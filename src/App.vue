@@ -1,12 +1,13 @@
 <script setup>
-import Navbar from './components/Navbar.vue'
-import Cta from './components/Cta.vue'
-import Work from './components/Work.vue'
-import About from './components/About.vue'
-import Contact from './components/Contact.vue'
-import Footer from './components/Footer.vue'
+  import Navbar from './components/Navbar.vue'
+  import Cta from './components/Cta.vue'
+  import Work from './components/Work.vue'
+  import About from './components/About.vue'
+  import Resume from './components/Resume.vue'
+  import Contact from './components/Contact.vue'
+  import Footer from './components/Footer.vue'
 
-import { ref } from 'vue'
+  import { ref } from 'vue'
 
   const theme = ref('light')
 
@@ -19,17 +20,21 @@ import { ref } from 'vue'
   <v-app>
     <Navbar @toggle-theme="toggleTheme"/>
 
-        <Cta />
-        <Work />
-        <About />
-        <Contact />
-        <Footer />
+    <!-- Gives spacing between navigation and content below -->
+    <v-spacer style="height:50px"></v-spacer>
+
+    <Cta />
+    <Work />
+    <About />
+    <Resume />
+    <Contact />
+    <Footer />
 
   </v-app>
 </template>
 
 <style scoped>
-.nav-space {
-  top: 50px;
-}
+  .nav-space {
+    top: 50px;
+  }
 </style>

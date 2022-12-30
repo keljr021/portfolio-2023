@@ -13,6 +13,7 @@
                 <span class="nav-item">UI/UX</span>
                 <span class="nav-item">Logos</span>
                 <span class="nav-item">About</span>
+                <span class="nav-item">Resume</span>
                 <span class="nav-item">Contact</span>
                 <span class="nav-item" @click="this.$emit('toggle-theme')">Theme</span>
             </v-col>
@@ -27,7 +28,8 @@
 }
 
 .nav-item {
-    padding: 0 10px;
+    padding: 0 20px;
     cursor: pointer;
+    text-align: center;
 }
 </style>
