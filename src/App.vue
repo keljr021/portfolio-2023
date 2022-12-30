@@ -21,7 +21,7 @@
     <Navbar @toggle-theme="toggleTheme"/>
 
     <!-- Gives spacing between navigation and content below -->
-    <v-spacer style="height:50px"></v-spacer>
+    <v-spacer style="height:40px"></v-spacer>
 
     <Cta />
     <Work />

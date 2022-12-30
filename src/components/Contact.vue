@@ -16,5 +16,6 @@
 .contact {
     background:lightgrey;
     height: 500px;
+    padding: 50px 100px;
 }
 </style>

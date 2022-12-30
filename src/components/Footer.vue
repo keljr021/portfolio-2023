@@ -1,21 +1,15 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
-    <v-container-fluid class="footer">
-        <v-row>
-            <v-col>
-                Footer Here
-            </v-col>
-        </v-row>
-    </v-container-fluid>
+    <v-footer class="justify-center">
+        <span class="footer-text">{{ new Date().getFullYear() }} - Kelvin Morrisey Jr.</span>
+    </v-footer>
 </template>
 
 <style scoped>
-.footer {
-    background:darkslategrey;
-    color: white;
-    height: 25px;
+.footer-text {
+    font-size: 12px;
+    font-style: italic;
+    opacity: 0.6;
 }
 </style>

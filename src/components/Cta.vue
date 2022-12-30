@@ -1,6 +1,7 @@
 <script setup>
 import CtaText from './partials/CtaText.vue'
 import CtaMenu from './partials/CtaMenu.vue'
+import CtaSocials from './partials/CtaSocials.vue'
 </script>
 
 <template>
@@ -10,12 +11,17 @@ import CtaMenu from './partials/CtaMenu.vue'
                 <h1 class="cta-title">Lorem ipsum</h1>
             </v-col>
         </v-row>
-        <v-row class="pa-3 justify-center">
+        <v-row class="px-3 py-2 justify-center">
             <v-col>
                 <CtaText />
             </v-col>
             <v-col>
                 <CtaMenu />
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col class="justify-end text-right">
+                <CtaSocials />
             </v-col>
         </v-row>
     </v-container-fluid>

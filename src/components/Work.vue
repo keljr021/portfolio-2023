@@ -20,5 +20,6 @@ import LogoWork from './partials/LogoWork.vue'
 .work {
     background:lightyellow;
     min-height: 500px;
+    padding: 50px 100px;
 }
 </style>
