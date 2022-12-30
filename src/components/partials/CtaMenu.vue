@@ -4,6 +4,11 @@ export default {
     props: {
         navItems: Array
     },
+    computed: {
+        ctaNavItems() {
+           return this.navItems.filter(items => items.text);
+        }
+    },
     methods: {
         scrollTo(input) {
             this.$emit('scroll-to', input)
@@ -15,7 +20,7 @@ export default {
 <template>
     <div class="cta-menu text-right">
         <div class="cta-menu-box">
-            <div class="cta-menu-item" v-for="navItem in navItems" @click="scrollTo(navItem.className)">{{ navItem.text }}</div>
+            <div class="cta-menu-item" v-for="navItem in ctaNavItems" @click="scrollTo(navItem.className)"><span>{{ navItem.text }}</span></div>
         </div>
     </div>
 </template>
@@ -27,18 +32,26 @@ export default {
 }
 
 .cta-menu-box {
-    width: 50px;
     float: right;
 }
 
 .cta-menu-item {
     margin: 20px;
     padding: 0 10px 10px;
+    border-bottom: 2px solid transparent;
     cursor: pointer;
     text-align: right;
+    opacity: 0.8;
 
-    &:hover {
-        text-decoration: underline;
-    }
+    span {
+        opacity: 0.8;
+        border: 3px solid transparent;
+        padding: 4px;
+
+        &:hover {
+            opacity: 1;
+            border-bottom-color: white;
+        }
+    }   
 }
 </style>

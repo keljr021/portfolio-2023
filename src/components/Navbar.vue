@@ -35,9 +35,10 @@ export default {
     padding: 0 20px;
     cursor: pointer;
     text-align: center;
+    opacity: 0.8;
 
     &:hover {
-        text-decoration: underline;
+       opacity: 1;
     }
 }
 </style>

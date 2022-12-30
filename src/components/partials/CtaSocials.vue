@@ -9,10 +9,15 @@
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .cta-socials-item {
     font-size: 13px;
     opacity: 0.8;
     padding: 0 25px;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+    }
 }
 </style>
