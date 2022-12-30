@@ -33,6 +33,11 @@
     padding: 50px 100px;
 }
 
+.about-text-title {
+    font-size: 24px;
+    padding: 10px 0;
+}
+
 .about-text-body {
     p {
         line-height: 2.25;

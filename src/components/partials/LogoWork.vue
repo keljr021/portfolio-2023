@@ -1,19 +1,18 @@
 <script setup>
-
+import WorkCard from './WorkCard.vue'
 </script>
 
 <template>
-    <v-container-fluid class="logo">
+    <div class="work-section logos">
         <v-row>
             <v-col>
-                Logo work is here
+                <div class="work-title">Logos</div>
             </v-col>
         </v-row>
-    </v-container-fluid>
+        <v-row>
+            <WorkCard />
+        </v-row>
+    </div>
 </template>
 
-<style scoped>
-.logo {
-    background:lightblue;
-}
-</style>
+<style scoped></style>

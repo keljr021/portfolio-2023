@@ -16,10 +16,20 @@ import LogoWork from './partials/LogoWork.vue'
     </v-container-fluid>
 </template>
 
-<style scoped>
+<style >
 .work {
     background:lightyellow;
     min-height: 500px;
     padding: 50px 100px;
+}
+
+.work-title {
+    font-size: 24px;
+    padding: 20px 0;
+}
+
+.work-section {
+    min-height: 100px;
+    padding-bottom: 50px;
 }
 </style>

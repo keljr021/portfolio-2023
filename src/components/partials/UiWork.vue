@@ -1,22 +1,18 @@
 <script setup>
-
+import WorkCard from './WorkCard.vue'
 </script>
 
 <template>
-    <v-container-fluid class="work">
+    <div class="work-section ui">
         <v-row>
             <v-col>
                 <div class="work-title">UI/UX</div>
             </v-col>
         </v-row>
         <v-row class="justify-center">
-            <v-col cols="4" v-for="n in 6" class="text-center pa-2">
-                x
-            </v-col>
+            <WorkCard />
         </v-row>
-    </v-container-fluid>
+    </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

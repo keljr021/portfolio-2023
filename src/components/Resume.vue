@@ -18,6 +18,7 @@
 <style lang="scss" scoped>
 .resume {
     background:indigo;
+    color: white;
     width: 100%;
     min-height: 500px;
     padding: 50px 100px;
@@ -27,5 +28,10 @@
         min-height: 100%;
         
     }
+}
+
+.resume-title {
+    font-size: 24px;
+    padding: 10px 0;
 }
 </style>

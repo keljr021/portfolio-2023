@@ -1,19 +1,18 @@
 <script setup>
-
+import WorkCard from './WorkCard.vue'
 </script>
 
 <template>
-    <v-container-fluid class="dev">
+    <div class="work-section dev">
         <v-row>
             <v-col>
-                Dev Work is here
+                <div class="work-title">Web Developement</div>
             </v-col>
         </v-row>
-    </v-container-fluid>
+        <v-row>
+            <WorkCard />
+        </v-row>
+    </div>
 </template>
 
-<style scoped>
-.dev {
-    background:lightblue;
-}
-</style>
+<style scoped></style>

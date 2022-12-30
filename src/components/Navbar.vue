@@ -1,21 +1,20 @@
-<script setup>
-
+<script>
+export default {
+    name: 'navbar',
+    props: {
+        navItems: Array
+    }
+}
 </script>
 
 <template>
     <div class="nav w-100 pa-2">
         <v-row class="align-center">
-            <v-col style="font-weight:bold">
+            <v-col class="nav-logo" @click="this.$emit('scroll-to', 'cta')">
                 Kelvin Morrisey Jr.
             </v-col>
             <v-col class="text-right">
-                <span class="nav-item">Dev</span>
-                <span class="nav-item">UI/UX</span>
-                <span class="nav-item">Logos</span>
-                <span class="nav-item">About</span>
-                <span class="nav-item">Resume</span>
-                <span class="nav-item">Contact</span>
-                <span class="nav-item" @click="this.$emit('toggle-theme')">Theme</span>
+                <span v-for="navItem in navItems" class="nav-item" @click="this.$emit('scroll-to', navItem.className)">{{ navItem.text }}</span>
             </v-col>
         </v-row>
     </div>
@@ -25,6 +24,11 @@
 .nav {
     background:white;
     position: fixed;
+    z-index: 9999;
+}
+
+.nav-logo {
+    cursor: pointer;
 }
 
 .nav-item {

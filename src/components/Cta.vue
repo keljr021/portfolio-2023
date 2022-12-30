@@ -1,7 +1,24 @@
-<script setup>
+<script>
 import CtaText from './partials/CtaText.vue'
 import CtaMenu from './partials/CtaMenu.vue'
 import CtaSocials from './partials/CtaSocials.vue'
+
+export default {
+    name: 'cta',
+    props: {
+        navItems: Array
+    },
+    methods: {
+        scrollTo(input) {
+            this.$emit('scroll-to', input);
+        }
+    },
+    components: {
+        CtaText,
+        CtaMenu,
+        CtaSocials
+    }
+}
 </script>
 
 <template>
@@ -16,7 +33,7 @@ import CtaSocials from './partials/CtaSocials.vue'
                 <CtaText />
             </v-col>
             <v-col>
-                <CtaMenu />
+                <CtaMenu @scroll-to="scrollTo" :navItems="navItems"/>
             </v-col>
         </v-row>
         <v-row>

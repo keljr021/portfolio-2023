@@ -1,14 +1,21 @@
-<script setup></script>
+<script>
+export default {
+    name: 'ctaMenu',
+    props: {
+        navItems: Array
+    },
+    methods: {
+        scrollTo(input) {
+            this.$emit('scroll-to', input)
+        }
+    }
+}
+</script>
 
 <template>
     <div class="cta-menu text-right">
         <div class="cta-menu-box">
-            <div class="cta-menu-item">Dev</div>
-            <div class="cta-menu-item">UI/UX</div>
-            <div class="cta-menu-item">Logos</div>
-            <div class="cta-menu-item">About</div>
-            <div class="cta-menu-item">Resume</div>
-            <div class="cta-menu-item">Contact</div>
+            <div class="cta-menu-item" v-for="navItem in navItems" @click="scrollTo(navItem.className)">{{ navItem.text }}</div>
         </div>
     </div>
 </template>
