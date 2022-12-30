@@ -21,7 +21,7 @@
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .nav {
     background:white;
     position: fixed;
@@ -31,5 +31,9 @@
     padding: 0 20px;
     cursor: pointer;
     text-align: center;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 </style>

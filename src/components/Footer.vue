@@ -16,6 +16,6 @@
 .footer {
     background:darkslategrey;
     color: white;
-    height: 150px;
+    height: 25px;
 }
 </style>
