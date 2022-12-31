@@ -32,6 +32,6 @@
 
 .resume-title {
     font-size: 24px;
-    padding: 10px 0;
+    padding: 30px 0;
 }
 </style>

@@ -13,6 +13,11 @@ import LogoWork from './partials/LogoWork.vue'
                 <LogoWork />
             </v-col>
         </v-row>
+        <v-row>
+            <v-col>
+                
+            </v-col>
+        </v-row>
     </v-container-fluid>
 </template>
 
@@ -25,7 +30,7 @@ import LogoWork from './partials/LogoWork.vue'
 
 .work-title {
     font-size: 24px;
-    padding: 20px 0;
+    padding: 30px 0;
 }
 
 .work-section {
