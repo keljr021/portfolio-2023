@@ -34,4 +34,10 @@
     font-size: 24px;
     padding: 30px 0;
 }
+
+@media all and (max-width: 768px) {
+    .resume {
+        padding: 20px;
+    }
+}
 </style>

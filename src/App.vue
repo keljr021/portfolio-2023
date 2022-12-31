@@ -20,7 +20,7 @@
             text: ''
           },
           {
-            className: 'work',
+            className: 'ui',
             text: 'UI/UX'
           },
           {
@@ -76,7 +76,7 @@
     <Navbar @toggle-theme="toggleTheme" @scroll-to="scrollTo" :navItems="navItems"/>
 
     <!-- Gives spacing between navigation and content below -->
-    <v-spacer style="height:40px"></v-spacer>
+    <v-spacer style="height:41.5px"></v-spacer>
 
     <Cta @scroll-to="scrollTo" :navItems="navItems"/>
     <Work />

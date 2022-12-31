@@ -6,7 +6,7 @@ import WorkCard from './WorkCard.vue'
     <div class="work-section logos">
         <v-row>
             <v-col>
-                <div class="work-title">Logos</div>
+                <div class="work-subtitle">Logos</div>
             </v-col>
         </v-row>
         <v-row>

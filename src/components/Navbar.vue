@@ -23,9 +23,9 @@ export default {
 </script>
 
 <template>
-    <div class="nav pa-2" v-if="$vuetify.display.mobile">
+    <div class="nav pa-2" v-if="$vuetify.display.xs">
         <v-row class="align-center justify-space-between">
-            <v-col sm="2" md="2" class="nav-logo" @click="this.$emit('scroll-to', 'cta')">
+            <v-col cols="2" class="nav-logo" @click="this.$emit('scroll-to', 'cta')">
                 Kelvin Morrisey Jr.
             </v-col>
             <v-col class="text-right">
@@ -60,13 +60,14 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
-    width: calc(100% - 12px);
+    width: 100%;
     background:white;
     position: fixed;
     z-index: 9999;
 }
 
 .nav-logo {
+    padding: 0 20px;
     cursor: pointer;
 }
 

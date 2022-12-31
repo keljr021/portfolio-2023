@@ -32,7 +32,7 @@ export default {
             <v-col>
                 <CtaText />
             </v-col>
-            <v-col v-if="!$vuetify.display.mobile">
+            <v-col v-if="!$vuetify.display.xs">
                 <CtaMenu @scroll-to="scrollTo" :navItems="navItems"/>
             </v-col>
         </v-row>

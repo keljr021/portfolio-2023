@@ -6,7 +6,7 @@ import WorkCard from './WorkCard.vue'
     <div class="work-section ui">
         <v-row>
             <v-col>
-                <div class="work-title">UI/UX</div>
+                <div class="work-subtitle">UI/UX</div>
             </v-col>
         </v-row>
         <v-row class="justify-center">
