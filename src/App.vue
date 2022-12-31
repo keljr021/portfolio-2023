@@ -51,7 +51,6 @@
         theme.value = theme.value === 'light' ? 'dark' : 'light';
       },
       scrollTo(input) {
-        debugger;
         let el = document.getElementsByClassName(input)[0];
 
         if(el) 

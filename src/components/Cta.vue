@@ -32,12 +32,12 @@ export default {
             <v-col>
                 <CtaText />
             </v-col>
-            <v-col>
+            <v-col v-if="!$vuetify.display.mobile">
                 <CtaMenu @scroll-to="scrollTo" :navItems="navItems"/>
             </v-col>
         </v-row>
         <v-row>
-            <v-col class="justify-end text-right">
+            <v-col class="justify-md-center justify-md-end text-center text-md-right">
                 <CtaSocials />
             </v-col>
         </v-row>
@@ -50,5 +50,11 @@ export default {
     color: white;
     min-height: 500px;
     padding: 50px 100px;
+}
+
+@media all and (max-width: 768px) {
+    .cta {
+        padding: 20px;
+    }
 }
 </style>

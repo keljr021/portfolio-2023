@@ -4,6 +4,11 @@
       return {
         dialog: false,
       };
+    },
+    methods: {
+      closeDialog() {
+        this.dialog = false;
+      }
     }
   }
 </script>
@@ -19,7 +24,7 @@
                     class="item-close"
                     icon
                     variant="text"
-                    @click="dialog = false"
+                    @click="closeDialog()"
                 >x</v-btn>
             </div>
           </v-card-title>
@@ -30,7 +35,7 @@
         </v-card-text>
           <v-card-actions class="text-center">
             <v-spacer></v-spacer>
-            <v-btn color="primary" @click="dialog = false">Close Dialog</v-btn>
+            <v-btn color="primary" @click="closeDialog()">Close Dialog</v-btn>
             <v-spacer></v-spacer>
           </v-card-actions>
         </v-card>
