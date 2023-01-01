@@ -1,17 +1,46 @@
-<script setup></script>
+<script>
+export default {
+    name: 'ctaText',
+    emits: [
+        'scrollTo'
+    ],
+    methods: {
+        scrollTo(input) {
+            this.$emit('scrollTo', input)
+        }
+    }
+}
+</script>
 
 <template>
     <div class="cta-text">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nisl tempus felis egestas eleifend. Fusce sagittis faucibus neque. Aliquam vehicula enim vel nisl consequat imperdiet. Quisque commodo, massa eu luctus ullamcorper, lorem enim sodales ipsum, eu bibendum augue neque vel massa. Nulla facilisi. Suspendisse potenti. In porta quam efficitur posuere maximus. Nam tortor metus, convallis vel sollicitudin ut, suscipit at ipsum. Vestibulum dapibus, ligula at aliquam rutrum, eros odio iaculis elit, et hendrerit est erat quis mauris. Cras suscipit leo vitae condimentum cursus.</p>
-        <p>Fusce quis dictum erat. Praesent at dolor sed lectus imperdiet finibus. Nunc aliquet dignissim volutpat. Maecenas sit amet eros nibh. Quisque fermentum ac ligula rhoncus elementum. Nullam hendrerit non ante a mattis. Proin ut purus lorem. Donec dolor erat, aliquam non pulvinar at, ultrices sed neque. Vivamus rhoncus eget diam id consequat. In sit amet sagittis eros.</p>
+        <p>With <b>over six years of experience</b> across various IT environments; I am always open to find opportunities to match technical experience with creative skills.</p>
+        <p>My focus is 
+            <span class="cta-link" @click="scrollTo('ui')">UI/UX design</span>, 
+            <span class="cta-link" @click="scrollTo('dev')">front-end development</span>, and 
+            <span class="cta-link" @click="scrollTo('logos')">logo design</span> as well. From writing notes to rough drafting ideas, my passion is to bring ideas to life.</p>
+        <p>Feel free to browse the links, or <span class="cta-link" @click="scrollTo('contact')">drop a note</span> to chat more!</p>
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .cta-text p {
     font-size: 18px;
     font-weight: 300;
     line-height: 2;
     padding: 10px 0;
+    opacity: 0.9;
+
+    .cta-link {
+        cursor: pointer;
+        padding: 0 2px;
+        font-weight: normal;
+        
+        &:hover {
+            color: #18184d;
+            text-decoration: underline;
+            opacity: 1;
+        }
+    }
 }
 </style>
