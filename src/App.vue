@@ -98,7 +98,7 @@
 
 <template>
   <v-app>
-    <Navbar @scrollTo="scrollTo" :navItems="navItems" />
+    <Navbar @scrollTo="scrollTo" :navItems="navItems" :logo="kmLogoUrl"/>
 
     <!-- Gives spacing between navigation and content below -->
     <v-spacer v-if="this.$vuetify.display.xs" style="height:41.5px"></v-spacer>
@@ -107,7 +107,7 @@
     <Work />
     <About />
     <Contact :socialIconsArray="socialIconsArray" />
-    <Footer />
+    <Footer :logo="kmLogoUrl" />
 
   </v-app>
 </template>

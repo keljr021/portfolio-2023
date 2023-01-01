@@ -2,7 +2,7 @@
 
 <template>
     <v-footer class="justify-end">
-        <span class="footer-text">{{ new Date().getFullYear() }} - Kelvin Morrisey Jr.</span>
+        <span class="footer-text">Kelvin Morrisey Jr. - {{ new Date().getFullYear() }}</span>
     </v-footer>
 </template>
 
