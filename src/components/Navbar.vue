@@ -29,7 +29,6 @@ export default {
 
         // Here we determine whether we need to show or hide the navbar
         this.showNav = currentScrollPosition >= 300;
-        console.log('position is: ', currentScrollPosition, ' - showNavbar is: ', this.showNav);
       }
     },
     mounted() {

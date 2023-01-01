@@ -36,11 +36,6 @@ export default {
                 <CtaMenu @scroll-to="scrollTo" :navItems="navItems"/>
             </v-col>
         </v-row>
-        <v-row>
-            <v-col class="justify-md-center justify-md-end text-center text-md-right">
-                <CtaSocials />
-            </v-col>
-        </v-row>
     </v-container-fluid>
 </template>
 

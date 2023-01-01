@@ -2,7 +2,7 @@
 import WorkDialog from './WorkDialog.vue'
 
 export default {
-    name: 'work-card',
+    name: 'workCard',
     methods: {},
     components: {
         WorkDialog

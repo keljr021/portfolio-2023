@@ -1,5 +1,6 @@
 <script>
   export default {
+    name: 'workDialog',
     data () {
       return {
         dialog: false,
