@@ -12,24 +12,18 @@
                 </div>
             </v-col>
             <v-col cols="12" sm="6" md="6" lg="4" class="text-center text-md-right">
-                <img class="about-image" alt="about photo" src="../assets/about.jpg" />
+                <img class="about-image" alt="about photo" src="../assets/about-alt.jpg" />
             </v-col>
         </v-row>
     </v-container>
 </template>
 
-<style lang="scss" scoped>
-.about {
-    background:lightgreen;
-    min-height: 500px;
-}
-
-.about-text {
+<style lang="scss" scoped>.about-text {
     padding: 50px 100px;
 }
 
 .about-text-title {
-    font-size: 24px;
+    font-size: 28px;
     font-family: 'Quicksand', 'Roboto Thin', sans-serif;
     font-weight: normal;  
     padding: 30px 0;
@@ -39,6 +33,7 @@
     p {
         line-height: 2.25;
         padding: 10px 0;
+        opacity: 0.9;
     }
 }
 

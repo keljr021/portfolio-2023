@@ -53,10 +53,11 @@ export default {
 }
 
 .contact-title {
-    font-size: 24px;
+    font-size: 28px;
     font-family: 'Quicksand', 'Roboto Thin', sans-serif;
     font-weight: normal;  
     padding: 10px 0;
+    color: #18184d;
 }
 
 .contact-emails,

@@ -36,7 +36,6 @@ export default {
 
 <style>
 .work {
-    background:lightyellow;
     min-height: 500px;
     padding: 50px 100px !important;
 }
@@ -48,13 +47,14 @@ export default {
 }
 
 .work-title {
-    font-size: 24px;
-    padding: 30px 0;
+    font-size: 28px;
+    padding: 40px 0;
+    color: #18184d;
 }
 
 .work-subtitle {
     font-size: 18px;
-    padding: 20px 0;
+    padding: 30px 0;
 }
 
 .work-section {

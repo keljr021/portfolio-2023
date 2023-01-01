@@ -39,21 +39,37 @@ export default {
             <v-col v-if="!$vuetify.display.xs">
                 <CtaMenu @scrollTo="scrollTo" :navItems="navItems"/>
             </v-col>
+
+            <img class="cta-logo" src="../assets/km-icon.svg" />
         </v-row>
     </v-container>
 </template>
 
 <style scoped>
 .cta {
-    background:#18184d;
-    color: white;
     min-height: 500px;
     padding: 100px 50px 100px;
+}
+
+.cta-title {
+    color: #18184d;
+}
+
+.cta-logo {
+    position: absolute;
+    bottom: 10%;
+    right: 100px;
+    opacity: 0.4;
+    height: 50px;
 }
 
 @media all and (max-width: 768px) {
     .cta {
         padding: 20px;
+    }
+
+    .cta-logo {
+        display: none;
     }
 }
 </style>

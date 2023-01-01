@@ -11,7 +11,6 @@
 .cta-text p {
     font-size: 18px;
     font-weight: 300;
-    opacity: 0.9;
     line-height: 2;
     padding: 10px 0;
 }

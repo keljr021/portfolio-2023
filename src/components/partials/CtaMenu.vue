@@ -45,17 +45,15 @@ export default {
     padding: 0 10px 10px;
     cursor: pointer;
     text-align: right;
-    opacity: 0.8;
     
     span {
-        opacity: 0.8;
         border: 3px solid transparent;
         padding: 4px;
         transition: border-bottom-color 0.3s;
 
         &:hover {
-            opacity: 1;
-            border-bottom-color: white;
+            color: #18184d;
+            border-bottom-color: #18184d;
         }
     }   
 }
