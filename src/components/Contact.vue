@@ -22,7 +22,7 @@ export default {
             <v-col cols="12">
                 <div class="contact-title">Contact Me</div>
             </v-col>
-            <v-col cols="12" sm="6" md="6" lg="4" class="px-4">
+            <v-col cols="12" lg="4" class="px-4">
                 <div class="contact-emails">
                     <div @click="openWindow('mailto:kmjr07@yahoo.com')">
                         <v-icon icon="mdi-email" variant="text"  />
@@ -39,7 +39,7 @@ export default {
                     </span>
                 </div>
             </v-col>
-            <v-col cols="12" sm="6" md="6" lg="8">
+            <v-col cols="12" lg="8">
                 <ContactForm />
             </v-col>
         </v-row>
