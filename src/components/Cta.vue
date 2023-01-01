@@ -57,7 +57,7 @@ export default {
 
 .cta-logo {
     position: absolute;
-    bottom: 10%;
+    bottom: 0;
     right: 100px;
     opacity: 0.4;
     height: 50px;

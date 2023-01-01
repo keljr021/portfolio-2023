@@ -34,7 +34,7 @@ export default {
     </v-container>
 </template>
 
-<style>
+<style lang="scss">
 .work {
     min-height: 500px;
     padding: 50px 100px !important;
@@ -60,6 +60,14 @@ export default {
 .work-section {
     min-height: 100px;
     padding-bottom: 50px;
+}
+
+.work-card {
+    cursor: pointer;
+
+    .v-card, .v-card-text {
+        line-height: 1.5 !important;
+    }
 }
 
 @media all and (max-width: 768px) {

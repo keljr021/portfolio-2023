@@ -1,5 +1,5 @@
 <script setup>
-import WorkCard from './WorkCard.vue'
+import Test from './workCards/Test.vue'
 </script>
 
 <template>
@@ -10,7 +10,9 @@ import WorkCard from './WorkCard.vue'
             </v-col>
         </v-row>
         <v-row class="justify-center">
-            <WorkCard />
+            <Test />
+            <Test />
+            <Test />
         </v-row>
     </div>
 </template>

@@ -4,11 +4,13 @@
     <v-container fluid class="about">
         <v-row>
             <v-col cols="12" sm="6" md="6" lg="8" class="about-text">
-                <div class="about-text-title">About</div>
+                <div class="about-text-title">About Me</div>
+                <div class="about-text-caption">Art and tech: and my quest to find the median between the two.</div>
                 <div class="about-text-body py-3">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nisl tempus felis egestas eleifend. Fusce sagittis faucibus neque. Aliquam vehicula enim vel nisl consequat imperdiet. Quisque commodo, massa eu luctus ullamcorper, lorem enim sodales ipsum, eu bibendum augue neque vel massa. Nulla facilisi. Suspendisse potenti. In porta quam efficitur posuere maximus. Nam tortor metus, convallis vel sollicitudin ut, suscipit at ipsum. Vestibulum dapibus, ligula at aliquam rutrum, eros odio iaculis elit, et hendrerit est erat quis mauris. Cras suscipit leo vitae condimentum cursus.</p>
-                    <p>Fusce quis dictum erat. Praesent at dolor sed lectus imperdiet finibus. Nunc aliquet dignissim volutpat. Maecenas sit amet eros nibh. Quisque fermentum ac ligula rhoncus elementum. Nullam hendrerit non ante a mattis. Proin ut purus lorem. Donec dolor erat, aliquam non pulvinar at, ultrices sed neque. Vivamus rhoncus eget diam id consequat. In sit amet sagittis eros.</p>
-                    <p>Fusce quis dictum erat. Praesent at dolor sed lectus imperdiet finibus. Nunc aliquet dignissim volutpat. Maecenas sit amet eros nibh. Quisque fermentum ac ligula rhoncus elementum. Nullam hendrerit non ante a mattis. Proin ut purus lorem. Donec dolor erat, aliquam non pulvinar at, ultrices sed neque. Vivamus rhoncus eget diam id consequat. In sit amet sagittis eros.</p>
+                    <p>Growing up in the 90's, I was always fascinated with computers, technology, and art. After graduating with a B.S. in Computer Science from UNC Pembroke, I have worked in several IT environments; including hospitals, healthcare, and media companies as well.</p>
+                    <p>My goal is to find an opportunity to flex my creative skills with UI, UX, and visual design; and grow with a great company with like-minded people. My versatility with web development also provides a valuable resource along with my creative skills.</p>
+                    <p>I'm an avid note-taker, researcher, thinker, drawer, and Google...er (if that's a word). When I'm out of work; I'm usually surfing the web, drawing, writing, listening to music, or gaming online.</p>
+                    <p>Want to learn more? Drop a note below!</p>
                 </div>
             </v-col>
             <v-col cols="12" sm="6" md="6" lg="4" class="text-center text-md-right">
@@ -27,6 +29,12 @@
     font-family: 'Quicksand', 'Roboto Thin', sans-serif;
     font-weight: normal;  
     padding: 30px 0;
+}
+
+.about-text-caption {
+    line-height: 2.5;
+    padding: 15px 0;
+    font-size: 20px;
 }
 
 .about-text-body {

@@ -14,7 +14,7 @@ export default {
 
 <template>
     <div class="cta-text">
-        <p>With <b>over six years of experience</b> across various IT environments; I am always open to find opportunities to match technical experience with creative skills.</p>
+        <p>With over 6 years of experience across various IT environments; I am always open to find opportunities to match technical experience with creative skills.</p>
         <p>My focus is 
             <span class="cta-link" @click="scrollTo('ui')">UI/UX design</span>, 
             <span class="cta-link" @click="scrollTo('dev')">front-end development</span>, and 
