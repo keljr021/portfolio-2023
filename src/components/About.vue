@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-    <v-container-fluid class="about">
+    <v-container fluid class="about">
         <v-row>
             <v-col cols="12" sm="6" md="6" lg="8" class="about-text">
                 <div class="about-text-title">About</div>
@@ -15,7 +15,7 @@
                 <img class="about-image" alt="about photo" src="../assets/about.jpg" />
             </v-col>
         </v-row>
-    </v-container-fluid>
+    </v-container>
 </template>
 
 <style lang="scss" scoped>

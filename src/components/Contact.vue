@@ -17,13 +17,10 @@ export default {
 </script>
 
 <template>
-    <v-container-fluid class="contact">
+    <v-container fluid class="contact">
         <v-row>
             <v-col cols="12">
                 <div class="contact-title">Contact Me</div>
-            </v-col>
-            <v-col cols="12" sm="6" md="6" lg="8">
-                <ContactForm />
             </v-col>
             <v-col cols="12" sm="6" md="6" lg="4" class="px-4">
                 <div class="contact-emails">
@@ -42,8 +39,11 @@ export default {
                     </span>
                 </div>
             </v-col>
+            <v-col cols="12" sm="6" md="6" lg="8">
+                <ContactForm />
+            </v-col>
         </v-row>
-    </v-container-fluid>
+    </v-container>
 </template>
 
 <style lang="scss" scoped>
@@ -86,6 +86,11 @@ export default {
 @media all and (max-width: 768px) {
     .contact {
         padding: 20px;
+    }
+
+    .contact-emails,
+    .contact-icons {
+        padding: 10px 0;
     }
 }
 </style>

@@ -69,9 +69,6 @@
       }
     },
     methods: {
-      toggleTheme() {
-        theme.value = theme.value === 'light' ? 'dark' : 'light';
-      },
       scrollTo(input) {
         let el = document.getElementsByClassName(input)[0];
 
@@ -101,12 +98,12 @@
 
 <template>
   <v-app>
-    <Navbar @toggle-theme="toggleTheme" @scroll-to="scrollTo" :navItems="navItems" />
+    <Navbar @scrollTo="scrollTo" :navItems="navItems" />
 
     <!-- Gives spacing between navigation and content below -->
     <v-spacer v-if="this.$vuetify.display.xs" style="height:41.5px"></v-spacer>
 
-    <Cta @scroll-to="scrollTo" :navItems="navItems" :socialIconsArray="socialIconsArray"/>
+    <Cta @scrolTo="scrollTo" :navItems="navItems" :socialIconsArray="socialIconsArray"/>
     <Work />
     <About />
     <Contact :socialIconsArray="socialIconsArray" />

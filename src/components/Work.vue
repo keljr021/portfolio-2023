@@ -5,7 +5,7 @@ import LogoWork from './partials/LogoWork.vue'
 </script>
 
 <template>
-    <v-container-fluid class="work">
+    <v-container fluid class="work">
         <v-row>
             <v-col>
                 <div class="work-title">Work</div>
@@ -18,7 +18,7 @@ import LogoWork from './partials/LogoWork.vue'
                 <LogoWork />
             </v-col>
         </v-row>
-    </v-container-fluid>
+    </v-container>
 </template>
 
 <style >

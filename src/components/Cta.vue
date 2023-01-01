@@ -9,9 +9,12 @@ export default {
         navItems: Array,
         socialIconsArray: Array
     },
+    emits: [
+        'scrollTo'
+    ],
     methods: {
         scrollTo(input) {
-            this.$emit('scroll-to', input);
+            this.$emit('scrollTo', input);
         }
     },
     components: {
@@ -23,7 +26,7 @@ export default {
 </script>
 
 <template>
-    <v-container-fluid class="cta">
+    <v-container fluid class="cta">
         <v-row class="pa-3 justify-center">
             <v-col>
                 <h1 class="cta-title">Lorem ipsum</h1>
@@ -37,7 +40,7 @@ export default {
                 <CtaMenu @scroll-to="scrollTo" :navItems="navItems"/>
             </v-col>
         </v-row>
-    </v-container-fluid>
+    </v-container>
 </template>
 
 <style scoped>

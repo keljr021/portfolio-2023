@@ -10,6 +10,9 @@ export default {
     props: {
         navItems: Array
     },
+    emits: [
+        'scrollTo'
+    ],
     computed: {
         mobileNavItems() {
            return this.navItems.filter(items => items.text);
@@ -50,7 +53,7 @@ export default {
     <!-- Mobile Navigation -->
     <div class="nav w-100 pa-2" :class="{'show': showNav }" v-if="$vuetify.display.xs">
         <v-row class="align-center justify-space-between">
-            <v-col cols="6" class="nav-logo" @click="this.$emit('scroll-to', 'cta')">
+            <v-col cols="6" class="nav-logo" @click="this.$emit('scrollTo', 'cta')">
                 Kelvin Morrisey Jr.
             </v-col>
             <v-col class="text-right">
@@ -63,7 +66,7 @@ export default {
                         </template>
                     </v-list-item>
                     <v-list density="compact" nav>
-                        <v-list-item v-for="navItem in mobileNavItems" :title="navItem.text" :value="navItem.text" @click.stop="this.$emit('scroll-to', navItem.className);toggleNavDrawer()"></v-list-item>
+                        <v-list-item v-for="navItem in mobileNavItems" :title="navItem.text" :value="navItem.text" @click.stop="this.$emit('scrollTo', navItem.className);toggleNavDrawer()"></v-list-item>
                     </v-list>
                 </v-navigation-drawer>
             </v-col>
