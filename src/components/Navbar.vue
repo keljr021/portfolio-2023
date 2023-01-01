@@ -3,6 +3,7 @@ export default {
     name: 'navbar',
     data() {
         return {
+            showNav: false,
             showNavDrawer: false
         };
     },
@@ -17,13 +18,33 @@ export default {
     methods: {
         toggleNavDrawer() {
             this.showNavDrawer = !this.showNavDrawer;
-        }
-    }
+        },
+        checkToShowNavbar() {
+        // Get the current scroll position
+        const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Because of momentum scrolling on mobiles, we shouldn't continue if it is less than zero
+        if (currentScrollPosition < 0) 
+          return false;
+
+        // Here we determine whether we need to show or hide the navbar
+        this.showNav = currentScrollPosition >= 300;
+        console.log('position is: ', currentScrollPosition, ' - showNavbar is: ', this.showNav);
+      }
+    },
+    mounted() {
+      this.checkToShowNavbar();
+      window.addEventListener('scroll', this.checkToShowNavbar)
+    },
+    beforeDestroy () {
+      window.removeEventListener('scroll', this.checkToShowNavbar)
+    },
 }
 </script>
 
 <template>
-    <div class="nav pa-2" v-if="$vuetify.display.xs">
+    <!-- Mobile Navigation -->
+    <div class="nav w-100 pa-2" :class="{'show': showNav }" v-if="$vuetify.display.xs">
         <v-row class="align-center justify-space-between">
             <v-col cols="2" class="nav-logo" @click="this.$emit('scroll-to', 'cta')">
                 Kelvin Morrisey Jr.
@@ -45,7 +66,8 @@ export default {
         </v-row>
     </div>
 
-    <div class="nav w-100 pa-2" v-else>
+    <!-- Tablet/Desktop navigation -->
+    <div class="nav w-100 pa-2" :class="{'show': showNav }" v-else>
         <v-row class="align-center">
             <v-col class="nav-logo" @click="this.$emit('scroll-to', 'cta')">
                 Kelvin Morrisey Jr.
@@ -60,10 +82,15 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
-    width: 100%;
     background:white;
     position: fixed;
     z-index: 9999;
+    top: -42px;
+    transition: top 0.3s;
+
+    &.show {
+        top: 0 !important;
+    }
 }
 
 .nav-logo {

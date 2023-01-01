@@ -53,11 +53,17 @@
       scrollTo(input) {
         let el = document.getElementsByClassName(input)[0];
 
-        if(el) 
+        if(el) {
             el.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+        }
         else 
           alert('ELement not found: ', input);
-      }
+      },
+    },
+    mounted() {
+      let input = null;
+      if (input)
+        this.scrollTo(input);
     },
     components: {
       Navbar,
@@ -73,10 +79,10 @@
 
 <template>
   <v-app>
-    <Navbar @toggle-theme="toggleTheme" @scroll-to="scrollTo" :navItems="navItems"/>
+    <Navbar @toggle-theme="toggleTheme" @scroll-to="scrollTo" :navItems="navItems" />
 
     <!-- Gives spacing between navigation and content below -->
-    <v-spacer style="height:41.5px"></v-spacer>
+    <!-- <v-spacer style="height:41.5px"></v-spacer> -->
 
     <Cta @scroll-to="scrollTo" :navItems="navItems"/>
     <Work />
@@ -88,8 +94,4 @@
   </v-app>
 </template>
 
-<style scoped>
-  .nav-space {
-    top: 50px;
-  }
-</style>
+<style scoped></style>
