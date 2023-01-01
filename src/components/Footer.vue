@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-    <v-footer class="justify-center">
+    <v-footer class="justify-end">
         <span class="footer-text">{{ new Date().getFullYear() }} - Kelvin Morrisey Jr.</span>
     </v-footer>
 </template>

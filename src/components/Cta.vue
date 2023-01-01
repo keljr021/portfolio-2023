@@ -7,7 +7,7 @@ export default {
     name: 'cta',
     props: {
         navItems: Array,
-        socialArray: Array
+        socialIconsArray: Array
     },
     methods: {
         scrollTo(input) {

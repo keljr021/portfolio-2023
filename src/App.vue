@@ -7,8 +7,8 @@
   import Contact from './components/Contact.vue'
   import Footer from './components/Footer.vue'
 
-  import linkedinUrl from './assets/linkedin-black.png'
-  import githubUrl from './assets/github-black.png'
+  import linkedinUrl from './assets/LI-black.png'
+  import githubUrl from './assets/github-mark.png'
 
   import { ref } from 'vue'
 
@@ -48,21 +48,7 @@
             text: 'Contact'
           }
         ],
-        socialArray: [
-            {
-                type: 'icon',
-                src: 'mdi-email',
-                link: 'mailto:kmjr07@yahoo.com',
-                alt: 'Email kmjr07@yahoo.com',
-                text: 'kmjr07@yahoo.com'
-            },
-            {
-                type: 'icon',
-                src: 'mdi-email',
-                link: 'mailto:keljr021@gmail.com',
-                alt: 'Email keljr021@gmail.com',
-                text: 'keljr021@gmail.com'
-            },
+        socialIconsArray: [
             {
                 type: 'img',
                 src: linkedinUrl,
@@ -120,10 +106,10 @@
     <!-- Gives spacing between navigation and content below -->
     <v-spacer v-if="this.$vuetify.display.xs" style="height:41.5px"></v-spacer>
 
-    <Cta @scroll-to="scrollTo" :navItems="navItems" :socialArray="socialArray"/>
+    <Cta @scroll-to="scrollTo" :navItems="navItems" :socialIconsArray="socialIconsArray"/>
     <Work />
     <About />
-    <Contact :socialArray="socialArray" />
+    <Contact :socialIconsArray="socialIconsArray" />
     <Footer />
 
   </v-app>

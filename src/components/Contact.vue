@@ -3,7 +3,7 @@ import ContactForm from './partials/ContactForm.vue'
 export default {
     name: 'Contact',
     props: {
-        socialArray: Array
+        socialIconsArray: Array
     },
     components: {
         ContactForm
@@ -22,14 +22,24 @@ export default {
             <v-col cols="12">
                 <div class="contact-title">Contact Me</div>
             </v-col>
-            <v-col cols="12" sm="6" md="6" lg="8" style="background:#eee">
+            <v-col cols="12" sm="6" md="6" lg="8">
                 <ContactForm />
             </v-col>
-            <v-col cols="12" sm="6" md="6" lg="4">
-                <div class="pb-3 px-3" v-for="item in socialArray">
-                    <v-icon v-if="item.type === 'icon'" :icon="item.src" variant="text" @click="openWindow(item.link)" />
-                    <a v-else :href="item.link" target="_blank"><img :src="item.src" :alt="item.alt" /></a>
-                    <span class="px-2" v-if="item.type === 'icon'">{{ item.text }}</span>
+            <v-col cols="12" sm="6" md="6" lg="4" class="px-4">
+                <div class="contact-emails">
+                    <div @click="openWindow('mailto:kmjr07@yahoo.com')">
+                        <v-icon icon="mdi-email" variant="text"  />
+                        kmjr07@yahoo.com
+                    </div>
+                    <div @click="openWindow('mailto:keljr021@gmail.com')">
+                        <v-icon icon="mdi-email" variant="text"  />
+                        keljr021@gmail.com
+                    </div>
+                </div>
+                <div class="contact-icons py-3">
+                    <span class="pr-3" v-for="item in socialIconsArray">
+                        <a :href="item.link" target="_blank"><img class="content-item-img" :src="item.src" :alt="item.alt" /></a>
+                    </span>
                 </div>
             </v-col>
         </v-row>
@@ -47,11 +57,29 @@ export default {
     padding: 10px 0;
 }
 
-.contact-item {
-    opacity: 0.8;
+.contact-emails,
+.contact-icons {
+    padding: 30px 0;
 
-    &:hover {
-        opacity: 1;
+    div, span {
+        opacity: 0.8;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.contact-emails {
+    div {
+        padding: 10px 0;
+    }
+}
+
+.contact-icons {
+    img {
+        height: 40px !important;
     }
 }
 
