@@ -9,7 +9,10 @@
 
 <style scoped>
 .cta-text p {
-    line-height: 2.25;
+    font-size: 18px;
+    font-weight: 300;
+    opacity: 0.9;
+    line-height: 2;
     padding: 10px 0;
 }
 </style>

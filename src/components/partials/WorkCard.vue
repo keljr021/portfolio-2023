@@ -22,8 +22,12 @@ export default {
     </v-col>
 </template>
 
-<style>
+<style lang="scss">
 .work-card {
     cursor: pointer;
+
+    .v-card, .v-card-text {
+        line-height: 1.5 !important;
+    }
 }
 </style>

@@ -1,7 +1,20 @@
-<script setup>
+<script>
 import UiWork from './partials/UiWork.vue'
 import DevWork from './partials/DevWork.vue'
 import LogoWork from './partials/LogoWork.vue'
+export default {
+    name: 'work',
+    data() {
+        return {
+            lazyLoad: false
+        };
+    },
+    components: {
+        UiWork,
+        DevWork,
+        LogoWork
+    }
+}
 </script>
 
 <template>
@@ -21,11 +34,17 @@ import LogoWork from './partials/LogoWork.vue'
     </v-container>
 </template>
 
-<style >
+<style>
 .work {
     background:lightyellow;
     min-height: 500px;
-    padding: 50px 100px;
+    padding: 50px 100px !important;
+}
+
+.work-title,
+.work-subtitle {
+    font-family: 'Quicksand', 'Roboto Thin', sans-serif;
+    font-weight: normal;  
 }
 
 .work-title {
@@ -45,7 +64,7 @@ import LogoWork from './partials/LogoWork.vue'
 
 @media all and (max-width: 768px) {
     .work {
-        padding: 20px;
+        padding: 20px !important;
     }
 }
 </style>

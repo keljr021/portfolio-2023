@@ -54,6 +54,8 @@ export default {
 
 .contact-title {
     font-size: 24px;
+    font-family: 'Quicksand', 'Roboto Thin', sans-serif;
+    font-weight: normal;  
     padding: 10px 0;
 }
 

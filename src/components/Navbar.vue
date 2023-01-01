@@ -24,15 +24,15 @@ export default {
             this.showNavDrawer = !this.showNavDrawer;
         },
         checkToShowNavbar() {
-        // Get the current scroll position
-        const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+            // Get the current scroll position
+            const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-        // Because of momentum scrolling on mobiles, we shouldn't continue if it is less than zero
-        if (currentScrollPosition < 0) 
-          return false;
+            // Because of momentum scrolling on mobiles, we shouldn't continue if it is less than zero
+            if (currentScrollPosition < 0) 
+            return false;
 
-        // Here we determine whether we need to show or hide the navbar
-        this.showNav = currentScrollPosition >= 300;
+            // Here we determine whether we need to show or hide the navbar
+            this.showNav = currentScrollPosition >= 300;    
       }
     },
     mounted() {

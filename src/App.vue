@@ -40,13 +40,13 @@
             text: 'About'
           },
           {
+            className: 'contact',
+            text: 'Contact'
+          },
+          {
             className: 'resume',
             text: 'Resume'
           },
-          {
-            className: 'contact',
-            text: 'Contact'
-          }
         ],
         socialIconsArray: [
             {
@@ -70,14 +70,14 @@
     },
     methods: {
       scrollTo(input) {
+        if (input === 'resume') 
+          window.open('https://docs.google.com/document/d/1SABOJAG4JkzPpqIXq3yTini9i2JFcc9Nb7xT6sgzIqY/edit?usp=sharing', '_blank');
+        else {
         let el = document.getElementsByClassName(input)[0];
-
-        if(el) {
+          if(el) 
             el.scrollIntoView({ behavior: 'smooth', inline: 'start' });
         }
-        else 
-          alert('ELement not found: ', input);
-      },
+      }
     },
     mounted() {
       let input = null;
@@ -103,7 +103,7 @@
     <!-- Gives spacing between navigation and content below -->
     <v-spacer v-if="this.$vuetify.display.xs" style="height:41.5px"></v-spacer>
 
-    <Cta @scrolTo="scrollTo" :navItems="navItems" :socialIconsArray="socialIconsArray"/>
+    <Cta @scrollTo="scrollTo" :navItems="navItems" :socialIconsArray="socialIconsArray"/>
     <Work />
     <About />
     <Contact :socialIconsArray="socialIconsArray" />
@@ -112,4 +112,16 @@
   </v-app>
 </template>
 
-<style scoped></style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: 'Jost', 'Roboto', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Quicksand', 'Roboto Thin', sans-serif;
+  font-weight: normal;
+}
+</style>

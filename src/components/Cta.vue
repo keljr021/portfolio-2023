@@ -37,7 +37,7 @@ export default {
                 <CtaText />
             </v-col>
             <v-col v-if="!$vuetify.display.xs">
-                <CtaMenu @scroll-to="scrollTo" :navItems="navItems"/>
+                <CtaMenu @scrollTo="scrollTo" :navItems="navItems"/>
             </v-col>
         </v-row>
     </v-container>
@@ -48,7 +48,7 @@ export default {
     background:#18184d;
     color: white;
     min-height: 500px;
-    padding: 50px 100px;
+    padding: 100px 50px 100px;
 }
 
 @media all and (max-width: 768px) {

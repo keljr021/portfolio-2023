@@ -30,6 +30,8 @@
 
 .about-text-title {
     font-size: 24px;
+    font-family: 'Quicksand', 'Roboto Thin', sans-serif;
+    font-weight: normal;  
     padding: 30px 0;
 }
 
@@ -41,7 +43,7 @@
 }
 
 .about-image {
-    height: 100%;
+    width: 100%;
 }
 
 @media all and (max-width: 768px) {
@@ -52,6 +54,7 @@
     }
 
     .about-image {
+        width: initial !important;
         height: 300px;
     }
 }
