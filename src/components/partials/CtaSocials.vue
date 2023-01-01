@@ -1,41 +1,8 @@
 <script>
-import linkedinUrl from './../../assets/linkedin.png'
-import githubUrl from './../../assets/github.png'
-
-
 export default {
     name: 'ctaSocials',
-    data () {
-      return {
-        socialArray: [
-            {
-                type: 'icon',
-                src: 'mdi-email',
-                link: 'mailto:kmjr07@yahoo.com',
-                alt: 'Email kmjr07@yahoo.com'
-            },
-            {
-                type: 'icon',
-                src: 'mdi-email',
-                link: 'mailto:keljr021@gmail.com',
-                alt: 'Email keljr021@gmail.com'
-            },
-            {
-                type: 'img',
-                src: linkedinUrl,
-                link: 'https://www.linkedin.com/in/kelvin-morrisey-jr-514360a7/',
-                alt: 'LinkedIn https://www.linkedin.com/in/kelvin-morrisey-jr-514360a7/'
-
-            },
-            {
-                type: 'img',
-                src: githubUrl,
-                link: 'https://github.com/keljr021',
-                alt: 'GitHub https://github.com/keljr021'
-
-            }
-        ]
-      };
+    props: {
+        socialArray: Array
     }
 }
 </script>

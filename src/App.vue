@@ -6,6 +6,10 @@
   import Resume from './components/Resume.vue'
   import Contact from './components/Contact.vue'
   import Footer from './components/Footer.vue'
+
+  import linkedinUrl from './assets/linkedin-black.png'
+  import githubUrl from './assets/github-black.png'
+
   import { ref } from 'vue'
 
   const theme = ref('light')
@@ -43,6 +47,38 @@
             className: 'contact',
             text: 'Contact'
           }
+        ],
+        socialArray: [
+            {
+                type: 'icon',
+                src: 'mdi-email',
+                link: 'mailto:kmjr07@yahoo.com',
+                alt: 'Email kmjr07@yahoo.com',
+                text: 'kmjr07@yahoo.com'
+            },
+            {
+                type: 'icon',
+                src: 'mdi-email',
+                link: 'mailto:keljr021@gmail.com',
+                alt: 'Email keljr021@gmail.com',
+                text: 'keljr021@gmail.com'
+            },
+            {
+                type: 'img',
+                src: linkedinUrl,
+                link: 'https://www.linkedin.com/in/kelvin-morrisey-jr-514360a7/',
+                alt: 'LinkedIn https://www.linkedin.com/in/kelvin-morrisey-jr-514360a7/',
+                text: 'https://www.linkedin.com/in/kelvin-morrisey-jr-514360a7/'
+
+            },
+            {
+                type: 'img',
+                src: githubUrl,
+                link: 'https://github.com/keljr021',
+                alt: 'GitHub https://github.com/keljr021',
+                text: 'https://github.com/keljr021',
+
+            }
         ]
       }
     },
@@ -82,13 +118,12 @@
     <Navbar @toggle-theme="toggleTheme" @scroll-to="scrollTo" :navItems="navItems" />
 
     <!-- Gives spacing between navigation and content below -->
-    <!-- <v-spacer style="height:41.5px"></v-spacer> -->
+    <v-spacer v-if="this.$vuetify.display.xs" style="height:41.5px"></v-spacer>
 
-    <Cta @scroll-to="scrollTo" :navItems="navItems"/>
+    <Cta @scroll-to="scrollTo" :navItems="navItems" :socialArray="socialArray"/>
     <Work />
     <About />
-    <Resume />
-    <Contact />
+    <Contact :socialArray="socialArray" />
     <Footer />
 
   </v-app>

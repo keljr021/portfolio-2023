@@ -32,11 +32,16 @@ export default {
       }
     },
     mounted() {
-      this.checkToShowNavbar();
-      window.addEventListener('scroll', this.checkToShowNavbar)
+        if (!this.$vuetify.display.xs) {
+            this.checkToShowNavbar();
+            window.addEventListener('scroll', this.checkToShowNavbar)
+        } else {
+            this.showNav = true;
+        }
     },
     beforeDestroy () {
-      window.removeEventListener('scroll', this.checkToShowNavbar)
+        if (!this.$vuetify.display.xs)
+            window.removeEventListener('scroll', this.checkToShowNavbar)
     },
 }
 </script>
@@ -45,7 +50,7 @@ export default {
     <!-- Mobile Navigation -->
     <div class="nav w-100 pa-2" :class="{'show': showNav }" v-if="$vuetify.display.xs">
         <v-row class="align-center justify-space-between">
-            <v-col cols="2" class="nav-logo" @click="this.$emit('scroll-to', 'cta')">
+            <v-col cols="6" class="nav-logo" @click="this.$emit('scroll-to', 'cta')">
                 Kelvin Morrisey Jr.
             </v-col>
             <v-col class="text-right">

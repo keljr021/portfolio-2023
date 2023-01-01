@@ -6,7 +6,8 @@ import CtaSocials from './partials/CtaSocials.vue'
 export default {
     name: 'cta',
     props: {
-        navItems: Array
+        navItems: Array,
+        socialArray: Array
     },
     methods: {
         scrollTo(input) {

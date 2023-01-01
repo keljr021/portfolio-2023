@@ -11,7 +11,7 @@
                     <p>Fusce quis dictum erat. Praesent at dolor sed lectus imperdiet finibus. Nunc aliquet dignissim volutpat. Maecenas sit amet eros nibh. Quisque fermentum ac ligula rhoncus elementum. Nullam hendrerit non ante a mattis. Proin ut purus lorem. Donec dolor erat, aliquam non pulvinar at, ultrices sed neque. Vivamus rhoncus eget diam id consequat. In sit amet sagittis eros.</p>
                 </div>
             </v-col>
-            <v-col cols="12" sm="6" md="6" lg="4" class="text-right">
+            <v-col cols="12" sm="6" md="6" lg="4" class="text-center text-md-right">
                 <img class="about-image" alt="about photo" src="../assets/about.jpg" />
             </v-col>
         </v-row>
@@ -41,7 +41,7 @@
 }
 
 .about-image {
-    width: 100%;
+    height: 100%;
 }
 
 @media all and (max-width: 768px) {
@@ -49,6 +49,10 @@
     .about-text,
     .about-image {
         padding: 20px;
+    }
+
+    .about-image {
+        height: 300px;
     }
 }
 </style>
