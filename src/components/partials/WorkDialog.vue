@@ -15,7 +15,7 @@
 </script>
 
 <template>
-    <v-dialog class="item" v-model="dialog" activator="parent" scrollable>
+    <v-dialog class="item" v-model="dialog" activator="parent" scrollable :fullscreen="this.$vuetify.display.xs">
         <v-card>
           <v-card-title>
             <span>Title</span>
