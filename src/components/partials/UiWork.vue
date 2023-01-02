@@ -1,5 +1,6 @@
 <script setup>
 import Test from './workCards/Test.vue'
+import Reys from './workCards/Reys.vue'
 </script>
 
 <template>
@@ -10,9 +11,9 @@ import Test from './workCards/Test.vue'
             </v-col>
         </v-row>
         <v-row class="justify-center">
-            <Test />
-            <Test />
-            <Test />
+            <Reys />
+            <Reys />
+            <Reys />
         </v-row>
     </div>
 </template>
