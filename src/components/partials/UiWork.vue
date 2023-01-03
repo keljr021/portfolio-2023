@@ -274,7 +274,7 @@ export default {
 
             <work-item 
                 title="LemonBranch DIY Site" 
-                caption="A responsive website to search and view various tutorials" 
+                caption="A responsive website to search and view tutorials and how-tos" 
                 :image="imgSrc('lb-home-rev.png')"
                 imageWidth="100%"
                 company="LemonBranch LTD"
@@ -352,27 +352,27 @@ export default {
                         <v-row>
                             <v-col class="text-center">
                                 <div class="pa-2 float-left" style="width:25%">
-                                    <v-img height="300" :src="imgSrc('lb-home-drafts.jpg')" class="text-center" />
+                                    <v-img height="300" :src="imgSrc('lb-sitemap.png')" class="text-center"></v-img>
                                     <div class="py-4">
-                                        Sketched out the general workflow of the app.
+                                        Brainstormed a sitemap to figure out what types of pages would be needed.
                                     </div>
                                 </div>
                                 <div class="pa-2 float-left" style="width:25%">
                                     <v-img height="300" :src="imgSrc('lb-pframe1.jpg')" class="text-center"></v-img>
                                     <div class="py-4">
-                                        Then began to brainstorm several rough draft ideas of how the app should look. From these drafts, I've picked a few items from each to add to the final wireframe.
+                                        Started to draw several rough drafts of the site and it's corresponding pages.
                                     </div>
                                 </div>
                                 <div class="pa-2 float-left" style="width:25%">
-                                    <v-img height="300" :src="imgSrc('lb-pframe2.jpg')" class="text-center"></v-img>
+                                    <v-img height="300" :src="imgSrc('lb-home-drafts.jpg')" class="text-center" />
                                     <div class="py-4">
-                                        Finally, I've drawn up the final version of the wireframes. Above is an example of the Menu pages.
+                                        Used Clip Studio Paint to draw up a few rough drafts of the Home page, and highlighted the items that should be in the final draft.
                                     </div>
                                 </div>
                                 <div class="pa-2 float-left" style="width:25%">
                                     <v-img height="300" :src="imgSrc('lb-pframe3.jpg')" class="text-center"></v-img>
                                     <div class="py-4">
-                                        Finally, I've drawn up the final version of the wireframes. Above is an example of the Menu pages.
+                                        Finally, I've drawn up the final version of the wireframes.
                                     </div>
                                 </div>
                             </v-col>
@@ -390,19 +390,19 @@ export default {
                             <v-col>
                                 <v-img height="300" :src="imgSrc('lb-dframe2.png')" />
                                 <div class="py-4">
-                                    Menu using Grid View
+                                    Search Results
                                 </div>
                             </v-col>
                             <v-col>
                                 <v-img height="300" :src="imgSrc('lb-dframe3.png')" />
                                 <div class="py-4">
-                                    Menu using List View
+                                    Tutorial Item
                                 </div>
                             </v-col>
                             <v-col>
                                 <v-img height="300" :src="imgSrc('lb-dframe4.png')" />
                                 <div class="py-4">
-                                    Food item when clicked from the menu
+                                    Author Page
                                 </div>
                             </v-col>
                         </v-row>
@@ -413,25 +413,25 @@ export default {
                             <v-col>
                                 <v-img height="300" :src="imgSrc('lb-home-rev.png')" />
                                 <div class="py-4">
-                                    Home - Added a Cart icon and Account button to the navigation.
+                                    Home - Added an image on the home page to enhance the message of the site.
                                 </div>
                             </v-col>
                             <v-col>
                                 <v-img height="300" :src="imgSrc('lb-search-query.png')" />
                                 <div class="py-4">
-                                    Menu using Grid View - The Grid and List buttons were grouped to show the relation among one another.
+                                    Search Results - Updated the query items using a rating system and author. Used a light green background to separate the results section.
                                 </div>
                             </v-col>
                             <v-col>
                                 <v-img height="300" :src="imgSrc('lb-tutorial.png')" />
                                 <div class="py-4">
-                                    Menu using List View - For the list items, added a description to each item.
+                                    Tutorial Item - Added print and enlarge font icons, with different typography for the title. 
                                 </div>
                             </v-col>
                             <v-col>
                                 <v-img height="300" :src="imgSrc('lb-author.png')" />
                                 <div class="py-4">
-                                    Food item when clicked from the menu - Added an icon to go back to the Menu screen.
+                                    Author page - Updated the typography of the page, and updated the body text with indentation to separate from the title and subtitle.
                                 </div>
                             </v-col>
                         </v-row>
