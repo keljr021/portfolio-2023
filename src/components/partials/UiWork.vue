@@ -7,7 +7,6 @@ import WorkImage from './WorkImage.vue'
 export default {
     name: 'UiWork',
     components: {
-        Reys,
         WorkItem,
         WorkImage
     },
@@ -475,30 +474,4 @@ export default {
     </div>
 </template>
 
-<style scoped>
-
-.work-card-img {
-    padding: 5px 0;
-}
-
-.work-section {
-    padding: 10px 0;
-}
-
-h4 {
-    padding: 25px 0;
-}
-
-p {
-    padding: 10px 0;
-}
-
-ul, ol {
-    padding: 10px 0;
-}
-
-li {
-    margin-left: 30px;
-    padding: 5px 0;
-}
-</style>
+<style scoped></style>

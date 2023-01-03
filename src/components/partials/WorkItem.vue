@@ -28,7 +28,8 @@ export default {
         },
         isSlotFilled(name) {
             const slots = useSlots();
-            return slots[name] !== null;
+            let slotValue = slots[name]; 
+            return !!slotValue;
         }
     },
 }
@@ -99,7 +100,13 @@ export default {
                                     <slot name="overview"></slot>
                                 </div>
                             </div>
-                        </v-col>
+                            <div class="pb-4" v-if="isSlotFilled('features')">
+                                <h2>Features</h2>
+                                <div class="py-2">
+                                    <slot name="features"></slot>
+                                </div>
+                            </div>
+                         </v-col>
                     </v-row>
                     <v-row class="py-2" v-if="isSlotFilled('challenges')">
                         <v-col>
@@ -115,7 +122,7 @@ export default {
                             <slot name="body"></slot>
                          </v-col>
                     </v-row>    
-                    <v-row>
+                    <v-row v-if="isSlotFilled('results')">
                         <v-col>
                             <h2>Results</h2>
                             <slot name="results"></slot>

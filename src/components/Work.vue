@@ -27,14 +27,31 @@ export default {
         <v-row>
             <v-col>
                 <ui-work></ui-work>
-                <DevWork/>
-                <LogoWork/>
+                <dev-work></dev-work>
+                <logo-work></logo-work>
             </v-col>
         </v-row>
     </v-container>
 </template>
 
 <style lang="scss">
+h4 {
+    padding: 25px 0;
+}
+
+p {
+    padding: 10px 0;
+}
+
+ul, ol {
+    padding: 10px 0;
+}
+
+li {
+    margin-left: 30px;
+    padding: 5px 0;
+}
+
 .work {
     min-height: 500px;
     padding: 50px 100px !important;
@@ -68,6 +85,10 @@ export default {
     .v-card, .v-card-text {
         line-height: 1.5 !important;
     }
+}
+
+.work-section {
+    padding: 10px 0;
 }
 
 @media all and (max-width: 768px) {
