@@ -42,7 +42,7 @@ export default {
         <v-card class="work-card">
             <v-card-title class="text-left">{{ title }}</v-card-title>
             <v-card-text>
-                <div class="work-card-img" style="height:200px;overflow-y:hidden">
+                <div class="work-card-img">
                     <v-img :width="imageWidth" :height="imageHeight" :src="image" class="mx-auto"/>
                 </div>
                 <div class="work-card-caption text-left mt-2">
@@ -66,8 +66,8 @@ export default {
                 </v-card-title>
                 <v-card-text class="item-text">
                     <v-row>
-                        <v-col cols="12" sm="12" md="12" lg="4" class="item-text-img">
-                            <v-img :width="imageWidth" :height="imageHeight" :src="image" />
+                        <v-col cols="12" sm="12" md="12" lg="4" class="item-text-img text-center">
+                            <v-img :width="imageWidth" :height="imageHeight" :src="image" class="mx-auto" />
                         </v-col>
                         <v-col cols="12" sm="12" md="12" lg="4">
                             <div class="pb-4" v-if="company">
@@ -141,4 +141,17 @@ export default {
     </v-col>
 </template>
 
-<style scoped></style>
+<style scoped>
+.work-card-img {
+    height: 200px;
+    overflow-y: hidden;
+}
+
+@media all and (max-width: 768px) {
+    .work-card-img {
+        height: 100px !important;
+        overflow-y: hidden;
+    }
+}
+
+</style>

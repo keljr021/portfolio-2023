@@ -20,7 +20,7 @@ export default {
 </script>
 
 <template>
-    <div class="pa-2" :style="imageWidth">
+    <div class="pa-lg-2" :style="imageWidth">
         <v-img width="100%" :height="imageHeight" :src="image" class="text-center" />
         <div class="py-4">
             <slot></slot>

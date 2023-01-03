@@ -133,13 +133,54 @@ export default {
                     <p>Soccer for Success was an online e-learning platform that allows coaches to view videos and answer questions on various soccer techniques and learning principles. We've even built-in a Content Management System for Administrators, which allows them to add and update their own custom learning content and upload videos.</p>
                     <p>The site was built with React on the front-end, PHP CodeIgniter on the back-end, and JSON for saving and editing content.</p>
                 </template>
-                 <template v-slot:buttons>
-                    <v-btn  class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://google.com')">
+            </work-item>   
+
+
+            <work-item 
+                title="ScoreShots 2.0" 
+                caption="A platform to create and share infographics" 
+                :image="imgSrc('ss-full.png')"
+                imageWidth="90%"
+                company="ScoreShots/Immersion Media"
+                date="Aug 2016 - Jan 2018"
+                >
+                <template v-slot:role>
+                    <ul>
+                        <li>Web Developer</li>
+                    </ul>
+                </template>
+                <template v-slot:tools>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>jQuery</li>
+                        <li>PHP CodeIgniter</li>
+                    </ul>
+                </template>
+                <template v-slot:overview>
+                    <p>ScoreShots is Immersion Media's in-house website. It allows a user to create a web-based sports infographic (ie. ScoreShot) using the user's custom colors, fonts, and images. A user can submit the finished graphic to their phone, download it to their computer, and even submit it to their own Facebook or Twitter account.</p>
+                    <p>The entire development team at Immersion each pulled their weight with the re-design of the ScoreShots interface from 1.0 to version 2.0; and in the process added several new features on the new site as well. We've each had a part of every page; with successful results.</p>
+                </template>
+                <template v-slot:features>
+                    <ul>
+                        <li>Uses an built-in image editor to create an infographic</li>
+                        <li>Images and logos are able to be uploaded and saved onto their accounts</li>
+                        <li>Ability to export XML files for team scores into the editor</li>
+                        <li>Enables social media connections with Facebook and Twitter to post their graphic</li>
+                    </ul>
+                    <v-btn class="px-3" v-if="$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://web.archive.org/web/20180105122544/https://scoreshots.com/')">
                         <v-icon class="mr-2">mdi-link</v-icon>
                         View Site (Archived Wayback)
                     </v-btn>
                 </template>
-            </work-item>   
+                 <template v-slot:buttons>
+                    <v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://web.archive.org/web/20180105122544/https://scoreshots.com/')">
+                        <v-icon class="mr-2">mdi-link</v-icon>
+                        View Site (Archived Wayback)
+                    </v-btn>
+                </template>
+            </work-item>            
             
             <work-item 
                 title="React Calculator" 

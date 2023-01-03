@@ -118,7 +118,7 @@ export default {
                     <div class="work-section">
                         <h4>Paper Wireframes</h4>
                         <v-row>
-                            <v-col offset="1" cols="12" sm="12" md="2" lg="3">
+                            <v-col offset-lg="1" cols="12" sm="12" md="2" lg="3">
                                 <work-image width="100%" imageHeight="400" :image="imgSrc('reys-pframe1.jpg')">
                                     Sketched out the general workflow of the app.
                                 </work-image>
@@ -138,7 +138,7 @@ export default {
                     <div class="work-section">
                         <h4>Digital Wireframes</h4>
                         <v-row>
-                            <v-col offset="1" cols="12" sm="12" md="2" lg="2">
+                            <v-col offset-lg="1" cols="12" sm="12" md="2" lg="2">
                                 <work-image width="100%" imageHeight="400" :image="imgSrc('reys-dframe1.png')">
                                     Home
                                 </work-image>
@@ -168,7 +168,7 @@ export default {
                     <div class="work-section">
                         <h4>Mockups</h4>
                         <v-row>
-                            <v-col offset="1" cols="12" sm="12" md="2" lg="2">
+                            <v-col offset-lg="1" cols="12" sm="12" md="2" lg="2">
                                 <work-image width="100%" imageHeight="400" :image="imgSrc('reys-mock1.png')">
                                     Home - Added a Cart icon and Account button to the navigation.
                                 </work-image>
