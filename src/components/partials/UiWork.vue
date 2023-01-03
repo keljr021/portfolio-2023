@@ -2,12 +2,14 @@
 import Test from './workCards/Test.vue'
 import Reys from './workCards/Reys.vue'
 import WorkItem from './WorkItem.vue'
+import WorkImage from './WorkImage.vue'
 
 export default {
     name: 'UiWork',
     components: {
         Reys,
-        WorkItem
+        WorkItem,
+        WorkImage
     },
     methods: {
         imgSrc(input) {
@@ -117,102 +119,87 @@ export default {
                     <div class="work-section">
                         <h4>Paper Wireframes</h4>
                         <v-row>
-                            <v-col class="text-center">
-                                <div class="pa-2 float-left" style="width:33%">
-                                    <v-img height="300" :src="imgSrc('reys-pframe1.jpg')" class="text-center" />
-                                    <div class="py-4">
-                                        Sketched out the general workflow of the app.
-                                    </div>
-                                </div>
-                                <div class="pa-2 float-left" style="width:33%">
-                                    <v-img height="300" :src="imgSrc('reys-pframe2.jpg')" class="text-center"></v-img>
-                                    <div class="py-4">
-                                        Then began to brainstorm several rough draft ideas of how the app should look. From these drafts, I've picked a few items from each to add to the final wireframe.
-                                    </div>
-                                </div>
-                                <div class="pa-2 float-left" style="width:33%">
-                                    <v-img height="300" :src="imgSrc('reys-pframe3.jpg')" class="text-center"></v-img>
-                                    <div class="py-4">
-                                        Finally, I've drawn up the final version of the wireframes. Above is an example of the Menu pages.
-                                    </div>
-                                </div>
+                            <v-col offset="1" cols="12" sm="12" md="2" lg="3">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-pframe1.jpg')">
+                                    Sketched out the general workflow of the app.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="2" lg="3">
+                                <work-image width="100%" :image="imgSrc('reys-pframe2.jpg')">
+                                    Then began to brainstorm several rough draft ideas of how the app should look. From these drafts, I've picked a few items from each to add to the final wireframe.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="2" lg="3">
+                                <work-image width="100%" :image="imgSrc('reys-pframe3.jpg')">
+                                    Finally, I've drawn up the final version of the wireframes. Above is an example of the Menu pages.
+                                </work-image>
                             </v-col>
                         </v-row>
                     </div>
                     <div class="work-section">
                         <h4>Digital Wireframes</h4>
-                        <v-row class="text-center">
-                            <v-col>
-                                <v-img height="300" :src="imgSrc('reys-dframe1.png')" />
-                                <div class="py-4">
+                        <v-row>
+                            <v-col offset="1" cols="12" sm="12" md="2" lg="2">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-dframe1.png')">
                                     Home
-                                </div>
+                                </work-image>
                             </v-col>
-                            <v-col>
-                                <v-img height="300" :src="imgSrc('reys-dframe2.png')" />
-                                <div class="py-4">
-                                    Menu using Grid View
-                                </div>
+                            <v-col cols="12" sm="12" md="2" lg="2">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-dframe2.png')">
+                                    Menu Grid View
+                                </work-image>
                             </v-col>
-                            <v-col>
-                                <v-img height="300" :src="imgSrc('reys-dframe3.png')" />
-                                <div class="py-4">
-                                    Menu using List View
-                                </div>
+                            <v-col cols="12" sm="12" md="2" lg="2">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-dframe3.png')">
+                                    Menu List View
+                                </work-image>
                             </v-col>
-                            <v-col>
-                                <v-img height="300" :src="imgSrc('reys-dframe4.png')" />
-                                <div class="py-4">
+                            <v-col cols="12" sm="12" md="2" lg="2">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-dframe4.png')">
                                     Food item when clicked from the menu
-                                </div>
+                                </work-image>
                             </v-col>
-                            <v-col>
-                                <v-img height="300" :src="imgSrc('reys-dframe5.png')" />
-                                <div class="py-4">
+                            <v-col cols="12" sm="12" md="2" lg="2">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-dframe5.png')">
                                     Order Tracker
-                                </div>
+                                </work-image>
                             </v-col>
                         </v-row>
                     </div>
                     <div class="work-section">
                         <h4>Mockups</h4>
-                        <v-row class="text-center">
-                            <v-col>
-                                <v-img height="300" :src="imgSrc('reys-mock1.png')" />
-                                <div class="py-4">
+                        <v-row>
+                            <v-col offset="1" cols="12" sm="12" md="2" lg="2">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-mock1.png')">
                                     Home - Added a Cart icon and Account button to the navigation.
-                                </div>
+                                </work-image>
                             </v-col>
-                            <v-col>
-                                <v-img height="300" :src="imgSrc('reys-mock2.png')" />
-                                <div class="py-4">
+                            <v-col cols="12" sm="12" md="2" lg="2">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-mock2.png')">
                                     Menu using Grid View - The Grid and List buttons were grouped to show the relation among one another.
-                                </div>
+                                </work-image>
                             </v-col>
-                            <v-col>
-                                <v-img height="300" :src="imgSrc('reys-mock3.png')" />
-                                <div class="py-4">
+                            <v-col cols="12" sm="12" md="2" lg="2">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-mock3.png')">
                                     Menu using List View - For the list items, added a description to each item.
-                                </div>
+                                </work-image>
                             </v-col>
-                            <v-col>
-                                <v-img height="300" :src="imgSrc('reys-mock4.png')" />
-                                <div class="py-4">
+                            <v-col cols="12" sm="12" md="2" lg="2">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-mock4.png')">
                                     Food item when clicked from the menu - Added an icon to go back to the Menu screen.
-                                </div>
+                                </work-image>
                             </v-col>
-                            <v-col>
-                                <v-img height="300" :src="imgSrc('reys-mock5.png')" />
-                                <div class="py-4">
+                            <v-col cols="12" sm="12" md="2" lg="2">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-mock5.png')">
                                     Order Tracker - Added Order number and time on top instead of the bottom area.
-                                </div>
+                                </work-image>
                             </v-col>
                         </v-row>
                     </div>
                     <div class="work-section">
                         <h4>Prototypes</h4>
                         <v-row class="justify-center">
-                            <v-col cols="12" sm="12" md="12" lg="6">
+                            <v-col cols="12" sm="12" md="12" lg="4">
                                 <div>
                                     <v-img height="300" :src="imgSrc('reys-lofi.png')" />
 
@@ -224,7 +211,7 @@ export default {
                                     </div>
                                 </div>
                             </v-col>
-                            <v-col cols="12" sm="12" md="12" lg="6">
+                            <v-col cols="12" sm="12" md="12" lg="4">
                                 <v-img height="300" :src="imgSrc('reys-hifi.png')" />
                                 <div class="py-4 text-center">
                                     <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/5NxCYVA06z3PUwJN9qYVR1/Mexican-Restaurant-App---Revised?node-id=140%3A485&scaling=scale-down&page-id=140%3A2&starting-point-node-id=140%3A485')">
@@ -260,13 +247,13 @@ export default {
                     </div>
                 </template>
                 <template v-slot:buttons>
-                    <v-btn v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://docs.google.com/presentation/d/1L7N0_CG95WT4dYPjiDQqjJcviKUniSmyCGsc_-OxTvg/edit?usp=sharing')">
-                        <v-icon class="mx-2">mdi-link</v-icon>
-                        Case Study PPT
+                    <v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://docs.google.com/presentation/d/1L7N0_CG95WT4dYPjiDQqjJcviKUniSmyCGsc_-OxTvg/edit?usp=sharing')">
+                        <v-icon class="mr-2">mdi-link</v-icon>
+                        View Case Study PPT
                     </v-btn>
-                    <v-btn v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://www.figma.com/proto/5NxCYVA06z3PUwJN9qYVR1/Mexican-Restaurant-App---Revised?node-id=140%3A485&scaling=scale-down&page-id=140%3A2&starting-point-node-id=140%3A485')">
-                        <v-icon class="mx-2">mdi-open-in-new</v-icon>
-                        Prototype
+                    <v-btn  class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://www.figma.com/proto/5NxCYVA06z3PUwJN9qYVR1/Mexican-Restaurant-App---Revised?node-id=140%3A485&scaling=scale-down&page-id=140%3A2&starting-point-node-id=140%3A485')">
+                        <v-icon class="mr-2">mdi-open-in-new</v-icon>
+                        View Prototype
                     </v-btn>
                 </template>
             </work-item>
@@ -350,89 +337,75 @@ export default {
                     <div class="work-section">
                         <h4>Paper Wireframes</h4>
                         <v-row>
-                            <v-col class="text-center">
-                                <div class="pa-2 float-left" style="width:25%">
-                                    <v-img height="300" :src="imgSrc('lb-sitemap.png')" class="text-center"></v-img>
-                                    <div class="py-4">
-                                        Brainstormed a sitemap to figure out what types of pages would be needed.
-                                    </div>
-                                </div>
-                                <div class="pa-2 float-left" style="width:25%">
-                                    <v-img height="300" :src="imgSrc('lb-pframe1.jpg')" class="text-center"></v-img>
-                                    <div class="py-4">
-                                        Started to draw several rough drafts of the site and it's corresponding pages.
-                                    </div>
-                                </div>
-                                <div class="pa-2 float-left" style="width:25%">
-                                    <v-img height="300" :src="imgSrc('lb-home-drafts.jpg')" class="text-center" />
-                                    <div class="py-4">
-                                        Used Clip Studio Paint to draw up a few rough drafts of the Home page, and highlighted the items that should be in the final draft.
-                                    </div>
-                                </div>
-                                <div class="pa-2 float-left" style="width:25%">
-                                    <v-img height="300" :src="imgSrc('lb-pframe3.jpg')" class="text-center"></v-img>
-                                    <div class="py-4">
-                                        Finally, I've drawn up the final version of the wireframes.
-                                    </div>
-                                </div>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('lb-sitemap.png')">
+                                    Brainstormed a sitemap to document the types of pages that would be needed.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('lb-pframe1.jpg')">
+                                    Started to draw several rough drafts of the site and it's corresponding pages.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('lb-home-drafts.jpg')">
+                                    Used Clip Studio Paint to draw up a few rough drafts of the Home page, and highlighted the items that should be in the final draft.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('lb-pframe3.jpg')">
+                                    Finally, I've drawn up the final version of the wireframes.
+                                </work-image>
                             </v-col>
                         </v-row>
                     </div>
                     <div class="work-section">
                         <h4>Digital Wireframes</h4>
-                        <v-row class="text-center">
-                            <v-col>
-                                <v-img height="300" :src="imgSrc('lb-dframe1.png')" />
-                                <div class="py-4">
+                        <v-row>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('lb-dframe1.png')">
                                     Home
-                                </div>
+                                </work-image>
                             </v-col>
-                            <v-col>
-                                <v-img height="300" :src="imgSrc('lb-dframe2.png')" />
-                                <div class="py-4">
-                                    Search Results
-                                </div>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('lb-dframe2.png')">
+                                    Search Results page
+                                </work-image>
                             </v-col>
-                            <v-col>
-                                <v-img height="300" :src="imgSrc('lb-dframe3.png')" />
-                                <div class="py-4">
-                                    Tutorial Item
-                                </div>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('lb-dframe3.png')">
+                                    Tutorial article page
+                                </work-image>
                             </v-col>
-                            <v-col>
-                                <v-img height="300" :src="imgSrc('lb-dframe4.png')" />
-                                <div class="py-4">
-                                    Author Page
-                                </div>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('lb-dframe4.png')">
+                                    Author page
+                                </work-image>
                             </v-col>
                         </v-row>
                     </div>
                     <div class="work-section">
                         <h4>Mockups</h4>
-                        <v-row class="text-center">
-                            <v-col>
-                                <v-img height="300" :src="imgSrc('lb-home-rev.png')" />
-                                <div class="py-4">
+                        <v-row>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('lb-home-rev.png')">
                                     Home - Added an image on the home page to enhance the message of the site.
-                                </div>
+                                </work-image>
                             </v-col>
-                            <v-col>
-                                <v-img height="300" :src="imgSrc('lb-search-query.png')" />
-                                <div class="py-4">
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('lb-search-query.png')">
                                     Search Results - Updated the query items using a rating system and author. Used a light green background to separate the results section.
-                                </div>
+                                </work-image>
                             </v-col>
-                            <v-col>
-                                <v-img height="300" :src="imgSrc('lb-tutorial.png')" />
-                                <div class="py-4">
-                                    Tutorial Item - Added print and enlarge font icons, with different typography for the title. 
-                                </div>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('lb-tutorial.png')">
+                                    Tutorial article page - Added print and enlarge font icons, with different typography for the title. 
+                                </work-image>
                             </v-col>
-                            <v-col>
-                                <v-img height="300" :src="imgSrc('lb-author.png')" />
-                                <div class="py-4">
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('lb-author.png')">
                                     Author page - Updated the typography of the page, and updated the body text with indentation to separate from the title and subtitle.
-                                </div>
+                                </work-image>
                             </v-col>
                         </v-row>
                     </div>
@@ -488,8 +461,8 @@ export default {
                 </template>
                 <template v-slot:buttons>
                     <v-btn v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://xd.adobe.com/view/39ebb787-4097-4220-85a0-e901d27a116f-6cb8/?fullscreen')">
-                        <v-icon class="mx-2">mdi-open-in-new</v-icon>
-                        Prototype
+                        <v-icon class="mr-2">mdi-open-in-new</v-icon>
+                        View Prototype
                     </v-btn>
                 </template>
             </work-item>
@@ -527,11 +500,5 @@ ul, ol {
 li {
     margin-left: 30px;
     padding: 5px 0;
-}
-
-@media screen and (max-width: 768px) {
-    img {
-        width: 100%;
-    }
 }
 </style>

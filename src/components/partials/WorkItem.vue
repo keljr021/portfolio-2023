@@ -124,8 +124,8 @@ export default {
                 </v-card-text>
                 <v-card-actions class="justify-end px-4 mx-4">
                     <slot name="buttons"></slot>
-                    <v-btn variant="outlined" :block="$vuetify.display.xs" @click="closeDialog()">
-                        <v-icon class="mx-2">mdi-close</v-icon>
+                    <v-btn class="px-3 text-right" variant="outlined" :block="$vuetify.display.xs" @click="closeDialog()">
+                        <v-icon class="mr-2">mdi-close</v-icon>
                         Close
                     </v-btn>
                 </v-card-actions>
