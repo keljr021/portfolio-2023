@@ -11,6 +11,8 @@ export default {
         title: String,
         caption: String,
         image: String,
+        imageWidth: String,
+        imageHeight: String,
         company: String,
         date: String
     },
@@ -39,8 +41,8 @@ export default {
         <v-card class="work-card">
             <v-card-title class="text-left">{{ title }}</v-card-title>
             <v-card-text>
-                <div class="work-card-img" style="max-height:250px;overflow-y:hidden">
-                    <v-img width="50%" :src="image" class="mx-auto"/>
+                <div class="work-card-img" style="height:200px;overflow-y:hidden">
+                    <v-img :width="imageWidth" :height="imageHeight" :src="image" class="mx-auto"/>
                 </div>
                 <div class="work-card-caption text-left mt-2">
                     {{ caption }}
@@ -64,7 +66,7 @@ export default {
                 <v-card-text class="item-text">
                     <v-row>
                         <v-col cols="12" sm="12" md="12" lg="4" class="item-text-img">
-                            <v-img height="500" :src="imgSrc('reys-mock1.png')" />
+                            <v-img :width="imageWidth" :height="imageHeight" :src="image" />
                         </v-col>
                         <v-col cols="12" sm="12" md="12" lg="4">
                             <div class="pb-4" v-if="company">

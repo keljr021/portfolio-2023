@@ -24,7 +24,7 @@ export default {
     <div class="work-section ui">
         <v-row>
             <v-col>
-                <div class="work-subtitle">UI/UX</div>
+                <div class="work-subtitle">UI/UX Design</div>
             </v-col>
         </v-row>
         <v-row class="justify-center">
@@ -32,6 +32,8 @@ export default {
                 title="Rey's Restaurant App" 
                 caption="A mobile app to streamline the ordering process" 
                 :image="imgSrc('reys-mock1.png')"
+                imageWidth="80%"
+                imageHeight="500"
                 company="Rey's Mexican Restaurant"
                 date="Sep 2022 - Nov 2022"
                 >
@@ -52,7 +54,7 @@ export default {
                 </template>
                 <template v-slot:overview>
                     <p>During my studies in UI/UX design, I focused on designing a menu app for a Mexican Restaurant. Rey's Mexican Restaurant is a fictional restaurant chain that provides authentic Mexican food with a variety of options.</p>
-                    <p>For this project, I focused on designing a new mobile app which will allow customers to browse and order food without waiting in line for long periods of time.</p>
+                    <p>For this project, I focused on designing a new mobile app which will allow customers to browse and order food without waiting in line for long periods of time. I've added a green, red and white color scheme; which resembles the Mexican flag. The idea was to make a family-friendly app with a more authentic feel using the colors and typography.</p>
                 </template>
                 <template v-slot:challenges>
                     <v-row>
@@ -268,6 +270,234 @@ export default {
                     </v-btn>
                 </template>
             </work-item>
+
+
+            <work-item 
+                title="LemonBranch DIY Site" 
+                caption="A responsive website to search and view various tutorials" 
+                :image="imgSrc('lb-home-rev.png')"
+                imageWidth="100%"
+                company="LemonBranch LTD"
+                date="Nov 2022 - Dec 2022"
+                >
+                <template v-slot:role>
+                    <div>UX Designer</div>
+                    <ul>
+                        <li>Logo Design</li>
+                        <li>Paper and Digital Wireframes</li>
+                        <li>Competitive Audits</li>
+                        <li>Prototyping</li>
+                        <li>Testing</li>
+                    </ul>
+                </template>
+                <template v-slot:tools>
+                    <ul>
+                        <li>Adobe XD</li>
+                        <li>Clip Studio Paint</li>
+                        <li>Inkscape</li>
+                    </ul>
+                </template>
+                <template v-slot:overview>
+                    <p>During my studies in UI/UX design, one of my projects was to design a responsive website for searching and viewing online DIY tutorials. LemonBranch is a fictional company that hosts various online tutorials to view; and also allows members to create their own tutorials.</p>
+                    <p>For this project, I kept a minimal color scheme, and focused on functionality with a search feature with filtering and sort options, while making the designs as responsive as possible for mobile.</p>
+                </template>
+                <template v-slot:challenges>
+                    <v-row>
+                        <v-col cols="12" sm="12" md="12" lg="6">
+                            <div class="work-section">
+                                <h4>Problem</h4>
+                                <p>Users often have to use various search engines to find a tutorial; which can generate inaccurate results, causing frustration.</p>
+                            </div>
+                        </v-col>
+                        <v-col cols="12" sm="12" md="12" lg="6">
+                            <div class="work-section">
+                                <h4>Goal</h4>
+                                <p>Give users an option to find and view tutorials online in a streamlined way so members are able to fix and work on items without paying a professional, saving themselves money.</p>
+                            </div>
+                        </v-col>
+                    </v-row>
+                </template>
+                <template v-slot:body>
+                    <div class="work-section">
+                        <h4>Persona</h4>
+                        <v-row>
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <v-img width="600" :src="imgSrc('lb-persona.png')" />
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <div>
+                                    <p><b>Jerry Lyn.</b> Jerry is a newlywed Network Admin who has recently purchased his first house. He often uses his phone to find quick tutorials on different projects to help him navigate home ownership.</p>
+                                </div>
+                            </v-col>
+                        </v-row>
+                    </div>
+                    <div class="work-section">
+                        <h4>User Map</h4>
+                        <v-row>
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <p>From documenting Jerry's User journey, I have discovered the following opportunities:</p>
+                                <ul>
+                                    <li>Sections, filter, and sort options would improve search queries</li>
+                                    <li>Add a comment and rating system to each tutorial item</li>
+                                    <li>Filter between video or article tutorials</li>
+                                </ul>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <v-img width="600" :src="imgSrc('lb-usermap.png')" />
+                            </v-col>
+                        </v-row>
+                    </div>
+                    <div class="work-section">
+                        <h4>Paper Wireframes</h4>
+                        <v-row>
+                            <v-col class="text-center">
+                                <div class="pa-2 float-left" style="width:25%">
+                                    <v-img height="300" :src="imgSrc('lb-home-drafts.jpg')" class="text-center" />
+                                    <div class="py-4">
+                                        Sketched out the general workflow of the app.
+                                    </div>
+                                </div>
+                                <div class="pa-2 float-left" style="width:25%">
+                                    <v-img height="300" :src="imgSrc('lb-pframe1.jpg')" class="text-center"></v-img>
+                                    <div class="py-4">
+                                        Then began to brainstorm several rough draft ideas of how the app should look. From these drafts, I've picked a few items from each to add to the final wireframe.
+                                    </div>
+                                </div>
+                                <div class="pa-2 float-left" style="width:25%">
+                                    <v-img height="300" :src="imgSrc('lb-pframe2.jpg')" class="text-center"></v-img>
+                                    <div class="py-4">
+                                        Finally, I've drawn up the final version of the wireframes. Above is an example of the Menu pages.
+                                    </div>
+                                </div>
+                                <div class="pa-2 float-left" style="width:25%">
+                                    <v-img height="300" :src="imgSrc('lb-pframe3.jpg')" class="text-center"></v-img>
+                                    <div class="py-4">
+                                        Finally, I've drawn up the final version of the wireframes. Above is an example of the Menu pages.
+                                    </div>
+                                </div>
+                            </v-col>
+                        </v-row>
+                    </div>
+                    <div class="work-section">
+                        <h4>Digital Wireframes</h4>
+                        <v-row class="text-center">
+                            <v-col>
+                                <v-img height="300" :src="imgSrc('lb-dframe1.png')" />
+                                <div class="py-4">
+                                    Home
+                                </div>
+                            </v-col>
+                            <v-col>
+                                <v-img height="300" :src="imgSrc('lb-dframe2.png')" />
+                                <div class="py-4">
+                                    Menu using Grid View
+                                </div>
+                            </v-col>
+                            <v-col>
+                                <v-img height="300" :src="imgSrc('lb-dframe3.png')" />
+                                <div class="py-4">
+                                    Menu using List View
+                                </div>
+                            </v-col>
+                            <v-col>
+                                <v-img height="300" :src="imgSrc('lb-dframe4.png')" />
+                                <div class="py-4">
+                                    Food item when clicked from the menu
+                                </div>
+                            </v-col>
+                        </v-row>
+                    </div>
+                    <div class="work-section">
+                        <h4>Mockups</h4>
+                        <v-row class="text-center">
+                            <v-col>
+                                <v-img height="300" :src="imgSrc('lb-home-rev.png')" />
+                                <div class="py-4">
+                                    Home - Added a Cart icon and Account button to the navigation.
+                                </div>
+                            </v-col>
+                            <v-col>
+                                <v-img height="300" :src="imgSrc('lb-search-query.png')" />
+                                <div class="py-4">
+                                    Menu using Grid View - The Grid and List buttons were grouped to show the relation among one another.
+                                </div>
+                            </v-col>
+                            <v-col>
+                                <v-img height="300" :src="imgSrc('lb-tutorial.png')" />
+                                <div class="py-4">
+                                    Menu using List View - For the list items, added a description to each item.
+                                </div>
+                            </v-col>
+                            <v-col>
+                                <v-img height="300" :src="imgSrc('lb-author.png')" />
+                                <div class="py-4">
+                                    Food item when clicked from the menu - Added an icon to go back to the Menu screen.
+                                </div>
+                            </v-col>
+                        </v-row>
+                    </div>
+                    <div class="work-section">
+                        <h4>Prototypes</h4>
+                        <v-row class="justify-center">
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <div>
+                                    <v-img height="300" :src="imgSrc('lb-lofi.png')" />
+
+                                    <div class="py-4 text-center">
+                                        <v-btn variant="outlined" @click="openWindow('https://xd.adobe.com/view/25553f55-f5fc-4c50-9954-ab41db3bf124-7006/?fullscreen')">
+                                            <v-icon class="mx-2">mdi-open-in-new</v-icon>
+                                            Lo-Fi Prototype
+                                        </v-btn>
+                                    </div>
+                                </div>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <v-img height="300" :src="imgSrc('lb-hifi.png')" />
+                                <div class="py-4 text-center">
+                                    <v-btn variant="outlined" @click="openWindow('https://xd.adobe.com/view/39ebb787-4097-4220-85a0-e901d27a116f-6cb8/?fullscreen')">
+                                        <v-icon class="mx-2">mdi-open-in-new</v-icon>
+                                        Hi-Fi Prototype
+                                    </v-btn>
+                                </div>
+                            </v-col>
+                        </v-row>
+                    </div>
+                    <div class="work-section">
+                        <h4>Accessibilty</h4>
+                        <ul>
+                            <li>Kept the color scheme minimal to give more focus on the content</li>
+                            <li>Web content are grouped together when elements are similar</li>
+                            <li>Buttons and input fields are clearly defined</li>
+                        </ul>
+                    </div>
+
+                </template>
+                <template v-slot:results>
+                    <div class="work-section">
+                        <h4>Lessons Learned</h4>
+                        <p>During the prototyping phase of this project, I've gained more experience in using the Components and Library options in Adobe XD. Using these options will streamline prototyping in the future.</p>
+                    </div>
+                    <div class="work-section">
+                        <h4>Next Steps</h4>
+                        <ol>
+                            <li>Currently the site only has text versions of tutorials. I would add a video version of these pages, along with the video and text filtering as well.</li>
+                            <li>I would also add in tablet responsive views, to ensure the prototype also handle tablet view</li>
+                            <li>I would slightly restructure the site map and navigation. For example, having a search page alongside the search bar during the navigation could cause confusion.</li>
+                        </ol>
+                    </div>
+                </template>
+                <template v-slot:buttons>
+                    <v-btn v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://xd.adobe.com/view/39ebb787-4097-4220-85a0-e901d27a116f-6cb8/?fullscreen')">
+                        <v-icon class="mx-2">mdi-open-in-new</v-icon>
+                        Prototype
+                    </v-btn>
+                </template>
+            </work-item>
+
+
+
+
+
         </v-row>
     </div>
 </template>
