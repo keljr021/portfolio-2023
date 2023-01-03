@@ -26,9 +26,9 @@ export default {
         </v-row>
         <v-row>
             <v-col>
-                <UiWork />
-                <DevWork />
-                <LogoWork />
+                <ui-work></ui-work>
+                <DevWork/>
+                <LogoWork/>
             </v-col>
         </v-row>
     </v-container>

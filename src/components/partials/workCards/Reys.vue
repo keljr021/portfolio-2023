@@ -3,7 +3,7 @@ export default {
     name: 'Reys',
     data() {
         return {
-            dialog: true,
+            dialog: false,
             title: 'Rey\'s Resturant App'
         }
     },
@@ -85,7 +85,7 @@ export default {
                                 </div>
                             </div>
                         </v-col>
-                        <v-col  cols="12" sm="12" md="12" lg="4">
+                        <v-col cols="12" sm="12" md="12" lg="4">
                             <div class="pb-4">
                                 <h2>Project Date</h2>
                                 <div class="py-2">Sep 2022 - Nov 2022</div>
@@ -104,13 +104,13 @@ export default {
                             <h2>Challenges</h2>
                             <div>
                                 <v-row>
-                                    <v-col>
+                                    <v-col cols="12" sm="12" md="12" lg="6">
                                         <div class="py-2">
                                             <h4>Problem</h4>
                                             <p>Customers have complained about long wait times when ordering lunch, and frustration regarding the accuracy of their orders when ready for pickup.</p>
                                         </div>
                                     </v-col>
-                                    <v-col>
+                                    <v-col cols="12" sm="12" md="12" lg="6">
                                         <div class="py-2">
                                             <h4>Goal</h4>
                                             <p>Design an app that allows users to order food online, and pick up their order within the allotted time frame; which avoids long waits in line to order, and improves accuracy when picking up their order.</p>
@@ -139,10 +139,10 @@ export default {
                             <div class="py-2">
                                 <h4>Persona</h4>
                                 <v-row>
-                                    <v-col>
+                                    <v-col cols="12" sm="12" md="12" lg="6">
                                         <v-img width="600" :src="imgSrc('reys-persona.png')" />
                                     </v-col>
-                                    <v-col>
+                                    <v-col cols="12" sm="12" md="12" lg="6">
                                         <div>
                                             <p><b>Cal Murphy.</b> Cal is a busy office manager who needs more accurate order tracking because his time is limited due to his work schedule.</p>
                                         </div>
@@ -152,14 +152,14 @@ export default {
                             <div class="py-2">
                                 <h4>User Map</h4>
                                 <v-row>
-                                    <v-col>
+                                    <v-col cols="12" sm="12" md="12" lg="6">
                                         <p>From documenting Cal's User journey, I have discovered the following:</p>
                                         <ul>
                                             <li>An Order Tracker would increase the accuracy of takeout orders; and notify users when items are ready for pickup.</li>
                                             <li>Specials section should be added</li>
                                         </ul>
                                     </v-col>
-                                    <v-col>
+                                    <v-col cols="12" sm="12" md="12" lg="6">
                                         <v-img width="600" :src="imgSrc('reys-usermap.png')" />
                                     </v-col>
                                 </v-row>
@@ -262,7 +262,7 @@ export default {
                             <div class="py-2">
                                 <h4>Prototypes</h4>
                                 <v-row class="justify-center">
-                                    <v-col>
+                                    <v-col cols="12" sm="12" md="12" lg="6">
                                         <div>
                                             <v-img height="300" :src="imgSrc('reys-lofi.png')" />
 
@@ -274,7 +274,7 @@ export default {
                                             </div>
                                         </div>
                                     </v-col>
-                                    <v-col>
+                                    <v-col cols="12" sm="12" md="12" lg="6">
                                         <v-img height="300" :src="imgSrc('reys-hifi.png')" />
                                         <div class="py-4 text-center">
                                             <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/5NxCYVA06z3PUwJN9qYVR1/Mexican-Restaurant-App---Revised?node-id=140%3A485&scaling=scale-down&page-id=140%3A2&starting-point-node-id=140%3A485')">
@@ -314,11 +314,11 @@ export default {
                     </v-row>
                 </v-card-text>
                 <v-card-actions class="justify-end px-4 mx-4">
-                    <v-btn variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://docs.google.com/presentation/d/1L7N0_CG95WT4dYPjiDQqjJcviKUniSmyCGsc_-OxTvg/edit?usp=sharing')">
+                    <v-btn v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://docs.google.com/presentation/d/1L7N0_CG95WT4dYPjiDQqjJcviKUniSmyCGsc_-OxTvg/edit?usp=sharing')">
                         <v-icon class="mx-2">mdi-link</v-icon>
                         Case Study PPT
                     </v-btn>
-                    <v-btn variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://www.figma.com/proto/5NxCYVA06z3PUwJN9qYVR1/Mexican-Restaurant-App---Revised?node-id=140%3A485&scaling=scale-down&page-id=140%3A2&starting-point-node-id=140%3A485')">
+                    <v-btn v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://www.figma.com/proto/5NxCYVA06z3PUwJN9qYVR1/Mexican-Restaurant-App---Revised?node-id=140%3A485&scaling=scale-down&page-id=140%3A2&starting-point-node-id=140%3A485')">
                         <v-icon class="mx-2">mdi-open-in-new</v-icon>
                         Prototype
                     </v-btn>
