@@ -57,9 +57,13 @@ export default {
                         <li>Responsive single-page website using modern web languages</li>
                         <li>Contact form with form validation</li>
                     </ul>
+                    <v-btn class="px-3" v-if="$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('http://ka-clean.com')">
+                        <v-icon class="mr-2">mdi-link</v-icon>
+                        View Site
+                    </v-btn>
                 </template>
                  <template v-slot:buttons>
-                    <v-btn  class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('http://ka-clean.com')">
+                    <v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('http://ka-clean.com')">
                         <v-icon class="mr-2">mdi-link</v-icon>
                         View Site
                     </v-btn>
@@ -98,9 +102,13 @@ export default {
                         <li>Users can create their own webpage with custom colors and fonts</li>
                         <li>Users can add up to 150 photos per account based on subscription</li>
                     </ul>
+                    <v-btn class="px-3" v-if="$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://web.archive.org/web/20180809104951/http://ifolio.online/')">
+                        <v-icon class="mr-2">mdi-link</v-icon>
+                        View Site (Archived Wayback)
+                    </v-btn>
                 </template>
                  <template v-slot:buttons>
-                    <v-btn  class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://web.archive.org/web/20180809104951/http://ifolio.online/')">
+                    <v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://web.archive.org/web/20180809104951/http://ifolio.online/')">
                         <v-icon class="mr-2">mdi-link</v-icon>
                         View Site (Archived Wayback)
                     </v-btn>
@@ -201,9 +209,15 @@ export default {
                 </template>
                 <template v-slot:overview>
                     <p>This is a basic calculator component built with React. The component itself performs basic math calculations, allowing the user to click the buttons on screen, or key in the values themselves using the keyboard.</p>
-                    <p v-if="$vuetify.display.xs"><v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://github.com/keljr021/react-calculator')">
-                        View Code on Github
-                    </v-btn></p>
+                    <p v-if="$vuetify.display.xs">
+                        <v-btn class="px-3" variant="flat" block @click="openWindow('https://github.com/keljr021/react-calculator')">
+                            View Code on Github
+                        </v-btn>
+                        <v-btn class="px-3" variant="flat" block @click="openWindow('http://poc.kelvin-m.com/react-calculator')">
+                            <v-icon class="mr-2">mdi-link</v-icon>
+                            View Site
+                        </v-btn>
+                    </p>
                 </template>
                  <template v-slot:buttons>
                     <v-btn class="px-3" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://github.com/keljr021/react-calculator')">
@@ -238,8 +252,12 @@ export default {
                 <template v-slot:overview>
                     <p>This is a calendar component built with Vue and Bootstrap. The component uses the current date and generates a full calendar for display.</p>
                     <p v-if="$vuetify.display.xs">
-                        <v-btn class="px-3" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://github.com/keljr021/vue-calendar')">
+                        <v-btn class="px-3" variant="flat" block @click="openWindow('https://github.com/keljr021/vue-calendar')">
                             View Code on Github
+                        </v-btn>
+                        <v-btn class="px-3" variant="flat" block @click="openWindow('http://poc.kelvin-m.com/vue-calendar')">
+                            <v-icon class="mr-2">mdi-link</v-icon>
+                            View Site
                         </v-btn>
                     </p>
                 </template>

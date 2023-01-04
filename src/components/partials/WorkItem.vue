@@ -52,7 +52,7 @@ export default {
        </v-card>
 
        <!-- Dialog component -->
-       <v-dialog class="item" v-model="dialog" activator="parent" scrollable :fullscreen="$vuetify.display.xs">
+       <v-dialog class="item" v-model="dialog" activator="parent" height="900" scrollable :fullscreen="$vuetify.display.xs">
             <v-card class="pt-xs-10">
                 <v-card-title>
                     <span>{{ title }}</span>

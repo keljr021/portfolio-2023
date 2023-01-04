@@ -1,6 +1,4 @@
 <script>
-import Test from './workCards/Test.vue'
-import Reys from './workCards/Reys.vue'
 import WorkItem from './WorkItem.vue'
 import WorkImage from './WorkImage.vue'
 
@@ -243,6 +241,12 @@ export default {
                             <li>Added a UI framework (such as Material UI) to streamline the mockups and prototyping phase.</li>
                             <li>Conduct another usability study on the high-fidelity designs. There may be an additional feature or section that could be improved in the future.</li>
                         </ol>
+                    </div>
+                    <div v-if="$vuetify.display.xs">
+                        <v-btn class="px-3" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://docs.google.com/presentation/d/1L7N0_CG95WT4dYPjiDQqjJcviKUniSmyCGsc_-OxTvg/edit?usp=sharing')">
+                            <v-icon class="mr-2">mdi-link</v-icon>
+                            View Case Study PPT
+                        </v-btn>
                     </div>
                 </template>
                 <template v-slot:buttons>
