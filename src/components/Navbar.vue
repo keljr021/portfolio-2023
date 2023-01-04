@@ -120,4 +120,13 @@ export default {
        opacity: 1;
     }
 }
+
+@media all and (max-width: 768px) {
+    .nav-logo {
+        img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    }
+}
 </style>
