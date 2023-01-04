@@ -71,7 +71,7 @@
     methods: {
       scrollTo(input) {
         if (input === 'resume') 
-          window.open('https://docs.google.com/document/d/1SABOJAG4JkzPpqIXq3yTini9i2JFcc9Nb7xT6sgzIqY/edit?usp=sharing', '_blank');
+          window.open('https://docs.google.com/document/d/1XbCOu2RBi78_cs9l7eaKo83hxflmpt_aEYBfh5w4PW4/edit?usp=sharing', '_blank');
         else {
         let el = document.getElementsByClassName(input)[0];
           if(el) 
@@ -98,7 +98,7 @@
 
 <template>
   <v-app>
-    <Navbar @scrollTo="scrollTo" :navItems="navItems" :logo="kmLogoUrl"/>
+    <Navbar @scrollTo="scrollTo" :navItems="navItems" />
 
     <!-- Gives spacing between navigation and content below -->
     <v-spacer v-if="this.$vuetify.display.xs" style="height:41.5px"></v-spacer>
@@ -107,7 +107,7 @@
     <Work />
     <About />
     <Contact :socialIconsArray="socialIconsArray" />
-    <Footer :logo="kmLogoUrl" />
+    <Footer />
 
   </v-app>
 </template>
@@ -125,7 +125,7 @@ h1, h2, h3 {
   font-weight: normal;
 }
 
-.cta {
+.cta, .work, .contact, .about {
   background: #f9f9f9; /* Old browsers */
   background: -moz-linear-gradient(top, #f9f9f9 0%, #ffffff 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, #f9f9f9 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
@@ -133,19 +133,6 @@ h1, h2, h3 {
   background-size: 30px cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  filter: grayscale(1);
-  min-height: 500px;
-}
-
-.work, .contact {
-  background: #f9f9f9; /* Old browsers */
-  background: -moz-linear-gradient(top, #f9f9f9 0%, #ffffff 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #f9f9f9 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #f9f9f9 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  min-height: 500px;
 }
 
 .about {
@@ -153,11 +140,6 @@ h1, h2, h3 {
   background: -moz-linear-gradient(top, #18184d 0%, #221653 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, #18184d 0%,#221653 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #18184d 0%,#221653 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  min-height: 500px;
   color: white;
 }
-
 </style>

@@ -15,7 +15,10 @@ export default {
     methods: {
         scrollTo(input) {
             this.$emit('scrollTo', input);
-        }
+        },
+        imgSrc(input) {
+            return new URL(`../assets/${input}`, import.meta.url).href;
+        },
     },
     components: {
         CtaText,
@@ -39,10 +42,14 @@ export default {
             <v-col v-if="!$vuetify.display.xs">
                 <CtaMenu @scrollTo="scrollTo" :navItems="navItems"/>
             </v-col>
-
-            <img class="cta-logo" src="../assets/km-icon.svg" />
+        </v-row>
+        <v-row class="px-3 py-2 justify-end" v-if="!$vuetify.display.xs">
+            <v-col class="text-right">
+                <img class="cta-logo px-3 ma-3 text-right" :src="imgSrc('km-icon.svg')" />
+            </v-col>
         </v-row>
     </v-container>
+    
 </template>
 
 <style scoped>
@@ -56,11 +63,9 @@ export default {
 }
 
 .cta-logo {
-    position: absolute;
-    bottom: 0;
-    right: 100px;
-    opacity: 0.4;
-    height: 50px;
+    height: 40px;
+    filter: grayscale(1);
+    opacity: 0.3;
 }
 
 @media all and (max-width: 768px) {
