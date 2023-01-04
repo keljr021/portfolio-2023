@@ -71,7 +71,7 @@
     methods: {
       scrollTo(input) {
         if (input === 'resume') 
-          window.open('https://docs.google.com/document/d/1XbCOu2RBi78_cs9l7eaKo83hxflmpt_aEYBfh5w4PW4/edit?usp=sharing', '_blank');
+          window.open('https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=sharing', '_blank');
         else {
         let el = document.getElementsByClassName(input)[0];
           if(el) 
