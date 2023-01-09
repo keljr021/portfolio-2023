@@ -461,8 +461,18 @@ export default {
                             <li>I would slightly restructure the site map and navigation. For example, having a search page alongside the search bar during the navigation could cause confusion.</li>
                         </ol>
                     </div>
+                    <div v-if="$vuetify.display.xs">
+                        <v-btn class="px-3" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://docs.google.com/presentation/d/1KkYDj0hg_QahT5ULisc1QjGmakgCmZHS1LnPMD-qadA/edit?usp=sharing')">
+                            <v-icon class="mr-2">mdi-link</v-icon>
+                            View Case Study PPT
+                        </v-btn>
+                    </div>
                 </template>
                 <template v-slot:buttons>
+                    <v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://docs.google.com/presentation/d/1KkYDj0hg_QahT5ULisc1QjGmakgCmZHS1LnPMD-qadA/edit?usp=sharing')">
+                        <v-icon class="mr-2">mdi-link</v-icon>
+                        View Case Study PPT
+                    </v-btn>
                     <v-btn v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://xd.adobe.com/view/39ebb787-4097-4220-85a0-e901d27a116f-6cb8/?fullscreen')">
                         <v-icon class="mr-2">mdi-open-in-new</v-icon>
                         View Prototype
