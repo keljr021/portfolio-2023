@@ -55,7 +55,7 @@ export default {
     <div class="nav w-100 pa-2" :class="{'show': showNav }" v-if="$vuetify.display.xs">
         <v-row class="align-center justify-space-between">
             <v-col cols="6" class="nav-logo" @click="this.$emit('scrollTo', 'cta')">
-                <img class="mt-2" src="../assets/km-logo.svg" alt="Kelvin Morrisey Jr" />
+                <img class="mt-2" src="../assets/km-logo.png" alt="Kelvin Morrisey Jr" />
             </v-col>
             <v-col cols="6" class="text-right">
                 <v-icon @click.stop="toggleNavDrawer">mdi-menu</v-icon>
@@ -78,7 +78,7 @@ export default {
     <div class="nav w-100 pa-2" :class="{'show': showNav }" v-else>
         <v-row class="align-center">
             <v-col cols="3" class="nav-logo" @click="this.$emit('scroll-to', 'cta')">
-                <img class="mt-2" src="../assets/km-logo.svg" alt="Kelvin Morrisey Jr"/>
+                <img class="mt-2" src="../assets/km-logo.png" alt="Kelvin Morrisey Jr"/>
             </v-col>
             <v-col cols="9" class="text-right">
                 <span v-for="navItem in navItems" class="nav-item" @click="this.$emit('scroll-to', navItem.className)">{{ navItem.text }}</span>
@@ -106,7 +106,7 @@ export default {
     cursor: pointer;
 
     img {
-        height: 25px;
+        height: 26px;
     }
 }
 
