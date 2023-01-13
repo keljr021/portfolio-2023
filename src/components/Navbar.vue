@@ -54,10 +54,10 @@ export default {
     <!-- Mobile Navigation -->
     <div class="nav w-100 pa-2" :class="{'show': showNav }" v-if="$vuetify.display.xs">
         <v-row class="align-center justify-space-between">
-            <v-col cols="6" class="nav-logo" @click="this.$emit('scrollTo', 'cta')">
+            <v-col cols="8" class="nav-logo" @click="this.$emit('scrollTo', 'cta')">
                 <img class="mt-2" src="../assets/km-logo.png" alt="Kelvin Morrisey Jr" />
             </v-col>
-            <v-col cols="6" class="text-right">
+            <v-col cols="4" class="text-right">
                 <v-icon @click.stop="toggleNavDrawer">mdi-menu</v-icon>
 
                 <v-navigation-drawer v-model="showNavDrawer" location="right">
@@ -92,7 +92,7 @@ export default {
 .nav {
     background:white;
     position: fixed;
-    z-index: 9999;
+    z-index: 1;
     top: -42px;
     transition: top 0.3s;
 
@@ -102,7 +102,7 @@ export default {
 }
 
 .nav-logo {
-    padding: 5px 20px;
+    padding: 3px 20px;
     cursor: pointer;
 
     img {
@@ -121,12 +121,15 @@ export default {
     }
 }
 
+:deep(.v-list-item--nav .v-list-item-title) {
+    font-size: 18px !important;
+    font-weight: 300 !important;
+}
+
 @media all and (max-width: 768px) {
     .nav-logo {
-        img {
-            width: 100% !important;
-            height: auto !important;
-        }
+        padding-left: 5px;
+        padding-right: 5px;
     }
 }
 </style>
