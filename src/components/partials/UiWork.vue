@@ -480,7 +480,309 @@ export default {
                 </template>
             </work-item>
 
+            <work-item 
+                title="Torch Mentor Network" 
+                caption="A mobile app and website that connects students with mentors" 
+                :image="imgSrc('to-full.png')"
+                imageWidth="100%"
+                company="Torch Mentor Network"
+                date="Jan 2023"
+                >
+                <template v-slot:role>
+                    <div>UX Designer</div>
+                    <ul>
+                        <li>Logo Design</li>
+                        <li>Paper and Digital Wireframes</li>
+                        <li>Competitive Audits</li>
+                        <li>Prototyping</li>
+                        <li>Testing</li>
+                    </ul>
+                </template>
+                <template v-slot:tools>
+                    <ul>
+                        <li>Figma</li>
+                        <li>Inkscape</li>
+                    </ul>
+                </template>
+                <template v-slot:overview>
+                    <p>In UI/UX design, my final project was to design both a mobile app and responsive website for a career mentorship service to help college graduates. Torch Mentor Network is an online service that helps students connect with a mentor during their college studies.</p>
+                    <p>The main idea of the project was a simple and intuitive online presence geared towards college students and experienced mentors.</p>
+                    <p>For this project, I used a red and purple color scheme, while keeping the typography and layout modern. I've also used the Lightning UI by Salesforce for most of the components and elements in the pages.</p>
+                </template>
+                <template v-slot:challenges>
+                    <v-row>
+                        <v-col cols="12" sm="12" md="12" lg="6">
+                            <div class="work-section">
+                                <h4>Problem</h4>
+                                <p>Students have a troubling time finding ways to participate in a mentorship. Often there are missed opportunities out during college studies to connect with someone with experience in their field of study.</p>
+                            </div>
+                        </v-col>
+                        <v-col cols="12" sm="12" md="12" lg="6">
+                            <div class="work-section">
+                                <h4>Goal</h4>
+                                <p>The goal of this project is to create both a dedicated mobile app and responsive web site that gives users easier options to connect with fellow mentors in their field of interest.</p>
+                            </div>
+                        </v-col>
+                    </v-row>
+                </template>
+                <template v-slot:body>
+                    <div class="work-section">
+                        <h4>Persona</h4>
+                        <v-row>
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <v-img width="600" :src="imgSrc('to-persona.png')" />
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <div>
+                                    <p><b>Joseph Strawn.</b> Joseph is an upcoming college graduate who wants to find a mentor to learn more about the radio communication field. However, he has a hard time navigating online to find an experienced mentor in his area.</p>
+                                </div>
+                            </v-col>
+                        </v-row>
+                    </div>
+                    <div class="work-section">
+                        <h4>User Map</h4>
+                        <v-row>
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <p>From documenting Joseph's user journey there were several improvement opportunities, including:</p>
+                                <ul>
+                                    <li>Creating an easy to navigate home page for desktop</li>
+                                    <li>Automatically add user's profile info into corresponding forms</li>
+                                    <li>Mentor availability status is kept up-to-date</li>
+                                </ul>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <v-img width="600" :src="imgSrc('to-usermap.png')" />
+                            </v-col>
+                        </v-row>
+                    </div>
+                    <div class="work-section">
+                        <h4>Paper Wireframes</h4>
+                        <v-row>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-pframe1.jpg')">
+                                    For the mobile app, I've began rough drafting some ideas.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-pframe2.jpg')">
+                                    From there, I've also drafted three versions of each page, and picked out ideas from each.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-pframe3.jpg')">
+                                    I have referenced these mobile wireframes to alse layout the digital wireframes for the responsive site.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-sitemap.png')">
+                                    I've added a sitemap for each page to properly structure the pages and help with Information Architecture.
+                                </work-image>
+                            </v-col>
+                        </v-row>
+                    </div>
+                    <div class="work-section">
+                        <h4>Digital Wireframes - Mobile App</h4>
+                        <v-row>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-dframe1.png')">
+                                    Home
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-dframe2.png')">
+                                    Find a Mentor page
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-dframe3.png')">
+                                    Mentor Profile page
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-dframe4.png')">
+                                    Chat page
+                                </work-image>
+                            </v-col>
+                        </v-row>
+                    </div>
+                    <div class="work-section">
+                        <h4>Mockups - Mobile App</h4>
+                        <v-row>
+                            <v-col cols="12" sm="12" md="12" lg="2" offset-lg="1">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-mobile1.png')">
+                                    Home - Instead of a long site, I've refactored the site to show a quick login page first.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="2">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-mobile2.png')">
+                                    User Feed - The previous Home layout was restructured to this page, with quick links and notifications after login.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="2">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-mobile3.png')">
+                                    Find a Mentor - Modified the layout structure, and added instructional text based on user feedback from the lo-fi prototype.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="2">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-mobile4.png')">
+                                    Mentor Profile page - Kept the structure similar to prototype, but adds two more buttons to quickly connect with the mentor.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="2">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-mobile5.png')">
+                                    Chat window - Used the Salesforce Lightning UI Chat component.
+                                </work-image>
+                            </v-col>
+                        </v-row>
+                    </div>
+                    <div class="work-section">
+                        <h4>Prototypes - Mobile App</h4>
+                        <v-row class="justify-center">
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <div>
+                                    <v-img height="300" :src="imgSrc('to-mobile-lofi.png')" />
 
+                                    <div class="py-4 text-center">
+                                        <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=6%3A4996&scaling=scale-down&page-id=6%3A4995&starting-point-node-id=6%3A4996')">
+                                            <v-icon class="mx-2">mdi-open-in-new</v-icon>
+                                            Lo-Fi Prototype
+                                        </v-btn>
+                                    </div>
+                                </div>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <v-img height="300" :src="imgSrc('to-mobile-hifi.png')" />
+                                <div class="py-4 text-center">
+                                    <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A9537&scaling=scale-down&page-id=28%3A9536&starting-point-node-id=28%3A9537')">
+                                        <v-icon class="mx-2">mdi-open-in-new</v-icon>
+                                        Hi-Fi Prototype
+                                    </v-btn>
+                                </div>
+                            </v-col>
+                        </v-row>
+                    </div>
+
+                    <div class="work-section">
+                        <h4>Digital Wireframes - Responsive Site</h4>
+                        <v-row>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-dframe5.png')">
+                                    Home
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-dframe6.png')">
+                                    User Feed page
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-dframe7.png')">
+                                    Find a Mentor page
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-dframe8.png')">
+                                    Chat page
+                                </work-image>
+                            </v-col>
+                        </v-row>
+                    </div>
+                    <div class="work-section">
+                        <h4>Mockups - Responsive Site</h4>
+                        <v-row>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-site1.png')">
+                                    Home - The CTA was modified to remove the two Username and Password textboxes, and an image symbolizing the brand.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-site2.png')">
+                                    User Feed - The mobile layout was referenced with this page. The items were shifted accordingly to make use of the wider screen.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-site3.png')">
+                                    Find a Mentor - Keeps the same options, but adds a Card component to the options for better accesssibility.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="3">
+                                <work-image width="100%" imageHeight="350" :image="imgSrc('to-site4.png')">
+                                    Chat window - Instead of a Chat page, the layout was modified to have a fixed button on the bottom right of the site. Once clicked, this menu will be opened above.
+                                </work-image>
+                            </v-col>
+                        </v-row>
+                    </div>
+                    <div class="work-section">
+                        <h4>Prototypes - Responsive Site</h4>
+                        <v-row class="justify-center">
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <div>
+                                    <v-img height="300" :src="imgSrc('to-site-lofi.png')" />
+
+                                    <div class="py-4 text-center">
+                                        <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=6%3A4996&scaling=scale-down&page-id=6%3A4995&starting-point-node-id=6%3A4996')">
+                                            <v-icon class="mx-2">mdi-open-in-new</v-icon>
+                                            Lo-Fi Prototype
+                                        </v-btn>
+                                    </div>
+                                </div>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <v-img height="300" :src="imgSrc('to-site-hifi.png')" />
+                                <div class="py-4 text-center">
+                                    <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A11119&scaling=min-zoom&page-id=28%3A11118&starting-point-node-id=28%3A11119')">
+                                        <v-icon class="mx-2">mdi-open-in-new</v-icon>
+                                        Hi-Fi Prototype
+                                    </v-btn>
+                                </div>
+                            </v-col>
+                        </v-row>
+                    </div>
+                    <div class="work-section">
+                        <h4>Accessibilty</h4>
+                        <ul>
+                            <li>Added icons alongside most of the buttons and links for both the mobile app and website.</li>
+                            <li>Separated sections between pages with both spacing and background colors.</li>
+                            <li>Kept ease of user navigation in mind while prototyping the project.</li>
+                        </ul>
+                    </div>
+
+                </template>
+                <template v-slot:results>
+                    <div class="work-section">
+                        <h4>Lessons Learned</h4>
+                        <p>I discovered a great insight on the importance of Information Architecture in web design. Creating an organized sitemap, and understanding how the data should be structured is critical when designing a new app or website.</p>
+                    </div>
+                    <div class="work-section">
+                        <h4>Next Steps</h4>
+                        <ol>
+                            <li>Design a responsive feel for tablet screens. Currently the above projects are only focused on mobile and desktop versions of the project.</li>
+                            <li>I would add availability options to the mentor list and profile pages. This would give great insight to a fellow user looking for a mentor in their area.</li>
+                            <li>I would attempt to merge the Mentor Form into one form, rather than breaking it up into pieces. To do that, I would need to ensure that form validation is instant on each field to prevent excess scrolling to resolve invalid parameters.</li>
+                        </ol>
+                    </div>
+                    <div v-if="$vuetify.display.xs">
+                        <v-btn class="px-3" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://docs.google.com/presentation/d/1CbvvBE5rUeZywcQJZRo_OzVhJJSYJrjRe7X77Tes8hE/edit?usp=sharing')">
+                            <v-icon class="mr-2">mdi-link</v-icon>
+                            View Case Study PPT
+                        </v-btn>
+                    </div>
+                </template>
+                <template v-slot:buttons>
+                    <v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://docs.google.com/presentation/d/1CbvvBE5rUeZywcQJZRo_OzVhJJSYJrjRe7X77Tes8hE/edit?usp=sharing')">
+                        <v-icon class="mr-2">mdi-link</v-icon>
+                        View Case Study PPT
+                    </v-btn>
+                    <v-btn v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A9537&scaling=scale-down&page-id=28%3A9536&starting-point-node-id=28%3A9537')">
+                        <v-icon class="mr-2">mdi-open-in-new</v-icon>
+                        View Mobile App Prototype
+                    </v-btn>
+                    <v-btn v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A11119&scaling=min-zoom&page-id=28%3A11118&starting-point-node-id=28%3A11119')">
+                        <v-icon class="mr-2">mdi-open-in-new</v-icon>
+                        View Site Prototype
+                    </v-btn>
+                </template>
+            </work-item>
 
 
 
