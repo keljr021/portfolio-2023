@@ -505,7 +505,7 @@ export default {
                     </ul>
                 </template>
                 <template v-slot:overview>
-                    <p>In UI/UX design, my final project was to design both a mobile app and responsive website for a career mentorship service to help college graduates. Torch Mentor Network is an online service that helps students connect with a mentor during their college studies.</p>
+                    <p>My final project was to design both a mobile app and responsive website for a career mentorship service to help college graduates. Torch Mentor Network is an online service that helps students connect with a mentor during their college studies.</p>
                     <p>The main idea of the project was a simple and intuitive online presence geared towards college students and experienced mentors.</p>
                     <p>For this project, I used a red and purple color scheme, while keeping the typography and layout modern. I've also used the Lightning UI by Salesforce for most of the components and elements in the pages.</p>
                 </template>
@@ -643,7 +643,7 @@ export default {
                                     <v-img height="300" :src="imgSrc('to-mobile-lofi.png')" />
 
                                     <div class="py-4 text-center">
-                                        <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=6%3A4996&scaling=scale-down&page-id=6%3A4995&starting-point-node-id=6%3A4996')">
+                                        <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/hgMpXvVZJfJno8AiRug0VC/Torch-Mobile-App?node-id=23%3A3&scaling=scale-down&page-id=23%3A2&starting-point-node-id=23%3A3')">
                                             <v-icon class="mx-2">mdi-open-in-new</v-icon>
                                             Lo-Fi Prototype
                                         </v-btn>
@@ -653,7 +653,7 @@ export default {
                             <v-col cols="12" sm="12" md="12" lg="6">
                                 <v-img height="300" :src="imgSrc('to-mobile-hifi.png')" />
                                 <div class="py-4 text-center">
-                                    <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A9537&scaling=scale-down&page-id=28%3A9536&starting-point-node-id=28%3A9537')">
+                                    <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/hgMpXvVZJfJno8AiRug0VC/Torch-Mobile-App?node-id=58%3A3934&scaling=scale-down&page-id=58%3A3610&starting-point-node-id=58%3A3934')">
                                         <v-icon class="mx-2">mdi-open-in-new</v-icon>
                                         Hi-Fi Prototype
                                     </v-btn>
@@ -722,7 +722,13 @@ export default {
                                     <div class="py-4 text-center">
                                         <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=6%3A4996&scaling=scale-down&page-id=6%3A4995&starting-point-node-id=6%3A4996')">
                                             <v-icon class="mx-2">mdi-open-in-new</v-icon>
-                                            Lo-Fi Prototype
+                                            Mobile Lo-Fi Prototype
+                                        </v-btn>
+                                    </div>
+                                    <div class="py-4 text-center">
+                                        <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=6%3A6495&scaling=min-zoom&page-id=6%3A6494&starting-point-node-id=6%3A6495')">
+                                            <v-icon class="mx-2">mdi-open-in-new</v-icon>
+                                            Desktop Lo-Fi Prototype
                                         </v-btn>
                                     </div>
                                 </div>
@@ -730,9 +736,15 @@ export default {
                             <v-col cols="12" sm="12" md="12" lg="6">
                                 <v-img height="300" :src="imgSrc('to-site-hifi.png')" />
                                 <div class="py-4 text-center">
+                                    <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A9537&scaling=scale-down&page-id=28%3A9536&starting-point-node-id=28%3A9537')">
+                                        <v-icon class="mx-2">mdi-open-in-new</v-icon>
+                                        Mobile Hi-Fi Prototype
+                                    </v-btn>
+                                </div>
+                                <div class="py-4 text-center">
                                     <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A11119&scaling=min-zoom&page-id=28%3A11118&starting-point-node-id=28%3A11119')">
                                         <v-icon class="mx-2">mdi-open-in-new</v-icon>
-                                        Hi-Fi Prototype
+                                        Desktop Hi-Fi Prototype
                                     </v-btn>
                                 </div>
                             </v-col>

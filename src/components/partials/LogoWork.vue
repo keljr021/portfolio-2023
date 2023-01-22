@@ -5,6 +5,9 @@ export default {
         return {
             logos: [
                 {
+                    src: 'logo-to.png'
+                },
+                {
                     src: 'logo-reys.png'
                 },
                 {
