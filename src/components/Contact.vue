@@ -2,6 +2,11 @@
 import ContactForm from './partials/ContactForm.vue'
 export default {
     name: 'Contact',
+    data() {
+        return {
+            resumeUrl: 'https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=sharing'
+        };
+    },
     props: {
         socialIconsArray: Array
     },
@@ -11,7 +16,7 @@ export default {
     methods: {
         openWindow(link) {
             window.open(link, '_blank');
-        }
+        },
     }
 }
 </script>
@@ -37,6 +42,11 @@ export default {
                     <span class="pr-3" v-for="item in socialIconsArray">
                         <a :href="item.link" target="_blank"><img class="content-item-img" :src="item.src" :alt="item.alt" /></a>
                     </span>
+                </div>
+                <div class="py-3" :class="{'pa-3 text-center' : this.$vuetify.display.xs }">
+                    <v-btn variant="outlined" color="#1A237E" @click="openWindow(resumeUrl)">
+                        View Resume
+                    </v-btn>
                 </div>
             </v-col>
             <v-col cols="12" lg="8">
