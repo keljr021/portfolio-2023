@@ -76,7 +76,7 @@ li {
 
 .work-section {
     min-height: 100px;
-    padding-bottom: 50px;
+    padding: 75px 0;
 }
 
 .work-card {
