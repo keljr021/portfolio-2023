@@ -9,7 +9,7 @@ export default {
     ],
     computed: {
         ctaNavItems() {
-           return this.navItems.filter(items => items.text);
+           return this.navItems.filter(items => items.text !== 'Home');
         }
     },
     methods: {

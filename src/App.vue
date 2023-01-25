@@ -21,7 +21,7 @@
         navItems: [
           {
             className: 'cta',
-            text: ''
+            text: 'Home'
           },
           {
             className: 'ui',
