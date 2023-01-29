@@ -4,10 +4,12 @@ export default {
     name: 'WorkItem',
     data() {
         return {
-            dialog: false
+            dialog: false,
         }
     },
     props: {
+        showSlide: String,
+        slideId: String,
         title: String,
         caption: String,
         image: String,
@@ -16,12 +18,14 @@ export default {
         company: String,
         date: String
     },
+    emits: [
+        'set',
+        'move',
+        'close'
+    ],
     methods: {
         imgSrc(input) {
             return new URL(`../../assets/${input}`, import.meta.url).href;
-        },
-        closeDialog() {
-            this.dialog = false;
         },
         openWindow(link) {
             window.open(link, '_blank');
@@ -30,8 +34,30 @@ export default {
             const slots = useSlots();
             let slotValue = slots[name]; 
             return !!slotValue;
-        }
+        },
+        async setSlide() {
+            await this.$emit('set', this.slideId);
+            await this.toggleDialogStatus();
+        },
+        async toggleDialogStatus() {
+            this.dialog = this.showSlide === this.slideId;
+        },
+        async previousSlide() {
+            await this.$emit('move', 'prev');
+            await this.toggleDialogStatus();
+        },
+        async nextSlide() {
+            await this.$emit('move', 'next');
+            await this.toggleDialogStatus();
+        },
+        closeSlide() {
+            this.dialog = false;
+            this.$emit('close');
+        },
     },
+    updated() {
+        this.toggleDialogStatus();
+    }
 }
 </script>
 
@@ -39,7 +65,7 @@ export default {
     <v-col cols="12" sm="6" md="6" lg="4" class="text-center pa-4">
 
          <!-- Card component-->
-        <v-card class="work-card">
+        <v-card class="work-card" @click="setSlide(slideId)">
             <v-card-title class="text-left">{{ title }}</v-card-title>
             <v-card-text>
                 <div class="work-card-img">
@@ -52,7 +78,7 @@ export default {
        </v-card>
 
        <!-- Dialog component -->
-       <v-dialog class="item" v-model="dialog" activator="parent" height="900" scrollable :fullscreen="$vuetify.display.xs">
+       <v-dialog class="item" v-model="dialog" height="900" scrollable :fullscreen="$vuetify.display.xs">
             <v-card class="pt-xs-10">
                 <v-card-title>
                     <span>{{ title }}</span>
@@ -61,7 +87,7 @@ export default {
                         class="float-right item-close"
                         icon="mdi-close"
                         variant="text"
-                        @click="closeDialog()"
+                        @click="closeSlide()"
                     ></v-btn>
                 </v-card-title>
                 <v-card-text class="item-text">
@@ -129,12 +155,24 @@ export default {
                         </v-col>
                     </v-row>
                 </v-card-text>
-                <v-card-actions class="justify-end px-4 mx-4">
-                    <slot name="buttons"></slot>
-                    <v-btn class="px-3 text-right" variant="outlined" :block="$vuetify.display.xs" @click="closeDialog()">
-                        <v-icon class="mr-2">mdi-close</v-icon>
-                        Close
-                    </v-btn>
+                <v-card-actions class="justify-space-between px-4 mx-4">
+                    <div>
+                        <v-btn variant="flat" @click="previousSlide()">
+                            <v-icon class="mr-2">mdi-arrow-left</v-icon>
+                            Previous Slide
+                        </v-btn>
+                        <v-btn variant="flat" @click="nextSlide()">
+                            <v-icon class="mr-2">mdi-arrow-right</v-icon>
+                            Next Slide
+                        </v-btn>
+                    </div>
+                    <div>
+                        <slot name="buttons"></slot>
+                        <v-btn class="px-3 text-right" variant="outlined" :block="$vuetify.display.xs" @click="closeSlide()">
+                            <v-icon class="mr-2">mdi-close</v-icon>
+                            Close
+                        </v-btn>
+                    </div>
                 </v-card-actions>
             </v-card>
         </v-dialog>

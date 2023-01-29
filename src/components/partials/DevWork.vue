@@ -7,12 +7,28 @@ export default {
         WorkItem,
         WorkImage
     },
+    props: {
+        showSlide: String
+    },
+    emits: [
+        'move',
+        'close'
+    ],
     methods: {
         imgSrc(input) {
             return new URL(`../../assets/${input}`, import.meta.url).href;
         },
         openWindow(link) {
             window.open(link, '_blank');
+        },
+        setSlide(input) {
+            this.$emit('set', input);
+        },
+        moveSlide(input) {
+            this.$emit('move', input);
+        },
+        closeSlide(input) {
+            this.$emit('close', input);
         }
     }
 }
@@ -32,6 +48,11 @@ export default {
                 :image="imgSrc('ka-full.png')"
                 imageWidth="90%"
                 date="May 2019"
+                @set="setSlide"
+                @move="moveSlide"
+                @close="closeSlide"
+                slideId="d0"
+                :showSlide="showSlide"
                 >
                 <template v-slot:role>
                     <ul>
@@ -76,6 +97,11 @@ export default {
                 :image="imgSrc('if-full.png')"
                 imageWidth="90%"
                 date="Oct 2016 - Feb 2018"
+                @set="setSlide"
+                @move="moveSlide"
+                @close="closeSlide"
+                slideId="d1"
+                :showSlide="showSlide"
                 >
                 <template v-slot:role>
                     <ul>
@@ -122,6 +148,11 @@ export default {
                 imageWidth="90%"
                 company="Soccer for Success/Immersion Media"
                 date="Mar 2017 - Jun 2018"
+                @set="setSlide"
+                @move="moveSlide"
+                @close="closeSlide"
+                slideId="d2"
+                :showSlide="showSlide"
                 >
                 <template v-slot:role>
                     <ul>
@@ -151,6 +182,11 @@ export default {
                 imageWidth="90%"
                 company="ScoreShots/Immersion Media"
                 date="Aug 2016 - Jan 2018"
+                @set="setSlide"
+                @move="moveSlide"
+                @close="closeSlide"
+                slideId="d3"
+                :showSlide="showSlide"
                 >
                 <template v-slot:role>
                     <ul>
@@ -196,6 +232,11 @@ export default {
                 :image="imgSrc('react-full.png')"
                 imageWidth="90%"
                 date="Mar 2019"
+                @set="setSlide"
+                @move="moveSlide"
+                @close="closeSlide"
+                slideId="d4"
+                :showSlide="showSlide"
                 >
                 <template v-slot:role>
                     <ul>
@@ -237,6 +278,11 @@ export default {
                 :image="imgSrc('vuejs-full.png')"
                 imageWidth="90%"
                 date="Mar 2019"
+                @set="setSlide"
+                @move="moveSlide"
+                @close="closeSlide"
+                slideId="d5"
+                :showSlide="showSlide"
                 >
                 <template v-slot:role>
                     <ul>

@@ -6,8 +6,36 @@ export default {
     name: 'work',
     data() {
         return {
-            lazyLoad: false
+            lazyLoad: false,
+            showSlide: '',
+            showSlideArray: [
+                'u0', 'u1', 'u2',
+                'd0', 'd1', 'd2', 'd3', 'd4', 'd5'
+            ]
         };
+    },
+    methods: {
+        moveSlide(input) {
+            if (input) {
+                let currentIdx = this.showSlideArray.indexOf(this.showSlide);
+
+                if (input === 'next') {
+                    if (currentIdx === this.showSlideArray.length - 1) this.showSlide = 'u0';
+                    else this.showSlide = this.showSlideArray[currentIdx + 1];
+                }
+
+                if (input === 'prev') {
+                    if (currentIdx === 0) this.showSlide = 'd5';
+                    else this.showSlide = this.showSlideArray[currentIdx - 1];
+                }
+            }
+        },
+        setSlide(input) {
+            this.showSlide = input;
+        },
+        resetSlide() {
+            this.showSlide = '';
+        }
     },
     components: {
         UiWork,
@@ -26,8 +54,8 @@ export default {
         </v-row>
         <v-row>
             <v-col>
-                <ui-work></ui-work>
-                <dev-work></dev-work>
+                <ui-work @set="setSlide" @move="moveSlide" @reset="resetSlide" :showSlide="showSlide"></ui-work>
+                <dev-work @set="setSlide" @move="moveSlide" @reset="resetSlide" :showSlide="showSlide"></dev-work>
                 <logo-work></logo-work>
             </v-col>
         </v-row>

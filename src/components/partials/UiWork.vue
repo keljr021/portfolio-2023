@@ -8,12 +8,29 @@ export default {
         WorkItem,
         WorkImage
     },
+    props: {
+        showSlide: String
+    },
+    emits: [
+        'set',
+        'move',
+        'close'
+    ],
     methods: {
         imgSrc(input) {
             return new URL(`../../assets/${input}`, import.meta.url).href;
         },
         openWindow(link) {
             window.open(link, '_blank');
+        },
+        setSlide(input) {
+            this.$emit('set', input);
+        },
+        moveSlide(input) {
+            this.$emit('move', input);
+        },
+        closeSlide(input) {
+            this.$emit('close', input);
         }
     }
 }
@@ -35,6 +52,11 @@ export default {
                 imageHeight="500"
                 company="Rey's Mexican Restaurant"
                 date="Sep 2022 - Nov 2022"
+                @set="setSlide"
+                @move="moveSlide"
+                @close="closeSlide"
+                slideId="u0"
+                :showSlide="showSlide"
                 >
                 <template v-slot:role>
                     <div>UX Designer</div>
@@ -283,6 +305,11 @@ export default {
                 imageWidth="100%"
                 company="LemonBranch LTD"
                 date="Nov 2022 - Dec 2022"
+                @set="setSlide"
+                @move="moveSlide"
+                @close="closeSlide"
+                slideId="u1"
+                :showSlide="showSlide"
                 >
                 <template v-slot:role>
                     <div>UX Designer</div>
@@ -523,6 +550,11 @@ export default {
                 imageWidth="100%"
                 company="Torch Mentor Network"
                 date="Jan 2023"
+                @set="setSlide"
+                @move="moveSlide"
+                @close="closeSlide"
+                slideId="u2"
+                :showSlide="showSlide"
                 >
                 <template v-slot:role>
                     <div>UX Designer</div>
