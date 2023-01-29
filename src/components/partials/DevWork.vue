@@ -144,7 +144,7 @@ export default {
             <work-item 
                 title="Soccer for Success" 
                 caption="An e-learning platform for coaches and players" 
-                :image="imgSrc('s4s-full.png')"
+                :image="imgSrc('s4s-alt.png')"
                 imageWidth="90%"
                 company="Soccer for Success/Immersion Media"
                 date="Mar 2017 - Jun 2018"
