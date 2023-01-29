@@ -52,7 +52,7 @@ export default {
 
 <template>
     <!-- Mobile Navigation -->
-    <div class="nav w-100 pa-2" :class="{'show': showNav }" v-if="$vuetify.display.xs">
+    <div class="nav w-100 pa-2" :class="{'show': showNav }" v-if="$vuetify.display.smAndDown">
         <v-row class="align-center justify-space-between">
             <v-col cols="8" class="nav-logo" @click="this.$emit('scrollTo', 'cta')">
                 <img class="mt-2" src="../assets/km-logo.png" alt="Kelvin Morrisey Jr" />
@@ -124,6 +124,7 @@ export default {
 :deep(.v-list-item--nav .v-list-item-title) {
     font-size: 18px !important;
     font-weight: 300 !important;
+    padding: 10px 0;
 }
 
 @media all and (max-width: 768px) {
