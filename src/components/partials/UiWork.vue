@@ -506,13 +506,13 @@ export default {
                 </template>
                 <template v-slot:results>
                     <v-row>
-                        <v-col>
+                        <v-col cols="12" sm="12" md="12" lg="6">
                             <div class="work-section">
                                 <h4>Lessons Learned</h4>
                                 <p>During the prototyping phase of this project, I've gained more experience in using the Components and Library options in Adobe XD. Using these options will streamline prototyping in the future.</p>
                             </div>
                         </v-col>
-                        <v-col>
+                        <v-col cols="12" sm="12" md="12" lg="6">
                             <div class="work-section">
                                 <h4>Next Steps</h4>
                                 <ol>
@@ -823,13 +823,13 @@ export default {
                 </template>
                 <template v-slot:results>
                     <v-row>
-                        <v-col>
+                        <v-col cols="12" sm="12" md="12" lg="6">
                             <div class="work-section">
                                 <h4>Lessons Learned</h4>
                                 <p>I discovered a great insight on the importance of Information Architecture in web design. Creating an organized sitemap, and understanding how the data should be structured is critical when designing a new app or website.</p>
                             </div>
                         </v-col>
-                        <v-col>
+                        <v-col cols="12" sm="12" md="12" lg="6">
                             <div class="work-section">
                                 <h4>Next Steps</h4>
                                 <ol>

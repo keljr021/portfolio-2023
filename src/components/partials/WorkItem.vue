@@ -159,11 +159,11 @@ export default {
                     <div>
                         <v-btn variant="flat" @click="previousSlide()">
                             <v-icon class="mr-2">mdi-arrow-left</v-icon>
-                            Previous Slide
+                            <span v-if="!$vuetify.display.xs">Previous Slide</span>
                         </v-btn>
                         <v-btn variant="flat" @click="nextSlide()">
                             <v-icon class="mr-2">mdi-arrow-right</v-icon>
-                            Next Slide
+                            <span v-if="!$vuetify.display.xs">Next Slide</span>
                         </v-btn>
                     </div>
                     <div>
