@@ -92,18 +92,6 @@ export default {
                             </div>
                         </v-col>
                     </v-row>
-                    <v-row>
-                        <v-col>
-                            <div class="work-section">
-                                <h4>Pain Points</h4>
-                                <ul>
-                                    <li><b>Budgeting.</b> Users may have a limited budget when ordering food, so it's difficult to find items that are reasonable at the time.</li>
-                                    <li><b>Order Tracking.</b> There have been frustrations expressed by users who still have to wait on items to be completed even when ordering in advance. Sometimes orders for pickup are inaccurate, which causes frustration for members with limited time. Sitting and waiting for a correction causes longer wait times than previously intended.</li>
-                                    <li><b>Difficulty with understanding English.</b> Users with English difficulty have limited options on what to order. Additional accessibility for language options would expand the item options for the application.</li>
-                                </ul>
-                            </div>
-                        </v-col>
-                    </v-row>
                 </template>
                 <template v-slot:body>
                     <div class="work-section">
@@ -301,7 +289,7 @@ export default {
             <work-item 
                 title="LemonBranch DIY Site" 
                 caption="A responsive website to search and view tutorials and how-tos" 
-                :image="imgSrc('lb-home-rev.png')"
+                :image="imgSrc('lb-full.png')"
                 imageWidth="100%"
                 company="LemonBranch LTD"
                 date="Nov 2022 - Dec 2022"
@@ -494,9 +482,15 @@ export default {
                             <v-col cols="12" sm="12" md="12" lg="6">
                                 <v-img height="300" :src="imgSrc('lb-hifi.png')" />
                                 <div class="py-4 text-center">
+                                    <v-btn variant="outlined" @click="openWindow('https://xd.adobe.com/view/39ebb787-4097-4220-85a0-e901d27a116f-6cb8/screen/834dee81-37bd-4411-98b2-023f9a754dce?fullscreen')">
+                                        <v-icon class="mx-2">mdi-open-in-new</v-icon>
+                                        Mobile Hi-Fi Prototype
+                                    </v-btn>
+                                </div>
+                                <div class="py-4 text-center">
                                     <v-btn variant="outlined" @click="openWindow('https://xd.adobe.com/view/39ebb787-4097-4220-85a0-e901d27a116f-6cb8/?fullscreen')">
                                         <v-icon class="mx-2">mdi-open-in-new</v-icon>
-                                        Hi-Fi Prototype
+                                        Desktop Hi-Fi Prototype
                                     </v-btn>
                                 </div>
                             </v-col>

@@ -261,7 +261,7 @@ export default {
                     </p>
                 </template>
                  <template v-slot:buttons>
-                    <v-btn class="px-3" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://github.com/keljr021/react-calculator')">
+                    <v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://github.com/keljr021/react-calculator')">
                         View Code on Github
                     </v-btn>
                     <v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('http://poc.kelvin-m.com/react-calculator')">
