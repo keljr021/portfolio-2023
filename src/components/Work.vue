@@ -10,7 +10,7 @@ export default {
             showSlide: '',
             showSlideArray: [
                 'u0', 'u1', 'u2',
-                'd0', 'd1', 'd2', 'd3', 'd4', 'd5'
+                'd0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8'
             ]
         };
     },
@@ -20,12 +20,12 @@ export default {
                 let currentIdx = this.showSlideArray.indexOf(this.showSlide);
 
                 if (input === 'next') {
-                    if (currentIdx === this.showSlideArray.length - 1) this.showSlide = 'u0';
+                    if (currentIdx === this.showSlideArray.length - 1) this.showSlide = this.showSlideArray[0];
                     else this.showSlide = this.showSlideArray[currentIdx + 1];
                 }
 
                 if (input === 'prev') {
-                    if (currentIdx === 0) this.showSlide = 'd5';
+                    if (currentIdx === 0) this.showSlide = this.showSlideArray[this.showSlideArray.length - 1];
                     else this.showSlide = this.showSlideArray[currentIdx - 1];
                 }
             }

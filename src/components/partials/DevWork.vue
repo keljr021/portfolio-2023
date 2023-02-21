@@ -318,6 +318,137 @@ export default {
                 </template>
             </work-item>               
 
+            <work-item 
+                title="Discharge Preparation iForm" 
+                caption="Web form to prepare patients for hospital release" 
+                :image="imgSrc('iform-discharge.png')"
+                imageWidth="90%"
+                company="FirstHealth Moore Regional Hospital"
+                date="2013-2014"
+                @set="setSlide"
+                @move="moveSlide"
+                @close="closeSlide"
+                slideId="d6"
+                :showSlide="showSlide"
+                >
+                <template v-slot:role>
+                    <ul>
+                        <li>JavaScript Developer</li>
+                    </ul>
+                </template>
+                <template v-slot:tools>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>jQuery</li>
+                    </ul>
+                </template>
+                <template v-slot:overview>
+                    <p>This webpage is part of Moore Regional's front-end of the web application -- known as iForms. An iForm takes the values and selections a user has made, and add those values to the hospital's application once the form is submitted. Below is an example of one of the iForms that I have worked on.</p>
+                    <p>This iForm allows nurses to enter information for a patient's discharge from the hospital. During this process, the tabs goes through each step and adds information to the front-end when submitted.</p>
+                    <p>
+                        <v-btn class="px-3" v-if="$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://poc.kelvin-m.com/iForms/discharge_2014.htm')">
+                            <v-icon class="mr-2">mdi-link</v-icon>
+                            View Site
+                        </v-btn>
+                    </p>
+                </template>
+                 <template v-slot:buttons>
+                    <v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://poc.kelvin-m.com/iForms/discharge_2014.htm')">
+                        <v-icon class="mr-2">mdi-link</v-icon>
+                        View Site
+                    </v-btn>
+                </template>
+            </work-item> 
+
+            <work-item 
+                title="Integrilin Dosing iForm" 
+                caption="Web form to measure proper integrilin dosing" 
+                :image="imgSrc('iform-integrilin.png')"
+                imageWidth="90%"
+                company="FirstHealth Moore Regional Hospital"
+                date="2013-2014"
+                @set="setSlide"
+                @move="moveSlide"
+                @close="closeSlide"
+                slideId="d7"
+                :showSlide="showSlide"
+                >
+                <template v-slot:role>
+                    <ul>
+                        <li>JavaScript Developer</li>
+                    </ul>
+                </template>
+                <template v-slot:tools>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>jQuery</li>
+                    </ul>
+                </template>
+                <template v-slot:overview>
+                    <p>This webpage is part of Moore Regional's front-end of the web application -- known as iForms. An iForm takes the values and selections a user has made, and add those values to the hospital's application once the form is submitted. Below is an example of one of the iForms that I have worked on.</p>
+                    <p>The Integrilin iForm is a page that I have built using Moore Regional Hospital in 2014. The user would put in a patient's weight in kilograms, then select the dosing type, and a table is displayed with the proper dosage highlighted based on the user's input.</p>
+                    <p>
+                        <v-btn class="px-3" v-if="$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://poc.kelvin-m.com/iForms/int_dosing.htm')">
+                            <v-icon class="mr-2">mdi-link</v-icon>
+                            View Site
+                        </v-btn>
+                    </p>
+                </template>
+                 <template v-slot:buttons>
+                    <v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://poc.kelvin-m.com/iForms/int_dosing.htm')">
+                        <v-icon class="mr-2">mdi-link</v-icon>
+                        View Site
+                    </v-btn>
+                </template>
+            </work-item> 
+
+            <work-item 
+                title="Respiratory Common Orders iForm" 
+                caption="Web form for quick access to respiratory treatments" 
+                :image="imgSrc('iform-respiratory.png')"
+                imageWidth="90%"
+                company="FirstHealth Moore Regional Hospital"
+                date="2013-2014"
+                @set="setSlide"
+                @move="moveSlide"
+                @close="closeSlide"
+                slideId="d8"
+                :showSlide="showSlide"
+                >
+                <template v-slot:role>
+                    <ul>
+                        <li>JavaScript Developer</li>
+                    </ul>
+                </template>
+                <template v-slot:tools>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>jQuery</li>
+                    </ul>
+                </template>
+                <template v-slot:overview>
+                    <p>This webpage is part of Moore Regional's front-end of the web application -- known as iForms. An iForm takes the values and selections a user has made, and add those values to the hospital's application once the form is submitted. Below is an example of one of the iForms that I have worked on.</p>
+                    <p>The Respiratory iForm give the user tests and medications to select from and fill out the information if needed. For dates, we added a HTML calendar widget that toggles when the calendar icon is clicked.</p>
+                    <p>
+                        <v-btn class="px-3" v-if="$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://poc.kelvin-m.com/iForms/resp_ords.htm')">
+                            <v-icon class="mr-2">mdi-link</v-icon>
+                            View Site
+                        </v-btn>
+                    </p>
+                </template>
+                 <template v-slot:buttons>
+                    <v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://poc.kelvin-m.com/iForms/resp_ords.htm')">
+                        <v-icon class="mr-2">mdi-link</v-icon>
+                        View Site
+                    </v-btn>
+                </template>
+            </work-item>            
         </v-row>
     </div>
 </template>
