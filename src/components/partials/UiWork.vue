@@ -43,10 +43,10 @@ export default {
                 <div class="work-subtitle">UI/UX Design</div>
             </v-col>
         </v-row>
-        <v-row class="justify-center">
+        <v-row>
             <work-item 
                 title="K&A Morrisey Cleaning Services" 
-                caption="A responsive site for janitorial cleaning business" 
+                caption="A responsive website for family janitorial business" 
                 :image="imgSrc('ka-full-2023.png')"
                 imageWidth="90%"
                 company="K&A Morrisey Cleaning Services"

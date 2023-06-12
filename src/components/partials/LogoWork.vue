@@ -21,6 +21,9 @@ export default {
                 {
                     src: 'logo-ka.png',
                     height: 50
+                },
+                {
+                    src: 'logo-ka-2023.png'
                 }
             ]
         };
