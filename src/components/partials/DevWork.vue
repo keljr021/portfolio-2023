@@ -43,55 +43,6 @@ export default {
         </v-row>
         <v-row>
             <work-item 
-                title="K&A Morrisey Cleaning Services" 
-                caption="A responsive site for janitorial cleaning business" 
-                :image="imgSrc('ka-full.png')"
-                imageWidth="90%"
-                date="May 2019"
-                @set="setSlide"
-                @move="moveSlide"
-                @close="closeSlide"
-                slideId="d0"
-                :showSlide="showSlide"
-                >
-                <template v-slot:role>
-                    <ul>
-                        <li>Web Developer</li>
-                        <li>Web Designer</li>
-                        <li>Logo Designer</li>
-                    </ul>
-                </template>
-                <template v-slot:tools>
-                    <ul>
-                        <li>HTML</li>
-                        <li>SASS</li>
-                        <li>JavaScript</li>
-                        <li>Vue JS</li>
-                        <li>Bootstrap</li>
-                    </ul>
-                </template>
-                <template v-slot:overview>
-                    <p>My father and his father taught me the value of hard work at a very early age. They have both instilled a strong work-ethic that I hold onto this day. When he talked about having a website for his new business, I immediately jumped on the project without hesitation.</p>
-                </template>
-                <template v-slot:features>
-                    <ul>
-                        <li>Responsive single-page website using modern web languages</li>
-                        <li>Contact form with form validation</li>
-                    </ul>
-                    <v-btn class="px-3" v-if="$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('http://ka-clean.com')">
-                        <v-icon class="mr-2">mdi-link</v-icon>
-                        View Site
-                    </v-btn>
-                </template>
-                 <template v-slot:buttons>
-                    <v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('http://ka-clean.com')">
-                        <v-icon class="mr-2">mdi-link</v-icon>
-                        View Site
-                    </v-btn>
-                </template>
-            </work-item>
-
-            <work-item 
                 title="iFolio" 
                 caption="An online portfolio page to host images" 
                 :image="imgSrc('if-full.png')"
@@ -319,6 +270,7 @@ export default {
             </work-item>               
 
             <work-item 
+                v-if="false"
                 title="Discharge Preparation iForm" 
                 caption="Web form to prepare patients for hospital release" 
                 :image="imgSrc('iform-discharge.png')"
@@ -363,6 +315,7 @@ export default {
             </work-item> 
 
             <work-item 
+                v-if="false"
                 title="Integrilin Dosing iForm" 
                 caption="Web form to measure proper integrilin dosing" 
                 :image="imgSrc('iform-integrilin.png')"
@@ -407,6 +360,7 @@ export default {
             </work-item> 
 
             <work-item 
+                v-if="false"
                 title="Respiratory Common Orders iForm" 
                 caption="Web form for quick access to respiratory treatments" 
                 :image="imgSrc('iform-respiratory.png')"

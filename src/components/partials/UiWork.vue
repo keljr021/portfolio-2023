@@ -45,6 +45,254 @@ export default {
         </v-row>
         <v-row class="justify-center">
             <work-item 
+                title="K&A Morrisey Cleaning Services" 
+                caption="A responsive site for janitorial cleaning business" 
+                :image="imgSrc('ka-full-2023.png')"
+                imageWidth="90%"
+                company="K&A Morrisey Cleaning Services"
+                date="June 2019, updated June 2023"
+                @set="setSlide"
+                @move="moveSlide"
+                @close="closeSlide"
+                slideId="u0"
+                :showSlide="showSlide"
+                >
+                <template v-slot:role>
+                    <div>Web Developer & UX Designer</div>
+                    <ul>
+                        <li>Logo Design</li>
+                        <li>Paper and Digital Wireframes</li>
+                        <li>Competitive Audits</li>
+                        <li>Prototyping</li>
+                        <li>Testing</li>
+                    </ul>
+                </template>
+                <template v-slot:tools>
+                    <ul>
+                        <li>Figma</li>
+                        <li>HTML</li>
+                        <li>SASS</li>
+                        <li>JavaScript</li>
+                        <li>Vue JS</li>
+                        <li>Vuetify</li>
+                    </ul>
+                </template>
+                <template v-slot:overview>
+                    <p>My father and grandfather taught me the value of hard work at a very early age. They have both instilled a strong work-ethic that I hold onto this day. When he talked about having a website for his new business, I immediately jumped on the project without hesitation.</p>
+                </template>
+                <template v-slot:challenges>
+                    <v-row>
+                        <v-col cols="12" sm="12" md="12" lg="6">
+                            <div class="work-section">
+                                <h4>Problem</h4>
+                                <p>Customers have complained about long wait times when ordering lunch, and frustration regarding the accuracy of their orders when ready for pickup.</p>
+                            </div>
+                        </v-col>
+                        <v-col cols="12" sm="12" md="12" lg="6">
+                            <div class="work-section">
+                                <h4>Goal</h4>
+                                <p>Design an app that allows users to order food online, and pick up their order within the allotted time frame; which avoids long waits in line to order, and improves accuracy when picking up their order.</p>
+                            </div>
+                        </v-col>
+                    </v-row>
+                </template>
+                <template v-slot:body>
+                    <div class="work-section">
+                        <h4>Persona</h4>
+                        <v-row>
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <v-img width="600" :src="imgSrc('reys-persona.png')" />
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <div>
+                                    <p><b>Cal Murphy.</b> Cal is a busy office manager who needs more accurate order tracking because his time is limited due to his work schedule.</p>
+                                </div>
+                            </v-col>
+                        </v-row>
+                    </div>
+                    <div class="work-section">
+                        <h4>User Map</h4>
+                        <v-row>
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <p>From documenting Cal's User journey, I have discovered the following:</p>
+                                <ul>
+                                    <li>An Order Tracker would increase the accuracy of takeout orders; and notify users when items are ready for pickup.</li>
+                                    <li>Specials section should be added.</li>
+                                </ul>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <v-img width="600" :src="imgSrc('reys-usermap.png')" />
+                            </v-col>
+                        </v-row>
+                    </div>
+                    <div class="work-section">
+                        <h4>Paper Wireframes</h4>
+                        <v-row>
+                            <v-col offset-lg="1" cols="12" sm="12" md="2" lg="3">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-pframe1.jpg')">
+                                    Sketched out the general workflow of the app.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="2" lg="3">
+                                <work-image width="100%" :image="imgSrc('reys-pframe2.jpg')">
+                                    Then began to brainstorm several rough draft ideas of how the app should look. From these drafts, I've picked a few items from each to add to the final wireframe.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="2" lg="3">
+                                <work-image width="100%" :image="imgSrc('reys-pframe3.jpg')">
+                                    Finally, I've drawn up the final version of the wireframes. Above is an example of the Menu pages.
+                                </work-image>
+                            </v-col>
+                        </v-row>
+                    </div>
+                    <div class="work-section">
+                        <h4>Digital Wireframes</h4>
+                        <v-row>
+                            <v-col offset-lg="2" cols="12" sm="12" md="2" lg="2">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-dframe1.png')">
+                                    Home
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="2" lg="2">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-dframe2.png')">
+                                    Menu Grid View
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="2" lg="2">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-dframe3.png')">
+                                    Menu List View
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="2" lg="2">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-dframe5.png')">
+                                    Order Tracker
+                                </work-image>
+                            </v-col>
+                        </v-row>
+                    </div>
+
+                    <div class="work-section">
+                        <h4>Usability Study Insights</h4>
+                        <v-row>
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <ul>
+                                    <li>A confirmation page is needed during the order submission workflow.</li>
+                                    <li>The Language feature needs to have a more simplified workflow for users.</li>
+                                    <li>The app needs a Log In/Out option for easier access to customer information.</li>
+                                </ul>
+
+                                <div class="my-3">
+                                    <v-btn class="my-3 px-3" variant="outlined" @click="openWindow('https://docs.google.com/spreadsheets/d/1JPXFuY_JmU1EpBIJ-EJDESaTmYvrJCPU87cs1LKXNKo/edit?usp=sharing')">
+                                        <v-icon class="mr-2">mdi-link</v-icon>
+                                        View Full Usability Study
+                                    </v-btn>
+                                </div>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="6">
+                                <v-img width="600" :src="imgSrc('reys-study.png')" />
+                            </v-col>
+                        </v-row>
+                    </div>
+
+
+                    <div class="work-section">
+                        <h4>Mockups</h4>
+                        <v-row>
+                            <v-col offset-lg="2" cols="12" sm="12" md="2" lg="2">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-mock1.png')">
+                                    Home - Added a Cart icon and Account button to the navigation.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="2" lg="2">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-mock2.png')">
+                                    Menu using Grid View - The Grid and List buttons were grouped to show the relation among one another.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="2" lg="2">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-mock3.png')">
+                                    Menu using List View - For the list items, added a description to each item.
+                                </work-image>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="2" lg="2">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-mock5.png')">
+                                    Order Tracker - Added Order number and time on top instead of the bottom area.
+                                </work-image>
+                            </v-col>
+                        </v-row>
+                    </div>
+                    <div class="work-section">
+                        <h4>Prototypes</h4>
+                        <v-row class="justify-center">
+                            <v-col cols="12" sm="12" md="12" lg="4">
+                                <div>
+                                    <v-img height="300" :src="imgSrc('reys-lofi.png')" />
+
+                                    <div class="py-4 text-center">
+                                        <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/VaAdj9uN0B0Oh85trN10t6/Mexican-Restaurant-App---Lo-Fi-Prototype?node-id=1%3A6&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A6')">
+                                            <v-icon class="mx-2">mdi-open-in-new</v-icon>
+                                            Lo-Fi Prototype
+                                        </v-btn>
+                                    </div>
+                                </div>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="12" lg="4">
+                                <v-img height="300" :src="imgSrc('reys-hifi.png')" />
+                                <div class="py-4 text-center">
+                                    <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/5NxCYVA06z3PUwJN9qYVR1/Mexican-Restaurant-App---Revised?node-id=140%3A485&scaling=scale-down&page-id=140%3A2&starting-point-node-id=140%3A485')">
+                                        <v-icon class="mx-2">mdi-open-in-new</v-icon>
+                                        Hi-Fi Prototype
+                                    </v-btn>
+                                </div>
+                            </v-col>
+                        </v-row>
+                    </div>
+
+                </template>
+                <template v-slot:results>
+                    <v-row>
+                        <v-col cols="12" sm="12" md="12" lg="6">
+                            <div class="work-section">
+                                <h4>Lessons Learned</h4>
+                                <p>From working on this app, I have learned the great importance of usability studies and user feedback. It has given me insight to areas that were not thought about during the prototyping phase of the app. Going through the process has been very beneficial to designing in the future.</p>
+                            </div>
+                        </v-col>
+                        <v-col cols="12" sm="12" md="12" lg="6">
+                            <div class="work-section">
+                                <h4>Next Steps</h4>
+                                <ol>
+                                    <li>Currently the UI has a responsive site feel. I would modify the structure of the UI for a dedicated mobile app.</li>
+                                    <li>Continue with a webpage for desktop users to give customers an additional online option for the restaurant.</li>
+                                    <li>Reformat the input components using a UI framework (such as Material UI).</li>
+                                    <li>Conduct another usability study on the high-fidelity designs.</li>
+                                </ol>
+                            </div>
+                        </v-col>
+                    </v-row>
+                    
+                    <div v-if="$vuetify.display.xs">
+                        <v-btn class="px-3" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://docs.google.com/presentation/d/1L7N0_CG95WT4dYPjiDQqjJcviKUniSmyCGsc_-OxTvg/edit?usp=sharing')">
+                            <v-icon class="mr-2">mdi-link</v-icon>
+                            View Case Study PPT
+                        </v-btn>
+                    </div>
+                </template>
+                <template v-slot:buttons>
+                    <v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://docs.google.com/presentation/d/1L7N0_CG95WT4dYPjiDQqjJcviKUniSmyCGsc_-OxTvg/edit?usp=sharing')">
+                        <v-icon class="mr-2">mdi-link</v-icon>
+                        View Case Study PPT
+                    </v-btn>
+                    <v-btn  class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://www.figma.com/proto/5NxCYVA06z3PUwJN9qYVR1/Mexican-Restaurant-App---Revised?node-id=140%3A485&scaling=scale-down&page-id=140%3A2&starting-point-node-id=140%3A485')">
+                        <v-icon class="mr-2">mdi-open-in-new</v-icon>
+                        View Prototype
+                    </v-btn>
+                    <v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('http://ka-clean.com')">
+                        <v-icon class="mr-2">mdi-link</v-icon>
+                        View Site
+                    </v-btn>
+                </template>
+            </work-item>
+
+            <work-item 
                 title="Rey's Restaurant App" 
                 caption="A menu app to streamline the ordering process" 
                 :image="imgSrc('reys-mock1.png')"
@@ -55,7 +303,7 @@ export default {
                 @set="setSlide"
                 @move="moveSlide"
                 @close="closeSlide"
-                slideId="u0"
+                slideId="u1"
                 :showSlide="showSlide"
                 >
                 <template v-slot:role>
@@ -296,7 +544,7 @@ export default {
                 @set="setSlide"
                 @move="moveSlide"
                 @close="closeSlide"
-                slideId="u1"
+                slideId="u2"
                 :showSlide="showSlide"
                 >
                 <template v-slot:role>
@@ -547,7 +795,7 @@ export default {
                 @set="setSlide"
                 @move="moveSlide"
                 @close="closeSlide"
-                slideId="u2"
+                slideId="u3"
                 :showSlide="showSlide"
                 >
                 <template v-slot:role>
