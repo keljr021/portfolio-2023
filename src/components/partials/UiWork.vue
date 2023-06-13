@@ -48,9 +48,9 @@ export default {
                 title="K&A Morrisey Cleaning Services" 
                 caption="A responsive website for family janitorial business" 
                 :image="imgSrc('ka-full-2023.png')"
-                imageWidth="90%"
+                imageWidth="100%"
                 company="K&A Morrisey Cleaning Services"
-                date="June 2019, updated June 2023"
+                date="June 2019 - Updated June 2023"
                 @set="setSlide"
                 @move="moveSlide"
                 @close="closeSlide"
@@ -78,20 +78,21 @@ export default {
                     </ul>
                 </template>
                 <template v-slot:overview>
-                    <p>My father and grandfather taught me the value of hard work at a very early age. They have both instilled a strong work-ethic that I hold onto this day. When he talked about having a website for his new business, I immediately jumped on the project without hesitation.</p>
+                    <p>My father and my grandfather taught me the value of hard work at a very early age. They have both instilled a strong work-ethic that I hold onto this day. When he talked about having a website for his new business, I immediately jumped on the project without hesitation.</p>
+                    <p>K&A Morrisey Cleaning Services is a commercial janitorial business that is local to Sampson County. This site is a redesign of the previous website using the UX design principles learned.</p>
                 </template>
                 <template v-slot:challenges>
                     <v-row>
                         <v-col cols="12" sm="12" md="12" lg="6">
                             <div class="work-section">
                                 <h4>Problem</h4>
-                                <p>Customers have complained about long wait times when ordering lunch, and frustration regarding the accuracy of their orders when ready for pickup.</p>
+                                <p>K&A Morrisey Cleaning Services did not have an online presence to advertise to potential customers in Sampson County. From viewing the previous web site, I discovered several opportunities to improve their online presence.</p>
                             </div>
                         </v-col>
                         <v-col cols="12" sm="12" md="12" lg="6">
                             <div class="work-section">
                                 <h4>Goal</h4>
-                                <p>Design an app that allows users to order food online, and pick up their order within the allotted time frame; which avoids long waits in line to order, and improves accuracy when picking up their order.</p>
+                                <p>Re-design their website that will showcase K&A Cleaning Services and the type of services that are offered.</p>
                             </div>
                         </v-col>
                     </v-row>
@@ -101,11 +102,11 @@ export default {
                         <h4>Persona</h4>
                         <v-row>
                             <v-col cols="12" sm="12" md="12" lg="6">
-                                <v-img width="600" :src="imgSrc('reys-persona.png')" />
+                                <v-img width="600" :src="imgSrc('ka-persona.png')" />
                             </v-col>
                             <v-col cols="12" sm="12" md="12" lg="6">
                                 <div>
-                                    <p><b>Cal Murphy.</b> Cal is a busy office manager who needs more accurate order tracking because his time is limited due to his work schedule.</p>
+                                    <p><b>Eric Robinson.</b> Eric is a business owner of a masonry company in Roseboro, NC. He is looking for a janitorial business to clean and maintain the corporate offices daily, with occasional work on the weekends.</p>
                                 </div>
                             </v-col>
                         </v-row>
@@ -114,58 +115,39 @@ export default {
                         <h4>User Map</h4>
                         <v-row>
                             <v-col cols="12" sm="12" md="12" lg="6">
-                                <p>From documenting Cal's User journey, I have discovered the following:</p>
+                                <p>From documenting Eric's User journey, I have found several opportunities:</p>
                                 <ul>
-                                    <li>An Order Tracker would increase the accuracy of takeout orders; and notify users when items are ready for pickup.</li>
-                                    <li>Specials section should be added.</li>
+                                    <li>Ensure that online search engines can find their business website</li>
+                                    <li>Add a professional email and/or phone number</li>
+                                    <li>Notify the user when the Contact Form has been sent and received</li>
                                 </ul>
                             </v-col>
                             <v-col cols="12" sm="12" md="12" lg="6">
-                                <v-img width="600" :src="imgSrc('reys-usermap.png')" />
-                            </v-col>
-                        </v-row>
-                    </div>
-                    <div class="work-section">
-                        <h4>Paper Wireframes</h4>
-                        <v-row>
-                            <v-col offset-lg="1" cols="12" sm="12" md="2" lg="3">
-                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-pframe1.jpg')">
-                                    Sketched out the general workflow of the app.
-                                </work-image>
-                            </v-col>
-                            <v-col cols="12" sm="12" md="2" lg="3">
-                                <work-image width="100%" :image="imgSrc('reys-pframe2.jpg')">
-                                    Then began to brainstorm several rough draft ideas of how the app should look. From these drafts, I've picked a few items from each to add to the final wireframe.
-                                </work-image>
-                            </v-col>
-                            <v-col cols="12" sm="12" md="2" lg="3">
-                                <work-image width="100%" :image="imgSrc('reys-pframe3.jpg')">
-                                    Finally, I've drawn up the final version of the wireframes. Above is an example of the Menu pages.
-                                </work-image>
+                                <v-img width="600" :src="imgSrc('ka-usermap.png')" />
                             </v-col>
                         </v-row>
                     </div>
                     <div class="work-section">
                         <h4>Digital Wireframes</h4>
                         <v-row>
-                            <v-col offset-lg="2" cols="12" sm="12" md="2" lg="2">
-                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-dframe1.png')">
+                            <v-col cols="12" sm="12" md="6" lg="6">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('ka-dframe1.png')">
                                     Home
                                 </work-image>
                             </v-col>
-                            <v-col cols="12" sm="12" md="2" lg="2">
-                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-dframe2.png')">
-                                    Menu Grid View
+                            <v-col cols="12" sm="12" md="6" lg="6">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('ka-dframe2.png')">
+                                    Services
                                 </work-image>
                             </v-col>
-                            <v-col cols="12" sm="12" md="2" lg="2">
-                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-dframe3.png')">
-                                    Menu List View
+                            <v-col cols="12" sm="12" md="6" lg="6">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('ka-dframe3.png')">
+                                    Contact 
                                 </work-image>
                             </v-col>
-                            <v-col cols="12" sm="12" md="2" lg="2">
-                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-dframe5.png')">
-                                    Order Tracker
+                            <v-col cols="12" sm="12" md="6" lg="6">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('ka-dframe4.png')">
+                                    Contact Form
                                 </work-image>
                             </v-col>
                         </v-row>
@@ -176,20 +158,20 @@ export default {
                         <v-row>
                             <v-col cols="12" sm="12" md="12" lg="6">
                                 <ul>
-                                    <li>A confirmation page is needed during the order submission workflow.</li>
-                                    <li>The Language feature needs to have a more simplified workflow for users.</li>
-                                    <li>The app needs a Log In/Out option for easier access to customer information.</li>
+                                    <li>The Contact and Contact Form links was confusing to end users finding Contact information. Both links needs to be revised</li>
+                                    <li>The Contact information needs to be easily accessed</li>
+                                    <li>The scrolling from the prototype did not scroll to the correct sections, and needed to be corrected in the mockups</li>
                                 </ul>
 
                                 <div class="my-3">
-                                    <v-btn class="my-3 px-3" variant="outlined" @click="openWindow('https://docs.google.com/spreadsheets/d/1JPXFuY_JmU1EpBIJ-EJDESaTmYvrJCPU87cs1LKXNKo/edit?usp=sharing')">
+                                    <v-btn class="my-3 px-3" variant="outlined" @click="openWindow('https://docs.google.com/spreadsheets/d/1Kzox0Pj99egWzYeoKLnOd7jnaNGtsaHfJksv7ssFnlI/edit?usp=sharing')">
                                         <v-icon class="mr-2">mdi-link</v-icon>
                                         View Full Usability Study
                                     </v-btn>
                                 </div>
                             </v-col>
                             <v-col cols="12" sm="12" md="12" lg="6">
-                                <v-img width="600" :src="imgSrc('reys-study.png')" />
+                                <v-img width="600" :src="imgSrc('ka-study.png')" />
                             </v-col>
                         </v-row>
                     </div>
@@ -198,24 +180,26 @@ export default {
                     <div class="work-section">
                         <h4>Mockups</h4>
                         <v-row>
-                            <v-col offset-lg="2" cols="12" sm="12" md="2" lg="2">
-                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-mock1.png')">
-                                    Home - Added a Cart icon and Account button to the navigation.
+                            <v-col cols="12" sm="12" md="6" lg="6">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('ka-mock1.png')">
+                                    Home - Added a photo with a color overlay. Also added a fixed footer for the Contact Us that gives the user quick access to K&A Services' phone and email.
+
                                 </work-image>
                             </v-col>
-                            <v-col cols="12" sm="12" md="2" lg="2">
-                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-mock2.png')">
-                                    Menu using Grid View - The Grid and List buttons were grouped to show the relation among one another.
+                            <v-col cols="12" sm="12" md="6" lg="6">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('ka-mock2.png')">
+                                    Services - Kept the three-column layout; added Font Awesome icons based on each content section.
                                 </work-image>
                             </v-col>
-                            <v-col cols="12" sm="12" md="2" lg="2">
-                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-mock3.png')">
-                                    Menu using List View - For the list items, added a description to each item.
+                            <v-col cols="12" sm="12" md="6" lg="6">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('ka-mock3.png')">
+                                    Contact - Added a Google Map location of the general area.
+
                                 </work-image>
                             </v-col>
-                            <v-col cols="12" sm="12" md="2" lg="2">
-                                <work-image width="100%" imageHeight="400" :image="imgSrc('reys-mock5.png')">
-                                    Order Tracker - Added Order number and time on top instead of the bottom area.
+                            <v-col cols="12" sm="12" md="6" lg="6">
+                                <work-image width="100%" imageHeight="400" :image="imgSrc('ka-mock4.png')">
+                                    Contact Form - The Contact Form button opens up a modal with a Google Form embedded in the modal for desktop; and a new window for mobile.
                                 </work-image>
                             </v-col>
                         </v-row>
@@ -225,22 +209,34 @@ export default {
                         <v-row class="justify-center">
                             <v-col cols="12" sm="12" md="12" lg="4">
                                 <div>
-                                    <v-img height="300" :src="imgSrc('reys-lofi.png')" />
+                                    <v-img height="300" :src="imgSrc('ka-lofi-desktop.png')" />
 
                                     <div class="py-4 text-center">
-                                        <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/VaAdj9uN0B0Oh85trN10t6/Mexican-Restaurant-App---Lo-Fi-Prototype?node-id=1%3A6&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A6')">
+                                        <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/ka-clean.com?type=design&node-id=14-287&scaling=scale-down&page-id=14%3A227&starting-point-node-id=14%3A287')">
                                             <v-icon class="mx-2">mdi-open-in-new</v-icon>
-                                            Lo-Fi Prototype
+                                            Desktop Lo-Fi Prototype
+                                        </v-btn>
+                                    </div>
+                                    <div class="py-4 text-center">
+                                        <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/ka-clean.com?type=design&node-id=14-44&scaling=scale-down&page-id=14%3A43&starting-point-node-id=14%3A44')">
+                                            <v-icon class="mx-2">mdi-open-in-new</v-icon>
+                                            Mobile Lo-Fi Prototype
                                         </v-btn>
                                     </div>
                                 </div>
                             </v-col>
                             <v-col cols="12" sm="12" md="12" lg="4">
-                                <v-img height="300" :src="imgSrc('reys-hifi.png')" />
+                                <v-img height="300" :src="imgSrc('ka-hifi-desktop.png')" />
                                 <div class="py-4 text-center">
-                                    <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/5NxCYVA06z3PUwJN9qYVR1/Mexican-Restaurant-App---Revised?node-id=140%3A485&scaling=scale-down&page-id=140%3A2&starting-point-node-id=140%3A485')">
+                                    <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/ka-clean.com?type=design&node-id=86-243&scaling=scale-down&page-id=86%3A130&starting-point-node-id=86%3A243')">
                                         <v-icon class="mx-2">mdi-open-in-new</v-icon>
-                                        Hi-Fi Prototype
+                                        Desktop Hi-Fi Prototype
+                                    </v-btn>
+                                </div>
+                                <div class="py-4 text-center">
+                                    <v-btn variant="outlined" @click="openWindow('https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/ka-clean.com?type=design&node-id=86-474&scaling=scale-down&page-id=86%3A471&starting-point-node-id=86%3A474')">
+                                        <v-icon class="mx-2">mdi-open-in-new</v-icon>
+                                        Moblie Hi-Fi Prototype
                                     </v-btn>
                                 </div>
                             </v-col>
@@ -253,39 +249,40 @@ export default {
                         <v-col cols="12" sm="12" md="12" lg="6">
                             <div class="work-section">
                                 <h4>Lessons Learned</h4>
-                                <p>From working on this app, I have learned the great importance of usability studies and user feedback. It has given me insight to areas that were not thought about during the prototyping phase of the app. Going through the process has been very beneficial to designing in the future.</p>
+                                <p>From this project I have gained experience in user interviews and incorporating client feedback within mockups and prototypes.</p>
+                                <p>With Figma, I have learned how to create multiple instances of the site to simulate on and off states of components. This is shown in the fixed footer options from the high fidelity prototypes. I have also discovered how to add overlays with colors above images. Both will give a wider variety of options in Figma for future projects.</p>
+                                <p>Lastly, I ensured that the colors used will comply with WCAG guidelines for accessibility by using the WebAIM contrast checker.</p>
                             </div>
                         </v-col>
                         <v-col cols="12" sm="12" md="12" lg="6">
                             <div class="work-section">
                                 <h4>Next Steps</h4>
                                 <ol>
-                                    <li>Currently the UI has a responsive site feel. I would modify the structure of the UI for a dedicated mobile app.</li>
-                                    <li>Continue with a webpage for desktop users to give customers an additional online option for the restaurant.</li>
-                                    <li>Reformat the input components using a UI framework (such as Material UI).</li>
-                                    <li>Conduct another usability study on the high-fidelity designs.</li>
+                                    <li>I would add a Gallery of Work section for potential clients to see before and after steps of the services provided.</li>
+                                    <li>I would add a Testimonials section for clients to add positive reviews of the work that K&A Services provide.</li>
+                                    <li>For the site, I would improve SEO and add domains from a development standpoint to ensure users can get to the site seamlessly.</li>
                                 </ol>
                             </div>
                         </v-col>
                     </v-row>
                     
                     <div v-if="$vuetify.display.xs">
-                        <v-btn class="px-3" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://docs.google.com/presentation/d/1L7N0_CG95WT4dYPjiDQqjJcviKUniSmyCGsc_-OxTvg/edit?usp=sharing')">
+                        <v-btn class="px-3" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing')">
                             <v-icon class="mr-2">mdi-link</v-icon>
                             View Case Study PPT
                         </v-btn>
                     </div>
                 </template>
                 <template v-slot:buttons>
-                    <v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://docs.google.com/presentation/d/1L7N0_CG95WT4dYPjiDQqjJcviKUniSmyCGsc_-OxTvg/edit?usp=sharing')">
+                    <v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing')">
                         <v-icon class="mr-2">mdi-link</v-icon>
                         View Case Study PPT
                     </v-btn>
-                    <v-btn  class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://www.figma.com/proto/5NxCYVA06z3PUwJN9qYVR1/Mexican-Restaurant-App---Revised?node-id=140%3A485&scaling=scale-down&page-id=140%3A2&starting-point-node-id=140%3A485')">
+                    <v-btn  class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/ka-clean.com?type=design&node-id=86-243&scaling=scale-down&page-id=86%3A130&starting-point-node-id=86%3A243')">
                         <v-icon class="mr-2">mdi-open-in-new</v-icon>
                         View Prototype
                     </v-btn>
-                    <v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('http://ka-clean.com')">
+                    <v-btn class="px-3" v-if="!$vuetify.display.xs" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://ka-clean.com')">
                         <v-icon class="mr-2">mdi-link</v-icon>
                         View Site
                     </v-btn>
