@@ -51,7 +51,7 @@ export default {
                 @set="setSlide"
                 @move="moveSlide"
                 @close="closeSlide"
-                slideId="d1"
+                slideId="d0"
                 :showSlide="showSlide"
                 >
                 <template v-slot:role>
@@ -102,7 +102,7 @@ export default {
                 @set="setSlide"
                 @move="moveSlide"
                 @close="closeSlide"
-                slideId="d2"
+                slideId="d1"
                 :showSlide="showSlide"
                 >
                 <template v-slot:role>
@@ -136,7 +136,7 @@ export default {
                 @set="setSlide"
                 @move="moveSlide"
                 @close="closeSlide"
-                slideId="d3"
+                slideId="d2"
                 :showSlide="showSlide"
                 >
                 <template v-slot:role>
@@ -186,7 +186,7 @@ export default {
                 @set="setSlide"
                 @move="moveSlide"
                 @close="closeSlide"
-                slideId="d4"
+                slideId="d3"
                 :showSlide="showSlide"
                 >
                 <template v-slot:role>
@@ -232,7 +232,7 @@ export default {
                 @set="setSlide"
                 @move="moveSlide"
                 @close="closeSlide"
-                slideId="d5"
+                slideId="d4"
                 :showSlide="showSlide"
                 >
                 <template v-slot:role>
@@ -280,7 +280,7 @@ export default {
                 @set="setSlide"
                 @move="moveSlide"
                 @close="closeSlide"
-                slideId="d6"
+                slideId="d5"
                 :showSlide="showSlide"
                 >
                 <template v-slot:role>
@@ -370,7 +370,7 @@ export default {
                 @set="setSlide"
                 @move="moveSlide"
                 @close="closeSlide"
-                slideId="d8"
+                slideId="d6"
                 :showSlide="showSlide"
                 >
                 <template v-slot:role>

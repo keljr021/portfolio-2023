@@ -271,6 +271,10 @@ export default {
                             <v-icon class="mr-2">mdi-link</v-icon>
                             View Case Study PPT
                         </v-btn>
+                        <v-btn class="px-3" variant="flat" :block="$vuetify.display.xs" @click="openWindow('https://ka-clean.com')">
+                            <v-icon class="mr-2">mdi-link</v-icon>
+                            View Site
+                        </v-btn>
                     </div>
                 </template>
                 <template v-slot:buttons>
