@@ -15,7 +15,7 @@ export default {
 <template>
     <div class="cta-text">
         <p>
-            My focus is 
+            I'm interested in 
             <span class="cta-link" @click="scrollTo('ui')">UI/UX design</span>, 
             <span class="cta-link" @click="scrollTo('dev')">front-end development</span>, and 
             <span class="cta-link" @click="scrollTo('logos')">logo design</span>. From writing notes to rough drafting ideas, my passion is to bring concepts to life.
