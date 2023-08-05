@@ -30,7 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 .cta-menu {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 300;
     height: 100px;
     padding: 0 50px;
@@ -41,15 +41,15 @@ export default {
 }
 
 .cta-menu-item {
-    margin: 20px;
+    margin: 30px;
     padding: 0 10px 10px;
     cursor: pointer;
     text-align: right;
     
     span {
-        border: 3px solid transparent;
+        border: 2px solid transparent;
         padding: 4px;
-        transition: border-bottom-color 0.3s;
+        transition: border-right-color 0.3s;
 
         &:hover {
             color: #18184d;

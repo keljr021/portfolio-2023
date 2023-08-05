@@ -18,18 +18,17 @@ export default {
             My focus is 
             <span class="cta-link" @click="scrollTo('ui')">UI/UX design</span>, 
             <span class="cta-link" @click="scrollTo('dev')">front-end development</span>, and 
-            <span class="cta-link" @click="scrollTo('logos')">logo design</span> as well. From writing notes to rough drafting ideas, my passion is to bring concepts to life.
+            <span class="cta-link" @click="scrollTo('logos')">logo design</span>. From writing notes to rough drafting ideas, my passion is to bring concepts to life.
         </p>
-        <p>With over 6 years of experience across various IT environments; I am always open to find opportunities to match technical experience with creative skills.</p>
-        <p>Feel free to browse the links, or <span class="cta-link" @click="scrollTo('contact')">drop a note</span> to chat more!</p>
+        <p>Feel free to browse or <span class="cta-link" @click="scrollTo('contact')">drop a note</span> to chat more!</p>
     </div>
 </template>
 
 <style lang="scss" scoped>
 .cta-text p {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 300;
-    line-height: 2;
+    line-height: 2.25;
     padding: 10px 0;
     opacity: 0.9;
 
