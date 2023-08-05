@@ -62,7 +62,7 @@ export default {
 </script>
 
 <template>
-    <v-col cols="12" sm="6" md="6" lg="4" class="text-center pa-4">
+    <v-col cols="12" sm="6" md="6" lg="4" class="text-center pa-4 my-8">
 
          <!-- Card component-->
         <v-card class="work-card" @click="setSlide(slideId)">
