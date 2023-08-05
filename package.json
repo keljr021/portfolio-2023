@@ -12,6 +12,7 @@
     "sass": "^1.57.1",
     "scss": "^0.2.4",
     "vue": "^3.2.45",
+    "vue-router": "^4.2.4",
     "vuetify": "^3.0.6"
   },
   "devDependencies": {
