@@ -27,15 +27,19 @@ export default {
             <v-col cols="12">
                 <div class="contact-title">Contact</div>
             </v-col>
-            <v-col cols="12" lg="4" class="px-4">
-                <div class="contact-emails">
+            <v-col cols="12" lg="2" class="px-4">
+                <div class="contact-links">
                     <div @click="openWindow('mailto:kmjr07@yahoo.com')">
-                        <v-icon icon="mdi-email" variant="text"  />
+                        <v-icon class="mr-2" icon="mdi-email" variant="text"  />
                         kmjr07@yahoo.com
                     </div>
                     <div @click="openWindow('mailto:keljr021@gmail.com')">
-                        <v-icon icon="mdi-email" variant="text"  />
+                        <v-icon class="mr-2" icon="mdi-email" variant="text"  />
                         keljr021@gmail.com
+                    </div>
+                    <div @click="openWindow(resumeUrl)" class="mt-4">
+                        <v-icon class="mr-2" icon="mdi-folder-file" variant="text"  />
+                        Open Resume
                     </div>
                 </div>
                 <div class="contact-icons py-3">
@@ -43,13 +47,8 @@ export default {
                         <a :href="item.link" target="_blank"><img class="content-item-img" :src="item.src" :alt="item.alt" /></a>
                     </span>
                 </div>
-                <div class="py-3" :class="{'pa-3 text-center' : this.$vuetify.display.xs }">
-                    <v-btn variant="outlined" color="#1A237E" @click="openWindow(resumeUrl)">
-                        View Resume
-                    </v-btn>
-                </div>
             </v-col>
-            <v-col cols="12" lg="8">
+            <v-col cols="12" lg="9">
                 <ContactForm />
             </v-col>
         </v-row>
@@ -70,7 +69,7 @@ export default {
     color: #18184d;
 }
 
-.contact-emails,
+.contact-links,
 .contact-icons {
     padding: 30px 0;
 
@@ -84,9 +83,9 @@ export default {
     }
 }
 
-.contact-emails {
+.contact-links {
     div {
-        padding: 10px 0;
+        padding: 5px 0;
     }
 }
 
@@ -101,7 +100,7 @@ export default {
         padding: 20px;
     }
 
-    .contact-emails,
+    .contact-links,
     .contact-icons {
         padding: 10px 0;
     }

@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-    <v-row class="justify-center">
+    <v-row>
         <v-col v-if="!this.$vuetify.display.xs">
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScDaM4cS0uWQZGlPmm1SMcMvV3Zqtxcu_OZemKMIM_tVSRj-w/viewform?embedded=true" width="640" height="1100" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </v-col>
