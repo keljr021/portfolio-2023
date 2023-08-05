@@ -32,7 +32,7 @@ export default {
     <v-container fluid class="cta">
         <v-row class="pa-3 justify-center">
             <v-col>
-                <h1 class="cta-title">Hi, my name's <b class="color:#18184d">Kelvin.</b></h1>
+                <h1 class="cta-title">Hi, my name's <b class="color:#18184d">Kelvin Morrisey Jr.</b></h1>
             </v-col>
         </v-row>
         <v-row class="px-3 py-2 justify-center">
@@ -43,18 +43,13 @@ export default {
                 <CtaMenu @scrollTo="scrollTo" :navItems="navItems"/>
             </v-col>
         </v-row>
-        <v-row class="px-3 py-2 justify-end" v-if="!$vuetify.display.xs">
-            <v-col class="text-right">
-                <img class="cta-logo px-3 ma-3 text-right" :src="imgSrc('km-icon.svg')" />
-            </v-col>
-        </v-row>
     </v-container>
     
 </template>
 
 <style scoped>
 .cta {
-    min-height: 500px;
+    min-height: 700px;
     padding: 100px 50px 100px;
 }
 
@@ -63,9 +58,11 @@ export default {
 }
 
 .cta-logo {
+    position: absolute;
+    left: 50px;
+    top: 50px;
     height: 40px;
-    filter: grayscale(1);
-    opacity: 0.3;
+    opacity: 0.75;
 }
 
 @media all and (max-width: 768px) {

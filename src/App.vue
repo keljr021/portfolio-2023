@@ -24,16 +24,8 @@
             text: 'Home'
           },
           {
-            className: 'ui',
-            text: 'UI/UX'
-          },
-          {
-            className: 'dev',
-            text: 'Dev'
-          },
-          {
-            className: 'logos',
-            text: 'Logos'
+            classname: 'work',
+            text: 'Work'
           },
           {
             className: 'about',
