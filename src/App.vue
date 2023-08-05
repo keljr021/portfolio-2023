@@ -1,11 +1,68 @@
 <script>
+  import Navbar from '@/components/Navbar.vue';
+  import { ref } from 'vue';
+
+  const theme = ref('light');
+
   export default {
     name: 'app',
+    data() {
+      return {
+        navItems: [
+          {
+            className: 'cta',
+            text: 'Home'
+          },
+          {
+            classname: 'work',
+            text: 'Work'
+          },
+          {
+            className: 'about',
+            text: 'About'
+          },
+          {
+            className: 'contact',
+            text: 'Contact'
+          },
+          {
+            className: 'resume',
+            text: 'Resume'
+          }
+        ]
+      }
+    },
+    methods: {
+      scrollTo(input) {
+        if (input === 'resume') 
+          window.open('https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=sharing', '_blank');
+        else {
+        let el = document.getElementsByClassName(input)[0];
+          if(el) 
+            el.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+        }
+      }
+    },
+    mounted() {
+      let input = null;
+      if (input)
+        this.scrollTo(input);
+    },
+    components: {
+      Navbar
+    }
 }
 </script>
 
 <template>
-  <router-view></router-view>
+  <v-app>
+    <Navbar @scrollTo="scrollTo" :navItems="navItems" />
+
+    <!-- Gives spacing between navigation and content below -->
+    <v-spacer v-if="this.$vuetify.display.xs" style="height:41.5px"></v-spacer>
+
+    <router-view :navItems="navItems"></router-view>
+  </v-app>
 </template>
 
 <style>

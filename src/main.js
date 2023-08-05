@@ -1,7 +1,8 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
 import Home from './pages/Home.vue'
+import Work from './pages/Work.vue'
 
 // Vuetify
 import 'vuetify/styles'
@@ -10,10 +11,6 @@ import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import '@mdi/font/css/materialdesignicons.css'
-
-const Work = {
-  template: '<div>Work page here.</div>'
-} 
 
 const routes = [
   { path: '/', component: Home },

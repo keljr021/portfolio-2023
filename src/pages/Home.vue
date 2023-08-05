@@ -1,18 +1,10 @@
 <script>
-  import Navbar from '@/components/Navbar.vue'
   import Cta from '@/components/Cta.vue'
   import Work from '@/components/Work.vue'
   import About from '@/components/About.vue'
   import Resume from '@/components/Resume.vue'
   import Contact from '@/components/Contact.vue'
   import Footer from '@/components/Footer.vue'
-
-  import linkedinUrl from '@/assets/LI-black.png'
-  import githubUrl from '@/assets/github-mark.png'
-
-  import { ref } from 'vue'
-
-  const theme = ref('light')
 
   export default {
     name: 'Home',
@@ -38,46 +30,11 @@
           {
             className: 'resume',
             text: 'Resume'
-          },
-        ],
-        socialIconsArray: [
-            {
-                type: 'img',
-                src: linkedinUrl,
-                link: 'https://www.linkedin.com/in/kelvin-morrisey-jr-514360a7/',
-                alt: 'LinkedIn https://www.linkedin.com/in/kelvin-morrisey-jr-514360a7/',
-                text: 'https://www.linkedin.com/in/kelvin-morrisey-jr-514360a7/'
-
-            },
-            {
-                type: 'img',
-                src: githubUrl,
-                link: 'https://github.com/keljr021',
-                alt: 'GitHub https://github.com/keljr021',
-                text: 'https://github.com/keljr021',
-
-            }
+          }
         ]
       }
     },
-    methods: {
-      scrollTo(input) {
-        if (input === 'resume') 
-          window.open('https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=sharing', '_blank');
-        else {
-        let el = document.getElementsByClassName(input)[0];
-          if(el) 
-            el.scrollIntoView({ behavior: 'smooth', inline: 'start' });
-        }
-      }
-    },
-    mounted() {
-      let input = null;
-      if (input)
-        this.scrollTo(input);
-    },
     components: {
-      Navbar,
       Cta,
       Work,
       About,
@@ -89,19 +46,11 @@
 </script>
 
 <template>
-  <v-app>
-    <Navbar @scrollTo="scrollTo" :navItems="navItems" />
-
-    <!-- Gives spacing between navigation and content below -->
-    <v-spacer v-if="this.$vuetify.display.xs" style="height:41.5px"></v-spacer>
-
-    <Cta @scrollTo="scrollTo" :navItems="navItems" :socialIconsArray="socialIconsArray"/>
-    <Work />
-    <About />
-    <Contact :socialIconsArray="socialIconsArray" />
-    <Footer />
-
-  </v-app>
+  <Cta @scrollTo="scrollTo" :navItems="navItems" :socialIconsArray="socialIconsArray"/>
+  <Work />
+  <About />
+  <Contact :socialIconsArray="socialIconsArray" />
+  <Footer />
 </template>
 
 <style>
