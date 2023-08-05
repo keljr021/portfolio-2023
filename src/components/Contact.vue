@@ -25,7 +25,7 @@ export default {
     <v-container fluid class="contact">
         <v-row>
             <v-col cols="12">
-                <div class="contact-title">Contact Me</div>
+                <div class="contact-title">Contact</div>
             </v-col>
             <v-col cols="12" lg="4" class="px-4">
                 <div class="contact-emails">

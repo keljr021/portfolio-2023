@@ -99,7 +99,7 @@ li {
 
 .work-subtitle {
     font-size: 18px;
-    padding: 30px 0;
+    padding: 10px 0;
 }
 
 .work-section {
