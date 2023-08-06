@@ -13,8 +13,8 @@ import * as directives from 'vuetify/directives'
 import '@mdi/font/css/materialdesignicons.css'
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/work', component: Work }
+  { path: '/', name: 'home', component: Home },
+  { path: '/work', name: 'work', component: Work }
 ];
 
 const router = createRouter({
