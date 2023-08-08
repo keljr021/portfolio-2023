@@ -67,7 +67,10 @@
 </template>
 
 <style scoped>
+:deep(.v-container) {
+  height: calc(100% -32px);
+}
 .scroll {
-  max-height: calc(600px - 32px);
+  max-height: calc(520px - 32px);
 }
 </style>
