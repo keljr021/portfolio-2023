@@ -52,28 +52,28 @@ export default {
             </v-col>
         </v-row>
         <v-row class="py-8" v-if="showItems === 'all' || showItems === 'ui'">
-            <v-col cols="4">
+            <v-col cols="6" sm="6" md="6" lg="4">
                 <work-list-item 
                     title="K&A Morrisey Cleaning Services" 
                     caption="A responsive website for the family janitorial business" 
                     :image="imgSrc('ka-full-2023.png')"
                     imageWidth="100%" />
             </v-col>
-            <v-col cols="4">
+            <v-col cols="6" sm="6" md="6" lg="4">
                 <work-list-item 
                     title="Torch Mentor Network" 
                     caption="A mobile app and website that connects students with mentors" 
                     :image="imgSrc('to-full.png')"
                     imageWidth="100%" />
             </v-col>
-            <v-col cols="4">
+            <v-col cols="6" sm="6" md="6" lg="4">
                 <work-list-item 
                     title="LemonBranch DIY Site" 
                     caption="A responsive website to search and view tutorials and how-tos" 
                     :image="imgSrc('lb-full.png')"
                     imageWidth="100%" />
             </v-col>
-            <v-col cols="4">
+            <v-col cols="6" sm="6" md="6" lg="4">
                 <work-list-item 
                     title="Rey's Restaurant App" 
                     caption="A menu app to streamline the ordering process" 
@@ -89,35 +89,35 @@ export default {
             </v-col>
         </v-row>
         <v-row class="py-8" v-if="showItems === 'all' || showItems === 'frontend'">
-            <v-col cols="4">
+            <v-col cols="6" sm="6" md="6" lg="4">
                 <work-list-item 
                     title="iFolio" 
                     caption="An online portfolio page to host images" 
                     :image="imgSrc('if-full.png')"
                     imageWidth="100%" />
             </v-col>
-            <v-col cols="4">
+            <v-col cols="6" sm="6" md="6" lg="4">
                 <work-list-item 
                     title="ScoreShots 2.0" 
                     caption="A platform to create and share infographics" 
                     :image="imgSrc('ss-full.png')"
                     imageWidth="100%" />
             </v-col>
-            <v-col cols="4">
+            <v-col cols="6" sm="6" md="6" lg="4">
                 <work-list-item 
                     title="Soccer for Success" 
                     caption="An e-learning platform for coaches and players" 
                     :image="imgSrc('s4s-alt.png')"
                     imageWidth="100%" />
             </v-col>
-            <v-col cols="4">
+            <v-col cols="6" sm="6" md="6" lg="4">
                 <work-list-item 
                     title="React Calculator" 
                     caption="A calculator component built with React JS" 
                     :image="imgSrc('react-full.png')"
                     imageHeight="300px" />
             </v-col>
-            <v-col cols="4">
+            <v-col cols="6" sm="6" md="6" lg="4">
                 <work-list-item 
                     title="Vue Calendar" 
                     caption="A calendar component built with Vue JS" 
