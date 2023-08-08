@@ -85,7 +85,7 @@ export default {
 
         <v-row v-if="showItems === 'all'">
             <v-col>
-                <div class="work-subtitle">Front-End</div>
+                <div class="work-subtitle">Front-End Development</div>
             </v-col>
         </v-row>
         <v-row class="py-8" v-if="showItems === 'all' || showItems === 'frontend'">
