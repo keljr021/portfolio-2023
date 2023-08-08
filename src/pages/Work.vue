@@ -1,39 +1,64 @@
 <script>
-  import WorkMenuItem from '@/components/partials/WorkMenuItem.vue';
+  import WorkTabs from '@/components/partials/WorkTabs.vue';
+  import WorkList from '@/components/partials/WorkList.vue';
+
   export default {
     name: 'Work',
     data() {
-      return {}
+      return {
+        menuArray: [
+            {
+                name: 'All',
+                value: 'all',
+                icon: 'mdi-view-grid'
+            },
+            {
+                name: 'UI/UX Design',
+                value: 'ui',
+                icon: 'mdi-folder-account'
+            },
+            {
+                name: 'Front-End',
+                value: 'frontend',
+                icon: 'mdi-code-tags'
+            },
+            {
+                name: 'Logos',
+                value: 'logos',
+                icon: 'mdi-drawing'
+            }
+        ],
+        selectedTab: 'all'
+      }
     },
     methods: {
+      setTab(input) {
+        this.selectedTab = input;
+      }
     },
     mounted() {
      
     },
     components: {
-      WorkMenuItem
+      WorkTabs,
+      WorkList
     }
 }
 </script>
 
 <template>
   <v-container fluid>
-    <v-spacer style="height:41.5px"></v-spacer>
-    
     <v-row>
       <v-col>
         <div class="work-title pa-4">Work</div>
       </v-col>
     </v-row>
     <v-row>
-      <v-col class="pa-8">
-        <work-menu-item icon="mdi-application-settings" name="Test" title="Design" />
+      <v-col cols="12" sm="12" md="2" lg="2">
+        <work-tabs :items="menuArray" @set-tab="setTab"/>  
       </v-col>
-      <v-col class="pa-8">
-        <work-menu-item icon="mdi-code-tags" name="Test" title="Development" />
-      </v-col>
-      <v-col class="pa-8">
-        <work-menu-item icon="mdi-drawing" name="Test" title="Logos" />
+      <v-col>
+        <work-list :tabs="menuArray" :showItems="selectedTab" />
       </v-col>
     </v-row>
   </v-container>
