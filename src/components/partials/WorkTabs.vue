@@ -29,13 +29,22 @@
             </template>
 
             <v-list>
-                <v-list-item
-                    v-for="(item, index) in menuArray"
-                    :key="index"
-                    >
-                    <v-list-item-title @click="this.tab = item.value">
-                        <v-icon start>{{ item.icon }}</v-icon>
-                        {{ item.name }}
+                <v-list-item>
+                    <v-list-item-title class="py-2" @click="this.tab = 'all'">
+                        <v-icon start>mdi-view-grid</v-icon>
+                        All
+                    </v-list-item-title>
+                    <v-list-item-title class="py-2" @click="this.tab = 'ui'">
+                        <v-icon start>mdi-folder-account</v-icon>
+                        UI/UX Design
+                    </v-list-item-title>
+                    <v-list-item-title class="py-2" @click="this.tab = 'frontend'">
+                        <v-icon start>mdi-code-tags</v-icon>
+                        Front-End
+                    </v-list-item-title>
+                    <v-list-item-title class="py-2" @click="this.tab = 'logos'">
+                        <v-icon start>mdi-drawing</v-icon>
+                        Logos
                     </v-list-item-title>
                 </v-list-item>
             </v-list>
@@ -50,20 +59,20 @@
             :color="selectedColor"
         >
             <v-tab value="all">
-            <v-icon start>mdi-view-grid</v-icon>
-            All
+                <v-icon start>mdi-view-grid</v-icon>
+                All
             </v-tab>
             <v-tab value="ui">
-            <v-icon start>mdi-folder-account</v-icon>
-            UI/UX Design
+                <v-icon start>mdi-folder-account</v-icon>
+                UI/UX Design
             </v-tab>
             <v-tab value="frontend">
-            <v-icon start>mdi-code-tags</v-icon>
-            Front-End
+                <v-icon start>mdi-code-tags</v-icon>
+                Front-End
             </v-tab>
             <v-tab value="logos">
-            <v-icon start>mdi-drawing</v-icon>
-            Logos
+                <v-icon start>mdi-drawing</v-icon>
+                Logos
             </v-tab>
         </v-tabs>
       </div>
@@ -78,7 +87,7 @@
 .mobile-button {
     position: fixed;
     left: 0;
-    top: 40%;
+    top: 15%;
     border: 2px solid #aaa;
     border-left: none;
     color: #aaa;
