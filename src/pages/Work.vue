@@ -58,11 +58,16 @@
         <work-tabs :items="menuArray" @set-tab="setTab"/>  
       </v-col>
       <v-col>
-        <work-list :tabs="menuArray" :showItems="selectedTab" />
+        <div class="scroll overflow-y-auto">
+          <work-list :showItems="selectedTab" />
+        </div>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
-<style>
+<style scoped>
+.scroll {
+  max-height: calc(600px - 32px);
+}
 </style>

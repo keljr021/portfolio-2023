@@ -2,11 +2,16 @@
   export default {
     name: 'WorkListItem',
     props: {
-      
+        type: String,
+        title: String,
+        caption: String,
+        image: String,
+        imageWidth: String,
+        imageHeight: String,
     },
     methods: {
         clickItem(input) {
-            console.log('clicked item: ', input);
+            console.log('clicked item: ', title);
         }
     }
 }
@@ -15,7 +20,7 @@
 <template>
   <v-card class="work-menu" @click="clickItem">
     <v-card-text class="text-center">
-        x
+        <v-img :width="imageWidth" :height="imageHeight" :src="image"/>
     </v-card-text>
   </v-card>
 </template>

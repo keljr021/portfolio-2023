@@ -10,18 +10,10 @@
     emits: [
         'set-tab'
     ],
-    methods: {
-
-    },
     watch: {
         tab(newVal, oldVal) {
             if (oldVal !== newVal) this.$emit('set-tab', newVal);
         }
-    },
-    mounted() {
-     
-    },
-    components: {
     }
 }
 </script>
@@ -65,7 +57,7 @@
             <v-icon start>mdi-folder-account</v-icon>
             UI/UX Design
             </v-tab>
-            <v-tab value="front">
+            <v-tab value="frontend">
             <v-icon start>mdi-code-tags</v-icon>
             Front-End
             </v-tab>
