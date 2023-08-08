@@ -51,4 +51,8 @@
 .list-item-text {
     width: 300px;
 }
-</style>
+
+:deep(.v-overlay__scrim) {
+    opacity: 0.65;
+}
+</style> 
