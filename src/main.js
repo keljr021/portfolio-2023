@@ -3,6 +3,7 @@ import App from './App.vue';
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
 import Home from './pages/Home.vue'
 import Work from './pages/Work.vue'
+import View from './pages/View.vue'
 
 // Vuetify
 import 'vuetify/styles'
@@ -14,7 +15,8 @@ import '@mdi/font/css/materialdesignicons.css'
 
 const routes = [
   { path: '/', name: 'home', component: Home },
-  { path: '/work', name: 'work', component: Work }
+  { path: '/work', name: 'work', component: Work },
+  { path: '/view/:id', name: 'view', component: View }
 ];
 
 const router = createRouter({

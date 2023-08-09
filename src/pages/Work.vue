@@ -8,11 +8,6 @@
       return {
         menuArray: [
             {
-                name: 'All',
-                value: 'all',
-                icon: 'mdi-view-grid'
-            },
-            {
                 name: 'UI/UX Design',
                 value: 'ui',
                 icon: 'mdi-folder-account'
@@ -28,16 +23,14 @@
                 icon: 'mdi-drawing'
             }
         ],
-        selectedTab: 'all'
+        selectedTab: 'ui'
       }
     },
     methods: {
-      setTab(input) {
-        this.selectedTab = input;
-      }
+
     },
     mounted() {
-     
+
     },
     components: {
       WorkTabs,
@@ -55,11 +48,11 @@
     </v-row>
     <v-row>
       <v-col cols="12" sm="12" md="2" lg="2">
-        <work-tabs :items="menuArray" @set-tab="setTab"/>  
+        <work-tabs :tab="selectedTab" :items="menuArray" />  
       </v-col>
       <v-col>
         <div class="scroll overflow-y-auto">
-          <work-list :showItems="selectedTab" />
+          <work-list :tab="selectedTab" />
         </div>
       </v-col>
     </v-row>

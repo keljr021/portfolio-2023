@@ -3,17 +3,26 @@
     name: 'WorkTabs',
     data() {
       return {
-        tab: 'all',
-        selectedColor: '#18184d'
+        selectedColor: '#18184d',
+        selectedTab: 'ui'
       }
     },
     emits: [
         'set-tab'
     ],
+    props: {
+        tab: {
+            type: String,
+            default: 'ui'
+        }
+    },
     watch: {
-        tab(newVal, oldVal) {
+        selectedTab(newVal, oldVal) {
             if (oldVal !== newVal) this.$emit('set-tab', newVal);
         }
+    },
+    mounted() {
+        this.selectedTab = this.tab;
     }
 }
 </script>
@@ -30,19 +39,15 @@
 
             <v-list>
                 <v-list-item>
-                    <v-list-item-title class="py-2" @click="this.tab = 'all'">
-                        <v-icon start>mdi-view-grid</v-icon>
-                        All
-                    </v-list-item-title>
-                    <v-list-item-title class="py-2" @click="this.tab = 'ui'">
+                    <v-list-item-title class="py-2" @click="this.selectedTab = 'ui'">
                         <v-icon start>mdi-folder-account</v-icon>
                         UI/UX Design
                     </v-list-item-title>
-                    <v-list-item-title class="py-2" @click="this.tab = 'frontend'">
+                    <v-list-item-title class="py-2" @click="this.selectedTab = 'frontend'">
                         <v-icon start>mdi-code-tags</v-icon>
                         Front-End
                     </v-list-item-title>
-                    <v-list-item-title class="py-2" @click="this.tab = 'logos'">
+                    <v-list-item-title class="py-2" @click="this.selectedTab = 'logos'">
                         <v-icon start>mdi-drawing</v-icon>
                         Logos
                     </v-list-item-title>
@@ -54,14 +59,10 @@
     <!-- Desktop tabs -->
     <div v-else>
         <v-tabs
-            v-model="tab"
+            v-model="selectedTab"
             direction="vertical"
             :color="selectedColor"
         >
-            <v-tab value="all">
-                <v-icon start>mdi-view-grid</v-icon>
-                All
-            </v-tab>
             <v-tab value="ui">
                 <v-icon start>mdi-folder-account</v-icon>
                 UI/UX Design

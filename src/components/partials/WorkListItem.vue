@@ -7,6 +7,7 @@
         }
     },
     props: {
+        linkId: String,
         type: String,
         title: String,
         caption: String,
@@ -20,14 +21,15 @@
         },
 
         clickItem() {
-            console.log('clicked item: ', this.title);
+            console.log('clicked item: ', this.linkId);
+            this.$router.push({ name: 'view', params: { id: this.linkId } })
         }
     }
 }
 </script>
 
 <template>
-  <v-card height="200" @click="clickItem" @mouseover="hoverItem(true)" @mouseleave="hoverItem(false)">
+  <v-card height="200" class="mb-8" @click="clickItem" @mouseover="hoverItem(true)" @mouseleave="hoverItem(false)">
     <v-card-text class="pa-0 ma-0">
         <v-img :width="imageWidth" :height="imageHeight" :src="image"/>
 
