@@ -47,8 +47,6 @@
 
 <template>
   <Cta @scrollTo="scrollTo" :navItems="navItems" :socialIconsArray="socialIconsArray"/>
-  <Work />
-  <About />
   <Contact :socialIconsArray="socialIconsArray" />
   <Footer />
 </template>

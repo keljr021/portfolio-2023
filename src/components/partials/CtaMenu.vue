@@ -8,14 +8,12 @@ export default {
         'scrollTo'
     ],
     computed: {
-        ctaNavItems() {
-           return this.navItems.filter(items => items.text !== 'Home');
-        }
+
     },
     methods: {
-        scrollTo(input) {
-            this.$emit('scrollTo', input)
-        }
+        // scrollTo(input) {
+        //     this.$emit('scrollTo', input)
+        // }
     }
 }
 </script>
@@ -23,7 +21,10 @@ export default {
 <template>
     <div class="cta-menu text-right">
         <div class="cta-menu-box">
-            <div class="cta-menu-item" v-for="navItem in ctaNavItems" @click="scrollTo(navItem.className)"><span>{{ navItem.text }}</span></div>
+            <div class="cta-menu-item" @click="$router.push({ name: 'work' })"><span>Work</span></div>
+            <div class="cta-menu-item" @click="$router.push({ name: 'about' })"><span>About</span></div>
+            <div class="cta-menu-item" @click="$router.push({ name: 'contact' })"><span>Contact</span></div>
+            <a class="cta-menu-item" @click="window.open('https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=sharing', '_blank');"><span>Resume</span></a>
         </div>
     </div>
 </template>

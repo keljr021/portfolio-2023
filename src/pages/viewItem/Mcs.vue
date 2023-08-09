@@ -65,8 +65,145 @@
     </v-col>   
   </v-row>
 
+  <div class="work-text">
+    <v-row style="background: #ccc" class="work-text-section">
+      <v-col offset-xs="1" offset-sm="1" offset-md="1" offset="2" xs="10" sm="10" md="10" cols="8">
+        <div class="work-text-title">Background</div>
+
+        <v-row>
+          <v-col>
+            <p>
+              My father and my grandfather taught me the value of hard work at a very early age. They have both instilled a strong work-ethic that I hold onto this day. When he talked about having a website for his new business, I immediately jumped on the project without hesitation.
+            </p>
+            <p>
+              K&A Morrisey Cleaning Services is a commercial janitorial business that is local to Sampson County. This site is a redesign of the previous website using the UX design principles learned.
+            </p>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <p><b>Problem</b></p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>
+          </v-col>
+          <v-col>
+            <p><b>Goal</b></p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>
+          </v-col>
+        </v-row>
+
+      </v-col>
+    </v-row>
 
 
+    <v-row style="background: #eee" class="work-text-section">
+      <v-col offset-xs="1" offset-sm="1" offset-md="1" offset="2" xs="10" sm="10" md="10" cols="8">
+        <div class="work-text-title">Defining the User</div>
+
+        <v-row>
+          <v-col cols="12" xs="12" sm="12" md="12" lg="6">
+            <p><b>Persona</b></p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>
+          </v-col>
+          <v-col cols="12" xs="12" sm="12" md="12" lg="6">
+            <p>&nbsp;</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>
+          </v-col>
+          <v-col cols="12" xs="12" sm="12" md="12" lg="6">
+            <p><b>User Map Summary</b></p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>
+          </v-col>
+          <v-col cols="12" xs="12" sm="12" md="12" lg="6">
+            <p>&nbsp;</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>
+          </v-col>
+        </v-row>
+
+      </v-col>
+    </v-row>
+
+
+    <v-row style="background: #ccc" class="work-text-section">
+      <v-col offset-xs="1" offset-sm="1" offset-md="1" offset="2" xs="10" sm="10" md="10" cols="8">
+        <div class="work-text-title">Solutioning</div>
+
+        <v-row>
+          <v-col cols="12" xs="12" sm="12" md="12" lg="12">
+            <p><b>Wireframes</b></p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>
+          </v-col>
+
+          <v-col cols="12" xs="12" sm="12" md="12" lg="12">
+            <p><b>Logo</b></p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>
+          </v-col>
+
+          <v-col cols="12" xs="12" sm="12" md="12" lg="12">
+            <p><b>Usability Study</b></p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>
+          </v-col>
+        </v-row>
+
+      </v-col>
+    </v-row>
+
+
+    <v-row style="background: #eee" class="work-text-section">
+      <v-col offset-xs="1" offset-sm="1" offset-md="1" offset="2" xs="10" sm="10" md="10" cols="8">
+        <div class="work-text-title">Results</div>
+
+        <v-row>
+          <v-col cols="12" xs="12" sm="12" md="12" lg="12">
+            <p><b>Mockups</b></p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>
+          </v-col>
+        </v-row>
+
+      </v-col>
+    </v-row>
+
+
+    <v-row class="work-text-section">
+      <v-col offset-xs="1" offset-sm="1" offset-md="1" offset="2" xs="10" sm="10" md="10" cols="8">
+        <div class="work-text-title">Takeaways</div>
+
+        <v-row>
+          <v-col cols="12" xs="12" sm="12" md="12" lg="6">
+            <p><b>Lessons Learned</b></p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>
+          </v-col>
+          <v-col cols="12" xs="12" sm="12" md="12" lg="6">
+            <p><b>Next Steps</b></p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>
+          </v-col>
+        </v-row>
+
+      </v-col>
+    </v-row>
+  </div>
 </template>
 
 <style scoped>

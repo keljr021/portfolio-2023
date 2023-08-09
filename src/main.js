@@ -13,10 +13,14 @@ import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import '@mdi/font/css/materialdesignicons.css'
 
+const TestComp = { template: `<p>Test component here.</p>` };
+
 const routes = [
   { path: '/', name: 'home', component: Home },
   { path: '/work', name: 'work', component: Work },
-  { path: '/view/:id', name: 'view', component: View }
+  { path: '/view/:id', name: 'view', component: View },
+  { path: '/about', name: 'about', component: TestComp },
+  { path: '/contact', name: 'contact', component: TestComp },
 ];
 
 const router = createRouter({
