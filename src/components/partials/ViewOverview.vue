@@ -1,0 +1,40 @@
+<script>
+  export default {
+    name: 'ViewOverview',
+    props: {
+        backgroundColor: {
+            type: String,
+            default: '#ccc'
+        }
+    }
+}
+</script>
+
+<template>
+    <v-row class="view-text-overview">
+        <v-col offset-xs="1" offset-sm="1" offset-md="1" offset="2" xs="10" sm="10" md="10" cols="8">
+            <v-row class="py-8">
+                <v-col>
+                    <slot name="overview"></slot>
+                </v-col>
+                <v-col>
+                    <slot name="image"></slot>
+                </v-col>
+            </v-row>
+            <v-row class="py-8">
+                <v-col>
+                    <div class="view-text-section-title">Problem</div>
+                    <p>
+                        <slot name="problem"></slot>
+                    </p>
+                </v-col>
+                <v-col>
+                    <div class="view-text-section-title">Goal</div>
+                    <p>
+                        <slot name="goal"></slot>
+                    </p>
+                </v-col>
+            </v-row>
+        </v-col>
+    </v-row>
+</template>

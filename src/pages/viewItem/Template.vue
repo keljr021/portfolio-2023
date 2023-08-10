@@ -40,7 +40,7 @@
 
 <template>
   <view-title-banner 
-    :backgroundColor="primaryColor"
+    :primaryColor="primaryColor"
     title="K&A Morrisey Cleaning Services"
     subtitle="A responsive website for the family janitorial business"
     prototypeUrl="https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/ka-clean.com?type=design&node-id=86-243&scaling=scale-down&page-id=86%3A130&starting-point-node-id=86%3A243"
@@ -97,21 +97,23 @@
     <view-define>
       <template #persona1>
         <p>
-          <b>Eric Robinson</b> is a business owner of a masonry company in Roseboro, NC. He is looking for a janitorial business to clean and maintain the corporate offices daily, with occasional work on the weekends.
-        </p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>
       </template>
       <template #persona2>
-        <v-img width="100%" :src="imgSrc('ka-persona.png')" />
+        <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>
       </template>
       <template #user1>
-        <v-img width="100%" :src="imgSrc('ka-usermap.png')" />
+        <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>
       </template>
       <template #user2>
-        <ol>
-          <li>Ensure that online search engines can find their business website</li>
-          <li>Add a professional email and/or phone number</li>
-          <li>Notify the user when the Contact Form has been sent and received</li>
-        </ol>
+        <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>
       </template>
     </view-define>
 
@@ -123,32 +125,29 @@
 
     <view-solution>
       <template #wireframes>
-        <v-row class="py-8">
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('ka-dframe1.png')" />
-          </v-col>
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('ka-dframe2.png')" />
-          </v-col>
-        </v-row>
-        <v-row class="py-8">  
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('ka-dframe3.png')" />
-          </v-col>
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('ka-dframe4.png')" />
-          </v-col>
-        </v-row>
+        <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>
+      </template>
+      <template #logo1>
+        <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>        
+      </template>
+      <template #logo2>
+        <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>        
       </template>
       <template #usability1>
-        <v-img class="mx-auto" width="80%" :src="imgSrc('ka-study.png')" />
+        <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>        
       </template>
       <template #usability2>
-        <ul>
-          <li>The Contact and Contact Form links was confusing to end users finding Contact information. Both links needs to be revised</li>
-          <li>The Contact information needs to be easily accessed</li>
-          <li>The scrolling from the prototype did not scroll to the correct sections, and needed to be corrected in the mockups</li>
-        </ul>      
+        <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>        
       </template>
     </view-solution>
 
@@ -159,31 +158,10 @@
     </v-row>
 
     <view-results>
-      <template #logo1>
-        <v-img height="150" :src="imgSrc('logo-ka-2023.png')" />
-      </template>
-      <template #logo2>
+      <template name="mockups">
         <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
-            </p>        
-      </template>
-      <template #mockups>
-        <v-row class="py-8">
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-              <v-img width="90%" :src="imgSrc('ka-mock1.png')" />
-            </v-col>
-            <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-              <v-img width="90%" :src="imgSrc('ka-mock2.png')" />
-            </v-col>
-        </v-row>
-        <v-row class="py-8"> 
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('ka-mock3.png')" />
-          </v-col>
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('ka-mock4.png')" />
-          </v-col>
-        </v-row>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+        </p>
       </template>
     </view-results>
      
@@ -196,21 +174,13 @@
     <view-takeaways>
       <template #lessons>
         <p>
-          From this project I have gained experience in user interviews and incorporating client feedback within mockups and prototypes.
-        </p>
-        <p>
-          With Figma, I have learned how to create multiple instances of the site to simulate on and off states of components. This is shown in the fixed footer options from the high fidelity prototypes. I have also discovered how to add overlays with colors above images. Both will give a wider variety of options in Figma for future projects.
-        </p>
-        <p>
-          Lastly, I ensured that the colors used will comply with WCAG guidelines for accessibility by using the WebAIM contrast checker.
-        </p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>
       </template>
       <template #next>
-        <ol>
-          <li>I would add a Gallery of Work section for potential clients to see before and after steps of the services provided.</li>
-          <li>I would add a Testimonials section for clients to add positive reviews of the work that K&A Services provide.</li>
-          <li>For the site, I would improve SEO and add domains from a development standpoint to ensure users can get to the site seamlessly.</li>
-        </ol>        
+        <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+            </p>        
       </template>
     </view-takeaways>
 
