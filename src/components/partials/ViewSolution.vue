@@ -32,11 +32,11 @@
         </v-row>
         
         <v-row class="py-8">
-          <v-col>
+          <v-col cols="5">
             <div class="view-text-section-title">Usability Study</div>
             <slot name="usability1"></slot>
           </v-col>
-          <v-col>
+          <v-col offset="1">
             <p><b>&nbsp;</b></p>
             <slot name="usability2"></slot>
           </v-col>

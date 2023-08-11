@@ -25,13 +25,13 @@
         <div class="view-text-title">Define</div>
 
         <v-row class="py-8">
-          <v-col cols="12" xs="12" sm="12" md="12" lg="6">
+          <v-col cols="12" xs="12" sm="12" md="12" lg="5">
             <div class="view-text-section-title">Persona</div>
             <p>
                 <slot name="persona1"></slot>
             </p>
           </v-col>
-          <v-col cols="12" xs="12" sm="12" md="12" lg="6">
+          <v-col cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
             <p>&nbsp;</p>
             <p>
                 <slot name="persona2"></slot>
@@ -39,13 +39,13 @@
           </v-col>
         </v-row>
         <v-row class="py-8">
-          <v-col cols="12" xs="12" sm="12" md="12" lg="6">
+          <v-col cols="12" xs="12" sm="12" md="12" lg="5">
             <div class="view-text-section-title">User Map</div>
             <p>
               <slot name="user1"></slot>
             </p>
           </v-col>
-          <v-col cols="12" xs="12" sm="12" md="12" lg="6">
+          <v-col cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
             <p>&nbsp;</p>
             <p>
                 <slot name="user2"></slot>
@@ -55,6 +55,3 @@
       </v-col>
     </v-row>
 </template>
-
-<style lang="scss">
-</style>

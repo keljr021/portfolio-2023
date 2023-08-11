@@ -62,7 +62,7 @@
     </template>
   </view-title-banner>
 
-  <div class="view-text">
+  <div class="view-text" :style="{ 'border-bottom': '2px solid' + primaryColor }">
     <view-overview>
       <template #overview>
         <p>
@@ -84,7 +84,7 @@
         </ul>
       </template>
       <template #image>
-        <v-img class="mx-0" height="500" :src="imgSrc('work/ka-mobile.png')" />
+        <v-img class="mx-0" height="480" :src="imgSrc('work/ka-mobile.png')" />
       </template>
     </view-overview>
 

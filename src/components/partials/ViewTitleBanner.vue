@@ -42,49 +42,49 @@
             <div class="view-header-title">{{ title }}</div>
             <div class="view-header-text">
                 <v-row class="pa-3">
-                <v-col>
-                    <div class="view-header-text-title">Role</div>
-                    <div class="view-header-text-desc">
-                        <slot name="role"></slot>
-                    </div>
-                </v-col>
-                <v-col>
-                    <div class="view-header-text-title">Client</div>
-                    <div class="view-header-text-desc">
-                        <slot name="client"></slot>
-                    </div>
-                </v-col>
-            </v-row>
-            <v-row class="pa-3">
-                <v-col>
-                    <div class="view-header-text-title">Tools Used</div>
-                    <div class="view-header-text-desc">
-                        <slot name="tools"></slot>
-                    </div>
-                </v-col>
-                <v-col>
-                    <div class="view-header-text-title">Project Date</div>
-                    <div class="view-header-text-desc">
-                        <slot name="date"></slot>
-                    </div>
-                </v-col>
-            </v-row>
-            <v-row class="pa-3">
-                <v-col>
-                    <v-btn v-if="prototypeUrl" size="small" class="text-normal px-3 mr-6" variant="outlined" :href="prototypeUrl">
-                        <v-icon class="mr-2">mdi-open-in-new</v-icon>
-                        Prototype
-                    </v-btn>
-                    <v-btn v-if="siteUrl" size="small" class="text-normal px-3 mr-6" variant="outlined" :href="siteUrl">
-                        <v-icon class="mr-2">mdi-link</v-icon>
-                        Live Site
-                    </v-btn>
-                    <v-btn v-if="caseStudyUrl" size="small" class="text-normal px-3" variant="outlined" :href="caseStudyUrl">
-                        <v-icon class="mr-2">mdi-presentation</v-icon>
-                        Case Study PPT
-                    </v-btn>
-                </v-col>
-            </v-row>
+                    <v-col>
+                        <div class="view-header-text-title">Role</div>
+                        <div class="view-header-text-desc">
+                            <slot name="role"></slot>
+                        </div>
+                    </v-col>
+                    <v-col>
+                        <div class="view-header-text-title">Client</div>
+                        <div class="view-header-text-desc">
+                            <slot name="client"></slot>
+                        </div>
+                    </v-col>
+                </v-row>
+                <v-row class="pa-3">
+                    <v-col>
+                        <div class="view-header-text-title">Tools Used</div>
+                        <div class="view-header-text-desc">
+                            <slot name="tools"></slot>
+                        </div>
+                    </v-col>
+                    <v-col>
+                        <div class="view-header-text-title">Project Date</div>
+                        <div class="view-header-text-desc">
+                            <slot name="date"></slot>
+                        </div>
+                    </v-col>
+                </v-row>
+                <v-row class="pa-3">
+                    <v-col>
+                        <v-btn v-if="prototypeUrl" size="small" class="text-normal px-3 mr-6" variant="outlined" :href="prototypeUrl">
+                            <v-icon class="mr-2">mdi-open-in-new</v-icon>
+                            Prototype
+                        </v-btn>
+                        <v-btn v-if="siteUrl" size="small" class="text-normal px-3 mr-6" variant="outlined" :href="siteUrl">
+                            <v-icon class="mr-2">mdi-link</v-icon>
+                            Live Site
+                        </v-btn>
+                        <v-btn v-if="caseStudyUrl" size="small" class="text-normal px-3" variant="outlined" :href="caseStudyUrl">
+                            <v-icon class="mr-2">mdi-presentation</v-icon>
+                            Case Study PPT
+                        </v-btn>
+                    </v-col>
+                </v-row>
             </div>
         </v-col>
         <v-col class="my-auto">

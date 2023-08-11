@@ -22,13 +22,13 @@
                 </v-col>
             </v-row>
             <v-row class="py-8">
-                <v-col>
+                <v-col cols="5">
                     <div class="view-text-section-title">Problem</div>
                     <p>
                         <slot name="problem"></slot>
                     </p>
                 </v-col>
-                <v-col>
+                <v-col offset="1">
                     <div class="view-text-section-title">Goal</div>
                     <p>
                         <slot name="goal"></slot>

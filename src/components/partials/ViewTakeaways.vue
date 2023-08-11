@@ -25,11 +25,11 @@
         <div class="view-text-title">Takeaways</div>
 
         <v-row class="py-8">
-          <v-col>
+          <v-col cols="5">
             <div class="view-text-section-title">Lessons Learned</div>
             <slot name="lessons"></slot>
           </v-col>
-          <v-col>
+          <v-col offset="1">
             <div class="view-text-section-title">Next Steps</div>
             <slot name="next"></slot>
           </v-col>
