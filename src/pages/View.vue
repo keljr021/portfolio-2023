@@ -1,6 +1,13 @@
 <script>
   import Mcs from './viewItem/Mcs.vue';
   import Torch from './viewItem/Torch.vue';
+  import Lemon from './viewItem/Lemon.vue';
+  import Reys from './viewItem/Reys.vue';
+  import Ifolio from './viewItem/Ifolio.vue';
+  import Ss from './viewItem/Ss.vue';
+  import S4s from './viewItem/S4s.vue';
+  import React from './viewItem/React.vue';
+  import Vue from './viewItem/Vue.vue';
   export default {
     name: 'View',
     data() {
@@ -9,11 +16,12 @@
           'mcs',
           'torch',
           'lemon',
+          'reys',
           'ifolio',
           'ss',
           's4s',
-          'vue',
-          'react'
+          'react',
+          'vue'
         ],
         previousView: null,
         nextView: null
@@ -54,7 +62,14 @@
     },
     components: {
       Mcs,
-      Torch
+      Torch,
+      Lemon,
+      Reys,
+      Ifolio,
+      Ss,
+      S4s,
+      React,
+      Vue
     }
 }
 </script>
@@ -73,6 +88,14 @@
     <div>
       <mcs @set-image="imgSrc" v-if="$route.params.id === 'mcs'" primaryColor="#464da0" secondaryColor="#1d2352"/>
       <torch @set-image="imgSrc" v-if="$route.params.id === 'torch'" primaryColor="#993838" secondaryColor="#584fc4"/>
+      <lemon @set-image="imgSrc" v-if="$route.params.id === 'lemon'" primaryColor="#008C73" secondaryColor="#918b49"/>
+      <reys @set-image="imgSrc" v-if="$route.params.id === 'reys'" primaryColor="#005031" secondaryColor="#933c1f"/>
+
+      <ifolio @set-image="imgSrc" v-if="$route.params.id === 'ifolio'" primaryColor="#3e2963" secondaryColor="#4d7599"/>
+      <ss @set-image="imgSrc" v-if="$route.params.id === 'ss'" primaryColor="#29414d" secondaryColor="#48ab61"/>
+      <s4s @set-image="imgSrc" v-if="$route.params.id === 's4s'" primaryColor="#2d3b66" secondaryColor="#8f3535"/>
+      <react @set-image="imgSrc" v-if="$route.params.id === 'react'" />
+      <vue @set-image="imgSrc" v-if="$route.params.id === 'vue'" />
     </div>
 
     <v-row justify="space-between" class="pa-2">
@@ -107,6 +130,11 @@
 .view-header-image {
   width: 75%;
   margin: 0 12.5%;
+
+  &.mobile {
+    width: initial;
+    max-height: 380px;
+  }
 }
 
 .view-header-text {

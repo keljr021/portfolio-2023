@@ -71,7 +71,7 @@ export default {
                     color="#008C73"
                     linkId="lemon"
                     title="LemonBranch DIY Site" 
-                    caption="A responsive website to search and view tutorials and how-tos" 
+                    caption="A responsive site to view tutorials and how-tos" 
                     :desktopImg="imgSrc('work/lb-desktop.png')"
                     :mobileImg="imgSrc('work/lb-mobile.png')"
                     :imageHeight="cardHeight" />

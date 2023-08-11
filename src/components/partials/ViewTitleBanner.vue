@@ -22,7 +22,11 @@
         prototypeUrl: String,
         siteUrl: String,
         caseStudyUrl: String,
-        imageSrc: String
+        imageSrc: String,
+        isMobileImg: {
+            type: Boolean,
+            default: false
+        }
     },
     methods: {
 
@@ -87,8 +91,14 @@
                 </v-row>
             </div>
         </v-col>
-        <v-col class="pa-0 my-auto">
-            <img :src="imageSrc" class="view-header-image" />
+        <v-col :class="{
+            'pa-0 my-auto': true,
+            'text-center': isMobileImg
+        }">
+            <img :src="imageSrc" :class="{
+                'view-header-image': true,
+                'mobile': isMobileImg
+            }" />
         </v-col>   
     </v-row>
 </template>
