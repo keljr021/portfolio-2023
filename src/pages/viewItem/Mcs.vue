@@ -46,7 +46,7 @@
     prototypeUrl="https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/ka-clean.com?type=design&node-id=86-243&scaling=scale-down&page-id=86%3A130&starting-point-node-id=86%3A243"
     siteUrl="https://ka-clean.com/"
     caseStudyUrl="https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing"
-    :imageSrc="imgSrc('ka-full-2023.png')"
+    :imageSrc="imgSrc('work/ka-desktop.png')"
   >
     <template #role>
       UX Designer, Logo Designer, Developer
@@ -84,7 +84,7 @@
         </ul>
       </template>
       <template #image>
-        <v-img height="400" :src="imgSrc('reys-mock1.png')" />
+        <v-img class="mx-0" height="500" :src="imgSrc('work/ka-mobile.png')" />
       </template>
     </view-overview>
 

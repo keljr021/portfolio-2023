@@ -64,6 +64,6 @@
   height: calc(100% -32px);
 }
 .scroll {
-  max-height: calc(520px - 32px);
+  max-height: calc(85vh - 32px);
 }
 </style>

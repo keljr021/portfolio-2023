@@ -102,7 +102,8 @@
 }
 
 .view-header-image {
-  width: 100%;
+  width: 75%;
+  margin: 0 12.5%;
 }
 
 .view-header-text {

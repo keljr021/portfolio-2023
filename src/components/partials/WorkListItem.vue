@@ -7,11 +7,17 @@
         }
     },
     props: {
+        color: {
+            type: String,
+            default: '#333'
+        },
         linkId: String,
         type: String,
         title: String,
         caption: String,
         image: String,
+        desktopImg: String,
+        mobileImg: String,
         imageWidth: String,
         imageHeight: String,
     },
@@ -28,31 +34,43 @@
 }
 </script>
 
-<template>
-  <v-card height="200" class="mb-8" @click="clickItem" @mouseover="hoverItem(true)" @mouseleave="hoverItem(false)">
-    <v-card-text class="pa-0 ma-0">
-        <v-img :width="imageWidth" :height="imageHeight" :src="image"/>
-
-        <v-overlay
-          v-model="overlay"
-          class="align-center justify-center"
-          scrim="#18184d"
-          contained>
-            <div class='list-item-text text-white text-left pa-3'>
-                <div class="list-item-text-title py-2 font-weight-bold">{{ title }}</div>
-                <div class="list-item-text-caption">{{ caption }}</div>
-            </div>
-        </v-overlay>
-
-       
-    </v-card-text>
-  </v-card>
+<template>  
+    <v-card flat class="list-item w-100" :style="{ 'border-bottom': '2px solid' + color }" @click="clickItem" @mouseover="hoverItem(true)" @mouseleave="hoverItem(false)">
+        <v-row justify="center">
+            <v-col cols="5" class="list-item-text my-auto">
+                <div class="list-item-text-title py-1" :style="{ 'color': color }">{{ title }}</div>
+                <div class="list-item-text-caption py-1">{{ caption }}</div>
+            </v-col>
+            <v-col v-if="desktopImg" class="ma-auto">
+                <v-img class="mx-auto" width="400" :src="desktopImg" />
+            </v-col>
+            <v-col v-if="mobileImg" class="ma-auto">
+                <v-img class="mx-auto" height="250" :src="mobileImg" />
+            </v-col>
+        </v-row>
+    </v-card>
 </template>
 
 <style scoped lang="scss">
-.list-item-text {
-    width: 300px;
+.list-item {
+    width: 100%;
+    padding: 40px 0;
+    margin: 20px 0;
+    cursor: pointer;
 }
+
+.list-item-text {
+    padding-left: 30px;
+    .list-item-text-title {
+        font-size: 22px;
+    }
+
+    .list-item-text-caption {
+        font-size: 16px;
+    }
+}
+
+
 
 :deep(.v-overlay__scrim) {
     opacity: 0.65;
