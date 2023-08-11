@@ -87,7 +87,7 @@
                 </v-row>
             </div>
         </v-col>
-        <v-col class="my-auto">
+        <v-col class="pa-0 my-auto">
             <img :src="imageSrc" class="view-header-image" />
         </v-col>   
     </v-row>

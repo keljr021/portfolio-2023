@@ -25,11 +25,11 @@
         <div class="view-text-title">Results</div>
 
         <v-row class="py-8">
-          <v-col cols="5">
+          <v-col cols="5" class="my-auto">
             <div class="view-text-section-title">Logo</div>
             <slot name="logo1"></slot>
           </v-col>
-          <v-col offset="1">
+          <v-col offset="1" class="my-auto">
             <p><b>&nbsp;</b></p>
             <slot name="logo2"></slot>
           </v-col>

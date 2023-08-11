@@ -1,5 +1,6 @@
 <script>
   import Mcs from './viewItem/Mcs.vue';
+  import Torch from './viewItem/Torch.vue';
   export default {
     name: 'View',
     data() {
@@ -52,7 +53,8 @@
       this.setNextView(to.params.id);
     },
     components: {
-      Mcs
+      Mcs,
+      Torch
     }
 }
 </script>
@@ -68,8 +70,9 @@
       </v-col>
     </v-row>
     
-    <div class="py-3">
+    <div>
       <mcs @set-image="imgSrc" v-if="$route.params.id === 'mcs'" primaryColor="#464da0" secondaryColor="#1d2352"/>
+      <torch @set-image="imgSrc" v-if="$route.params.id === 'torch'" primaryColor="#993838" secondaryColor="#584fc4"/>
     </div>
 
     <v-row justify="space-between" class="pa-2">
@@ -98,7 +101,7 @@
 
 .view-header-title {
   font-size: 36px;
-  padding: 20px 10px;
+  padding: 10px 20px;
 }
 
 .view-header-image {
@@ -108,7 +111,7 @@
 
 .view-header-text {
   font-size: 18px;
-  padding: 20px 0;
+  padding: 20px;
   opacity: 0.9;
 }
 

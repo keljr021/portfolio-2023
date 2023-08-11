@@ -7,7 +7,7 @@
   import ViewResults from '../../components/partials/ViewResults.vue';
   import ViewTakeaways from '../../components/partials/ViewTakeaways.vue';
   export default {
-    name: 'Mcs',
+    name: 'Torch',
     emits: [
       'set-image'
     ],
@@ -41,24 +41,24 @@
 <template>
   <view-title-banner 
     :backgroundColor="primaryColor"
-    title="K&A Morrisey Cleaning Services"
-    subtitle="A responsive website for the family janitorial business"
-    prototypeUrl="https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/ka-clean.com?type=design&node-id=86-243&scaling=scale-down&page-id=86%3A130&starting-point-node-id=86%3A243"
-    siteUrl="https://ka-clean.com/"
+    title="Torch Mentorship Network"
+    subtitle="A mobile app and website that connects students with mentors"
+    prototypeUrl="https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/to-clean.com?type=design&node-id=86-243&scaling=scale-down&page-id=86%3A130&starting-point-node-id=86%3A243"
+    siteUrl="https://to-clean.com/"
     caseStudyUrl="https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing"
-    :imageSrc="imgSrc('work/ka-desktop.png')"
+    :imageSrc="imgSrc('work/to-desktop.png')"
   >
     <template #role>
-      UX Designer, Logo Designer, Developer
+      UX Designer, Logo Designer
     </template>
     <template #client>
-      K&A Morrisey Cleaning Services
+      Torch Mentorship
     </template>
     <template #tools>
-      Figma, HTML, SASS, JavaScript, Vue JS, Vuetify
+      Figma, Inkscape
     </template>
     <template #date>
-      June 2019, Updated June 2023
+      Jan 2023
     </template>
   </view-title-banner>
 
@@ -66,25 +66,20 @@
     <view-overview>
       <template #overview>
         <p>
-          My father and my grandfather taught me the value of hard work at a very early age. They have both instilled a strong work-ethic that I hold onto this day. When he talked about having a website for his new business, I immediately jumped on the project without hesitation.
+           This project was to design both a mobile app and responsive website for a career mentorship service to help college graduates. Torch Mentorship Network is an online service that helps students connect with a mentor during their college studies.
         </p>
         <p>
-          K&A Morrisey Cleaning Services is a commercial janitorial business that is local to Sampson County. This site is a redesign of the previous website using the UX design principles learned.
+            The main idea of the project was a simple and intuitive online presence geared towards college students and experienced mentors.
         </p>
       </template>
       <template #problem>
-        K&A Morrisey Cleaning Services needs an online presence to advertise to potential customers in Sampson County. From viewing the previous web site, there were several opportunities to update and improve a potential customer's online experience.
+        Students find it frustrating to find mentorship opportunities. Often there are missed resources during college studies to connect with an experienced mentor in their field of study.
       </template>
       <template #goal>
-        Improve the user experience for their online site. The idea was to better showcase
-        <ul>
-          <li>The company janitorial services offered</li>
-          <li>The areas that the company will serve</li>
-          <li>A more streamlined way to contact the clients' business</li>
-        </ul>
+        Create both a dedicated mobile app and responsive web site that gives users easier options to connect with fellow mentors in their field of interest.
       </template>
       <template #image>
-        <v-img class="mx-0" height="480" :src="imgSrc('work/ka-mobile.png')" />
+        <v-img class="mx-0" height="480" :src="imgSrc('work/to-mobile.png')" />
       </template>
     </view-overview>
 
@@ -97,20 +92,20 @@
     <view-define>
       <template #persona1>
         <p>
-          <b>Eric Robinson</b> is a business owner of a masonry company in Roseboro, NC. He is looking for a janitorial business to clean and maintain the corporate offices daily, with occasional work on the weekends.
+            <b>Joseph Strawn</b> is an upcoming college graduate who wants to find a mentor to learn more about the radio communication field. However, he has a hard time navigating resources to find an experienced mentor.
         </p>
       </template>
       <template #persona2>
-        <v-img width="100%" :src="imgSrc('ka-persona.png')" />
+        <v-img width="100%" :src="imgSrc('to-persona.png')" />
       </template>
       <template #user1>
-        <v-img width="100%" :src="imgSrc('ka-usermap.png')" />
+        <v-img width="100%" :src="imgSrc('to-usermap.png')" />
       </template>
       <template #user2>
         <ol>
-          <li>Ensure that online search engines can find their business website</li>
-          <li>Add a professional email and/or phone number</li>
-          <li>Notify the user when the Contact Form has been sent and received</li>
+            <li>Creating an easy to navigate home page for desktop</li>
+            <li>Automatically add user's profile info into corresponding forms for quicker submission</li>
+            <li>Mentor availability status is kept up-to-date</li>
         </ol>
       </template>
     </view-define>
@@ -125,29 +120,29 @@
       <template #wireframes>
         <v-row class="py-8">
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('ka-dframe1.png')" />
+            <v-img width="90%" :src="imgSrc('to-dframe1.png')" />
           </v-col>
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('ka-dframe2.png')" />
+            <v-img width="90%" :src="imgSrc('to-dframe2.png')" />
           </v-col>
         </v-row>
         <v-row class="py-8">  
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('ka-dframe3.png')" />
+            <v-img width="90%" :src="imgSrc('to-dframe3.png')" />
           </v-col>
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('ka-dframe4.png')" />
+            <v-img width="90%" :src="imgSrc('to-dframe4.png')" />
           </v-col>
         </v-row>
       </template>
       <template #usability1>
-        <v-img class="mx-auto" width="80%" :src="imgSrc('ka-study.png')" />
+        <v-img class="mx-auto" width="80%" :src="imgSrc('to-study.png')" />
       </template>
       <template #usability2>
         <ul>
-          <li>The Contact and Contact Form links was confusing to end users finding Contact information. Both links needs to be revised</li>
-          <li>The Contact information needs to be easily accessed</li>
-          <li>The scrolling from the prototype did not scroll to the correct sections, and needed to be corrected in the mockups</li>
+            <li>The Mentor Search workflow was inconsistent between navigation and the headers.</li>
+            <li>Testers had difficulty navigating through each page during the workflow.</li>
+            <li>The Article page navigation confused a majority of the users and needed refactoring.</li>
         </ul>      
       </template>
     </view-solution>
@@ -160,7 +155,7 @@
 
     <view-results>
       <template #logo1>
-        <v-img height="150" :src="imgSrc('logo-ka-2023.png')" />
+        <v-img height="150" :src="imgSrc('logo-to-2023.png')" />
       </template>
       <template #logo2>
         <p>
@@ -170,18 +165,18 @@
       <template #mockups>
         <v-row class="py-8">
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-              <v-img width="90%" :src="imgSrc('ka-mock1.png')" />
+              <v-img width="90%" :src="imgSrc('to-mock1.png')" />
             </v-col>
             <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-              <v-img width="90%" :src="imgSrc('ka-mock2.png')" />
+              <v-img width="90%" :src="imgSrc('to-mock2.png')" />
             </v-col>
         </v-row>
         <v-row class="py-8"> 
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('ka-mock3.png')" />
+            <v-img width="90%" :src="imgSrc('to-mock3.png')" />
           </v-col>
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('ka-mock4.png')" />
+            <v-img width="90%" :src="imgSrc('to-mock4.png')" />
           </v-col>
         </v-row>
       </template>
@@ -196,20 +191,14 @@
     <view-takeaways>
       <template #lessons>
         <p>
-          From this project I have gained experience in user interviews and incorporating client feedback within mockups and prototypes.
-        </p>
-        <p>
-          With Figma, I have learned how to create multiple instances of the site to simulate on and off states of components. This is shown in the fixed footer options from the high fidelity prototypes. I have also discovered how to add overlays with colors above images. Both will give a wider variety of options in Figma for future projects.
-        </p>
-        <p>
-          Lastly, I ensured that the colors used will comply with WCAG guidelines for accessibility by using the WebAIM contrast checker.
+            I discovered a great insight on the importance of Information Architecture in web design. Creating an organized sitemap, and understanding how the data should be structured is critical when designing a new app or website.
         </p>
       </template>
       <template #next>
         <ol>
-          <li>I would add a Gallery of Work section for potential clients to see before and after steps of the services provided.</li>
-          <li>I would add a Testimonials section for clients to add positive reviews of the work that K&A Services provide.</li>
-          <li>For the site, I would improve SEO and add domains from a development standpoint to ensure users can get to the site seamlessly.</li>
+          <li>Design a responsive feel for tablet screens. Currently the above projects are only focused on mobile and desktop versions of the project.</li>
+          <li>I would add availability options to the mentor list and profile pages. This would give great insight to a fellow user looking for a mentor in their area.</li>
+          <li>I would attempt to merge the Mentor Form into a single form, rather than breaking it up into pieces. To do that, I would need to ensure that form validation is instant on each field to prevent excess scrolling to resolve invalid parameters.</li>
         </ol>        
       </template>
     </view-takeaways>

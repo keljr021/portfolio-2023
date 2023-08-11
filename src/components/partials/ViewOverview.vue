@@ -1,20 +1,14 @@
 <script>
   export default {
-    name: 'ViewOverview',
-    props: {
-        backgroundColor: {
-            type: String,
-            default: '#ccc'
-        }
-    }
+    name: 'ViewOverview'
 }
 </script>
 
 <template>
     <v-row class="view-text-overview">
         <v-col offset-xs="1" offset-sm="1" offset-md="1" offset="2" xs="10" sm="10" md="10" cols="8">
-            <v-row class="py-8">
-                <v-col>
+            <v-row justify="center" class="py-8">
+                <v-col class="my-auto">
                     <slot name="overview"></slot>
                 </v-col>
                 <v-col>
