@@ -4,7 +4,9 @@ export default {
     name: 'WorkList',
     data() {
       return {
-        cardHeight: '500px',
+        atUiTab: true,
+        atFrontendTab: false,
+        atLogoTab: false,
         logos: [
                 {
                     src: 'logo-to.png'
@@ -30,12 +32,27 @@ export default {
             ]
       }
     },
+    emits: [
+        'set-tab'
+    ],
     props: {
         tab: String
     },
     methods: {
         imgSrc(input) {
             return new URL(`../../assets/${input}`, import.meta.url).href;
+        },
+        onIntersect(isIntersected, entries, observer) {
+            console.log('isIntersected: ', isIntersected, ' entries: ', entries, ' observer: ', observer);
+            if (isIntersected) {
+                if (entries[0].target) {
+                    if (entries[0].target.id) {
+                        let elementId = entries[0].target.id;
+                        console.log(' - targeting: ', elementId);
+                        this.$emit('set-tab', elementId);
+                    }
+                }
+            }
         }
     },
     components: {
@@ -46,7 +63,7 @@ export default {
 
 <template>
     <v-container>
-        <v-row class="mb-15" justify="center">
+        <v-row id="ui" class="mb-15" justify="center" v-intersect="onIntersect">
             <v-col cols="10">
                 <work-list-item
                     color="#464da0"
@@ -87,7 +104,7 @@ export default {
             </v-col>
         </v-row>
 
-        <v-row class="mb-15" justify="center">
+        <v-row id="frontend" class="mb-15" justify="center" v-intersect="onIntersect">
             <v-col cols="10">
                 <work-list-item 
                     color="#464da0"
@@ -135,7 +152,7 @@ export default {
             </v-col>
         </v-row>
 
-        <v-row class="mb-15" justify="center">
+        <v-row id="logos" class="mb-15" justify="center" v-intersect="onIntersect">
             <v-col offset="1" cols="5" v-for="logo in logos">
                 <v-card width="100%" :min-height="$vuetify.display.xs ? 'auto' : 150" class="align-stretch d-flex mb-8">
                     <v-card-text class="align-start ma-auto">

@@ -19,10 +19,13 @@
     watch: {
         selectedTab(newVal, oldVal) {
             if (oldVal !== newVal) this.$emit('set-tab', newVal);
+        },
+        tab() {
+            this.selectedTab = this.tab;
         }
     },
     mounted() {
-        this.selectedTab = this.tab;
+        this.selectedTab = this.tab ? this.tab : 'ui';
     }
 }
 </script>
@@ -63,15 +66,15 @@
             direction="vertical"
             :color="selectedColor"
         >
-            <v-tab value="ui">
+            <v-tab value="ui" @click="this.$emit('scroll-to', 'ui')">
                 <v-icon start>mdi-folder-account</v-icon>
                 UI/UX Design
             </v-tab>
-            <v-tab value="frontend">
+            <v-tab value="frontend" @click="this.$emit('scroll-to', 'frontend')">
                 <v-icon start>mdi-code-tags</v-icon>
                 Front-End
             </v-tab>
-            <v-tab value="logos">
+            <v-tab value="logos" @click="this.$emit('scroll-to', 'logos')">
                 <v-icon start>mdi-drawing</v-icon>
                 Logos
             </v-tab>

@@ -47,6 +47,10 @@
         
         if (target !== null)
           this.nextView = this.viewIdArray[target];
+      },
+      goToView(viewId) {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant'});
+        this.$router.push({ name: 'view', params: { id: viewId } });
       }
     },
     created() {
@@ -100,13 +104,13 @@
 
     <v-row justify="space-between" class="pa-2">
       <v-col cols="12" xs="12" sm="12" md="12" lg="6">
-        <v-btn v-if="previousView !== null" class="px-3" variant="flat" :block="$vuetify.display.xs" :to="{ name: 'view', params: { id: previousView } }">
+        <v-btn v-if="previousView !== null" class="px-3" variant="flat" :block="$vuetify.display.xs" @click="goToView(previousView)">
             <v-icon class="mr-2">mdi-arrow-left</v-icon>
             Previous Item
         </v-btn>
       </v-col>
       <v-col cols="12" xs="12" sm="12" md="12" lg="6" class="text-right">
-        <v-btn v-if="nextView !== null" class="px-3" variant="flat" :block="$vuetify.display.xs" :to="{ name: 'view', params: { id: nextView } }">
+        <v-btn v-if="nextView !== null" class="px-3" variant="flat" :block="$vuetify.display.xs" @click="goToView(nextView)">
           Next Item
           <v-icon class="mr-2">mdi-arrow-right</v-icon>
         </v-btn>
