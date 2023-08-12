@@ -50,7 +50,7 @@
       <v-col cols="12" sm="12" md="2" lg="2">
         <work-tabs :tab="selectedTab" :items="menuArray" />  
       </v-col>
-      <v-col>
+      <v-col  cols="12" sm="12" md="9" lg="9">
         <div class="scroll overflow-y-auto">
           <work-list :tab="selectedTab" />
         </div>

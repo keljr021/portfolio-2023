@@ -16,11 +16,11 @@ export default {
     <div class="cta-text">
         <p>
             I'm interested in 
-            <span class="cta-link" @click="scrollTo('ui')">UI/UX design</span>, 
-            <span class="cta-link" @click="scrollTo('dev')">front-end development</span>, and 
-            <span class="cta-link" @click="scrollTo('logos')">logo design</span>. From writing notes to rough drafting ideas, my passion is to bring concepts to life.
+            <b>UI/UX design</b>, 
+            <b>front-end development</b>, and 
+            <b>logo design</b>. From writing notes to rough drafting ideas, my passion is to bring concepts to life.
         </p>
-        <p>Feel free to browse or <span class="cta-link" @click="scrollTo('contact')">drop a note</span> to chat more!</p>
+        <p>Feel free to browse or <router-link class="cta-link" :to="{ name: 'contact'}">drop a note</router-link> to chat more!</p>
     </div>
 </template>
 
@@ -36,12 +36,9 @@ export default {
         cursor: pointer;
         padding: 0 2px;
         font-weight: normal;
-        
-        &:hover {
-            color: #18184d;
-            text-decoration: underline;
-            opacity: 1;
-        }
+        color: #18184d;
+        text-decoration: underline;
+        opacity: 1;
     }
 }
 </style>

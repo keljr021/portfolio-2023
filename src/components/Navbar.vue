@@ -23,6 +23,9 @@ export default {
         toggleNavDrawer() {
             this.showNavDrawer = !this.showNavDrawer;
         },
+        openWindow(link) {
+            window.open(link, '_blank');
+        }
     },
     watch: {
         $route: function(to, from) {
@@ -56,7 +59,7 @@ export default {
                         <v-list-item title="Work" value="work" @click="$router.push({ name: 'work' })">Work</v-list-item>
                         <v-list-item title="About" value="about" @click="$router.push({ name: 'about' })">About</v-list-item>
                         <v-list-item title="Contact" value="contact" @click="$router.push({ name: 'contact' })">Contact</v-list-item>
-                        <v-list-item title="Resume" value="resume" @click="window.open('https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=drive_link', '_blank')">Resume</v-list-item>
+                        <v-list-item title="Resume" value="resume" @click="openWindow('https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=drive_link')">Resume</v-list-item>
                     </v-list>
                 </v-navigation-drawer>
             </v-col>
@@ -75,7 +78,7 @@ export default {
                 <span class="nav-item" @click="$router.push({ name: 'work' })">Work</span>
                 <span class="nav-item" @click="$router.push({ name: 'about' })">About</span>
                 <span class="nav-item" @click="$router.push({ name: 'contact' })">Contact</span>
-                <span class="nav-item" @click="window.open('https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=drive_link', '_blank')">Resume</span>
+                <span class="nav-item" @click="openWindow('https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=drive_link')">Resume</span>
             </v-col>
         </v-row>
     </div>

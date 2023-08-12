@@ -75,7 +75,7 @@
 </script>
 
 <template>
-  <v-container fluid class="px-0 ma-0">
+  <v-container fluid class="px-0 mx-0 mt-3 mb-0">
     <v-row class="px-2 py-3">
       <v-col>
         <v-btn class="px-3" variant="flat" :block="$vuetify.display.xs" :to="{ name: 'work' }">
@@ -117,7 +117,7 @@
 </template>
 
 <style scoped lang="scss">
-:deep(.v-container--fluid) {
+:deep(.v-container) {
   padding-top: 41.5px !important; 
   height: calc(100% - 73.5px) !important;
 }
