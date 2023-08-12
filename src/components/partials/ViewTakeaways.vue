@@ -5,7 +5,7 @@
       return {}
     },
     props: {
-        
+        caseStudyUrl: String
     },
     methods: {
 
@@ -28,6 +28,14 @@
           <v-col cols="5">
             <div class="view-text-section-title">Lessons Learned</div>
             <slot name="lessons"></slot>
+            <v-row>
+              <v-col>
+                <v-btn v-if="caseStudyUrl" size="small" class="text-normal px-3" variant="outlined" :href="caseStudyUrl">
+                    <v-icon class="mr-2">mdi-presentation</v-icon>
+                    Case Study PPT
+                </v-btn>
+              </v-col>
+            </v-row>
           </v-col>
           <v-col offset="1">
             <div class="view-text-section-title">Next Steps</div>

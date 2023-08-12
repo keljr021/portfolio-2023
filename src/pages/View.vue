@@ -51,6 +51,9 @@
       goToView(viewId) {
         window.scrollTo({ top: 0, left: 0, behavior: 'instant'});
         this.$router.push({ name: 'view', params: { id: viewId } });
+      },
+      windowOpen(input) {
+        window.open(input, '_blank');
       }
     },
     created() {
@@ -90,16 +93,16 @@
     </v-row>
     
     <div>
-      <mcs @set-image="imgSrc" v-if="$route.params.id === 'mcs'" primaryColor="#464da0" secondaryColor="#1d2352"/>
-      <torch @set-image="imgSrc" v-if="$route.params.id === 'torch'" primaryColor="#993838" secondaryColor="#584fc4"/>
-      <lemon @set-image="imgSrc" v-if="$route.params.id === 'lemon'" primaryColor="#008C73" secondaryColor="#918b49"/>
-      <reys @set-image="imgSrc" v-if="$route.params.id === 'reys'" primaryColor="#005031" secondaryColor="#933c1f"/>
+      <mcs @set-image="imgSrc" @window-open="windowOpen" v-if="$route.params.id === 'mcs'" primaryColor="#464da0" secondaryColor="#1d2352"/>
+      <torch @set-image="imgSrc" @window-open="windowOpen" v-if="$route.params.id === 'torch'" primaryColor="#993838" secondaryColor="#584fc4"/>
+      <lemon @set-image="imgSrc" @window-open="windowOpen" v-if="$route.params.id === 'lemon'" primaryColor="#008C73" secondaryColor="#918b49"/>
+      <reys @set-image="imgSrc" @window-open="windowOpen" v-if="$route.params.id === 'reys'" primaryColor="#005031" secondaryColor="#933c1f"/>
 
-      <ifolio @set-image="imgSrc" v-if="$route.params.id === 'ifolio'" primaryColor="#3e2963" secondaryColor="#4d7599"/>
-      <ss @set-image="imgSrc" v-if="$route.params.id === 'ss'" primaryColor="#29414d" secondaryColor="#48ab61"/>
-      <s4s @set-image="imgSrc" v-if="$route.params.id === 's4s'" primaryColor="#2d3b66" secondaryColor="#8f3535"/>
-      <react @set-image="imgSrc" v-if="$route.params.id === 'react'" />
-      <vue @set-image="imgSrc" v-if="$route.params.id === 'vue'" />
+      <ifolio @set-image="imgSrc" @window-open="windowOpen" v-if="$route.params.id === 'ifolio'" primaryColor="#3e2963" secondaryColor="#4d7599"/>
+      <ss @set-image="imgSrc" @window-open="windowOpen" v-if="$route.params.id === 'ss'" primaryColor="#29414d" secondaryColor="#48ab61"/>
+      <s4s @set-image="imgSrc" @window-open="windowOpen" v-if="$route.params.id === 's4s'" primaryColor="#2d3b66" secondaryColor="#8f3535"/>
+      <react @set-image="imgSrc" @window-open="windowOpen" v-if="$route.params.id === 'react'" />
+      <vue @set-image="imgSrc" @window-open="windowOpen" v-if="$route.params.id === 'vue'" />
     </div>
 
     <v-row justify="space-between" class="pa-2">
@@ -177,6 +180,14 @@
     font-size: 21px;
     font-weight: 400;
     padding: 20px 0;
+
+    &.link {
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   p, li {

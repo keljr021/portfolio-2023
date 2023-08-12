@@ -9,7 +9,8 @@
   export default {
     name: 'Torch',
     emits: [
-      'set-image'
+      'set-image',
+      'window-open'
     ],
     props: {
       primaryColor: {
@@ -24,6 +25,9 @@
     methods: {
       imgSrc(input) {
         return new URL(`../../assets/${input}`, import.meta.url).href;
+      },
+      windowOpen(input) {
+        this.$emit('window-open', input);
       }
     },
     components: {
@@ -248,7 +252,10 @@
       <template #mockups>
         <v-row class="pb-12">
           <v-col>
-            <div class="view-text-section-title">Mockups - Mobile App</div>
+            <div class="view-text-section-title link" @click="windowOpen('https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A11119&scaling=min-zoom&page-id=28%3A11118&starting-point-node-id=28%3A11119')">
+              Mockups - Mobile App
+              <v-icon size="x-small">mdi-open-in-new</v-icon>
+            </div>
           </v-col>
         </v-row>
         <v-row class="py-8">
@@ -283,7 +290,10 @@
         </v-row>
         <v-row class="pb-12">
           <v-col>
-            <div class="view-text-section-title">Mockups - Responsive Site</div>
+            <div class="view-text-section-title link" @click="windowOpen('https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A11119&scaling=min-zoom&page-id=28%3A11118&starting-point-node-id=28%3A11119')">
+              Mockups - Responsive Site
+              <v-icon size="x-small">mdi-open-in-new</v-icon>
+            </div>
           </v-col>
         </v-row>
         <v-row class="py-8">
@@ -323,7 +333,7 @@
       </v-col>
     </v-row>
 
-    <view-takeaways>
+    <view-takeaways caseStudyUrl="https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing">
       <template #lessons>
         <p>
             I discovered a great insight on the importance of Information Architecture in web design. Creating an organized sitemap, and understanding how the data should be structured is critical when designing a new app or website.

@@ -9,7 +9,8 @@
   export default {
     name: 'Mcs',
     emits: [
-      'set-image'
+      'set-image',
+      'window-open'
     ],
     props: {
       primaryColor: {
@@ -24,6 +25,9 @@
     methods: {
       imgSrc(input) {
         return new URL(`../../assets/${input}`, import.meta.url).href;
+      },
+      windowOpen(input) {
+        this.$emit('window-open', input);
       }
     },
     components: {
@@ -169,7 +173,7 @@
       </v-col>
     </v-row>
 
-    <view-results>
+    <view-results caseStudyUrl="https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing">
       <template #logo1>
         <v-img height="150" :src="imgSrc('logo-ka-2023.png')" />
       </template>
