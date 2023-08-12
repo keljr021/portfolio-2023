@@ -75,8 +75,8 @@
 </script>
 
 <template>
-  <v-container fluid class="pa-0 ma-0">
-    <v-row class="px-2 py-1">
+  <v-container fluid class="px-0 ma-0">
+    <v-row class="px-2 py-3">
       <v-col>
         <v-btn class="px-3" variant="flat" :block="$vuetify.display.xs" :to="{ name: 'work' }">
             <v-icon class="mr-2">mdi-backburger</v-icon>
@@ -117,6 +117,11 @@
 </template>
 
 <style lang="scss">
+.v-container--fluid {
+  padding-top: 41.5px !important; 
+  height: calc(100% - 73.5px) !important;
+}
+
 .view-header {
   padding: 0;
   margin: 0;

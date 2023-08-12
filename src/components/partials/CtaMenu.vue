@@ -24,7 +24,7 @@ export default {
             <div class="cta-menu-item" @click="$router.push({ name: 'work' })"><span>Work</span></div>
             <div class="cta-menu-item" @click="$router.push({ name: 'about' })"><span>About</span></div>
             <div class="cta-menu-item" @click="$router.push({ name: 'contact' })"><span>Contact</span></div>
-            <a class="cta-menu-item" @click="window.open('https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=sharing', '_blank');"><span>Resume</span></a>
+            <div class="cta-menu-item" @click="window.open('https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=sharing', '_blank');"><span>Resume</span></div>
         </div>
     </div>
 </template>
