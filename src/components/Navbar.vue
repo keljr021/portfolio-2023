@@ -56,7 +56,7 @@ export default {
                         <v-list-item title="Work" value="work" @click="$router.push({ name: 'work' })">Work</v-list-item>
                         <v-list-item title="About" value="about" @click="$router.push({ name: 'about' })">About</v-list-item>
                         <v-list-item title="Contact" value="contact" @click="$router.push({ name: 'contact' })">Contact</v-list-item>
-                        <v-list-item title="Resume" value="resume" @click="">Resume</v-list-item>
+                        <v-list-item title="Resume" value="resume" @click="window.open('https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=drive_link', '_blank')">Resume</v-list-item>
                     </v-list>
                 </v-navigation-drawer>
             </v-col>
@@ -67,14 +67,15 @@ export default {
     <div class="nav w-100 pa-2" :class="{'show': showNav }" v-else>
         <v-row class="align-center">
             <v-col cols="3" class="nav-logo" @click="$router.push({ name: 'home' })">
-                <img class="mt-2" src="../assets/km-icon.svg" alt="Kelvin Morrisey Jr"/>
+                <img class="logo mt-2" src="../assets/km-icon.svg" alt="Kelvin Morrisey Jr"/>
+                <img class="full mt-2" src="../assets/km-logo.svg" alt="Kelvin Morrisey Jr"/>
             </v-col>
             <v-col cols="9" class="text-right">
                 <span class="nav-item" @click="$router.push({ name: 'home' })">Home</span>
                 <span class="nav-item" @click="$router.push({ name: 'work' })">Work</span>
                 <span class="nav-item" @click="$router.push({ name: 'about' })">About</span>
                 <span class="nav-item" @click="$router.push({ name: 'contact' })">Contact</span>
-                <span class="nav-item" @click="">Resume</span>
+                <span class="nav-item" @click="window.open('https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=drive_link', '_blank')">Resume</span>
             </v-col>
         </v-row>
     </div>
@@ -100,6 +101,30 @@ export default {
 
     img {
         height: 26px;
+        position: absolute;
+        left: 20px;
+        top: 0;
+        transition: opacity 0.25s ease-in-out;
+    }
+
+    .logo {
+        opacity: 1;
+    }
+
+    .full {
+        left: 10px;
+        opacity: 0;
+        z-index: 1;
+    }
+
+    &:hover {
+        .logo {
+            opacity: 0;
+        }
+
+        .full {
+            opacity: 1;
+        }
     }
 }
 

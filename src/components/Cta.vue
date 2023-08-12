@@ -40,7 +40,7 @@ export default {
                 <CtaText @scrollTo="scrollTo" />
             </v-col>
             <v-col v-if="!$vuetify.display.xs">
-                <CtaMenu @scrollTo="scrollTo" :navItems="navItems"/>
+                <CtaMenu />
             </v-col>
         </v-row>
     </v-container>

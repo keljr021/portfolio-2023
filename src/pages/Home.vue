@@ -8,32 +8,6 @@
 
   export default {
     name: 'Home',
-    data() {
-      return {
-        navItems: [
-          {
-            className: 'cta',
-            text: 'Home'
-          },
-          {
-            classname: 'work',
-            text: 'Work'
-          },
-          {
-            className: 'about',
-            text: 'About'
-          },
-          {
-            className: 'contact',
-            text: 'Contact'
-          },
-          {
-            className: 'resume',
-            text: 'Resume'
-          }
-        ]
-      }
-    },
     components: {
       Cta,
       Work,
@@ -46,7 +20,7 @@
 </script>
 
 <template>
-  <Cta @scrollTo="scrollTo" :navItems="navItems" :socialIconsArray="socialIconsArray"/>
+  <Cta :socialIconsArray="socialIconsArray"/>
   <Contact :socialIconsArray="socialIconsArray" />
   <Footer />
 </template>
