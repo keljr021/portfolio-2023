@@ -29,18 +29,18 @@ export default {
     },
     watch: {
         $route: function(to, from) {
-            this.showNav = this.$route.name !== 'home' && !this.$vuetify.display.xs;
+            this.showNav = this.$route.name !== 'home';
         }
     },
     mounted() {
-        this.showNav = this.$route.name !== 'home' && !this.$vuetify.display.xs;
+        this.showNav = this.$route.name !== 'home';
     }
 }
 </script>
 
 <template>
     <!-- Mobile Navigation -->
-    <div class="nav w-100 px-4 py-2" :class="{'show': showNav }" v-if="$vuetify.display.smAndDown">
+    <div class="nav show w-100 px-4 py-2" v-if="$vuetify.display.smAndDown">
         <v-row class="align-center justify-space-between">
             <v-col cols="8" class="nav-logo" @click="$router.push({ name: 'home' })">
                 <img class="mt-2 mx-4" src="../assets/km-icon.svg" alt="Kelvin Morrisey Jr" />
@@ -55,11 +55,11 @@ export default {
                         </template>
                     </v-list-item>
                     <v-list density="compact" nav>
-                        <v-list-item title="Home" value="home" @click="$router.push({ name: 'home' })">Home</v-list-item>
-                        <v-list-item title="Work" value="work" @click="$router.push({ name: 'work' })">Work</v-list-item>
-                        <v-list-item title="About" value="about" @click="$router.push({ name: 'about' })">About</v-list-item>
-                        <v-list-item title="Contact" value="contact" @click="$router.push({ name: 'contact' })">Contact</v-list-item>
-                        <v-list-item title="Resume" value="resume" @click="openWindow('https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=drive_link')">Resume</v-list-item>
+                        <v-list-item title="Home" value="home" @click="$router.push({ name: 'home' })"></v-list-item>
+                        <v-list-item title="Work" value="work" @click="$router.push({ name: 'work' })"></v-list-item>
+                        <v-list-item title="About" value="about" @click="$router.push({ name: 'about' })"></v-list-item>
+                        <v-list-item title="Contact" value="contact" @click="$router.push({ name: 'contact' })"></v-list-item>
+                        <v-list-item title="Resume" value="resume" @click="openWindow('https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=drive_link')"></v-list-item>
                     </v-list>
                 </v-navigation-drawer>
             </v-col>
@@ -107,7 +107,7 @@ export default {
         position: absolute;
         left: 20px;
         top: 0;
-        transition: opacity 0.25s ease-in-out;
+        transition: top 0.3s ease-in-out, opacity 0.2s ease-in-out;
     }
 
     .logo {
@@ -115,8 +115,8 @@ export default {
     }
 
     .full {
+        top: -100px;
         left: 10px;
-        opacity: 0;
         z-index: 1;
     }
 
@@ -126,7 +126,7 @@ export default {
         }
 
         .full {
-            opacity: 1;
+            top: 0;
         }
     }
 }

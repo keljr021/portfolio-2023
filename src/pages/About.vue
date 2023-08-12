@@ -21,7 +21,7 @@
                 </div>
             </v-col>
             <v-col cols="12" sm="6" md="6" lg="4" class="about-image text-center py-md-auto">
-                <img alt="about photo" src="../assets/about-alt.jpg" />
+                <img alt="about photo" class="elevation-8" src="../assets/about-alt.jpg" />
             </v-col>
         </v-row>
     </v-container>

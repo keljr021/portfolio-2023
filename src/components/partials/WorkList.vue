@@ -43,7 +43,6 @@ export default {
             return new URL(`../../assets/${input}`, import.meta.url).href;
         },
         onIntersect(isIntersected, entries, observer) {
-            console.log('isIntersected: ', isIntersected, ' entries: ', entries, ' observer: ', observer);
             if (isIntersected) {
                 if (entries[0].target) {
                     if (entries[0].target.id) {
