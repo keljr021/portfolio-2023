@@ -183,5 +183,17 @@
       font-size: 17px;  
       line-height: 2.5;
     }
+
+  p {
+    padding-bottom: 30px;
+  }
+
+  ol, ul {
+    padding-left: 20px;
+  }
+
+  li {
+    padding-bottom: 20px;
+  }
 }
 </style>
