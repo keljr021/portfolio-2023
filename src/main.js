@@ -4,6 +4,8 @@ import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router
 import Home from './pages/Home.vue'
 import Work from './pages/Work.vue'
 import View from './pages/View.vue'
+import About from './pages/About.vue'
+import Contact from './pages/Contact.vue'
 
 // Vuetify
 import 'vuetify/styles'
@@ -13,14 +15,12 @@ import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import '@mdi/font/css/materialdesignicons.css'
 
-const TestComp = { template: `<p>Test component here.</p>` };
-
 const routes = [
   { path: '/', name: 'home', component: Home },
   { path: '/work', name: 'work', component: Work },
   { path: '/view/:id', name: 'view', component: View },
-  { path: '/about', name: 'about', component: TestComp },
-  { path: '/contact', name: 'contact', component: TestComp },
+  { path: '/about', name: 'about', component: About },
+  { path: '/contact', name: 'contact', component: Contact },
 ];
 
 const router = createRouter({
