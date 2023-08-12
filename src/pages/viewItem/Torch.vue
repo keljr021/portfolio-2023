@@ -8,6 +8,13 @@
   import ViewTakeaways from '../../components/partials/ViewTakeaways.vue';
   export default {
     name: 'Torch',
+    data() {
+      return {
+        mobilePrototypeUrl: 'https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A9537&scaling=scale-down&page-id=28%3A9536&starting-point-node-id=28%3A9537',
+        desktopPrototypeUrl: 'https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A11119&scaling=min-zoom&page-id=28%3A11118&starting-point-node-id=28%3A11119',
+        caseStudyUrl: 'https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing'
+      }
+    },
     emits: [
       'set-image',
       'window-open'
@@ -47,9 +54,9 @@
     :backgroundColor="primaryColor"
     title="Torch Mentorship Network"
     subtitle="A mobile app and website that connects students with mentors"
-    mobilePrototypeUrl="https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A9537&scaling=scale-down&page-id=28%3A9536&starting-point-node-id=28%3A9537"
-    desktopPrototypeUrl="https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A11119&scaling=min-zoom&page-id=28%3A11118&starting-point-node-id=28%3A11119"
-    caseStudyUrl="https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing"
+    :mobilePrototypeUrl="mobilePrototypeUrl"
+    :desktopPrototypeUrl="desktopPrototypeUrl"
+    :caseStudyUrl="caseStudyUrl"
     :imageSrc="imgSrc('work/to-desktop.png')"
   >
     <template #role>
@@ -252,7 +259,7 @@
       <template #mockups>
         <v-row class="pb-12">
           <v-col>
-            <div class="view-text-section-title link" @click="windowOpen('https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A11119&scaling=min-zoom&page-id=28%3A11118&starting-point-node-id=28%3A11119')">
+            <div class="view-text-section-title link" @click="windowOpen(mobilePrototypeUrl)">
               Mockups - Mobile App
               <v-icon size="x-small">mdi-open-in-new</v-icon>
             </div>
@@ -290,7 +297,7 @@
         </v-row>
         <v-row class="pb-12">
           <v-col>
-            <div class="view-text-section-title link" @click="windowOpen('https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A11119&scaling=min-zoom&page-id=28%3A11118&starting-point-node-id=28%3A11119')">
+            <div class="view-text-section-title link" @click="windowOpen(desktopPrototypeUrl)">
               Mockups - Responsive Site
               <v-icon size="x-small">mdi-open-in-new</v-icon>
             </div>
@@ -333,7 +340,7 @@
       </v-col>
     </v-row>
 
-    <view-takeaways caseStudyUrl="https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing">
+    <view-takeaways :caseStudyUrl="caseStudyUrl">
       <template #lessons>
         <p>
             I discovered a great insight on the importance of Information Architecture in web design. Creating an organized sitemap, and understanding how the data should be structured is critical when designing a new app or website.

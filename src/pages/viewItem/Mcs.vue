@@ -8,6 +8,12 @@
   import ViewTakeaways from '../../components/partials/ViewTakeaways.vue';
   export default {
     name: 'Mcs',
+    data() {
+      return {
+        prototypeUrl: 'https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/ka-clean.com?type=design&node-id=86-243&scaling=scale-down&page-id=86%3A130&starting-point-node-id=86%3A243',
+        caseStudyUrl: 'https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing'
+      }
+    },
     emits: [
       'set-image',
       'window-open'
@@ -47,9 +53,9 @@
     :backgroundColor="primaryColor"
     title="K&A Morrisey Cleaning Services"
     subtitle="A responsive website for the family janitorial business"
-    prototypeUrl="https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/ka-clean.com?type=design&node-id=86-243&scaling=scale-down&page-id=86%3A130&starting-point-node-id=86%3A243"
+    :prototypeUrl="prototypeUrl"
     siteUrl="https://ka-clean.com/"
-    caseStudyUrl="https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing"
+    :caseStudyUrl="caseStudyUrl"
     :imageSrc="imgSrc('work/ka-desktop.png')"
   >
     <template #role>
@@ -173,7 +179,7 @@
       </v-col>
     </v-row>
 
-    <view-results caseStudyUrl="https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing">
+    <view-results :caseStudyUrl="caseStudyUrl">
       <template #logo1>
         <v-img height="150" :src="imgSrc('logo-ka-2023.png')" />
       </template>
@@ -183,7 +189,10 @@
       <template #mockups>
         <v-row>
           <v-col>
-            <div class="view-text-section-title">Mockups</div>
+            <div class="view-text-section-title link" @click="windowOpen(prototypeUrl)">
+              Mockups
+              <v-icon size="x-small">mdi-open-in-new</v-icon>
+            </div>
           </v-col>
         </v-row>
         <v-row class="py-8">

@@ -47,7 +47,6 @@ export default {
                 if (entries[0].target) {
                     if (entries[0].target.id) {
                         let elementId = entries[0].target.id;
-                        console.log(' - targeting: ', elementId);
                         this.$emit('set-tab', elementId);
                     }
                 }

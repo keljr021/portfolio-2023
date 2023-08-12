@@ -9,7 +9,8 @@
   export default {
     name: 'Lemon',
     emits: [
-      'set-image'
+      'set-image',
+      'window-open'
     ],
     props: {
       primaryColor: {
@@ -24,6 +25,9 @@
     methods: {
       imgSrc(input) {
         return new URL(`../../assets/${input}`, import.meta.url).href;
+      },
+      windowOpen(input) {
+        this.$emit('window-open', input);
       }
     },
     components: {

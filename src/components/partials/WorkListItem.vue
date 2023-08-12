@@ -27,7 +27,6 @@
         },
 
         clickItem() {
-            console.log('clicked item: ', this.linkId);
             this.$router.push({ name: 'view', params: { id: this.linkId } })
         }
     }

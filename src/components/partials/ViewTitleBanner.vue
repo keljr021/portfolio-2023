@@ -77,23 +77,23 @@
                 </v-row>
                 <v-row class="pa-3">
                     <v-col>
-                        <v-btn v-if="prototypeUrl" size="small" class="text-normal px-3 mr-6" variant="outlined" :href="prototypeUrl">
+                        <v-btn v-if="prototypeUrl" size="small" class="text-normal px-3 mr-6" variant="outlined" :href="prototypeUrl" target="_blank">
                             <v-icon class="mr-2">mdi-open-in-new</v-icon>
                             Prototype
                         </v-btn>
-                        <v-btn v-if="mobilePrototypeUrl" size="small" class="text-normal px-3 mr-6" variant="outlined" :href="mobilePrototypeUrl">
+                        <v-btn v-if="mobilePrototypeUrl" size="small" class="text-normal px-3 mr-6" variant="outlined" :href="mobilePrototypeUrl" target="_blank">
                             <v-icon class="mr-2">mdi-open-in-new</v-icon>
                             Mobile Prototype
                         </v-btn>
-                        <v-btn v-if="desktopPrototypeUrl" size="small" class="text-normal px-3 mr-6" variant="outlined" :href="desktopPrototypeUrl">
+                        <v-btn v-if="desktopPrototypeUrl" size="small" class="text-normal px-3 mr-6" variant="outlined" :href="desktopPrototypeUrl" target="_blank">
                             <v-icon class="mr-2">mdi-open-in-new</v-icon>
                             Desktop Prototype
                         </v-btn>
-                        <v-btn v-if="siteUrl" size="small" class="text-normal px-3 mr-6" variant="outlined" :href="siteUrl">
+                        <v-btn v-if="siteUrl" size="small" class="text-normal px-3 mr-6" variant="outlined" :href="siteUrl" target="_blank">
                             <v-icon class="mr-2">mdi-link</v-icon>
                             Live Site
                         </v-btn>
-                        <v-btn v-if="caseStudyUrl" size="small" class="text-normal px-3" variant="outlined" :href="caseStudyUrl">
+                        <v-btn v-if="caseStudyUrl" size="small" class="text-normal px-3" variant="outlined" :href="caseStudyUrl" target="_blank">
                             <v-icon class="mr-2">mdi-presentation</v-icon>
                             Case Study PPT
                         </v-btn>
