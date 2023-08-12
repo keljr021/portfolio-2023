@@ -36,7 +36,7 @@ export default {
             </v-col>
         </v-row>
         <v-row class="px-3 py-2 justify-center">
-            <v-col>
+            <v-col class="my-auto">
                 <CtaText @scrollTo="scrollTo" />
             </v-col>
             <v-col v-if="!$vuetify.display.xs">
@@ -47,10 +47,18 @@ export default {
     
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .cta {
-    min-height: 700px;
+    height: 100%;
     padding: 100px 50px 100px;
+    background: rgba(217,217,217,1); /* Old browsers */
+    background: -moz-linear-gradient(45deg, rgba(217,217,217,1) 0%, rgba(241,240,240,1) 51%, rgba(255,255,255,1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(217,217,217,1) 0%, rgba(241,240,240,1) 51%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(45deg, rgba(217,217,217,1) 0%, rgba(241,240,240,1) 51%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d9d9d9",endColorstr="#ffffff",GradientType=1);
+    background-size: 30px cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 .cta-title {

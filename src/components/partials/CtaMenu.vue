@@ -1,20 +1,6 @@
 <script>
 export default {
-    name: 'ctaMenu',
-    props: {
-        navItems: Array
-    },
-    emits: [
-        'scrollTo'
-    ],
-    computed: {
-
-    },
-    methods: {
-        // scrollTo(input) {
-        //     this.$emit('scrollTo', input)
-        // }
-    }
+    name: 'ctaMenu'
 }
 </script>
 

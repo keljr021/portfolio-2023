@@ -116,23 +116,23 @@
   </v-container>
 </template>
 
-<style lang="scss">
-.v-container--fluid {
+<style scoped lang="scss">
+:deep(.v-container--fluid) {
   padding-top: 41.5px !important; 
   height: calc(100% - 73.5px) !important;
 }
 
-.view-header {
+:deep(.view-header) {
   padding: 0;
   margin: 0;
 }
 
-.view-header-title {
+:deep(.view-header-title) {
   font-size: 36px;
   padding: 10px 20px;
 }
 
-.view-header-image {
+:deep(.view-header-image) {
   width: 75%;
   margin: 0 12.5%;
 
@@ -142,17 +142,17 @@
   }
 }
 
-.view-header-text {
+:deep(.view-header-text) {
   font-size: 18px;
   padding: 20px;
   opacity: 0.9;
 }
 
-.view-header-text-title {
+:deep(.view-header-text-title) {
   font-weight: bold;
 }
 
-.view-text {
+:deep(.view-text) {
   .view-text-title {
     font-size: 26px;
     text-align: center;
