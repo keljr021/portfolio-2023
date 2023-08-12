@@ -119,6 +119,11 @@
 
     <view-solution>
       <template #wireframes>
+        <v-row>
+          <v-col>
+            <div class="view-text-section-title">Digital Wireframes</div>
+          </v-col>
+        </v-row>
         <v-row class="py-8">
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
             <v-img width="90%" :src="imgSrc('ka-dframe1.png')" />
@@ -172,6 +177,11 @@
         <p>For the logo design, I wanted to give a professional feel from both the color and typography choices. I also wanted to set the precedence of "the same professional company you know, now under new management."</p>        
       </template>
       <template #mockups>
+        <v-row>
+          <v-col>
+            <div class="view-text-section-title">Mockups</div>
+          </v-col>
+        </v-row>
         <v-row class="py-8">
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
               <v-img width="90%" :src="imgSrc('ka-mock1.png')" />

@@ -26,11 +26,6 @@
 
         <v-row>
           <v-col>
-            <div class="view-text-section-title">Wireframes</div>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col>
             <slot name="wireframes"></slot>
           </v-col>
         </v-row>

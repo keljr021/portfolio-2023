@@ -20,6 +20,8 @@
         tools: String,
         date: String,
         prototypeUrl: String,
+        mobilePrototypeUrl: String,
+        desktopPrototypeUrl: String,
         siteUrl: String,
         caseStudyUrl: String,
         imageSrc: String,
@@ -78,6 +80,14 @@
                         <v-btn v-if="prototypeUrl" size="small" class="text-normal px-3 mr-6" variant="outlined" :href="prototypeUrl">
                             <v-icon class="mr-2">mdi-open-in-new</v-icon>
                             Prototype
+                        </v-btn>
+                        <v-btn v-if="mobilePrototypeUrl" size="small" class="text-normal px-3 mr-6" variant="outlined" :href="mobilePrototypeUrl">
+                            <v-icon class="mr-2">mdi-open-in-new</v-icon>
+                            Mobile Prototype
+                        </v-btn>
+                        <v-btn v-if="desktopPrototypeUrl" size="small" class="text-normal px-3 mr-6" variant="outlined" :href="desktopPrototypeUrl">
+                            <v-icon class="mr-2">mdi-open-in-new</v-icon>
+                            Desktop Prototype
                         </v-btn>
                         <v-btn v-if="siteUrl" size="small" class="text-normal px-3 mr-6" variant="outlined" :href="siteUrl">
                             <v-icon class="mr-2">mdi-link</v-icon>

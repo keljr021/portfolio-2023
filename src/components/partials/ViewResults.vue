@@ -37,7 +37,6 @@
 
         <v-row class="py-8">
           <v-col>
-            <div class="view-text-section-title">Mockups</div>
             <slot name="mockups"></slot>
           </v-col>
         </v-row>

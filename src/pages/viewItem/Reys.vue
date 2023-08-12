@@ -73,10 +73,10 @@
         </p>
       </template>
       <template #problem>
-        Students find it frustrating to find mentorship opportunities. Often there are missed resources during college studies to connect with an experienced mentor in their field of study.
+        Students find it frustrating to find a mentor. Often there are missed opportunities during college studies to connect with an experienced mentor in their field of study.
       </template>
       <template #goal>
-        Create both a dedicated mobile app and responsive web site that gives users easier options to connect with fellow mentors in their field of interest.
+        Create both a dedicated mobile app and responsive web site that gives users a better solution to connect with fellow mentors in their career field.
       </template>
     </view-overview>
 
