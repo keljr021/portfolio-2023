@@ -59,11 +59,12 @@
   </v-container>
 </template>
 
-<style scoped>
-:deep(.v-container) {
-  height: calc(100% -32px);
+<style scoped lang="scss">
+.v-container--fluid {
+  padding-top: 41.5px !important; 
+  height: calc(100% - 73.5px) !important;
 }
 .scroll {
-  max-height: calc(85vh - 32px);
+  max-height: calc(85vh - 74px);
 }
 </style>

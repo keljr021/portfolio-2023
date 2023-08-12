@@ -23,30 +23,15 @@ export default {
         toggleNavDrawer() {
             this.showNavDrawer = !this.showNavDrawer;
         },
-        checkToShowNavbar() {
-            // Get the current scroll position
-            const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-
-            // Because of momentum scrolling on mobiles, we shouldn't continue if it is less than zero
-            if (currentScrollPosition < 0) 
-            return false;
-
-            // Here we determine whether we need to show or hide the navbar
-            this.showNav = currentScrollPosition >= 300;    
-      }
     },
-    mounted() {
-        if (!this.$vuetify.display.xs) {
-            this.checkToShowNavbar();
-            window.addEventListener('scroll', this.checkToShowNavbar)
-        } else {
-            this.showNav = true;
+    watch: {
+        $route: function(to, from) {
+            this.showNav = this.$route.name !== 'home' && !this.$vuetify.display.xs;
         }
     },
-    beforeDestroy () {
-        if (!this.$vuetify.display.xs)
-            window.removeEventListener('scroll', this.checkToShowNavbar)
-    },
+    mounted() {
+        this.showNav = this.$route.name !== 'home' && !this.$vuetify.display.xs;
+    }
 }
 </script>
 
@@ -54,7 +39,7 @@ export default {
     <!-- Mobile Navigation -->
     <div class="nav w-100 px-4 py-2" :class="{'show': showNav }" v-if="$vuetify.display.smAndDown">
         <v-row class="align-center justify-space-between">
-            <v-col cols="8" class="nav-logo" @click="this.$emit('scrollTo', 'cta')">
+            <v-col cols="8" class="nav-logo" @click="$router.push({ name: 'home' })">
                 <img class="mt-2 mx-4" src="../assets/km-icon.svg" alt="Kelvin Morrisey Jr" />
             </v-col>
             <v-col cols="4" class="text-right">
@@ -67,7 +52,11 @@ export default {
                         </template>
                     </v-list-item>
                     <v-list density="compact" nav>
-                        <v-list-item v-for="navItem in mobileNavItems" :title="navItem.text" :value="navItem.text" @click.stop="this.$emit('scrollTo', navItem.className);toggleNavDrawer()"></v-list-item>
+                        <v-list-item title="Home" value="home" @click="$router.push({ name: 'home' })">Home</v-list-item>
+                        <v-list-item title="Work" value="work" @click="$router.push({ name: 'work' })">Work</v-list-item>
+                        <v-list-item title="About" value="about" @click="$router.push({ name: 'about' })">About</v-list-item>
+                        <v-list-item title="Contact" value="contact" @click="$router.push({ name: 'contact' })">Contact</v-list-item>
+                        <v-list-item title="Resume" value="resume" @click="">Resume</v-list-item>
                     </v-list>
                 </v-navigation-drawer>
             </v-col>
@@ -77,11 +66,15 @@ export default {
     <!-- Tablet/Desktop navigation -->
     <div class="nav w-100 pa-2" :class="{'show': showNav }" v-else>
         <v-row class="align-center">
-            <v-col cols="3" class="nav-logo" @click="this.$emit('scroll-to', 'cta')">
+            <v-col cols="3" class="nav-logo" @click="$router.push({ name: 'home' })">
                 <img class="mt-2" src="../assets/km-icon.svg" alt="Kelvin Morrisey Jr"/>
             </v-col>
             <v-col cols="9" class="text-right">
-                <span v-for="navItem in navItems" class="nav-item" @click="this.$emit('scroll-to', navItem.className)">{{ navItem.text }}</span>
+                <span class="nav-item" @click="$router.push({ name: 'home' })">Home</span>
+                <span class="nav-item" @click="$router.push({ name: 'work' })">Work</span>
+                <span class="nav-item" @click="$router.push({ name: 'about' })">About</span>
+                <span class="nav-item" @click="$router.push({ name: 'contact' })">Contact</span>
+                <span class="nav-item" @click="">Resume</span>
             </v-col>
         </v-row>
     </div>
