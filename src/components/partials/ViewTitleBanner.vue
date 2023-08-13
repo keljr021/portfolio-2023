@@ -91,7 +91,7 @@
                         </v-btn>
                         <v-btn v-if="siteUrl" size="small" class="text-normal px-3 mr-6" variant="outlined" :href="siteUrl" target="_blank">
                             <v-icon class="mr-2">mdi-link</v-icon>
-                            Live Site
+                            Live Site <span v-if="$route.params.id === 'ifolio' || $route.params.id === 'ss'" class="ml-2">(via Archived Wayback)</span>
                         </v-btn>
                         <v-btn v-if="caseStudyUrl" size="small" class="text-normal px-3" variant="outlined" :href="caseStudyUrl" target="_blank">
                             <v-icon class="mr-2">mdi-presentation</v-icon>

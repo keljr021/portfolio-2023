@@ -11,18 +11,18 @@
                 <v-col class="my-auto">
                     <slot name="overview"></slot>
                 </v-col>
-                <v-col>
+                <v-col v-if="$slots.image">
                     <slot name="image"></slot>
                 </v-col>
             </v-row>
             <v-row class="py-8">
-                <v-col cols="5">
+                <v-col cols="5" v-if="$slots.problem">
                     <div class="view-text-section-title">Problem</div>
                     <p>
                         <slot name="problem"></slot>
                     </p>
                 </v-col>
-                <v-col offset="1">
+                <v-col offset="1" v-if="$slots.goal">
                     <div class="view-text-section-title">Goal</div>
                     <p>
                         <slot name="goal"></slot>

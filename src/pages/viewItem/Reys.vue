@@ -8,8 +8,15 @@
   import ViewTakeaways from '../../components/partials/ViewTakeaways.vue';
   export default {
     name: 'Reys ',
+    data() {
+      return {
+        prototypeUrl: 'https://www.figma.com/proto/5NxCYVA06z3PUwJN9qYVR1/Mexican-Restaurant-App---Revised?node-id=140%3A485&scaling=scale-down&page-id=140%3A2&starting-point-node-id=140%3A485',
+        caseStudyUrl: 'https://docs.google.com/presentation/d/1L7N0_CG95WT4dYPjiDQqjJcviKUniSmyCGsc_-OxTvg/edit?usp=sharing'
+      }
+    },
     emits: [
-      'set-image'
+      'set-image',
+      'window-open'
     ],
     props: {
       primaryColor: {
@@ -24,6 +31,9 @@
     methods: {
       imgSrc(input) {
         return new URL(`../../assets/${input}`, import.meta.url).href;
+      },
+      windowOpen(input) {
+        this.$emit('window-open', input);
       }
     },
     components: {
@@ -43,8 +53,8 @@
     :backgroundColor="primaryColor"
     title="Rey's Mexican Restaurant App"
     subtitle="A menu app to streamline the ordering process"
-    prototypeUrl="https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/to-clean.com?type=design&node-id=86-243&scaling=scale-down&page-id=86%3A130&starting-point-node-id=86%3A243"
-    caseStudyUrl="https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing"
+    :prototypeUrl="prototypeUrl"
+    :caseStudyUrl="caseStudyUrl"
     :imageSrc="imgSrc('work/reys-mobile.png')"
     isMobileImg="true"
   >
@@ -52,7 +62,7 @@
       UX Designer, Logo Designer
     </template>
     <template #client>
-      LemonBranch Network
+      Rey's Mexican Restaurant
     </template>
     <template #tools>
       Figma, Inkscape
@@ -65,18 +75,13 @@
   <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
     <view-overview>
       <template #overview>
-        <p>
-           This project was to design both a mobile app and responsive website for a career mentorship service to help college graduates. Torch Mentorship Network is an online service that helps students connect with a mentor during their college studies.
-        </p>
-        <p>
-            The main idea of the project was a simple and intuitive online presence geared towards college students and experienced mentors.
-        </p>
+        <p>For this project, I focused on designing a menu app for a Mexican Restaurant. Rey's Mexican Restaurant is a restaurant chain that provides authentic Mexican food with a variety of options.</p>
       </template>
       <template #problem>
-        Students find it frustrating to find a mentor. Often there are missed opportunities during college studies to connect with an experienced mentor in their field of study.
+        Customers have complained about long wait times when ordering lunch, and frustration regarding the accuracy of their orders during pickup.
       </template>
       <template #goal>
-        Create both a dedicated mobile app and responsive web site that gives users a better solution to connect with fellow mentors in their career field.
+        Design an app that allows users to order food online, and pick up their order within the allotted time frame; which avoids long waits in line to order, and helps accuracy when picking up their order.
       </template>
     </view-overview>
 
@@ -89,21 +94,17 @@
     <view-define>
       <template #persona1>
         <p>
-            <b>Joseph Strawn</b> is an upcoming college graduate who wants to find a mentor to learn more about the radio communication field. However, he has a hard time navigating resources to find an experienced mentor.
+          <b>Cal Murphy</b> is a busy office manager who needs more accurate order tracking because he has a tight work schedule and limited time in between meetings.
         </p>
       </template>
       <template #persona2>
-        <v-img width="100%" :src="imgSrc('to-persona.png')" />
+        <v-img width="100%" :src="imgSrc('reys-persona.png')" />
       </template>
       <template #user1>
-        <v-img width="100%" :src="imgSrc('to-usermap.png')" />
+        <v-img width="100%" :src="imgSrc('reys-usermap.png')" />
       </template>
       <template #user2>
-        <ol>
-            <li>Creating an easy to navigate home page for desktop</li>
-            <li>Automatically add user's profile info into corresponding forms for quicker submission</li>
-            <li>Mentor availability status is kept up-to-date</li>
-        </ol>
+        <p>From documenting Cal's User journey, I have discovered that an Order Tracker would increase the accuracy of takeout orders. The app can notify users when items are ready for pickup, and allowing members to confirm their order status.</p>
       </template>
     </view-define>
 
@@ -115,32 +116,70 @@
 
     <view-solution>
       <template #wireframes>
-        <v-row class="py-8">
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-dframe1.png')" />
-          </v-col>
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-dframe2.png')" />
+        <v-row>
+          <v-col>
+            <div class="view-text-section-title">Paper Wireframes</div>
           </v-col>
         </v-row>
-        <v-row class="py-8">  
+        <v-row class="py-8">
+          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="4">
+            <v-img height="350" :src="imgSrc('reys-pframe1.jpg')" />
+            <div class="w-100 pt-8">
+              1. I began to sketch out the general workflow of the application.
+            </div>
+          </v-col>
+          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="4">
+            <v-img height="300" :src="imgSrc('reys-pframe2.jpg')" />
+            <div class="w-100 pt-8">
+              2. Then I brainstormed several rough draft ideas of how the app should look. From these drafts, I've picked a few items from each to add to the final wireframe.
+            </div>
+          </v-col> 
+          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="4">
+            <v-img height="300" :src="imgSrc('reys-pframe3.jpg')" />
+            <div class="w-100 pt-8">
+              3. Finally, I've drawn up the final version of the wireframes. Above is an example of the Menu pages.
+            </div>
+          </v-col>
+        </v-row>
+        <v-row class="my-12">
+          <v-col>
+            <div class="view-text-section-title">Digital Wireframes</div>
+          </v-col>
+        </v-row>
+        <v-row class="py-8">
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-dframe3.png')" />
+            <v-img height="300" :src="imgSrc('reys-dframe1.png')" />
+            <div class="w-100 py-8">
+              1. <b>Home</b> - The page is layout with the restaurant image, and a slider of menu options. There is a View Menu button across the width of the screen. Near the navigation, a Cart button is added.
+            </div>
           </v-col>
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-dframe4.png')" />
+            <v-img height="300" :src="imgSrc('reys-dframe2.png')" />
+            <div class="w-100 py-8">
+              2. <b>Menu Grid View</b> - The Grid View shows the various menu items in a grid like layout to quickly sort through each choice. There is also an option to toggle between Grid and List view.
+            </div>
+          </v-col> 
+          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img height="300" :src="imgSrc('reys-dframe3.png')" />
+            <div class="w-100 py-8">
+              3. <b>Menu List View</b> - The List View shows the items in a list layout with more information for each item.
+            </div>
+          </v-col>
+          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img height="300" :src="imgSrc('reys-dframe5.png')" />
+            <div class="w-100 py-8">
+              4. <b>Order Tracker</b> - Diagrams a vertical stepper which will allow users to track their order status until pickup.
+            </div>
           </v-col>
         </v-row>
       </template>
       <template #usability1>
-        <v-img class="mx-auto" width="80%" :src="imgSrc('to-study.png')" />
+        <v-img class="mx-auto" width="80%" :src="imgSrc('reys-study.png')" />
       </template>
       <template #usability2>
-        <ul>
-            <li>The Mentor Search workflow was inconsistent between navigation and the headers.</li>
-            <li>Testers had difficulty navigating through each page during the workflow.</li>
-            <li>The Article page navigation confused a majority of the users and needed refactoring.</li>
-        </ul>      
+        <p>From the study, I've discovered several improvements, including adding a confirmation page during the order submission workflow before submission. This will ensure that orders are accurate before-hand.</p>
+        <p>There is a Language option that needs to have a more simplified workflow for users. Changing the language of the app can get cumbersome from the wireframes.</p>
+        <p>Lastly, the app should have an Account system for quicker access to customer information.</p>
       </template>
     </view-solution>
 
@@ -152,28 +191,47 @@
 
     <view-results>
       <template #logo1>
-        <v-img height="150" :src="imgSrc('logo-to-2023.png')" />
+        <v-img height="150" :src="imgSrc('logo-reys.png')" />
       </template>
       <template #logo2>
-        <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
-            </p>        
+        <p>The logo idea was to make a casual and family-friendly with a more authentic feel. It also uses the a golden color for the "Rey's" to highlight a royal and proper tone.</p>
       </template>
       <template #mockups>
+        <v-row>
+          <v-col>
+            <div class="view-text-section-title link" @click="windowOpen(prototypeUrl)">
+              Mockups
+              <v-icon size="x-small">mdi-open-in-new</v-icon>
+            </div>
+          </v-col>
+        </v-row>
         <v-row class="py-8">
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-              <v-img width="90%" :src="imgSrc('to-mock1.png')" />
+              <v-img height="300" :src="imgSrc('reys-mock1.png')" />
+              <div class="w-100 py-8">
+                1. <b>Home</b> - Added a Cart and Account button to the navigation. The color and typography has been updated accordingly.
+
+              </div>
             </v-col>
             <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-              <v-img width="90%" :src="imgSrc('to-mock2.png')" />
+              <v-img height="300" :src="imgSrc('reys-mock2.png')" />
+              <div class="w-100 py-8">
+                2. <b>Menu Grid View</b> - The Grid and List buttons were grouped to show the relation among one another.
+              </div>
             </v-col>
         </v-row>
         <v-row class="py-8"> 
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-mock3.png')" />
+            <v-img height="300" :src="imgSrc('reys-mock3.png')" />
+            <div class="w-100 py-8">
+                3. <b>Menu List View</b> - For the list items, added a description to each.
+              </div>
           </v-col>
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-mock4.png')" />
+            <v-img height="300" :src="imgSrc('reys-mock4.png')" />
+            <div class="w-100 py-8">
+                4. <b>Order Tracker</b> - Added the Order number and estimated time on top instead of the bottom area.
+            </div>
           </v-col>
         </v-row>
       </template>
@@ -188,14 +246,15 @@
     <view-takeaways>
       <template #lessons>
         <p>
-            I discovered a great insight on the importance of Information Architecture in web design. Creating an organized sitemap, and understanding how the data should be structured is critical when designing a new app or website.
+          From working on this app, I have learned the great importance of usability studies and user feedback. It has given me insight to areas that were not thought about during the prototyping phase of the app. Going through the process has been very beneficial to designing in the future.
         </p>
       </template>
       <template #next>
         <ol>
-          <li>Design a responsive feel for tablet screens. Currently the above projects are only focused on mobile and desktop versions of the project.</li>
-          <li>I would add availability options to the mentor list and profile pages. This would give great insight to a fellow user looking for a mentor in their area.</li>
-          <li>I would attempt to merge the Mentor Form into a single form, rather than breaking it up into pieces. To do that, I would need to ensure that form validation is instant on each field to prevent excess scrolling to resolve invalid parameters.</li>
+          <li>Currently the UI has a responsive website feel. I would modify the structure of the UI for a dedicated mobile app.</li>
+          <li>Continue with a webpage for desktop users to give customers an additional online option for the restaurant.</li>
+          <li>Reformat the input components using a UI framework (such as Material UI).</li>
+          <li>Conduct another usability study on the high-fidelity designs.</li>
         </ol>        
       </template>
     </view-takeaways>
