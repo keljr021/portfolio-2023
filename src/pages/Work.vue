@@ -75,6 +75,13 @@
     padding: 30px 0;
 }
 
+:deep(.work-section-title) {
+    font-size: 20px !important;
+    font-family: 'Quicksand', 'Roboto Thin', sans-serif;
+    font-weight: normal;  
+    padding: 30px 0;
+}
+
 .scroll {
   max-height: calc(85vh - 74px);
 }

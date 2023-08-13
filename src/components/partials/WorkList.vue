@@ -62,7 +62,8 @@ export default {
 <template>
     <v-container>
         <v-row id="ui" class="mb-15" justify="center" v-intersect="onIntersect">
-            <v-col cols="10">
+            <v-col cols="12" v-if="$vuetify.display.xs" class="work-section-title text-center">UI/UX Design</v-col>
+            <v-col cols="12" md="10" lg="10">
                 <work-list-item
                     color="#464da0"
                     linkId="mcs" 
@@ -71,7 +72,7 @@ export default {
                     :desktopImg="imgSrc('work/ka-desktop.png')"
                     :mobileImg="imgSrc('work/ka-mobile.png')" />
             </v-col>
-            <v-col cols="10">
+            <v-col cols="12" md="10" lg="10">
                 <work-list-item 
                     color="#993838"
                     linkId="torch"
@@ -81,7 +82,7 @@ export default {
                     :mobileImg="imgSrc('work/to-mobile.png')"
                     :imageHeight="cardHeight" />
             </v-col>
-            <v-col cols="10">
+            <v-col cols="12" md="10" lg="10">
                 <work-list-item 
                     color="#008C73"
                     linkId="lemon"
@@ -91,7 +92,7 @@ export default {
                     :mobileImg="imgSrc('work/lb-mobile.png')"
                     :imageHeight="cardHeight" />
             </v-col>
-            <v-col cols="10">
+            <v-col cols="12" md="10" lg="10">
                 <work-list-item 
                     color="#993c1f"
                     linkId="reys"
@@ -103,7 +104,8 @@ export default {
         </v-row>
 
         <v-row id="frontend" class="mb-15" justify="center" v-intersect="onIntersect">
-            <v-col cols="10">
+            <v-col cols="12" v-if="$vuetify.display.xs" class="work-section-title text-center">Front-End Development</v-col>
+            <v-col cols="12" md="10" lg="10">
                 <work-list-item 
                     color="#464da0"
                     linkId="ifolio"
@@ -113,7 +115,7 @@ export default {
                     :mobileImg="imgSrc('work/if-mobile.png')"
                     :imageHeight="cardHeight" />
             </v-col>
-            <v-col cols="10">
+            <v-col cols="12" md="10" lg="10">
                 <work-list-item 
                     color="#1f4739"
                     linkId="ss"
@@ -122,7 +124,7 @@ export default {
                     :desktopImg="imgSrc('work/ss-desktop.png')"
                     :imageHeight="cardHeight" />
             </v-col>
-            <v-col cols="10">
+            <v-col cols="12" md="10" lg="10">
                 <work-list-item 
                     color="#2d2f66"
                     linkId="s4s"
@@ -132,7 +134,7 @@ export default {
                     :mobileImg="imgSrc('work/s4s-mobile.png')"
                     :imageHeight="cardHeight" />
             </v-col>
-            <v-col cols="10">
+            <v-col cols="12" md="10" lg="10">
                 <work-list-item 
                     linkId="react"
                     title="React Calculator" 
@@ -140,7 +142,7 @@ export default {
                     :desktopImg="imgSrc('work/react-desktop.png')"
                     :imageHeight="cardHeight" />
             </v-col>
-            <v-col cols="10">
+            <v-col cols="12" md="10" lg="10">
                 <work-list-item 
                     linkId="vue"
                     title="Vue Calendar" 
@@ -151,7 +153,8 @@ export default {
         </v-row>
 
         <v-row id="logos" class="mb-15" justify="center" v-intersect="onIntersect">
-            <v-col offset="1" cols="5" v-for="logo in logos">
+            <v-col cols="12" v-if="$vuetify.display.xs" class="work-section-title text-center">Logos</v-col>
+            <v-col cols="12" offset-md="1" md="5" offset-lg="1" lg="5" v-for="logo in logos">
                 <v-card width="100%" :min-height="$vuetify.display.xs ? 'auto' : 150" class="align-stretch d-flex mb-8">
                     <v-card-text class="align-start ma-auto">
                         <v-img contain :height="$vuetify.display.xs ? 50 : (logo.height ? logo.height : 80)" :src="imgSrc(logo.src)" />

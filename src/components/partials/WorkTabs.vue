@@ -42,15 +42,15 @@
 
             <v-list>
                 <v-list-item>
-                    <v-list-item-title class="py-2" @click="this.selectedTab = 'ui'">
+                    <v-list-item-title class="py-2" @click="this.$emit('scroll-to', 'ui')">
                         <v-icon start>mdi-folder-account</v-icon>
                         UI/UX Design
                     </v-list-item-title>
-                    <v-list-item-title class="py-2" @click="this.selectedTab = 'frontend'">
+                    <v-list-item-title class="py-2" @click="this.$emit('scroll-to', 'frontend')">
                         <v-icon start>mdi-code-tags</v-icon>
                         Front-End
                     </v-list-item-title>
-                    <v-list-item-title class="py-2" @click="this.selectedTab = 'logos'">
+                    <v-list-item-title class="py-2" @click="this.$emit('scroll-to', 'logos')">
                         <v-icon start>mdi-drawing</v-icon>
                         Logos
                     </v-list-item-title>
