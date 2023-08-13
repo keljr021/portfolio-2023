@@ -32,7 +32,7 @@
 
 <template>
     <!-- Mobile tabs -->
-    <div v-if="$vuetify.display.xs">
+    <div v-if="$vuetify.display.smAndDown">
         <v-menu location="start" transition="slide-x-transition">
             <template v-slot:activator="{ props }">
                 <button class="mobile-button px-2" v-bind="props">

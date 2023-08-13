@@ -154,7 +154,7 @@ export default {
 
         <v-row id="logos" class="mb-15" justify="center" v-intersect="onIntersect">
             <v-col cols="12" v-if="$vuetify.display.xs" class="work-section-title text-center">Logos</v-col>
-            <v-col cols="12" offset-md="1" md="5" offset-lg="1" lg="5" v-for="logo in logos">
+            <v-col cols="12" sm="5" md="5" offset-lg="1" lg="5" v-for="logo in logos">
                 <v-card width="100%" :min-height="$vuetify.display.xs ? 'auto' : 150" class="align-stretch d-flex mb-8">
                     <v-card-text class="align-start ma-auto">
                         <v-img contain :height="$vuetify.display.xs ? 50 : (logo.height ? logo.height : 80)" :src="imgSrc(logo.src)" />
