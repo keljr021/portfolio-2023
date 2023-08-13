@@ -8,6 +8,13 @@
   import ViewTakeaways from '../../components/partials/ViewTakeaways.vue';
   export default {
     name: 'Lemon',
+    data() {
+      return {
+        mobilePrototypeUrl: 'https://xd.adobe.com/view/39ebb787-4097-4220-85a0-e901d27a116f-6cb8/?fullscreen',
+        desktopPrototypeUrl: 'https://xd.adobe.com/view/39ebb787-4097-4220-85a0-e901d27a116f-6cb8/screen/834dee81-37bd-4411-98b2-023f9a754dce?fullscreen',
+        caseStudyUrl: 'https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing'
+      }
+    },
     emits: [
       'set-image',
       'window-open'
@@ -20,7 +27,8 @@
       secondaryColor: {
         type: String,
         default: '#aaa'
-      }
+      },
+
     },
     methods: {
       imgSrc(input) {
@@ -47,9 +55,8 @@
     :backgroundColor="primaryColor"
     title="LemonBranch DIY Network"
     subtitle="A responsive site to view tutorials and how-tos"
-    prototypeUrl="https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/to-clean.com?type=design&node-id=86-243&scaling=scale-down&page-id=86%3A130&starting-point-node-id=86%3A243"
-    siteUrl="https://to-clean.com/"
-    caseStudyUrl="https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing"
+    :prototypeUrl="prototypeUrl"
+    :caseStudyUrl="caseStudyUrl"
     :imageSrc="imgSrc('work/lb-desktop.png')"
   >
     <template #role>
@@ -70,17 +77,17 @@
     <view-overview>
       <template #overview>
         <p>
-           This project was to design both a mobile app and responsive website for a career mentorship service to help college graduates. Torch Mentorship Network is an online service that helps students connect with a mentor during their college studies.
+          The LemonBranch Network is a company that hosts various online tutorials to view; and also allows members to create their own tutorials.
         </p>
         <p>
-            The main idea of the project was a simple and intuitive online presence geared towards college students and experienced mentors.
+          For this project, I kept a minimal color scheme, and focused on functionality with a search feature with filtering and sort options, while making the designs as responsive as possible for mobile.
         </p>
       </template>
       <template #problem>
-        Students find it frustrating to find mentorship opportunities. Often there are missed resources during college studies to connect with an experienced mentor in their field of study.
+        Users often look online to view a tutorial on various items. Often they have to use various search engines to find those tutorials; which could generate inaccurate results.
       </template>
       <template #goal>
-        Create both a dedicated mobile app and responsive web site that gives users easier options to connect with fellow mentors in their field of interest.
+        Give users an option to find tutorials online in a more streamlined way so members are able to find accurate tutorials.
       </template>
       <template #image>
         <v-img class="mx-0" height="480" :src="imgSrc('work/lb-mobile.png')" />
@@ -96,20 +103,21 @@
     <view-define>
       <template #persona1>
         <p>
-            <b>Joseph Strawn</b> is an upcoming college graduate who wants to find a mentor to learn more about the radio communication field. However, he has a hard time navigating resources to find an experienced mentor.
+          <b>Jerry Lyn</b> is a newlywed Network Admin that has recently purchased a new house. He uses his phone often to find quick tutorials on different projects to help him navigate new home ownership.
         </p>
       </template>
       <template #persona2>
-        <v-img width="100%" :src="imgSrc('to-persona.png')" />
+        <v-img width="100%" :src="imgSrc('lb-persona.png')" />
       </template>
       <template #user1>
-        <v-img width="100%" :src="imgSrc('to-usermap.png')" />
+        <v-img width="100%" :src="imgSrc('lb-usermap.png')" />
       </template>
       <template #user2>
+        From documenting Jerry's User journey, I have discovered the following opportunities when searching for a tutorial.
         <ol>
-            <li>Creating an easy to navigate home page for desktop</li>
-            <li>Automatically add user's profile info into corresponding forms for quicker submission</li>
-            <li>Mentor availability status is kept up-to-date</li>
+            <li>The site should include sections, filter, and sort options to improve search queries.</li>
+            <li>Adding a comment and rating system to each tutorial item would better help find accurate tutorial articles.</li>
+            <li>Including a filter option to search for video or article tutorials.</li>
         </ol>
       </template>
     </view-define>
@@ -122,32 +130,81 @@
 
     <view-solution>
       <template #wireframes>
+        <v-row>
+          <v-col>
+            <div class="view-text-section-title">Paper Wireframes</div>
+          </v-col>
+        </v-row>
         <v-row class="py-8">
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-dframe1.png')" />
+            <v-img width="90%" :src="imgSrc('lb-sitemap.png')" />
+            <div class="w-100 pt-8">
+              1. Started with generating a sitemap to brainstorm the various pages.
+            </div>
           </v-col>
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-dframe2.png')" />
+            <v-img width="80%" :src="imgSrc('lb-pframe1.jpg')" />
+            <div class="w-100 pt-8">
+              2. Drew several rough drafts of the site and it's corresponding pages. I used the "Crazy Eights" method to jot down a few drafts.
+            </div>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img width="100%" :src="imgSrc('lb-home-drafts.jpg')" />
+            <div class="w-100 pt-8">
+              3. I decided to use <i>Clip Studio Paint</i> to draw up a few rough drafts of the Home page, and highlighted the items that should be in the final draft.
+
+            </div>
+          </v-col>
+          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img height="400" :src="imgSrc('lb-pframe3.jpg')" />
+            <div class="w-100 pt-8">
+              4. Lastly I've drawn up the final version of the wireframes.
+            </div>
+          </v-col>
+        </v-row>
+        <v-row class="py-12">
+          <v-col>
+            <div class="view-text-section-title">Digital Wireframes</div>
+          </v-col>
+        </v-row>
+        <v-row class="py-8">
+          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img width="90%" :src="imgSrc('lb-dframe1.png')" />
+            <div class="w-100 pt-8">
+              1. <b>Home</b> - Used the paper wireframes to align the Home page. The Search bar is the main item centered in the page.
+            </div>
+          </v-col>
+          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img width="90%" :src="imgSrc('lb-dframe2.png')" />
+            <div class="w-100 pt-8">
+              2. <b>Search</b> - On the top, the total amount is shown. The lower section has a filter option on the left, with the results on the right. The top navigation gives members an option to quickly search for another tutorial throughout the site.
+            </div>
           </v-col>
         </v-row>
         <v-row class="py-8">  
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-dframe3.png')" />
+            <v-img width="90%" :src="imgSrc('lb-dframe3.png')" />
+            <div class="w-100 pt-8">
+              3. <b>View Tutorial</b> - The tutorial is layered out with the title and caption first, an image, and the content spaced out below. An area for accessibility options is located on the top right corner.
+            </div>
           </v-col>
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-dframe4.png')" />
+            <v-img width="90%" :src="imgSrc('lb-dframe4.png')" />
+            <div class="w-100 pt-8">
+              4. <b>View Author</b> - The author page has information on the tutorial writer, with a photo placeholder on the right.
+            </div>
           </v-col>
         </v-row>
       </template>
       <template #usability1>
-        <v-img class="mx-auto" width="80%" :src="imgSrc('to-study.png')" />
+        <v-img class="mx-auto" width="80%" :src="imgSrc('lb-study.png')" />
       </template>
       <template #usability2>
-        <ul>
-            <li>The Mentor Search workflow was inconsistent between navigation and the headers.</li>
-            <li>Testers had difficulty navigating through each page during the workflow.</li>
-            <li>The Article page navigation confused a majority of the users and needed refactoring.</li>
-        </ul>      
+          <p>From the Usability Study, there were a few items that were discovered. The Account workflow needed refinement for both the Login and Create Account workflows.</p>
+          <p>The View Author page could not be easily navigated to, and also needed restructure.</p>
+          <p>Lastly the Filter options in the Search bar has caused some confustion among the users, and needed to be more defined.</p> 
       </template>
     </view-solution>
 
@@ -159,28 +216,59 @@
 
     <view-results>
       <template #logo1>
-        <v-img height="150" :src="imgSrc('logo-to-2023.png')" />
+        <v-img height="80" :src="imgSrc('logo-lb.png')" />
       </template>
       <template #logo2>
         <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius dignissim dolor, quis maximus mi ullamcorper eget. Sed maximus id metus sed aliquet. Quisque nulla massa, sodales vitae interdum vitae, convallis vitae dolor.
+              The LemonBranch logo was designed for a simple, but welcoming feel. The "L" letter in the logo has a lemon grown similar to a lemon tree.
             </p>        
       </template>
       <template #mockups>
+        <v-row>
+          <v-col>
+            <div class="view-text-section-title">
+              Mockups
+            </div>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <v-btn class="mx-3 px-3" @click="windowOpen(mobilePrototypeUrl)" color="#666" variant="outlined">
+                <v-icon class="mr-3">mdi-open-in-new</v-icon>
+                Mobile
+              </v-btn>
+              <v-btn class="mx-3 px-3" @click="windowOpen(desktopPrototypeUrl)" color="#666" variant="outlined">
+                <v-icon class="mr-3">mdi-open-in-new</v-icon>
+                Desktop
+              </v-btn>
+          </v-col>
+        </v-row>
         <v-row class="py-8">
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-              <v-img width="90%" :src="imgSrc('to-mock1.png')" />
+              <v-img width="90%" :src="imgSrc('lb-mock1.png')" />
+              <div class="w-100 pt-8">
+                1. <b>Home</b> - I used a green and yellow color scheme to build out the Call to Action; with an image to further emphasize the company brand. The Search bar is also shown in the center for quick access.
+              </div>
             </v-col>
             <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-              <v-img width="90%" :src="imgSrc('to-mock2.png')" />
+              <v-img width="90%" :src="imgSrc('lb-mock2.png')" />
+              <div class="w-100 pt-8">
+                2. <b>Search</b> - The layout is aligned similarly with the digital wireframe. The page includes a sort dropdown, and a light green background to separate the results section. A ratings system below each tutorial item has also been added.
+              </div>
             </v-col>
         </v-row>
         <v-row class="py-8"> 
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-mock3.png')" />
+            <v-img width="90%" :src="imgSrc('lb-mock3.png')" />
+            <div class="w-100 pt-8">
+                3. <b>View Tutorial</b> - The layout is kept the same with different typography; also added print and enlarge font options on the top right.
+              </div>
           </v-col>
           <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-mock4.png')" />
+            <v-img width="90%" :src="imgSrc('lb-mock4.png')" />
+            <div class="w-100 pt-8">
+                4. <b>View Author</b> - Updated the typography of the page, and updated the body text with indentation to separate from the title and subtitle.
+              </div>
           </v-col>
         </v-row>
       </template>
@@ -195,14 +283,14 @@
     <view-takeaways>
       <template #lessons>
         <p>
-            I discovered a great insight on the importance of Information Architecture in web design. Creating an organized sitemap, and understanding how the data should be structured is critical when designing a new app or website.
+          During the prototyping phase of this project, I've gained more experience in using the Components and Library options in Adobe XD. Using these options will streamline prototyping in the future.
         </p>
       </template>
       <template #next>
         <ol>
-          <li>Design a responsive feel for tablet screens. Currently the above projects are only focused on mobile and desktop versions of the project.</li>
-          <li>I would add availability options to the mentor list and profile pages. This would give great insight to a fellow user looking for a mentor in their area.</li>
-          <li>I would attempt to merge the Mentor Form into a single form, rather than breaking it up into pieces. To do that, I would need to ensure that form validation is instant on each field to prevent excess scrolling to resolve invalid parameters.</li>
+          <li>Currently the prototype only has text versions of tutorials. I would enhance the workflow to allow video tutorials, along with the video and text filtering in the search queries.</li>
+          <li>I would also add in tablet responsive views, to ensure the prototype also handle tablet views.</li>
+          <li>I would slightly restructure the site map and navigation. For example, having a search page alongside the search bar during the navigation could cause confusion.</li>
         </ol>        
       </template>
     </view-takeaways>
