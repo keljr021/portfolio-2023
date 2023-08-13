@@ -43,7 +43,7 @@ export default {
     <div class="nav show w-100 px-4 py-2" v-if="$vuetify.display.smAndDown">
         <v-row class="align-center justify-space-between">
             <v-col cols="8" class="nav-logo" @click="$router.push({ name: 'home' })">
-                <img class="mt-2 mx-4" src="../assets/km-icon.svg" alt="Kelvin Morrisey Jr" />
+                <img class="mt-2 mx-1" src="../assets/km-icon.svg" alt="Kelvin Morrisey Jr" />
             </v-col>
             <v-col cols="4" class="text-right">
                 <v-icon @click.stop="toggleNavDrawer">mdi-menu</v-icon>

@@ -7,9 +7,6 @@ export default {
             resumeUrl: 'https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=sharing'
         };
     },
-    props: {
-        socialIconsArray: Array
-    },
     components: {
         ContactForm
     },
@@ -29,7 +26,7 @@ export default {
           </v-col>
         </v-row>
         <v-row class="contact">
-            <v-col cols="12" lg="2">
+            <v-col cols="12" md="2" lg="2">
                 <div class="contact-links">
                     <div @click="openWindow('mailto:kmjr07@yahoo.com')">
                         <v-icon class="mr-2" icon="mdi-email" variant="text"  />
@@ -44,13 +41,12 @@ export default {
                         Open Resume
                     </div>
                 </div>
-                <div class="contact-icons py-3">
-                    <span class="pr-3" v-for="item in socialIconsArray">
-                        <a :href="item.link" target="_blank"><img class="content-item-img" :src="item.src" :alt="item.alt" /></a>
-                    </span>
+                <div class="contact-icons pt-3">
+                    <a class="mr-3" href="www.google.com" target="_blank"><img class="content-item-img" src="../assets/LI-black.png" alt="LinkedIn link" /></a>
+                    <a class="mr-3" href="www.google.com" target="_blank"><img class="content-item-img" src="../assets/github-black.png" alt="GitHub link" /></a>
                 </div>
             </v-col>
-            <v-col cols="12" lg="9">
+            <v-col cols="12" md="9" lg="9">
                 <ContactForm />
             </v-col>
         </v-row>
@@ -92,12 +88,18 @@ export default {
 
 .contact-icons {
     img {
-        height: 40px !important;
+        height: 30px !important;
+        opacity: 0.7;
+
+        &:hover {
+            opacity: 1;
+        }
     }
 }
 
 @media all and (max-width: 768px) {
     .contact {
+        min-height: initial;
         padding: 20px;
     }
 
