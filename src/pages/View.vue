@@ -105,14 +105,14 @@
       <vue @set-image="imgSrc" @window-open="windowOpen" v-if="$route.params.id === 'vue'" />
     </div>
 
-    <v-row justify="space-between" class="pa-2">
-      <v-col cols="12" xs="12" sm="12" md="12" lg="6">
+    <v-row justify="space-between" class="py-2">
+      <v-col>
         <v-btn v-if="previousView !== null" class="px-3" variant="flat" :block="$vuetify.display.xs" @click="goToView(previousView)">
             <v-icon class="mr-2">mdi-arrow-left</v-icon>
             Previous Item
         </v-btn>
       </v-col>
-      <v-col cols="12" xs="12" sm="12" md="12" lg="6" class="text-right">
+      <v-col class="text-right">
         <v-btn v-if="nextView !== null" class="px-3" variant="flat" :block="$vuetify.display.xs" @click="goToView(nextView)">
           Next Item
           <v-icon class="mr-2">mdi-arrow-right</v-icon>
@@ -141,7 +141,7 @@
 
 :deep(.view-header-image) {
   width: 75%;
-  margin: 0 12.5%;
+  margin-left: 12.5%;
 
   &.mobile {
     width: initial;
@@ -205,6 +205,19 @@
 
   li {
     padding-bottom: 20px;
+  }
+}
+
+@media all and (max-width: 768px) {
+
+  :deep(.view-text) {
+    .view-text-overview {
+      padding: 40px 0 !important;
+    }
+
+    .view-text-section-title {
+      padding-bottom: 50px;
+    }
   }
 }
 </style>

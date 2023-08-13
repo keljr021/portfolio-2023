@@ -90,11 +90,11 @@
         Give users an option to find tutorials online in a more streamlined way so members are able to find accurate tutorials.
       </template>
       <template #image>
-        <v-img class="mx-0" height="480" :src="imgSrc('work/lb-mobile.png')" />
+        <v-img class="pt-1 mx-0" height="480" :src="imgSrc('work/lb-mobile.png')" />
       </template>
     </view-overview>
 
-    <v-row justify="center">
+    <v-row justify="start" justify-md="center" justify-lg="center">
       <v-col cols="10">
         <v-divider thickness="1" :color="secondaryColor" inset></v-divider>
       </v-col>
@@ -107,10 +107,10 @@
         </p>
       </template>
       <template #persona2>
-        <v-img width="100%" :src="imgSrc('lb-persona.png')" />
+        <v-img class="pt-1" width="100%" :src="imgSrc('lb-persona.png')" />
       </template>
       <template #user1>
-        <v-img width="100%" :src="imgSrc('lb-usermap.png')" />
+        <v-img class="pt-1" width="100%" :src="imgSrc('lb-usermap.png')" />
       </template>
       <template #user2>
         From documenting Jerry's User journey, I have discovered the following opportunities when searching for a tutorial.
@@ -122,7 +122,7 @@
       </template>
     </view-define>
 
-    <v-row justify="center">
+    <v-row justify="start" justify-md="center" justify-lg="center">
       <v-col cols="10">
         <v-divider thickness="1" :color="primaryColor" inset></v-divider>
       </v-col>
@@ -136,30 +136,30 @@
           </v-col>
         </v-row>
         <v-row class="py-8">
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('lb-sitemap.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="90%" :src="imgSrc('lb-sitemap.png')" />
+            <div class="w-100 py-8">
               1. Started with generating a sitemap to brainstorm the various pages.
             </div>
           </v-col>
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="80%" :src="imgSrc('lb-pframe1.jpg')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="80%" :src="imgSrc('lb-pframe1.jpg')" />
+            <div class="w-100 py-8">
               2. Drew several rough drafts of the site and it's corresponding pages. I used the "Crazy Eights" method to jot down a few drafts.
             </div>
           </v-col>
         </v-row>
         <v-row>
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="100%" :src="imgSrc('lb-home-drafts.jpg')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="100%" :src="imgSrc('lb-home-drafts.jpg')" />
+            <div class="w-100 py-8">
               3. I decided to use <i>Clip Studio Paint</i> to draw up a few rough drafts of the Home page, and highlighted the items that should be in the final draft.
 
             </div>
           </v-col>
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img height="400" :src="imgSrc('lb-pframe3.jpg')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" height="400" :src="imgSrc('lb-pframe3.jpg')" />
+            <div class="w-100 py-8">
               4. Lastly I've drawn up the final version of the wireframes.
             </div>
           </v-col>
@@ -170,36 +170,36 @@
           </v-col>
         </v-row>
         <v-row class="py-8">
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('lb-dframe1.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="90%" :src="imgSrc('lb-dframe1.png')" />
+            <div class="w-100 py-8">
               1. <b>Home</b> - Used the paper wireframes to align the Home page. The Search bar is the main item centered in the page.
             </div>
           </v-col>
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('lb-dframe2.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="90%" :src="imgSrc('lb-dframe2.png')" />
+            <div class="w-100 py-8">
               2. <b>Search</b> - On the top, the total amount is shown. The lower section has a filter option on the left, with the results on the right. The top navigation gives members an option to quickly search for another tutorial throughout the site.
             </div>
           </v-col>
         </v-row>
         <v-row class="py-8">  
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('lb-dframe3.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="90%" :src="imgSrc('lb-dframe3.png')" />
+            <div class="w-100 py-8">
               3. <b>View Tutorial</b> - The tutorial is layered out with the title and caption first, an image, and the content spaced out below. An area for accessibility options is located on the top right corner.
             </div>
           </v-col>
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('lb-dframe4.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="90%" :src="imgSrc('lb-dframe4.png')" />
+            <div class="w-100 py-8">
               4. <b>View Author</b> - The author page has information on the tutorial writer, with a photo placeholder on the right.
             </div>
           </v-col>
         </v-row>
       </template>
       <template #usability1>
-        <v-img class="mx-auto" width="80%" :src="imgSrc('lb-study.png')" />
+        <v-img class="pt-1 mx-auto" width="80%" :src="imgSrc('lb-study.png')" />
       </template>
       <template #usability2>
           <p>From the Usability Study, there were a few items that were discovered. The Account workflow needed refinement for both the Login and Create Account workflows.</p>
@@ -208,7 +208,7 @@
       </template>
     </view-solution>
 
-    <v-row justify="center">
+    <v-row justify="start" justify-md="center" justify-lg="center">
       <v-col cols="10">
         <v-divider thickness="1" :color="secondaryColor" inset></v-divider>
       </v-col>
@@ -216,7 +216,7 @@
 
     <view-results>
       <template #logo1>
-        <v-img height="80" :src="imgSrc('logo-lb.png')" />
+        <v-img class="pt-1" :height="$vuetify.display.xs ? 'initial' : '80'"  :width="$vuetify.display.xs ? '100%' : 'initial'" :src="imgSrc('logo-lb.png')" />
       </template>
       <template #logo2>
         <p>
@@ -244,29 +244,29 @@
           </v-col>
         </v-row>
         <v-row class="py-8">
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-              <v-img width="90%" :src="imgSrc('lb-mock1.png')" />
-              <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+              <v-img class="pt-1" width="90%" :src="imgSrc('lb-mock1.png')" />
+              <div class="w-100 py-8">
                 1. <b>Home</b> - I used a green and yellow color scheme to build out the Call to Action; with an image to further emphasize the company brand. The Search bar is also shown in the center for quick access.
               </div>
             </v-col>
-            <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-              <v-img width="90%" :src="imgSrc('lb-mock2.png')" />
-              <div class="w-100 pt-8">
+            <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+              <v-img class="pt-1" width="90%" :src="imgSrc('lb-mock2.png')" />
+              <div class="w-100 py-8">
                 2. <b>Search</b> - The layout is aligned similarly with the digital wireframe. The page includes a sort dropdown, and a light green background to separate the results section. A ratings system below each tutorial item has also been added.
               </div>
             </v-col>
         </v-row>
         <v-row class="py-8"> 
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('lb-mock3.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="90%" :src="imgSrc('lb-mock3.png')" />
+            <div class="w-100 py-8">
                 3. <b>View Tutorial</b> - The layout is kept the same with different typography; also added print and enlarge font options on the top right.
               </div>
           </v-col>
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('lb-mock4.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="90%" :src="imgSrc('lb-mock4.png')" />
+            <div class="w-100 py-8">
                 4. <b>View Author</b> - Updated the typography of the page, and updated the body text with indentation to separate from the title and subtitle.
               </div>
           </v-col>
@@ -274,7 +274,7 @@
       </template>
     </view-results>
      
-    <v-row justify="center">
+    <v-row justify="start" justify-md="center" justify-lg="center">
       <v-col cols="10">
         <v-divider thickness="1" :color="primaryColor" inset></v-divider>
       </v-col>

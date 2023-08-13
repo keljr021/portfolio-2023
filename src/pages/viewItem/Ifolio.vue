@@ -87,7 +87,7 @@
 
       </template>
       <template #image>
-        <v-img class="mx-0" height="480" :src="imgSrc('work/if-mobile.png')" />
+        <v-img class="pt-1 mx-0" height="480" :src="imgSrc('work/if-mobile.png')" />
       </template>
     </view-overview>
 

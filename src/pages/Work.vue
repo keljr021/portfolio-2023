@@ -50,10 +50,10 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="12" sm="12" md="2" lg="2">
+      <v-col cols="11" sm="12" md="2" lg="2">
         <work-tabs @scroll-to="scrollTo" :tab="selectedTab" :items="menuArray" />  
       </v-col>
-      <v-col  cols="12" sm="12" md="9" lg="9">
+      <v-col  cols="11" sm="12" md="9" lg="9">
         <div class="scroll overflow-y-auto">
           <work-list @set-tab="setTab" :tab="selectedTab" />
         </div>

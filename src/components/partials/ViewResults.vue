@@ -1,21 +1,6 @@
 <script>
   export default {
-    name: 'ViewResults',
-    data() {
-      return {}
-    },
-    props: {
-        
-    },
-    methods: {
-
-    },
-    mounted() {
-     
-    },
-    components: {
-      
-    }
+    name: 'ViewResults'
 }
 </script>
 
@@ -25,11 +10,11 @@
         <div class="view-text-title">Results</div>
 
         <v-row class="py-8">
-          <v-col cols="5" class="my-auto">
+          <v-col cols="11" md="5" lg="5" class="my-auto">
             <div class="view-text-section-title">Logo</div>
             <slot name="logo1"></slot>
           </v-col>
-          <v-col offset="1" class="my-auto">
+          <v-col offset-md="1" offset-lg="1" class="my-auto">
             <p><b>&nbsp;</b></p>
             <slot name="logo2"></slot>
           </v-col>

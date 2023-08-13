@@ -30,12 +30,12 @@
           </v-col>
         </v-row>
         <v-row>
-          <v-col class="my-auto" cols="12" xs="12" sm="12" md="12" lg="5">
+          <v-col class="my-auto" cols="11" xs="12" sm="12" md="12" lg="5">
             <p>
                 <slot name="persona1"></slot>
             </p>
           </v-col>
-          <v-col class="my-auto" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col order="first" order-md="null" order-lg="null" class="my-auto" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
             <p>
               <slot name="persona2"></slot>
             </p>
@@ -47,12 +47,12 @@
           </v-col>
         </v-row>
         <v-row>
-          <v-col class="my-auto" cols="12" xs="12" sm="12" md="12" lg="5">
+          <v-col class="my-auto" cols="11" xs="12" sm="12" md="12" lg="5">
             <p>
               <slot name="user1"></slot>
             </p>
           </v-col>
-          <v-col class="my-auto" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="my-auto" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
             <p>
                 <slot name="user2"></slot>
             </p>

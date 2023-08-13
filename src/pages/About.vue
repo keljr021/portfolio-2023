@@ -11,8 +11,8 @@
             <div class="about-text-title">About</div>
           </v-col>
         </v-row>
-        <v-row justify="center">
-            <v-col cols="12" sm="6" md="6" lg="8" class="about-text py-md-auto">
+        <v-row justify="start" justify-md="center" justify-lg="center">
+            <v-col cols="11" sm="6" md="6" lg="8" class="about-text py-md-auto">
                 <div class="about-text-caption">Art and tech: and finding the perfect median between the two.</div>
                 <div class="about-text-body py-3">
                     <p>Computers, technology, and art always fascinated me as a child. That curiosity has never stopped even as an adult today. I'm an avid note-taker, researcher, thinker, drawer, and Google...er (if that's a word).</p>
@@ -20,7 +20,7 @@
                     <p>Outside of work; I'm usually surfing the web, drawing, writing, listening to music, or gaming online.</p>
                 </div>
             </v-col>
-            <v-col cols="12" sm="6" md="6" lg="4" class="about-image text-center py-md-auto">
+            <v-col cols="11" sm="6" md="6" lg="4" class="about-image text-center py-md-auto">
                 <img alt="about photo" class="elevation-8" src="../assets/about-alt.jpg" />
             </v-col>
         </v-row>

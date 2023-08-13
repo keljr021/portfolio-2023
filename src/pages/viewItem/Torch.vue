@@ -89,11 +89,11 @@
       <template #goal>
         Create both a dedicated mobile app and responsive web site that gives users a better solution to connect with fellow mentors in their career field.      </template>
       <template #image>
-        <v-img class="mx-0" height="480" :src="imgSrc('work/to-mobile.png')" />
+        <v-img class="pt-1 mx-0" height="480" :src="imgSrc('work/to-mobile.png')" />
       </template>
     </view-overview>
 
-    <v-row justify="center">
+    <v-row justify="start" justify-md="center" justify-lg="center">
       <v-col cols="10">
         <v-divider thickness="1" :color="secondaryColor" inset></v-divider>
       </v-col>
@@ -106,10 +106,10 @@
         </p>
       </template>
       <template #persona2>
-        <v-img width="100%" :src="imgSrc('to-persona.png')" />
+        <v-img class="pt-1" width="100%" :src="imgSrc('to-persona.png')" />
       </template>
       <template #user1>
-        <v-img width="100%" :src="imgSrc('to-usermap.png')" />
+        <v-img class="pt-1" width="100%" :src="imgSrc('to-usermap.png')" />
       </template>
       <template #user2>
         <p>From documenting the user map, there were several discovered during the search process: </p>
@@ -121,7 +121,7 @@
       </template>
     </view-define>
 
-    <v-row justify="center">
+    <v-row justify="start" justify-md="center" justify-lg="center">
       <v-col cols="10">
         <v-divider thickness="1" :color="primaryColor" inset></v-divider>
       </v-col>
@@ -135,29 +135,29 @@
           </v-col>
         </v-row>
         <v-row class="py-8">
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-pframe1.jpg')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="90%" :src="imgSrc('to-pframe1.jpg')" />
+            <div class="w-100 py-8">
               1. For the mobile app, I've began rough drafting some ideas. I used the "Crazy Eights" method to quickly brainstorm some ideas on paper.
             </div>
           </v-col>
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-pframe4.jpg')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="90%" :src="imgSrc('to-pframe4.jpg')" />
+            <div class="w-100 py-8">
               2. From there, I've also drafted three separate versions of each page, and picked out ideas from each one by marking an asterisk on the chosen sections.
             </div>
           </v-col>
         </v-row>
         <v-row class="py-8">  
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-pframe3.jpg')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="90%" :src="imgSrc('to-pframe3.jpg')" />
+            <div class="w-100 py-8">
               2b <i>(Continued)</i>. Also picked a few items on the back using the same asterisk.
             </div>
           </v-col>
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-sitemap.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="90%" :src="imgSrc('to-sitemap.png')" />
+            <div class="w-100 py-8">
               3. To organize the different sections, I've created a sitemap that would benefit both the mobile app and the upcoming responsive site.
             </div>
           </v-col>
@@ -168,29 +168,29 @@
           </v-col>
         </v-row>
         <v-row class="py-8">
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img height="350" :src="imgSrc('to-dframe1.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" height="350" :src="imgSrc('to-dframe1.png')" />
+            <div class="w-100 py-8">
               1. <b>Home</b> - Adds a quick Title and message on the top page with an image placeholder. The sections below would be a quick link to various options and articles found on the site.
             </div>
           </v-col>
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img height="350" :src="imgSrc('to-dframe2.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" height="350" :src="imgSrc('to-dframe2.png')" />
+            <div class="w-100 py-8">
               2. <b>Find a Mentor</b> - The main search area where the user can either Search for a Mentor or fill out a generic Form. The user is also given a bottom navbar to navigate between pages.
             </div>
           </v-col>
         </v-row>
         <v-row>  
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img height="350" :src="imgSrc('to-dframe3.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" height="350" :src="imgSrc('to-dframe3.png')" />
+            <div class="w-100 py-8">
               3. <b>Mentor Profile</b> - Gives a page that displays a mentor's information; such as area of study.
             </div>
           </v-col>
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img height="350" :src="imgSrc('to-dframe4.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" height="350" :src="imgSrc('to-dframe4.png')" />
+            <div class="w-100 py-8">
               3. For the responsive site, I've documented the different section ideas onto a sitemap.
             </div>
           </v-col>
@@ -201,36 +201,36 @@
           </v-col>
         </v-row>
         <v-row class="py-8">
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-dframe5-alt.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="90%" :src="imgSrc('to-dframe5-alt.png')" />
+            <div class="w-100 py-8">
               1. <b>Home</b> - I wanted to give a quick way to either login or create a new account in the Call to Action. The navbar and account components were used from <i>Salesforce's Lightning UI Kit.</i>
             </div>
           </v-col>
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-dframe6-alt.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="90%" :src="imgSrc('to-dframe6-alt.png')" />
+            <div class="w-100 py-8">
               2. <b>Feed</b> - This page is shown after a member logs into their account. The idea is to give them the sections as buttons they can click on to prevent searching for options. On the right is a notification section that pops in when a member has a message or important information from the site. The Chat icon should be a fixed button on the bottom right corner.
             </div>
           </v-col>
         </v-row>
         <v-row>  
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-dframe7.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="90%" :src="imgSrc('to-dframe7.png')" />
+            <div class="w-100 py-8">
               3. <b>Find a Mentor</b> - This page is similar to the mobile app, giving the users two options to select from. The images were created from <i>Blush Designs.</i>
             </div>
           </v-col>
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-dframe8.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="90%" :src="imgSrc('to-dframe8.png')" />
+            <div class="w-100 py-8">
               3. <b>Chat Enabled</b> - This shows the behavior when the Chat button is pressed.
             </div>
           </v-col>
         </v-row>                
       </template>
       <template #usability1>
-        <v-img class="mx-auto" width="80%" :src="imgSrc('to-study.png')" />
+        <v-img class="pt-1 mx-auto" width="80%" :src="imgSrc('to-study.png')" />
       </template>
       <template #usability2>
         <ul>
@@ -241,7 +241,7 @@
       </template>
     </view-solution>
 
-    <v-row justify="center">
+    <v-row justify="start" justify-md="center" justify-lg="center">
       <v-col cols="10">
         <v-divider thickness="1" :color="secondaryColor" inset></v-divider>
       </v-col>
@@ -249,7 +249,7 @@
 
     <view-results>
       <template #logo1>
-        <v-img height="150" :src="imgSrc('logo-to.png')" />
+        <v-img class="pt-1" height="150" :src="imgSrc('logo-to.png')" />
       </template>
       <template #logo2>
         <p>
@@ -266,37 +266,37 @@
           </v-col>
         </v-row>
         <v-row class="py-8">
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-              <v-img height="350" :src="imgSrc('to-mobile1.png')" />
-              <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+              <v-img class="pt-1" height="350" :src="imgSrc('to-mobile1.png')" />
+              <div class="w-100 py-8">
               1. <b>Home</b> - Instead of a long site, I've refactored the site in the mockups to show a quick login page front and center.
 
             </div>
             </v-col>
-            <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-              <v-img height="350" :src="imgSrc('to-mobile2.png')" />
-              <div class="w-100 pt-8">
+            <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+              <v-img class="pt-1" height="350" :src="imgSrc('to-mobile2.png')" />
+              <div class="w-100 py-8">
               2. <b>Feed</b> - Used the previous Home layout from the wireframes for this page, with quick links and notifications after login.
 
             </div>
             </v-col>
         </v-row>
         <v-row class="py-8"> 
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img height="350" :src="imgSrc('to-mobile3.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" height="350" :src="imgSrc('to-mobile3.png')" />
+            <div class="w-100 py-8">
               3. <b>Find a Mentor</b> - Modified the layout structure, and added instructional text based on user feedback from the lo-fi prototype.
             </div>
           </v-col>
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img height="350" :src="imgSrc('to-mobile4.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" height="350" :src="imgSrc('to-mobile4.png')" />
+            <div class="w-100 py-8">
               4. <b>Mentor Profile</b> - Kept the structure similar to prototype, but adds two more buttons for students to quickly connect with a mentor.
             </div>
           </v-col>
         </v-row>
         <v-row class="pb-12">
-          <v-col>
+          <v-col>vscode-file://vscode-app/c:/Users/kmjr0/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html
             <div class="view-text-section-title link" @click="windowOpen(desktopPrototypeUrl)">
               Mockups - Responsive Site
               <v-icon size="x-small">mdi-open-in-new</v-icon>
@@ -304,29 +304,29 @@
           </v-col>
         </v-row>
         <v-row class="py-8">
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-              <v-img width="90%" :src="imgSrc('to-site1-alt.png')" />
-              <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+              <v-img class="pt-1" width="90%" :src="imgSrc('to-site1-alt.png')" />
+              <div class="w-100 py-8">
               1. <b>Home</b> - The Call to Action was modified to remove the two Username and Password textboxes. It also includes an image symbolizing the brand. 
             </div>
             </v-col>
-            <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-              <v-img width="90%" :src="imgSrc('to-site2.png')" />
-              <div class="w-100 pt-8">
+            <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+              <v-img class="pt-1" width="90%" :src="imgSrc('to-site2.png')" />
+              <div class="w-100 py-8">
               2. <b>Feed</b> - The mobile layout was referenced with this page. Components were shifted accordingly to make use of the wider screen.
             </div>
             </v-col>
         </v-row>
         <v-row class="py-8"> 
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-site3.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="90%" :src="imgSrc('to-site3.png')" />
+            <div class="w-100 py-8">
               3. <b>Find a Mentor</b> - Keeps the same options, but adds a Card component to the options for better accesssibility.
             </div>
           </v-col>
-          <v-col class="pa-3" cols="12" xs="12" sm="12" md="12" lg="5" offset-lg="1">
-            <v-img width="90%" :src="imgSrc('to-site4.png')" />
-            <div class="w-100 pt-8">
+          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-img class="pt-1" width="90%" :src="imgSrc('to-site4.png')" />
+            <div class="w-100 py-8">
               3. <b>Chat</b> - The Chat component was mostly kept the same, with some added styling.
             </div>
           </v-col>
@@ -334,7 +334,7 @@
       </template>
     </view-results>
      
-    <v-row justify="center">
+    <v-row justify="start" justify-md="center" justify-lg="center">
       <v-col cols="10">
         <v-divider thickness="1" :color="primaryColor" inset></v-divider>
       </v-col>

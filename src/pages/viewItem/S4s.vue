@@ -76,7 +76,7 @@
         <p>The site was built with React on the front-end, PHP CodeIgniter on the back-end, and JSON for saving and editing content.</p>
       </template>
       <template #image>
-        <v-img class="mx-0" height="480" :src="imgSrc('work/s4s-mobile.png')" />
+        <v-img class="pt-1 mx-0" height="480" :src="imgSrc('work/s4s-mobile.png')" />
       </template>
     </view-overview>
 
