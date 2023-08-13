@@ -67,6 +67,14 @@
   padding-top: 41.5px !important; 
   height: calc(100% - 73.5px) !important;
 }
+
+.work-title {
+    font-size: 28px;
+    font-family: 'Quicksand', 'Roboto Thin', sans-serif;
+    font-weight: normal;  
+    padding: 30px 0;
+}
+
 .scroll {
   max-height: calc(85vh - 74px);
 }
