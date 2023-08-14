@@ -1,6 +1,10 @@
 <script>
-  export default {
-    name: 'About'
+import Footer from './../components/partials/Footer.vue';
+export default {
+    name: 'About',
+    components: {
+        Footer
+    }
 }
 </script>
 
@@ -24,6 +28,8 @@
                 <img alt="about photo" class="elevation-8" src="../assets/about-alt.jpg" />
             </v-col>
         </v-row>
+
+        <Footer :fixed="true" />
     </v-container>
 </template>
 

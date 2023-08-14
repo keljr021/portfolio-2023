@@ -121,7 +121,7 @@
 
 
 
-    <view-solution :color="secondaryColor" :wireframeUrl="wireframeUrl">
+    <view-solution :color="secondaryColor">
       <template #wireframes>
         <v-row justify="center" class="py-8">
           <v-col cols="11" class="my-auto">

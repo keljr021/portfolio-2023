@@ -1,6 +1,7 @@
 <script>
   import WorkTabs from '@/components/partials/WorkTabs.vue';
   import WorkList from '@/components/partials/WorkList.vue';
+  import Footer from '@/components/partials/Footer.vue'
 
   export default {
     name: 'Work',
@@ -20,7 +21,8 @@
     },
     components: {
       WorkTabs,
-      WorkList
+      WorkList,
+      Footer
     }
 }
 </script>
@@ -42,6 +44,8 @@
         </div>
       </v-col>
     </v-row>
+
+    <Footer />
   </v-container>
 </template>
 
@@ -66,6 +70,6 @@
 }
 
 .scroll {
-  max-height: calc(85vh - 74px);
+  max-height: calc(80vh - 77px);
 }
 </style>

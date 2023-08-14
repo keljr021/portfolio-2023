@@ -1,7 +1,7 @@
 <script>
 import CtaText from './partials/CtaText.vue'
 import CtaMenu from './partials/CtaMenu.vue'
-import CtaSocials from './partials/CtaSocials.vue'
+import Footer from './partials/Footer.vue'
 
 export default {
     name: 'cta',
@@ -23,7 +23,7 @@ export default {
     components: {
         CtaText,
         CtaMenu,
-        CtaSocials
+        Footer
     }
 }
 </script>
@@ -43,8 +43,9 @@ export default {
                 <CtaMenu />
             </v-col>
         </v-row>
+        
+        <Footer :fixed="true" />
     </v-container>
-    
 </template>
 
 <style scoped lang="scss">

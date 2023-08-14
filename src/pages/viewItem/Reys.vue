@@ -57,7 +57,7 @@
     :prototypeUrl="prototypeUrl"
     :caseStudyUrl="caseStudyUrl"
     :imageSrc="imgSrc('work/reys-mobile.png')"
-    isMobileImg="true"
+    :isMobileImg="true"
   >
     <template #role>
       UX Designer, Logo Designer
@@ -107,7 +107,7 @@
 
 
 
-    <view-solution :color="secondaryColor" :wireframeUrl="wireframeUrl">
+    <view-solution :color="secondaryColor">
       <template #wireframes>
         <v-row justify="center" class="py-8">
           <v-col cols="11" class="my-auto">

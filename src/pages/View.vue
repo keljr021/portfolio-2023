@@ -8,6 +8,8 @@
   import S4s from './viewItem/S4s.vue';
   import React from './viewItem/React.vue';
   import Vue from './viewItem/Vue.vue';
+  import Footer from '../components/partials/Footer.vue'
+
   export default {
     name: 'View',
     data() {
@@ -76,7 +78,8 @@
       Ss,
       S4s,
       React,
-      Vue
+      Vue,
+      Footer
     }
 }
 </script>
@@ -120,6 +123,7 @@
       </v-col>
     </v-row>
 
+    <Footer />
   </v-container>
 </template>
 

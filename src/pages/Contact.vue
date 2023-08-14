@@ -28,11 +28,11 @@ export default {
         <v-row class="contact">
             <v-col cols="11" md="2" lg="2">
                 <div class="contact-links">
-                    <div @click="openWindow('mailto:kmjr07@yahoo.com')">
+                    <div @click="openWindow('mailto:kmjr07@yahoo.com')" title="Email kmjr07@yahoo.com">
                         <v-icon class="mr-2" icon="mdi-email" variant="text"  />
                         kmjr07@yahoo.com
                     </div>
-                    <div @click="openWindow('mailto:keljr021@gmail.com')">
+                    <div @click="openWindow('mailto:keljr021@gmail.com')" title="Email keljr021@gmail.com">
                         <v-icon class="mr-2" icon="mdi-email" variant="text"  />
                         keljr021@gmail.com
                     </div>
@@ -42,8 +42,8 @@ export default {
                     </div>
                 </div>
                 <div class="contact-icons pt-3">
-                    <a class="mr-3" href="www.google.com" target="_blank"><img class="content-item-img" src="../assets/LI-black.png" alt="LinkedIn link" /></a>
-                    <a class="mr-3" href="www.google.com" target="_blank"><img class="content-item-img" src="../assets/github-black.png" alt="GitHub link" /></a>
+                    <a class="mr-3" href="https://www.linkedin.com/in/kelvin-morrisey-jr-514360a7/" target="_blank"><img class="content-item-img" src="../assets/LI-black.png" alt="LinkedIn link" title="View LinkedIn Profile"/></a>
+                    <a class="mr-3" href="https://github.com/keljr021" target="_blank"><img class="content-item-img" src="../assets/github-black.png" alt="GitHub link" title="View GitHub Profile" /></a>
                 </div>
             </v-col>
             <v-col cols="11" md="9" lg="9">
