@@ -1,49 +1,46 @@
 <script>
+  import Divider from './Divider.vue';
   export default {
     name: 'ViewSolution',
-    data() {
-      return {}
-    },
     props: {
-        
-    },
-    methods: {
-
-    },
-    mounted() {
-     
+        color: {
+            type: String,
+            default: '#666'
+        }
     },
     components: {
-      
+        Divider
     }
 }
 </script>
 
 <template>
- <v-row class="view-text-section">
-      <v-col offset-xs="1" offset-sm="1" offset-md="1" offset="2" xs="11" sm="11" md="11" cols="8">
+ <v-row class="view-text-section" justify="space-evenly">
+      <v-col cols="11">
         <div class="view-text-title">Solution</div>
 
-        <v-row>
-          <v-col>
+        <v-row justify="center">
+          <v-col cols="12">
             <slot name="wireframes"></slot>
           </v-col>
         </v-row>
         
-        <v-row class="py-8">
-          <v-col cols="11" md="5" lg="5" class="my-auto">
+        <v-row justify="center" class="py-8">
+          <v-col offset="1" cols="11" class="my-auto">
             <div class="view-text-section-title">Usability Study</div>
           </v-col>
         </v-row>
-        <v-row>
-          <v-col cols="11" md="5" lg="5" class="my-auto">
+        <v-row justify="space-evenly">
+          <v-col cols="11" md="11" lg="5" class="my-auto">
             <slot name="usability1"></slot>
           </v-col>
-          <v-col offset-md="1" offset-lg="1" class="my-auto">
+          <v-col cols="11" md="11" lg="5" class="my-auto">
             <slot name="usability2"></slot>
           </v-col>
         </v-row>
         
       </v-col>
     </v-row>
+
+    <divider :color="color" />
 </template>

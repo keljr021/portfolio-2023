@@ -1,20 +1,15 @@
 <script>
+  import Divider from './Divider.vue';
   export default {
-    name: 'VueDefine',
-    data() {
-      return {}
-    },
+    name: 'ViewDefine',
     props: {
-        
-    },
-    methods: {
-
-    },
-    mounted() {
-     
+        color: {
+            type: String,
+            default: '#666'
+        }
     },
     components: {
-      
+        Divider
     }
 }
 </script>
@@ -29,13 +24,13 @@
             <div class="view-text-section-title">Persona</div>
           </v-col>
         </v-row>
-        <v-row>
-          <v-col class="my-auto" cols="11" xs="12" sm="12" md="12" lg="5">
+        <v-row justify-md="space-evenly" justify-lg="space-evenly">
+          <v-col class="my-auto" cols="11" sm="5" md="5" lg="5">
             <p>
                 <slot name="persona1"></slot>
             </p>
           </v-col>
-          <v-col order="first" order-md="null" order-lg="null" class="my-auto" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col order-xs="first" offset-sm="1" offset-md="1" offset-lg="1" sm="5" md="5" lg="5">
             <p>
               <slot name="persona2"></slot>
             </p>
@@ -46,13 +41,13 @@
             <div class="view-text-section-title">User Map</div>
           </v-col>
         </v-row>
-        <v-row>
-          <v-col class="my-auto" cols="11" xs="12" sm="12" md="12" lg="5">
+        <v-row justify-md="space-evenly" justify-lg="space-evenly">
+          <v-col class="my-auto" cols="11" xs="12" sm="12" md="11" lg="5">
             <p>
               <slot name="user1"></slot>
             </p>
           </v-col>
-          <v-col class="my-auto" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="my-auto" cols="11" xs="12" sm="12" md="11" lg="5">
             <p>
                 <slot name="user2"></slot>
             </p>
@@ -60,4 +55,6 @@
         </v-row>
       </v-col>
     </v-row>
+
+    <divider :color="color" />
 </template>

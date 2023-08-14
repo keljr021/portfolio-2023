@@ -89,7 +89,7 @@ export default {
 .nav {
     background:white;
     position: fixed;
-    z-index: 1;
+    z-index: 99;
     top: -42px;
     transition: top 0.3s;
 

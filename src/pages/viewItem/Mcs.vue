@@ -73,7 +73,7 @@
   </view-title-banner>
 
   <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
-    <view-overview>
+    <view-overview :color="secondaryColor">
       <template #overview>
         <p>
           My father and grandfather taught me the value of hard work at a very early age. Both of them instilled a strong work-ethic that I hold onto this day. Once my father inherited the family buisness, he discussed with me the opportunity of having a new website. I immediately jumped on the project without hesitation.
@@ -93,13 +93,7 @@
       </template>
     </view-overview>
 
-    <v-row justify="start" justify-md="center" justify-lg="center">
-      <v-col cols="10">
-        <v-divider thickness="1" :color="secondaryColor" inset></v-divider>
-      </v-col>
-    </v-row>
-
-    <view-define>
+    <view-define :color="primaryColor">
       <template #persona1>
         <p>
           <b>Eric Robinson</b> is a business owner of a masonry company in Roseboro, NC. He looks for a janitorial business to maintain the corporate offices daily, with occasional janitorial work on the weekends.
@@ -121,41 +115,35 @@
       </template>
     </view-define>
 
-    <v-row justify="start" justify-md="center" justify-lg="center">
-      <v-col cols="10">
-        <v-divider thickness="1" :color="primaryColor" inset></v-divider>
-      </v-col>
-    </v-row>
-
-    <view-solution>
+    <view-solution :color="secondaryColor">
       <template #wireframes>
-        <v-row>
-          <v-col>
+        <v-row justify="center" class="py-8">
+          <v-col cols="11" class="my-auto">
             <div class="view-text-section-title">Digital Wireframes</div>
           </v-col>
         </v-row>
-        <v-row class="py-8">
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+        <v-row justify="space-evenly" class="py-8">
+          <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">
             <v-img width="90%" :src="imgSrc('ka-dframe1.png')" />
             <div class="w-100 py-8">
               1. <b>Call to Action</b> - Define the business and a brief blurb on about the client with a placeholder for the image background. Also give a large button to contact the client front and center.
             </div>
           </v-col>
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">
             <v-img width="90%" :src="imgSrc('ka-dframe2.png')" />
             <div class="w-100 py-8">
               2. <b>Services</b> - Lists the different types of service items the client offers in a three-column layout. 
             </div>
           </v-col>
         </v-row>
-        <v-row class="py-8">  
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+        <v-row justify="space-evenly" class="py-8">  
+          <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">
             <v-img width="90%" :src="imgSrc('ka-dframe4.png')" />
             <div class="w-100 py-8">
               3. <b>Contact</b> - Gives the client's information and a possible map to show the client's location.
             </div>
           </v-col>
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">
             <v-img width="90%" :src="imgSrc('ka-dframe5.png')" />
             <div class="w-100 py-8">
               4. <b>Contact Form</b> - A popup that allows the user to Submit a query to the client.
@@ -164,7 +152,7 @@
         </v-row>
       </template>
       <template #usability1>
-        <v-img class="mx-auto" width="100%" :src="imgSrc('ka-study.png')" />
+        <v-img class="mx-auto" :width="$vuetify.display.smAndDown ? 'initial' : '100%'" :height="$vuetify.display.smAndDown ? 300 : 'initial'" :src="imgSrc('ka-study.png')" />
       </template>
       <template #usability2>
         <p>From going through the usability study, I've discovered that the The Contact and Contact Form links was confusing to end users when attempting to contact the client. Both links would need to be revised to prevent this.</p>
@@ -173,51 +161,47 @@
       </template>
     </view-solution>
 
-    <v-row justify="start" justify-md="center" justify-lg="center">
-      <v-col cols="10">
-        <v-divider thickness="1" :color="secondaryColor" inset></v-divider>
-      </v-col>
-    </v-row>
+    
 
-    <view-results :caseStudyUrl="caseStudyUrl">
+    <view-results :color="primaryColor" :caseStudyUrl="caseStudyUrl">
       <template #logo1>
-        <v-img v-if="$vuetify.display.xs" width="180" style="max-width:inherit" :src="imgSrc('logo-ka-2023.png')" />
-        <v-img v-else height="350" :src="imgSrc('logo-ka-2023.png')" />
+        <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="imgSrc('logo-ka-2023.png')" />
+        <v-img v-else height="150" :src="imgSrc('logo-ka-2023.png')" />
       </template>
       <template #logo2>
         <p>For the logo design, I wanted to give a professional feel from both the color and typography choices. I also wanted to set the precedence of "the same professional company you know, now under new management."</p>        
       </template>
       <template #mockups>
-        <v-row>
-          <v-col>
+        <v-row justify="space-evenly" justify-sm="center">
+          <v-col cols="11">
             <div class="view-text-section-title link" @click="windowOpen(prototypeUrl)">
               Mockups
               <v-icon size="x-small">mdi-open-in-new</v-icon>
             </div>
           </v-col>
         </v-row>
-        <v-row class="py-8">
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+        <v-row justify="center" justify-md="space-evenly" justify-lg="space-evenly" class="py-8">
+          <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">
               <v-img width="90%" :src="imgSrc('ka-mock1.png')" />
               <div class="w-100 py-8">
               1. <b>Call to Action</b> - Added the logo in the center of the page. The content was given more spacing from the wireframes; and the button was replaced with links for each section of the site. The bottom has a fixed button that slides out with the user's contact information when clicked.
             </div>
             </v-col>
-            <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">
               <v-img width="90%" :src="imgSrc('ka-mock2.png')" />
               <div class="w-100 py-8">
                 2. <b>Services</b> - The service layout is kept the same from the wireframes, with the icons representing each service item.
               </div>
             </v-col>
         </v-row>
-        <v-row class="py-8"> 
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+        <v-row justify="center" justify-md="space-evenly" justify-lg="space-evenly" class="py-8"> 
+          <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">
             <v-img width="90%" :src="imgSrc('ka-mock3.png')" />
             <div class="w-100 py-8">
               3. <b>Contact</b> - Updated the section to include the Contact Form button, and a Google Maps iFrame to show the client's location.
             </div>
           </v-col>
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">
             <v-img width="90%" :src="imgSrc('ka-mock4.png')" />
             <div class="w-100 py-8">
               4. <b>Contact Form</b> - A popup is defined with an embedded Google Form in the desktop, with a button to close the popup or open the form in a new tab. For mobile members, the Google Form is opened in a new window by default.
@@ -226,14 +210,8 @@
         </v-row>
       </template>
     </view-results>
-     
-    <v-row justify="start" justify-md="center" justify-lg="center">
-      <v-col cols="10">
-        <v-divider thickness="1" :color="primaryColor" inset></v-divider>
-      </v-col>
-    </v-row>
 
-    <view-takeaways>
+    <view-takeaways :caseStudyUrl="caseStudyUrl">
       <template #lessons>
         <p>
           From this project I have gained experience in user interviews and incorporating client feedback within mockups and prototypes.

@@ -70,7 +70,7 @@
   </view-title-banner>
 
   <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
-    <view-overview>
+    <view-overview  :color="secondaryColor">
       <template #overview>
         <p>This is a basic calculator component built with React. The component itself performs basic math calculations, allowing the user to click the buttons on screen, or key in the values themselves using the keyboard.</p>
       </template>

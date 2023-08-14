@@ -48,13 +48,13 @@
             <div class="view-header-title">{{ title }}</div>
             <div class="view-header-text">
                 <v-row class="pa-3">
-                    <v-col cols="11" md="6" lg="6">
+                    <v-col cols="11" sm="6" md="6" lg="6">
                         <div class="view-header-text-title">Role</div>
                         <div class="view-header-text-desc">
                             <slot name="role"></slot>
                         </div>
                     </v-col>
-                    <v-col cols="11" md="6" lg="6">
+                    <v-col cols="11" sm="6" md="6" lg="6">
                         <div class="view-header-text-title">Client</div>
                         <div class="view-header-text-desc">
                             <slot name="client"></slot>
@@ -62,13 +62,13 @@
                     </v-col>
                 </v-row>
                 <v-row class="pa-3">
-                    <v-col cols="11" md="6" lg="6">
+                    <v-col cols="11" sm="6" md="6" lg="6">
                         <div class="view-header-text-title">Tools Used</div>
                         <div class="view-header-text-desc">
                             <slot name="tools"></slot>
                         </div>
                     </v-col>
-                    <v-col cols="11" md="6" lg="6">
+                    <v-col cols="11" sm="6" md="6" lg="6">
                         <div class="view-header-text-title">Project Date</div>
                         <div class="view-header-text-desc">
                             <slot name="date"></slot>
@@ -77,23 +77,23 @@
                 </v-row>
                 <v-row class="pa-3">
                     <v-col>
-                        <v-btn v-if="prototypeUrl" :block="$vuetify.display.smAndDown" size="small" class="text-normal px-3 mr-6 mb-3" variant="outlined" :href="prototypeUrl" target="_blank">
+                        <v-btn v-if="prototypeUrl" :block="$vuetify.display.xs" size="small" class="text-normal px-3 mr-6 mb-3" variant="outlined" :href="prototypeUrl" target="_blank">
                             <v-icon class="mr-2">mdi-open-in-new</v-icon>
                             Prototype
                         </v-btn>
-                        <v-btn v-if="mobilePrototypeUrl" :block="$vuetify.display.smAndDown" size="small" class="text-normal px-3 mr-6 mb-3" variant="outlined" :href="mobilePrototypeUrl" target="_blank">
+                        <v-btn v-if="mobilePrototypeUrl" :block="$vuetify.display.xs" size="small" class="text-normal px-3 mr-6 mb-3" variant="outlined" :href="mobilePrototypeUrl" target="_blank">
                             <v-icon class="mr-2">mdi-open-in-new</v-icon>
                             Mobile Prototype
                         </v-btn>
-                        <v-btn v-if="desktopPrototypeUrl" :block="$vuetify.display.smAndDown" size="small" class="text-normal px-3 mr-6 mb-3" variant="outlined" :href="desktopPrototypeUrl" target="_blank">
+                        <v-btn v-if="desktopPrototypeUrl" :block="$vuetify.display.xs" size="small" class="text-normal px-3 mr-6 mb-3" variant="outlined" :href="desktopPrototypeUrl" target="_blank">
                             <v-icon class="mr-2">mdi-open-in-new</v-icon>
                             Desktop Prototype
                         </v-btn>
-                        <v-btn v-if="siteUrl" :block="$vuetify.display.smAndDown" size="small" class="text-normal px-3 mr-6 mb-3" variant="outlined" :href="siteUrl" target="_blank">
+                        <v-btn v-if="siteUrl" :block="$vuetify.display.xs" size="small" class="text-normal px-3 mr-6 mb-3" variant="outlined" :href="siteUrl" target="_blank">
                             <v-icon class="mr-2">mdi-link</v-icon>
-                            Live Site <span v-if="$route.params.id === 'ifolio' || $route.params.id === 'ss'" class="ml-2">(via Archived Wayback)</span>
+                            Live Site <span v-if="$route.params.id === 'ifolio' || $route.params.id === 'ss'" class="ml-2">(Archived)</span>
                         </v-btn>
-                        <v-btn v-if="caseStudyUrl" :block="$vuetify.display.smAndDown" size="small" class="text-normal px-3 mb-3" variant="outlined" :href="caseStudyUrl" target="_blank">
+                        <v-btn v-if="caseStudyUrl" :block="$vuetify.display.xs" size="small" class="text-normal px-3 mb-3" variant="outlined" :href="caseStudyUrl" target="_blank">
                             <v-icon class="mr-2">mdi-presentation</v-icon>
                             Case Study PPT
                         </v-btn>

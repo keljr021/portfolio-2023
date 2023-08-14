@@ -70,7 +70,7 @@
   </view-title-banner>
 
   <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
-    <view-overview>
+    <view-overview  :color="secondaryColor">
       <template #overview>
         <p>This is a calendar component built with Vue and Bootstrap. The component uses the current date and generates a full calendar for display.</p>
       </template>

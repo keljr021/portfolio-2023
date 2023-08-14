@@ -74,7 +74,7 @@
   </view-title-banner>
 
   <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
-    <view-overview>
+    <view-overview  :color="secondaryColor">
       <template #overview>
         <p>
           The LemonBranch Network is a company that hosts various online tutorials to view; and also allows members to create their own tutorials.
@@ -100,7 +100,7 @@
       </v-col>
     </v-row>
 
-    <view-define>
+    <view-define :color="primaryColor">
       <template #persona1>
         <p>
           <b>Jerry Lyn</b> is a newlywed Network Admin that has recently purchased a new house. He uses his phone often to find quick tutorials on different projects to help him navigate new home ownership.
@@ -128,7 +128,7 @@
       </v-col>
     </v-row>
 
-    <view-solution>
+    <view-solution :color="secondaryColor">
       <template #wireframes>
         <v-row>
           <v-col>
@@ -136,13 +136,13 @@
           </v-col>
         </v-row>
         <v-row class="py-8">
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" width="90%" :src="imgSrc('lb-sitemap.png')" />
             <div class="w-100 py-8">
               1. Started with generating a sitemap to brainstorm the various pages.
             </div>
           </v-col>
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
             <v-img class="pt-1" width="80%" :src="imgSrc('lb-pframe1.jpg')" />
             <div class="w-100 py-8">
               2. Drew several rough drafts of the site and it's corresponding pages. I used the "Crazy Eights" method to jot down a few drafts.
@@ -150,14 +150,14 @@
           </v-col>
         </v-row>
         <v-row>
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" width="100%" :src="imgSrc('lb-home-drafts.jpg')" />
             <div class="w-100 py-8">
               3. I decided to use <i>Clip Studio Paint</i> to draw up a few rough drafts of the Home page, and highlighted the items that should be in the final draft.
 
             </div>
           </v-col>
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
             <v-img class="pt-1" height="400" :src="imgSrc('lb-pframe3.jpg')" />
             <div class="w-100 py-8">
               4. Lastly I've drawn up the final version of the wireframes.
@@ -170,13 +170,13 @@
           </v-col>
         </v-row>
         <v-row class="py-8">
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" width="90%" :src="imgSrc('lb-dframe1.png')" />
             <div class="w-100 py-8">
               1. <b>Home</b> - Used the paper wireframes to align the Home page. The Search bar is the main item centered in the page.
             </div>
           </v-col>
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
             <v-img class="pt-1" width="90%" :src="imgSrc('lb-dframe2.png')" />
             <div class="w-100 py-8">
               2. <b>Search</b> - On the top, the total amount is shown. The lower section has a filter option on the left, with the results on the right. The top navigation gives members an option to quickly search for another tutorial throughout the site.
@@ -184,13 +184,13 @@
           </v-col>
         </v-row>
         <v-row class="py-8">  
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" width="90%" :src="imgSrc('lb-dframe3.png')" />
             <div class="w-100 py-8">
               3. <b>View Tutorial</b> - The tutorial is layered out with the title and caption first, an image, and the content spaced out below. An area for accessibility options is located on the top right corner.
             </div>
           </v-col>
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
             <v-img class="pt-1" width="90%" :src="imgSrc('lb-dframe4.png')" />
             <div class="w-100 py-8">
               4. <b>View Author</b> - The author page has information on the tutorial writer, with a photo placeholder on the right.
@@ -214,7 +214,7 @@
       </v-col>
     </v-row>
 
-    <view-results>
+    <view-results :color="primaryColor">
       <template #logo1>
         <v-img class="pt-1" :height="$vuetify.display.xs ? 'initial' : '80'"  :width="$vuetify.display.xs ? '100%' : 'initial'" :src="imgSrc('logo-lb.png')" />
       </template>
@@ -233,24 +233,24 @@
         </v-row>
         <v-row>
           <v-col>
-            <v-btn class="mx-3 px-3" @click="windowOpen(mobilePrototypeUrl)" color="#666" variant="outlined">
+            <v-btn :block="$vuetify.display.xs" :class="{ 'mx-3 px-3': true, 'mb-3': $vuetify.display.xs }" @click="windowOpen(mobilePrototypeUrl)" color="#666" variant="outlined">
                 <v-icon class="mr-3">mdi-open-in-new</v-icon>
                 Mobile
               </v-btn>
-              <v-btn class="mx-3 px-3" @click="windowOpen(desktopPrototypeUrl)" color="#666" variant="outlined">
+              <v-btn :block="$vuetify.display.xs" :class="{ 'mx-3 px-3': true, 'mb-3': $vuetify.display.xs }" @click="windowOpen(desktopPrototypeUrl)" color="#666" variant="outlined">
                 <v-icon class="mr-3">mdi-open-in-new</v-icon>
                 Desktop
               </v-btn>
           </v-col>
         </v-row>
         <v-row class="py-8">
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
               <v-img class="pt-1" width="90%" :src="imgSrc('lb-mock1.png')" />
               <div class="w-100 py-8">
                 1. <b>Home</b> - I used a green and yellow color scheme to build out the Call to Action; with an image to further emphasize the company brand. The Search bar is also shown in the center for quick access.
               </div>
             </v-col>
-            <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
               <v-img class="pt-1" width="90%" :src="imgSrc('lb-mock2.png')" />
               <div class="w-100 py-8">
                 2. <b>Search</b> - The layout is aligned similarly with the digital wireframe. The page includes a sort dropdown, and a light green background to separate the results section. A ratings system below each tutorial item has also been added.
@@ -258,13 +258,13 @@
             </v-col>
         </v-row>
         <v-row class="py-8"> 
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" width="90%" :src="imgSrc('lb-mock3.png')" />
             <div class="w-100 py-8">
                 3. <b>View Tutorial</b> - The layout is kept the same with different typography; also added print and enlarge font options on the top right.
               </div>
           </v-col>
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
             <v-img class="pt-1" width="90%" :src="imgSrc('lb-mock4.png')" />
             <div class="w-100 py-8">
                 4. <b>View Author</b> - Updated the typography of the page, and updated the body text with indentation to separate from the title and subtitle.

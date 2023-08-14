@@ -73,7 +73,7 @@
   </view-title-banner>
 
   <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
-    <view-overview>
+    <view-overview  :color="secondaryColor">
       <template #overview>
         <p>For this project, I focused on designing a menu app for a Mexican Restaurant. Rey's Mexican Restaurant is a restaurant chain that provides authentic Mexican food with a variety of options.</p>
       </template>
@@ -91,7 +91,7 @@
       </v-col>
     </v-row>
 
-    <view-define>
+    <view-define :color="primaryColor">
       <template #persona1>
         <p>
           <b>Cal Murphy</b> is a busy office manager who needs more accurate order tracking because he has a tight work schedule and limited time in between meetings.
@@ -114,7 +114,7 @@
       </v-col>
     </v-row>
 
-    <view-solution>
+    <view-solution :color="secondaryColor">
       <template #wireframes>
         <v-row>
           <v-col>
@@ -122,19 +122,19 @@
           </v-col>
         </v-row>
         <v-row class="py-8">
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="4">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="4" lg="4">
             <v-img class="pt-1" height="350" :src="imgSrc('reys-pframe1.jpg')" />
             <div class="w-100 py-8">
               1. I began to sketch out the general workflow of the application.
             </div>
           </v-col>
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="4">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="4" lg="4">
             <v-img class="pt-1" height="300" :src="imgSrc('reys-pframe2.jpg')" />
             <div class="w-100 py-8">
               2. Then I brainstormed several rough draft ideas of how the app should look. From these drafts, I've picked a few items from each to add to the final wireframe.
             </div>
           </v-col> 
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="4">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="4" lg="4">
             <v-img class="pt-1" height="300" :src="imgSrc('reys-pframe3.jpg')" />
             <div class="w-100 py-8">
               3. Finally, I've drawn up the final version of the wireframes. Above is an example of the Menu pages.
@@ -147,25 +147,25 @@
           </v-col>
         </v-row>
         <v-row class="py-8">
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" height="300" :src="imgSrc('reys-dframe1.png')" />
             <div class="w-100 py-8">
               1. <b>Home</b> - The page is layout with the restaurant image, and a slider of menu options. There is a View Menu button across the width of the screen. Near the navigation, a Cart button is added.
             </div>
           </v-col>
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
             <v-img class="pt-1" height="300" :src="imgSrc('reys-dframe2.png')" />
             <div class="w-100 py-8">
               2. <b>Menu Grid View</b> - The Grid View shows the various menu items in a grid like layout to quickly sort through each choice. There is also an option to toggle between Grid and List view.
             </div>
           </v-col> 
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" height="300" :src="imgSrc('reys-dframe3.png')" />
             <div class="w-100 py-8">
               3. <b>Menu List View</b> - The List View shows the items in a list layout with more information for each item.
             </div>
           </v-col>
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
             <v-img class="pt-1" height="300" :src="imgSrc('reys-dframe5.png')" />
             <div class="w-100 py-8">
               4. <b>Order Tracker</b> - Diagrams a vertical stepper which will allow users to track their order status until pickup.
@@ -189,7 +189,7 @@
       </v-col>
     </v-row>
 
-    <view-results>
+    <view-results :color="primaryColor">
       <template #logo1>
         <v-img class="pt-1" height="150" :src="imgSrc('logo-reys.png')" />
       </template>
@@ -206,14 +206,14 @@
           </v-col>
         </v-row>
         <v-row class="py-8">
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
               <v-img class="pt-1" height="300" :src="imgSrc('reys-mock1.png')" />
               <div class="w-100 py-8">
                 1. <b>Home</b> - Added a Cart and Account button to the navigation. The color and typography has been updated accordingly.
 
               </div>
             </v-col>
-            <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+            <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
               <v-img class="pt-1" height="300" :src="imgSrc('reys-mock2.png')" />
               <div class="w-100 py-8">
                 2. <b>Menu Grid View</b> - The Grid and List buttons were grouped to show the relation among one another.
@@ -221,13 +221,13 @@
             </v-col>
         </v-row>
         <v-row class="py-8"> 
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" height="300" :src="imgSrc('reys-mock3.png')" />
             <div class="w-100 py-8">
                 3. <b>Menu List View</b> - For the list items, added a description to each.
               </div>
           </v-col>
-          <v-col class="pa-3" cols="11" xs="12" sm="12" md="12" lg="5" offset-lg="1">
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
             <v-img class="pt-1" height="300" :src="imgSrc('reys-mock4.png')" />
             <div class="w-100 py-8">
                 4. <b>Order Tracker</b> - Added the Order number and estimated time on top instead of the bottom area.
