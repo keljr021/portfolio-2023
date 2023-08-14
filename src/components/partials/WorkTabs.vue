@@ -8,6 +8,7 @@
       }
     },
     emits: [
+        'scroll-to',
         'set-tab'
     ],
     props: {

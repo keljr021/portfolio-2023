@@ -22,10 +22,6 @@
         imageHeight: String,
     },
     methods: {
-        hoverItem(input) {
-            this.overlay = input;
-        },
-
         clickItem() {
             this.$router.push({ name: 'view', params: { id: this.linkId } })
         }
@@ -34,7 +30,7 @@
 </script>
 
 <template>  
-    <v-card flat class="list-item w-100" :style="{ 'border-bottom': '2px solid' + color }" @click="clickItem" @mouseover="hoverItem(true)" @mouseleave="hoverItem(false)">
+    <v-card flat class="list-item w-100" :style="{ 'border-bottom': '2px solid' + color }">
         <v-row justify="start" justify-md="center" justify-lg="center">
             <v-col cols="11" md="5" lg="5" class="list-item-text my-auto">
                 <div class="list-item-text-title py-1" :style="{ 'color': color }">{{ title }}</div>

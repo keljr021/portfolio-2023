@@ -56,12 +56,12 @@
 
 <template>
   <v-app>
-    <Navbar @scrollTo="scrollTo" :navItems="navItems" />
+    <Navbar @scrollTo="scrollTo" />
 
     <!-- Gives spacing between navigation and content below -->
     <!-- <v-spacer v-if="this.$vuetify.display.smAndDown" style="height:41.5px"></v-spacer> -->
 
-    <router-view :navItems="navItems"></router-view>
+    <router-view></router-view>
   </v-app>
 </template>
 

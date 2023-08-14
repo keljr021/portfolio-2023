@@ -10,7 +10,7 @@
 </script>
 
 <template>
-  <Cta :socialIconsArray="socialIconsArray"/>
+  <Cta />
 </template>
 
 <style>

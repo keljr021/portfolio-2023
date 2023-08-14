@@ -264,7 +264,7 @@
      
 
 
-    <view-takeaways>
+    <view-takeaways :caseStudyUrl="caseStudyUrl">
       <template #lessons>
         <p>
           During the prototyping phase of this project, I've gained more experience in using the Components and Library options in Adobe XD. Using these options will streamline prototyping in the future.

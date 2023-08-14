@@ -8,7 +8,6 @@ export default {
         };
     },
     props: {
-        navItems: Array,
         logo: String
     },
     emits: [

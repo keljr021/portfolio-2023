@@ -227,7 +227,7 @@
      
 
 
-    <view-takeaways>
+    <view-takeaways :caseStudyUrl="caseStudyUrl">
       <template #lessons>
         <p>
           From working on this app, I have learned the great importance of usability studies and user feedback. It has given me insight to areas that were not thought about during the prototyping phase of the app. Going through the process has been very beneficial to designing in the future.

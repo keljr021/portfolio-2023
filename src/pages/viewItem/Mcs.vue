@@ -163,7 +163,7 @@
 
     
 
-    <view-results :color="primaryColor" :caseStudyUrl="caseStudyUrl">
+    <view-results :color="primaryColor">
       <template #logo1>
         <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="imgSrc('logo-ka-2023.png')" />
         <v-img v-else height="150" :src="imgSrc('logo-ka-2023.png')" />

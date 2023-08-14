@@ -6,23 +6,6 @@
     name: 'Work',
     data() {
       return {
-        menuArray: [
-            {
-                name: 'UI/UX Design',
-                value: 'ui',
-                icon: 'mdi-folder-account'
-            },
-            {
-                name: 'Front-End',
-                value: 'frontend',
-                icon: 'mdi-code-tags'
-            },
-            {
-                name: 'Logos',
-                value: 'logos',
-                icon: 'mdi-drawing'
-            }
-        ],
         selectedTab: 'ui'
       }
     },
@@ -51,7 +34,7 @@
     </v-row>
     <v-row>
       <v-col cols="11" sm="12" md="2" lg="2">
-        <work-tabs @scroll-to="scrollTo" :tab="selectedTab" :items="menuArray" />  
+        <work-tabs @scroll-to="scrollTo" @set-tab="setTab" :tab="selectedTab" />  
       </v-col>
       <v-col  cols="11" sm="12" md="9" lg="9">
         <div class="scroll overflow-y-auto">

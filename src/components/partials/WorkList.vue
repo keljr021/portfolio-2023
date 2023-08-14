@@ -80,7 +80,7 @@ export default {
                     caption="A mobile app and website that connects students with mentors" 
                     :desktopImg="imgSrc('work/to-desktop.png')"
                     :mobileImg="imgSrc('work/to-mobile.png')"
-                    :imageHeight="cardHeight" />
+                     />
             </v-col>
             <v-col cols="12" md="10" lg="10">
                 <work-list-item 
@@ -90,7 +90,7 @@ export default {
                     caption="A responsive site to view tutorials and how-tos" 
                     :desktopImg="imgSrc('work/lb-desktop.png')"
                     :mobileImg="imgSrc('work/lb-mobile.png')"
-                    :imageHeight="cardHeight" />
+                     />
             </v-col>
             <v-col cols="12" md="10" lg="10">
                 <work-list-item 
@@ -113,7 +113,7 @@ export default {
                     caption="An online portfolio page to host images" 
                     :desktopImg="imgSrc('work/if-desktop.png')"
                     :mobileImg="imgSrc('work/if-mobile.png')"
-                    :imageHeight="cardHeight" />
+                     />
             </v-col>
             <v-col cols="12" md="10" lg="10">
                 <work-list-item 
@@ -122,7 +122,7 @@ export default {
                     title="ScoreShots 2.0" 
                     caption="A platform to create and share infographics" 
                     :desktopImg="imgSrc('work/ss-desktop.png')"
-                    :imageHeight="cardHeight" />
+                     />
             </v-col>
             <v-col cols="12" md="10" lg="10">
                 <work-list-item 
@@ -132,7 +132,7 @@ export default {
                     caption="An e-learning platform for coaches and players" 
                     :desktopImg="imgSrc('work/s4s-desktop.png')"
                     :mobileImg="imgSrc('work/s4s-mobile.png')"
-                    :imageHeight="cardHeight" />
+                     />
             </v-col>
             <v-col cols="12" md="10" lg="10">
                 <work-list-item 
@@ -140,7 +140,7 @@ export default {
                     title="React Calculator" 
                     caption="A calculator component built with React JS" 
                     :desktopImg="imgSrc('work/react-desktop.png')"
-                    :imageHeight="cardHeight" />
+                     />
             </v-col>
             <v-col cols="12" md="10" lg="10">
                 <work-list-item 
@@ -148,7 +148,7 @@ export default {
                     title="Vue Calendar" 
                     caption="A calendar component built with Vue JS" 
                     :desktopImg="imgSrc('work/vue-desktop.png')"
-                    :imageHeight="cardHeight" />
+                     />
             </v-col>
         </v-row>
 
