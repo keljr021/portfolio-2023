@@ -94,11 +94,7 @@
       </template>
     </view-overview>
 
-    <v-row justify="start" justify-md="center" justify-lg="center">
-      <v-col cols="10">
-        <v-divider thickness="1" :color="secondaryColor" inset></v-divider>
-      </v-col>
-    </v-row>
+
 
     <view-define :color="primaryColor">
       <template #persona1>
@@ -122,20 +118,16 @@
       </template>
     </view-define>
 
-    <v-row justify="start" justify-md="center" justify-lg="center">
-      <v-col cols="10">
-        <v-divider thickness="1" :color="primaryColor" inset></v-divider>
-      </v-col>
-    </v-row>
+
 
     <view-solution :color="secondaryColor">
       <template #wireframes>
-        <v-row>
-          <v-col>
+        <v-row justify="center" class="py-8">
+          <v-col cols="11" class="my-auto">
             <div class="view-text-section-title">Paper Wireframes</div>
           </v-col>
         </v-row>
-        <v-row class="py-8">
+        <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" width="90%" :src="imgSrc('lb-sitemap.png')" />
             <div class="w-100 py-8">
@@ -149,7 +141,7 @@
             </div>
           </v-col>
         </v-row>
-        <v-row>
+        <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" width="100%" :src="imgSrc('lb-home-drafts.jpg')" />
             <div class="w-100 py-8">
@@ -169,7 +161,7 @@
             <div class="view-text-section-title">Digital Wireframes</div>
           </v-col>
         </v-row>
-        <v-row class="py-8">
+        <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" width="90%" :src="imgSrc('lb-dframe1.png')" />
             <div class="w-100 py-8">
@@ -183,7 +175,7 @@
             </div>
           </v-col>
         </v-row>
-        <v-row class="py-8">  
+        <v-row justify="space-evenly" class="py-8">  
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" width="90%" :src="imgSrc('lb-dframe3.png')" />
             <div class="w-100 py-8">
@@ -208,15 +200,11 @@
       </template>
     </view-solution>
 
-    <v-row justify="start" justify-md="center" justify-lg="center">
-      <v-col cols="10">
-        <v-divider thickness="1" :color="secondaryColor" inset></v-divider>
-      </v-col>
-    </v-row>
+
 
     <view-results :color="primaryColor">
       <template #logo1>
-        <v-img class="pt-1" :height="$vuetify.display.xs ? 'initial' : '80'"  :width="$vuetify.display.xs ? '100%' : 'initial'" :src="imgSrc('logo-lb.png')" />
+        <v-img class="pt-1" :height="$vuetify.display.xs ? 'initial' : '65'"  :width="$vuetify.display.xs ? '90%' : 'initial'" :src="imgSrc('logo-lb.png')" />
       </template>
       <template #logo2>
         <p>
@@ -224,26 +212,26 @@
             </p>        
       </template>
       <template #mockups>
-        <v-row>
-          <v-col>
+        <v-row justify="space-evenly" class="pt-8">
+          <v-col cols="11">
             <div class="view-text-section-title">
               Mockups
             </div>
           </v-col>
         </v-row>
-        <v-row>
+        <v-row justify="space-evenly" class="pt-8">
           <v-col>
-            <v-btn :block="$vuetify.display.xs" :class="{ 'mx-3 px-3': true, 'mb-3': $vuetify.display.xs }" @click="windowOpen(mobilePrototypeUrl)" color="#666" variant="outlined">
+            <v-btn :class="{ 'mx-3 px-3': true, 'mb-3': $vuetify.display.xs }" @click="windowOpen(mobilePrototypeUrl)" color="#666" variant="outlined">
                 <v-icon class="mr-3">mdi-open-in-new</v-icon>
                 Mobile
               </v-btn>
-              <v-btn :block="$vuetify.display.xs" :class="{ 'mx-3 px-3': true, 'mb-3': $vuetify.display.xs }" @click="windowOpen(desktopPrototypeUrl)" color="#666" variant="outlined">
+              <v-btn :class="{ 'mx-3 px-3': true, 'mb-3': $vuetify.display.xs }" @click="windowOpen(desktopPrototypeUrl)" color="#666" variant="outlined">
                 <v-icon class="mr-3">mdi-open-in-new</v-icon>
                 Desktop
               </v-btn>
           </v-col>
         </v-row>
-        <v-row class="py-8">
+        <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
               <v-img class="pt-1" width="90%" :src="imgSrc('lb-mock1.png')" />
               <div class="w-100 py-8">
@@ -257,7 +245,7 @@
               </div>
             </v-col>
         </v-row>
-        <v-row class="py-8"> 
+        <v-row justify="space-evenly" class="py-8"> 
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" width="90%" :src="imgSrc('lb-mock3.png')" />
             <div class="w-100 py-8">
@@ -274,11 +262,7 @@
       </template>
     </view-results>
      
-    <v-row justify="start" justify-md="center" justify-lg="center">
-      <v-col cols="10">
-        <v-divider thickness="1" :color="primaryColor" inset></v-divider>
-      </v-col>
-    </v-row>
+
 
     <view-takeaways>
       <template #lessons>

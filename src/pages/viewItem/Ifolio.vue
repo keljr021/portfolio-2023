@@ -70,7 +70,7 @@
   </view-title-banner>
 
   <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
-    <view-overview  :color="secondaryColor">
+    <view-overview :color="secondaryColor" noDivider>
       <template #overview>
         <p>iFolio was an idea that a fellow co-worker of mine came up with. When he asked for help in this endeavor, I had no problem in giving him a hand.</p>
         <p>iFolio was a web application that allowed users to create their own web page to post images; mainly for stylists and barbers to showcase their work. We attempted to make it as simple as possible for clients to use. I worked on the front-end of the application; including the home page.</p>

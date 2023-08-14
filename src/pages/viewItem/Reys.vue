@@ -85,11 +85,7 @@
       </template>
     </view-overview>
 
-    <v-row justify="start" justify-md="center" justify-lg="center">
-      <v-col cols="10">
-        <v-divider thickness="1" :color="secondaryColor" inset></v-divider>
-      </v-col>
-    </v-row>
+
 
     <view-define :color="primaryColor">
       <template #persona1>
@@ -108,20 +104,16 @@
       </template>
     </view-define>
 
-    <v-row justify="start" justify-md="center" justify-lg="center">
-      <v-col cols="10">
-        <v-divider thickness="1" :color="primaryColor" inset></v-divider>
-      </v-col>
-    </v-row>
+
 
     <view-solution :color="secondaryColor">
       <template #wireframes>
-        <v-row>
-          <v-col>
+        <v-row justify="center" class="py-8">
+          <v-col cols="11" class="my-auto">
             <div class="view-text-section-title">Paper Wireframes</div>
           </v-col>
         </v-row>
-        <v-row class="py-8">
+        <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="4" lg="4">
             <v-img class="pt-1" height="350" :src="imgSrc('reys-pframe1.jpg')" />
             <div class="w-100 py-8">
@@ -146,7 +138,7 @@
             <div class="view-text-section-title">Digital Wireframes</div>
           </v-col>
         </v-row>
-        <v-row class="py-8">
+        <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" height="300" :src="imgSrc('reys-dframe1.png')" />
             <div class="w-100 py-8">
@@ -183,11 +175,7 @@
       </template>
     </view-solution>
 
-    <v-row justify="start" justify-md="center" justify-lg="center">
-      <v-col cols="10">
-        <v-divider thickness="1" :color="secondaryColor" inset></v-divider>
-      </v-col>
-    </v-row>
+
 
     <view-results :color="primaryColor">
       <template #logo1>
@@ -197,7 +185,7 @@
         <p>The logo idea was to make a casual and family-friendly with a more authentic feel. It also uses the a golden color for the "Rey's" to highlight a royal and proper tone.</p>
       </template>
       <template #mockups>
-        <v-row>
+        <v-row justify="space-evenly" class="py-8">
           <v-col>
             <div class="view-text-section-title link" @click="windowOpen(prototypeUrl)">
               Mockups
@@ -205,7 +193,7 @@
             </div>
           </v-col>
         </v-row>
-        <v-row class="py-8">
+        <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
               <v-img class="pt-1" height="300" :src="imgSrc('reys-mock1.png')" />
               <div class="w-100 py-8">
@@ -220,7 +208,7 @@
               </div>
             </v-col>
         </v-row>
-        <v-row class="py-8"> 
+        <v-row justify="space-evenly" class="py-8"> 
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" height="300" :src="imgSrc('reys-mock3.png')" />
             <div class="w-100 py-8">
@@ -237,11 +225,7 @@
       </template>
     </view-results>
      
-    <v-row justify="start" justify-md="center" justify-lg="center">
-      <v-col cols="10">
-        <v-divider thickness="1" :color="primaryColor" inset></v-divider>
-      </v-col>
-    </v-row>
+
 
     <view-takeaways>
       <template #lessons>

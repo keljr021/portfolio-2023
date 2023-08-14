@@ -25,7 +25,7 @@
         <div class="view-text-title">Takeaways</div>
 
         <v-row justify="space-between">
-          <v-col md="5" lg="5">
+          <v-col cols="11" md="5" lg="5">
             <div class="view-text-section-title">Lessons Learned</div>
             <slot name="lessons"></slot>
             <v-row>
@@ -37,7 +37,7 @@
               </v-col>
             </v-row>
           </v-col>
-          <v-col md="5" lg="5">
+          <v-col cols="11" md="5" lg="5">
             <div class="view-text-section-title">Next Steps</div>
             <slot name="next"></slot>
           </v-col>

@@ -6,6 +6,10 @@
         color: {
             type: String,
             default: '#666'
+        },
+        noDivider: {
+            type: Boolean,
+            default: false
         }
     },
     components: {
@@ -25,7 +29,7 @@
                     <slot name="image"></slot>
                 </v-col>
             </v-row>
-            <v-row class="py-8">
+            <v-row justify="space-evenly" class="py-8">
                 <v-col cols="11" sm="5" md="5" lg="5" v-if="$slots.problem">
                     <div class="view-text-section-title">Problem</div>
                     <p>
@@ -42,5 +46,5 @@
         </v-col>
     </v-row>
     
-    <divider :color="color" />
+    <divider v-if="!noDivider" :color="color" />
 </template>
