@@ -72,4 +72,10 @@
 .scroll {
   max-height: calc(80vh - 77px);
 }
+
+@media all and (max-width: 768px) {
+  .scroll {
+    max-height: calc(75vh - 77px);
+  }
+}
 </style>
