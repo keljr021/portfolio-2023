@@ -191,7 +191,7 @@
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
             <v-img class="pt-1" height="350" :src="imgSrc('to-dframe4.png')" />
             <div class="w-100 py-8">
-              3. For the responsive site, I've documented the different section ideas onto a sitemap.
+              4. <b>Chat</b> - Displays the Chat layout that shows the list of members that the user has conversed with.
             </div>
           </v-col>
         </v-row>
@@ -224,7 +224,7 @@
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
             <v-img class="pt-1" width="90%" :src="imgSrc('to-dframe8.png')" />
             <div class="w-100 py-8">
-              3. <b>Chat Enabled</b> - This shows the behavior when the Chat button is pressed.
+              4. <b>Chat Enabled</b> - This shows the behavior when the Chat button is pressed.
             </div>
           </v-col>
         </v-row>                
@@ -327,7 +327,7 @@
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
             <v-img class="pt-1" width="90%" :src="imgSrc('to-site4.png')" />
             <div class="w-100 py-8">
-              3. <b>Chat</b> - The Chat component was mostly kept the same, with some added styling.
+              4. <b>Chat</b> - The Chat component was mostly kept the same, with some added styling.
             </div>
           </v-col>
         </v-row>
