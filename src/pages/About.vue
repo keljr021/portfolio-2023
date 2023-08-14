@@ -29,7 +29,7 @@ export default {
             </v-col>
         </v-row>
 
-        <Footer :fixed="true" />
+        <Footer :fixed="$vuetify.display.mdAndUp" />
     </v-container>
 </template>
 
