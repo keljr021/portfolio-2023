@@ -61,7 +61,11 @@
     <!-- Gives spacing between navigation and content below -->
     <!-- <v-spacer v-if="this.$vuetify.display.smAndDown" style="height:41.5px"></v-spacer> -->
 
-    <router-view></router-view>
+    <router-view v-slot="{ Component, route }">
+      <transition name="fade" mode="out-in">
+        <component :is="Component" :key="route.path" />
+      </transition>
+    </router-view>
   </v-app>
 </template>
 
@@ -71,5 +75,15 @@
 
 :deep(.v-container, .v-container--fluid) {
   background: transparent;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

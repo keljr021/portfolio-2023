@@ -10,7 +10,9 @@
     name: 'Torch',
     data() {
       return {
-        mobilePrototypeUrl: 'https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A9537&scaling=scale-down&page-id=28%3A9536&starting-point-node-id=28%3A9537',
+        mobileWireframeUrl: 'https://www.figma.com/proto/hgMpXvVZJfJno8AiRug0VC/Torch-Mobile-App?node-id=23-3&scaling=scale-down&page-id=23%3A2&starting-point-node-id=23%3A3',
+        desktopWireframeUrl: 'https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=6-6495&scaling=min-zoom&page-id=6%3A6494&starting-point-node-id=6%3A6495',
+        mobilePrototypeUrl: 'https://www.figma.com/proto/hgMpXvVZJfJno8AiRug0VC/Torch-Mobile-App?node-id=58-3934&scaling=scale-down&page-id=58%3A3610&starting-point-node-id=58%3A3934',
         desktopPrototypeUrl: 'https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A11119&scaling=min-zoom&page-id=28%3A11118&starting-point-node-id=28%3A11119',
         caseStudyUrl: 'https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing'
       }
@@ -155,8 +157,11 @@
           </v-col>
         </v-row>
         <v-row justify="space-evenly" class="py-12">
-          <v-col>
-            <div class="view-text-section-title">Digital Wireframes - Mobile App</div>
+          <v-col cols="11">
+            <div class="view-text-section-title link" @click="windowOpen(mobileWireframeUrl)" title="Open in new tab">
+              Digital Wireframes - Mobile App
+              <v-icon size="x-small">mdi-open-in-new</v-icon>
+            </div>
           </v-col>
         </v-row>
         <v-row justify="space-evenly" class="py-8">
@@ -188,8 +193,11 @@
           </v-col>
         </v-row>
         <v-row class="py-12">
-          <v-col>
-            <div class="view-text-section-title">Digital Wireframes - Responsive Site</div>
+          <v-col cols="11">
+            <div class="view-text-section-title link" @click="windowOpen(desktopWireframeUrl)" title="Open in new tab">
+              Digital Wireframes - Responsive Site
+              <v-icon size="x-small">mdi-open-in-new</v-icon>
+            </div>
           </v-col>
         </v-row>
         <v-row justify="space-evenly" class="py-8">
@@ -246,7 +254,7 @@
       </template>
       <template #mockups>
         <v-row class="pb-12">
-          <v-col>
+          <v-col cols="11">
             <div class="view-text-section-title link" @click="windowOpen(mobilePrototypeUrl)">
               Mockups - Mobile App
               <v-icon size="x-small">mdi-open-in-new</v-icon>
@@ -284,7 +292,7 @@
           </v-col>
         </v-row>
         <v-row class="pb-12">
-          <v-col>
+          <v-col cols="11">
             <div class="view-text-section-title link" @click="windowOpen(desktopPrototypeUrl)">
               Mockups - Responsive Site
               <v-icon size="x-small">mdi-open-in-new</v-icon>

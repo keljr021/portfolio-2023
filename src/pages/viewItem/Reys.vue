@@ -10,6 +10,7 @@
     name: 'Reys ',
     data() {
       return {
+        wireframeUrl: 'https://www.figma.com/proto/VaAdj9uN0B0Oh85trN10t6/Mexican-Restaurant-App---Lo-Fi-Prototype?node-id=1-6&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A6',
         prototypeUrl: 'https://www.figma.com/proto/5NxCYVA06z3PUwJN9qYVR1/Mexican-Restaurant-App---Revised?node-id=140%3A485&scaling=scale-down&page-id=140%3A2&starting-point-node-id=140%3A485',
         caseStudyUrl: 'https://docs.google.com/presentation/d/1L7N0_CG95WT4dYPjiDQqjJcviKUniSmyCGsc_-OxTvg/edit?usp=sharing'
       }
@@ -106,7 +107,7 @@
 
 
 
-    <view-solution :color="secondaryColor">
+    <view-solution :color="secondaryColor" :wireframeUrl="wireframeUrl">
       <template #wireframes>
         <v-row justify="center" class="py-8">
           <v-col cols="11" class="my-auto">
@@ -135,7 +136,10 @@
         </v-row>
         <v-row class="my-12">
           <v-col>
-            <div class="view-text-section-title">Digital Wireframes</div>
+            <div class="view-text-section-title link" @click="windowOpen(wireframeUrl)" title="Open in new tab">
+              Digital Wireframes
+              <v-icon size="x-small">mdi-open-in-new</v-icon>
+            </div>
           </v-col>
         </v-row>
         <v-row justify="space-evenly" class="py-8">
@@ -187,7 +191,7 @@
       <template #mockups>
         <v-row justify="space-evenly" class="py-8">
           <v-col>
-            <div class="view-text-section-title link" @click="windowOpen(prototypeUrl)">
+            <div class="view-text-section-title link" @click="windowOpen(prototypeUrl)" title="Open in new tab">
               Mockups
               <v-icon size="x-small">mdi-open-in-new</v-icon>
             </div>

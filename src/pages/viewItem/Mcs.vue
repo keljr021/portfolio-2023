@@ -10,6 +10,7 @@
     name: 'Mcs',
     data() {
       return {
+        wireframeUrl: 'https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/ka-clean.com?type=design&node-id=14-287&scaling=scale-down&page-id=14%3A227&starting-point-node-id=14%3A287',
         prototypeUrl: 'https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/ka-clean.com?type=design&node-id=86-243&scaling=scale-down&page-id=86%3A130&starting-point-node-id=86%3A243',
         caseStudyUrl: 'https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing'
       }
@@ -119,7 +120,10 @@
       <template #wireframes>
         <v-row justify="center" class="py-8">
           <v-col cols="11" class="my-auto">
-            <div class="view-text-section-title">Digital Wireframes</div>
+            <div class="view-text-section-title link" @click="windowOpen(wireframeUrl)" title="Open in new tab">
+              Digital Wireframes
+              <v-icon size="x-small">mdi-open-in-new</v-icon>
+            </div>
           </v-col>
         </v-row>
         <v-row justify="space-evenly" class="py-8">
@@ -174,7 +178,7 @@
       <template #mockups>
         <v-row justify="space-evenly" justify-sm="center">
           <v-col cols="11">
-            <div class="view-text-section-title link" @click="windowOpen(prototypeUrl)">
+            <div class="view-text-section-title link" @click="windowOpen(prototypeUrl)" title="Open prototype in new tab">
               Mockups
               <v-icon size="x-small">mdi-open-in-new</v-icon>
             </div>

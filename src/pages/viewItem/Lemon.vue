@@ -10,8 +10,9 @@
     name: 'Lemon',
     data() {
       return {
-        mobilePrototypeUrl: 'https://xd.adobe.com/view/39ebb787-4097-4220-85a0-e901d27a116f-6cb8/?fullscreen',
-        desktopPrototypeUrl: 'https://xd.adobe.com/view/39ebb787-4097-4220-85a0-e901d27a116f-6cb8/screen/834dee81-37bd-4411-98b2-023f9a754dce?fullscreen',
+        wireframeUrl: 'https://xd.adobe.com/view/25553f55-f5fc-4c50-9954-ab41db3bf124-7006/?fullscreen',
+        desktopPrototypeUrl: 'https://xd.adobe.com/view/39ebb787-4097-4220-85a0-e901d27a116f-6cb8/?fullscreen',
+        mobilePrototypeUrl: 'https://xd.adobe.com/view/39ebb787-4097-4220-85a0-e901d27a116f-6cb8/screen/834dee81-37bd-4411-98b2-023f9a754dce?fullscreen',
         caseStudyUrl: 'https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing'
       }
     },
@@ -120,7 +121,7 @@
 
 
 
-    <view-solution :color="secondaryColor">
+    <view-solution :color="secondaryColor" :wireframeUrl="wireframeUrl">
       <template #wireframes>
         <v-row justify="center" class="py-8">
           <v-col cols="11" class="my-auto">
@@ -158,7 +159,10 @@
         </v-row>
         <v-row class="py-12">
           <v-col>
-            <div class="view-text-section-title">Digital Wireframes</div>
+            <div class="view-text-section-title link" @click="windowOpen(wireframeUrl)" title="Open in new tab">
+              Digital Wireframes
+              <v-icon size="x-small">mdi-open-in-new</v-icon>
+            </div>
           </v-col>
         </v-row>
         <v-row justify="space-evenly" class="py-8">
@@ -219,13 +223,13 @@
             </div>
           </v-col>
         </v-row>
-        <v-row justify="space-evenly" class="pt-8">
-          <v-col>
-            <v-btn :class="{ 'mx-3 px-3': true, 'mb-3': $vuetify.display.xs }" @click="windowOpen(mobilePrototypeUrl)" color="#666" variant="outlined">
+        <v-row justify="space-evenly" class="">
+          <v-col cols="11">
+            <v-btn :class="{ 'mx-3 px-3': true, 'mb-3': $vuetify.display.xs }" @click="windowOpen(mobilePrototypeUrl)" color="#666" variant="outlined" title="Open in new tab">
                 <v-icon class="mr-3">mdi-open-in-new</v-icon>
                 Mobile
               </v-btn>
-              <v-btn :class="{ 'mx-3 px-3': true, 'mb-3': $vuetify.display.xs }" @click="windowOpen(desktopPrototypeUrl)" color="#666" variant="outlined">
+              <v-btn :class="{ 'mx-3 px-3': true, 'mb-3': $vuetify.display.xs }" @click="windowOpen(desktopPrototypeUrl)" color="#666" variant="outlined" title="Open in new tab">
                 <v-icon class="mr-3">mdi-open-in-new</v-icon>
                 Desktop
               </v-btn>

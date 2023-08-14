@@ -30,7 +30,7 @@
             <slot name="lessons"></slot>
             <v-row>
               <v-col>
-                <v-btn v-if="caseStudyUrl" size="small" class="text-normal px-3" variant="outlined" :href="caseStudyUrl">
+                <v-btn v-if="caseStudyUrl" size="small" class="text-normal px-3" variant="outlined" :href="caseStudyUrl" target="_blank">
                     <v-icon class="mr-2">mdi-presentation</v-icon>
                     Case Study PPT
                 </v-btn>
