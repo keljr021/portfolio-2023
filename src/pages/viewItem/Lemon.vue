@@ -56,7 +56,8 @@
     :backgroundColor="primaryColor"
     title="LemonBranch DIY Network"
     subtitle="A responsive site to view tutorials and how-tos"
-    :prototypeUrl="prototypeUrl"
+    :mobilePrototypeUrl="mobilePrototypeUrl"
+    :desktopPrototypeUrl="desktopPrototypeUrl"
     :caseStudyUrl="caseStudyUrl"
     :imageSrc="imgSrc('work/lb-desktop.png')"
   >

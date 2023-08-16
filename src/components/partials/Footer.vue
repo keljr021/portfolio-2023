@@ -40,8 +40,8 @@ export default {
 
 <style scoped lang="scss">
 .footer {
-  margin: 0 30%;
-  font-size: 85%;
+  font-size: 80%;
+  margin: 0;
 
   &.fixed {
     position: absolute;

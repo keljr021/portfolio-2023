@@ -26,7 +26,7 @@ export default {
           </v-col>
         </v-row>
         <v-row class="contact">
-            <v-col cols="11" md="2" lg="2">
+            <v-col cols="11" md="3" lg="3">
                 <div class="contact-links">
                     <div @click="openWindow('mailto:kmjr07@yahoo.com')" title="Email kmjr07@yahoo.com">
                         <v-icon class="mr-2" icon="mdi-email" variant="text"  />
@@ -46,7 +46,7 @@ export default {
                     <a class="mr-3" href="https://github.com/keljr021" target="_blank"><img class="content-item-img" src="../assets/github-black.png" alt="GitHub link" title="View GitHub Profile" /></a>
                 </div>
             </v-col>
-            <v-col cols="11" md="9" lg="9">
+            <v-col cols="11" md="6" lg="6">
                 <ContactForm />
             </v-col>
         </v-row>
