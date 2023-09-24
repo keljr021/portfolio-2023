@@ -1,6 +1,11 @@
 <script>
   export default {
     name: 'WorkGridItem',
+    data() {
+        return {
+           overlay: null 
+        }
+    },
     methods: {
       imgSrc(input) {
         return new URL(`../../assets/${input}`, import.meta.url).href;
