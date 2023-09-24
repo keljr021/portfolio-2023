@@ -1,6 +1,5 @@
 <script>
-  import WorkTabs from '@/components/partials/WorkTabs.vue';
-  import WorkList from '@/components/partials/WorkList.vue';
+  import WorkGrid from '@/components/partials/WorkGrid.vue';
   import Footer from '@/components/partials/Footer.vue'
 
   export default {
@@ -20,8 +19,7 @@
       }
     },
     components: {
-      WorkTabs,
-      WorkList,
+      WorkGrid,
       Footer
     }
 }
@@ -35,12 +33,9 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="11" sm="12" md="2" lg="2">
-        <work-tabs @scroll-to="scrollTo" @set-tab="setTab" :tab="selectedTab" />  
-      </v-col>
-      <v-col  cols="11" sm="12" md="9" lg="9">
+      <v-col cols="10" offset="1" class="">
         <div class="scroll overflow-y-auto">
-          <work-list @set-tab="setTab" :tab="selectedTab" />
+          <work-grid />  
         </div>
       </v-col>
     </v-row>
