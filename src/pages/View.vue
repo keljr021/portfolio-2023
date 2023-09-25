@@ -85,16 +85,7 @@
 </script>
 
 <template>
-  <v-container fluid class="px-0 mx-0 mt-3 mb-0">
-    <v-row class="px-2 py-3">
-      <v-col>
-        <v-btn class="px-3" variant="flat" :block="$vuetify.display.xs" :to="{ name: 'work' }">
-            <v-icon class="mr-2">mdi-backburger</v-icon>
-            Back
-        </v-btn>
-      </v-col>
-    </v-row>
-    
+  <v-container fluid class="px-0 mx-0 mt-3 mb-5">    
     <div>
       <mcs @window-open="windowOpen" v-if="$route.params.id === 'mcs'" primaryColor="#464da0" secondaryColor="#1d2352"/>
       <torch @window-open="windowOpen" v-if="$route.params.id === 'torch'" primaryColor="#993838" secondaryColor="#584fc4"/>
@@ -108,29 +99,57 @@
       <vue @window-open="windowOpen" v-if="$route.params.id === 'vue'" />
     </div>
 
-    <v-row justify="space-between" class="py-2">
-      <v-col>
-        <v-btn v-if="previousView !== null" class="px-3" variant="flat" :block="$vuetify.display.xs" @click="goToView(previousView)">
+    <div class="fixed-item-menu">
+      <v-row justify="space-between">
+        <v-col cols="4" class="text-left">
+          <v-btn v-if="previousView !== null" class="px-3" variant="flat" :block="$vuetify.display.xs" @click="goToView(previousView)">
             <v-icon class="mr-2">mdi-arrow-left</v-icon>
-            Previous Item
-        </v-btn>
-      </v-col>
-      <v-col class="text-right">
-        <v-btn v-if="nextView !== null" class="px-3" variant="flat" :block="$vuetify.display.xs" @click="goToView(nextView)">
-          Next Item
-          <v-icon class="mr-2">mdi-arrow-right</v-icon>
-        </v-btn>
-      </v-col>
-    </v-row>
+            Previous
+          </v-btn>
+        </v-col>
+        <v-col cols="4" class="text-center">
+          <v-btn class="px-3" variant="flat" :block="$vuetify.display.xs" :to="{ name: 'work' }">
+              <v-icon class="mr-2">mdi-view-list</v-icon>
+              Return <span v-if="$vuetify.display.mdAndUp">&nbsp;to List</span>
+          </v-btn>
+        </v-col>
+        <v-col cols="4" class="text-right">
+          <v-btn v-if="nextView !== null" class="px-3" variant="flat" :block="$vuetify.display.xs" @click="goToView(nextView)">
+            Next
+            <v-icon class="mr-2">mdi-arrow-right</v-icon>
+          </v-btn>
+        </v-col>
+      </v-row>
+    </div>
 
     <Footer />
   </v-container>
 </template>
 
 <style scoped lang="scss">
+.fixed-item-menu {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background: white;
+  z-index: 1;
+  transition: opacity ease-in-out 0.5;
+
+  :deep(.v-btn) {
+    font-size: 90%;
+    opacity: 0.4;
+  }
+
+  &:hover {
+    :deep(.v-btn) {
+      opacity: 1;
+    }
+  }
+}
+
 :deep(.v-container) {
-  padding-top: 41.5px !important; 
-  height: calc(100% - 73.5px) !important;
+  padding-top: 41.5px !important;
+  margin-bottom: 20px;
 }
 
 :deep(.view-header) {
@@ -164,6 +183,8 @@
 }
 
 :deep(.view-text) {
+  padding-left: 20px;
+  padding-right: 20px;
   .view-text-title {
     font-size: 26px;
     text-align: center;
