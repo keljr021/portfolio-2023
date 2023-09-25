@@ -104,7 +104,7 @@
         <v-col cols="4" class="text-left">
           <v-btn v-if="previousView !== null" class="px-3" variant="flat" :block="$vuetify.display.xs" @click="goToView(previousView)">
             <v-icon class="mr-2">mdi-arrow-left</v-icon>
-            Previous
+            Previous <span v-if="$vuetify.display.mdAndUp">&nbsp;Item</span>
           </v-btn>
         </v-col>
         <v-col cols="4" class="text-center">
@@ -115,7 +115,7 @@
         </v-col>
         <v-col cols="4" class="text-right">
           <v-btn v-if="nextView !== null" class="px-3" variant="flat" :block="$vuetify.display.xs" @click="goToView(nextView)">
-            Next
+            Next <span v-if="$vuetify.display.mdAndUp">&nbsp;Item</span>
             <v-icon class="mr-2">mdi-arrow-right</v-icon>
           </v-btn>
         </v-col>
@@ -159,7 +159,7 @@
 
 :deep(.view-header-title) {
   font-size: 36px;
-  padding: 10px 20px;
+  padding: 20px;
 }
 
 :deep(.view-header-image) {
