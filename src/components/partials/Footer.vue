@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-    <v-row class="footer w-100 fixed" :class="{ 'view': $route.name === 'view'}">
+    <v-row class="footer fixed" :class="{ 'view': $route.name === 'view'}">
       <v-spacer></v-spacer>
       <v-col cols="12" class="text-center">
           <span class="footer-link" @click="openWindow('mailto:kmjr07@yahoo.com')" title="Email kmjr07@yahoo.com">
@@ -40,6 +40,7 @@ export default {
 
 <style scoped lang="scss">
 .footer {
+  width: calc(100% - 40px);
   font-size: 75%;
   position: absolute;
   bottom: 0;
