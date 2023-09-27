@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-    <v-row class="footer fixed" :class="{ 'view': $route.name === 'view'}">
+    <v-row class="footer fixed" :class="{ 'relative': $route.name === 'view' || $route.name === 'about'}">
       <v-spacer></v-spacer>
       <v-col cols="12" class="text-center">
           <span class="footer-link" @click="openWindow('mailto:kmjr07@yahoo.com')" title="Email kmjr07@yahoo.com">
@@ -46,7 +46,7 @@ export default {
   bottom: 0;
   margin: 0;
 
-  &.view {
+  &.relative {
     position: relative;
   }
 
