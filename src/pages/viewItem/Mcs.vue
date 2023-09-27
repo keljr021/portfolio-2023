@@ -87,7 +87,7 @@
         K&A Morrisey Cleaning Services needs an online presence to advertise to potential customers in Sampson County. From viewing the previous web site, there were several opportunities to update and improve a potential customer's online experience.
       </template>
       <template #goal>
-        Improve the user experience for the website. The idea was to better showcase, the company janitorial services offered, along The areas that the company will serve. We also wanted to give a more streamlined way to contact the clients.
+        Improve the user experience for the website. The idea was to better showcase the company janitorial services offered and the areas that the company will serve. We also wanted to give a more streamlined way to contact the clients.
       </template>
       <template #image>
         <v-img class="mx-0" height="480" :src="imgSrc('work/ka-mobile.png')" />
@@ -97,7 +97,7 @@
     <view-define :color="primaryColor">
       <template #persona1>
         <p>
-          <b>Eric Robinson</b> is a business owner of a masonry company in Roseboro, NC. He looks for a janitorial business to maintain the corporate offices daily, with occasional janitorial work on the weekends.
+          <b>Eric Robinson</b> is a business owner of a masonry company in Roseboro NC. He looks for a janitorial business to maintain the corporate offices daily, with occasional janitorial work on the weekends.
         </p>
       </template>
       <template #persona2>

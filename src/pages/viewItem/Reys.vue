@@ -220,7 +220,7 @@
               </div>
           </v-col>
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
-            <v-img class="pt-1" height="300" :src="imgSrc('reys-mock4.png')" />
+            <v-img class="pt-1" height="300" :src="imgSrc('reys-mock5.png')" />
             <div class="w-100 py-8">
                 4. <b>Order Tracker</b> - Added the Order number and estimated time on top instead of the bottom area.
             </div>
