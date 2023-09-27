@@ -149,7 +149,7 @@
 
 :deep(.v-container) {
   padding-top: 41.5px !important;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 :deep(.view-header) {

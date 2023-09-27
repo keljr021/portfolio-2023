@@ -16,36 +16,37 @@ export default {
 </script>
 
 <template>
-    <v-row :class="{ 'footer': true, 'fixed': fixed }">
-      <v-col>
-        <div>
-          <div class="footer-link float-left" @click="openWindow('mailto:kmjr07@yahoo.com')" title="Email kmjr07@yahoo.com">
+    <v-row class="footer w-100 fixed" :class="{ 'view': $route.name === 'view'}">
+      <v-spacer></v-spacer>
+      <v-col cols="12" class="text-center">
+          <span class="footer-link" @click="openWindow('mailto:kmjr07@yahoo.com')" title="Email kmjr07@yahoo.com">
               <v-icon class="mr-2" icon="mdi-email" variant="text"  />
               <span v-if="!$vuetify.display.xs">kmjr07@yahoo.com</span>
-          </div>
-          <div class="footer-link float-left mx-lg-8" @click="openWindow('mailto:keljr021@gmail.com')" title="Email keljr021@gmail.com">
+          </span>
+          <span class="footer-link mx-lg-8" @click="openWindow('mailto:keljr021@gmail.com')" title="Email keljr021@gmail.com">
               <v-icon class="mr-2" icon="mdi-email" variant="text"  />
               <span v-if="!$vuetify.display.xs">keljr021@gmail.com</span>
-          </div>
-          <div class="footer-link float-left mx-lg-8" @click="openWindow('https://www.linkedin.com/in/kelvin-morrisey-jr-514360a7/')" title="View LinkedIn Profile">
+          </span>
+          <span class="footer-link mx-lg-8" @click="openWindow('https://www.linkedin.com/in/kelvin-morrisey-jr-514360a7/')" title="View LinkedIn Profile">
             <img class="footer-icon" src="../../assets/LI-black.png" alt="LinkedIn link" />
-          </div>
-          <div class="footer-link float-left mx-lg-8" @click="openWindow('https://github.com/keljr021')" title="View GitHub Profile">
+          </span>
+          <span class="footer-link mx-lg-8" @click="openWindow('https://github.com/keljr021')" title="View GitHub Profile">
             <img class="footer-icon" src="../../assets/github-black.png" alt="GitHub link" />
-          </div>
-        </div>
+          </span>
       </v-col>
+      <v-spacer></v-spacer>
     </v-row>
 </template>
 
 <style scoped lang="scss">
 .footer {
-  font-size: 80%;
+  font-size: 75%;
+  position: absolute;
+  bottom: 0;
   margin: 0;
 
-  &.fixed {
-    position: absolute;
-    bottom: 10px;
+  &.view {
+    position: relative;
   }
 
   .footer-link {
@@ -64,14 +65,6 @@ export default {
 }
 
 @media all and (min-width: 768px) and (max-width: 1023px) {
-  .footer {
-    margin: 0 35px;
-    width: calc(75% - 30px);
-
-    &.fixed {
-      bottom: 30px;
-    }
-  }
 
   .footer-link {
     width: initial;
@@ -81,9 +74,6 @@ export default {
 }
 
 @media all and (max-width: 768px) {
-  .footer {
-    margin: 0 20px;
-  }
 
   .footer-link {
     width: calc(25% - 60px);
