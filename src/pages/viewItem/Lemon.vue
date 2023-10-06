@@ -13,7 +13,7 @@
         wireframeUrl: 'https://xd.adobe.com/view/25553f55-f5fc-4c50-9954-ab41db3bf124-7006/?fullscreen',
         desktopPrototypeUrl: 'https://xd.adobe.com/view/39ebb787-4097-4220-85a0-e901d27a116f-6cb8/?fullscreen',
         mobilePrototypeUrl: 'https://xd.adobe.com/view/39ebb787-4097-4220-85a0-e901d27a116f-6cb8/screen/834dee81-37bd-4411-98b2-023f9a754dce?fullscreen',
-        caseStudyUrl: 'https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing'
+        caseStudyUrl: 'https://docs.google.com/presentation/d/1KkYDj0hg_QahT5ULisc1QjGmakgCmZHS1LnPMD-qadA/edit?usp=sharing'
       }
     },
     emits: [

@@ -14,7 +14,7 @@
         desktopWireframeUrl: 'https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=6-6495&scaling=min-zoom&page-id=6%3A6494&starting-point-node-id=6%3A6495',
         mobilePrototypeUrl: 'https://www.figma.com/proto/hgMpXvVZJfJno8AiRug0VC/Torch-Mobile-App?node-id=58-3934&scaling=scale-down&page-id=58%3A3610&starting-point-node-id=58%3A3934',
         desktopPrototypeUrl: 'https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A11119&scaling=min-zoom&page-id=28%3A11118&starting-point-node-id=28%3A11119',
-        caseStudyUrl: 'https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing'
+        caseStudyUrl: 'https://docs.google.com/presentation/d/1CbvvBE5rUeZywcQJZRo_OzVhJJSYJrjRe7X77Tes8hE/edit?usp=sharing'
       }
     },
     emits: [
