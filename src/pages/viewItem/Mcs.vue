@@ -77,7 +77,7 @@
     <view-overview :color="secondaryColor">
       <template #overview>
         <p>
-          My father and grandfather taught me the value of hard work at a very early age. Both of them instilled a strong work-ethic that I hold onto this day. Once my father inherited the family buisness, he discussed with me the opportunity of having a new website. I immediately jumped on the project without hesitation.
+          My father and grandfather taught me the value of hard work at a very early age. Both of them instilled a strong work-ethic that I hold onto this day. Once my father inherited the family business, he discussed with me the opportunity of having a new website. I immediately jumped on the project without hesitation.
         </p>
         <p>
           K&A Morrisey Cleaning Services is a commercial janitorial business that is local to Sampson County. This site is a redesign of the previous website using the UX design principles learned.
