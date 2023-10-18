@@ -44,6 +44,9 @@ export default {
                 <div class="contact-icons pt-3">
                     <a class="mr-3" href="https://www.linkedin.com/in/kelvin-morrisey-jr-514360a7/" target="_blank"><img class="content-item-img" src="../assets/LI-black.png" alt="LinkedIn link" title="View LinkedIn Profile"/></a>
                     <a class="mr-3" href="https://github.com/keljr021" target="_blank"><img class="content-item-img" src="../assets/github-black.png" alt="GitHub link" title="View GitHub Profile" /></a>
+                    <a class="mr-3" href="https://dribbble.com/keljr021" target="_blank"><img class="content-item-img" src="../assets/dr-logo.png" alt="Dribbble link" title="View Dribbble Profile" /></a>
+                    <a class="mr-3" href="https://www.behance.net/kelvin-m" target="_blank"><img class="content-item-img" src="../assets/be-logo-alt2.png" alt="Behance link" title="View Behance Profile" /></a>
+
                 </div>
             </v-col>
             <v-col cols="11" md="6" lg="6">
