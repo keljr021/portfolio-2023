@@ -1,4 +1,5 @@
 <script>
+  import Divider from './Divider.vue';
   export default {
     name: 'ViewTitleBanner',
     data() {
@@ -37,7 +38,7 @@
      
     },
     components: {
-      
+      Divider
     }
 }
 </script>
@@ -120,4 +121,6 @@
             }" />
         </v-col>   
     </v-row>
+    
+    <divider :color="color" />
 </template>

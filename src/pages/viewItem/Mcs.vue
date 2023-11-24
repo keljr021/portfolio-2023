@@ -1,11 +1,7 @@
 <script>
-  import WorkImage from '../../components/partials/WorkImage.vue';
+  import WorkImage from '../../components/partials/WorkImage.vue';  
   import ViewTitleBanner from '../../components/partials/ViewTitleBanner.vue';
-  import ViewOverview from '../../components/partials/ViewOverview.vue';
-  import ViewDefine from '../../components/partials/ViewDefine.vue';
-  import ViewSolution from '../../components/partials/ViewSolution.vue';
-  import ViewResults from '../../components/partials/ViewResults.vue';
-  import ViewTakeaways from '../../components/partials/ViewTakeaways.vue';
+  import Overview from '../../components/partials/view/Overview.vue';
   import Empathize from '../../components/partials/view/Empathize.vue';
   import Define from '../../components/partials/view/Define.vue';
   import Ideate from '../../components/partials/view/Ideate.vue';
@@ -44,11 +40,7 @@
     },
     components: {
       ViewTitleBanner,
-      ViewOverview,
-      ViewDefine,
-      ViewSolution,
-      ViewResults,
-      ViewTakeaways,
+      Overview,
       Define,
       Empathize,
       Evaluate,
@@ -84,7 +76,7 @@
   </view-title-banner>
 
   <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
-    <view-overview :color="secondaryColor">
+    <overview :color="secondaryColor">
       <template #overview>
         <p>
           My father and grandfather taught me the value of hard work at a very early age. Both of them instilled a strong work-ethic that I hold onto this day. Once my father inherited the family business, he discussed with me the opportunity of having a new website. I immediately jumped on the project without hesitation.
@@ -96,7 +88,7 @@
       <template #image>
         <v-img class="mx-0" height="480" :src="imgSrc('work/ka-mobile.png')" />
       </template>
-    </view-overview>
+    </overview>
 
     <empathize :color="primaryColor">
       <template #problem>
@@ -135,9 +127,6 @@
 
 
     <ideate :color="primaryColor" @openLofi="windowOpen(wireframeUrl)" @openHifi="windowOpen(prototypeUrl)">
-      <template #paper>
-        x
-      </template>
       <template #lofi>
         <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">

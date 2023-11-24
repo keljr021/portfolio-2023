@@ -20,14 +20,14 @@
             <div class="view-text-title" :style="'color:' + color">Ideate</div>
 
             <v-row>
-                <v-col cols="12">
+                <v-col cols="12" v-if="$slots.paper">
                     <div class="view-text-section-title">Paper Wireframes</div>
                     <div>
                         <slot name="paper"></slot>
                     </div>
                 </v-col>
 
-                <v-col cols="12">
+                <v-col cols="12" v-if="$slots.lofi">
                     <div class="view-text-section-title link" @click="$emit('open-lofi')" title="Open in new tab">
                         Lo-Fi Wireframes
                         <v-icon size="x-small">mdi-open-in-new</v-icon>
@@ -37,7 +37,7 @@
                     </div>
                 </v-col>
 
-                <v-col cols="12">
+                <v-col cols="12" v-if="$slots.study1 && $slots.study2">
                     <div class="view-text-section-title">Usability Study</div>
                     <div>
                         <v-row>
@@ -51,7 +51,7 @@
                     </div>
                 </v-col>
 
-                <v-col cols="12">
+                <v-col cols="12" v-if="$slots.hifi">
                     <div class="view-text-section-title link" @click="$emit('open-hifi')" title="Open in new tab">
                         Hi-Fi Wireframes
                         <v-icon size="x-small">mdi-open-in-new</v-icon>
@@ -61,7 +61,7 @@
                     </div>
                 </v-col>
 
-                <v-col cols="12">
+                <v-col cols="12" v-if="$slots.logo1 && $slots.logo2">
                     <div class="view-text-section-title">Logo</div>
                     <div>
                         <v-row>

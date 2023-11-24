@@ -186,10 +186,11 @@
   padding-left: 20px;
   padding-right: 20px;
   .view-text-title {
-    font-size: 26px;
     padding-top: 30px;
     padding-bottom: 60px;
+    font-size: 26px;
     font-weight: bold;
+    text-align: center;
   }
 
   .view-text-overview {
