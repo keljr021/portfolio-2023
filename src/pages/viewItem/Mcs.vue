@@ -64,11 +64,8 @@
     <template #role>
       UX Designer, Logo Designer, Developer
     </template>
-    <template #client>
-      K&A Morrisey Cleaning Services
-    </template>
     <template #tools>
-      Figma, HTML, SASS, JavaScript, Vue JS, Vuetify
+      Figma, HTML, SASS, JavaScript, Vue
     </template>
     <template #date>
       June 2019, Updated June 2023
@@ -161,7 +158,7 @@
         <v-img class="mx-auto" :width="$vuetify.display.smAndDown ? 'initial' : '100%'" :height="$vuetify.display.smAndDown ? 300 : 'initial'" :src="imgSrc('ka-study.png')" />
       </template>
       <template #study2>
-        <p>From the usability study, I've discovered that the The Contact and Contact Form links was confusing to end users when attempting to contact the client. Both links would need to be revised to prevent this.</p>
+        <p>From conducting the usability study, I've discovered that The Contact and Contact Form links confused end users when attempting to contact the client. Both links would need to be revised to prevent this.</p>
         <p>Also discussed that the Contact Information would need to have a more streamlined access.</p>  
         <p>Lastly there were a few comments regarding issues with the navigation scrolling to the proper section that would need to be resolved in the upcoming mockups.</p>      
       </template>

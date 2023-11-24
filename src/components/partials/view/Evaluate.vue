@@ -22,15 +22,11 @@
             <v-row justify="space-between" class="py-6">
                 <v-col cols="11" sm="5" md="5" lg="5">
                     <div class="view-text-section-title">Lessons Learned</div>
-                    <p>
-                        <slot name="lessons"></slot>
-                    </p>
+                    <slot name="lessons"></slot>
                 </v-col>
                 <v-col offset-sm="1" offset-md="1" offset-lg="1" sm="5" md="5" lg="5">
                     <div class="view-text-section-title">Next Steps</div>
-                    <p>
-                        <slot name="next"></slot>
-                    </p>
+                    <slot name="next"></slot>
                 </v-col>
             </v-row>
 

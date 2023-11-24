@@ -203,9 +203,9 @@
   }
 
   .view-text-section-title {
-    font-size: 21px;
-    font-weight: 400;
-    padding: 20px 0;
+    font-size: 1.25em;
+    font-weight: 500;
+    padding: 30px 0;
 
     &.link {
       cursor: pointer;
@@ -217,7 +217,7 @@
   }
 
   p, li {
-      font-size: 17px;  
+      font-size: 1.1em;
       line-height: 2.5;
     }
 
