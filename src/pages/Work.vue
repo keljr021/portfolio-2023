@@ -1,5 +1,5 @@
 <script>
-  import WorkGrid from '@/components/partials/WorkGrid.vue';
+  import WorkList from '@/components/partials/WorkList.vue';
   import Footer from '@/components/partials/Footer.vue'
 
   export default {
@@ -19,7 +19,7 @@
       }
     },
     components: {
-      WorkGrid,
+      WorkList,
       Footer
     }
 }
@@ -35,7 +35,7 @@
     <v-row>
       <v-col cols="10" offset="1" class="">
         <div class="scroll overflow-y-auto">
-          <work-grid />  
+          <work-list />  
         </div>
       </v-col>
     </v-row>
