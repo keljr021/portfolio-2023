@@ -136,7 +136,6 @@
   transition: opacity ease-in-out 0.5;
 
   :deep(.v-btn) {
-    font-size: 90%;
     opacity: 0.4;
   }
 
@@ -159,7 +158,9 @@
 
 :deep(.view-header-title) {
   font-size: 36px;
-  padding: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 :deep(.view-header-image) {
@@ -173,9 +174,8 @@
 }
 
 :deep(.view-header-text) {
-  font-size: 18px;
-  padding: 20px;
-  opacity: 0.9;
+  font-size: 1.2em;
+  padding: 30px;
 }
 
 :deep(.view-header-text-title) {
@@ -187,9 +187,9 @@
   padding-right: 20px;
   .view-text-title {
     font-size: 26px;
-    text-align: center;
     padding-top: 30px;
     padding-bottom: 60px;
+    font-weight: bold;
   }
 
   .view-text-overview {
@@ -197,8 +197,8 @@
   }
 
   .view-text-section {
-    padding-top: 40px;
-    padding-bottom: 80px;
+    padding-top: 50px;
+    padding-bottom: 120px;
   }
 
   .view-text-section-title {

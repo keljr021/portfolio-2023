@@ -6,6 +6,11 @@
   import ViewSolution from '../../components/partials/ViewSolution.vue';
   import ViewResults from '../../components/partials/ViewResults.vue';
   import ViewTakeaways from '../../components/partials/ViewTakeaways.vue';
+  import Empathize from '../../components/partials/view/Empathize.vue';
+  import Define from '../../components/partials/view/Define.vue';
+  import Ideate from '../../components/partials/view/Ideate.vue';
+  import Evaluate from '../../components/partials/view/Evaluate.vue';
+  import Solution from '../../components/partials/view/Solution.vue';
   export default {
     name: 'Mcs',
     data() {
@@ -44,6 +49,11 @@
       ViewSolution,
       ViewResults,
       ViewTakeaways,
+      Define,
+      Empathize,
+      Evaluate,
+      Ideate,
+      Solution,
       WorkImage
     }
 }
@@ -83,27 +93,22 @@
           K&A Morrisey Cleaning Services is a commercial janitorial business that is local to Sampson County. This site is a redesign of the previous website using the UX design principles learned.
         </p>
       </template>
+      <template #image>
+        <v-img class="mx-0" height="480" :src="imgSrc('work/ka-mobile.png')" />
+      </template>
+    </view-overview>
+
+    <empathize :color="primaryColor">
       <template #problem>
         K&A Morrisey Cleaning Services needs an online presence to advertise to potential customers in Sampson County. From viewing the previous web site, there were several opportunities to update and improve a potential customer's online experience.
       </template>
       <template #goal>
         Improve the user experience for the website. The idea was to better showcase the company janitorial services offered and the areas that the company will serve. We also wanted to give a more streamlined way to contact the clients.
       </template>
-      <template #image>
-        <v-img class="mx-0" height="480" :src="imgSrc('work/ka-mobile.png')" />
-      </template>
-    </view-overview>
-
-    <view-define :color="primaryColor">
-      <template #persona1>
-        <p>
-          <b>Eric Robinson</b> is a business owner of a masonry company in Roseboro NC. He looks for a janitorial business to maintain the corporate offices daily, with occasional janitorial work on the weekends.
-        </p>
-      </template>
-      <template #persona2>
+      <template #persona>
         <v-img width="100%" :src="imgSrc('ka-persona.png')" />
       </template>
-      <template #user1>
+      <template #user>
         <v-img width="100%" :src="imgSrc('ka-usermap.png')" />
       </template>
       <template #user2>
@@ -114,18 +119,26 @@
           <li>Add the client's email and/or phone number in a more accessible area.</li>
         </ol>
       </template>
-    </view-define>
+    </empathize>
 
-    <view-solution :color="secondaryColor">
-      <template #wireframes>
-        <v-row justify="center" class="py-8">
-          <v-col cols="11" class="my-auto">
-            <div class="view-text-section-title link" @click="windowOpen(wireframeUrl)" title="Open in new tab">
-              Digital Wireframes
-              <v-icon size="x-small">mdi-open-in-new</v-icon>
-            </div>
-          </v-col>
-        </v-row>
+
+    <define :color="primaryColor">
+      <template #ideas>
+        <p>From documenting the user map, there were several opportunities to improve the user experience during the updates:</p>
+        <ol>
+          <li>The site should communicate with the user after their Contact Form has been sent successfully.</li>
+          <li>Online search engines needs to be able to find the business website.</li>
+          <li>The client's email and/or phone number needs to be in a more accessible area.</li>
+        </ol>
+      </template>
+    </define>
+
+
+    <ideate :color="primaryColor" @openLofi="windowOpen(wireframeUrl)" @openHifi="windowOpen(prototypeUrl)">
+      <template #paper>
+        x
+      </template>
+      <template #lofi>
         <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">
             <v-img width="90%" :src="imgSrc('ka-dframe1.png')" />
@@ -155,35 +168,15 @@
           </v-col>
         </v-row>
       </template>
-      <template #usability1>
+      <template #study1>
         <v-img class="mx-auto" :width="$vuetify.display.smAndDown ? 'initial' : '100%'" :height="$vuetify.display.smAndDown ? 300 : 'initial'" :src="imgSrc('ka-study.png')" />
       </template>
-      <template #usability2>
-        <p>From going through the usability study, I've discovered that the The Contact and Contact Form links was confusing to end users when attempting to contact the client. Both links would need to be revised to prevent this.</p>
+      <template #study2>
+        <p>From the usability study, I've discovered that the The Contact and Contact Form links was confusing to end users when attempting to contact the client. Both links would need to be revised to prevent this.</p>
         <p>Also discussed that the Contact Information would need to have a more streamlined access.</p>  
         <p>Lastly there were a few comments regarding issues with the navigation scrolling to the proper section that would need to be resolved in the upcoming mockups.</p>      
       </template>
-    </view-solution>
-
-    
-
-    <view-results :color="primaryColor">
-      <template #logo1>
-        <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="imgSrc('logo-ka-2023.png')" />
-        <v-img v-else height="150" :src="imgSrc('logo-ka-2023.png')" />
-      </template>
-      <template #logo2>
-        <p>For the logo design, I wanted to give a professional feel from both the color and typography choices. I also wanted to set the precedence of "the same professional company you know, now under new management."</p>        
-      </template>
-      <template #mockups>
-        <v-row justify="space-evenly" justify-sm="center">
-          <v-col cols="11">
-            <div class="view-text-section-title link" @click="windowOpen(prototypeUrl)" title="Open prototype in new tab">
-              Mockups
-              <v-icon size="x-small">mdi-open-in-new</v-icon>
-            </div>
-          </v-col>
-        </v-row>
+      <template #hifi>
         <v-row justify="center" justify-md="space-evenly" justify-lg="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">
               <v-img width="90%" :src="imgSrc('ka-mock1.png')" />
@@ -213,9 +206,17 @@
           </v-col>
         </v-row>
       </template>
-    </view-results>
 
-    <view-takeaways :caseStudyUrl="caseStudyUrl">
+      <template #logo1>
+        <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="imgSrc('logo-ka-2023.png')" />
+        <v-img v-else height="150" :src="imgSrc('logo-ka-2023.png')" />
+      </template>
+      <template #logo2>
+        <p>For the logo design, I wanted to give a professional feel from both the color and typography choices. I also wanted to set the precedence of the same professional company, now under new management.</p>        
+      </template>
+    </ideate>
+
+    <evaluate :color="primaryColor" :caseStudyUrl="caseStudyUrl">
       <template #lessons>
         <p>
           From this project I have gained experience in user interviews and incorporating client feedback within mockups and prototypes.
@@ -229,12 +230,12 @@
       </template>
       <template #next>
         <ol>
-          <li>I would add a Gallery of Work section for potential clients to see before and after steps of the services provided.</li>
-          <li>I would add a Testimonials section for clients to add positive reviews of the work that K&A Services provide.</li>
-          <li>For the site, I would improve SEO and add domains from a development standpoint to ensure users can get to the site seamlessly.</li>
+          <li>Add a Gallery of Work section for potential clients to see before and after steps of the services provided.</li>
+          <li>Include a Testimonials section for clients to add positive reviews of the work that K&A Services provide.</li>
+          <li>I would improve SEO and add domains from a development standpoint to ensure users can get to the site seamlessly.</li>
         </ol>        
       </template>
-    </view-takeaways>
+    </evaluate>
 
   </div>
 </template>
