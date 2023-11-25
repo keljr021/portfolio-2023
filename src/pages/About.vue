@@ -35,7 +35,7 @@ export default {
 
 <style lang="scss" scoped>
 .about-text {
-    padding: 25px 100px;
+    padding: 25px 100px 80px;
 }
 
 .about-text-title {
@@ -50,10 +50,10 @@ export default {
     padding: 5px 0;
     font-size: 22px;
     font-weight: 300;
-    font-style: italic;
 }
 
 .about-text-body {
+    font-size: 1.1em;
     p {
         line-height: 2.25;
         padding: 10px 0;

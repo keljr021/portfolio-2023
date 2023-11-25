@@ -71,6 +71,7 @@ export default {
 
 .contact-links,
 .contact-icons {
+    font-size: 1.1em;
     padding: 30px 0;
 
     div, span {
