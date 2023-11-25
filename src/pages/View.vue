@@ -199,7 +199,7 @@
 
   .view-text-section {
     padding-top: 50px;
-    padding-bottom: 120px;
+    padding-bottom: 75px;
   }
 
   .view-text-section-title {

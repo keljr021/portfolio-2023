@@ -17,7 +17,10 @@
 <template>
     <v-row class="view-text-section" justify="space-evenly">
         <v-col cols="10">
-            <div class="view-text-title" :style="'color:' + color">Empathize</div>
+            <div class="view-text-title" :style="'color:' + color">
+                <v-icon>mdi-head-cog-outline</v-icon>
+                Empathize
+            </div>
 
             <v-row justify="space-between" class="py-6">
                 <v-col cols="11" sm="5" md="5" lg="5">

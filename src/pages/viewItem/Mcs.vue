@@ -200,6 +200,16 @@
       <template #logo2>
         <p>For the logo design, I wanted to give a professional feel from both the color and typography choices. I also wanted to set the precedence of the same professional company, now under new management.</p>        
       </template>
+
+
+      <template #color>
+        <v-row justify="space-evenly" class="py-8"> 
+          <v-col cols="11" class="py-3">
+            <v-img width="80%" class="mx-auto" :src="imgSrc('ka-sticker.png')" />
+          </v-col>
+        </v-row>
+      </template>
+
     </ideate>
 
     <evaluate :color="primaryColor" :caseStudyUrl="caseStudyUrl">

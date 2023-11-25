@@ -17,7 +17,10 @@
 <template>
     <v-row class="view-text-section" justify="space-evenly">
         <v-col cols="10">
-            <div class="view-text-title" :style="'color:' + color">Define</div>
+            <div class="view-text-title" :style="'color:' + color">
+                <v-icon>mdi-chart-bubble</v-icon>
+                Define
+            </div>
 
             <v-row>
                 <v-col cols="12">

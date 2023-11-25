@@ -17,17 +17,20 @@
 <template>
     <v-row class="view-text-section" justify="space-evenly">
         <v-col cols="10">
-            <div class="view-text-title" :style="'color:' + color">Ideate</div>
+            <div class="view-text-title" :style="'color:' + color">
+                <v-icon>mdi-lightbulb</v-icon>
+                Ideate
+            </div>
 
             <v-row>
-                <v-col cols="12" v-if="$slots.paper">
+                <v-col cols="12" v-if="$slots.paper" class="py-6">
                     <div class="view-text-section-title">Paper Wireframes</div>
                     <div>
                         <slot name="paper"></slot>
                     </div>
                 </v-col>
 
-                <v-col cols="12" v-if="$slots.lofi">
+                <v-col cols="12" v-if="$slots.lofi" class="py-6">
                     <div class="view-text-section-title link" @click="$emit('open-lofi')" title="Open in new tab">
                         Lo-Fi Wireframes
                         <v-icon size="x-small">mdi-open-in-new</v-icon>
@@ -37,7 +40,7 @@
                     </div>
                 </v-col>
 
-                <v-col cols="12" v-if="$slots.study1 && $slots.study2">
+                <v-col cols="12" v-if="$slots.study1 && $slots.study2" class="py-6">
                     <div class="view-text-section-title">Usability Study</div>
                     <div>
                         <v-row>
@@ -51,7 +54,7 @@
                     </div>
                 </v-col>
 
-                <v-col cols="12" v-if="$slots.hifi">
+                <v-col cols="12" v-if="$slots.hifi" class="py-6">
                     <div class="view-text-section-title link" @click="$emit('open-hifi')" title="Open in new tab">
                         Hi-Fi Wireframes
                         <v-icon size="x-small">mdi-open-in-new</v-icon>
@@ -61,7 +64,7 @@
                     </div>
                 </v-col>
 
-                <v-col cols="12" v-if="$slots.logo1 && $slots.logo2">
+                <v-col cols="12" v-if="$slots.logo1 && $slots.logo2" class="py-6">
                     <div class="view-text-section-title">Logo</div>
                     <div>
                         <v-row>
@@ -72,6 +75,13 @@
                                 <slot name="logo2"></slot>
                             </v-col>
                         </v-row>
+                    </div>
+                </v-col>
+
+                <v-col cols="12" v-if="$slots.color" class="py-6">
+                    <div class="view-text-section-title">Color and Typography</div>
+                    <div>
+                        <slot name="color"></slot>
                     </div>
                 </v-col>
             </v-row>
