@@ -35,11 +35,11 @@
 </script>
 
 <template>
-  <v-col cols="12" class="pt-3 pb-6" @click="$router.push({ name: 'view', params: { id: this.linkId } })">
+  <v-col cols="12" class="pb-sm-8 pt-3 pb-6" @click="$router.push({ name: 'view', params: { id: this.linkId } })">
     <v-container fluid>
         <v-row class="list-item">
-            <v-col cols="6" class="list-item-img ma-0 pa-0">
-                <v-img v-if="$vuetify.display.smAndDown" class="ma-auto" width="180" style="max-width:inherit" :src="imgSrc(logo)" />
+            <v-col cols="12" xs="12" sm="12" md="6" lg="6" class="list-item-img my-xs-6 my-sm-6 ma-md-0 pa-md-0">
+                <v-img v-if="$vuetify.display.smAndDown" class="mx-auto w-100" :src="imgSrc(logo)" />
                 <v-img v-else :aspect-ratio="linkId === 'reys' ? 1 : ''" :class="{'mx-auto': true, 'my-5': linkId !== 'reys'}" :width="logoWidth ? logoWidth : ''" :src="imgSrc(logo)" />
             </v-col>
             <v-col>
@@ -62,7 +62,6 @@
 .list-item {
     font-size: 1.1em;
     width: 100%;
-    height: 300px;
     padding: 30px 0;
     cursor: pointer;
     background-color: transparent;
