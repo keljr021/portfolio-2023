@@ -30,6 +30,9 @@
       }
     },
     methods: {
+      scrollToTop() {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth'});
+      },
       setPreviousView(currentId) {
         let currentIdx = this.viewIdArray.indexOf(currentId);
         let target = null;
@@ -99,8 +102,17 @@
       <vue @window-open="windowOpen" v-if="$route.params.id === 'vue'" />
     </div>
 
-    <div class="fixed-item-menu">
-      <v-row justify="space-between">
+    <div class="fixed-item">
+      <v-row class="fixed-item-button">
+        <v-col class="text-right mx-5 my-2">
+          <v-tooltip text="Scroll to top" location="left">
+            <template v-slot:activator="{ props }">
+              <v-btn v-bind="props" color="#18184d" variant="outlined" icon="mdi-menu-up" style="background-color:white" @click="scrollToTop"></v-btn>
+            </template>
+          </v-tooltip>
+        </v-col>
+      </v-row>
+      <v-row class="fixed-item-menu" justify="space-between">
         <v-col cols="4" class="text-left">
           <v-btn v-if="previousView !== null" class="px-3" variant="flat" :block="$vuetify.display.xs" @click="goToView(previousView)">
             <v-icon class="mr-2">mdi-arrow-left</v-icon>
@@ -127,11 +139,10 @@
 </template>
 
 <style scoped lang="scss">
-.fixed-item-menu {
+.fixed-item {
   position: fixed;
   width: 100%;
   bottom: 0;
-  background: white;
   z-index: 1;
   transition: opacity ease-in-out 0.5;
 
@@ -140,10 +151,20 @@
   }
 
   &:hover {
-    :deep(.v-btn) {
+    :deep(.v-btn--icon) {
       opacity: 1;
     }
   }
+}
+
+.fixed-top-button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.fixed-item-menu {
+  background: white;
 }
 
 :deep(.v-container) {
