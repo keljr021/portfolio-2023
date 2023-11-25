@@ -21,8 +21,8 @@
 <template>
     <v-row class="view-text-overview">
         <v-col offset="1" cols="11">
-            <v-row justify="start" justify-md="center" justify-lg="center" class="py-8">
-                <v-col cols="11" :sm="$slots.image ? 6 : 11" :md="$slots.image ? 8 : 11" :lg="$slots.image ? 6 : 11" class="my-auto">
+            <v-row justify="start" class="py-8">
+                <v-col cols="11" :md="6" :lg="6">
                     <slot name="overview"></slot>
                 </v-col>
                 <v-col cols="11" sm="6" md="6" lg="6" v-if="$slots.image">

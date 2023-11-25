@@ -88,10 +88,10 @@
                     <div class="view-text-section-title">Logo</div>
                     <div>
                         <v-row>
-                            <v-col>
+                            <v-col cols="11" sm="5" md="5" lg="5">
                                 <slot name="logo1"></slot>
                             </v-col>
-                            <v-col>
+                            <v-col offset-sm="1" offset-md="1" offset-lg="1" sm="5" md="5" lg="5">
                                 <slot name="logo2"></slot>
                             </v-col>
                         </v-row>
@@ -99,7 +99,7 @@
                 </v-col>
 
                 <v-col cols="12" v-if="$slots.color" class="py-6">
-                    <div class="view-text-section-title">Color and Typography</div>
+                    <div class="view-text-section-title">Components and Typography</div>
                     <div>
                         <slot name="color"></slot>
                     </div>

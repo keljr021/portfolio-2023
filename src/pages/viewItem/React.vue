@@ -1,11 +1,7 @@
 <script>
-  import WorkImage from '../../components/partials/WorkImage.vue';
   import ViewTitleBanner from '../../components/partials/ViewTitleBanner.vue';
-  import ViewOverview from '../../components/partials/ViewOverview.vue';
-  import ViewDefine from '../../components/partials/ViewDefine.vue';
-  import ViewSolution from '../../components/partials/ViewSolution.vue';
-  import ViewResults from '../../components/partials/ViewResults.vue';
-  import ViewTakeaways from '../../components/partials/ViewTakeaways.vue';
+  import WorkImage from '../../components/partials/WorkImage.vue';
+  import Overview from '../../components/partials/view/Overview.vue';
   export default {
     name: 'React ',
     data() {
@@ -37,11 +33,7 @@
     },
     components: {
       ViewTitleBanner,
-      ViewOverview,
-      ViewDefine,
-      ViewSolution,
-      ViewResults,
-      ViewTakeaways,
+      Overview,
       WorkImage
     }
 }
@@ -70,11 +62,11 @@
   </view-title-banner>
 
   <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
-    <view-overview  :color="secondaryColor" noDivider>
+    <overview :color="primaryColor" noDivider>
       <template #overview>
         <p>This is a basic calculator component built with React. The component itself performs basic math calculations, allowing the user to click the buttons on screen, or key in the values themselves using the keyboard.</p>
       </template>
-    </view-overview>
+    </overview>
 
   </div>
 </template>

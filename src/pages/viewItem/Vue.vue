@@ -1,12 +1,7 @@
 <script>
   import WorkImage from '../../components/partials/WorkImage.vue';
   import ViewTitleBanner from '../../components/partials/ViewTitleBanner.vue';
-  import ViewOverview from '../../components/partials/ViewOverview.vue';
-  import ViewDefine from '../../components/partials/ViewDefine.vue';
-  import ViewSolution from '../../components/partials/ViewSolution.vue';
-  import ViewResults from '../../components/partials/ViewResults.vue';
-  import ViewTakeaways from '../../components/partials/ViewTakeaways.vue';
-  export default {
+  import Overview from '../../components/partials/view/Overview.vue';  export default {
     name: 'Vue ',
     data() {
       return {
@@ -37,11 +32,7 @@
     },
     components: {
       ViewTitleBanner,
-      ViewOverview,
-      ViewDefine,
-      ViewSolution,
-      ViewResults,
-      ViewTakeaways,
+      Overview,
       WorkImage
     }
 }
@@ -70,11 +61,11 @@
   </view-title-banner>
 
   <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
-    <view-overview  :color="secondaryColor" noDivider>
+    <overview  :color="secondaryColor" noDivider>
       <template #overview>
         <p>This is a calendar component built with Vue and Bootstrap. The component uses the current date and generates a full calendar for display.</p>
       </template>
-    </view-overview>
+    </overview>
 
   </div>
 </template>

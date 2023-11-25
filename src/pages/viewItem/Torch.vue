@@ -1,11 +1,12 @@
 <script>
   import WorkImage from '../../components/partials/WorkImage.vue';
   import ViewTitleBanner from '../../components/partials/ViewTitleBanner.vue';
-  import ViewOverview from '../../components/partials/ViewOverview.vue';
-  import ViewDefine from '../../components/partials/ViewDefine.vue';
-  import ViewSolution from '../../components/partials/ViewSolution.vue';
-  import ViewResults from '../../components/partials/ViewResults.vue';
-  import ViewTakeaways from '../../components/partials/ViewTakeaways.vue';
+  import Overview from '../../components/partials/view/Overview.vue';
+  import Empathize from '../../components/partials/view/Empathize.vue';
+  import Define from '../../components/partials/view/Define.vue';
+  import Ideate from '../../components/partials/view/Ideate.vue';
+  import Evaluate from '../../components/partials/view/Evaluate.vue';
+  import Solution from '../../components/partials/view/Solution.vue';
   export default {
     name: 'Torch',
     data() {
@@ -41,11 +42,12 @@
     },
     components: {
       ViewTitleBanner,
-      ViewOverview,
-      ViewDefine,
-      ViewSolution,
-      ViewResults,
-      ViewTakeaways,
+      Overview,
+      Define,
+      Empathize,
+      Evaluate,
+      Ideate,
+      Solution,
       WorkImage
     }
 }
@@ -64,9 +66,6 @@
     <template #role>
       UX Designer, Logo Designer
     </template>
-    <template #client>
-      Torch Mentorship
-    </template>
     <template #tools>
       Figma, Inkscape
     </template>
@@ -76,7 +75,7 @@
   </view-title-banner>
 
   <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
-    <view-overview  :color="secondaryColor">
+    <overview  :color="secondaryColor">
       <template #overview>
         <p>
            This project was to design both a mobile app and responsive website for a career mentorship service to help college graduates. Torch Mentorship Network is an online service that helps students connect with a mentor during their college studies.
@@ -85,49 +84,40 @@
             The main idea of the project was a simple and intuitive online presence geared towards college students and experienced mentors.
         </p>
       </template>
+      <template #image>
+        <v-img class="pt-1 mx-0" height="480" :src="imgSrc('work/to-mobile.png')" />
+      </template>
+    </overview>
+
+    <empathize :color="primaryColor">
       <template #problem>
         Students find it frustrating to find a mentor. Often there are missed opportunities during college studies to connect with an experienced mentor in their field of study.
       </template>
       <template #goal>
-        Create both a dedicated mobile app and responsive web site that gives users a better solution to connect with fellow mentors in their career field.      </template>
-      <template #image>
-        <v-img class="pt-1 mx-0" height="480" :src="imgSrc('work/to-mobile.png')" />
+        Create both a dedicated mobile app and responsive web site that gives users a better solution to connect with fellow mentors in their career field.      
       </template>
-    </view-overview>
-
-
-
-    <view-define :color="primaryColor">
-      <template #persona1>
-        <p>
-            <b>Joseph Strawn</b> is an upcoming college graduate who wants to find a mentor to learn more about radio communications. However, he has a hard time navigating resources to find an experienced mentor.
-        </p>
-      </template>
-      <template #persona2>
+      <template #persona>
         <v-img class="pt-1" width="100%" :src="imgSrc('to-persona.png')" />
       </template>
-      <template #user1>
+      <template #user>
         <v-img class="pt-1" width="100%" :src="imgSrc('to-usermap.png')" />
       </template>
-      <template #user2>
+    </empathize>
+
+    <define :color="primaryColor">
+      <template #ideas>
         <p>From documenting the user map, there were several discovered during the search process: </p>
         <ol>
             <li>We should create an easy to navigate home page for desktop users.</li>
-            <li>When filling out a form, both the app and site should add a user's profile info from their account. This would allow for quicker form submissions.</li>
-            <li>A mentor availability status is kept up-to-date within the site and app.</li>
+            <li>When filling out a form, both the app  should add a user's profile info from their account. This would allow for quicker form submissions.</li>
+            <li>A mentor availability status is kept up-to-date within the app.</li>
         </ol>
       </template>
-    </view-define>
+    </define>
 
 
-
-    <view-solution :color="secondaryColor">
-      <template #wireframes>
-        <v-row justify="center" class="py-8">
-          <v-col cols="11" class="my-auto">
-            <div class="view-text-section-title">Paper Wireframes - Mobile App</div>
-          </v-col>
-        </v-row>
+    <ideate :color="primaryColor">
+      <template #paper>
         <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" width="90%" :src="imgSrc('to-pframe1.jpg')" />
@@ -156,10 +146,14 @@
             </div>
           </v-col>
         </v-row>
+      </template>
+
+
+      <template #lofi>        
         <v-row justify="space-evenly" class="py-12">
           <v-col cols="11">
             <div class="view-text-section-title link" @click="windowOpen(mobileWireframeUrl)" title="Open in new tab">
-              Digital Wireframes - Mobile App
+              Mobile App
               <v-icon size="x-small">mdi-open-in-new</v-icon>
             </div>
           </v-col>
@@ -195,7 +189,7 @@
         <v-row class="py-12">
           <v-col cols="11">
             <div class="view-text-section-title link" @click="windowOpen(desktopWireframeUrl)" title="Open in new tab">
-              Digital Wireframes - Responsive Site
+              Responsive Site
               <v-icon size="x-small">mdi-open-in-new</v-icon>
             </div>
           </v-col>
@@ -229,34 +223,23 @@
           </v-col>
         </v-row>                
       </template>
-      <template #usability1>
+
+      <template #study1>
         <v-img class="pt-1 mx-auto" width="80%" :src="imgSrc('to-study.png')" />
       </template>
-      <template #usability2>
+      <template #study2>
         <ul>
             <li>From conducting the usability study, I've discoved that the Mentor Search workflow was inconsistent between navigation and the headers. This would be resolved in the upcoming prototyope.</li>
             <li>During the workflow, a majority of the testers had difficulty navigating through each page. I would need to further simplify the workfow when going through the app and site.</li>
             <li>There was an Article page also added to the site that confused a majority of the users when navigated. This would need refactoring in the upcoming prototype.</li>
         </ul>      
       </template>
-    </view-solution>
 
-
-
-    <view-results :color="primaryColor">
-      <template #logo1>
-        <v-img class="pt-1" height="150" :src="imgSrc('logo-to.png')" />
-      </template>
-      <template #logo2>
-        <p>
-              For the Torch logo, I kept in mind that college students and experienced mentors would be the target consumer. I wanted to give the idea of "passing the torch" during an Olympic event. I wanted to also to keep the color and typography in a more structured manner since this is a more educational experience.
-            </p>        
-      </template>
-      <template #mockups>
+      <template #hifi>
         <v-row class="pb-12">
           <v-col cols="11">
             <div class="view-text-section-title link" @click="windowOpen(mobilePrototypeUrl)">
-              Mockups - Mobile App
+              Mobile App
               <v-icon size="x-small">mdi-open-in-new</v-icon>
             </div>
           </v-col>
@@ -294,7 +277,7 @@
         <v-row class="pb-12">
           <v-col cols="11">
             <div class="view-text-section-title link" @click="windowOpen(desktopPrototypeUrl)">
-              Mockups - Responsive Site
+              Responsive Site
               <v-icon size="x-small">mdi-open-in-new</v-icon>
             </div>
           </v-col>
@@ -328,11 +311,27 @@
           </v-col>
         </v-row>
       </template>
-    </view-results>
-     
+    
+      <template #logo1>
+        <v-img class="pt-1" height="150" :src="imgSrc('logo-to.png')" />
+      </template>
+      <template #logo2>
+        <p>
+              For the Torch logo, I kept in mind that college students and experienced mentors would be the target consumer. I wanted to give the idea of "passing the torch" during an Olympic event. I wanted to also to keep the color and typography in a more structured manner since this is a more educational experience.
+            </p>        
+      </template>
 
 
-    <view-takeaways :caseStudyUrl="caseStudyUrl">
+      <template #color>
+        <v-row justify="space-evenly" class="py-8"> 
+          <v-col cols="11" class="py-3">
+            <v-img width="80%" class="mx-auto" :src="imgSrc('to-sticker.png')" />
+          </v-col>
+        </v-row>
+      </template>
+    </ideate>
+
+    <evaluate :color="primaryColor" :caseStudyUrl="caseStudyUrl">
       <template #lessons>
         <p>
             I discovered a great insight on the importance of Information Architecture in web design. Creating an organized sitemap, and understanding how the data should be structured is critical when designing a new app or website.
@@ -345,7 +344,6 @@
           <li>I would attempt to merge the Mentor Form into a single form, rather than breaking it up into pieces. To do that, I would need to ensure that form validation is instant on each field to prevent excess scrolling to resolve invalid parameters.</li>
         </ol>        
       </template>
-    </view-takeaways>
-
+    </evaluate>
   </div>
 </template>
