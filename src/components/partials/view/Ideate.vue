@@ -2,11 +2,31 @@
   import Divider from './../Divider.vue';
   export default {
     name: 'Ideate',
+    emits: [
+      'open-lofi',
+      'open-hifi'
+    ],
     props: {
         color: {
             type: String,
             default: '#666'
+        },
+        hasLofi: {
+            type: Boolean,
+            default: false
+        },
+        hasHifi: {
+            type: Boolean,
+            default: false
         }
+    },
+    methods: {
+        openLofi() {
+            if (this.hasLofi) this.$emit('open-lofi');
+        },
+        openHifi() {
+            if (this.hasHifi) this.$emit('open-hifi');
+        },
     },
     components: {
         Divider
@@ -31,9 +51,9 @@
                 </v-col>
 
                 <v-col cols="12" v-if="$slots.lofi" class="py-6">
-                    <div class="view-text-section-title link" @click="$emit('open-lofi')" title="Open in new tab">
+                    <div :class="{ 'view-text-section-title': true, 'link': hasLofi }" @click="openLofi" title="Open in new tab">
                         Lo-Fi Wireframes
-                        <v-icon size="x-small">mdi-open-in-new</v-icon>
+                        <v-icon size="x-small" v-if="hasLofi">mdi-open-in-new</v-icon>
                     </div>
                     <div>
                         <slot name="lofi"></slot>
@@ -55,9 +75,9 @@
                 </v-col>
 
                 <v-col cols="12" v-if="$slots.hifi" class="py-6">
-                    <div class="view-text-section-title link" @click="$emit('open-hifi')" title="Open in new tab">
+                    <div :class="{ 'view-text-section-title': true, 'link': hasHifi }" @click="openHifi" title="Open in new tab">
                         Hi-Fi Wireframes
-                        <v-icon size="x-small">mdi-open-in-new</v-icon>
+                        <v-icon size="x-small" v-if="hasHifi">mdi-open-in-new</v-icon>
                     </div>
                     <div>
                         <slot name="hifi"></slot>

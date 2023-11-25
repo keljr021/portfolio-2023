@@ -18,7 +18,9 @@
     },
     emits: [
       'set-image',
-      'window-open'
+      'window-open',
+      'open-lofi',
+      'open-hifi'
     ],
     props: {
       primaryColor: {
@@ -123,7 +125,12 @@
     </define>
 
 
-    <ideate :color="primaryColor" @openLofi="windowOpen(wireframeUrl)" @openHifi="windowOpen(prototypeUrl)">
+    <ideate 
+      :color="primaryColor" 
+      :hasLofi="true" 
+      :hasHifi="true" 
+      @open-lofi="windowOpen(wireframeUrl)" 
+      @open-hifi="windowOpen(prototypeUrl)">
       <template #lofi>
         <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">

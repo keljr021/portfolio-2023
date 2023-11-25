@@ -1,11 +1,12 @@
 <script>
-  import WorkImage from '../../components/partials/WorkImage.vue';
+  import WorkImage from '../../components/partials/WorkImage.vue';  
   import ViewTitleBanner from '../../components/partials/ViewTitleBanner.vue';
-  import ViewOverview from '../../components/partials/ViewOverview.vue';
-  import ViewDefine from '../../components/partials/ViewDefine.vue';
-  import ViewSolution from '../../components/partials/ViewSolution.vue';
-  import ViewResults from '../../components/partials/ViewResults.vue';
-  import ViewTakeaways from '../../components/partials/ViewTakeaways.vue';
+  import Overview from '../../components/partials/view/Overview.vue';
+  import Empathize from '../../components/partials/view/Empathize.vue';
+  import Define from '../../components/partials/view/Define.vue';
+  import Ideate from '../../components/partials/view/Ideate.vue';
+  import Evaluate from '../../components/partials/view/Evaluate.vue';
+  import Solution from '../../components/partials/view/Solution.vue';
   export default {
     name: 'Lemon',
     data() {
@@ -41,11 +42,12 @@
     },
     components: {
       ViewTitleBanner,
-      ViewOverview,
-      ViewDefine,
-      ViewSolution,
-      ViewResults,
-      ViewTakeaways,
+      Overview,
+      Define,
+      Empathize,
+      Evaluate,
+      Ideate,
+      Solution,
       WorkImage
     }
 }
@@ -64,11 +66,8 @@
     <template #role>
       UX Designer, Logo Designer
     </template>
-    <template #client>
-      LemonBranch Network
-    </template>
     <template #tools>
-      Adobe XD, Inkscape
+      Adobe XD, Inkscape, Clip Studio Paint
     </template>
     <template #date>
       Nov 2022 - Dec 2022
@@ -76,7 +75,7 @@
   </view-title-banner>
 
   <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
-    <view-overview  :color="secondaryColor">
+    <overview  :color="secondaryColor">
       <template #overview>
         <p>
           The LemonBranch Network is a company that hosts various online tutorials to view; and also allows members to create their own tutorials.
@@ -85,50 +84,46 @@
           For this project, I kept a minimal color scheme, and focused on functionality with a search feature with filtering and sort options, while making the designs as responsive as possible for mobile.
         </p>
       </template>
+      <template #image>
+        <v-img class="pt-1 mx-0" height="480" :src="imgSrc('work/lb-mobile.png')" />
+      </template>
+    </overview>
+
+
+
+    <empathize :color="primaryColor">
       <template #problem>
         Users often look online to view a tutorial on various items. Often they have to use various search engines to find those tutorials; which could generate inaccurate results.
       </template>
       <template #goal>
         Give users an option to find tutorials online in a more streamlined way so members are able to find accurate tutorials.
       </template>
-      <template #image>
-        <v-img class="pt-1 mx-0" height="480" :src="imgSrc('work/lb-mobile.png')" />
-      </template>
-    </view-overview>
-
-
-
-    <view-define :color="primaryColor">
-      <template #persona1>
-        <p>
-          <b>Jerry Lyn</b> is a newlywed Network Admin that has recently purchased a new house. He uses his phone often to find quick tutorials on different projects to help him navigate new home ownership.
-        </p>
-      </template>
-      <template #persona2>
+      <template #persona>
         <v-img class="pt-1" width="100%" :src="imgSrc('lb-persona.png')" />
       </template>
-      <template #user1>
+      <template #user>
         <v-img class="pt-1" width="100%" :src="imgSrc('lb-usermap.png')" />
       </template>
-      <template #user2>
-        From documenting Jerry's User journey, I have discovered the following opportunities when searching for a tutorial.
+    </empathize>
+
+    
+    <define :color="primaryColor">
+      <template #ideas>
+        <p>From documenting Jerry's User journey, I have discovered the following opportunities when searching for a tutorial.</p>
         <ol>
             <li>The site should include sections, filter, and sort options to improve search queries.</li>
-            <li>Adding a comment and rating system to each tutorial item would better help find accurate tutorial articles.</li>
-            <li>Including a filter option to search for video or article tutorials.</li>
+            <li>A comment and rating system to each tutorial item would better help find accurate tutorial articles.</li>
+            <li>Include a filter option to search for video or article tutorials.</li>
         </ol>
       </template>
-    </view-define>
+    </define>
 
 
 
-    <view-solution :color="secondaryColor">
-      <template #wireframes>
-        <v-row justify="center" class="py-8">
-          <v-col cols="11" class="my-auto">
-            <div class="view-text-section-title">Paper Wireframes</div>
-          </v-col>
-        </v-row>
+
+
+    <ideate :color="primaryColor">
+      <template #paper>
         <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" width="90%" :src="imgSrc('lb-sitemap.png')" />
@@ -147,7 +142,7 @@
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" width="100%" :src="imgSrc('lb-home-drafts.jpg')" />
             <div class="w-100 py-8">
-              3. I decided to use <i>Clip Studio Paint</i> to draw up a few rough drafts of the Home page, and highlighted the items that should be in the final draft.
+              3. Used <i>Clip Studio Paint</i> to draw up a few rough drafts of the Home page, and highlighted the items that should be in the final draft.
 
             </div>
           </v-col>
@@ -158,14 +153,8 @@
             </div>
           </v-col>
         </v-row>
-        <v-row class="py-12">
-          <v-col>
-            <div class="view-text-section-title link" @click="windowOpen(wireframeUrl)" title="Open in new tab">
-              Digital Wireframes
-              <v-icon size="x-small">mdi-open-in-new</v-icon>
-            </div>
-          </v-col>
-        </v-row>
+      </template>
+      <template #lofi>
         <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" width="90%" :src="imgSrc('lb-dframe1.png')" />
@@ -195,35 +184,16 @@
           </v-col>
         </v-row>
       </template>
-      <template #usability1>
+      <template #study1>
         <v-img class="pt-1 mx-auto" width="80%" :src="imgSrc('lb-study.png')" />
       </template>
-      <template #usability2>
-          <p>From the Usability Study, there were a few items that were discovered. The Account workflow needed refinement for both the Login and Create Account workflows.</p>
+      <template #study2>
+          <p>From the Usability Study, there were a few items that were discovered. To start, the Account workflow needed refinement for both the Login and Create Account workflows.</p>
           <p>The View Author page could not be easily navigated to, and also needed restructure.</p>
           <p>Lastly the Filter options in the Search bar has caused some confustion among the users, and needed to be more defined.</p> 
       </template>
-    </view-solution>
 
-
-
-    <view-results :color="primaryColor">
-      <template #logo1>
-        <v-img class="pt-1" :height="$vuetify.display.xs ? 'initial' : '65'"  :width="$vuetify.display.xs ? '90%' : 'initial'" :src="imgSrc('logo-lb.png')" />
-      </template>
-      <template #logo2>
-        <p>
-              The LemonBranch logo was designed for a simple, but welcoming feel. The "L" letter in the logo has a lemon grown similar to a lemon tree.
-            </p>        
-      </template>
-      <template #mockups>
-        <v-row justify="space-evenly" class="pt-8">
-          <v-col cols="11">
-            <div class="view-text-section-title">
-              Mockups
-            </div>
-          </v-col>
-        </v-row>
+      <template #hifi>
         <v-row justify="space-evenly" class="">
           <v-col cols="11">
             <v-btn :class="{ 'mx-3 px-3': true, 'mb-3': $vuetify.display.xs }" @click="windowOpen(mobilePrototypeUrl)" color="#666" variant="outlined" title="Open in new tab">
@@ -265,11 +235,18 @@
           </v-col>
         </v-row>
       </template>
-    </view-results>
-     
 
+      <template #logo1>
+        <v-img class="pt-1" :height="$vuetify.display.xs ? 'initial' : '65'"  :width="$vuetify.display.xs ? '90%' : 'initial'" :src="imgSrc('logo-lb.png')" />
+      </template>
+      <template #logo2>
+        <p>
+           The LemonBranch logo was designed for a simple, but welcoming feel. The "L" letter in the logo has a lemon grown similar to a lemon tree.
+        </p>  
+      </template>
+    </ideate>
 
-    <view-takeaways :caseStudyUrl="caseStudyUrl">
+    <evaluate :color="primaryColor" :caseStudyUrl="caseStudyUrl">
       <template #lessons>
         <p>
           During the prototyping phase of this project, I've gained more experience in using the Components and Library options in Adobe XD. Using these options will streamline prototyping in the future.
@@ -282,7 +259,7 @@
           <li>I would slightly restructure the site map and navigation. For example, having a search page alongside the search bar during the navigation could cause confusion.</li>
         </ol>        
       </template>
-    </view-takeaways>
+    </evaluate>
 
   </div>
 </template>
