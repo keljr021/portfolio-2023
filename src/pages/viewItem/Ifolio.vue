@@ -46,6 +46,7 @@
     subtitle="An online portfolio page to host images"
     :siteUrl="siteUrl"
     :imageSrc="imgSrc('work/if-desktop.png')"
+    :mobileSrc="imgSrc('work/if-mobile.png')"
   >
     <template #role>
       Front-End Developer, Web Designer, Logo Designer
@@ -79,7 +80,7 @@
 
       </template>
       <template #image>
-        <v-img class="pt-1 mx-0" height="480" :src="imgSrc('work/if-mobile.png')" />
+        <v-img class="pt-1 mx-0" height="80" :src="imgSrc('logo-if.png')" />
       </template>
     </overview>
 

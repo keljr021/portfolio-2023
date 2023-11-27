@@ -26,6 +26,7 @@
         siteUrl: String,
         caseStudyUrl: String,
         imageSrc: String,
+        mobileSrc: String,
         isMobileImg: {
             type: Boolean,
             default: false
@@ -44,13 +45,21 @@
 </script>
 
 <template>
-    <v-row>
+    <v-row justify="center">
         <v-col>
             <div class="view-header-title" :style="{ color: backgroundColor }">{{ title }}</div>
         </v-col>
     </v-row>
-    <v-row class="view-header" justify="start" justify-md="center" justify-lg="center">
-        <v-col cols="11" md="6" lg="6">
+    <v-row class="view-header" justify="center">
+        
+        <v-col v-if="imageSrc" cols="11" md="5" lg="5" class="pa-0 my-auto text-center">
+            <img :src="imageSrc" class="view-header-image" />
+        </v-col> 
+        <v-col v-if="mobileSrc" cols="11" md="5" lg="5" class="pa-0 my-auto text-center">
+            <img :src="mobileSrc" class="view-header-image mobile" />
+        </v-col>
+
+        <v-col cols="11" class="text-center">
             
             <div class="view-header-text">
                 <v-row class="pa-3">
@@ -110,15 +119,37 @@
                     </v-col>
                 </v-row>
             </div>
-        </v-col>
-        <v-col cols="11" md="6" lg="6" :class="{
-            'pa-0 my-auto': true,
-            'text-center': isMobileImg
-        }">
-            <img :src="imageSrc" :class="{
-                'view-header-image': true,
-                'mobile': isMobileImg
-            }" />
-        </v-col>   
+        </v-col>  
     </v-row>
 </template>
+<style lang="scss" scoped>
+:deep(.view-header) {
+  padding: 0;
+  margin: 0;
+}
+
+:deep(.view-header-title) {
+  padding: 40px 20px;
+  font-size: 36px;
+  text-align: center;
+}
+
+:deep(.view-header-image) {
+  padding: 40px 0;
+  width: 85%;
+
+  &.mobile {
+    width: initial;
+    max-height: 500px;
+  }
+}
+
+:deep(.view-header-text) {
+  font-size: 1.2em;
+  padding: 30px;
+}
+
+:deep(.view-header-text-title) {
+  font-weight: bold;
+}
+</style>

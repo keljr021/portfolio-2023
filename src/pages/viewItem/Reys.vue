@@ -58,7 +58,7 @@
     subtitle="A menu app to streamline the ordering process"
     :prototypeUrl="prototypeUrl"
     :caseStudyUrl="caseStudyUrl"
-    :imageSrc="imgSrc('work/reys-mobile.png')"
+    :mobileSrc="imgSrc('work/reys-mobile.png')"
     :isMobileImg="true"
   >
     <template #role>
@@ -76,6 +76,9 @@
     <overview :color="secondaryColor">
       <template #overview>
         <p>For this project, I focused on designing a menu app for a Mexican Restaurant. Rey's Mexican Restaurant is a restaurant chain that provides authentic Mexican food with a variety of options.</p>
+      </template>
+      <template #image>
+        <v-img class="pt-1" height="150" :src="imgSrc('logo-reys.png')" />
       </template>
     </overview>
 

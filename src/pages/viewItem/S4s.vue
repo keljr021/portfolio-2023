@@ -46,6 +46,7 @@
     subtitle="An e-learning platform for coaches and players" 
     :siteUrl="siteUrl"
     :imageSrc="imgSrc('work/s4s-desktop.png')"
+    :mobileSrc="imgSrc('work/s4s-mobile.png')"
   >
     <template #role>
       Front-End Developer (Immersion Media)
@@ -66,9 +67,6 @@
       <template #overview>
         <p>Soccer for Success was an online e-learning platform that allows coaches to view videos and answer questions on various soccer techniques and learning principles. We've even built-in a Content Management System for Administrators, which allows them to add and update their own custom learning content and upload videos.</p>
         <p>The site was built with React on the front-end, PHP CodeIgniter on the back-end, and JSON for saving and editing content.</p>
-      </template>
-      <template #image>
-        <v-img class="pt-1 mx-0" height="480" :src="imgSrc('work/s4s-mobile.png')" />
       </template>
     </overview>
 

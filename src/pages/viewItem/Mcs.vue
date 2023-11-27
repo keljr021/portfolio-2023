@@ -62,6 +62,7 @@
     siteUrl="https://ka-clean.com/"
     :caseStudyUrl="caseStudyUrl"
     :imageSrc="imgSrc('work/ka-desktop.png')"
+    :mobileSrc="imgSrc('work/ka-mobile.png')"
   >
     <template #role>
       UX Designer, Logo Designer, Developer
@@ -85,7 +86,8 @@
         </p>
       </template>
       <template #image>
-        <v-img class="mx-0" height="480" :src="imgSrc('work/ka-mobile.png')" />
+        <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="imgSrc('logo-ka-2023.png')" />
+        <v-img v-else height="150" :src="imgSrc('logo-ka-2023.png')" />
       </template>
     </overview>
 

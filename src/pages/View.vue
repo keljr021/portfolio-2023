@@ -172,37 +172,6 @@
   margin-bottom: 50px;
 }
 
-:deep(.view-header) {
-  padding: 0;
-  margin: 0;
-}
-
-:deep(.view-header-title) {
-  font-size: 36px;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-:deep(.view-header-image) {
-  width: 75%;
-  margin-left: 12.5%;
-
-  &.mobile {
-    width: initial;
-    max-height: 380px;
-  }
-}
-
-:deep(.view-header-text) {
-  font-size: 1.2em;
-  padding: 30px;
-}
-
-:deep(.view-header-text-title) {
-  font-weight: bold;
-}
-
 :deep(.view-text) {
   padding-left: 20px;
   padding-right: 20px;

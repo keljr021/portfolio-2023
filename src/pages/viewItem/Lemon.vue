@@ -62,6 +62,7 @@
     :desktopPrototypeUrl="desktopPrototypeUrl"
     :caseStudyUrl="caseStudyUrl"
     :imageSrc="imgSrc('work/lb-desktop.png')"
+    :mobileSrc="imgSrc('work/lb-mobile.png')"
   >
     <template #role>
       UX Designer, Logo Designer
@@ -85,7 +86,7 @@
         </p>
       </template>
       <template #image>
-        <v-img class="pt-1 mx-0" height="480" :src="imgSrc('work/lb-mobile.png')" />
+        <v-img class="pt-1" :height="$vuetify.display.xs ? 'initial' : '65'"  :width="$vuetify.display.xs ? '90%' : 'initial'" :src="imgSrc('logo-lb.png')" />
       </template>
     </overview>
 

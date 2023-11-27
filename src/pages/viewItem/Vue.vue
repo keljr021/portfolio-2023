@@ -49,9 +49,6 @@
     <template #role>
       Front-End Developer
     </template>
-    <template #client>
-      None
-    </template>
     <template #tools>
       Vue JS, Bootstrap
     </template>
