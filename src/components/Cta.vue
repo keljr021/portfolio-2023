@@ -32,7 +32,7 @@ export default {
     <v-container fluid class="cta">
         <v-row class="pa-3 justify-center">
             <v-col>
-                <h1 class="cta-title">Hi, my name's <br v-if="$vuetify.display.xs" /><b class="color:#18184d">Kelvin Morrisey Jr.</b></h1>
+                <h1 class="cta-title">Hi, my name's <br v-if="$vuetify.display.xs" /><b class="color:#18184d">Kelvin.</b></h1>
             </v-col>
         </v-row>
         <v-row class="px-3 py-2 justify-center">

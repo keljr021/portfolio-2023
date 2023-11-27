@@ -4,7 +4,7 @@ export default {
     data() {
         return {
             showNav: false,
-            showNavDrawer: false
+            showNavDrawer: false,
         };
     },
     props: {
@@ -58,7 +58,7 @@ export default {
                         <v-list-item title="Work" value="work" @click="$router.push({ name: 'work' })"></v-list-item>
                         <v-list-item title="About" value="about" @click="$router.push({ name: 'about' })"></v-list-item>
                         <v-list-item title="Contact" value="contact" @click="$router.push({ name: 'contact' })"></v-list-item>
-                        <v-list-item title="Resume" value="resume" @click="openWindow('https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=drive_link')"></v-list-item>
+                        <v-list-item title="Resume" value="resume" @click="openWindow('./kelvin_morrisey_resume.pdf')"></v-list-item>
                     </v-list>
                 </v-navigation-drawer>
             </v-col>
@@ -77,7 +77,7 @@ export default {
                 <span class="nav-item" @click="$router.push({ name: 'work' })">Work</span>
                 <span class="nav-item" @click="$router.push({ name: 'about' })">About</span>
                 <span class="nav-item" @click="$router.push({ name: 'contact' })">Contact</span>
-                <span class="nav-item" @click="openWindow('https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=drive_link')">Resume</span>
+                <span class="nav-item" @click="openWindow('./kelvin_morrisey_resume.pdf')">Resume</span>
             </v-col>
         </v-row>
     </div>
