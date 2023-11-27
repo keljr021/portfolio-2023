@@ -1,8 +1,10 @@
 <script>
+import Skills from './../components/partials/Skills.vue';
 import Footer from './../components/partials/Footer.vue';
 export default {
     name: 'About',
     components: {
+        Skills,
         Footer
     }
 }
@@ -28,7 +30,9 @@ export default {
                 <img alt="about photo" class="elevation-8" src="../assets/about-alt.jpg" />
             </v-col>
         </v-row>
-
+        
+        <Skills />
+        
         <Footer :fixed="$vuetify.display.mdAndUp" />
     </v-container>
 </template>
