@@ -32,7 +32,7 @@ export default {
     <v-container fluid class="cta">
         <v-row class="pa-3">
             <v-col cols="12" xs="12" sm="12" md="6">
-                <h1 class="cta-title">Hi, my name's <br v-if="$vuetify.display.xs" /><b class="color:#18184d">Kelvin.</b></h1>
+                <h1 class="cta-title">Hi, my name's <br v-if="$vuetify.display.xs" /><b class="color:#18184d">Kelvin Morrisey Jr.</b></h1>
                 <CtaText @scrollTo="scrollTo" />
             </v-col>
             <v-col cols="12" xs="12" sm="12" md="6" class="text-right">
