@@ -36,9 +36,14 @@ export default {
         cursor: pointer;
         padding: 0 2px;
         font-weight: normal;
-        color: #18184d;
+        color: #d9d9d9;
         text-decoration: underline;
         opacity: 1;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+            color: #EDA591;
+        }
     }
 }
 </style>

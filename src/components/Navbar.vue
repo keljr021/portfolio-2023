@@ -3,7 +3,7 @@ export default {
     name: 'navbar',
     data() {
         return {
-            showNav: false,
+            onHome: false,
             showNavDrawer: false,
         };
     },
@@ -28,11 +28,11 @@ export default {
     },
     watch: {
         $route: function(to, from) {
-            this.showNav = this.$route.name !== 'home';
+            this.onHome = this.$route.name === 'home';
         }
     },
     mounted() {
-        this.showNav = this.$route.name !== 'home';
+        this.showNav = this.$route.name === 'home';
     }
 }
 </script>
@@ -66,11 +66,10 @@ export default {
     </div>
 
     <!-- Tablet/Desktop navigation -->
-    <div class="nav w-100 pa-2" :class="{'show': showNav }" v-else>
+    <div class="nav w-100 pa-2 show" :class="{'home': onHome }" v-else>
         <v-row class="align-center">
             <v-col cols="3" class="nav-logo" @click="$router.push({ name: 'home' })">
                 <img class="logo mt-2" src="../assets/km-icon.svg" alt="Kelvin Morrisey Jr"/>
-                <img class="full mt-2" src="../assets/km-logo.svg" alt="Kelvin Morrisey Jr"/>
             </v-col>
             <v-col cols="9" class="text-right">
                 <span class="nav-item" @click="$router.push({ name: 'home' })">Home</span>
@@ -90,10 +89,16 @@ export default {
     position: fixed;
     z-index: 99;
     top: -42px;
-    transition: top 0.3s;
+    transition: (top, background) 0.3s;
 
     &.show {
         top: 0 !important;
+    }
+
+    &.home {
+        background: transparent;
+        color: white;
+        opacity: 0.75;
     }
 }
 
@@ -111,22 +116,6 @@ export default {
 
     .logo {
         opacity: 1;
-    }
-
-    .full {
-        top: -100px;
-        left: 10px;
-        z-index: 1;
-    }
-
-    &:hover {
-        .logo {
-            opacity: 0;
-        }
-
-        .full {
-            top: 0;
-        }
     }
 }
 

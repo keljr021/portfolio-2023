@@ -30,17 +30,13 @@ export default {
 
 <template>
     <v-container fluid class="cta">
-        <v-row class="pa-3 justify-center">
-            <v-col>
+        <v-row class="pa-3">
+            <v-col cols="12" xs="12" sm="12" md="6">
                 <h1 class="cta-title">Hi, my name's <br v-if="$vuetify.display.xs" /><b class="color:#18184d">Kelvin.</b></h1>
-            </v-col>
-        </v-row>
-        <v-row class="px-3 py-2 justify-center">
-            <v-col class="my-auto">
                 <CtaText @scrollTo="scrollTo" />
             </v-col>
-            <v-col v-if="!$vuetify.display.xs">
-                <CtaMenu />
+            <v-col cols="12" xs="12" sm="12" md="6" class="text-right">
+                <img alt="placeholder photo" height="400" class="elevation-8 ma-5" src="../assets/about-alt.jpg" />
             </v-col>
         </v-row>
         
@@ -52,18 +48,16 @@ export default {
 .cta {
     height: 100%;
     padding: 100px 50px 100px;
-    background: rgba(217,217,217,1); /* Old browsers */
-    background: -moz-linear-gradient(45deg, rgba(217,217,217,1) 0%, rgba(241,240,240,1) 51%, rgba(255,255,255,1) 100%);
-    background: -webkit-linear-gradient(45deg, rgba(217,217,217,1) 0%, rgba(241,240,240,1) 51%, rgba(255,255,255,1) 100%);
-    background: linear-gradient(45deg, rgba(217,217,217,1) 0%, rgba(241,240,240,1) 51%, rgba(255,255,255,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d9d9d9",endColorstr="#ffffff",GradientType=1);
+    background: #18184d;
     background-size: 30px cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    color: #d9d9d9;
 }
 
 .cta-title {
-    color: #18184d;
+    color: #EDA591;
+    padding: 50px 0;
 }
 
 .cta-logo {

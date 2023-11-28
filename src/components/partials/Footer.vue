@@ -28,16 +28,16 @@ export default {
               <span v-if="!$vuetify.display.xs">keljr021@gmail.com</span>
           </span>
           <span class="footer-link mx-lg-8 mb-2" @click="openWindow('https://www.linkedin.com/in/kelvin-morrisey-jr-514360a7/')" title="View LinkedIn Profile">
-            <img class="footer-icon" src="../../assets/LI-black.png" alt="LinkedIn link" />
+            <img class="footer-icon" src="../../assets/LI-white.png" alt="LinkedIn link" />
           </span>
           <span class="footer-link mx-lg-8 mb-2" @click="openWindow('https://github.com/keljr021')" title="View GitHub Profile">
-            <img class="footer-icon" src="../../assets/github-black.png" alt="GitHub link" />
+            <img class="footer-icon" src="../../assets/github-white.png" alt="GitHub link" />
           </span>
           <span class="footer-link mx-lg-8 mb-2" @click="openWindow('https://dribbble.com/keljr021')" title="View Dribbble Profile">
-            <img class="footer-icon" src="../../assets/dr-logo.png" alt="Dribbble link" />
+            <img class="footer-icon" src="../../assets/dr-logo-white.png" alt="Dribbble link" />
           </span>
           <span class="footer-link mx-lg-8 mb-2" @click="openWindow('https://www.behance.net/kelvin-m')" title="View Behance Profile">
-            <img class="footer-icon" src="../../assets/be-logo-alt2.png" alt="Behance link" />
+            <img class="footer-icon" src="../../assets/be-logo-alt2-white.png" alt="Behance link" />
           </span>
         </v-col>
       <v-spacer></v-spacer>
@@ -57,7 +57,7 @@ export default {
   }
 
   .footer-link {
-    opacity: 0.35;
+    opacity: 0.5;
     cursor: pointer;
     transition: opacity 0.3s ease-in-out;
 
