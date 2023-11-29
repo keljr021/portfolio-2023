@@ -36,7 +36,7 @@ export default {
                         <v-icon class="mr-2" icon="mdi-email" variant="text"  />
                         keljr021@gmail.com
                     </div>
-                    <div @click="openWindow(resumeUrl)" class="mt-4">
+                    <div @click="openWindow('./kelvin_morrisey_resume.pdf')" class="mt-4">
                         <v-icon class="mr-2" icon="mdi-folder-file" variant="text"  />
                         Open Resume
                     </div>

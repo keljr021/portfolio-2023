@@ -42,7 +42,7 @@ export default {
         transition: color 0.3s ease-in-out;
 
         &:hover {
-            color: #EDA591;
+            color: #b9e9e1;
         }
     }
 }
