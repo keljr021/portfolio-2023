@@ -39,7 +39,7 @@ export default {
 
 <template>
     <!-- Mobile Navigation -->
-    <div class="nav show w-100 px-4 py-2" v-if="$vuetify.display.smAndDown">
+    <div class="nav show w-100 px-4 py-2" :class="{'home': onHome }" v-if="$vuetify.display.smAndDown">
         <v-row class="align-center justify-space-between">
             <v-col cols="8" class="nav-logo" @click="$router.push({ name: 'home' })">
                 <img v-if="onHome" class="mt-2 mx-1 home" src="../assets/km-icon-white.svg" alt="Kelvin Morrisey Jr" />

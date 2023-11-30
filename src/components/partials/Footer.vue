@@ -23,23 +23,23 @@ export default {
               <v-icon class="mr-2 mt-0" icon="mdi-email" variant="text"  />
               <span v-if="!$vuetify.display.xs">kmjr07@yahoo.com</span>
           </span>
-          <span class="footer-link mx-lg-8 mb-2" @click="openWindow('mailto:keljr021@gmail.com')" title="Email keljr021@gmail.com">
+          <span class="footer-link mx-md-8 mx-lg-8 mb-2" @click="openWindow('mailto:keljr021@gmail.com')" title="Email keljr021@gmail.com">
               <v-icon class="mr-2 mt-0" icon="mdi-email" variant="text"  />
               <span v-if="!$vuetify.display.xs">keljr021@gmail.com</span>
           </span>
-          <span class="footer-link mx-lg-8 mb-2" @click="openWindow('https://www.linkedin.com/in/kelvin-morrisey-jr-514360a7/')" title="View LinkedIn Profile">
+          <span class="footer-link mx-md-8 mx-lg-8 mb-2" @click="openWindow('https://www.linkedin.com/in/kelvin-morrisey-jr-514360a7/')" title="View LinkedIn Profile">
             <img v-if="$route.name === 'home'" class="footer-icon" src="../../assets/LI-white.png" alt="LinkedIn link" />
             <img v-else class="footer-icon" src="../../assets/LI-black.png" alt="LinkedIn link" />
           </span>
-          <span class="footer-link mx-lg-8 mb-2" @click="openWindow('https://github.com/keljr021')" title="View GitHub Profile">
+          <span class="footer-link mx-md-8 mx-lg-8 mb-2" @click="openWindow('https://github.com/keljr021')" title="View GitHub Profile">
             <img v-if="$route.name === 'home'" class="footer-icon" src="../../assets/github-white.png" alt="GitHub link" />
             <img v-else class="footer-icon" src="../../assets/github-black.png" alt="GitHub link" />
           </span>
-          <span class="footer-link mx-lg-8 mb-2" @click="openWindow('https://dribbble.com/keljr021')" title="View Dribbble Profile">
+          <span class="footer-link mx-md-8 mx-lg-8 mb-2" @click="openWindow('https://dribbble.com/keljr021')" title="View Dribbble Profile">
             <img v-if="$route.name === 'home'" class="footer-icon" src="../../assets/dr-logo-white.png" alt="Dribbble link" />
             <img v-else class="footer-icon" src="../../assets/dr-logo.png" alt="Behance link" />
           </span>
-          <span class="footer-link mx-lg-8 mb-2" @click="openWindow('https://www.behance.net/kelvin-m')" title="View Behance Profile">
+          <span class="footer-link mx-md-8 mx-lg-8 mb-2" @click="openWindow('https://www.behance.net/kelvin-m')" title="View Behance Profile">
             <img v-if="$route.name === 'home'" class="footer-icon" src="../../assets/be-logo-alt2-white.png" alt="Behance link" />
             <img v-else class="footer-icon" src="../../assets/be-logo-alt2.png" alt="Behance link" />
           </span>
@@ -78,7 +78,6 @@ export default {
 @media all and (min-width: 768px) and (max-width: 1023px) {
 
   .footer-link {
-    width: calc(25% - 80px);
     margin: 10px 40px;
     text-align: center;
   }

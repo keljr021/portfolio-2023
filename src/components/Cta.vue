@@ -30,14 +30,16 @@ export default {
 
 <template>
     <v-container fluid class="cta">
-        <img class="cta-bg" src="../assets/cta/background-1060405_1280.png" />
+        <div class="cta-bg">
+            <img class="cta-bg-image" src="../assets/cta/background-1060405_1280.png" />
+        </div>
         <v-row>
             <v-col cols="12" xs="12" sm="12" md="6">
                 <h1 class="cta-title">Hi my name's <br v-if="$vuetify.display.xs" /><b>Kelvin Morrisey Jr.</b></h1>
                 <CtaText @scrollTo="scrollTo" />
             </v-col>
-            <v-col cols="12" xs="12" sm="12" md="6" class="text-right pa-0">
-                <img alt="placeholder photo" height="440" class="cta-image mx-0" src="../assets/cta-self-drawing.png" />
+            <v-col cols="12" xs="12" sm="12" md="6" class="text-xs-center text-sm-center text-md-right text-right pa-0">
+                <img alt="drawing of me and my interests" class="cta-image mx-0" src="../assets/cta-self-drawing.png" />
             </v-col>
         </v-row>
         
@@ -50,7 +52,8 @@ export default {
     position: relative;
     height: 100%;
     padding: 150px 0 100px 50px;
-    background: #17174f;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     -webkit-border-radius: 0;
     border-radius: 0;
     z-index: 0;
@@ -62,7 +65,23 @@ export default {
     right: 0;
     bottom: 0;
     width: 100%;
+    height: 100%;
     object-fit: contain;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    background: #17174f;
+    z-index: -1;
+
+}
+
+.cta-bg-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    object-fit: cover;
     overflow: hidden;
     opacity: 0.35;
     z-index: -1;
@@ -83,6 +102,14 @@ export default {
 
 .cta-image {
     opacity: 0.7;
+    height: 440px;
+}
+
+@media all and (min-width: 768px) and (max-width: 1023px) {
+    .cta-bg-image {
+        width: 100%;
+        height: 100vh;
+    }
 }
 
 @media all and (max-width: 768px) {
@@ -90,8 +117,18 @@ export default {
         padding: 20px;
     }
 
+    .cta-bg-image {
+        width: initial;
+        height: 100vh;
+    }
+
     .cta-logo {
         display: none;
+    }
+
+    .cta-image {
+        width: 100%;
+        height: initial;
     }
 }
 </style>
