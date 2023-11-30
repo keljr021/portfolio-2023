@@ -31,13 +31,13 @@ export default {
 <template>
     <v-container fluid class="cta">
         <img class="cta-bg" src="../assets/cta/background-1060405_1280.png" />
-        <v-row class="pa-3">
+        <v-row>
             <v-col cols="12" xs="12" sm="12" md="6">
                 <h1 class="cta-title">Hi my name's <br v-if="$vuetify.display.xs" /><b>Kelvin Morrisey Jr.</b></h1>
                 <CtaText @scrollTo="scrollTo" />
             </v-col>
-            <v-col cols="12" xs="12" sm="12" md="6" class="text-right">
-                <img alt="placeholder photo" height="400" class="elevation-8 ma-5" src="../assets/about-alt.jpg" />
+            <v-col cols="12" xs="12" sm="12" md="6" class="text-right pa-0">
+                <img alt="placeholder photo" height="440" class="cta-image mx-0" src="../assets/cta-self-drawing.png" />
             </v-col>
         </v-row>
         
@@ -49,7 +49,7 @@ export default {
 .cta {
     position: relative;
     height: 100%;
-    padding: 100px 50px 100px;
+    padding: 150px 0 100px 50px;
     background: #17174f;
     -webkit-border-radius: 0;
     border-radius: 0;
@@ -79,6 +79,10 @@ export default {
     top: 50px;
     height: 40px;
     opacity: 0.75;
+}
+
+.cta-image {
+    opacity: 0.7;
 }
 
 @media all and (max-width: 768px) {
