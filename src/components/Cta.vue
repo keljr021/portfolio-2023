@@ -32,14 +32,12 @@ export default {
     <v-container fluid class="cta">
         <div class="cta-bg">
             <img class="cta-bg-image" src="../assets/cta/background-1060405_1280.png" />
+            <img alt="drawing of me" class="cta-image" src="../assets/cta-self.png" />
         </div>
         <v-row>
             <v-col cols="12" xs="12" sm="12" md="6">
                 <h1 class="cta-title">Hi my name's <br v-if="$vuetify.display.xs" /><b>Kelvin Morrisey Jr.</b></h1>
                 <CtaText @scrollTo="scrollTo" />
-            </v-col>
-            <v-col cols="12" xs="12" sm="12" md="6" class="text-xs-center text-sm-center text-md-right text-right pa-0">
-                <img alt="drawing of me and my interests" class="cta-image mx-0" src="../assets/cta-self-drawing.png" />
             </v-col>
         </v-row>
         
@@ -101,8 +99,12 @@ export default {
 }
 
 .cta-image {
-    opacity: 0.7;
-    height: 440px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0.6;
+    height: 500px;
+    margin-top: 10%;
 }
 
 @media all and (min-width: 768px) and (max-width: 1023px) {
@@ -127,7 +129,7 @@ export default {
     }
 
     .cta-image {
-        width: 100%;
+        width: 75%;
         height: initial;
     }
 }
