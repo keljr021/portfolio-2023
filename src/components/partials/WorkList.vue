@@ -19,6 +19,16 @@
     <v-row>
       <work-list-item 
         bg="light"
+        color="#0081b7"
+        linkId="four" 
+        title="4 Lives AI" 
+        caption="Responsive site for janitorial business"
+        role="UX Designer, Logo Designer"
+        logo="work/fl-desktop.png" 
+        :logoWidth="listWidth" />
+
+      <work-list-item 
+        bg="light"
         color="#464da0"
         linkId="mcs" 
         title="K&A Morrisey Cleaning Services" 

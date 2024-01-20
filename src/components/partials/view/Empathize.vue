@@ -43,9 +43,16 @@
                     <slot name="persona"></slot>
                 </v-col>
 
-                <v-col order-xs="first" offset-sm="1" offset-md="1" offset-lg="1" sm="5" md="5" lg="5">
+                <v-col v-if="$slots.user" order-xs="first" offset-sm="1" offset-md="1" offset-lg="1" sm="5" md="5" lg="5">
                     <div class="view-text-section-title">User Map</div>
+
                     <slot name="user"></slot>
+                </v-col>
+
+                <v-col v-if="$slots.diagram" order-xs="first" offset-sm="1" offset-md="1" offset-lg="1" sm="5" md="5" lg="5">
+                    <div class="view-text-section-title">User Diagram</div>
+
+                    <slot name="diagram"></slot>
                 </v-col>
             </v-row>
         </v-col>

@@ -60,6 +60,17 @@
                     </div>
                 </v-col>
 
+                <v-col cols="12" v-if="$slots.study" class="py-6">
+                    <div class="view-text-section-title">Usability Study</div>
+                    <div>
+                        <v-row>
+                            <v-col cols="11">
+                                <slot name="study"></slot>
+                            </v-col>
+                        </v-row>
+                    </div>
+                </v-col>
+
                 <v-col cols="12" v-if="$slots.study1 && $slots.study2" class="py-6">
                     <div class="view-text-section-title">Usability Study</div>
                     <div>

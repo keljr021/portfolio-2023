@@ -1,4 +1,5 @@
 <script>
+  import Four from './viewItem/Four.vue';
   import Mcs from './viewItem/Mcs.vue';
   import Torch from './viewItem/Torch.vue';
   import Lemon from './viewItem/Lemon.vue';
@@ -15,6 +16,7 @@
     data() {
       return {
         viewIdArray: [
+          'four',
           'mcs',
           'torch',
           'lemon',
@@ -73,6 +75,7 @@
       this.setNextView(to.params.id);
     },
     components: {
+      Four,
       Mcs,
       Torch,
       Lemon,
@@ -90,6 +93,7 @@
 <template>
   <v-container fluid class="px-0 mx-0 mt-3 mb-5">    
     <div>
+      <four @window-open="windowOpen" v-if="$route.params.id === 'four'" primaryColor="#0081b7" secondaryColor="#3f5d66"/>
       <mcs @window-open="windowOpen" v-if="$route.params.id === 'mcs'" primaryColor="#464da0" secondaryColor="#1d2352"/>
       <torch @window-open="windowOpen" v-if="$route.params.id === 'torch'" primaryColor="#993838" secondaryColor="#584fc4"/>
       <lemon @window-open="windowOpen" v-if="$route.params.id === 'lemon'" primaryColor="#008C73" secondaryColor="#918b49"/>
