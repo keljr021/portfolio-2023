@@ -15,7 +15,7 @@
         desktopWireframeUrl: 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=3-161&t=zbR1jXXPcPLTNuMU-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A4&mode=design',
         mobilePrototypeUrl: 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=76-5666&t=V6DdFKCvilGcjKaA-1&scaling=scale-down-width&page-id=76%3A3524&starting-point-node-id=78%3A1674&mode=design',
         desktopPrototypeUrl: 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=28-242&t=7r8PqfSf9rv4qlZX-1&scaling=min-zoom&page-id=28%3A187&starting-point-node-id=28%3A242&mode=design',
-        caseStudyUrl: 'https://docs.google.com/presentation/d/1CbvvBE5rUeZywcQJZRo_OzVhJJSYJrjRe7X77Tes8hE/edit?usp=sharing'
+        caseStudyUrl: 'https://docs.google.com/presentation/d/11AmaJsV7683gmRCD8ctkhfBbgtaMJRarI9DvzXZhG2Q/edit?usp=sharing'
       }
     },
     emits: [
@@ -80,10 +80,13 @@
     <overview  :color="secondaryColor">
       <template #overview>
         <p>
-           This project was to design both a mobile app and responsive website for a career mentorship service to help college graduates. Torch Mentorship Network is an online service that helps students connect with a mentor during their college studies.
+          This project was born based on my interests in video games; and the continued accolades of Artificial Intelligence.
         </p>
         <p>
-            The main idea of the project was a simple and intuitive online presence geared towards college students and experienced mentors.
+          Ever been in this situation? You purchase a new game system and finally get the time to play it. You assemble the system, and find out you can't play it because you missed an important item that was sold separately. This project helps to reduce similar frustrations.
+        </p>
+        <p>
+          4 Lives AI is an online resource to connect users to the gaming information that exists online using AI-generated queries.        
         </p>
       </template>
       <template #image>
@@ -94,9 +97,11 @@
 
     <empathize :color="primaryColor">
       <template #problem>
-       Users can be overwhelmed or confused with the various video game options out there. Many times, these are based on what is told to them, or going off of their judgements; which can cause them to get an incorrect item.      </template>
+       Some consumers are overwhelmed or confused with the various video game options out there. Many times, purchases are made based on what is told to them, or going off of their own judgement without a clear understanding of what to buy.      
+      </template>
       <template #goal>
-        Provide an online resource that takes a user-generated question and give accurate information of a particular gaming topic.       </template>
+        This project is to provide an online resource that takes a user-generated question and give recommended information of video game items.       
+      </template>
       <template #persona>
         <v-img class="pt-1" width="100%" :src="imgSrc('fl-persona.png')" />
       </template>
@@ -107,11 +112,11 @@
 
     <define :color="primaryColor">
       <template #ideas>
-        <p>From documenting the user map, there were several discovered during the search process: </p>
+        <p>For this project, I started with a user diagram that guides the user flow on how the site should operate. The diagram allows us to clearly define the goals to achieve during this project, including the below:</p>
         <ol>
-            <li>We should create an easy to navigate home page for desktop users.</li>
-            <li>When filling out a form, both the app  should add a user's profile info from their account. This would allow for quicker form submissions.</li>
-            <li>A mentor availability status is kept up-to-date within the app.</li>
+            <li>The user should be able to enter a query to gather specific information.</li>
+            <li>The query should give information laid out in an easy to read format.</li>
+            <li>There needs to be an option for the user to share that generated content.</li>
         </ol>
       </template>
     </define>
@@ -123,19 +128,19 @@
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="4" lg="4">
             <v-img class="pt-1" height="350" :src="imgSrc('fl-pframe1.png')" />
             <div class="w-100 py-8">
-              1. I began to sketch out the general workflow of the application.
+              1. Began with documenting some various ideas and notes for this project.
             </div>
           </v-col>
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="4" lg="4">
             <v-img class="pt-1" height="300" :src="imgSrc('fl-pframe2.png')" />
             <div class="w-100 py-8">
-              2. Then I brainstormed several rough draft ideas of how the app should look. From these drafts, I've picked a few items from each to add to the final wireframe.
+              2. Then, generated a sitemap of pages that should be available on the site.
             </div>
           </v-col> 
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="4" lg="4">
             <v-img class="pt-1" height="300" :src="imgSrc('fl-pframe3.jpg')" />
             <div class="w-100 py-8">
-              3. Finally, I've drawn up the final version of the wireframes. Above is an example of the Menu pages.
+              3. I've then created a paper wireframe of the layout of each page.
             </div>
           </v-col>
         </v-row>
@@ -148,13 +153,13 @@
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" height="350" :src="imgSrc('fl-dframe1.png')" />
             <div class="w-100 py-8">
-              1. <b>Home</b> - Adds a quick Title and message on the top page with an image placeholder. The sections below would be a quick link to various options and articles found on the site.
+              1. <b>Home</b> - Adds a textarea and Submit button as a Call to Action to the page so the user has a quick way to query the site.
             </div>
           </v-col>
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
             <v-img class="pt-1" height="350" :src="imgSrc('fl-dframe2.png')" />
             <div class="w-100 py-8">
-              2. <b>Find a Mentor</b> - The main search area where the user can either Search for a Mentor or fill out a generic Form. The user is also given a bottom navbar to navigate between pages.
+              2. <b>Query Page</b> - When the user submits a question, this page is generated with the main answer on top. Additional information is laid out below with links to more content.
             </div>
           </v-col>
         </v-row>
@@ -162,13 +167,7 @@
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" height="350" :src="imgSrc('fl-dframe3.png')" />
             <div class="w-100 py-8">
-              3. <b>Mentor Profile</b> - Gives a page that displays a mentor's information; such as area of study.
-            </div>
-          </v-col>
-          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
-            <v-img class="pt-1" height="350" :src="imgSrc('fl-dframe4.png')" />
-            <div class="w-100 py-8">
-              4. <b>Chat</b> - Displays the Chat layout that shows the list of members that the user has conversed with.
+              3. <b>Section Page</b> - Based on the information, the content may lay out as a grid of items. When clicked, the query page would be loaded with content based on the selection. The question section near the navbar lets the user keep track of what current question has been asked.
             </div>
           </v-col>
         </v-row>
@@ -176,9 +175,8 @@
 
       <template #study>
         <ul>
-            <li>From conducting the usability study, I've discoved that the Mentor Search workflow was inconsistent between navigation and the headers. This would be resolved in the upcoming prototyope.</li>
-            <li>During the workflow, a majority of the testers had difficulty navigating through each page. I would need to further simplify the workfow when going through the app and site.</li>
-            <li>There was an Article page also added to the site that confused a majority of the users when navigated. This would need refactoring in the upcoming prototype.</li>
+            <li>From conducting the usability study, several of the users noticed that they have to the Home page or Ask page to update their questions. There needs to be a quicker way for users to refine or update queries.</li>
+            <li>The Share and Print options were missed in a few of the studies that would allow users to share content. These options would need to be more prominently displayed to the user.</li>
         </ul>      
       </template>
 
@@ -187,13 +185,13 @@
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
               <v-img class="pt-1" width="90%" :src="imgSrc('fl-mock1.png')" />
               <div class="w-100 py-8">
-              1. <b>Home</b> - The Call to Action was modified to remove the two Username and Password textboxes. It also includes an image symbolizing the brand. 
+              1. <b>Home</b> - For the mockups, I've used <i>Microsoft Fluent UI</i> for the components. A background image was added to complement the AI-generated workflow. Scrolling below displays a most recently searched section with links to quickly generate content.
             </div>
             </v-col>
             <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
               <v-img class="pt-1" width="90%" :src="imgSrc('fl-mock2.png')" />
               <div class="w-100 py-8">
-              2. <b>Feed</b> - The mobile layout was referenced with this page. Components were shifted accordingly to make use of the wider screen.
+              2. <b>Query Page</b> - The layout is largely unchanged, but uses Card components for each section. The question component near the navbar is now clickable for the user to quickly refine or update their question; and re-submit. The Share and Print options are added to the right of the page and fixed whenever the user scrolls.
             </div>
             </v-col>
         </v-row>
@@ -201,13 +199,7 @@
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
             <v-img class="pt-1" width="90%" :src="imgSrc('fl-mock3.png')" />
             <div class="w-100 py-8">
-              3. <b>Find a Mentor</b> - Keeps the same options, but adds a Card component to the options for better accesssibility.
-            </div>
-          </v-col>
-          <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
-            <v-img class="pt-1" width="90%" :src="imgSrc('fl-mock4.png')" />
-            <div class="w-100 py-8">
-              4. <b>Chat</b> - The Chat component was mostly kept the same, with some added styling.
+              3. <b>Section Page</b> - The layout is also kept the same; and used the Card components to separate each item. The Share and Print options are also on the right of the page.
             </div>
           </v-col>
         </v-row>
@@ -218,8 +210,8 @@
       </template>
       <template #logo2>
         <p>
-              For the Torch logo, I kept in mind that college students and experienced mentors would be the target consumer. I wanted to give the idea of "passing the torch" during an Olympic event. I wanted to also to keep the color and typography in a more structured manner since this is a more educational experience.
-            </p>        
+          This logo I've gien it a modern and digital structure. The background underneath the "4" is shaped as a digital diamond, and the typography gives an old-style computer terminal feel, since the site would use AI for most of it's content.
+        </p>        
       </template>
 
 
@@ -235,14 +227,17 @@
     <evaluate :color="primaryColor" :caseStudyUrl="caseStudyUrl">
       <template #lessons>
         <p>
-            I discovered a great insight on the importance of Information Architecture in web design. Creating an organized sitemap, and understanding how the data should be structured is critical when designing a new app or website.
+          Working on this project, I have gained more knowledge in using the Assets panel from Figma. This has proved very beneficial when prototyping the project to reuse assets, components, and layout structure.
+        </p>
+        <p>
+          I have also researched areas around AI-generated queries; and realize how powerful AI can be in the near future.
         </p>
       </template>
       <template #next>
         <ol>
-          <li>Design a responsive feel for tablet screens. Currently the above projects are only focused on mobile and desktop versions of the project.</li>
-          <li>I would add availability options to the mentor list and profile pages. This would give great insight to a fellow user looking for a mentor in their area.</li>
-          <li>I would attempt to merge the Mentor Form into a single form, rather than breaking it up into pieces. To do that, I would need to ensure that form validation is instant on each field to prevent excess scrolling to resolve invalid parameters.</li>
+          <li>For the Print option, I would add a way to remove unneeded sections from the page before sending to the printer.</li>
+          <li>I would add a section that would give links of where to purchase video game items; and possibly a direct link to the specific item.</li>
+          <li>One nice to have would be a Forum section so members can chat with one another and ask each other questions online.</li>
         </ol>        
       </template>
     </evaluate>

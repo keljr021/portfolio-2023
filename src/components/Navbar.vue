@@ -42,8 +42,8 @@ export default {
     <div class="nav show w-100 px-4 py-2" :class="{'home': onHome }" v-if="$vuetify.display.smAndDown">
         <v-row class="align-center justify-space-between">
             <v-col cols="8" class="nav-logo" @click="$router.push({ name: 'home' })">
-                <img v-if="onHome" class="mt-2 mx-1 home" src="../assets/km-icon-white.svg" alt="Kelvin Morrisey Jr" />
-                <img v-else class="mt-2 mx-1" src="../assets/km-icon.svg" alt="Kelvin Morrisey Jr" />
+                <!-- <img v-if="onHome" class="mt-2 mx-1 home" src="../assets/km-icon-white.svg" alt="Kelvin Morrisey Jr" /> -->
+                <img v-if="!onHome" class="mt-2 mx-1" src="../assets/km-icon.svg" alt="Kelvin Morrisey Jr" />
             </v-col>
             <v-col cols="4" class="text-right">
                 <v-icon @click.stop="toggleNavDrawer">mdi-menu</v-icon>
@@ -70,8 +70,8 @@ export default {
     <div class="nav w-100 pa-2 show" :class="{'home': onHome }" v-else>
         <v-row class="align-center">
             <v-col cols="3" class="nav-logo" @click="$router.push({ name: 'home' })">
-                <img v-if="onHome" class="mt-2 mx-1 home" src="../assets/km-icon-white.svg" alt="Kelvin Morrisey Jr" />
-                <img v-else class="mt-2 mx-1" src="../assets/km-icon.svg" alt="Kelvin Morrisey Jr" />
+                <!-- <img v-if="onHome" class="mt-2 mx-1 home" src="../assets/km-icon-white.svg" alt="Kelvin Morrisey Jr" /> -->
+                <img v-if="!onHome" class="mt-2 mx-1" src="../assets/km-icon.svg" alt="Kelvin Morrisey Jr" />
             </v-col>
             <v-col cols="9" class="text-right">
                 <span class="nav-item" @click="$router.push({ name: 'home' })">Home</span>
