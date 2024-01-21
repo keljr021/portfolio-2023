@@ -22,7 +22,7 @@
         color="#0081b7"
         linkId="four" 
         title="4 Lives AI" 
-        caption="Responsive site for janitorial business"
+        caption="AI-generated information resource for video games"
         role="UX Designer, Logo Designer"
         logo="work/fl-desktop.png" 
         :logoWidth="listWidth" />
