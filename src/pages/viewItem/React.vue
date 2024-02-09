@@ -6,7 +6,8 @@
     name: 'React ',
     data() {
       return {
-        siteUrl: 'http://poc.kelvin-m.com/react-calculator/'
+        siteUrl: 'http://poc.kelvin-m.com/react-calculator/',
+        githubUrl: 'https://github.com/keljr021/react-calculator'
       }
     },
     emits: [
@@ -45,6 +46,7 @@
     title="React Calculator" 
     subtitle="A calculator component built with React JS" 
     :siteUrl="siteUrl"
+    :githubUrl="githubUrl"
     :imageSrc="imgSrc('work/react-desktop.png')"
   >
     <template #role>

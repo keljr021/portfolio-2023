@@ -17,8 +17,13 @@ export default {
 
 <template>
     <v-row class="footer fixed" :class="{ 'relative': $route.name === 'view' || $route.name === 'about'}">
-      <v-spacer></v-spacer>
-      <v-col cols="12" class="text-center">
+      <v-col>
+          <span class="footer-link" @click="openWindow('https://github.com/keljr021/portfolio-2023')" :color="$route.name === 'home' ? 'transparent' : ''">
+            <v-icon class="mr-2 mt-0" icon="mdi-code-tags" variant="text"  />
+            <span v-if="!$vuetify.display.xs">View Code</span>
+          </span>
+        </v-col>
+      <v-col cols="10" class="text-center">
           <span class="footer-link" @click="openWindow('mailto:kmjr07@yahoo.com')" title="Email kmjr07@yahoo.com">
               <v-icon class="mr-2 mt-0" icon="mdi-email" variant="text"  />
               <span v-if="!$vuetify.display.xs">kmjr07@yahoo.com</span>
@@ -44,7 +49,7 @@ export default {
             <img v-else class="footer-icon" src="../../assets/be-logo-alt2.png" alt="Behance link" />
           </span>
         </v-col>
-      <v-spacer></v-spacer>
+        <v-spacer></v-spacer>
     </v-row>
 </template>
 
@@ -74,6 +79,10 @@ export default {
     height: 20px;
   }
 }
+
+  .home {
+    background: yellow;
+  }
 
 @media all and (min-width: 768px) and (max-width: 1023px) {
 

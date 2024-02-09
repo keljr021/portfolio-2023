@@ -1,11 +1,13 @@
 <script>
   import WorkImage from '../../components/partials/WorkImage.vue';
   import ViewTitleBanner from '../../components/partials/ViewTitleBanner.vue';
-  import Overview from '../../components/partials/view/Overview.vue';  export default {
+  import Overview from '../../components/partials/view/Overview.vue';  
+  export default {
     name: 'Vue ',
     data() {
       return {
-        siteUrl: 'http://poc.kelvin-m.com/vue-calendar/#/'
+        siteUrl: 'http://poc.kelvin-m.com/vue-calendar/#/',
+        githubUrl: 'https://github.com/keljr021/vue-calendar'
       }
     },
     emits: [
@@ -44,6 +46,7 @@
     title="Vue Calendar" 
     subtitle="A calculator component built with React JS" 
     :siteUrl="siteUrl"
+    :githubUrl="githubUrl"
     :imageSrc="imgSrc('work/vue-desktop.png')"
   >
     <template #role>
