@@ -83,31 +83,31 @@ export default {
 
     <v-row v-else class="footer fixed" :class="{ 'relative': $route.name === 'view' || $route.name === 'about'}">
       <v-col class="text-center">
-        <span class="footer-link mx-md-4 mx-lg-8 mb-2" @click="openWindow('https://github.com/keljr021/portfolio-2023')" title="View Portfolio Code">
+        <span class="footer-link mx-md-6 mx-lg-8 mb-2" @click="openWindow('https://github.com/keljr021/portfolio-2023')" title="View Portfolio Code">
             <v-icon class="mr-2 mt-0" icon="mdi-code-tags" variant="text"  />
-            <span v-if="!$vuetify.display.mdAndDown">View Code</span>
+            <span>View Code</span>
           </span>
           <span class="footer-link" @click="openWindow('mailto:kmjr07@yahoo.com')" title="Email kmjr07@yahoo.com">
               <v-icon class="mr-2 mt-0" icon="mdi-email" variant="text"  />
-              <span v-if="!$vuetify.display.mdAndDown">kmjr07@yahoo.com</span>
+              <span>kmjr07@yahoo.com</span>
           </span>
-          <span class="footer-link mx-md-4 mx-lg-8 mb-lg-2" @click="openWindow('mailto:keljr021@gmail.com')" title="Email keljr021@gmail.com">
+          <span class="footer-link mx-md-6 mx-lg-8 mb-lg-2" @click="openWindow('mailto:keljr021@gmail.com')" title="Email keljr021@gmail.com">
               <v-icon class="mr-2 mt-0" icon="mdi-email" variant="text"  />
-              <span v-if="!$vuetify.display.mdAndDown">keljr021@gmail.com</span>
+              <span>keljr021@gmail.com</span>
           </span>
-          <span class="footer-link mx-md-4 mx-lg-8 mb-lg-2" @click="openWindow('https://www.linkedin.com/in/kelvin-morrisey-jr-514360a7/')" title="View LinkedIn Profile">
+          <span class="footer-link mx-md-6 mx-lg-8 mb-lg-2" @click="openWindow('https://www.linkedin.com/in/kelvin-morrisey-jr-514360a7/')" title="View LinkedIn Profile">
             <img v-if="onHomePage" class="footer-icon" src="../../assets/LI-white.png" alt="LinkedIn link" />
             <img v-else class="footer-icon" src="../../assets/LI-black.png" alt="LinkedIn link" />
           </span>
-          <span class="footer-link mx-md-4 mx-lg-8 mb-2" @click="openWindow('https://github.com/keljr021')" title="View GitHub Profile">
+          <span class="footer-link mx-md-6 mx-lg-8 mb-2" @click="openWindow('https://github.com/keljr021')" title="View GitHub Profile">
             <img v-if="onHomePage" class="footer-icon" src="../../assets/github-white.png" alt="GitHub link" />
             <img v-else class="footer-icon" src="../../assets/github-black.png" alt="GitHub link" />
           </span>
-          <span class="footer-link mx-md-4 mx-lg-8 mb-2" @click="openWindow('https://dribbble.com/keljr021')" title="View Dribbble Profile">
+          <span class="footer-link mx-md-6 mx-lg-8 mb-2" @click="openWindow('https://dribbble.com/keljr021')" title="View Dribbble Profile">
             <img v-if="onHomePage" class="footer-icon" src="../../assets/dr-logo-white.png" alt="Dribbble link" />
             <img v-else class="footer-icon" src="../../assets/dr-logo.png" alt="Dribbble link" />
           </span>
-          <span class="footer-link mx-md-4 mx-lg-8 mb-2" @click="openWindow('https://www.behance.net/kelvin-m')" title="View Behance Profile">
+          <span class="footer-link mx-md-6 mx-lg-8 mb-2" @click="openWindow('https://www.behance.net/kelvin-m')" title="View Behance Profile">
             <img v-if="onHomePage" class="footer-icon" src="../../assets/be-logo-alt2-white.png" alt="Behance link" />
             <img v-else class="footer-icon" src="../../assets/be-logo-alt2.png" alt="Behance link" />
           </span>
