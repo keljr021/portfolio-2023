@@ -40,7 +40,7 @@
       </v-col>
     </v-row>
 
-    <Footer />
+    <Footer :onHomePage="false" />
   </v-container>
 </template>
 

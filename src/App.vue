@@ -56,7 +56,7 @@
 
 <template>
   <v-app>
-    <Navbar @scrollTo="scrollTo" />
+    <Navbar :onHome="this.$route.name === 'home'" @scrollTo="scrollTo" />
 
     <!-- Gives spacing between navigation and content below -->
     <!-- <v-spacer v-if="this.$vuetify.display.smAndDown" style="height:41.5px"></v-spacer> -->

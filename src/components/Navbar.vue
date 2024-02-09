@@ -3,12 +3,15 @@ export default {
     name: 'navbar',
     data() {
         return {
-            onHome: false,
-            showNavDrawer: false,
+            showNavDrawer: false
         };
     },
     props: {
-        logo: String
+        logo: String,
+        onHome: {
+            type: Boolean,
+            default: false
+        }
     },
     emits: [
         'scrollTo'
@@ -25,14 +28,6 @@ export default {
         openWindow(link) {
             window.open(link, '_blank');
         }
-    },
-    watch: {
-        $route: function(to, from) {
-            this.onHome = this.$route.name === 'home';
-        }
-    },
-    mounted() {
-        this.showNav = this.$route.name === 'home';
     }
 }
 </script>
@@ -48,7 +43,7 @@ export default {
             <v-col cols="4" class="text-right">
                 <v-icon @click.stop="toggleNavDrawer">mdi-menu</v-icon>
 
-                <v-navigation-drawer v-model="showNavDrawer" location="right">
+                <v-navigation-drawer :color="onHome ? 'black' : ''" v-model="showNavDrawer" location="right">
                     <v-list-item>
                         <template v-slot:append>
                             <v-icon @click.stop="toggleNavDrawer">mdi-close</v-icon>
@@ -100,7 +95,7 @@ export default {
     &.home {
         background: transparent;
         color: white;
-        opacity: 0.75;
+        opacity: 0.85;
     }
 }
 

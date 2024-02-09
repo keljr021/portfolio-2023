@@ -138,7 +138,7 @@
       </v-row>
     </div>
 
-    <Footer />
+    <Footer :onHomePage="false" />
   </v-container>
 </template>
 

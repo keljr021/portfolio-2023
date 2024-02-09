@@ -41,7 +41,7 @@ export default {
             </v-col>
         </v-row>
         
-        <Footer :fixed="true" />
+        <Footer :fixed="true" :onHomePage="true"/>
     </v-container>
 </template>
 

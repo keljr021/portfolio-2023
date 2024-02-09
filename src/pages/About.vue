@@ -33,7 +33,7 @@ export default {
         
         <Skills />
         
-        <Footer :fixed="$vuetify.display.mdAndUp" />
+        <Footer :fixed="$vuetify.display.mdAndUp" :onHomePage="false" />
     </v-container>
 </template>
 
