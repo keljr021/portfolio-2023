@@ -113,7 +113,7 @@
                             <v-icon class="mr-2">mdi-open-in-new</v-icon>
                             Desktop Prototype
                         </v-btn>
-                        <v-btn v-if="caseStudyUrl" :block="$vuetify.display.xs" class="text-normal px-3 mb-3" variant="outlined"  :color="backgroundColor" :href="caseStudyUrl" target="_blank">
+                        <v-btn v-if="caseStudyUrl" :block="$vuetify.display.xs" class="text-normal px-3 mr-6 mb-3" variant="outlined"  :color="backgroundColor" :href="caseStudyUrl" target="_blank">
                             <v-icon class="mr-2">mdi-presentation</v-icon>
                             Case Study PPT
                         </v-btn>

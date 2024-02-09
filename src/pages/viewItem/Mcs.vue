@@ -13,7 +13,8 @@
       return {
         wireframeUrl: 'https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/ka-clean.com?type=design&node-id=14-287&scaling=scale-down&page-id=14%3A227&starting-point-node-id=14%3A287',
         prototypeUrl: 'https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/ka-clean.com?type=design&node-id=86-243&scaling=scale-down&page-id=86%3A130&starting-point-node-id=86%3A243',
-        caseStudyUrl: 'https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing'
+        caseStudyUrl: 'https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing',
+        githubUrl: 'https://github.com/keljr021/ka-clean-2023'
       }
     },
     emits: [
@@ -61,6 +62,7 @@
     :prototypeUrl="prototypeUrl"
     siteUrl="https://ka-clean.com/"
     :caseStudyUrl="caseStudyUrl"
+    :githubUrl="githubUrl"
     :imageSrc="imgSrc('work/ka-desktop.png')"
     :mobileSrc="imgSrc('work/ka-mobile.png')"
   >
