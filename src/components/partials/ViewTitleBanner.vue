@@ -150,6 +150,11 @@
 <style lang="scss" scoped>
 .cursor-pointer {
     cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
 :deep(.view-header) {

@@ -65,10 +65,11 @@
     padding: 30px 0;
     cursor: pointer;
     background-color: transparent;
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 
     &:hover {
         background-color: #e9e9e9;
+        transform: scale(1.05);
     }
 }
 .list-item-text {
