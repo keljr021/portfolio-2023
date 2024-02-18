@@ -47,6 +47,7 @@
     :siteUrl="siteUrl"
     :imageSrc="imgSrc('work/if-desktop.png')"
     :mobileSrc="imgSrc('work/if-mobile.png')"
+    @window-open="windowOpen"
   >
     <template #role>
       Front-End Developer, Web Designer, Logo Designer

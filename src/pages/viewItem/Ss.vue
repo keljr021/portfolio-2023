@@ -46,6 +46,7 @@
     subtitle="A platform to create and share infographics"
     :siteUrl="siteUrl"
     :imageSrc="imgSrc('work/ss-desktop.png')"
+    @window-open="windowOpen"
   >
     <template #role>
       Front-End Developer (Immersion Media)

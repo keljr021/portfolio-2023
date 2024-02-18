@@ -20,7 +20,10 @@
         client: String,
         tools: String,
         date: String,
-        prototypeUrl: String,
+        prototypeUrl: {
+            type: String,
+            default: null
+        },
         mobilePrototypeUrl: String,
         desktopPrototypeUrl: String,
         siteUrl: String,
@@ -36,8 +39,22 @@
     emits: [
         'window-open'
     ],
+    computed: {
+        showPointer() {
+            return this.siteUrl || this.prototypeUrl || (this.desktopPrototypeUrl || this.mobilePrototypeUrl);
+        }
+    },
     methods: {
+        goToPrototype(inputUrl) {
+            debugger;
+            let url = null;
 
+            if (this.siteUrl) url = this.siteUrl;
+            else if (this.prototypeUrl) url = this.prototypeUrl;
+            else url = inputUrl;
+
+            return this.$emit('window-open', url);
+        }
     },
     mounted() {
      
@@ -56,10 +73,10 @@
     </v-row>
     <v-row class="view-header" justify="center">
         
-        <v-col v-if="imageSrc" cols="11" md="5" lg="5" class="pa-0 my-auto text-center cursor-pointer" @click="$emit('window-open', desktopPrototypeUrl)">
+        <v-col v-if="imageSrc" cols="11" md="5" lg="5" :class="{ 'pa-0 my-auto text-center': true,  'cursor-pointer': showPointer }"  @click="goToPrototype(desktopPrototypeUrl)">
             <img :src="imageSrc" class="view-header-image" />
         </v-col> 
-        <v-col v-if="mobileSrc" cols="11" md="5" lg="5" class="pa-0 my-auto text-center cursor-pointer"  @click="$emit('window-open', mobilePrototypeUrl)">
+        <v-col v-if="mobileSrc" cols="11" md="5" lg="5" :class="{ 'pa-0 my-auto text-center': true,  'cursor-pointer': showPointer }"  @click="goToPrototype(mobilePrototypeUrl)">
             <img :src="mobileSrc" class="view-header-image mobile" />
         </v-col>
 

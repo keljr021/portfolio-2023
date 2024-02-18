@@ -48,6 +48,7 @@
     :siteUrl="siteUrl"
     :githubUrl="githubUrl"
     :imageSrc="imgSrc('work/vue-desktop.png')"
+    @window-open="windowOpen"
   >
     <template #role>
       Front-End Developer

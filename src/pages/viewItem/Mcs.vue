@@ -61,8 +61,6 @@
     :backgroundColor="primaryColor"
     title="K&A Morrisey Cleaning Services"
     subtitle="A responsive website for the family janitorial business"
-    :mobilePrototypeUrl="prototypeUrl"
-    :desktopPrototypeUrl="prototypeUrl"
     :prototypeUrl="prototypeUrl"
     siteUrl="https://ka-clean.com/"
     :caseStudyUrl="caseStudyUrl"
