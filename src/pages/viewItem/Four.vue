@@ -7,6 +7,7 @@
   import Ideate from '../../components/partials/view/Ideate.vue';
   import Evaluate from '../../components/partials/view/Evaluate.vue';
   import Solution from '../../components/partials/view/Solution.vue';
+  import ViewImage from '../../components/partials/ViewImage.vue';
   export default {
     name: 'Four',
     data() {
@@ -47,9 +48,10 @@
       Empathize,
       Evaluate,
       Ideate,
-      Solution,
-      WorkImage
-    }
+      Solution, 
+      WorkImage,
+      ViewImage
+  }
 }
 </script>
 
@@ -63,7 +65,7 @@
     :caseStudyUrl="caseStudyUrl"
     :imageSrc="imgSrc('work/fl-desktop.png')"
     :mobileSrc="imgSrc('work/fl-mobile.png')"
-
+    @window-open="windowOpen"
   >
     <template #role>
       UX Designer, Logo Designer
@@ -103,10 +105,10 @@
         This project is to provide an online resource that takes a user-generated question and give recommended information of video game items.       
       </template>
       <template #persona>
-        <v-img class="pt-1" width="100%" :src="imgSrc('fl-persona.png')" />
+        <view-image src="fl-persona.png" />
       </template>
       <template #diagram>
-        <v-img class="pt-1" width="100%" :src="imgSrc('fl-diagram.png')" />
+        <view-image src="fl-diagram.png" />
       </template>
     </empathize>
 
@@ -125,20 +127,20 @@
     <ideate :color="primaryColor">
       <template #paper>
         <v-row justify="space-evenly" class="py-8">
-          <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="4" lg="4">
-            <v-img class="pt-1" height="350" :src="imgSrc('fl-pframe1.png')" />
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="6" lg="6">
+            <view-image imgHeight="350" src="fl-pframe1.png" text="1. Began with documenting some various ideas and notes for this project." />
             <div class="w-100 py-8">
               1. Began with documenting some various ideas and notes for this project.
             </div>
           </v-col>
-          <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="4" lg="4">
-            <v-img class="pt-1" height="300" :src="imgSrc('fl-pframe2.png')" />
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="6" lg="6">
+            <view-image imgHeight="300" src="fl-pframe2.png" text="2. Then, generated a sitemap of pages that should be available on the site."/>
             <div class="w-100 py-8">
               2. Then, generated a sitemap of pages that should be available on the site.
             </div>
           </v-col> 
-          <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="4" lg="4">
-            <v-img class="pt-1" height="300" :src="imgSrc('fl-pframe3.jpg')" />
+          <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="6" lg="6">
+            <view-image imgHeight="300" src="fl-pframe3.jpg" text="3. I've then created a paper wireframe of the layout of each page."/>
             <div class="w-100 py-8">
               3. I've then created a paper wireframe of the layout of each page.
             </div>
@@ -151,21 +153,20 @@
       <template #lofi>        
         <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
-            <v-img class="pt-1" height="350" :src="imgSrc('fl-dframe1.png')" />
+            <view-image imgHeight="350" src="fl-dframe1.png" text="1. Home - Adds a textarea and Submit button as a Call to Action to the page so the user has a quick way to query the site."/>
             <div class="w-100 py-8">
               1. <b>Home</b> - Adds a textarea and Submit button as a Call to Action to the page so the user has a quick way to query the site.
             </div>
           </v-col>
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
-            <v-img class="pt-1" height="350" :src="imgSrc('fl-dframe2.png')" />
-            <div class="w-100 py-8">
+            <view-image imgHeight="350" src="fl-dframe2.png" text="2. Query Page - When the user submits a question, this page is generated with the main answer on top. Additional information is laid out below with links to more content."/>            <div class="w-100 py-8">
               2. <b>Query Page</b> - When the user submits a question, this page is generated with the main answer on top. Additional information is laid out below with links to more content.
             </div>
           </v-col>
         </v-row>
         <v-row justify="space-evenly" class="py-8">  
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
-            <v-img class="pt-1" height="350" :src="imgSrc('fl-dframe3.png')" />
+            <view-image imgHeight="350" src="fl-dframe3.png" text="3. Section Page - Based on the information, the content may lay out as a grid of items. When clicked, the query page would be loaded with content based on the selection. The question section near the navbar lets the user keep track of what current question has been asked."/>
             <div class="w-100 py-8">
               3. <b>Section Page</b> - Based on the information, the content may lay out as a grid of items. When clicked, the query page would be loaded with content based on the selection. The question section near the navbar lets the user keep track of what current question has been asked.
             </div>
@@ -183,13 +184,13 @@
       <template #hifi>
         <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
-              <v-img class="pt-1" width="90%" :src="imgSrc('fl-mock1.png')" />
+              <view-image imgWidth="90%" src="fl-mock1.png" text="1. Home - For the mockups, I've used 'Microsoft Fluent UI' for the components. A background image was added to complement the AI-generated workflow. Scrolling below displays a most recently searched section with links to quickly generate content."/>
               <div class="w-100 py-8">
               1. <b>Home</b> - For the mockups, I've used <i>Microsoft Fluent UI</i> for the components. A background image was added to complement the AI-generated workflow. Scrolling below displays a most recently searched section with links to quickly generate content.
             </div>
             </v-col>
             <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
-              <v-img class="pt-1" width="90%" :src="imgSrc('fl-mock2.png')" />
+              <view-image imgWidth="90%" src="fl-mock2.png" text="2. Query Page - The layout is largely unchanged, but uses Card components for each section. The question component near the navbar is now clickable for the user to quickly refine or update their question; and re-submit. The Share and Print options are added to the right of the page and fixed whenever the user scrolls."/>
               <div class="w-100 py-8">
               2. <b>Query Page</b> - The layout is largely unchanged, but uses Card components for each section. The question component near the navbar is now clickable for the user to quickly refine or update their question; and re-submit. The Share and Print options are added to the right of the page and fixed whenever the user scrolls.
             </div>
@@ -197,7 +198,7 @@
         </v-row>
         <v-row justify="space-evenly" class="py-8"> 
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
-            <v-img class="pt-1" width="90%" :src="imgSrc('fl-mock3.png')" />
+            <view-image imgWidth="90%" src="fl-mock3.png" text="3. Section Page - The layout is also kept the same; and used the Card components to separate each item. The Share and Print options are also on the right of the page."/>
             <div class="w-100 py-8">
               3. <b>Section Page</b> - The layout is also kept the same; and used the Card components to separate each item. The Share and Print options are also on the right of the page.
             </div>

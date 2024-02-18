@@ -33,6 +33,9 @@
             default: false
         }
     },
+    emits: [
+        'window-open'
+    ],
     methods: {
 
     },
@@ -53,10 +56,10 @@
     </v-row>
     <v-row class="view-header" justify="center">
         
-        <v-col v-if="imageSrc" cols="11" md="5" lg="5" class="pa-0 my-auto text-center">
+        <v-col v-if="imageSrc" cols="11" md="5" lg="5" class="pa-0 my-auto text-center cursor-pointer" @click="$emit('window-open', desktopPrototypeUrl)">
             <img :src="imageSrc" class="view-header-image" />
         </v-col> 
-        <v-col v-if="mobileSrc" cols="11" md="5" lg="5" class="pa-0 my-auto text-center">
+        <v-col v-if="mobileSrc" cols="11" md="5" lg="5" class="pa-0 my-auto text-center cursor-pointer"  @click="$emit('window-open', mobilePrototypeUrl)">
             <img :src="mobileSrc" class="view-header-image mobile" />
         </v-col>
 
@@ -128,6 +131,10 @@
     </v-row>
 </template>
 <style lang="scss" scoped>
+.cursor-pointer {
+    cursor: pointer;
+}
+
 :deep(.view-header) {
   padding: 0;
   margin: 0;
