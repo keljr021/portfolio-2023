@@ -7,6 +7,7 @@
   import Ideate from '../../components/partials/view/Ideate.vue';
   import Evaluate from '../../components/partials/view/Evaluate.vue';
   import Solution from '../../components/partials/view/Solution.vue';
+  import ViewImage from '../../components/partials/ViewImage.vue';
   export default {
     name: 'Lemon',
     data() {
@@ -48,7 +49,8 @@
       Evaluate,
       Ideate,
       Solution,
-      WorkImage
+      WorkImage,
+      ViewImage
     }
 }
 </script>
@@ -63,6 +65,7 @@
     :caseStudyUrl="caseStudyUrl"
     :imageSrc="imgSrc('work/lb-desktop.png')"
     :mobileSrc="imgSrc('work/lb-mobile.png')"
+    @window-open="windowOpen"
   >
     <template #role>
       UX Designer, Logo Designer
@@ -100,10 +103,10 @@
         Give users an option to find tutorials online in a more streamlined way so members are able to find accurate tutorials.
       </template>
       <template #persona>
-        <v-img class="pt-1" width="100%" :src="imgSrc('lb-persona.png')" />
+        <view-image src="lb-persona.png" />
       </template>
       <template #user>
-        <v-img class="pt-1" width="100%" :src="imgSrc('lb-usermap.png')" />
+        <view-image src="lb-usermap.png" />
       </template>
     </empathize>
 
@@ -127,13 +130,13 @@
       <template #paper>
         <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
-            <v-img class="pt-1" width="90%" :src="imgSrc('lb-sitemap.png')" />
+            <view-image imageWidth="90%" src="lb-sitemap.png" text="1. Started with generating a sitemap to brainstorm the various pages."/>
             <div class="w-100 py-8">
               1. Started with generating a sitemap to brainstorm the various pages.
             </div>
           </v-col>
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
-            <v-img class="pt-1" width="80%" :src="imgSrc('lb-pframe1.jpg')" />
+            <view-image imageWidth="80%" src="lb-pframe2.jpg" text="2. Drew several rough drafts of the site and it's corresponding pages. I used the 'Crazy Eights' method to jot down a few drafts."/>
             <div class="w-100 py-8">
               2. Drew several rough drafts of the site and it's corresponding pages. I used the "Crazy Eights" method to jot down a few drafts.
             </div>
@@ -141,14 +144,13 @@
         </v-row>
         <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
-            <v-img class="pt-1" width="100%" :src="imgSrc('lb-home-drafts.jpg')" />
+            <view-image imageWidth="100%" src="lb-home-drafts.jpg" text="3. Used 'Clip Studio Paint' to draw up a few rough drafts of the Home page, and highlighted the items that should be in the final draft." />
             <div class="w-100 py-8">
               3. Used <i>Clip Studio Paint</i> to draw up a few rough drafts of the Home page, and highlighted the items that should be in the final draft.
-
             </div>
           </v-col>
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
-            <v-img class="pt-1" height="400" :src="imgSrc('lb-pframe3.jpg')" />
+            <view-image imageHeight="400" src="lb-pframe3.jpg" text="4. Lastly I've drawn up the final version of the wireframes."/>
             <div class="w-100 py-8">
               4. Lastly I've drawn up the final version of the wireframes.
             </div>
@@ -158,13 +160,13 @@
       <template #lofi>
         <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
-            <v-img class="pt-1" width="90%" :src="imgSrc('lb-dframe1.png')" />
+            <view-image imageWidth="90%" src="lb-dframe1.png" text="1. Home - Used the paper wireframes to align the Home page. The Search bar is the main item centered in the page."/>
             <div class="w-100 py-8">
               1. <b>Home</b> - Used the paper wireframes to align the Home page. The Search bar is the main item centered in the page.
             </div>
           </v-col>
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
-            <v-img class="pt-1" width="90%" :src="imgSrc('lb-dframe2.png')" />
+            <view-image imageWidth="90%" src="lb-dframe2.png" text="2. Search - On the top, the total amount is shown. The lower section has a filter option on the left, with the results on the right. The top navigation gives members an option to quickly search for another tutorial throughout the site."/>
             <div class="w-100 py-8">
               2. <b>Search</b> - On the top, the total amount is shown. The lower section has a filter option on the left, with the results on the right. The top navigation gives members an option to quickly search for another tutorial throughout the site.
             </div>
@@ -172,13 +174,13 @@
         </v-row>
         <v-row justify="space-evenly" class="py-8">  
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
-            <v-img class="pt-1" width="90%" :src="imgSrc('lb-dframe3.png')" />
+            <view-image imageWidth="90%" src="lb-dframe3.png" text="3. View Tutorial - The tutorial is layered out with the title and caption first, an image, and the content spaced out below. An area for accessibility options is located on the top right corner."/>
             <div class="w-100 py-8">
               3. <b>View Tutorial</b> - The tutorial is layered out with the title and caption first, an image, and the content spaced out below. An area for accessibility options is located on the top right corner.
             </div>
           </v-col>
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
-            <v-img class="pt-1" width="90%" :src="imgSrc('lb-dframe4.png')" />
+            <view-image imageWidth="90%" src="lb-dframe4.png" text="4. View Author - The author page has information on the tutorial writer, with a photo placeholder on the right."/>
             <div class="w-100 py-8">
               4. <b>View Author</b> - The author page has information on the tutorial writer, with a photo placeholder on the right.
             </div>
@@ -186,7 +188,7 @@
         </v-row>
       </template>
       <template #study1>
-        <v-img class="pt-1 mx-auto" width="80%" :src="imgSrc('lb-study.png')" />
+        <view-image imageWidth="80%" src="lb-study.png" text="From the Usability Study, there were a few items that were discovered. To start, the Account workflow needed refinement for both the Login and Create Account workflows. The View Author page could not be easily navigated to, and also needed restructure. Lastly the Filter options in the Search bar has caused some confustion among the users, and needed to be more defined."/>
       </template>
       <template #study2>
           <p>From the Usability Study, there were a few items that were discovered. To start, the Account workflow needed refinement for both the Login and Create Account workflows.</p>
@@ -209,13 +211,13 @@
         </v-row>
         <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
-              <v-img class="pt-1" width="90%" :src="imgSrc('lb-mock1.png')" />
+               <view-image imageWidth="90%" src="lb-mock1.png" text="1. Home - I used a green and yellow color scheme to build out the Call to Action; with an image to further emphasize the company brand. The Search bar is also shown in the center for quick access."/>
               <div class="w-100 py-8">
                 1. <b>Home</b> - I used a green and yellow color scheme to build out the Call to Action; with an image to further emphasize the company brand. The Search bar is also shown in the center for quick access.
               </div>
             </v-col>
             <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
-              <v-img class="pt-1" width="90%" :src="imgSrc('lb-mock2.png')" />
+              <view-image imageWidth="90%" src="lb-mock2.png" text="2. Search - The layout is aligned similarly with the digital wireframe. The page includes a sort dropdown, and a light green background to separate the results section. A ratings system below each tutorial item has also been added."/>
               <div class="w-100 py-8">
                 2. <b>Search</b> - The layout is aligned similarly with the digital wireframe. The page includes a sort dropdown, and a light green background to separate the results section. A ratings system below each tutorial item has also been added.
               </div>
@@ -223,13 +225,13 @@
         </v-row>
         <v-row justify="space-evenly" class="py-8"> 
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
-            <v-img class="pt-1" width="90%" :src="imgSrc('lb-mock3.png')" />
+            <view-image imageWidth="90%" src="lb-mock3.png" text="3. View Tutorial - The layout is kept the same with different typography; also added print and enlarge font options on the top right."/>
             <div class="w-100 py-8">
                 3. <b>View Tutorial</b> - The layout is kept the same with different typography; also added print and enlarge font options on the top right.
               </div>
           </v-col>
           <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
-            <v-img class="pt-1" width="90%" :src="imgSrc('lb-mock4.png')" />
+            <view-image imageWidth="90%" src="lb-mock4.png" text="4. View Author - Updated the typography of the page, and updated the body text with indentation to separate from the title and subtitle."/>
             <div class="w-100 py-8">
                 4. <b>View Author</b> - Updated the typography of the page, and updated the body text with indentation to separate from the title and subtitle.
               </div>
