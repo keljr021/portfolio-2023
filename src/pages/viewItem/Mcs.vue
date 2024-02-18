@@ -7,6 +7,7 @@
   import Ideate from '../../components/partials/view/Ideate.vue';
   import Evaluate from '../../components/partials/view/Evaluate.vue';
   import Solution from '../../components/partials/view/Solution.vue';
+  import ViewImage from '../../components/partials/ViewImage.vue';
   export default {
     name: 'Mcs',
     data() {
@@ -49,7 +50,8 @@
       Evaluate,
       Ideate,
       Solution,
-      WorkImage
+      WorkImage,
+      ViewImage
     }
 }
 </script>
@@ -59,12 +61,15 @@
     :backgroundColor="primaryColor"
     title="K&A Morrisey Cleaning Services"
     subtitle="A responsive website for the family janitorial business"
+    :mobilePrototypeUrl="prototypeUrl"
+    :desktopPrototypeUrl="prototypeUrl"
     :prototypeUrl="prototypeUrl"
     siteUrl="https://ka-clean.com/"
     :caseStudyUrl="caseStudyUrl"
     :githubUrl="githubUrl"
     :imageSrc="imgSrc('work/ka-desktop.png')"
     :mobileSrc="imgSrc('work/ka-mobile.png')"
+    @window-open="windowOpen"
   >
     <template #role>
       UX Designer, Logo Designer, Developer
@@ -101,10 +106,10 @@
         Improve the user experience for the website. The idea was to better showcase the company janitorial services offered and the areas that the company will serve. We also wanted to give a more streamlined way to contact the clients.
       </template>
       <template #persona>
-        <v-img width="100%" :src="imgSrc('ka-persona.png')" />
+        <view-image src="ka-persona.png" />
       </template>
       <template #user>
-        <v-img width="100%" :src="imgSrc('ka-usermap.png')" />
+        <view-image src="ka-usermap.png" />
       </template>
       <template #user2>
         <p>From documenting the user map, there were several opportunities to improve the user experience when arriving on our site, including: </p>
@@ -138,13 +143,13 @@
       <template #lofi>
         <v-row justify="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">
-            <v-img width="90%" :src="imgSrc('ka-dframe1.png')" />
+            <view-image imageWidth="90%" src="ka-dframe1.png" text="1. Call to Action - Define the business and a brief blurb on about the client with a placeholder for the image background. Also give a large button to contact the client front and center."/>
             <div class="w-100 py-8">
               1. <b>Call to Action</b> - Define the business and a brief blurb on about the client with a placeholder for the image background. Also give a large button to contact the client front and center.
             </div>
           </v-col>
           <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">
-            <v-img width="90%" :src="imgSrc('ka-dframe2.png')" />
+            <view-image imageWidth="90%" src="ka-dframe2.png" text="2. Services - Lists the different types of service items the client offers in a three-column layout."/>
             <div class="w-100 py-8">
               2. <b>Services</b> - Lists the different types of service items the client offers in a three-column layout. 
             </div>
@@ -152,13 +157,13 @@
         </v-row>
         <v-row justify="space-evenly" class="py-8">  
           <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">
-            <v-img width="90%" :src="imgSrc('ka-dframe4.png')" />
+            <view-image imageWidth="90%" src="ka-dframe4.png" text="3. Contact - Gives the client's information and a possible map to show the client's location."/>
             <div class="w-100 py-8">
               3. <b>Contact</b> - Gives the client's information and a possible map to show the client's location.
             </div>
           </v-col>
           <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">
-            <v-img width="90%" :src="imgSrc('ka-dframe5.png')" />
+            <view-image imageWidth="90%" src="ka-dframe5.png" text="4. Contact Form - A popup that allows the user to Submit a query to the client."/>
             <div class="w-100 py-8">
               4. <b>Contact Form</b> - A popup that allows the user to Submit a query to the client.
             </div>
@@ -166,7 +171,7 @@
         </v-row>
       </template>
       <template #study1>
-        <v-img class="mx-auto" :width="$vuetify.display.smAndDown ? 'initial' : '100%'" :height="$vuetify.display.smAndDown ? 300 : 'initial'" :src="imgSrc('ka-study.png')" />
+        <view-image :imageWidth="$vuetify.display.smAndDown ? 'initial' : '100%'" :imageHeight="$vuetify.display.smAndDown ? 300 : 'initial'" src="ka-study.png" text="From conducting the usability study, I've discovered that The Contact and Contact Form links confused end users when attempting to contact the client. Both links would need to be revised to prevent this. Also discussed that the Contact Information would need to have a more streamlined access. Lastly there were a few comments regarding issues with the navigation scrolling to the proper section that would need to be resolved in the upcoming mockups."/>
       </template>
       <template #study2>
         <p>From conducting the usability study, I've discovered that The Contact and Contact Form links confused end users when attempting to contact the client. Both links would need to be revised to prevent this.</p>
@@ -176,13 +181,13 @@
       <template #hifi>
         <v-row justify="center" justify-md="space-evenly" justify-lg="space-evenly" class="py-8">
           <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">
-              <v-img width="90%" :src="imgSrc('ka-mock1.png')" />
+              <view-image imageWidth="90%" src="ka-mock1.png" text="1. Call to Action - Added the logo in the center of the page. The content was given more spacing from the wireframes; and the button was replaced with links for each section of the site. The bottom has a fixed button that slides out with the user's contact information when clicked."/>
               <div class="w-100 py-8">
               1. <b>Call to Action</b> - Added the logo in the center of the page. The content was given more spacing from the wireframes; and the button was replaced with links for each section of the site. The bottom has a fixed button that slides out with the user's contact information when clicked.
             </div>
             </v-col>
             <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">
-              <v-img width="90%" :src="imgSrc('ka-mock2.png')" />
+              <view-image imageWidth="90%" src="ka-mock2.png" text="2. Services - The service layout is kept the same from the wireframes, with the icons representing each service item."/>
               <div class="w-100 py-8">
                 2. <b>Services</b> - The service layout is kept the same from the wireframes, with the icons representing each service item.
               </div>
@@ -190,13 +195,13 @@
         </v-row>
         <v-row justify="center" justify-md="space-evenly" justify-lg="space-evenly" class="py-8"> 
           <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">
-            <v-img width="90%" :src="imgSrc('ka-mock3.png')" />
+            <view-image imageWidth="90%" src="ka-mock3.png" text="3. Contact - Updated the section to include the Contact Form button, and a Google Maps iFrame to show the client's location."/>
             <div class="w-100 py-8">
               3. <b>Contact</b> - Updated the section to include the Contact Form button, and a Google Maps iFrame to show the client's location.
             </div>
           </v-col>
           <v-col class="pr-3 py-3" cols="11" sm="5" md="5" lg="5">
-            <v-img width="90%" :src="imgSrc('ka-mock4.png')" />
+            <view-image imageWidth="90%" src="ka-mock4.png" text="4. Contact Form - A popup is defined with an embedded Google Form in the desktop, with a button to close the popup or open the form in a new tab. For mobile members, the Google Form is opened in a new window by default."/>
             <div class="w-100 py-8">
               4. <b>Contact Form</b> - A popup is defined with an embedded Google Form in the desktop, with a button to close the popup or open the form in a new tab. For mobile members, the Google Form is opened in a new window by default.
             </div>
@@ -216,7 +221,7 @@
       <template #color>
         <v-row justify="space-evenly" class="py-8"> 
           <v-col cols="11" class="py-3">
-            <v-img width="80%" class="mx-auto" :src="imgSrc('ka-sticker.png')" />
+            <view-image imageWidth="80%" src="ka-sticker.png" />
           </v-col>
         </v-row>
       </template>

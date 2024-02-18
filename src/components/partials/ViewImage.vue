@@ -64,7 +64,7 @@ export default {
                 </template>
 
                 <v-img
-                    class="ma-2"
+                    class="mx-1"
                     width="100%"
                     min-height="500"
                     lazy-src="https://picsum.photos/id/11/100/60" 
