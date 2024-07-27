@@ -180,15 +180,13 @@
   padding-left: 20px;
   padding-right: 20px;
   .view-text-title {
-    padding-top: 30px;
     padding-bottom: 60px;
     font-size: 26px;
     font-weight: bold;
-    text-align: center;
   }
 
   .view-text-overview {
-    padding: 80px 0;
+    padding: 60px 0;
   }
 
   .view-text-section {

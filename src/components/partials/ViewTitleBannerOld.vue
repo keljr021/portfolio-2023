@@ -1,7 +1,7 @@
 <script>
   import Divider from './Divider.vue';
   export default {
-    name: 'ViewTitleBanner',
+    name: 'ViewTitleBannerOld',
     data() {
       return {}
     },
@@ -66,18 +66,22 @@
 </script>
 
 <template>
-    <v-row>
+    <v-row justify="center">
         <v-col>
             <div class="view-header-title" :style="{ color: backgroundColor }">{{ title }}</div>
         </v-col>
     </v-row>
-    <v-row class="view-header">
-        <v-col v-if="imageSrc" :class="{ 'pa-0 my-auto text-left': true,  'cursor-pointer': showPointer }"  @click="goToPrototype(desktopPrototypeUrl)">
+    <v-row class="view-header" justify="center">
+        
+        <v-col v-if="imageSrc" cols="11" md="5" lg="5" :class="{ 'pa-0 my-auto text-center': true,  'cursor-pointer': showPointer }"  @click="goToPrototype(desktopPrototypeUrl)">
             <img :src="imageSrc" class="view-header-image" />
         </v-col> 
-    </v-row>
-    <v-row class="view-header">
-        <v-col>
+        <v-col v-if="mobileSrc" cols="11" md="5" lg="5" :class="{ 'pa-0 my-auto text-center': true,  'cursor-pointer': showPointer }"  @click="goToPrototype(mobilePrototypeUrl)">
+            <img :src="mobileSrc" class="view-header-image mobile" />
+        </v-col>
+
+        <v-col cols="11" class="text-center">
+            
             <div class="view-header-text">
                 <v-row class="pa-3">
                     <div class="py-3 w-100" v-if="$slots.client">
@@ -107,33 +111,33 @@
                 </v-row>
                 <v-row class="pa-3">
                     <v-col>
-                        <v-btn v-if="githubUrl" block class="text-normal px-3 mr-6 mb-4" variant="outlined"  :color="backgroundColor" :href="githubUrl" target="_blank">
+                        <v-btn v-if="githubUrl" :block="$vuetify.display.xs" class="text-normal px-3 mr-6 mb-3" variant="outlined"  :color="backgroundColor" :href="githubUrl" target="_blank">
                             <v-icon class="mr-2">mdi-github</v-icon>
                             View Code
                         </v-btn>
-                        <v-btn v-if="siteUrl" block class="text-normal px-3 mr-6 mb-4" variant="outlined"
+                        <v-btn v-if="siteUrl" :block="$vuetify.display.xs" class="text-normal px-3 mr-6 mb-3" variant="outlined"
                         :color="backgroundColor" :href="siteUrl" target="_blank">
                             <v-icon class="mr-2">mdi-link</v-icon>
                             Live Site <span v-if="$route.params.id === 'ifolio' || $route.params.id === 'ss'" class="ml-2">(Archived)</span>
                         </v-btn>
-                        <v-btn v-if="prototypeUrl" block class="text-normal px-3 mr-6 mb-4" variant="outlined"
+                        <v-btn v-if="prototypeUrl" :block="$vuetify.display.xs" class="text-normal px-3 mr-6 mb-3" variant="outlined"
                         :color="backgroundColor"
                         :href="prototypeUrl" target="_blank">
                             <v-icon class="mr-2">mdi-open-in-new</v-icon>
                             Prototype
                         </v-btn>
-                        <v-btn v-if="mobilePrototypeUrl" block class="text-normal px-3 mr-6 mb-4" variant="outlined" :href="mobilePrototypeUrl"
+                        <v-btn v-if="mobilePrototypeUrl" :block="$vuetify.display.xs" class="text-normal px-3 mr-6 mb-3" variant="outlined" :href="mobilePrototypeUrl"
                         :color="backgroundColor" 
                         target="_blank">
                             <v-icon class="mr-2">mdi-open-in-new</v-icon>
                             Mobile Prototype
                         </v-btn>
-                        <v-btn v-if="desktopPrototypeUrl" block class="text-normal px-3 mr-6 mb-4" variant="outlined" :href="desktopPrototypeUrl"
+                        <v-btn v-if="desktopPrototypeUrl" :block="$vuetify.display.xs" class="text-normal px-3 mr-6 mb-3" variant="outlined" :href="desktopPrototypeUrl"
                         :color="backgroundColor" target="_blank">
                             <v-icon class="mr-2">mdi-open-in-new</v-icon>
                             Desktop Prototype
                         </v-btn>
-                        <v-btn v-if="caseStudyUrl" block class="text-normal px-3 mr-6 mb-4" variant="outlined"  :color="backgroundColor" :href="caseStudyUrl" target="_blank">
+                        <v-btn v-if="caseStudyUrl" :block="$vuetify.display.xs" class="text-normal px-3 mr-6 mb-3" variant="outlined"  :color="backgroundColor" :href="caseStudyUrl" target="_blank">
                             <v-icon class="mr-2">mdi-presentation</v-icon>
                             Case Study PPT
                         </v-btn>
@@ -159,13 +163,13 @@
 }
 
 :deep(.view-header-title) {
-  padding: 15px 20px;
+  padding: 40px 20px;
   font-size: 36px;
+  text-align: center;
 }
 
 :deep(.view-header-image) {
-  padding-top: 20px;
-  padding-left: 20px;
+  padding: 40px 0;
   width: 85%;
 
   &.mobile {
@@ -176,7 +180,7 @@
 
 :deep(.view-header-text) {
   font-size: 1.2em;
-  padding: 20px;
+  padding: 30px;
 }
 
 :deep(.view-header-text-title) {
