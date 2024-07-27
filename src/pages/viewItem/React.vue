@@ -12,7 +12,7 @@
     },
     emits: [
       'set-image',
-      'window-open'
+      'window-open',
     ],
     props: {
       primaryColor: {
@@ -22,7 +22,7 @@
       secondaryColor: {
         type: String,
         default: '#aaa'
-      }
+      },
     },
     methods: {
       imgSrc(input) {
@@ -41,32 +41,46 @@
 </script>
 
 <template>
-  <view-title-banner 
-    :backgroundColor="primaryColor"
-    title="React Calculator" 
-    subtitle="A calculator component built with React JS" 
-    :siteUrl="siteUrl"
-    :githubUrl="githubUrl"
-    :imageSrc="imgSrc('work/react-desktop.png')"
-    @window-open="windowOpen"
-  >
-    <template #role>
-      Front-End Developer
-    </template>
-    <template #tools>
-      React JS
-    </template>
-    <template #date>
-      Mar 2019
-    </template>
-  </view-title-banner>
+    <v-row style="padding-top: 40px">
+      <v-col cols="3" class="view-banner" :style="{ 'border-color': primaryColor }">
+        <view-title-banner 
+          :backgroundColor="primaryColor"
+          title="React Calculator" 
+          subtitle="A calculator component built with React JS" 
+          :siteUrl="siteUrl"
+          :githubUrl="githubUrl"
+          :imageSrc="imgSrc('work/react-desktop.png')"
+          @window-open="windowOpen"
+          @toggle-banner="toggleBanner"
+          :showBanner="true"
+        >
+          <template #role>
+            Front-End Developer
+          </template>
+          <template #tools>
+            React JS
+          </template>
+          <template #date>
+            Mar 2019
+          </template>
+        </view-title-banner>
+      </v-col>
 
-  <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
-    <overview :color="primaryColor" noDivider>
-      <template #overview>
-        <p>This is a basic calculator component built with React. The component itself performs basic math calculations, allowing the user to click the buttons on screen, or key in the values themselves using the keyboard.</p>
-      </template>
-    </overview>
+      <v-col offset="2">
+        <div class="view-text" 
+        :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }">
+          <div class="view-text" 
+              :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }" 
+              @click="$emit('toggle-banner', false)" 
+              @mouseover="(showBanner === true) ? hoverAwayFromBanner() : ''">
+            <overview :color="primaryColor" noDivider>
+              <template #overview>
+                <p>This is a basic calculator component built with React. The component itself performs basic math calculations, allowing the user to click the buttons on screen, or key in the values themselves using the keyboard.</p>
+              </template>
+            </overview>
 
-  </div>
+          </div>
+        </div>
+      </v-col>
+    </v-row>
 </template>

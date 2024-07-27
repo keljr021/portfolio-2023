@@ -41,32 +41,39 @@
 </script>
 
 <template>
-  <view-title-banner 
-    :backgroundColor="primaryColor"
-    title="Vue Calendar" 
-    subtitle="A calculator component built with React JS" 
-    :siteUrl="siteUrl"
-    :githubUrl="githubUrl"
-    :imageSrc="imgSrc('work/vue-desktop.png')"
-    @window-open="windowOpen"
-  >
-    <template #role>
-      Front-End Developer
-    </template>
-    <template #tools>
-      Vue JS, Bootstrap
-    </template>
-    <template #date>
-      Mar 2019
-    </template>
-  </view-title-banner>
+   <v-row style="padding-top: 40px">
+      <v-col cols="3" class="view-banner" :style="{ 'border-color': primaryColor }">
+        <view-title-banner 
+          :backgroundColor="primaryColor"
+          title="Vue Calendar" 
+          subtitle="A calculator component built with React JS" 
+          :siteUrl="siteUrl"
+          :githubUrl="githubUrl"
+          :imageSrc="imgSrc('work/vue-desktop.png')"
+          @window-open="windowOpen"
+        >
+          <template #role>
+            Front-End Developer
+          </template>
+          <template #tools>
+            Vue JS, Bootstrap
+          </template>
+          <template #date>
+            Mar 2019
+          </template>
+        </view-title-banner>
+      </v-col>
 
-  <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
-    <overview  :color="secondaryColor" noDivider>
-      <template #overview>
-        <p>This is a calendar component built with Vue and Bootstrap. The component uses the current date and generates a full calendar for display.</p>
-      </template>
-    </overview>
+      <v-col offset="2">
+        <div class="view-text" 
+        :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }">
+          <overview  :color="secondaryColor" noDivider>
+            <template #overview>
+              <p>This is a calendar component built with Vue and Bootstrap. The component uses the current date and generates a full calendar for display.</p>
+            </template>
+          </overview>
 
-  </div>
+        </div>
+      </v-col>
+    </v-row>
 </template>

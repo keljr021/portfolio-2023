@@ -46,13 +46,12 @@
         this.$emit('window-open', input);
       },
       toggleBanner(input) {
-        debugger;
         this.$emit('toggle-banner', input);
       },
       hoverAwayFromBanner() {
           setTimeout(() => {
             this.toggleBanner(false)
-          }, 3000);
+          }, 4000);
       }
     },
     components: {
@@ -99,7 +98,7 @@
     <v-col offset="2">
       <div class="view-text" 
            :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }" 
-           @click.once="$emit('toggle-banner', false)" 
+           @click="$emit('toggle-banner', false)" 
            @mouseover="(showBanner === true) ? hoverAwayFromBanner() : ''">
         <overview title="4 Lives AI" :color="secondaryColor">
           <template #overview>

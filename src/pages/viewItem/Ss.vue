@@ -11,7 +11,8 @@
     },
     emits: [
       'set-image',
-      'window-open'
+      'window-open',
+      'toggle-banner'
     ],
     props: {
       primaryColor: {
@@ -29,6 +30,14 @@
       },
       windowOpen(input) {
         this.$emit('window-open', input);
+      },
+      toggleBanner(input) {
+        this.$emit('toggle-banner', input);
+      },
+      hoverAwayFromBanner() {
+          setTimeout(() => {
+            this.toggleBanner(false)
+          }, 4000);
       }
     },
     components: {
@@ -40,29 +49,37 @@
 </script>
 
 <template>
-  <view-title-banner 
-    :backgroundColor="primaryColor"
-    title="ScoreShots 2.0"
-    subtitle="A platform to create and share infographics"
-    :siteUrl="siteUrl"
-    :imageSrc="imgSrc('work/ss-desktop.png')"
-    @window-open="windowOpen"
-  >
-    <template #role>
-      Front-End Developer (Immersion Media)
-    </template>
-    <template #client>
-      Immersion Media/ScoreShots
-    </template>
-    <template #tools>
-      HTML, CSS, JavaScript, jQuery, PHP CodeIgniter
-    </template>
-    <template #date>
-      Aug 2016 - Jan 2018
-    </template>
-  </view-title-banner>
-
-  <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
+  <v-row style="padding-top: 40px">
+    <v-col cols="3" class="view-banner" :style="{ 'border-color': primaryColor }">
+      <view-title-banner 
+        :backgroundColor="primaryColor"
+        title="ScoreShots 2.0"
+        subtitle="A platform to create and share infographics"
+        :siteUrl="siteUrl"
+        :imageSrc="imgSrc('work/ss-desktop.png')"
+        @window-open="windowOpen"
+        @toggle-banner="toggleBanner"
+        :showBanner="showBanner"
+      >
+        <template #role>
+          Front-End Developer (Immersion Media)
+        </template>
+        <template #client>
+          Immersion Media/ScoreShots
+        </template>
+        <template #tools>
+          HTML, CSS, JavaScript, jQuery, PHP CodeIgniter
+        </template>
+        <template #date>
+          Aug 2016 - Jan 2018
+        </template>
+      </view-title-banner>
+    </v-col>
+    <v-col offset="2">
+      <div class="view-text" 
+           :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }" 
+           @click="$emit('toggle-banner', false)" 
+           @mouseover="(showBanner === true) ? hoverAwayFromBanner() : ''">
     <overview  :color="primaryColor" noDivider>
       <template #overview>
         <p>ScoreShots is Immersion Media's in-house website. It allows a user to create a web-based sports infographic (ie. ScoreShot) using the user's custom colors, fonts, and images. A user can submit the finished graphic to their phone, download it to their computer, and even submit it to their own Facebook or Twitter account.</p>
@@ -83,5 +100,7 @@
       </template>
     </overview>
 
-  </div>
+      </div>
+    </v-col>
+  </v-row>
 </template>

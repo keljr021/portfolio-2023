@@ -87,7 +87,8 @@
         </v-row>
         <v-row class="view-header">
             <v-col v-if="imageSrc" :class="{ 'pa-0 ml-3 my-auto text-left': true,  'cursor-pointer': showPointer }"  @click="goToPrototype(desktopPrototypeUrl)">
-                <img :src="imageSrc" class="view-header-image" />
+                <img v-if="isMobileImg" :src="imageSrc" class="view-header-image" style="width:auto;max-height:250px" />
+                <img v-else :src="imageSrc" class="view-header-image"  />
             </v-col> 
         </v-row>
         <v-row>

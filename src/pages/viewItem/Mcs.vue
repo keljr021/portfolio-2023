@@ -22,7 +22,8 @@
       'set-image',
       'window-open',
       'open-lofi',
-      'open-hifi'
+      'open-hifi',
+      'toggle-banner'
     ],
     props: {
       primaryColor: {
@@ -46,13 +47,12 @@
         this.$emit('window-open', input);
       },
       toggleBanner(input) {
-        debugger;
         this.$emit('toggle-banner', input);
       },
       hoverAwayFromBanner() {
           setTimeout(() => {
             this.toggleBanner(false)
-          }, 3000);
+          }, 4000);
       }
     },
     components: {
@@ -70,34 +70,38 @@
 </script>
 
 <template>
-  <view-title-banner 
-    :backgroundColor="primaryColor"
-    title="K&A Morrisey Cleaning Services"
-    subtitle="A responsive website for the family janitorial business"
-    :prototypeUrl="prototypeUrl"
-    siteUrl="https://ka-clean.com/"
-    :caseStudyUrl="caseStudyUrl"
-    :githubUrl="githubUrl"
-    :imageSrc="imgSrc('work/ka-desktop.png')"
-    :mobileSrc="imgSrc('work/ka-mobile.png')"
-    @window-open="windowOpen"
-    @toggle-banner="toggleBanner"
-    :showBanner="showBanner"
-  >
-    <template #role>
-      UX Designer, Logo Designer, Developer
-    </template>
-    <template #tools>
-      Figma, HTML, SASS, JavaScript, Vue
-    </template>
-    <template #date>
-      June 2019, Updated June 2023
-    </template>
-  </view-title-banner>
+  <v-row style="padding-top: 40px">
+    <v-col cols="3" class="view-banner" :style="{ 'border-color': primaryColor }">
+      <view-title-banner 
+        :backgroundColor="primaryColor"
+        title="K&A Morrisey Cleaning Services"
+        subtitle="A responsive website for the family janitorial business"
+        :prototypeUrl="prototypeUrl"
+        siteUrl="https://ka-clean.com/"
+        :caseStudyUrl="caseStudyUrl"
+        :githubUrl="githubUrl"
+        :imageSrc="imgSrc('work/ka-desktop.png')"
+        :mobileSrc="imgSrc('work/ka-mobile.png')"
+        @window-open="windowOpen"
+        @toggle-banner="toggleBanner"
+        :showBanner="showBanner"
+      >
+        <template #role>
+          UX Designer, Logo Designer, Developer
+        </template>
+        <template #tools>
+          Figma, HTML, SASS, JavaScript, Vue
+        </template>
+        <template #date>
+          June 2019, Updated June 2023
+        </template>
+      </view-title-banner>
+    </v-col>
 
-  <div class="view-text" 
+    <v-col offset="2">
+      <div class="view-text" 
        :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }" 
-           @click.once="$emit('toggle-banner', false)" 
+           @click="$emit('toggle-banner', false)" 
            @mouseover="(showBanner === true) ? hoverAwayFromBanner() : ''">
     <overview :color="secondaryColor">
       <template #overview>
@@ -265,5 +269,7 @@
       </template>
     </evaluate>
 
-  </div>
+      </div>
+    </v-col>
+  </v-row>
 </template>

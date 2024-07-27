@@ -21,7 +21,8 @@
     },
     emits: [
       'set-image',
-      'window-open'
+      'window-open',
+      'toggle-banner'
     ],
     props: {
       primaryColor: {
@@ -31,7 +32,11 @@
       secondaryColor: {
         type: String,
         default: '#aaa'
-      }
+      },
+      showBanner: {
+        type: Boolean,
+        default: false
+      },
     },
     methods: {
       imgSrc(input) {
@@ -39,6 +44,14 @@
       },
       windowOpen(input) {
         this.$emit('window-open', input);
+      },
+      toggleBanner(input) {
+        this.$emit('toggle-banner', input);
+      },
+      hoverAwayFromBanner() {
+          setTimeout(() => {
+            this.toggleBanner(false)
+          }, 4000);
       }
     },
     components: {
@@ -56,29 +69,37 @@
 </script>
 
 <template>
-  <view-title-banner 
-    :backgroundColor="primaryColor"
-    title="Torch Mentorship Network"
-    subtitle="A mobile app and website that connects students with mentors"
-    :mobilePrototypeUrl="mobilePrototypeUrl"
-    :desktopPrototypeUrl="desktopPrototypeUrl"
-    :caseStudyUrl="caseStudyUrl"
-    :imageSrc="imgSrc('work/to-desktop.png')"
-    :mobileSrc="imgSrc('work/to-mobile.png')"
-    @window-open="windowOpen"
-  >
-    <template #role>
-      UX Designer, Logo Designer
-    </template>
-    <template #tools>
-      Figma, Inkscape
-    </template>
-    <template #date>
-      Jan 2023
-    </template>
-  </view-title-banner>
-
-  <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
+  <v-row style="padding-top: 40px">
+    <v-col cols="3" class="view-banner" :style="{ 'border-color': primaryColor }">
+      <view-title-banner 
+        :backgroundColor="primaryColor"
+        title="Torch Mentorship Network"
+        subtitle="A mobile app and website that connects students with mentors"
+        :mobilePrototypeUrl="mobilePrototypeUrl"
+        :desktopPrototypeUrl="desktopPrototypeUrl"
+        :caseStudyUrl="caseStudyUrl"
+        :imageSrc="imgSrc('work/to-desktop.png')"
+        :mobileSrc="imgSrc('work/to-mobile.png')"
+        @window-open="windowOpen"
+        @toggle-banner="toggleBanner"
+        :showBanner="showBanner"
+      >
+        <template #role>
+          UX Designer, Logo Designer
+        </template>
+        <template #tools>
+          Figma, Inkscape
+        </template>
+        <template #date>
+          Jan 2023
+        </template>
+      </view-title-banner>
+    </v-col>
+    <v-col offset="2">
+      <div class="view-text" 
+           :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }" 
+           @click="$emit('toggle-banner', false)" 
+           @mouseover="(showBanner === true) ? hoverAwayFromBanner() : ''">
     <overview  :color="secondaryColor">
       <template #overview>
         <p>
@@ -350,5 +371,7 @@
         </ol>        
       </template>
     </evaluate>
-  </div>
+      </div>
+    </v-col>
+  </v-row>
 </template>
