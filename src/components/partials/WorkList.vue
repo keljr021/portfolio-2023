@@ -16,7 +16,7 @@
 
 <template>
   <v-container fluid>
-    <v-row>
+    <v-row align-md="end" align-lg="end">
       <work-list-item 
         bg="light"
         color="#0081b7"

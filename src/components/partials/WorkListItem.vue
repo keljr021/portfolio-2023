@@ -35,27 +35,23 @@
 </script>
 
 <template>
-  <v-col cols="12" class="pb-sm-8 pt-3 pb-6" @click="$router.push({ name: 'view', params: { id: this.linkId } })">
-    <v-container fluid>
-        <v-row class="list-item">
-            <v-col cols="12" xs="12" sm="12" md="6" lg="6" class="list-item-img my-xs-6 my-sm-6 ma-md-0 pa-md-0">
-                <v-img v-if="$vuetify.display.smAndDown" class="mx-auto w-100" :src="imgSrc(logo)" />
-                <v-img v-else :aspect-ratio="linkId === 'reys' ? 1 : ''" :class="{'mx-auto': true, 'my-5': linkId !== 'reys'}" :width="logoWidth ? logoWidth : ''" :src="imgSrc(logo)" />
-            </v-col>
-            <v-col>
-                <div><b :style="'color:' + color">{{ title }}</b></div>
-                <div class="pb-4">{{ caption }}</div>
-                <div class="pb-4"><b>Role: </b>{{ role }}</div>
-                <div>
-                    <v-btn class="my-6" :color="color" block variant="outlined" :to="{ name: 'view', params: { id: this.linkId } }">
-                        View
-                        <v-icon class="ml-2">mdi-arrow-right</v-icon>
-                    </v-btn>
-                </div>
-            </v-col>
-        </v-row>
-    </v-container>
-  </v-col>
+  <v-col cols="12" sm="6" md="6" lg="4" class="list-item pb-sm-8 pt-3 pb-6 px-9" @click="$router.push({ name: 'view', params: { id: this.linkId } })">
+        <div class="list-item-img my-xs-6 my-sm-6 ma-md-0 pa-md-0">
+            <v-img v-if="$vuetify.display.smAndDown" class="mx-auto my-4 w-100" :src="imgSrc(logo)" :height="linkId === 'reys' ? '300px' : ''"/>
+            <v-img v-else :aspect-ratio="linkId === 'reys' ? 1 : ''" :class="{'mx-auto': true, 'my-5': linkId !== 'reys'}" :width="logoWidth ? logoWidth : ''" :src="imgSrc(logo)" :height="linkId === 'reys' ? '300px' : ''"/>
+        </div>
+        <div>
+            <div><b :style="'color:' + color">{{ title }}</b></div>
+            <div class="pb-4">{{ caption }}</div>
+            <div class="pb-4"><b>Role: </b>{{ role }}</div>
+            <div>
+                <v-btn class="my-6" :color="color" block variant="outlined" :to="{ name: 'view', params: { id: this.linkId } }">
+                    View
+                    <v-icon class="ml-2">mdi-arrow-right</v-icon>
+                </v-btn>
+            </div>
+        </div>
+    </v-col>
 </template>
 
 <style scoped lang="scss">
