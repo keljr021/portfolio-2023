@@ -32,7 +32,11 @@
       secondaryColor: {
         type: String,
         default: '#aaa'
-      }
+      },
+      showBanner: {
+        type: Boolean,
+        default: false
+      },
     },
     methods: {
       imgSrc(input) {
@@ -40,6 +44,15 @@
       },
       windowOpen(input) {
         this.$emit('window-open', input);
+      },
+      toggleBanner(input) {
+        debugger;
+        this.$emit('toggle-banner', input);
+      },
+      hoverAwayFromBanner() {
+          setTimeout(() => {
+            this.toggleBanner(false)
+          }, 3000);
       }
     },
     components: {
@@ -68,6 +81,8 @@
     :imageSrc="imgSrc('work/ka-desktop.png')"
     :mobileSrc="imgSrc('work/ka-mobile.png')"
     @window-open="windowOpen"
+    @toggle-banner="toggleBanner"
+    :showBanner="showBanner"
   >
     <template #role>
       UX Designer, Logo Designer, Developer
@@ -80,7 +95,10 @@
     </template>
   </view-title-banner>
 
-  <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
+  <div class="view-text" 
+       :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }" 
+           @click.once="$emit('toggle-banner', false)" 
+           @mouseover="(showBanner === true) ? hoverAwayFromBanner() : ''">
     <overview :color="secondaryColor">
       <template #overview>
         <p>

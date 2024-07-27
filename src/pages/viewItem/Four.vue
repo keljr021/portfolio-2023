@@ -21,7 +21,8 @@
     },
     emits: [
       'set-image',
-      'window-open'
+      'window-open',
+      'toggle-banner'
     ],
     props: {
       primaryColor: {
@@ -31,7 +32,11 @@
       secondaryColor: {
         type: String,
         default: '#aaa'
-      }
+      },
+      showBanner: {
+        type: Boolean,
+        default: false
+      },
     },
     methods: {
       imgSrc(input) {
@@ -39,6 +44,15 @@
       },
       windowOpen(input) {
         this.$emit('window-open', input);
+      },
+      toggleBanner(input) {
+        debugger;
+        this.$emit('toggle-banner', input);
+      },
+      hoverAwayFromBanner() {
+          setTimeout(() => {
+            this.toggleBanner(false)
+          }, 3000);
       }
     },
     components: {
@@ -57,7 +71,7 @@
 
 <template>
   <v-row style="padding-top: 40px">
-    <v-col cols="3" style="background:#ccc;position:fixed;max-height:calc(90vh);overflow-y:auto;z-index:2">
+    <v-col cols="3" class="view-banner" :style="{ 'border-color': primaryColor }">
       <view-title-banner 
         :backgroundColor="primaryColor"
         title="4 Lives AI"
@@ -68,6 +82,8 @@
         :imageSrc="imgSrc('work/fl-desktop.png')"
         :mobileSrc="imgSrc('work/fl-mobile.png')"
         @window-open="windowOpen"
+        @toggle-banner="toggleBanner"
+        :showBanner="showBanner"
       >
         <template #role>
           UX Designer, Logo Designer
@@ -81,8 +97,11 @@
       </view-title-banner>
     </v-col>
     <v-col offset="2">
-      <div class="view-text" :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }">
-        <overview  :color="secondaryColor">
+      <div class="view-text" 
+           :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }" 
+           @click.once="$emit('toggle-banner', false)" 
+           @mouseover="(showBanner === true) ? hoverAwayFromBanner() : ''">
+        <overview title="4 Lives AI" :color="secondaryColor">
           <template #overview>
             <p>
               This project was born based on my interests in video games; and the continued accolades of Artificial Intelligence.

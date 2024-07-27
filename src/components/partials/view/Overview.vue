@@ -3,6 +3,9 @@
   export default {
     name: 'Overview',
     props: {
+        title: {
+            type: String
+        },
         color: {
             type: String,
             default: '#666'

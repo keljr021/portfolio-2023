@@ -28,7 +28,8 @@
           'vue'
         ],
         previousView: null,
-        nextView: null
+        nextView: null,
+        showBanner: true,
       }
     },
     methods: {
@@ -61,7 +62,13 @@
       },
       windowOpen(input) {
         window.open(input, '_blank');
-      }
+      },
+      toggleBanner(input) {
+        debugger;
+        console.log('-toggle banner: ', input);
+        this.showBanner = input;
+        console.log('--show banner is now: ', this.showBanner);
+      },
     },
     created() {
       this.setPreviousView(this.$route.params.id);
@@ -93,17 +100,17 @@
 <template>
   <v-container fluid class="px-0 mx-0 mt-3 mb-5">    
     <div>
-      <four @window-open="windowOpen" v-if="$route.params.id === 'four'" primaryColor="#0081b7" secondaryColor="#3f5d66"/>
-      <mcs @window-open="windowOpen" v-if="$route.params.id === 'mcs'" primaryColor="#464da0" secondaryColor="#1d2352"/>
-      <torch @window-open="windowOpen" v-if="$route.params.id === 'torch'" primaryColor="#993838" secondaryColor="#584fc4"/>
-      <lemon @window-open="windowOpen" v-if="$route.params.id === 'lemon'" primaryColor="#008C73" secondaryColor="#918b49"/>
-      <reys @window-open="windowOpen" v-if="$route.params.id === 'reys'" primaryColor="#005031" secondaryColor="#933c1f"/>
+      <four @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'four'" primaryColor="#0081b7" secondaryColor="#3f5d66"/>
+      <mcs  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'mcs'" primaryColor="#464da0" secondaryColor="#1d2352"/>
+      <torch  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'torch'" primaryColor="#993838" secondaryColor="#584fc4"/>
+      <lemon  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'lemon'" primaryColor="#008C73" secondaryColor="#918b49"/>
+      <reys  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'reys'" primaryColor="#005031" secondaryColor="#933c1f"/>
 
-      <ifolio @window-open="windowOpen" v-if="$route.params.id === 'ifolio'" primaryColor="#3e2963" secondaryColor="#4d7599"/>
-      <ss @window-open="windowOpen" v-if="$route.params.id === 'ss'" primaryColor="#29414d" secondaryColor="#48ab61"/>
-      <s4s @window-open="windowOpen" v-if="$route.params.id === 's4s'" primaryColor="#2d3b66" secondaryColor="#8f3535"/>
-      <react @window-open="windowOpen" v-if="$route.params.id === 'react'" />
-      <vue @window-open="windowOpen" v-if="$route.params.id === 'vue'" />
+      <ifolio  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'ifolio'" primaryColor="#3e2963" secondaryColor="#4d7599"/>
+      <ss  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'ss'" primaryColor="#29414d" secondaryColor="#48ab61"/>
+      <s4s  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 's4s'" primaryColor="#2d3b66" secondaryColor="#8f3535"/>
+      <react  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'react'" />
+      <vue  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'vue'" />
     </div>
 
     <div class="fixed-item">
@@ -176,12 +183,32 @@
   margin-bottom: 50px;
 }
 
+:deep(.view-banner) {
+  position:fixed;
+  max-height: 90vh;
+  z-index:2;
+  overflow: hidden;
+  border-right: 2px solid black;
+  background: transparent;
+  transition: ease-in-out all .2s;
+
+  &:hover {
+    overflow-y: auto;
+    background: #f9f9f9;
+  }
+}
+
 :deep(.view-text) {
   padding-left: 20px;
   padding-right: 20px;
+
+  .view-text-cta {
+    font-size: 36px;
+  }
+  
   .view-text-title {
-    padding-bottom: 60px;
-    font-size: 26px;
+    padding-bottom: 30px;
+    font-size: 24px;
     font-weight: bold;
   }
 

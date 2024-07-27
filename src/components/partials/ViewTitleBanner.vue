@@ -34,10 +34,15 @@
         isMobileImg: {
             type: Boolean,
             default: false
+        },
+        showBanner: {
+            type: Boolean,
+            default: true
         }
     },
     emits: [
-        'window-open'
+        'window-open',
+        'toggle-banner',
     ],
     computed: {
         showPointer() {
@@ -54,6 +59,14 @@
             else url = inputUrl;
 
             return this.$emit('window-open', url);
+        },
+        expand() {
+            debugger;
+            this.$emit('toggle-banner', true);
+        },
+        collapse() {
+            debugger;
+            this.$emit('toggle-banner', false);
         }
     },
     mounted() {
@@ -66,82 +79,94 @@
 </script>
 
 <template>
-    <v-row>
-        <v-col>
-            <div class="view-header-title" :style="{ color: backgroundColor }">{{ title }}</div>
-        </v-col>
-    </v-row>
-    <v-row class="view-header">
-        <v-col v-if="imageSrc" :class="{ 'pa-0 my-auto text-left': true,  'cursor-pointer': showPointer }"  @click="goToPrototype(desktopPrototypeUrl)">
-            <img :src="imageSrc" class="view-header-image" />
-        </v-col> 
-    </v-row>
-    <v-row class="view-header">
-        <v-col>
-            <div class="view-header-text">
-                <v-row class="pa-3">
-                    <div class="py-3 w-100" v-if="$slots.client">
-                        <span class="view-header-text-title" :style="{ color: backgroundColor }">Client: </span>
-                        <span class="view-header-text-desc">
-                            <slot name="client"></slot>
-                        </span>
-                    </div>
-                    <div class="py-3 w-100">
-                        <span class="view-header-text-title" :style="{ color: backgroundColor }">Role: </span>
-                        <span class="view-header-text-desc">
-                            <slot name="role"></slot>
-                        </span>
-                    </div>
-                    <div class="py-3 w-100">
-                        <span class="view-header-text-title" :style="{ color: backgroundColor }">Tools Used: </span>
-                        <span class="view-header-text-desc">
-                            <slot name="tools"></slot>
-                        </span>
-                    </div>
-                    <div class="py-3 w-100">
-                        <span class="view-header-text-title" :style="{ color: backgroundColor }">Project Date: </span>
-                        <span class="view-header-text-desc">
-                            <slot name="date"></slot>
-                        </span>
-                    </div>
-                </v-row>
-                <v-row class="pa-3">
-                    <v-col>
-                        <v-btn v-if="githubUrl" block class="text-normal px-3 mr-6 mb-4" variant="outlined"  :color="backgroundColor" :href="githubUrl" target="_blank">
-                            <v-icon class="mr-2">mdi-github</v-icon>
-                            View Code
-                        </v-btn>
-                        <v-btn v-if="siteUrl" block class="text-normal px-3 mr-6 mb-4" variant="outlined"
-                        :color="backgroundColor" :href="siteUrl" target="_blank">
-                            <v-icon class="mr-2">mdi-link</v-icon>
-                            Live Site <span v-if="$route.params.id === 'ifolio' || $route.params.id === 'ss'" class="ml-2">(Archived)</span>
-                        </v-btn>
-                        <v-btn v-if="prototypeUrl" block class="text-normal px-3 mr-6 mb-4" variant="outlined"
-                        :color="backgroundColor"
-                        :href="prototypeUrl" target="_blank">
-                            <v-icon class="mr-2">mdi-open-in-new</v-icon>
-                            Prototype
-                        </v-btn>
-                        <v-btn v-if="mobilePrototypeUrl" block class="text-normal px-3 mr-6 mb-4" variant="outlined" :href="mobilePrototypeUrl"
-                        :color="backgroundColor" 
-                        target="_blank">
-                            <v-icon class="mr-2">mdi-open-in-new</v-icon>
-                            Mobile Prototype
-                        </v-btn>
-                        <v-btn v-if="desktopPrototypeUrl" block class="text-normal px-3 mr-6 mb-4" variant="outlined" :href="desktopPrototypeUrl"
-                        :color="backgroundColor" target="_blank">
-                            <v-icon class="mr-2">mdi-open-in-new</v-icon>
-                            Desktop Prototype
-                        </v-btn>
-                        <v-btn v-if="caseStudyUrl" block class="text-normal px-3 mr-6 mb-4" variant="outlined"  :color="backgroundColor" :href="caseStudyUrl" target="_blank">
-                            <v-icon class="mr-2">mdi-presentation</v-icon>
-                            Case Study PPT
-                        </v-btn>
-                    </v-col>
-                </v-row>
-            </div>
-        </v-col>  
-    </v-row>
+    <div v-if="showBanner" class="view-banner-details">
+        <v-row justify="end">
+            <v-col align="right" class="py-0 my-0">
+                <v-btn @click="collapse()" class="text-right px-3 mb-3 rounded-0" variant="icon" icon="mdi-arrow-collapse-left" title="Collapse" :color="backgroundColor"></v-btn>
+            </v-col>
+        </v-row>
+        <v-row class="view-header">
+            <v-col v-if="imageSrc" :class="{ 'pa-0 ml-3 my-auto text-left': true,  'cursor-pointer': showPointer }"  @click="goToPrototype(desktopPrototypeUrl)">
+                <img :src="imageSrc" class="view-header-image" />
+            </v-col> 
+        </v-row>
+        <v-row>
+            <v-col>
+                <div class="view-header-title" :style="{ color: backgroundColor }">{{ title }}</div>
+            </v-col>
+        </v-row>
+        <v-row class="view-header">
+            <v-col>
+                <div class="view-header-text">
+                    <v-row class="px-3">
+                        <div class="py-3 w-100" v-if="$slots.client">
+                            <span class="view-header-text-title" :style="{ color: backgroundColor }">Client: </span>
+                            <span class="view-header-text-desc">
+                                <slot name="client"></slot>
+                            </span>
+                        </div>
+                        <div class="py-3 w-100">
+                            <span class="view-header-text-title" :style="{ color: backgroundColor }">Role: </span>
+                            <span class="view-header-text-desc">
+                                <slot name="role"></slot>
+                            </span>
+                        </div>
+                        <div class="py-3 w-100">
+                            <span class="view-header-text-title" :style="{ color: backgroundColor }">Tools Used: </span>
+                            <span class="view-header-text-desc">
+                                <slot name="tools"></slot>
+                            </span>
+                        </div>
+                        <div class="py-3 w-100">
+                            <span class="view-header-text-title" :style="{ color: backgroundColor }">Project Date: </span>
+                            <span class="view-header-text-desc">
+                                <slot name="date"></slot>
+                            </span>
+                        </div>
+                    </v-row>
+                    <v-row class="pa-3">
+                        <v-col>
+                            <v-btn v-if="githubUrl" block class="text-normal px-3 mr-6 mb-4" variant="outlined"  :color="backgroundColor" :href="githubUrl" target="_blank">
+                                <v-icon class="mr-2">mdi-github</v-icon>
+                                View Code
+                            </v-btn>
+                            <v-btn v-if="siteUrl" block class="text-normal px-3 mr-6 mb-4" variant="outlined"
+                            :color="backgroundColor" :href="siteUrl" target="_blank">
+                                <v-icon class="mr-2">mdi-link</v-icon>
+                                Live Site <span v-if="$route.params.id === 'ifolio' || $route.params.id === 'ss'" class="ml-2">(Archived)</span>
+                            </v-btn>
+                            <v-btn v-if="prototypeUrl" block class="text-normal px-3 mr-6 mb-4" variant="outlined"
+                            :color="backgroundColor"
+                            :href="prototypeUrl" target="_blank">
+                                <v-icon class="mr-2">mdi-open-in-new</v-icon>
+                                Prototype
+                            </v-btn>
+                            <v-btn v-if="mobilePrototypeUrl" block class="text-normal px-3 mr-6 mb-4" variant="outlined" :href="mobilePrototypeUrl"
+                            :color="backgroundColor" 
+                            target="_blank">
+                                <v-icon class="mr-2">mdi-open-in-new</v-icon>
+                                Mobile Prototype
+                            </v-btn>
+                            <v-btn v-if="desktopPrototypeUrl" block class="text-normal px-3 mr-6 mb-4" variant="outlined" :href="desktopPrototypeUrl"
+                            :color="backgroundColor" target="_blank">
+                                <v-icon class="mr-2">mdi-open-in-new</v-icon>
+                                Desktop Prototype
+                            </v-btn>
+                            <v-btn v-if="caseStudyUrl" block class="text-normal px-3 mr-6 mb-4" variant="outlined"  :color="backgroundColor" :href="caseStudyUrl" target="_blank">
+                                <v-icon class="mr-2">mdi-presentation</v-icon>
+                                Case Study PPT
+                            </v-btn>
+                        </v-col>
+                    </v-row>
+                </div>
+            </v-col>  
+        </v-row>
+    </div>
+    <div v-else>
+        <v-btn @click="expand()" class="text-normal px-3 mr-6 mb-4" append-icon="mdi-arrow-expand-right" variant="text" :color="backgroundColor">Details</v-btn>
+    </div>
+
+    
 </template>
 <style lang="scss" scoped>
 .cursor-pointer {
@@ -166,7 +191,7 @@
 :deep(.view-header-image) {
   padding-top: 20px;
   padding-left: 20px;
-  width: 85%;
+  width: calc(85% - 20px);
 
   &.mobile {
     width: initial;
@@ -175,8 +200,8 @@
 }
 
 :deep(.view-header-text) {
-  font-size: 1.2em;
-  padding: 20px;
+  font-size: 1.1em;
+  padding: 0 20px;
 }
 
 :deep(.view-header-text-title) {

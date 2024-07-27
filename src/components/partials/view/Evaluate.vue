@@ -16,7 +16,7 @@
 
 <template>
     <v-row class="view-text-section" justify="space-evenly">
-        <v-col cols="11">
+        <v-col cols="10">
             <div class="view-text-title" :style="'color:' + color">
                 <v-icon>mdi-finance</v-icon>
                 Evaluate
