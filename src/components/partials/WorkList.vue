@@ -61,7 +61,7 @@
         color="#993c1f"
         linkId="reys"
         title="Rey's Restaurant App" 
-        caption="A menu app to streamline the ordering process" 
+        caption="A menu app to streamline restaurant orders" 
         role="UX Designer, Logo Designer"
         logo="work/reys-mobile.png"
         :logoWidth="listWidth" />
