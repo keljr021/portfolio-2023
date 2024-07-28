@@ -99,7 +99,7 @@
 
 <template>
   <v-container fluid class="px-0 mx-0 mt-3 mb-5">    
-    <div class="view">
+    <div :class="{ 'view': true, 'lock-scroll': showBanner }">
       <four @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'four'" primaryColor="#0081b7" secondaryColor="#3f5d66"/>
       <mcs  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'mcs'" primaryColor="#464da0" secondaryColor="#1d2352"/>
       <torch  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'torch'" primaryColor="#993838" secondaryColor="#584fc4"/>
@@ -254,15 +254,44 @@
   }
 }
 
+@media all and (min-width: 769px) and (max-width: 1023px) {
+  :deep(.view-banner) {
+    position:initial;
+    top: 30px;
+    left: 0;
+    max-height: initial;
+    border-right: none;
+    overflow-y: auto;
+    background: #f9f9f9;
+  }
+
+  :deep(.view) {
+    &.lock-scroll {
+      .view-text {
+        position: fixed;
+      }
+    }
+  }
+}
+
 @media all and (max-width: 768px) {
   :deep(.view) {
-    padding-top: 40px;
+
+    &.lock-scroll {
+      .view-text {
+        position: fixed;
+      }
+    }
   }
 
   :deep(.view-banner) {
-    top: 30px;
+    position:initial;
+    top: 0;
     left: 0;
+    max-height: initial;
     border-right: none;
+    overflow-y: auto;
+    background: #f9f9f9;
   }
 
   :deep(.view-text) {

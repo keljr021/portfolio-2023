@@ -75,10 +75,10 @@
                     <div class="view-text-section-title">Usability Study</div>
                     <div>
                         <v-row>
-                            <v-col cols="11" sm="5" md="5" lg="5">
+                            <v-col cols="11" md="5" lg="5">
                                 <slot name="study1"></slot>
                             </v-col>
-                            <v-col offset-sm="1" offset-md="1" offset-lg="1" sm="5" md="5" lg="5">
+                            <v-col offset-md="1" offset-lg="1" md="5" lg="5">
                                 <slot name="study2"></slot>
                             </v-col>
                         </v-row>

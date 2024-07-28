@@ -23,13 +23,13 @@
             </div>
 
             <v-row justify="space-between" class="py-6">
-                <v-col cols="11" sm="5" md="5" lg="5">
+                <v-col cols="11" md="5" lg="5">
                     <div class="view-text-section-title">Problem</div>
                     <p>
                         <slot name="problem"></slot>
                     </p>
                 </v-col>
-                <v-col offset-sm="1" offset-md="1" offset-lg="1" sm="5" md="5" lg="5">
+                <v-col offset-md="1" offset-lg="1" md="5" lg="5">
                     <div class="view-text-section-title">Goal</div>
                     <p>
                         <slot name="goal"></slot>
