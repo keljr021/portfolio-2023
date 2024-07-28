@@ -79,7 +79,7 @@
     <div v-if="showBanner" class="view-banner-details">
         <v-row justify="end">
             <v-col align="right" class="py-0 my-0">
-                <v-btn @click="collapse" class="text-right px-3 mb-3 rounded-0" variant="icon" icon="mdi-arrow-collapse-all" title="Collapse" :color="backgroundColor"></v-btn>
+                <v-btn @click="collapse()" class="text-right px-3 mb-3 rounded-0" variant="icon" icon="mdi-arrow-collapse-all" title="Collapse" :color="backgroundColor"></v-btn>
             </v-col>
         </v-row>
         <v-row class="view-header">
@@ -163,7 +163,7 @@
     <div class="view-collapse text-left" :style="{'border-color': backgroundColor }" v-else>
         <div class="view-collapse-title pa-4" :style="{'color': backgroundColor}">{{ title }}</div>
         <div v-if="$vuetify.display.mdAndUp" class="view-collapse-subtitle pa-4">{{ subtitle }}</div>
-        <v-btn @click="expand" class="text-normal pl-3 pr-0 mr-6 mb-4" prepend-icon="mdi-arrow-expand-all" variant="text" :color="backgroundColor">Expand Details</v-btn>
+        <v-btn @click="expand()" class="text-normal pl-3 pr-0 mr-6 mb-4" prepend-icon="mdi-arrow-expand-all" variant="text" :color="backgroundColor">Expand Details</v-btn>
     </div>
 
     

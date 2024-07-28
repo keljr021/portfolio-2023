@@ -185,8 +185,8 @@
 
 :deep(.view-banner) {
   position:fixed;
-  max-height: calc(90vh - 60px);
-  z-index:2;
+  max-height: calc(90vh - 85px);
+  z-index: 2;
   overflow: hidden;
   border-right: 2px solid black;
   background: #fff;
@@ -201,6 +201,7 @@
 :deep(.view-text) {
   padding-left: 20px;
   padding-right: 20px;
+  min-height: calc(85vh - 50px); 
 
   .view-text-cta {
     font-size: 36px;
@@ -265,6 +266,8 @@
   }
 
   :deep(.view-text) {
+    min-height: initial; 
+
     .view-text-overview {
       padding: 40px 0 !important;
     }

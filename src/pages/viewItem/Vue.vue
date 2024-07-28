@@ -12,7 +12,8 @@
     },
     emits: [
       'set-image',
-      'window-open'
+      'window-open',
+      'toggle-banner'
     ],
     props: {
       primaryColor: {
@@ -22,6 +23,10 @@
       secondaryColor: {
         type: String,
         default: '#aaa'
+      },
+      showBanner: {
+        type: Boolean,
+        default: false
       }
     },
     methods: {
@@ -37,7 +42,7 @@
       hoverAwayFromBanner() {
           setTimeout(() => {
             this.toggleBanner(false)
-          }, 4000);
+          }, 10000);
       }
     },
     components: {
@@ -59,6 +64,7 @@
           :githubUrl="githubUrl"
           :imageSrc="imgSrc('work/vue-desktop.png')"
           @window-open="windowOpen"
+          @toggle-banner="toggleBanner"
           :showBanner="showBanner"
         >
           <template #role>
@@ -75,10 +81,16 @@
 
       <v-col offset-md="2" offset-lg="2">
         <div class="view-text" 
-        :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }">
+           :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }" 
+           @click="$emit('toggle-banner', false)" 
+           @mouseover="(showBanner === true) ? hoverAwayFromBanner() : ''">
           <overview  :color="secondaryColor" noDivider>
             <template #overview>
               <p>This is a calendar component built with Vue and Bootstrap. The component uses the current date and generates a full calendar for display.</p>
+            </template>
+            <template #image>
+              <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="imgSrc('work/vue-desktop.png')" />
+              <v-img v-else height="150" :src="imgSrc('work/vue-desktop.png')" />
             </template>
           </overview>
 

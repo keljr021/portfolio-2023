@@ -22,6 +22,10 @@
       secondaryColor: {
         type: String,
         default: '#aaa'
+      },
+      showBanner: {
+        type: Boolean,
+        default: false
       }
     },
     methods: {
@@ -37,7 +41,7 @@
       hoverAwayFromBanner() {
           setTimeout(() => {
             this.toggleBanner(false)
-          }, 4000);
+          }, 10000);
       }
     },
     components: {
@@ -78,11 +82,18 @@
     </v-col>
 
     <v-col offset-md="2" offset-lg="2">
-      <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
+      <div class="view-text" 
+           :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }" 
+           @click="$emit('toggle-banner', false)" 
+           @mouseover="(showBanner === true) ? hoverAwayFromBanner() : ''">
         <overview  :color="primaryColor" noDivider>
           <template #overview>
             <p>Soccer for Success was an online e-learning platform that allows coaches to view videos and answer questions on various soccer techniques and learning principles. We've even built-in a Content Management System for Administrators, which allows them to add and update their own custom learning content and upload videos.</p>
             <p>The site was built with React on the front-end, PHP CodeIgniter on the back-end, and JSON for saving and editing content.</p>
+          </template>
+          <template #image>
+            <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="imgSrc('work/s4s-desktop.png')" />
+            <v-img v-else height="150" :src="imgSrc('work/s4s-desktop.png')" />
           </template>
         </overview>
       </div>

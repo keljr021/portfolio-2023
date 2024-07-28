@@ -13,6 +13,7 @@
     emits: [
       'set-image',
       'window-open',
+      'toggle-banner'
     ],
     props: {
       primaryColor: {
@@ -23,6 +24,10 @@
         type: String,
         default: '#aaa'
       },
+      showBanner: {
+        type: Boolean,
+        default: false
+      }
     },
     methods: {
       imgSrc(input) {
@@ -37,7 +42,7 @@
       hoverAwayFromBanner() {
           setTimeout(() => {
             this.toggleBanner(false)
-          }, 4000);
+          }, 10000);
       }
     },
     components: {
@@ -76,19 +81,20 @@
 
       <v-col offset-md="2" offset-lg="2">
         <div class="view-text" 
-        :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }">
-          <div class="view-text" 
-              :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }" 
-              @click="$emit('toggle-banner', false)" 
-              @mouseover="(showBanner === true) ? hoverAwayFromBanner() : ''">
+           :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }" 
+           @click="$emit('toggle-banner', false)" 
+           @mouseover="(showBanner === true) ? hoverAwayFromBanner() : ''">
             <overview :color="primaryColor" noDivider>
               <template #overview>
                 <p>This is a basic calculator component built with React. The component itself performs basic math calculations, allowing the user to click the buttons on screen, or key in the values themselves using the keyboard.</p>
               </template>
+              <template #image>
+                <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="imgSrc('work/react-desktop.png')" />
+                <v-img v-else height="150" :src="imgSrc('work/react-desktop.png')" />
+              </template>
             </overview>
 
           </div>
-        </div>
       </v-col>
     </v-row>
 </template>

@@ -22,6 +22,10 @@
       secondaryColor: {
         type: String,
         default: '#aaa'
+      },
+      showBanner: {
+        type: Boolean,
+        default: false
       }
     },
     methods: {
@@ -37,7 +41,7 @@
       hoverAwayFromBanner() {
           setTimeout(() => {
             this.toggleBanner(false)
-          }, 4000);
+          }, 10000);
       }
     },
     components: {
@@ -98,6 +102,10 @@
         </v-row>
 
       </template>
+      <template #image>
+            <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="imgSrc('work/ss-desktop.png')" />
+            <v-img v-else height="150" :src="imgSrc('work/ss-desktop.png')" />
+          </template>
     </overview>
 
       </div>

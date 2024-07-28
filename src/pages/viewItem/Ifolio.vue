@@ -41,7 +41,7 @@
       hoverAwayFromBanner() {
           setTimeout(() => {
             this.toggleBanner(false)
-          }, 4000);
+          }, 10000);
       }
     },
     components: {
