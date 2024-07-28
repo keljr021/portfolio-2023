@@ -22,7 +22,8 @@ export default {
                 <div class="about-text-caption">Art and tech: and finding the perfect median between the two.</div>
                 <div class="about-text-body py-3">
                     <p>Computers, technology, and art always fascinated me as a child. That curiosity has never stopped even as an adult today. I'm an avid note-taker, researcher, thinker, drawer, and Google...er (if that's a word).</p>
-                    <p>My goal is to find an opportunity to flex my creative skills with UI, UX, and visual design with a great company with like-minded people. I have previously worked in a variety of IT environments; including hospitals, healthcare, and media companies. </p>
+                    <p>My goal is to find an opportunity to flex my creative skills with UI/UX; or continue improving my front-end development experience; all while contributing with a great company with like-minded people. For both of these passions, the end goal is the same; <i>to improve the process for the end user.</i></p>
+                    <p>I have previously worked in a variety of IT environments; including hospitals, healthcare, and media companies. </p>
                     <p>Outside of work; I'm usually surfing the web, drawing, writing, listening to music, or gaming online.</p>
                 </div>
             </v-col>
