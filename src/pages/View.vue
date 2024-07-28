@@ -64,15 +64,15 @@
         window.open(input, '_blank');
       },
       toggleBanner(input) {
-        debugger;
-        console.log('-toggle banner: ', input);
         this.showBanner = input;
-        console.log('--show banner is now: ', this.showBanner);
       },
     },
     created() {
       this.setPreviousView(this.$route.params.id);
       this.setNextView(this.$route.params.id);
+
+      if (this.$vuetify.display.smAndDown)
+        this.showBanner = false;
     },
     beforeRouteUpdate(to) {
       this.previousView = null;
@@ -99,7 +99,7 @@
 
 <template>
   <v-container fluid class="px-0 mx-0 mt-3 mb-5">    
-    <div>
+    <div class="view">
       <four @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'four'" primaryColor="#0081b7" secondaryColor="#3f5d66"/>
       <mcs  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'mcs'" primaryColor="#464da0" secondaryColor="#1d2352"/>
       <torch  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'torch'" primaryColor="#993838" secondaryColor="#584fc4"/>
@@ -185,11 +185,11 @@
 
 :deep(.view-banner) {
   position:fixed;
-  max-height: 90vh;
+  max-height: calc(90vh - 60px);
   z-index:2;
   overflow: hidden;
   border-right: 2px solid black;
-  background: transparent;
+  background: #fff;
   transition: ease-in-out all .2s;
 
   &:hover {
@@ -254,6 +254,15 @@
 }
 
 @media all and (max-width: 768px) {
+  :deep(.view) {
+    padding-top: 40px;
+  }
+
+  :deep(.view-banner) {
+    top: 30px;
+    left: 0;
+    border-right: none;
+  }
 
   :deep(.view-text) {
     .view-text-overview {

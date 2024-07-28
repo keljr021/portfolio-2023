@@ -70,7 +70,7 @@
 
 <template>
   <v-row style="padding-top: 40px">
-    <v-col cols="3" class="view-banner" :style="{ 'border-color': primaryColor }">
+    <v-col cols="12" sm="12" md="3" lg="3" class="view-banner" :style="{ 'border-color': primaryColor }">
       <view-title-banner 
         :backgroundColor="primaryColor"
         title="Torch Mentorship Network"
@@ -95,7 +95,7 @@
         </template>
       </view-title-banner>
     </v-col>
-    <v-col offset="2">
+    <v-col offset-md="2" offset-lg="2">
       <div class="view-text" 
            :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }" 
            @click="$emit('toggle-banner', false)" 

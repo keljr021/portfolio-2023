@@ -34,7 +34,7 @@
     </v-row>
     <v-row>
       <v-col cols="10" offset="1" class="">
-        <div class="scroll overflow-y-auto">
+        <div class="scroll overflow-x-hidden overflow-y-auto">
           <work-list />  
         </div>
       </v-col>

@@ -30,6 +30,14 @@
       },
       windowOpen(input) {
         this.$emit('window-open', input);
+      },
+      toggleBanner(input) {
+        this.$emit('toggle-banner', input);
+      },
+      hoverAwayFromBanner() {
+          setTimeout(() => {
+            this.toggleBanner(false)
+          }, 4000);
       }
     },
     components: {
@@ -42,7 +50,7 @@
 
 <template>
   <v-row style="padding-top: 40px">
-    <v-col cols="3" class="view-banner" :style="{ 'border-color': primaryColor }">
+    <v-col cols="12" sm="12" md="3" lg="3" class="view-banner" :style="{ 'border-color': primaryColor }">
       <view-title-banner 
         :backgroundColor="primaryColor"
         title="Soccer for Success" 
@@ -52,7 +60,7 @@
         :mobileSrc="imgSrc('work/s4s-mobile.png')"
         @window-open="windowOpen"
         @toggle-banner="toggleBanner"
-        :showBanner="true"
+        :showBanner="showBanner"
       >
         <template #role>
           Front-End Developer (Immersion Media)
@@ -69,7 +77,7 @@
       </view-title-banner>
     </v-col>
 
-    <v-col offset="2">
+    <v-col offset-md="2" offset-lg="2">
       <div class="view-text" :style="{ 'border-bottom': '1px solid' + primaryColor }">
         <overview  :color="primaryColor" noDivider>
           <template #overview>

@@ -46,7 +46,6 @@
     },
     methods: {
         goToPrototype(inputUrl) {
-            debugger;
             let url = null;
 
             if (this.siteUrl) url = this.siteUrl;

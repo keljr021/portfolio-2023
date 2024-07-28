@@ -51,7 +51,6 @@
     },
     methods: {
         goToPrototype(inputUrl) {
-            debugger;
             let url = null;
 
             if (this.siteUrl) url = this.siteUrl;
@@ -61,11 +60,9 @@
             return this.$emit('window-open', url);
         },
         expand() {
-            debugger;
             this.$emit('toggle-banner', true);
         },
         collapse() {
-            debugger;
             this.$emit('toggle-banner', false);
         }
     },
@@ -82,7 +79,7 @@
     <div v-if="showBanner" class="view-banner-details">
         <v-row justify="end">
             <v-col align="right" class="py-0 my-0">
-                <v-btn @click="collapse()" class="text-right px-3 mb-3 rounded-0" variant="icon" icon="mdi-arrow-collapse-left" title="Collapse" :color="backgroundColor"></v-btn>
+                <v-btn @click="collapse" class="text-right px-3 mb-3 rounded-0" variant="icon" icon="mdi-arrow-collapse-all" title="Collapse" :color="backgroundColor"></v-btn>
             </v-col>
         </v-row>
         <v-row class="view-header">
@@ -163,8 +160,10 @@
             </v-col>  
         </v-row>
     </div>
-    <div v-else>
-        <v-btn @click="expand()" class="text-normal px-3 mr-6 mb-4" append-icon="mdi-arrow-expand-right" variant="text" :color="backgroundColor">Details</v-btn>
+    <div class="view-collapse text-left" :style="{'border-color': backgroundColor }" v-else>
+        <div class="view-collapse-title pa-4" :style="{'color': backgroundColor}">{{ title }}</div>
+        <div v-if="$vuetify.display.mdAndUp" class="view-collapse-subtitle pa-4">{{ subtitle }}</div>
+        <v-btn @click="expand" class="text-normal pl-3 pr-0 mr-6 mb-4" prepend-icon="mdi-arrow-expand-all" variant="text" :color="backgroundColor">Expand Details</v-btn>
     </div>
 
     
@@ -177,6 +176,10 @@
     &:hover {
         transform: scale(1.05);
     }
+}
+
+:deep(.view-banner-details) {
+    background: #fff;
 }
 
 :deep(.view-header) {
@@ -207,5 +210,20 @@
 
 :deep(.view-header-text-title) {
   font-weight: bold;
+}
+
+:deep(.view-collapse-title) {
+    font-family: 'Quicksand', 'Roboto Thin', sans-serif;
+    font-size: 22px;
+ }
+
+:deep(.view-collapse-subtitle) {
+    font-size: 16px;
+}
+
+@media all and (max-width: 768px) {
+    .view-collapse {
+        border-bottom: 1px solid black;
+    }
 }
 </style>
