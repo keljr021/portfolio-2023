@@ -19,6 +19,16 @@
     <v-row align-md="end" align-lg="end">
       <work-list-item 
         bg="light"
+        color="#4e4c67"
+        linkId="prints" 
+        title="Prints Web Comics" 
+        caption="Responsive site to host and share comics"
+        role="UX Designer, Logo Designer, Developer"
+        logo="work/pr-desktop.png" 
+        :logoWidth="listWidth" />
+
+      <work-list-item 
+        bg="light"
         color="#0081b7"
         linkId="four" 
         title="4 Lives AI" 

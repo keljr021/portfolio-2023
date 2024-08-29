@@ -1,4 +1,5 @@
 <script>
+  import Prints from './viewItem/Prints.vue';
   import Four from './viewItem/Four.vue';
   import Mcs from './viewItem/Mcs.vue';
   import Torch from './viewItem/Torch.vue';
@@ -16,6 +17,7 @@
     data() {
       return {
         viewIdArray: [
+          'prints',
           'four',
           'mcs',
           'torch',
@@ -82,6 +84,7 @@
       this.setNextView(to.params.id);
     },
     components: {
+      Prints,
       Four,
       Mcs,
       Torch,
@@ -100,6 +103,7 @@
 <template>
   <v-container fluid class="px-0 mx-0 mt-3 mb-5">    
     <div :class="{ 'view': true, 'lock-scroll': showBanner }">
+      <prints @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'prints'" primaryColor="#4e4c67" secondaryColor="#3f5d66"/>
       <four @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'four'" primaryColor="#0081b7" secondaryColor="#3f5d66"/>
       <mcs  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'mcs'" primaryColor="#464da0" secondaryColor="#1d2352"/>
       <torch  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'torch'" primaryColor="#993838" secondaryColor="#584fc4"/>
