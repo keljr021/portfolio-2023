@@ -12,11 +12,11 @@
     name: 'Prints',
     data() {
       return {
-        mobileWireframeUrl: 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=13-950&t=i9MK2r2GrtT0j1vu-1&scaling=scale-down&page-id=13%3A596&mode=design',
-        desktopWireframeUrl: 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=3-161&t=zbR1jXXPcPLTNuMU-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A4&mode=design',
-        mobilePrototypeUrl: 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=76-5666&t=V6DdFKCvilGcjKaA-1&scaling=scale-down-width&page-id=76%3A3524&starting-point-node-id=78%3A1674&mode=design',
-        desktopPrototypeUrl: 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=28-242&t=7r8PqfSf9rv4qlZX-1&scaling=min-zoom&page-id=28%3A187&starting-point-node-id=28%3A242&mode=design',
-        caseStudyUrl: 'https://docs.google.com/presentation/d/11AmaJsV7683gmRCD8ctkhfBbgtaMJRarI9DvzXZhG2Q/edit?usp=sharing'
+        mobileWireframeUrl: 'https://www.figma.com/proto/Q3vhPUsXjeRLio6iVKsHDs/Prints-Webcomics-and-Hosting?page-id=8%3A1357&node-id=14-757&node-type=FRAME&viewport=795%2C173%2C0.14&t=Udh1mDTfCneyaL3e-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=14%3A757',
+        desktopWireframeUrl: 'https://www.figma.com/proto/Q3vhPUsXjeRLio6iVKsHDs/Prints-Webcomics-and-Hosting?page-id=0%3A1&node-id=1-4&node-type=CANVAS&viewport=632%2C280%2C0.12&t=FXdqCFvsTBz0Iizo-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A4',
+        mobilePrototypeUrl: 'https://www.figma.com/proto/Q3vhPUsXjeRLio6iVKsHDs/Prints-Webcomics-and-Hosting?page-id=123%3A6806&node-id=123-6807&node-type=FRAME&viewport=885%2C976%2C0.3&t=Er2KESzw9pppFQTB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=123%3A6807',
+        desktopPrototypeUrl: 'https://www.figma.com/proto/Q3vhPUsXjeRLio6iVKsHDs/Prints-Webcomics-and-Hosting?page-id=30%3A1292&node-id=30-1293&node-type=FRAME&viewport=1018%2C386%2C0.15&t=7rVDl1AC6erlbujd-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=30%3A1293',
+        caseStudyUrl: 'https://docs.google.com/presentation/d/1z19usKB6X4M1UkUDd9nJR8McTN70s8uCAhEH86uzqX0/edit?usp=sharing'
       }
     },
     emits: [
@@ -103,13 +103,11 @@
         <overview title="Prints Web Comics" :color="secondaryColor">
           <template #overview>
             <p>
-              This project was born based on my interests in video games; and the continued accolades of Artificial Intelligence.
+              This project was to create a web comics site with an easy to use interface accessible to all users.
+              <i>Prints</i> is an online web comic hosting site that promotes this experience for both artists and viewers. The site was built to help promote, publish, and share web comics.
             </p>
             <p>
-              Ever been in this situation? You purchase a new game system and finally get the time to play it. You assemble the system, and find out you can't play it because you missed an important item that was sold separately. This project helps to reduce similar frustrations.
-            </p>
-            <p>
-              4 Lives AI is an online resource to connect users to the gaming information that exists online using AI-generated queries.        
+              For this project, I've also decided to use a new language and UI library. I've decided to use Bulma and Buefy for a simle layout, but with more powerful components as needed.
             </p>
           </template>
           <template #image>
@@ -120,49 +118,71 @@
 
         <empathize :color="primaryColor">
           <template #problem>
-          Some consumers are overwhelmed or confused with the various video game options out there. Many times, purchases are made based on what is told to them, or going off of their own judgement without a clear understanding of what to buy.      
+            Comic book artists need a site to publish and share their webcomics; however the options available has complex and non-intuitive interfaces to work through, causing frustration. From a viewer's perspective, the sites' interfaces can also be clunky and obtrusive; hindering their overall experience when reading their favorite comics.
+
           </template>
           <template #goal>
-            This project is to provide an online resource that takes a user-generated question and give recommended information of video game items.       
+            The goal is to design a webcomic site to host and view webcomics, with an simple user experience for both artists and viewers.
           </template>
           <template #persona>
             <view-image src="pr-persona.png" />
+            <view-image src="pr-persona2.png" />
           </template>
           <template #diagram>
             <view-image src="pr-usermap.png" />
+            <view-image src="pr-usermap2.png" />
           </template>
         </empathize>
 
         <define :color="primaryColor">
           <template #ideas>
-            <p>For this project, I started with a user diagram that guides the user flow on how the site should operate. The diagram allows us to clearly define the goals to achieve during this project, including the below:</p>
+            <p>For this project, I started with a user diagram for both the artist and viewers' personas. From this diagram, I defined  the goals to achieve during this project below:</p>
             <ol>
-                <li>The user should be able to enter a query to gather specific information.</li>
-                <li>The query should give information laid out in an easy to read format.</li>
-                <li>There needs to be an option for the user to share that generated content.</li>
+                <li>Keep the site layout as clean as possible, while focusing on the content.</li>
+                <li>Ensure the interface is accessible and easy to navigate for both artists and viewers.</li>
+                <li>When viewing a web comic, the interface should be unobtrusive for both desktop and mobile.</li>
+                <li>A trigger or content warning should be available to user upfront for comic series with sensitive content.</li>
             </ol>
           </template>
         </define>
 
         <ideate :color="primaryColor">
           <template #paper>
-            <v-row justify="space-evenly" class="py-8">
-              <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="6" lg="6">
-                <view-image imgHeight="350" src="fl-pframe1.png" text="1. Began with documenting some various ideas and notes for this project." />
+            <v-row align="bottom" justify="space-evenly" class="py-8">
+              <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="4" lg="4">
+                <view-image imgHeight="300" src="pr-pframe1.png" text="1. Started documenting some notes and ideas on how to structure the sitemap for this project." />
                 <div class="w-100 py-8">
-                  1. Began with documenting some various ideas and notes for this project.
+                  1. Started documenting some notes and ideas on how to structure the sitemap for this project.
                 </div>
               </v-col>
-              <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="6" lg="6">
-                <view-image imgHeight="300" src="fl-pframe2.png" text="2. Then, generated a sitemap of pages that should be available on the site."/>
+              <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="4" lg="4">
+                <view-image imgHeight="300" src="pr-pframe2.png" text="2. From these personas, a user journey map was created to see how a viewer would navigate with the site."/>
                 <div class="w-100 py-8">
-                  2. Then, generated a sitemap of pages that should be available on the site.
+                  2. From these personas, a user journey map was created to see how a viewer would navigate with the site.
                 </div>
               </v-col> 
-              <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="6" lg="6">
-                <view-image imgHeight="300" src="fl-pframe3.jpg" text="3. I've then created a paper wireframe of the layout of each page."/>
+              <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="4" lg="4">
+                <view-image imgHeight="300" src="pr-pframe3.png" text="3. A user journey map for the author was also created."/>
                 <div class="w-100 py-8">
-                  3. I've then created a paper wireframe of the layout of each page.
+                  3. A user journey map for the author was also created.
+                </div>
+              </v-col>
+              <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="4" lg="4">
+                <view-image imgHeight="300" src="pr-pframe4.png" text="4. After gathering these notes, a sitemap was created including of all possible pages needed for the site."/>
+                <div class="w-100 py-8">
+                  4. After gathering these notes, a sitemap was created including of all possible pages needed for the site.
+                </div>
+              </v-col>
+              <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="4" lg="4">
+                <view-image imgHeight="300" src="pr-pframe5.jpg" text="5. With this information, began drafting paper mockups of how each page should look like."/>
+                <div class="w-100 py-8">
+                  5. With this information, began drafting paper mockups of how each page should look like.
+                </div>
+              </v-col>
+              <v-col class="pr-3 py-3" cols="11" xs="12" sm="6" md="4" lg="4">
+                <view-image imgHeight="300" src="pr-pframe5.jpg" text="6. Also drafted the same pages on mobile."/>
+                <div class="w-100 py-8">
+                  6. Also drafted the same pages on mobile.
                 </div>
               </v-col>
             </v-row>
@@ -173,22 +193,37 @@
           <template #lofi>        
             <v-row justify="space-evenly" class="py-8">
               <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
-                <view-image imgHeight="350" src="fl-dframe1.png" text="1. Home - Adds a textarea and Submit button as a Call to Action to the page so the user has a quick way to query the site."/>
+                <view-image imgHeight="250" src="pr-dframe1.png" text="1. Home - The Call to Action is upfront with information about the site on the top of the page. An image is added to the left, with the text onto the right. Below the CTA, there are several options for featured comics and authors."/>
                 <div class="w-100 py-8">
-                  1. <b>Home</b> - Adds a textarea and Submit button as a Call to Action to the page so the user has a quick way to query the site.
+                  1. <b>Home</b> - The Call to Action is upfront with information about the site on the top of the page. An image is added to the left, with the text onto the right. Below the CTA, there are several options for featured comics and authors.
                 </div>
               </v-col>
-              <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
-                <view-image imgHeight="350" src="fl-dframe2.png" text="2. Query Page - When the user submits a question, this page is generated with the main answer on top. Additional information is laid out below with links to more content."/>            <div class="w-100 py-8">
-                  2. <b>Query Page</b> - When the user submits a question, this page is generated with the main answer on top. Additional information is laid out below with links to more content.
+              <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
+                <view-image imgHeight="250" src="pr-dframe2.png" text="2. Genres - The Genre menu is added to the left section, which will show the items available for each. On mobile, this has been replaced with a dropdown. The Comic items are separated in a three-column layout with information on the bottom for desktop; and a two-column layout for mobile."/>            <div class="w-100 py-8">
+                  2. <b>Genres</b> - The Genre menu is added to the left section, which will show the items available for each. On mobile, this has been replaced with a dropdown. The Comic items are separated in a three-column layout with information on the bottom for desktop; and a two-column layout for mobile.
+
                 </div>
               </v-col>
             </v-row>
-            <v-row justify="space-evenly" class="py-8">  
+            <v-row justify="space-evenly" class="py-8"> 
               <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
-                <view-image imgHeight="350" src="fl-dframe3.png" text="3. Section Page - Based on the information, the content may lay out as a grid of items. When clicked, the query page would be loaded with content based on the selection. The question section near the navbar lets the user keep track of what current question has been asked."/>
+                <view-image imgHeight="250" src="pr-dframe3.png" text="3. View Comic - For the View Comic section, the comic is front and center; with two menu buttons on each side. The left is to go back, while the right holds a submenu for comments, likes, etc. The idea was to keep the menu options out of the way, but available to access as needed."/>
                 <div class="w-100 py-8">
-                  3. <b>Section Page</b> - Based on the information, the content may lay out as a grid of items. When clicked, the query page would be loaded with content based on the selection. The question section near the navbar lets the user keep track of what current question has been asked.
+                  3. <b>View Comic</b> - The comic is front and center with two menu buttons on each side. The left is to go back, while the right holds a submenu for comments, likes, etc. The idea was to keep the menu options out of the way, but available to access as needed.
+                </div>
+              </v-col>  
+              <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
+                <view-image imgHeight="250" src="pr-dframe4.png" text="4. For Desktop, when a user attempts to create a new series, this form is available. Artists can enter their information and upload a cover and thumb image for their comic series."/>
+                <div class="w-100 py-8">
+                  4. <b>Create a New Series</b> - For Desktop, artists can enter their information and upload a cover and thumb image for their comic series.
+                </div>
+              </v-col>
+            </v-row>
+            <v-row justify="space-evenly" class="py-8"> 
+              <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
+                <view-image imgHeight="250" src="pr-dframe5.png" text="5. Publish a New Chapter - For Desktop, this form is when a new chapter is added to an artist's comic series. The artist has an option to save the chapter as a draft, preview the chapter, or publish. For mobile users, this page is hidden as well."/>
+                <div class="w-100 py-8">
+                  5. <b>Publish a New Chapter</b> - The artist has an option to save the chapter as a draft, preview the chapter, or publish.
                 </div>
               </v-col>
             </v-row>
@@ -196,31 +231,50 @@
 
           <template #study>
             <ul>
-                <li>From conducting the usability study, several of the users noticed that they have to the Home page or Ask page to update their questions. There needs to be a quicker way for users to refine or update queries.</li>
-                <li>The Share and Print options were missed in a few of the studies that would allow users to share content. These options would need to be more prominently displayed to the user.</li>
+                <li>From conducting the usability study, the menu buttons for the View Comic section needs improvement to be more accessibile. Many were unsure of what these buttons did.
+                </li>
+                <li>The Publish workflow requires refactoring, as several of the participants missed how to publish a new comic series
+                </li>
+                <li>A Comic Series page should be introduced, for users to view information and view a specific chapter.</li>
             </ul>      
           </template>
 
           <template #hifi>
             <v-row justify="space-evenly" class="py-8">
               <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
-                  <view-image imgWidth="90%" src="fl-mock1.png" text="1. Home - For the mockups, I've used 'Microsoft Fluent UI' for the components. A background image was added to complement the AI-generated workflow. Scrolling below displays a most recently searched section with links to quickly generate content."/>
+                  <view-image imgWidth="90%" src="pr-mock1.png" text="1. Home - For the mockups, I've used 'Buefy' for the design and layout. A photo with a gradient background was added to the Call to Action. The text layout was kept similar, but adds a button to get to the Genre pages. The featured comics and authors layouts were kept in below the CTA, with a New Releases section added."/>
                   <div class="w-100 py-8">
-                  1. <b>Home</b> - For the mockups, I've used <i>Microsoft Fluent UI</i> for the components. A background image was added to complement the AI-generated workflow. Scrolling below displays a most recently searched section with links to quickly generate content.
+                  1. <b>Home</b> - For the mockups, I've used <i>Buefy</i> for the design and layout. A photo with a gradient background was added to the Call to Action. The text layout was kept similar, but adds a button to get to the Genre pages. The featured comics and authors layouts were kept in below the CTA, with a New Releases section added. 
                 </div>
                 </v-col>
                 <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5">
-                  <view-image imgWidth="90%" src="fl-mock2.png" text="2. Query Page - The layout is largely unchanged, but uses Card components for each section. The question component near the navbar is now clickable for the user to quickly refine or update their question; and re-submit. The Share and Print options are added to the right of the page and fixed whenever the user scrolls."/>
+                  <view-image imgWidth="90%" src="pr-mock2.png" text="2. Genres - The Genres section layout was kept the same; with the genres menu on the left for desktop; and dropdown menu for mobile. The comic content adds several mock items that shows a title, genre, author, and trigger warnings if needed."/>
                   <div class="w-100 py-8">
-                  2. <b>Query Page</b> - The layout is largely unchanged, but uses Card components for each section. The question component near the navbar is now clickable for the user to quickly refine or update their question; and re-submit. The Share and Print options are added to the right of the page and fixed whenever the user scrolls.
+                  2. <b>Genres</b> - The Genres section layout was kept the same; with the genres menu on the left for desktop; and dropdown menu for mobile. The comic content adds several mock items that shows a title, genre, author, and trigger warnings if needed.
+
                 </div>
                 </v-col>
             </v-row>
             <v-row justify="space-evenly" class="py-8"> 
               <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
-                <view-image imgWidth="90%" src="fl-mock3.png" text="3. Section Page - The layout is also kept the same; and used the Card components to separate each item. The Share and Print options are also on the right of the page."/>
+                <view-image imgWidth="90%" src="pr-mock3.png" text="3. View Comic - The Title of the comic was added to the top of the screen. For the menu buttons, I've decreased it to only one fixed on the bottom left of the screen. When selected, a submenu of options are shown, with the back button included into the submenu."/>
                 <div class="w-100 py-8">
-                  3. <b>Section Page</b> - The layout is also kept the same; and used the Card components to separate each item. The Share and Print options are also on the right of the page.
+                  3. <b>View Comic</b> - The Title of the comic was added to the top of the screen. For the menu buttons, I've decreased it to only one fixed on the bottom left of the screen. When selected, a submenu of options are shown, with the back button included into the submenu.
+
+                </div>
+              </v-col>
+              <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
+                <view-image imgWidth="90%" src="pr-mock4.png" text="4. Create a New Series - The Create Series page is fleshed out more, with each section rearranged."/>
+                <div class="w-100 py-8">
+                  4. <b>Create a New Series</b> - The Create Series page is fleshed out more, with each section rearranged.
+                </div>
+              </v-col>
+            </v-row>
+            <v-row justify="space-evenly" class="py-8"> 
+              <v-col class="pr-3 py-3" cols="11" xs="12" sm="5" md="5" lg="5" offset-lg="1">
+                <view-image imgWidth="90%" src="pr-mock5.png" text="5. Create a New Chpater - The header was changed to Create Chapter. The options were also fleshed out further, with the cover on the right of the form. The buttons below were kept the same, with the publish button color focused on a bit further."/>
+                <div class="w-100 py-8">
+                  5. <b>Create a New Chpater</b> - The header was changed to Create Chapter. The options were also fleshed out further, with the cover on the right of the form. The buttons below were kept the same, with the publish button color focused on a bit further.
                 </div>
               </v-col>
             </v-row>
@@ -231,7 +285,7 @@
           </template>
           <template #logo2>
             <p>
-              This logo I've gien it a modern and digital structure. The background underneath the "4" is shaped as a digital diamond, and the typography gives an old-style computer terminal feel, since the site would use AI for most of it's content.
+              The typography I wanted to give a feel of an artist using an traditional inkpen and brush; but keep the logo itself readable. I decided to use the contrasting styles of <i>Matura MT Script Capitals</i> and <i>Ink Free</i> for the title and subtitle respectively.
             </p>        
           </template>
 
@@ -248,17 +302,19 @@
         <evaluate :color="primaryColor" :caseStudyUrl="caseStudyUrl">
           <template #lessons>
             <p>
-              Working on this project, I have gained more knowledge in using the Assets panel from Figma. This has proved very beneficial when prototyping the project to reuse assets, components, and layout structure.
+              From taking on this project, user feedback was critical. Incorporating the feedback has helped in keeping the layout simple and intuitive.
             </p>
             <p>
-              I have also researched areas around AI-generated queries; and realize how powerful AI can be in the near future.
+              It has also further expanded my horizons as a designer with learning new UI webkits to use. The <i>Bulma/Buefy Webkit</i> used was somewhat new to me, but I was able to create a great experience.
             </p>
           </template>
           <template #next>
             <ol>
-              <li>For the Print option, I would add a way to remove unneeded sections from the page before sending to the printer.</li>
-              <li>I would add a section that would give links of where to purchase video game items; and possibly a direct link to the specific item.</li>
-              <li>One nice to have would be a Forum section so members can chat with one another and ask each other questions online.</li>
+              <li>For the various pages, I'd add more content rather than have “lorem ipsum” text.
+              </li>
+              <li>I'd also attempt to add a mobile application version of the site, and how it would differ from the current web version experience.</li>
+              <li>Another color for the site layout would be a nice to have, rather than grey tones. But I would still keep the minimalistic approach of the site.
+              </li>
             </ol>        
           </template>
         </evaluate>
