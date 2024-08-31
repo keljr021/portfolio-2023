@@ -111,7 +111,7 @@
               <i>Prints</i> is an online web comic hosting site that promotes this experience for both artists and viewers. The site was built to help promote, publish, and share web comics.
             </p>
             <p>
-              For this project, I've also decided to use a new language and UI library. I've decided to use Bulma and Buefy for a simle layout, but with more powerful components as needed.
+              For this project, I've also decided to use a new language and UI library. I've decided to use Bulma and Buefy for a simpler layout, but with more powerful components when needed.
             </p>
           </template>
           <template #image>
@@ -122,7 +122,7 @@
 
         <empathize :color="primaryColor">
           <template #problem>
-            Comic book artists need a site to publish and share their webcomics; however the options available has complex and non-intuitive interfaces to work through, causing frustration. From a viewer's perspective, the sites' interfaces can also be clunky and obtrusive; hindering their overall experience when reading their favorite comics.
+            Comic book artists need a site to publish and share their webcomics; however the options available has complex and non-intuitive interfaces to work through. From a viewer's perspective, the sites' interfaces can also be clunky and obtrusive; hindering the experience when reading their favorite comics.
 
           </template>
           <template #goal>
