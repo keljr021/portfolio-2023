@@ -98,25 +98,25 @@
                 <v-col>
                     <div class="view-header-text">
                         <v-row class="px-3">
-                            <div class="py-3 w-100" v-if="$slots.client">
+                            <div class="py-2 w-100" v-if="$slots.client">
                                 <span class="view-header-text-title" :style="{ color: backgroundColor }">Client: </span>
                                 <span class="view-header-text-desc">
                                     <slot name="client"></slot>
                                 </span>
                             </div>
-                            <div class="py-3 w-100">
+                            <div class="py-2 w-100">
                                 <span class="view-header-text-title" :style="{ color: backgroundColor }">Role: </span>
                                 <span class="view-header-text-desc">
                                     <slot name="role"></slot>
                                 </span>
                             </div>
-                            <div class="py-3 w-100">
+                            <div class="py-2 w-100">
                                 <span class="view-header-text-title" :style="{ color: backgroundColor }">Tools Used: </span>
                                 <span class="view-header-text-desc">
                                     <slot name="tools"></slot>
                                 </span>
                             </div>
-                            <div class="py-3 w-100">
+                            <div class="py-2 w-100">
                                 <span class="view-header-text-title" :style="{ color: backgroundColor }">Project Date: </span>
                                 <span class="view-header-text-desc">
                                     <slot name="date"></slot>
@@ -188,7 +188,7 @@
 
 :deep(.view-header-title) {
   padding: 15px 20px;
-  font-size: 36px;
+  font-size: 32px;
 }
 
 :deep(.view-header-image) {
@@ -203,7 +203,6 @@
 }
 
 :deep(.view-header-text) {
-  font-size: 1.1em;
   padding: 0 20px;
 }
 

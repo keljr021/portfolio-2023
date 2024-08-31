@@ -1,11 +1,6 @@
 <script>
 export default {
     name: 'Footer',
-    data() {
-        return {
-            onHomePage: false
-        };
-    },
     props: {
       fixed: {
         type: Boolean,

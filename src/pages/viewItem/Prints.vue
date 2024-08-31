@@ -16,7 +16,9 @@
         desktopWireframeUrl: 'https://www.figma.com/proto/Q3vhPUsXjeRLio6iVKsHDs/Prints-Webcomics-and-Hosting?page-id=0%3A1&node-id=1-4&node-type=CANVAS&viewport=632%2C280%2C0.12&t=FXdqCFvsTBz0Iizo-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A4',
         mobilePrototypeUrl: 'https://www.figma.com/proto/Q3vhPUsXjeRLio6iVKsHDs/Prints-Webcomics-and-Hosting?page-id=123%3A6806&node-id=123-6807&node-type=FRAME&viewport=885%2C976%2C0.3&t=Er2KESzw9pppFQTB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=123%3A6807',
         desktopPrototypeUrl: 'https://www.figma.com/proto/Q3vhPUsXjeRLio6iVKsHDs/Prints-Webcomics-and-Hosting?page-id=30%3A1292&node-id=30-1293&node-type=FRAME&viewport=1018%2C386%2C0.15&t=7rVDl1AC6erlbujd-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=30%3A1293',
-        caseStudyUrl: 'https://docs.google.com/presentation/d/1z19usKB6X4M1UkUDd9nJR8McTN70s8uCAhEH86uzqX0/edit?usp=sharing'
+        caseStudyUrl: 'https://docs.google.com/presentation/d/1z19usKB6X4M1UkUDd9nJR8McTN70s8uCAhEH86uzqX0/edit?usp=sharing',
+        githubUrl: 'https://github.com/keljr021/prints-webcomics',
+
       }
     },
     emits: [
@@ -78,6 +80,8 @@
         :mobilePrototypeUrl="mobilePrototypeUrl"
         :desktopPrototypeUrl="desktopPrototypeUrl"
         :caseStudyUrl="caseStudyUrl"
+        siteUrl="https://poc.kelvin-m.com/prints-webcomics/#/"
+        :githubUrl="githubUrl"
         :imageSrc="imgSrc('work/pr-desktop.png')"
         :mobileSrc="imgSrc('work/pr-mobile.png')"
         @window-open="windowOpen"

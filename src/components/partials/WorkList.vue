@@ -5,8 +5,11 @@
     name: 'WorkGrid',
     data() {
         return {
-            listWidth: 300
+            listWidth: "300"
         }
+    },
+    props: {
+      workType: String
     },
     components: {
         WorkListItem
@@ -18,6 +21,8 @@
   <v-container fluid>
     <v-row align-md="end" align-lg="end">
       <work-list-item 
+        :workType="workType"
+        :displayFor="['ux', 'frontend', 'logo']"
         bg="light"
         color="#4e4c67"
         linkId="prints" 
@@ -28,6 +33,8 @@
         :logoWidth="listWidth" />
 
       <work-list-item 
+        :workType="workType"
+        :displayFor="['ux', 'logo']"
         bg="light"
         color="#0081b7"
         linkId="four" 
@@ -38,6 +45,8 @@
         :logoWidth="listWidth" />
 
       <work-list-item 
+        :workType="workType"
+        :displayFor="['ux', 'frontend', 'logo']"
         bg="light"
         color="#464da0"
         linkId="mcs" 
@@ -48,6 +57,8 @@
         :logoWidth="listWidth" />
 
       <work-list-item
+        :workType="workType"
+        :displayFor="['ux', 'logo']"
         bg="light" 
         color="#993838"
         linkId="torch"
@@ -58,6 +69,8 @@
         :logoWidth="listWidth" />
 
       <work-list-item 
+        :workType="workType"
+        :displayFor="['ux', 'logo']"
         bg="light"
         color="#008C73"
         linkId="lemon"
@@ -68,6 +81,8 @@
         :logoWidth="listWidth" />
 
       <work-list-item 
+        :workType="workType"
+        :displayFor="['ux', 'logo']"
         color="#993c1f"
         linkId="reys"
         title="Rey's Restaurant App" 
@@ -77,6 +92,8 @@
         :logoWidth="listWidth" />
       
       <work-list-item 
+        :workType="workType"
+        :displayFor="['frontend', 'logo']"
         bg="light"
         color="#464da0"
         linkId="ifolio"
@@ -87,6 +104,8 @@
         :logoWidth="listWidth" />
 
       <work-list-item 
+        :workType="workType"
+        :displayFor="['frontend']"
         color="#1f4739"
         linkId="ss"
         title="ScoreShots 2.0" 
@@ -96,6 +115,8 @@
         :logoWidth="listWidth" />
 
       <work-list-item 
+        :workType="workType"
+        :displayFor="['frontend']"
         color="#2d2f66"
         linkId="s4s"
         title="Soccer for Success" 
@@ -105,6 +126,8 @@
         :logoWidth="listWidth" />
 
       <work-list-item 
+        :workType="workType"
+        :displayFor="['frontend']"
         linkId="react"
         title="React Calculator" 
         caption="A calculator component built with React JS" 
@@ -113,6 +136,8 @@
         :logoWidth="listWidth" />
 
       <work-list-item 
+          :workType="workType"
+          :displayFor="['frontend']"
           linkId="vue"
           title="Vue Calendar" 
           caption="A calendar component built with Vue JS" 

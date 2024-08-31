@@ -6,7 +6,25 @@
     name: 'Work',
     data() {
       return {
-        selectedTab: 'ui'
+        workType: 'all',
+        workTypesArray: [
+          {
+            title: 'All',
+            value: 'all'
+          },
+          {
+            title: 'UX/UI Design',
+            value: 'ux'
+          },
+          {
+            title: 'Front-End Development',
+            value: 'frontend'
+          },
+          {
+            title: 'Logo Design',
+            value: 'logo'
+          }
+        ]
       }
     },
     methods: {
@@ -14,8 +32,16 @@
         let el = document.getElementById(input);
             if(el) el.scrollIntoView({ behavior: 'smooth', inline: 'start' });
       },
-      setTab(input) {
-        this.selectedTab = input;
+      setWorkType(input) {
+
+        if (typeof input === 'object') {
+          this.workType = input.value;
+        }
+        else {
+          this.workType = input;
+        }
+
+        console.log('work type is - ', this.workType);
       }
     },
     components: {
@@ -33,9 +59,25 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="10" offset="1" class="">
+      <v-col xs="10" sm="2" md="2"  cols="10">
+        <div v-if="$vuetify.display.mdAndUp" v-for="item in workTypesArray">
+          <v-chip @click="setWorkType(item.value)" :color="(workType === item.value) ? 'black' : '#aaa'" class="work-type ma-3 px-5 py-1">
+            {{  item.title }}
+          </v-chip>
+        </div>
+        <div v-else>
+          <v-select
+            label="Work type..."
+            :items="workTypesArray"
+            item-title="title"
+            item-value="value"
+            v-model="workType"
+          ></v-select>
+        </div>
+      </v-col>
+      <v-col cols="10" class="">
         <div class="scroll overflow-x-hidden overflow-y-auto">
-          <work-list />  
+          <work-list :workType="workType"/>  
         </div>
       </v-col>
     </v-row>
@@ -48,6 +90,11 @@
 .v-container--fluid {
   padding-top: 41.5px !important; 
   height: calc(100% - 73.5px) !important;
+}
+
+.work-type {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 .work-title {
@@ -70,7 +117,7 @@
 
 @media all and (max-width: 768px) {
   .scroll {
-    max-height: calc(70vh - 77px);
+    max-height: calc(70vh - 90px);
   }
 }
 </style>
