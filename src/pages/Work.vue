@@ -59,13 +59,16 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col xs="10" sm="2" md="2" cols="10" offset="1">
-        <div v-if="$vuetify.display.mdAndUp" v-for="item in workTypesArray">
+      <v-col v-if="$vuetify.display.mdAndUp" cols="2">
+        <div v-for="item in workTypesArray">
           <v-chip @click="setWorkType(item.value)" :color="(workType === item.value) ? 'black' : '#aaa'" class="work-type ma-3 px-5 py-1">
             {{  item.title }}
           </v-chip>
         </div>
-        <div v-else>
+      </v-col>
+
+      <v-col v-else cols="10" offset="1">
+        <div>
           <v-select
             label="Work type..."
             :items="workTypesArray"
@@ -75,7 +78,7 @@
           ></v-select>
         </div>
       </v-col>
-      <v-col cols="10" offset="1" class="">
+      <v-col cols="10" class="">
         <div class="scroll overflow-x-hidden overflow-y-auto">
           <work-list :workType="workType"/>  
         </div>
