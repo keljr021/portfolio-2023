@@ -45,13 +45,13 @@
         <div>
             <div><b :style="'color:' + color">{{ title }}</b></div>
             <div class="pb-4">{{ caption }}</div>
-            <div class="pb-4"><b>Role: </b>{{ role }}</div>
-            <div>
+            <!-- <div class="pb-4"><b>Role: </b>{{ role }}</div> -->
+            <!-- <div>
                 <v-btn class="my-6" :color="color" block variant="outlined" :to="{ name: 'view', params: { id: this.linkId } }">
                     View
                     <v-icon class="ml-2">mdi-arrow-right</v-icon>
                 </v-btn>
-            </div>
+            </div> -->
         </div>
     </v-col>
 </template>
