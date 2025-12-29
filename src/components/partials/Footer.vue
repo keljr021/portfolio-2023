@@ -76,7 +76,7 @@ export default {
     </v-row>
 
 
-    <v-row v-else class="footer fixed" :class="{ 'relative': $route.name === 'view' || $route.name === 'about'}">
+    <v-row v-else class="footer fixed" :class="{ 'relative': $route.name === 'view' || $route.name === 'about', 'py-1': true }">
       <v-col class="text-center">
         <span class="footer-link mx-md-6 mx-lg-8 mb-2" @click="openWindow('https://github.com/keljr021/portfolio-2023')" title="View Portfolio Code">
             <v-icon class="mr-2 mt-0" icon="mdi-code-tags" variant="text"  />

@@ -77,6 +77,10 @@
   background: transparent;
 }
 
+:deep(.v-application__wrap) {
+  min-height: calc(100vh - 24px);
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s ease-in-out;

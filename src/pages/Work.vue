@@ -58,13 +58,11 @@
         <div class="work-title pa-4">Work</div>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col v-if="$vuetify.display.mdAndUp" cols="2">
-        <div v-for="item in workTypesArray">
-          <v-chip @click="setWorkType(item.value)" :color="(workType === item.value) ? 'black' : '#aaa'" class="work-type ma-3 px-5 py-1">
-            {{  item.title }}
-          </v-chip>
-        </div>
+    <v-row justify="center">
+      <v-col v-if="$vuetify.display.mdAndUp" cols="10" offset="1">
+        <v-chip v-for="item in workTypesArray" @click="setWorkType(item.value)" :color="(workType === item.value) ? 'black' : '#aaa'" class="work-type my-1 mr-5 px-5 py-1">
+          {{  item.title }}
+        </v-chip>
       </v-col>
 
       <v-col v-else cols="10" offset="1">
@@ -115,7 +113,7 @@
 }
 
 .scroll {
-  max-height: calc(80vh - 77px);
+  max-height: calc(80vh - 150px);
 }
 
 @media all and (max-width: 768px) {
