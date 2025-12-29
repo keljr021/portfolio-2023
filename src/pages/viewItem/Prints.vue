@@ -100,9 +100,7 @@
       </view-title-banner>
     </v-col>
     <v-col offset-md="3" offset-lg="3">
-      <div class="view-text" 
-           @click="$emit('toggle-banner', false)" 
-           @mouseover="(showBanner === true) ? hoverAwayFromBanner() : ''">
+      <div class="view-text" @click="$emit('toggle-banner', false)">
         <overview title="Prints Web Comics" :color="secondaryColor">
           <template #overview>
             <p>

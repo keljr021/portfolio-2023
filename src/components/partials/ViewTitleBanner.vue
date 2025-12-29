@@ -77,7 +77,12 @@
 
 <template>
     <transition name="slide-fade" mode="out-in">
-        <div class="view-banner-details">
+        <div v-if="showBanner" class="view-banner-details">
+             <v-row justify="end">
+                <v-col align="right" class="py-0 my-0">
+                    <v-btn @click="collapse()" class="text-right px-3 mb-3 rounded-0" variant="icon" icon="mdi-arrow-collapse-all" title="Collapse" :color="backgroundColor"></v-btn>
+                </v-col>
+            </v-row>
             <v-row class="view-header">
                 <v-col v-if="imageSrc" :class="{ 'pa-0 ml-3 my-auto text-left': true,  'cursor-pointer': showPointer }"  @click="goToPrototype(desktopPrototypeUrl)">
                     <img v-if="isMobileImg" :src="imageSrc" class="view-header-image" style="width:auto;max-height:250px" />
@@ -153,6 +158,10 @@
                     </div>
                 </v-col>  
             </v-row>
+        </div>
+        <div v-else class="view-collapse text-left" :style="{'border-color': backgroundColor }">
+            <div class="view-collapse-title pa-4" :style="{'color': backgroundColor}">{{ title }}</div>
+            <v-btn block @click="expand()" class="text-normal pl-3 pr-0 mr-6 mb-4" prepend-icon="mdi-arrow-expand-all" variant="text" :color="backgroundColor">Expand Details</v-btn>
         </div>
     </transition>
 </template>
