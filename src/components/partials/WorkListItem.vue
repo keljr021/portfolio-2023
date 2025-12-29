@@ -40,7 +40,7 @@
   <v-col cols="12" sm="6" md="6" lg="4" class="list-item pb-sm-8 pt-3 pb-6 px-9" :class="{ 'display' : workType === 'all' || displayFor.includes(workType) }" @click="$router.push({ name: 'view', params: { id: this.linkId } })">
         <div class="list-item-img my-xs-6 my-sm-6 ma-md-0 pa-md-0">
             <v-img v-if="$vuetify.display.smAndDown" class="mx-auto my-4 w-100" :src="imgSrc(logo)" :height="linkId === 'reys' ? '300px' : ''"/>
-            <v-img v-else :aspect-ratio="linkId === 'reys' ? 1 : ''" :class="{'mx-auto': true, 'my-5': linkId !== 'reys'}" :width="logoWidth ? logoWidth : ''" :src="imgSrc(logo)" :height="linkId === 'reys' ? '300px' : ''"/>
+            <v-img v-else :aspect-ratio="linkId === 'reys' ? 1 : ''" :class="{'mx-auto': true, 'my-5': linkId !== 'reys'}" :width="logoWidth ? logoWidth : ''" :src="imgSrc(logo)" :height="linkId === 'reys' ? '210px' : ''"/>
         </div>
         <div>
             <div><b :style="'color:' + color">{{ title }}</b></div>

@@ -101,7 +101,7 @@
 </script>
 
 <template>
-  <v-container fluid class="px-0 mx-0 mt-3 mb-5">    
+  <v-container fluid class="px-0 mx-0 my-5 bg">    
     <div :class="{ 'view': true, 'lock-scroll': showBanner }">
       <prints @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'prints'" primaryColor="#4e4c67" secondaryColor="#3f5d66"/>
       <four @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'four'" primaryColor="#0081b7" secondaryColor="#3f5d66"/>
@@ -154,6 +154,10 @@
 </template>
 
 <style scoped lang="scss">
+.bg {
+  background-color: #e6e6e6;
+}
+
 .fixed-item {
   position: fixed;
   width: 100%;
@@ -179,7 +183,13 @@
 }
 
 .fixed-item-menu {
-  background: white;
+  background: #fff;
+  padding-left: calc(26% + 5px);
+  opacity: 0.85;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 :deep(.v-container) {
@@ -189,12 +199,15 @@
 
 :deep(.view-banner) {
   position:fixed;
-  max-height: calc(90vh - 85px);
+  max-height: 100vh;
   z-index: 2;
   overflow: hidden;
-  border-right: 2px solid black;
   background: #fff;
   transition: ease-in-out all .2s;
+  padding-right: 0;
+  margin-right: 0;
+  max-width: 26vw;
+  color: #e6e6e6;
 
   &:hover {
     overflow-y: auto;

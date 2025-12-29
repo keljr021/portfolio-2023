@@ -113,10 +113,12 @@ export default {
 <style scoped lang="scss">
 .footer {
   width: calc(100% - 40px);
+  padding-left: calc(26% + 5px);
   font-size: 95%;
   position: absolute;
   bottom: 0;
   margin: 0;
+  background-color: white;
 
   &.relative {
     position: relative;

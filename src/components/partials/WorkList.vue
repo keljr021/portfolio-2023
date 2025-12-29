@@ -19,7 +19,7 @@
 
 <template>
   <v-container fluid>
-    <v-row align-md="end" align-lg="end">
+    <v-row align-md="start" align-lg="start">
       <work-list-item 
         :workType="workType"
         :displayFor="['ux', 'frontend', 'logo']"
