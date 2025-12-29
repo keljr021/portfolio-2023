@@ -53,8 +53,8 @@
 </script>
 
 <template>
-  <v-row style="padding-top: 40px">
-    <v-col cols="12" sm="12" md="3" lg="3" class="view-banner" :style="{ 'border-color': primaryColor }">
+  <v-row>
+    <v-col cols="12" sm="12" md="3" lg="3" class="view-banner" :style="{ 'background-color': primaryColor }">
       <view-title-banner 
         :backgroundColor="primaryColor"
         title="ScoreShots 2.0"
@@ -79,7 +79,7 @@
         </template>
       </view-title-banner>
     </v-col>
-    <v-col offset-md="2" offset-lg="2">
+    <v-col offset-md="3" offset-lg="3">
       <div class="view-text" 
            :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }" 
            @click="$emit('toggle-banner', false)" 

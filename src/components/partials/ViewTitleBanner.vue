@@ -177,7 +177,7 @@
 
 :deep(.view-header-title) {
   padding: 15px 20px;
-  font-size: 32px;
+  font-size: 30px;
 }
 
 :deep(.view-header-image) {

@@ -325,9 +325,3 @@
     </v-col>    
   </v-row>
 </template>
-
-<style scoped>
-.view-text {
-  background-color: #f6f6f6;
-}
-</style>

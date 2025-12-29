@@ -104,8 +104,8 @@
   <v-container fluid class="px-0 mx-0 my-5 bg">    
     <div :class="{ 'view': true, 'lock-scroll': showBanner }">
       <prints @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'prints'" primaryColor="#4e4c67" secondaryColor="#3f5d66"/>
-      <four @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'four'" primaryColor="#0081b7" secondaryColor="#3f5d66"/>
-      <mcs  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'mcs'" primaryColor="#464da0" secondaryColor="#1d2352"/>
+      <four @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'four'" primaryColor="#0d6d95" secondaryColor="#3f5d66"/>
+      <mcs  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'mcs'" primaryColor="#444c95" secondaryColor="#1d2352"/>
       <torch  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'torch'" primaryColor="#993838" secondaryColor="#584fc4"/>
       <lemon  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'lemon'" primaryColor="#008C73" secondaryColor="#918b49"/>
       <reys  @toggle-banner="toggleBanner" :showBanner="showBanner" @window-open="windowOpen" v-if="$route.params.id === 'reys'" primaryColor="#005031" secondaryColor="#933c1f"/>
@@ -215,6 +215,7 @@
 }
 
 :deep(.view-text) {
+  background-color: #f6f6f6;
   padding-left: 20px;
   padding-right: 20px;
   min-height: calc(85vh - 50px); 
