@@ -78,9 +78,9 @@
 <template>
     <transition name="slide-fade" mode="out-in">
         <div v-if="showBanner" class="view-banner-details">
-             <v-row justify="end">
-                <v-col align="right" class="py-0 my-0">
-                    <v-btn @click="collapse()" class="text-right px-3 mb-3 rounded-0" variant="icon" icon="mdi-arrow-collapse-all" title="Collapse" :color="backgroundColor"></v-btn>
+            <v-row v-if="$vuetify.display.smAndDown" justify="end">
+                <v-col align="right" class="pa-2 ma-4">
+                    <v-btn @click="collapse()" class="text-right px-3 mb-3 rounded-0" variant="icon" icon="mdi-close" title="Collapse" color="white"></v-btn>
                 </v-col>
             </v-row>
             <v-row class="view-header">
@@ -159,9 +159,11 @@
                 </v-col>  
             </v-row>
         </div>
-        <div v-else class="view-collapse text-left" :style="{'border-color': backgroundColor }">
-            <div class="view-collapse-title pa-4" :style="{'color': backgroundColor}">{{ title }}</div>
-            <v-btn block @click="expand()" class="text-normal pl-3 pr-0 mr-6 mb-4" prepend-icon="mdi-arrow-expand-all" variant="text" :color="backgroundColor">Expand Details</v-btn>
+        <div v-else class="view-collapse text-left">
+            <div class="view-collapse-title pa-4" :style="{'color': 'white'}">
+                <span class="float-left">{{ title }}</span>
+                <v-btn @click="expand()" class="float-right text-normal pl-3 pr-0 mr-6 mb-4" prepend-icon="mdi-arrow-expand-all" variant="text" color="white">Expand</v-btn>
+            </div>
         </div>
     </transition>
 </template>
@@ -239,7 +241,6 @@
     }
     
     .view-collapse {
-        border-right: 2px solid black;
         border-bottom: none;
     }
 
@@ -255,10 +256,6 @@
         min-height: 100vh;
         height: auto;
         overflow-y: auto;
-    }
-
-    .view-collapse {
-        border-bottom: 1px solid black;
     }
 
     .slide-fade-enter-from,

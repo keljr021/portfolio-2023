@@ -38,11 +38,7 @@
       toggleBanner(input) {
         this.$emit('toggle-banner', input);
       },
-      hoverAwayFromBanner() {
-          setTimeout(() => {
-            this.toggleBanner(false)
-          }, 10000);
-      }
+
     },
     components: {
       ViewTitleBanner,
@@ -83,7 +79,7 @@
       <div class="view-text" 
            :style="{ 'padding-left': '40px', 'border-bottom': '1px solid' + primaryColor }" 
            @click="$emit('toggle-banner', false)" 
-           @mouseover="(showBanner === true) ? hoverAwayFromBanner() : ''">
+           >
     <overview  :color="primaryColor" noDivider>
       <template #overview>
         <p>ScoreShots is Immersion Media's in-house website. It allows a user to create a web-based sports infographic (ie. ScoreShot) using the user's custom colors, fonts, and images. A user can submit the finished graphic to their phone, download it to their computer, and even submit it to their own Facebook or Twitter account.</p>

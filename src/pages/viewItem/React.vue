@@ -39,11 +39,7 @@
       toggleBanner(input) {
         this.$emit('toggle-banner', input);
       },
-      hoverAwayFromBanner() {
-          setTimeout(() => {
-            this.toggleBanner(false)
-          }, 10000);
-      }
+
     },
     components: {
       ViewTitleBanner,
@@ -82,7 +78,7 @@
       <v-col offset-md="3" offset-lg="3">
         <div class="view-text" 
            @click="$emit('toggle-banner', false)" 
-           @mouseover="(showBanner === true) ? hoverAwayFromBanner() : ''">
+           >
             <overview :color="primaryColor" noDivider>
               <template #overview>
                 <p>This is a basic calculator component built with React. The component itself performs basic math calculations, allowing the user to click the buttons on screen, or key in the values themselves using the keyboard.</p>

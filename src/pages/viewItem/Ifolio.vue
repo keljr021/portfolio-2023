@@ -38,11 +38,7 @@
       toggleBanner(input) {
         this.$emit('toggle-banner', input);
       },
-      hoverAwayFromBanner() {
-          setTimeout(() => {
-            this.toggleBanner(false)
-          }, 10000);
-      }
+
     },
     components: {
       ViewTitleBanner,
@@ -84,7 +80,7 @@
     <v-col offset-md="3" offset-lg="3">
       <div class="view-text" 
       @click="$emit('toggle-banner', false)" 
-      @mouseover="(showBanner === true) ? hoverAwayFromBanner() : ''">
+      >
         <overview :color="primaryColor" noDivider>
           <template #overview>
             <p>iFolio was an idea that a fellow co-worker of mine came up with. When he asked for help in this endeavor, I had no problem in giving him a hand.</p>

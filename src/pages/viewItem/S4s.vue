@@ -38,11 +38,7 @@
       toggleBanner(input) {
         this.$emit('toggle-banner', input);
       },
-      hoverAwayFromBanner() {
-          setTimeout(() => {
-            this.toggleBanner(false)
-          }, 10000);
-      }
+
     },
     components: {
       ViewTitleBanner,
@@ -84,7 +80,7 @@
     <v-col offset-md="3" offset-lg="3">
       <div class="view-text" 
            @click="$emit('toggle-banner', false)" 
-           @mouseover="(showBanner === true) ? hoverAwayFromBanner() : ''">
+           >
         <overview  :color="primaryColor" noDivider>
           <template #overview>
             <p>Soccer for Success was an online e-learning platform that allows coaches to view videos and answer questions on various soccer techniques and learning principles. We've even built-in a Content Management System for Administrators, which allows them to add and update their own custom learning content and upload videos.</p>

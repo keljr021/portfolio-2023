@@ -50,11 +50,7 @@
       toggleBanner(input) {
         this.$emit('toggle-banner', input);
       },
-      hoverAwayFromBanner() {
-          setTimeout(() => {
-            this.toggleBanner(false)
-          }, 10000);
-      }
+
     },
     components: {
       ViewTitleBanner,

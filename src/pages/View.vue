@@ -292,6 +292,14 @@
 }
 
 @media all and (max-width: 768px) {
+  .fixed-item-menu {
+    width: 100%;
+    padding: 0;
+    margin: 0 2px;
+    opacity: 1;
+  }
+
+
   :deep(.view) {
 
     &.lock-scroll {
@@ -306,6 +314,7 @@
     top: 0;
     left: 0;
     max-height: initial;
+    max-width: initial;
     border-right: none;
     overflow-y: auto;
     background: #f9f9f9;

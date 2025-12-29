@@ -48,11 +48,7 @@
       toggleBanner(input) {
         this.$emit('toggle-banner', input);
       },
-      hoverAwayFromBanner() {
-          setTimeout(() => {
-            this.toggleBanner(false)
-          }, 10000);
-      }
+
     },
     components: {
       ViewTitleBanner,
@@ -98,7 +94,7 @@
     <v-col offset-md="3" offset-lg="3">
       <div class="view-text" 
            @click="$emit('toggle-banner', false)" 
-           @mouseover="(showBanner === true) ? hoverAwayFromBanner() : ''">
+           >
     <overview  :color="secondaryColor">
       <template #overview>
         <p>
