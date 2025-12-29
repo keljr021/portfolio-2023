@@ -22,7 +22,7 @@ export default {
 <template>
     <v-row v-if="$vuetify.display.smAndDown" class="footer fixed">
       <v-col class="text-right">
-        <v-menu transition="slide-x-reverse-transition" :theme="onHomePage ? 'dark' : 'light'">
+        <v-menu transition="slide-x-reverse-transition" :theme="onHomePage ? 'dark' : 'light'" :style="{ 'background-color': onHomePage ? 'transparent' : 'white' }">
           <template v-slot:activator="{ props }">
             <v-btn
               flat
@@ -113,12 +113,10 @@ export default {
 <style scoped lang="scss">
 .footer {
   width: calc(100% - 40px);
-  padding-left: calc(26% + 5px);
   font-size: 95%;
   position: absolute;
   bottom: 0;
   margin: 0;
-  background-color: white;
 
   &.relative {
     position: relative;

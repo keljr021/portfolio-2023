@@ -101,7 +101,6 @@
     </v-col>
     <v-col offset-md="3" offset-lg="3">
       <div class="view-text" 
-           :style="{ 'border-bottom': '1px solid' + primaryColor }" 
            @click="$emit('toggle-banner', false)" 
            @mouseover="(showBanner === true) ? hoverAwayFromBanner() : ''">
         <overview title="Prints Web Comics" :color="secondaryColor">
@@ -329,7 +328,6 @@
 
 <style scoped>
 .view-text {
-  border: 2px solid #ccc;
   background-color: #f6f6f6;
 }
 </style>

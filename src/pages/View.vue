@@ -149,13 +149,12 @@
       </v-row>
     </div>
 
-    <Footer :onHomePage="false" />
   </v-container>
 </template>
 
 <style scoped lang="scss">
 .bg {
-  background-color: #e6e6e6;
+  background-color: #f6f6f6;
 }
 
 .fixed-item {
