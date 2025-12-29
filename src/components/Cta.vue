@@ -31,7 +31,7 @@ export default {
 <template>
     <v-container fluid class="cta">
         <div class="cta-bg">
-            <img class="cta-bg-image" src="../assets/cta/background-1060405_1280.png" />
+            <img class="cta-bg-image" src="../assets/cta/cta-bg2.jpg" />
             <img alt="drawing of me" class="cta-image" src="../assets/cta-self.png" />
         </div>
         <v-row>
@@ -68,7 +68,7 @@ export default {
     overflow: hidden;
     padding: 0;
     margin: 0;
-    background: #17174f;
+    background: #242b43;
     z-index: -1;
 
 }
@@ -81,7 +81,7 @@ export default {
     margin: 0;
     object-fit: cover;
     overflow: hidden;
-    opacity: 0.35;
+    opacity: 0.1;
     z-index: -1;
 }
 
@@ -100,9 +100,9 @@ export default {
 
 .cta-image {
     position: absolute;
-    right: 0;
+    right: -175px;
     bottom: 0;
-    opacity: 0.6;
+    opacity: 0.4;
     height: 500px;
     margin-top: 10%;
 }
