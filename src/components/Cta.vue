@@ -100,7 +100,7 @@ export default {
 
 .cta-image {
     position: absolute;
-    right: -175px;
+    right: -75px;
     bottom: 0;
     opacity: 0.4;
     height: 500px;
