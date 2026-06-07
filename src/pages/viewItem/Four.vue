@@ -191,7 +191,7 @@
 
           <template #study>
             <ul>
-                <li>From conducting the usability study, several of the users noticed that they have to the Home page or Ask page to update their questions. There needs to be a quicker way for users to refine or update queries.</li>
+                <li>From conducting the usability study, several of the users noticed that they have to navigate to the Home page or Ask page to update their questions. There needs to be a quicker way for users to refine or update queries.</li>
                 <li>The Share and Print options were missed in a few of the studies that would allow users to share content. These options would need to be more prominently displayed to the user.</li>
             </ul>      
           </template>

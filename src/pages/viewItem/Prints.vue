@@ -230,7 +230,7 @@
             <ul>
                 <li>From conducting the usability study, the menu buttons for the View Comic section needs improvement to be more accessibile. Many were unsure of what these buttons did.
                 </li>
-                <li>The Publish workflow requires refactoring, as several of the participants missed how to publish a new comic series
+                <li>The Publish workflow requires refactoring, as several of the participants missed how to publish a new comic series.
                 </li>
                 <li>A Comic Series page should be introduced, for users to view information and view a specific chapter.</li>
             </ul>      

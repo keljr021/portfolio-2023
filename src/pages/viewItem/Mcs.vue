@@ -101,10 +101,10 @@
     <overview :color="secondaryColor">
       <template #overview>
         <p>
-          My father and grandfather taught me the value of hard work at a very early age. Both of them instilled a strong work-ethic that I hold onto this day. Once my father inherited the family business, he discussed with me the opportunity of having a new website. I immediately jumped on the project without hesitation.
+          My father and grandfather taught me the value of hard work at a very early age. Both of them instilled a strong work ethic that I hold onto this day. Once my father inherited the family business, he discussed with me the opportunity of having a new website. I immediately jumped on the project without hesitation.
         </p>
         <p>
-          K&A Morrisey Cleaning Services is a commercial janitorial business that is local to Sampson County. This site is a redesign of the previous website using the UX design principles learned.
+          K&A Morrisey Cleaning Services is a commercial janitorial business that is local to Sampson County. This site is a redesign of the previous site using the UX design principles learned.
         </p>
       </template>
       <template #image>
@@ -118,7 +118,7 @@
         K&A Morrisey Cleaning Services needs an online presence to advertise to potential customers in Sampson County. From viewing the previous web site, there were several opportunities to update and improve a potential customer's online experience.
       </template>
       <template #goal>
-        Improve the user experience for the website. The idea was to better showcase the company janitorial services offered and the areas that the company will serve. We also wanted to give a more streamlined way to contact the clients.
+        Improve the user experience for the website. The idea was to better showcase the company janitorial services offered and the areas that the company will serve. We also wanted to give a more streamlined way to connect customers to the business.
       </template>
       <template #persona>
         <view-image src="ka-persona.png" />
@@ -127,7 +127,7 @@
         <view-image src="ka-usermap.png" />
       </template>
       <template #user2>
-        <p>From documenting the user map, there were several opportunities to improve the user experience when arriving on our site, including: </p>
+        <p>From documenting the user map, there were several opportunities to improve the user experience when arriving on the site, including: </p>
         <ol>
           <li>Communicate with the user when their Contact Form has been sent.</li>
           <li>Ensure that online search engines can find the business website.</li>
