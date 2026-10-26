@@ -31,8 +31,8 @@ export default {
 <template>
     <v-container fluid class="cta">
         <div class="cta-bg">
-            <img class="cta-bg-image" src="../assets/cta/cta-bg2.jpg" />
-            <img alt="drawing of me" class="cta-image" src="../assets/cta-self.png" />
+            <img class="cta-bg-image" src="../assets/cta/annie-spratt-xTaOPMa6wAE-unsplash.jpg" />
+            <img alt="drawing of me" class="cta-image" src="../assets/drawn-photo.png" />
         </div>
         <v-row>
             <v-col cols="12" xs="12" sm="12" md="6">
@@ -49,7 +49,7 @@ export default {
 .cta {
     position: relative;
     height: 100%;
-    padding: 150px 0 100px 50px;
+    padding: 100px 0 100px 50px;
     background-attachment: fixed;
     background-repeat: no-repeat;
     -webkit-border-radius: 0;
@@ -68,7 +68,7 @@ export default {
     overflow: hidden;
     padding: 0;
     margin: 0;
-    background: #242b43;
+    background: #323245;
     z-index: -1;
 
 }
@@ -100,10 +100,10 @@ export default {
 
 .cta-image {
     position: absolute;
-    right: -75px;
-    bottom: 0;
+    right: -10px;
+    bottom: -40px;
     opacity: 0.4;
-    height: 500px;
+    height: 400px;
     margin-top: 10%;
 }
 

@@ -10,22 +10,18 @@ export default {
 </script>
 
 <template>
-    <div class="cta-menu text-right">
+    <div class="cta-menu">
         <div class="cta-menu-box">
             <div class="cta-menu-item" @click="$router.push({ name: 'work' })">
-                <v-icon color="#EDA591" class="menu-icon" icon="mdi-menu-right" />
                 <span>Work</span>
             </div>
             <div class="cta-menu-item" @click="$router.push({ name: 'about' })">
-                <v-icon color="#EDA591" class="menu-icon" icon="mdi-menu-right" />
                 <span>About</span>
             </div>
             <div class="cta-menu-item" @click="$router.push({ name: 'contact' })">
-                <v-icon color="#EDA591" class="menu-icon" icon="mdi-menu-right" />
                 <span>Contact</span>
             </div>
             <div class="cta-menu-item" @click="openWindow('./kelvin_morrisey_resume.pdf');">
-                <v-icon color="#EDA591" class="menu-icon" icon="mdi-menu-right" />
                 <span>Resume</span>
             </div>
         </div>
@@ -37,31 +33,26 @@ export default {
     font-size: 20px;
     font-weight: 300;
     height: 100px;
-    padding: 0 50px;
 }
 
 .cta-menu-box {
-    float: right;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .cta-menu-item {
     margin: 30px;
     padding: 0 10px 10px;
     cursor: pointer;
-    text-align: right;
+    text-align: left;
+    float: left;
 
-    .menu-icon {        
-        opacity: 0 !important;
-    }
-    
     span {
-        border: 2px solid transparent;
-        padding: 4px;
-        transition: border-right-color 0.3s !important;
+        padding: 0 4px;
+        opacity: 0.8;
 
         &:hover {
-            color: #fff;
-            border-bottom-color: #EDA591;
+            text-decoration: underline;
             .menu-icon {
                 opacity: 1 !important;
             }

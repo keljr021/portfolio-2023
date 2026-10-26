@@ -1,4 +1,5 @@
 <script>
+import CtaMenu from './CtaMenu.vue'
 export default {
     name: 'ctaText',
     emits: [
@@ -8,6 +9,9 @@ export default {
         scrollTo(input) {
             this.$emit('scrollTo', input)
         }
+    },
+    components: {
+        CtaMenu
     }
 }
 </script>
@@ -15,12 +19,11 @@ export default {
 <template>
     <div class="cta-text">
         <p>
-            I'm interested in 
-            <b>UI/UX design</b>, 
-            <b>front-end development</b>, and 
-            <b>logo design</b>. From writing notes to rough drafting ideas, my passion is to bring concepts to life.
+           <b>Front-end developer</b> and <b>UI/UX designer</b> with experience in responsive web applications. My passion is to bridge the gap between design and development to bring ideas to life.
         </p>
-        <p>Feel free to browse or <router-link class="cta-link" :to="{ name: 'contact'}">drop a note</router-link> to chat more!</p>
+        <p>
+            <CtaMenu />
+        </p>
     </div>
 </template>
 
@@ -29,7 +32,7 @@ export default {
     font-size: 20px;
     font-weight: 300;
     line-height: 2.25;
-    padding: 10px 0;
+    padding: 20px 0;
     opacity: 0.9;
 
     .cta-link {
