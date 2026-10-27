@@ -8,27 +8,27 @@
   const workTypesArray = ref([
     {
       title: 'Full Design & Development',
+      selector: 'Full',
       value: 'all'
     },
     {
       title: 'UX/UI Design',
+      selector: 'UX/UI',
       value: 'ux'
     },
     {
       title: 'Front-End Development',
+      selector: 'Front-End',
       value: 'frontend'
     }
   ]);
 
-  const all = useTemplateRef('all');
-  const ux = useTemplateRef('ux');
-  const frontend = useTemplateRef('frontend');
-
-  const isAllVisible = useElementVisibility(all, { threshold: 0.7 });
-  const isUxVisible = useElementVisibility(ux, { threshold: 0.7 });
-  const isFrontendVisible = useElementVisibility(frontend, { threshold: 0.7 });
+  const isAllVisible = useElementVisibility(useTemplateRef('all'), { threshold: 0.7 });
+  const isUxVisible = useElementVisibility(useTemplateRef('ux'), { threshold: 0.7 });
+  const isFrontendVisible = useElementVisibility(useTemplateRef('frontend'), { threshold: 0.7 });
 
   const scrollToSection = (id) => {
+    debugger;
     const element = document.querySelector(`#` + id);
     if (element) {
       element.scrollIntoView({ top: element.scrollHeight, behavior: 'smooth' });
@@ -62,33 +62,32 @@
         <div class="work-title px-4 py-2">Work</div>
       </v-col>
     </v-row>
-    <v-row justify="start">
-      <v-col cols="2" class="top-0 px-4">
-        &nbsp;
-        <div class="work-links">
-          <v-col cols="2" v-if="$vuetify.display.mdAndUp">
-            <div :class="{ 'work-links-item': true, 'active': isAllVisible }" @click="scrollToSection('all')">
-              Full
-            </div>
-            <div :class="{ 'work-links-item': true, 'active': isUxVisible }" @click="scrollToSection('ux')">
-              UI/UX
-            </div>
-            <div :class="{ 'work-links-item': true, 'active': isFrontendVisible }" @click="scrollToSection('frontend')">
-              Front-End
-            </div>
-          </v-col>
-          <v-col v-else cols="10" offset="1">
-            <div>
-              <v-select
-                label="Work type..."
-                :items="workTypesArray"
-                item-title="title"
-                item-value="value"
-                v-model="selectedWorkType"
-              ></v-select>
-            </div>
-          </v-col>
+    <v-row>
+      <v-col cols="10" sm="2" md="2" lg="2" class="px-4">
+        <div class="work-links pl-4" v-if="$vuetify.display.mdAndUp">
+          <div :class="{ 'work-links-item': true, 'active': isAllVisible }" @click="scrollToSection('all')">
+            Full
+          </div>
+          <div :class="{ 'work-links-item': true, 'active': isUxVisible }" @click="scrollToSection('ux')">
+            UI/UX
+          </div>
+          <div :class="{ 'work-links-item': true, 'active': isFrontendVisible }" @click="scrollToSection('frontend')">
+            Front-End
+          </div>
         </div>
+
+        <div v-else>
+          <v-select
+            class="work-menu"
+            label="Work type..."
+            :items="workTypesArray"
+            item-title="selector"
+            item-value="value"
+            v-model="selectedWorkType"
+            @update:modelValue="scrollToSection(selectedWorkType)"
+          ></v-select>
+        </div>
+        
       </v-col>
       <v-col cols="10" class="px-4">
         <div v-for="(item, index) in workTypesArray" :key="index" class="mb-8" :id="item.value">
@@ -142,20 +141,25 @@
   }
 }
 
+.work-menu {
+  position: fixed;
+  top: 60px;
+  right: 0;
+}
+
 .work-section-title {
     font-size: 20px !important;
     font-family: 'Quicksand', 'Roboto Thin', sans-serif;
     font-weight: normal;  
-    padding: 30px 0;
-}
-
-.scroll {
-  max-height: calc(80vh - 150px);
+    padding-bottom: 30px;
 }
 
 @media all and (max-width: 768px) {
-  .scroll {
-    max-height: calc(70vh - 90px);
+
+  .work-links {
+    position: relative;
+    top: initial;
+    left: initial;
   }
 }
 </style>

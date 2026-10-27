@@ -36,7 +36,7 @@
 
 <template>
     <v-col cols="12" sm="6" md="6" lg="6" class="list-item pb-sm-8 pt-3 pb-6 px-9" :class="{ 'display' : displayFor.includes(workType) }" @click="$router.push({ name: 'view', params: { id: this.linkId } })">
-        <v-card class="mb-4" variant="elevated" width="75%" min-height="350" link>
+        <v-card class="mb-4 mx-auto" variant="elevated" :width="$vuetify.display.smAndDown ? '100%' : '75%'" min-height="350" link>
             <v-img v-if="$vuetify.display.smAndDown" class="mx-auto w-100" :src="$imageSrc(logo)" :height="linkId === 'reys' ? '300px' : ''"/>
             <v-img v-else :aspect-ratio="linkId === 'reys' ? 1 : ''" :class="{'mx-auto': true, 'my-5': linkId !== 'reys'}" :width="logoWidth ? logoWidth : ''" :src="$imageSrc(logo)" :height="linkId === 'reys' ? '210px' : ''"/>
 
