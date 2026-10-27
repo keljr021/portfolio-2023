@@ -49,7 +49,7 @@ export default {
 .cta {
     position: relative;
     height: 100%;
-    padding: 100px 0 100px 50px;
+    padding: 70px 0 10px 50px;
     background-attachment: fixed;
     background-repeat: no-repeat;
     -webkit-border-radius: 0;
@@ -102,7 +102,7 @@ export default {
     position: absolute;
     right: -10px;
     bottom: -40px;
-    opacity: 0.4;
+    opacity: 0.2;
     height: 400px;
     margin-top: 10%;
 }
