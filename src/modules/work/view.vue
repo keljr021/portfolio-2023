@@ -10,7 +10,7 @@
   import S4s from './viewItem/S4s.vue';
   import React from './viewItem/React.vue';
   import Vue from './viewItem/Vue.vue';
-  import Footer from '../components/partials/Footer.vue'
+  import Footer from '@/components/Footer.vue'
 
   export default {
     name: 'View',

@@ -1,7 +1,7 @@
 <script>
-import CtaText from './partials/CtaText.vue'
-import CtaMenu from './partials/CtaMenu.vue'
-import Footer from './partials/Footer.vue'
+import CtaText from './CtaText.vue'
+import CtaMenu from './CtaMenu.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
     name: 'cta',
@@ -16,9 +16,6 @@ export default {
         scrollTo(input) {
             this.$emit('scrollTo', input);
         },
-        imgSrc(input) {
-            return new URL(`../assets/${input}`, import.meta.url).href;
-        },
     },
     components: {
         CtaText,
@@ -31,8 +28,8 @@ export default {
 <template>
     <v-container fluid class="cta">
         <div class="cta-bg">
-            <img class="cta-bg-image" src="../assets/cta/annie-spratt-xTaOPMa6wAE-unsplash.jpg" />
-            <img alt="drawing of me" class="cta-image" src="../assets/drawn-photo.png" />
+            <img class="cta-bg-image" src="../../../assets/cta/annie-spratt-xTaOPMa6wAE-unsplash.jpg" />
+            <img alt="drawing of me" class="cta-image" src="../../../assets/drawn-photo.png" />
         </div>
         <v-row>
             <v-col cols="12" xs="12" sm="12" md="6">

@@ -1,11 +1,12 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
-import Home from './pages/Home.vue'
-import Work from './pages/Work.vue'
-import View from './pages/View.vue'
-import About from './pages/About.vue'
-import Contact from './pages/Contact.vue'
+import Home from './modules/home/home.vue'
+import Work from './modules/work/work.vue'
+import View from './modules/work/view.vue'
+import imageAssets from './modules/work/imageAssets.js'
+import About from './modules/about/about.vue'
+import Contact from './modules/contact/Contact.vue'
 
 // Vuetify
 import 'vuetify/styles'
@@ -48,4 +49,5 @@ const app = createApp(App);
 
 app.use(router);
 app.use(vuetify);
+app.use(imageAssets);
 app.mount('#app');

@@ -1,13 +1,13 @@
 <script>
-  import WorkImage from '../../components/partials/WorkImage.vue';
-  import ViewTitleBanner from '../../components/partials/ViewTitleBanner.vue';
-  import Overview from '../../components/partials/view/Overview.vue';
-  import Empathize from '../../components/partials/view/Empathize.vue';
-  import Define from '../../components/partials/view/Define.vue';
-  import Ideate from '../../components/partials/view/Ideate.vue';
-  import Evaluate from '../../components/partials/view/Evaluate.vue';
-  import Solution from '../../components/partials/view/Solution.vue';
-  import ViewImage from '../../components/partials/ViewImage.vue';
+  import WorkImage from '../partials/WorkImage.vue';
+  import ViewTitleBanner from '../partials/ViewTitleBanner.vue';
+  import Overview from '@/components/partials/view/Overview.vue';
+  import Empathize from '@/components/partials/view/Empathize.vue';
+  import Define from '@/components/partials/view/Define.vue';
+  import Ideate from '@/components/partials/view/Ideate.vue';
+  import Evaluate from '@/components/partials/view/Evaluate.vue';
+  import Solution from '@/components/partials/view/Solution.vue';
+  import ViewImage from './../partials/ViewImage.vue';
   export default {
     name: 'Reys ',
     data() {
@@ -37,9 +37,6 @@
       },
     },
     methods: {
-      imgSrc(input) {
-        return new URL(`../../assets/${input}`, import.meta.url).href;
-      },
       windowOpen(input) {
         this.$emit('window-open', input);
       },
@@ -71,7 +68,7 @@
         subtitle="A menu app to streamline the ordering process"
         :prototypeUrl="prototypeUrl"
         :caseStudyUrl="caseStudyUrl"
-        :imageSrc="imgSrc('work/reys-mobile.png')"
+        :imageSrc="$imageSrc('work/reys-mobile.png')"
         :isMobileImg="true"
         @window-open="windowOpen"
         @toggle-banner="toggleBanner"
@@ -98,7 +95,7 @@
             <p>For this project, I focused on designing a menu app for a Mexican Restaurant. Rey's Mexican Restaurant is a restaurant chain that provides authentic Mexican food with a variety of options.</p>
           </template>
           <template #image>
-            <v-img class="pt-1" height="150" :src="imgSrc('logo-reys-tp.png')" />
+            <v-img class="pt-1" height="150" :src="$imageSrc('logo-reys-tp.png')" />
           </template>
         </overview>
 
@@ -242,7 +239,7 @@
           </template>
           
           <template #logo1>
-            <v-img class="pt-1" height="150" :src="imgSrc('logo-reys.png')" />
+            <v-img class="pt-1" height="150" :src="$imageSrc('logo-reys.png')" />
           </template>
           <template #logo2>
             <p>The logo idea was to make a casual and family-friendly with a more authentic feel. It also uses the a golden color for the "Rey's" to highlight a royal and proper tone.</p>

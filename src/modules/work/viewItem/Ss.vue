@@ -1,7 +1,7 @@
 <script>
-  import WorkImage from '../../components/partials/WorkImage.vue';
-  import ViewTitleBanner from '../../components/partials/ViewTitleBanner.vue';
-  import Overview from '../../components/partials/view/Overview.vue';  import ViewDefine from '../../components/partials/ViewDefine.vue';
+  import WorkImage from '../partials/WorkImage.vue';
+  import ViewTitleBanner from '../partials/ViewTitleBanner.vue';
+  import Overview from '@/components/partials/view/Overview.vue';  
   export default {
     name: 'Ss ',
     data() {
@@ -29,9 +29,6 @@
       }
     },
     methods: {
-      imgSrc(input) {
-        return new URL(`../../assets/${input}`, import.meta.url).href;
-      },
       windowOpen(input) {
         this.$emit('window-open', input);
       },
@@ -56,7 +53,7 @@
         title="ScoreShots 2.0"
         subtitle="A platform to create and share infographics"
         :siteUrl="siteUrl"
-        :imageSrc="imgSrc('work/ss-desktop.png')"
+        :imageSrc="$imageSrc('work/ss-desktop.png')"
         @window-open="windowOpen"
         @toggle-banner="toggleBanner"
         :showBanner="showBanner"
@@ -99,8 +96,8 @@
 
       </template>
       <template #image>
-            <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="imgSrc('work/ss-desktop.png')" />
-            <v-img v-else height="150" :src="imgSrc('work/ss-desktop.png')" />
+            <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="$imageSrc('work/ss-desktop.png')" />
+            <v-img v-else height="150" :src="$imageSrc('work/ss-desktop.png')" />
           </template>
     </overview>
 

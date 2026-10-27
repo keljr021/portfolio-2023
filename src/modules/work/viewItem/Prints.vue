@@ -1,13 +1,13 @@
 <script>
-  import WorkImage from '../../components/partials/WorkImage.vue';
-  import ViewTitleBanner from '../../components/partials/ViewTitleBanner.vue';
-  import Overview from '../../components/partials/view/Overview.vue';
-  import Empathize from '../../components/partials/view/Empathize.vue';
-  import Define from '../../components/partials/view/Define.vue';
-  import Ideate from '../../components/partials/view/Ideate.vue';
-  import Evaluate from '../../components/partials/view/Evaluate.vue';
-  import Solution from '../../components/partials/view/Solution.vue';
-  import ViewImage from '../../components/partials/ViewImage.vue';
+  import WorkImage from '../partials/WorkImage.vue';
+  import ViewTitleBanner from '../partials/ViewTitleBanner.vue';
+  import Overview from '@/components/partials/view/Overview.vue';
+  import Empathize from '@/components/partials/view/Empathize.vue';
+  import Define from '@/components/partials/view/Define.vue';
+  import Ideate from '@/components/partials/view/Ideate.vue';
+  import Evaluate from '@/components/partials/view/Evaluate.vue';
+  import Solution from '@/components/partials/view/Solution.vue';
+  import ViewImage from './../partials/ViewImage.vue';
   export default {
     name: 'Prints',
     data() {
@@ -41,9 +41,6 @@
       },
     },
     methods: {
-      imgSrc(input) {
-        return new URL(`../../assets/${input}`, import.meta.url).href;
-      },
       windowOpen(input) {
         this.$emit('window-open', input);
       },
@@ -78,8 +75,8 @@
         :caseStudyUrl="caseStudyUrl"
         siteUrl="https://poc.kelvin-m.com/prints-webcomics/#/"
         :githubUrl="githubUrl"
-        :imageSrc="imgSrc('work/pr-desktop.png')"
-        :mobileSrc="imgSrc('work/pr-mobile.png')"
+        :imageSrc="$imageSrc('work/pr-desktop.png')"
+        :mobileSrc="$imageSrc('work/pr-mobile.png')"
         @window-open="windowOpen"
         @toggle-banner="toggleBanner"
         :showBanner="showBanner"
@@ -108,8 +105,8 @@
             </p>
           </template>
           <template #image>
-            <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="125" style="max-width:inherit" :src="imgSrc('logo-pr.png')" />
-            <v-img v-else height="100" :src="imgSrc('logo-pr.png')" />
+            <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="125" style="max-width:inherit" :src="$imageSrc('logo-pr.png')" />
+            <v-img v-else height="100" :src="$imageSrc('logo-pr.png')" />
           </template>
         </overview>
 
@@ -278,7 +275,7 @@
           </template>
         
           <template #logo1>
-            <v-img class="pt-1" height="125" :src="imgSrc('logo-pr.png')" />
+            <v-img class="pt-1" height="125" :src="$imageSrc('logo-pr.png')" />
           </template>
           <template #logo2>
             <p>
@@ -290,7 +287,7 @@
           <template #color>
             <v-row justify="space-evenly" class="py-8"> 
               <v-col cols="11" class="py-3">
-                <v-img width="80%" class="mx-auto" :src="imgSrc('pr-sticker.png')" />
+                <v-img width="80%" class="mx-auto" :src="$imageSrc('pr-sticker.png')" />
               </v-col>
             </v-row>
           </template>

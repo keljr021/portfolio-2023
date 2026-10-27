@@ -1,13 +1,13 @@
 <script>
-  import WorkImage from '../../components/partials/WorkImage.vue';  
-  import ViewTitleBanner from '../../components/partials/ViewTitleBanner.vue';
-  import Overview from '../../components/partials/view/Overview.vue';
-  import Empathize from '../../components/partials/view/Empathize.vue';
-  import Define from '../../components/partials/view/Define.vue';
-  import Ideate from '../../components/partials/view/Ideate.vue';
-  import Evaluate from '../../components/partials/view/Evaluate.vue';
-  import Solution from '../../components/partials/view/Solution.vue';
-  import ViewImage from '../../components/partials/ViewImage.vue';
+  import WorkImage from '../partials/WorkImage.vue';
+  import ViewTitleBanner from '../partials/ViewTitleBanner.vue';
+  import Overview from '@/components/partials/view/Overview.vue';
+  import Empathize from '@/components/partials/view/Empathize.vue';
+  import Define from '@/components/partials/view/Define.vue';
+  import Ideate from '@/components/partials/view/Ideate.vue';
+  import Evaluate from '@/components/partials/view/Evaluate.vue';
+  import Solution from '@/components/partials/view/Solution.vue';
+  import ViewImage from './../partials/ViewImage.vue';
   export default {
     name: 'Mcs',
     data() {
@@ -40,9 +40,6 @@
       },
     },
     methods: {
-      imgSrc(input) {
-        return new URL(`../../assets/${input}`, import.meta.url).href;
-      },
       windowOpen(input) {
         this.$emit('window-open', input);
       },
@@ -76,8 +73,8 @@
         siteUrl="https://ka-clean.com/"
         :caseStudyUrl="caseStudyUrl"
         :githubUrl="githubUrl"
-        :imageSrc="imgSrc('work/ka-desktop.png')"
-        :mobileSrc="imgSrc('work/ka-mobile.png')"
+        :imageSrc="$imageSrc('work/ka-desktop.png')"
+        :mobileSrc="$imageSrc('work/ka-mobile.png')"
         @window-open="windowOpen"
         @toggle-banner="toggleBanner"
         :showBanner="showBanner"
@@ -108,8 +105,8 @@
         </p>
       </template>
       <template #image>
-        <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="imgSrc('logo-ka-2023.png')" />
-        <v-img v-else height="150" :src="imgSrc('logo-ka-2023.png')" />
+        <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="$imageSrc('logo-ka-2023.png')" />
+        <v-img v-else height="150" :src="$imageSrc('logo-ka-2023.png')" />
       </template>
     </overview>
 
@@ -225,8 +222,8 @@
       </template>
 
       <template #logo1>
-        <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="imgSrc('logo-ka-2023.png')" />
-        <v-img v-else height="150" :src="imgSrc('logo-ka-2023.png')" />
+        <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="$imageSrc('logo-ka-2023.png')" />
+        <v-img v-else height="150" :src="$imageSrc('logo-ka-2023.png')" />
       </template>
       <template #logo2>
         <p>For the logo design, I wanted to give a professional feel from both the color and typography choices. I also wanted to set the precedence of the same professional company, now under new management.</p>        

@@ -1,13 +1,13 @@
 <script>
-  import WorkImage from '../../components/partials/WorkImage.vue';  
-  import ViewTitleBanner from '../../components/partials/ViewTitleBanner.vue';
-  import Overview from '../../components/partials/view/Overview.vue';
-  import Empathize from '../../components/partials/view/Empathize.vue';
-  import Define from '../../components/partials/view/Define.vue';
-  import Ideate from '../../components/partials/view/Ideate.vue';
-  import Evaluate from '../../components/partials/view/Evaluate.vue';
-  import Solution from '../../components/partials/view/Solution.vue';
-  import ViewImage from '../../components/partials/ViewImage.vue';
+  import WorkImage from '../partials/WorkImage.vue';
+  import ViewTitleBanner from '../partials/ViewTitleBanner.vue';
+  import Overview from '@/components/partials/view/Overview.vue';
+  import Empathize from '@/components/partials/view/Empathize.vue';
+  import Define from '@/components/partials/view/Define.vue';
+  import Ideate from '@/components/partials/view/Ideate.vue';
+  import Evaluate from '@/components/partials/view/Evaluate.vue';
+  import Solution from '@/components/partials/view/Solution.vue';
+  import ViewImage from './../partials/ViewImage.vue';
   export default {
     name: 'Lemon',
     data() {
@@ -39,9 +39,6 @@
 
     },
     methods: {
-      imgSrc(input) {
-        return new URL(`../../assets/${input}`, import.meta.url).href;
-      },
       windowOpen(input) {
         this.$emit('window-open', input);
       },
@@ -74,8 +71,8 @@
         :mobilePrototypeUrl="mobilePrototypeUrl"
         :desktopPrototypeUrl="desktopPrototypeUrl"
         :caseStudyUrl="caseStudyUrl"
-        :imageSrc="imgSrc('work/lb-desktop.png')"
-        :mobileSrc="imgSrc('work/lb-mobile.png')"
+        :imageSrc="$imageSrc('work/lb-desktop.png')"
+        :mobileSrc="$imageSrc('work/lb-mobile.png')"
         @window-open="windowOpen"
         @toggle-banner="toggleBanner"
         :showBanner="showBanner"
@@ -106,7 +103,7 @@
               </p>
             </template>
             <template #image>
-              <v-img class="pt-1" :height="$vuetify.display.xs ? 'initial' : '65'"  :width="$vuetify.display.xs ? '90%' : 'initial'" :src="imgSrc('logo-lb.png')" />
+              <v-img class="pt-1" :height="$vuetify.display.xs ? 'initial' : '65'"  :width="$vuetify.display.xs ? '90%' : 'initial'" :src="$imageSrc('logo-lb.png')" />
             </template>
           </overview>
 
@@ -257,7 +254,7 @@
             </template>
 
             <template #logo1>
-              <v-img class="pt-1" :height="$vuetify.display.xs ? 'initial' : '65'"  :width="$vuetify.display.xs ? '90%' : 'initial'" :src="imgSrc('logo-lb.png')" />
+              <v-img class="pt-1" :height="$vuetify.display.xs ? 'initial' : '65'"  :width="$vuetify.display.xs ? '90%' : 'initial'" :src="$imageSrc('logo-lb.png')" />
             </template>
             <template #logo2>
               <p>

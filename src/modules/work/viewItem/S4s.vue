@@ -1,7 +1,7 @@
 <script>
-  import WorkImage from '../../components/partials/WorkImage.vue';
-  import ViewTitleBanner from '../../components/partials/ViewTitleBanner.vue';
-  import Overview from '../../components/partials/view/Overview.vue';  import ViewDefine from '../../components/partials/ViewDefine.vue';
+  import WorkImage from '../partials/WorkImage.vue';
+  import ViewTitleBanner from '../partials/ViewTitleBanner.vue';
+  import Overview from '@/components/partials/view/Overview.vue';  
   export default {
     name: 'S4s ',
     data() {
@@ -29,9 +29,6 @@
       }
     },
     methods: {
-      imgSrc(input) {
-        return new URL(`../../assets/${input}`, import.meta.url).href;
-      },
       windowOpen(input) {
         this.$emit('window-open', input);
       },
@@ -56,8 +53,8 @@
         title="Soccer for Success" 
         subtitle="An e-learning platform for coaches and players" 
         :siteUrl="siteUrl"
-        :imageSrc="imgSrc('work/s4s-desktop.png')"
-        :mobileSrc="imgSrc('work/s4s-mobile.png')"
+        :imageSrc="$imageSrc('work/s4s-desktop.png')"
+        :mobileSrc="$imageSrc('work/s4s-mobile.png')"
         @window-open="windowOpen"
         @toggle-banner="toggleBanner"
         :showBanner="showBanner"
@@ -87,8 +84,8 @@
             <p>The site was built with React on the front-end, PHP CodeIgniter on the back-end, and JSON for saving and editing content.</p>
           </template>
           <template #image>
-            <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="imgSrc('work/s4s-desktop.png')" />
-            <v-img v-else height="150" :src="imgSrc('work/s4s-desktop.png')" />
+            <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="$imageSrc('work/s4s-desktop.png')" />
+            <v-img v-else height="150" :src="$imageSrc('work/s4s-desktop.png')" />
           </template>
         </overview>
       </div>

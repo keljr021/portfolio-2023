@@ -1,6 +1,6 @@
 <script>
-  import WorkList from '@/components/partials/WorkList.vue';
-  import Footer from '@/components/partials/Footer.vue'
+  import WorkList from './partials/WorkList.vue';
+  import Footer from '@/components/Footer.vue'
 
   export default {
     name: 'Work',

@@ -1,5 +1,5 @@
 <script>
-  import Cta from '@/components/Cta.vue'
+  import Cta from './partials/Cta.vue'
 
   export default {
     name: 'Home',

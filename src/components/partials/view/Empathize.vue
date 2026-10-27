@@ -1,5 +1,5 @@
 <script>
-  import Divider from './../Divider.vue';
+  import Divider from './../../Divider.vue';
   export default {
     name: 'Empathize',
     props: {

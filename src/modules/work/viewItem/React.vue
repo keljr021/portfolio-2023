@@ -1,7 +1,7 @@
 <script>
-  import ViewTitleBanner from '../../components/partials/ViewTitleBanner.vue';
-  import WorkImage from '../../components/partials/WorkImage.vue';
-  import Overview from '../../components/partials/view/Overview.vue';
+  import ViewTitleBanner from '../partials/ViewTitleBanner.vue';
+  import WorkImage from '../partials/WorkImage.vue';
+  import Overview from '@/components/partials/view/Overview.vue';
   export default {
     name: 'React ',
     data() {
@@ -30,9 +30,6 @@
       }
     },
     methods: {
-      imgSrc(input) {
-        return new URL(`../../assets/${input}`, import.meta.url).href;
-      },
       windowOpen(input) {
         this.$emit('window-open', input);
       },
@@ -58,7 +55,7 @@
           subtitle="A calculator component built with React JS" 
           :siteUrl="siteUrl"
           :githubUrl="githubUrl"
-          :imageSrc="imgSrc('work/react-desktop.png')"
+          :imageSrc="$imageSrc('work/react-desktop.png')"
           @window-open="windowOpen"
           @toggle-banner="toggleBanner"
           :showBanner="showBanner"
@@ -84,8 +81,8 @@
                 <p>This is a basic calculator component built with React. The component itself performs basic math calculations, allowing the user to click the buttons on screen, or key in the values themselves using the keyboard.</p>
               </template>
               <template #image>
-                <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="imgSrc('work/react-desktop.png')" />
-                <v-img v-else height="150" :src="imgSrc('work/react-desktop.png')" />
+                <v-img v-if="$vuetify.display.smAndDown" class="mx-auto" width="180" style="max-width:inherit" :src="$imageSrc('work/react-desktop.png')" />
+                <v-img v-else height="150" :src="$imageSrc('work/react-desktop.png')" />
               </template>
             </overview>
 

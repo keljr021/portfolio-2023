@@ -1,6 +1,6 @@
 <script>
-import Skills from './../components/partials/Skills.vue';
-import Footer from './../components/partials/Footer.vue';
+import Skills from './partials/Skills.vue';
+import Footer from '@/components/Footer.vue';
 export default {
     name: 'About',
     components: {
@@ -28,7 +28,7 @@ export default {
                 </div>
             </v-col>
             <v-col cols="11" sm="11" md="11" lg="4" class="about-image text-center py-md-auto">
-                <img alt="about photo" class="elevation-8" src="../assets/about-alt.jpg" />
+                <img alt="about photo" class="elevation-8" src="../../assets/about-alt.jpg" />
             </v-col>
         </v-row>
         

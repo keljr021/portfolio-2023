@@ -28,11 +28,6 @@ export default {
             return this.$vuetify.display.smAndDown;
         }
     },
-    methods: {
-        getSource() {
-            return new URL(`../../assets/${this.src}`, import.meta.url).href;
-        },
-    },
     components: {}
 }
 </script>
@@ -45,7 +40,7 @@ export default {
                 :width="imgWidth" 
                 :height="imgHeight ? imgHeight : ''" 
                 lazy-src="https://picsum.photos/id/11/100/60" 
-                :src="getSource()">
+                :src="$imageSrc(src)">
                 
                 <template v-slot:placeholder>
                     <div class="d-flex align-center justify-center fill-height">
@@ -84,7 +79,7 @@ export default {
                             :width="imgWidth * 1.5" 
                             :height="imgHeight ? imgHeight * 1.5 : ''" 
                             lazy-src="https://picsum.photos/id/11/100/60" 
-                            :src="getSource()" />
+                            :src="$imageSrc(src)" />
 
                         
 

@@ -1,4 +1,5 @@
 <script>
+
   export default {
     name: 'WorkGridItem',
     data() {
@@ -7,9 +8,6 @@
         }
     },
     methods: {
-      imgSrc(input) {
-        return new URL(`../../assets/${input}`, import.meta.url).href;
-      },
       windowOpen(input) {
         this.$emit('window-open', input);
       }
@@ -41,8 +39,8 @@
   <v-col cols="10" sm="6" md="4" lg="4" class="ma-0 pa-0">
     <v-hover v-slot="{ isHovering, props }">
         <v-card :color="bg === 'dark' ? '#666' : ''" v-bind="props" class="list-item" flat :rounded="false" :to="{ name: 'view', params: { id: this.linkId } }">
-            <v-img v-if="$vuetify.display.smAndDown" :cover="cover" class="ma-auto" width="180" style="max-width:inherit" :src="imgSrc(logo)" />
-            <v-img v-else aspect-ratio="1" :cover="cover" :content-class="cover ? 'align-start' : ''" class="ma-auto" :width="logoWidth ? logoWidth : ''" :height="logoHeight ? logoHeight : ''" :src="imgSrc(logo)" />
+            <v-img v-if="$vuetify.display.smAndDown" :cover="cover" class="ma-auto" width="180" style="max-width:inherit" :src="$imageSrc(logo)" />
+            <v-img v-else aspect-ratio="1" :cover="cover" :content-class="cover ? 'align-start' : ''" class="ma-auto" :width="logoWidth ? logoWidth : ''" :height="logoHeight ? logoHeight : ''" :src="$imageSrc(logo)" />
 
             <v-overlay
                 v-model="overlay"
