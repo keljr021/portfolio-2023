@@ -47,7 +47,7 @@ export default {
     font-size: 28px;
     font-family: 'Quicksand', 'Roboto Thin', sans-serif;
     font-weight: normal;  
-    padding: 30px 0;
+    padding: 30px 0 10px 0;
 }
 
 .about-text-caption {

@@ -22,7 +22,7 @@
     <v-row align-md="start" align-lg="start">
       <work-list-item 
         :workType="workType"
-        :displayFor="['ux', 'frontend', 'logo']"
+        :displayFor="['all']"
         bg="light"
         color="#4e4c67"
         linkId="prints" 
@@ -34,7 +34,7 @@
 
       <work-list-item 
         :workType="workType"
-        :displayFor="['ux', 'logo']"
+        :displayFor="['ux']"
         bg="light"
         color="#0081b7"
         linkId="four" 
@@ -46,7 +46,7 @@
 
       <work-list-item 
         :workType="workType"
-        :displayFor="['ux', 'frontend', 'logo']"
+        :displayFor="['all']"
         bg="light"
         color="#464da0"
         linkId="mcs" 
@@ -58,7 +58,7 @@
 
       <work-list-item
         :workType="workType"
-        :displayFor="['ux', 'logo']"
+        :displayFor="['ux']"
         bg="light" 
         color="#993838"
         linkId="torch"
@@ -70,7 +70,7 @@
 
       <work-list-item 
         :workType="workType"
-        :displayFor="['ux', 'logo']"
+        :displayFor="['ux']"
         bg="light"
         color="#008C73"
         linkId="lemon"
@@ -82,7 +82,7 @@
 
       <work-list-item 
         :workType="workType"
-        :displayFor="['ux', 'logo']"
+        :displayFor="['ux']"
         color="#993c1f"
         linkId="reys"
         title="Rey's Restaurant App" 
@@ -93,7 +93,7 @@
       
       <work-list-item 
         :workType="workType"
-        :displayFor="['frontend', 'logo']"
+        :displayFor="['frontend']"
         bg="light"
         color="#464da0"
         linkId="ifolio"
