@@ -31,7 +31,6 @@
   const isFrontendVisible = useElementVisibility(useTemplateRef('frontend'), { threshold: 0.7 });
 
   const scrollToSection = (id) => {
-    debugger;
     const element = document.querySelector(`#` + id);
     if (element) {
       element.scrollIntoView({ top: element.scrollHeight, behavior: 'smooth' });
