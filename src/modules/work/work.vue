@@ -8,17 +8,20 @@
   const workTypesArray = ref([
     {
       title: 'Full Design & Development',
-      selector: 'Full',
+      selector: 'Hybrid Work',
+      icon: 'mdi-pencil-ruler',
       value: 'all'
     },
     {
       title: 'UX/UI Design',
       selector: 'UX/UI',
+      icon: 'mdi-palette-outline',
       value: 'ux'
     },
     {
       title: 'Front-End Development',
       selector: 'Front-End',
+      icon: 'mdi-code-tags',
       value: 'frontend'
     }
   ]);
@@ -65,15 +68,9 @@
     <v-row>
       <v-col cols="10" sm="2" md="2" lg="2" class="px-4">
         <div class="work-links pl-4" v-if="$vuetify.display.mdAndUp">
-          <div :class="{ 'work-links-item': true, 'active': isAllVisible }" @click="scrollToSection('all')">
-            Full
-          </div>
-          <div :class="{ 'work-links-item': true, 'active': isUxVisible }" @click="scrollToSection('ux')">
-            UI/UX
-          </div>
-          <div :class="{ 'work-links-item': true, 'active': isFrontendVisible }" @click="scrollToSection('frontend')">
-            Front-End
-          </div>
+          <v-chip class="work-links-chip" size="large" :color="isAllVisible ? 'indigo-darken-3' : ''" :variant="isAllVisible ? 'tonal' : 'plain'" prepend-icon="mdi-pencil-ruler" @click="scrollToSection('all')">Hybrid Work</v-chip>
+          <v-chip class="work-links-chip" size="large" :color="isUxVisible ? 'teal-darken-2' : ''" :variant="isUxVisible ? 'tonal' : 'plain'" prepend-icon="mdi-palette-outline" @click="scrollToSection('ux')">UX/UI</v-chip>
+          <v-chip class="work-links-chip" size="large" :color="isFrontendVisible ? 'blue-darken-3' : ''" :variant="isFrontendVisible ? 'tonal' : 'plain'" prepend-icon="mdi-code-tags" @click="scrollToSection('frontend')">Front-End</v-chip>
         </div>
 
         <div v-else>
@@ -124,20 +121,10 @@
   left: 0;
   z-index: 1;
 
-  .work-links-item {
-    opacity: 0.6;
-    padding: 10px 0;
-    transition: opacity 0.4s ease-in-out;
-    cursor: pointer;
-  }
-
-  .work-links-item:hover {
-    opacity: 0.8;
-  }
-
-  .work-links-item.active {
-    opacity: 1;
-    text-decoration: underline;
+  .work-links-chip {
+    width: 100%;
+    margin: 10px 0;
+    clear: both;
   }
 }
 

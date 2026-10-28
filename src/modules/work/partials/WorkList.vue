@@ -20,6 +20,8 @@
         caption="Responsive site to host and share comics"
         role="UX Designer, Logo Designer, Developer"
         logo="work/pr-desktop.png" 
+        uxTools="Figma, Inkscape"
+        frontendStack="Vue JS, Bulma, Buefy"
         :logoWidth="listWidth" />
 
       <work-list-item 
@@ -32,6 +34,7 @@
         caption="AI-generated information resource for video games"
         role="UX Designer, Logo Designer"
         logo="work/fl-desktop.png" 
+        uxTools="Figma, Inkscape"
         :logoWidth="listWidth" />
 
       <work-list-item 
@@ -43,6 +46,8 @@
         title="K&A Morrisey Cleaning Services" 
         caption="Responsive site for janitorial business"
         role="UX Designer, Logo Designer, Developer"
+        uxTools="Figma, Inkscape"
+        frontendStack="Vue JS, SASS, JavaScript"
         logo="work/ka-desktop.png" 
         :logoWidth="listWidth" />
 
@@ -55,6 +60,7 @@
         title="Torch Mentor Network" 
         caption="App and website that connects students with mentors" 
         role="UX Designer, Logo Designer"
+        uxTools="Figma, Inkscape"
         logo="work/to-desktop.png" 
         :logoWidth="listWidth" />
 
@@ -67,6 +73,7 @@
         title="LemonBranch DIY Site" 
         caption="Responsive site to view tutorials and how-tos" 
         role="UX Designer, Logo Designer"
+        uxTools="Adobe XD, Inkscape, Clip Studio Paint"
         logo="work/lb-desktop.png" 
         :logoWidth="listWidth" />
 
@@ -78,6 +85,7 @@
         title="Rey's Restaurant App" 
         caption="A menu app to streamline restaurant orders" 
         role="UX Designer, Logo Designer"
+        uxTools="Figma, Inkscape"
         logo="work/reys-mobile.png"
         :logoWidth="listWidth" />
       
@@ -91,6 +99,7 @@
         caption="An online portfolio page to host images" 
         role="Logo Designer, Developer"
         logo="work/if-desktop.png"
+        frontendStack="HTML, CSS, JavaScript, PHP, Material Design Lite"
         :logoWidth="listWidth" />
 
       <work-list-item 
@@ -102,6 +111,7 @@
         caption="A platform to create and share infographics" 
         role="Developer"
         logo="work/ss-desktop.png" 
+        frontendStack="HTML, CSS, JavaScript, jQuery, PHP CodeIgniter"
         :logoWidth="listWidth" />
 
       <work-list-item 
@@ -113,6 +123,7 @@
         caption="An e-learning platform for coaches and players" 
         role="Developer"
         logo="work/s4s-desktop.png"
+        frontendStack="React JS, JSON, PHP CodeIgniter, Material Design Lite"
         :logoWidth="listWidth" />
 
       <work-list-item 
@@ -123,6 +134,7 @@
         caption="A calculator component built with React JS" 
         role="Developer"
         logo="work/react-desktop.png"
+        frontendStack="React JS"
         :logoWidth="listWidth" />
 
       <work-list-item 
@@ -133,6 +145,7 @@
           caption="A calendar component built with Vue JS" 
           role="Developer"
           logo="work/vue-desktop.png" 
+          frontendStack="Vue JS"
           :logoWidth="listWidth" />
 
     </v-row>
