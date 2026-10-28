@@ -1,6 +1,6 @@
 <script setup>
   import { ref, useTemplateRef, onMounted, onUnmounted } from 'vue';
-  import { useElementVisibility, useScroll } from '@vueuse/core'
+  import { useElementVisibility, useScroll, useElementSize } from '@vueuse/core'
   import { useDisplay } from 'vuetify';
   import { onBeforeRouteUpdate, useRoute, useRouter } from 'vue-router';
 
@@ -9,20 +9,22 @@
   const currentTab = ref(null);
   const { y } = useScroll(window);
 
-  const problemRef = useTemplateRef('problem');
-  const researchRef = useTemplateRef('research');
-  const designRef = useTemplateRef('design');
-  const accessibilityRef = useTemplateRef('accessibility');
-  const developmentRef = useTemplateRef('development');
-  const resultsRef = useTemplateRef('results');
+  const problemPos = 400;
+  const researchPos = 800;
+  const designPos = 1200;
+  const accessibilityPos = 1600;
+  const developmentPos = 1900;
+  const resultsPos = 2200;
 
   const checkIfSectionVisible = () => {
-    const isProblemVisible = useElementVisibility(problemRef, { threshold: 0.7 }).value;
-    const isResearchVisible = useElementVisibility(researchRef, { threshold: 0.7 }).value;
-    const isDesignVisible = useElementVisibility(designRef, { threshold: 0.7 }).value;
-    const isAccessibilityVisible = useElementVisibility(accessibilityRef, { threshold: 0.7 }).value;
-    const isDevelopmentVisible = useElementVisibility(developmentRef, { threshold: 0.7 }).value;
-    const isResultsVisible = useElementVisibility(resultsRef, { threshold: 0.7 }).value;
+    const isProblemVisible = y.value >= problemPos && y.value < researchPos;
+    const isResearchVisible = y.value >= researchPos && y.value < designPos;
+    const isDesignVisible = y.value >= designPos && y.value < accessibilityPos;
+    const isAccessibilityVisible = y.value >= accessibilityPos && y.value < developmentPos;
+    const isDevelopmentVisible = y.value >= developmentPos && y.value < resultsPos;
+    const isResultsVisible = y.value >= resultsPos;
+
+    currentTab.value = null;
 
     if (isProblemVisible) currentTab.value = 'problem';
     if (isResearchVisible) currentTab.value = 'research';
