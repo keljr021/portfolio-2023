@@ -7,8 +7,8 @@
   const selectedWorkType = ref('all');
   const workTypesArray = ref([
     {
-      title: 'Full Design & Development',
-      selector: 'Hybrid Work',
+      title: 'Design & Development',
+      selector: 'Hybrid',
       icon: 'mdi-pencil-ruler',
       value: 'all'
     },
