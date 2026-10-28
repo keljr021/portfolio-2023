@@ -1,22 +1,7 @@
-<script>
-  export default {
-    name: 'ViewTakeaways',
-    data() {
-      return {}
-    },
-    props: {
-        caseStudyUrl: String
-    },
-    methods: {
-
-    },
-    mounted() {
-     
-    },
-    components: {
-      
-    }
-}
+<script setup>
+defineProps({
+  caseStudyUrl: String
+});
 </script>
 
 <template>

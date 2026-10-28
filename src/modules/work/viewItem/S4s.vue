@@ -1,48 +1,22 @@
-<script>
+<script setup>
   import WorkImage from '../partials/WorkImage.vue';
   import ViewTitleBanner from '../partials/ViewTitleBanner.vue';
   import Overview from '@/components/partials/view/Overview.vue';  
-  export default {
-    name: 'S4s ',
-    data() {
-      return {
-        siteUrl: null
-      }
-    },
-    emits: [
-      'set-image',
-      'window-open',
-      'toggle-banner'
-    ],
-    props: {
-      primaryColor: {
-        type: String,
-        default: '#666'
-      },
-      secondaryColor: {
-        type: String,
-        default: '#aaa'
-      },
-      showBanner: {
-        type: Boolean,
-        default: false
-      }
-    },
-    methods: {
-      windowOpen(input) {
-        this.$emit('window-open', input);
-      },
-      toggleBanner(input) {
-        this.$emit('toggle-banner', input);
-      },
+  const siteUrl = null;
+  const emit = defineEmits(['set-image', 'window-open', 'toggle-banner']);
+  defineProps({
+    primaryColor: { type: String, default: '#666' },
+    secondaryColor: { type: String, default: '#aaa' },
+    showBanner: { type: Boolean, default: false }
+  });
 
-    },
-    components: {
-      ViewTitleBanner,
-      Overview,
-      WorkImage
-    }
-}
+  function windowOpen(input) {
+    emit('window-open', input);
+  }
+
+  function toggleBanner(input) {
+    emit('toggle-banner', input);
+  }
 </script>
 
 <template>

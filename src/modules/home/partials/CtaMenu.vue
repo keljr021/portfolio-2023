@@ -1,11 +1,6 @@
-<script>
-export default {
-    name: 'ctaMenu',
-    methods: {
-        openWindow(link) {
-            window.open(link, '_blank');
-        }
-    }
+<script setup>
+function openWindow(link) {
+  window.open(link, '_blank');
 }
 </script>
 

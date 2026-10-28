@@ -1,13 +1,6 @@
-<script>
+<script setup>
 import Skills from './partials/Skills.vue';
 import Footer from '@/components/Footer.vue';
-export default {
-    name: 'About',
-    components: {
-        Skills,
-        Footer
-    }
-}
 </script>
 
 <template>
@@ -89,4 +82,3 @@ export default {
     }
 }
 </style>
-

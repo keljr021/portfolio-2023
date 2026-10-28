@@ -1,49 +1,23 @@
-<script>
+<script setup>
   import WorkImage from '../partials/WorkImage.vue';
   import ViewTitleBanner from '../partials/ViewTitleBanner.vue';
   import Overview from '@/components/partials/view/Overview.vue';  
-  export default {
-    name: 'Vue ',
-    data() {
-      return {
-        siteUrl: 'http://poc.kelvin-m.com/vue-calendar/#/',
-        githubUrl: 'https://github.com/keljr021/vue-calendar'
-      }
-    },
-    emits: [
-      'set-image',
-      'window-open',
-      'toggle-banner'
-    ],
-    props: {
-      primaryColor: {
-        type: String,
-        default: '#666'
-      },
-      secondaryColor: {
-        type: String,
-        default: '#aaa'
-      },
-      showBanner: {
-        type: Boolean,
-        default: false
-      }
-    },
-    methods: {
-      windowOpen(input) {
-        this.$emit('window-open', input);
-      },
-      toggleBanner(input) {
-        this.$emit('toggle-banner', input);
-      },
+  const siteUrl = 'http://poc.kelvin-m.com/vue-calendar/#/';
+  const githubUrl = 'https://github.com/keljr021/vue-calendar';
+  const emit = defineEmits(['set-image', 'window-open', 'toggle-banner']);
+  defineProps({
+    primaryColor: { type: String, default: '#666' },
+    secondaryColor: { type: String, default: '#aaa' },
+    showBanner: { type: Boolean, default: false }
+  });
 
-    },
-    components: {
-      ViewTitleBanner,
-      Overview,
-      WorkImage
-    }
-}
+  function windowOpen(input) {
+    emit('window-open', input);
+  }
+
+  function toggleBanner(input) {
+    emit('toggle-banner', input);
+  }
 </script>
 
 <template>

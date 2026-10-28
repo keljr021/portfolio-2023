@@ -1,44 +1,39 @@
-<script>
+<script setup>
+import { ref } from 'vue';
 
-  export default {
-    name: 'WorkGridItem',
-    data() {
-        return {
-           overlay: null 
-        }
-    },
-    methods: {
-      windowOpen(input) {
-        this.$emit('window-open', input);
-      }
-    },
-    props: {
-        bg: {
-            type: String,
-            default: 'light'
-        },
-        color: {
-            type: String,
-            default: '#333'
-        },
-        title: String,
-        caption: String,
-        logo: String,
-        logoWidth: String,
-        logoHeight: String,
-        linkId: String,
-        cover: {
-            type: Boolean,
-            default: false
-        }
-    }
+const emit = defineEmits(['window-open']);
+const overlay = ref(null);
+
+defineProps({
+  bg: {
+    type: String,
+    default: 'light'
+  },
+  color: {
+    type: String,
+    default: '#333'
+  },
+  title: String,
+  caption: String,
+  logo: String,
+  logoWidth: String,
+  logoHeight: String,
+  linkId: String,
+  cover: {
+    type: Boolean,
+    default: false
+  }
+});
+
+function windowOpen(input) {
+  emit('window-open', input);
 }
 </script>
 
 <template>
   <v-col cols="10" sm="6" md="4" lg="4" class="ma-0 pa-0">
     <v-hover v-slot="{ isHovering, props }">
-        <v-card :color="bg === 'dark' ? '#666' : ''" v-bind="props" class="list-item" flat :rounded="false" :to="{ name: 'view', params: { id: this.linkId } }">
+        <v-card :color="bg === 'dark' ? '#666' : ''" v-bind="props" class="list-item" flat :rounded="false" :to="{ name: 'view', params: { id: linkId } }">
             <v-img v-if="$vuetify.display.smAndDown" :cover="cover" class="ma-auto" width="180" style="max-width:inherit" :src="$imageSrc(logo)" />
             <v-img v-else aspect-ratio="1" :cover="cover" :content-class="cover ? 'align-start' : ''" class="ma-auto" :width="logoWidth ? logoWidth : ''" :height="logoHeight ? logoHeight : ''" :src="$imageSrc(logo)" />
 

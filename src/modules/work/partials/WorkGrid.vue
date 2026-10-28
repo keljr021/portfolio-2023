@@ -1,12 +1,5 @@
-<script>
+<script setup>
   import WorkGridItem from './WorkGridItem.vue';
-
-  export default {
-    name: 'WorkGrid',
-    components: {
-        WorkGridItem
-    }
-}
 </script>
 
 <template>

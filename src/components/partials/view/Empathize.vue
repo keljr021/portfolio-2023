@@ -1,17 +1,12 @@
-<script>
-  import Divider from './../../Divider.vue';
-  export default {
-    name: 'Empathize',
-    props: {
-        color: {
-            type: String,
-            default: '#666'
-        }
-    },
-    components: {
-        Divider
-    }
-}
+<script setup>
+import Divider from './../../Divider.vue';
+
+defineProps({
+  color: {
+    type: String,
+    default: '#666'
+  }
+});
 </script>
 
 <template>

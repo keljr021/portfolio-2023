@@ -1,4 +1,4 @@
-<script>
+<script setup>
   import WorkImage from '../partials/WorkImage.vue';
   import ViewTitleBanner from '../partials/ViewTitleBanner.vue';
   import Overview from '@/components/partials/view/Overview.vue';
@@ -8,55 +8,23 @@
   import Evaluate from '@/components/partials/view/Evaluate.vue';
   import Solution from '@/components/partials/view/Solution.vue';
   import ViewImage from './../partials/ViewImage.vue';
-  export default {
-    name: 'Reys ',
-    data() {
-      return {
-        wireframeUrl: 'https://www.figma.com/proto/VaAdj9uN0B0Oh85trN10t6/Mexican-Restaurant-App---Lo-Fi-Prototype?node-id=1-6&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A6',
-        prototypeUrl: 'https://www.figma.com/proto/5NxCYVA06z3PUwJN9qYVR1/Mexican-Restaurant-App---Revised?node-id=140%3A485&scaling=scale-down&page-id=140%3A2&starting-point-node-id=140%3A485',
-        caseStudyUrl: 'https://docs.google.com/presentation/d/1L7N0_CG95WT4dYPjiDQqjJcviKUniSmyCGsc_-OxTvg/edit?usp=sharing'
-      }
-    },
-    emits: [
-      'set-image',
-      'window-open',
-      'toggle-banner'
-    ],
-    props: {
-      primaryColor: {
-        type: String,
-        default: '#666'
-      },
-      secondaryColor: {
-        type: String,
-        default: '#aaa'
-      },
-      showBanner: {
-        type: Boolean,
-        default: false
-      },
-    },
-    methods: {
-      windowOpen(input) {
-        this.$emit('window-open', input);
-      },
-      toggleBanner(input) {
-        this.$emit('toggle-banner', input);
-      },
+  const wireframeUrl = 'https://www.figma.com/proto/VaAdj9uN0B0Oh85trN10t6/Mexican-Restaurant-App---Lo-Fi-Prototype?node-id=1-6&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A6';
+  const prototypeUrl = 'https://www.figma.com/proto/5NxCYVA06z3PUwJN9qYVR1/Mexican-Restaurant-App---Revised?node-id=140%3A485&scaling=scale-down&page-id=140%3A2&starting-point-node-id=140%3A485';
+  const caseStudyUrl = 'https://docs.google.com/presentation/d/1L7N0_CG95WT4dYPjiDQqjJcviKUniSmyCGsc_-OxTvg/edit?usp=sharing';
+  const emit = defineEmits(['set-image', 'window-open', 'toggle-banner']);
+  defineProps({
+    primaryColor: { type: String, default: '#666' },
+    secondaryColor: { type: String, default: '#aaa' },
+    showBanner: { type: Boolean, default: false }
+  });
 
-    },
-    components: {
-      ViewTitleBanner,
-      Overview,
-      Define,
-      Empathize,
-      Evaluate,
-      Ideate,
-      Solution,
-      WorkImage,
-      ViewImage
-    }
-}
+  function windowOpen(input) {
+    emit('window-open', input);
+  }
+
+  function toggleBanner(input) {
+    emit('toggle-banner', input);
+  }
 </script>
 
 <template>

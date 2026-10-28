@@ -1,4 +1,4 @@
-<script>
+<script setup>
   import WorkImage from '../partials/WorkImage.vue';
   import ViewTitleBanner from '../partials/ViewTitleBanner.vue';
   import Overview from '@/components/partials/view/Overview.vue';
@@ -8,57 +8,25 @@
   import Evaluate from '@/components/partials/view/Evaluate.vue';
   import Solution from '@/components/partials/view/Solution.vue';
   import ViewImage from './../partials/ViewImage.vue';
-  export default {
-    name: 'Four',
-    data() {
-      return {
-        mobileWireframeUrl: 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=13-950&t=i9MK2r2GrtT0j1vu-1&scaling=scale-down&page-id=13%3A596&mode=design',
-        desktopWireframeUrl: 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=3-161&t=zbR1jXXPcPLTNuMU-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A4&mode=design',
-        mobilePrototypeUrl: 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=76-5666&t=V6DdFKCvilGcjKaA-1&scaling=scale-down-width&page-id=76%3A3524&starting-point-node-id=78%3A1674&mode=design',
-        desktopPrototypeUrl: 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=28-242&t=7r8PqfSf9rv4qlZX-1&scaling=min-zoom&page-id=28%3A187&starting-point-node-id=28%3A242&mode=design',
-        caseStudyUrl: 'https://docs.google.com/presentation/d/11AmaJsV7683gmRCD8ctkhfBbgtaMJRarI9DvzXZhG2Q/edit?usp=sharing'
-      }
-    },
-    emits: [
-      'set-image',
-      'window-open',
-      'toggle-banner'
-    ],
-    props: {
-      primaryColor: {
-        type: String,
-        default: '#666'
-      },
-      secondaryColor: {
-        type: String,
-        default: '#aaa'
-      },
-      showBanner: {
-        type: Boolean,
-        default: false
-      },
-    },
-    methods: {
-      windowOpen(input) {
-        this.$emit('window-open', input);
-      },
-      toggleBanner(input) {
-        this.$emit('toggle-banner', input);
-      },
+  const mobileWireframeUrl = 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=13-950&t=i9MK2r2GrtT0j1vu-1&scaling=scale-down&page-id=13%3A596&mode=design';
+  const desktopWireframeUrl = 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=3-161&t=zbR1jXXPcPLTNuMU-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A4&mode=design';
+  const mobilePrototypeUrl = 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=76-5666&t=V6DdFKCvilGcjKaA-1&scaling=scale-down-width&page-id=76%3A3524&starting-point-node-id=78%3A1674&mode=design';
+  const desktopPrototypeUrl = 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=28-242&t=7r8PqfSf9rv4qlZX-1&scaling=min-zoom&page-id=28%3A187&starting-point-node-id=28%3A242&mode=design';
+  const caseStudyUrl = 'https://docs.google.com/presentation/d/11AmaJsV7683gmRCD8ctkhfBbgtaMJRarI9DvzXZhG2Q/edit?usp=sharing';
+  const emit = defineEmits(['set-image', 'window-open', 'toggle-banner']);
+  defineProps({
+    primaryColor: { type: String, default: '#666' },
+    secondaryColor: { type: String, default: '#aaa' },
+    showBanner: { type: Boolean, default: false }
+  });
 
-    },
-    components: {
-      ViewTitleBanner,
-      Overview,
-      Define,
-      Empathize,
-      Evaluate,
-      Ideate,
-      Solution, 
-      WorkImage,
-      ViewImage
+  function windowOpen(input) {
+    emit('window-open', input);
   }
-}
+
+  function toggleBanner(input) {
+    emit('toggle-banner', input);
+  }
 </script>
 
 <template>

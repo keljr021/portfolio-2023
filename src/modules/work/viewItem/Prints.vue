@@ -1,4 +1,4 @@
-<script>
+<script setup>
   import WorkImage from '../partials/WorkImage.vue';
   import ViewTitleBanner from '../partials/ViewTitleBanner.vue';
   import Overview from '@/components/partials/view/Overview.vue';
@@ -8,59 +8,26 @@
   import Evaluate from '@/components/partials/view/Evaluate.vue';
   import Solution from '@/components/partials/view/Solution.vue';
   import ViewImage from './../partials/ViewImage.vue';
-  export default {
-    name: 'Prints',
-    data() {
-      return {
-        mobileWireframeUrl: 'https://www.figma.com/proto/Q3vhPUsXjeRLio6iVKsHDs/Prints-Webcomics-and-Hosting?page-id=8%3A1357&node-id=14-757&node-type=FRAME&viewport=795%2C173%2C0.14&t=Udh1mDTfCneyaL3e-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=14%3A757',
-        desktopWireframeUrl: 'https://www.figma.com/proto/Q3vhPUsXjeRLio6iVKsHDs/Prints-Webcomics-and-Hosting?page-id=0%3A1&node-id=1-4&node-type=CANVAS&viewport=632%2C280%2C0.12&t=FXdqCFvsTBz0Iizo-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A4',
-        mobilePrototypeUrl: 'https://www.figma.com/proto/Q3vhPUsXjeRLio6iVKsHDs/Prints-Webcomics-and-Hosting?page-id=123%3A6806&node-id=123-6807&node-type=FRAME&viewport=885%2C976%2C0.3&t=Er2KESzw9pppFQTB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=123%3A6807',
-        desktopPrototypeUrl: 'https://www.figma.com/proto/Q3vhPUsXjeRLio6iVKsHDs/Prints-Webcomics-and-Hosting?page-id=30%3A1292&node-id=30-1293&node-type=FRAME&viewport=1018%2C386%2C0.15&t=7rVDl1AC6erlbujd-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=30%3A1293',
-        caseStudyUrl: 'https://docs.google.com/presentation/d/1z19usKB6X4M1UkUDd9nJR8McTN70s8uCAhEH86uzqX0/edit?usp=sharing',
-        githubUrl: 'https://github.com/keljr021/prints-webcomics',
+  const mobileWireframeUrl = 'https://www.figma.com/proto/Q3vhPUsXjeRLio6iVKsHDs/Prints-Webcomics-and-Hosting?page-id=8%3A1357&node-id=14-757&node-type=FRAME&viewport=795%2C173%2C0.14&t=Udh1mDTfCneyaL3e-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=14%3A757';
+  const desktopWireframeUrl = 'https://www.figma.com/proto/Q3vhPUsXjeRLio6iVKsHDs/Prints-Webcomics-and-Hosting?page-id=0%3A1&node-id=1-4&node-type=CANVAS&viewport=632%2C280%2C0.12&t=FXdqCFvsTBz0Iizo-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A4';
+  const mobilePrototypeUrl = 'https://www.figma.com/proto/Q3vhPUsXjeRLio6iVKsHDs/Prints-Webcomics-and-Hosting?page-id=123%3A6806&node-id=123-6807&node-type=FRAME&viewport=885%2C976%2C0.3&t=Er2KESzw9pppFQTB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=123%3A6807';
+  const desktopPrototypeUrl = 'https://www.figma.com/proto/Q3vhPUsXjeRLio6iVKsHDs/Prints-Webcomics-and-Hosting?page-id=30%3A1292&node-id=30-1293&node-type=FRAME&viewport=1018%2C386%2C0.15&t=7rVDl1AC6erlbujd-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=30%3A1293';
+  const caseStudyUrl = 'https://docs.google.com/presentation/d/1z19usKB6X4M1UkUDd9nJR8McTN70s8uCAhEH86uzqX0/edit?usp=sharing';
+  const githubUrl = 'https://github.com/keljr021/prints-webcomics';
+  const emit = defineEmits(['set-image', 'window-open', 'toggle-banner']);
+  defineProps({
+    primaryColor: { type: String, default: '#666' },
+    secondaryColor: { type: String, default: '#aaa' },
+    showBanner: { type: Boolean, default: false }
+  });
 
-      }
-    },
-    emits: [
-      'set-image',
-      'window-open',
-      'toggle-banner'
-    ],
-    props: {
-      primaryColor: {
-        type: String,
-        default: '#666'
-      },
-      secondaryColor: {
-        type: String,
-        default: '#aaa'
-      },
-      showBanner: {
-        type: Boolean,
-        default: false
-      },
-    },
-    methods: {
-      windowOpen(input) {
-        this.$emit('window-open', input);
-      },
-      toggleBanner(input) {
-        this.$emit('toggle-banner', input);
-      },
-
-    },
-    components: {
-      ViewTitleBanner,
-      Overview,
-      Define,
-      Empathize,
-      Evaluate,
-      Ideate,
-      Solution, 
-      WorkImage,
-      ViewImage
+  function windowOpen(input) {
+    emit('window-open', input);
   }
-}
+
+  function toggleBanner(input) {
+    emit('toggle-banner', input);
+  }
 </script>
 
 <template>

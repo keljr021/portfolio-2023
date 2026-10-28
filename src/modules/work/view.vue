@@ -1,4 +1,7 @@
-<script>
+<script setup>
+  import { ref } from 'vue';
+  import { useDisplay } from 'vuetify';
+  import { onBeforeRouteUpdate, useRoute, useRouter } from 'vue-router';
   import Prints from './viewItem/Prints.vue';
   import Four from './viewItem/Four.vue';
   import Mcs from './viewItem/Mcs.vue';
@@ -12,92 +15,67 @@
   import Vue from './viewItem/Vue.vue';
   import Footer from '@/components/Footer.vue'
 
-  export default {
-    name: 'View',
-    data() {
-      return {
-        viewIdArray: [
-          'prints',
-          'four',
-          'mcs',
-          'torch',
-          'lemon',
-          'reys',
-          'ifolio',
-          'ss',
-          's4s',
-          'react',
-          'vue'
-        ],
-        previousView: null,
-        nextView: null,
-        showBanner: true,
-      }
-    },
-    methods: {
-      scrollToTop() {
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth'});
-      },
-      setPreviousView(currentId) {
-        let currentIdx = this.viewIdArray.indexOf(currentId);
-        let target = null;
+  const viewIdArray = [
+    'prints',
+    'four',
+    'mcs',
+    'torch',
+    'lemon',
+    'reys',
+    'ifolio',
+    'ss',
+    's4s',
+    'react',
+    'vue'
+  ];
+  const previousView = ref(null);
+  const nextView = ref(null);
+  const showBanner = ref(true);
+  const route = useRoute();
+  const router = useRouter();
+  const display = useDisplay();
 
-        if (currentIdx - 1 > -1) 
-          target = currentIdx - 1;
-        
-        if (target !== null)
-          this.previousView = this.viewIdArray[target];
-      },
-      setNextView(currentId) {
-        let currentIdx = this.viewIdArray.indexOf(currentId);
-        let target = null;
+  function scrollToTop() {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }
 
-        if (currentIdx + 1 < this.viewIdArray.length) 
-          target = currentIdx + 1;
-        
-        if (target !== null)
-          this.nextView = this.viewIdArray[target];
-      },
-      goToView(viewId) {
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant'});
-        this.$router.push({ name: 'view', params: { id: viewId } });
-      },
-      windowOpen(input) {
-        window.open(input, '_blank');
-      },
-      toggleBanner(input) {
-        this.showBanner = input;
-      },
-    },
-    created() {
-      this.setPreviousView(this.$route.params.id);
-      this.setNextView(this.$route.params.id);
+  function setPreviousView(currentId) {
+    const currentIdx = viewIdArray.indexOf(currentId);
+    const target = currentIdx - 1;
 
-      if (this.$vuetify.display.smAndDown)
-        this.showBanner = false;
-    },
-    beforeRouteUpdate(to) {
-      this.previousView = null;
-      this.nextView = null;
+    if (target > -1) previousView.value = viewIdArray[target];
+  }
 
-      this.setPreviousView(to.params.id);
-      this.setNextView(to.params.id);
-    },
-    components: {
-      Prints,
-      Four,
-      Mcs,
-      Torch,
-      Lemon,
-      Reys,
-      Ifolio,
-      Ss,
-      S4s,
-      React,
-      Vue,
-      Footer
-    }
-}
+  function setNextView(currentId) {
+    const currentIdx = viewIdArray.indexOf(currentId);
+    const target = currentIdx + 1;
+
+    if (target < viewIdArray.length) nextView.value = viewIdArray[target];
+  }
+
+  function goToView(viewId) {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    router.push({ name: 'view', params: { id: viewId } });
+  }
+
+  function windowOpen(input) {
+    window.open(input, '_blank');
+  }
+
+  function toggleBanner(input) {
+    showBanner.value = input;
+  }
+
+  setPreviousView(route.params.id);
+  setNextView(route.params.id);
+  if (display.smAndDown.value) showBanner.value = false;
+
+  onBeforeRouteUpdate((to) => {
+    previousView.value = null;
+    nextView.value = null;
+    setPreviousView(to.params.id);
+    setNextView(to.params.id);
+  });
 </script>
 
 <template>

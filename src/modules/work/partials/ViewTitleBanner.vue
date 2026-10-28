@@ -1,77 +1,59 @@
-<script>
-  import Divider from '@/components/Divider.vue';
-  export default {
-    name: 'ViewTitleBanner',
-    data() {
-      return {}
-    },
-    props: {
-        backgroundColor: {
-            type: String,
-            default: '#666'
-        },
-        textColor: {
-            type: String,
-            default: 'white'
-        },
-        title: String,
-        subtitle: String,
-        role: String,
-        client: String,
-        tools: String,
-        date: String,
-        prototypeUrl: {
-            type: String,
-            default: null
-        },
-        mobilePrototypeUrl: String,
-        desktopPrototypeUrl: String,
-        siteUrl: String,
-        caseStudyUrl: String,
-        githubUrl: String,
-        imageSrc: String,
-        mobileSrc: String,
-        isMobileImg: {
-            type: Boolean,
-            default: false
-        },
-        showBanner: {
-            type: Boolean,
-            default: true
-        }
-    },
-    emits: [
-        'window-open',
-        'toggle-banner',
-    ],
-    computed: {
-        showPointer() {
-            return this.siteUrl || this.prototypeUrl || (this.desktopPrototypeUrl || this.mobilePrototypeUrl);
-        }
-    },
-    methods: {
-        goToPrototype(inputUrl) {
-            let url = null;
+<script setup>
+import { computed } from 'vue';
+import Divider from '@/components/Divider.vue';
 
-            if (this.siteUrl) url = this.siteUrl;
-            else if (this.prototypeUrl) url = this.prototypeUrl;
-            else url = inputUrl;
+const props = defineProps({
+  backgroundColor: {
+    type: String,
+    default: '#666'
+  },
+  textColor: {
+    type: String,
+    default: 'white'
+  },
+  title: String,
+  subtitle: String,
+  role: String,
+  client: String,
+  tools: String,
+  date: String,
+  prototypeUrl: {
+    type: String,
+    default: null
+  },
+  mobilePrototypeUrl: String,
+  desktopPrototypeUrl: String,
+  siteUrl: String,
+  caseStudyUrl: String,
+  githubUrl: String,
+  imageSrc: String,
+  mobileSrc: String,
+  isMobileImg: {
+    type: Boolean,
+    default: false
+  },
+  showBanner: {
+    type: Boolean,
+    default: true
+  }
+});
 
-            return this.$emit('window-open', url);
-        },
-        expand() {
-            this.$emit('toggle-banner', true);
-        },
-        collapse() {
-            this.$emit('toggle-banner', false);
-        }
-    },
-    mounted() {
-     
-    },
-    components: {
-      Divider
-    }
+const emit = defineEmits(['window-open', 'toggle-banner']);
+const showPointer = computed(() =>
+  props.siteUrl || props.prototypeUrl || props.desktopPrototypeUrl || props.mobilePrototypeUrl
+);
+
+function goToPrototype(inputUrl) {
+  const url = props.siteUrl || props.prototypeUrl || inputUrl;
+  emit('window-open', url);
+}
+
+function expand() {
+  emit('toggle-banner', true);
+}
+
+function collapse() {
+  emit('toggle-banner', false);
 }
 </script>
 

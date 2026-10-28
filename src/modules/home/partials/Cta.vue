@@ -1,27 +1,17 @@
-<script>
+<script setup>
 import CtaText from './CtaText.vue'
 import CtaMenu from './CtaMenu.vue'
 import Footer from '@/components/Footer.vue'
 
-export default {
-    name: 'cta',
-    props: {
-        navItems: Array,
-        socialIconsArray: Array
-    },
-    emits: [
-        'scrollTo'
-    ],
-    methods: {
-        scrollTo(input) {
-            this.$emit('scrollTo', input);
-        },
-    },
-    components: {
-        CtaText,
-        CtaMenu,
-        Footer
-    }
+defineProps({
+  navItems: Array,
+  socialIconsArray: Array
+});
+
+const emit = defineEmits(['scrollTo']);
+
+function scrollTo(input) {
+  emit('scrollTo', input);
 }
 </script>
 

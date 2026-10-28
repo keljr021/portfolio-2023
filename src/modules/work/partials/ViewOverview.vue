@@ -1,21 +1,16 @@
-<script>
-  import Divider from './Divider.vue';
-  export default {
-    name: 'ViewOverview',
-    props: {
-        color: {
-            type: String,
-            default: '#666'
-        },
-        noDivider: {
-            type: Boolean,
-            default: false
-        }
-    },
-    components: {
-        Divider
-    }
-}
+<script setup>
+import Divider from './Divider.vue';
+
+defineProps({
+  color: {
+    type: String,
+    default: '#666'
+  },
+  noDivider: {
+    type: Boolean,
+    default: false
+  }
+});
 </script>
 
 <template>

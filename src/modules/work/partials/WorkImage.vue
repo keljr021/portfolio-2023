@@ -1,22 +1,19 @@
-<script>
-export default {
-    name: 'workImage',
-    props: {
-        image: String,
-        caption: String,
-        width: String,
-        imageHeight: String
-    },
-    computed: {
-        imageWidth() {
-            if (this.$vuetify.display.xs) return "100% important";
-            else {
-                if (this.width) return this.width;
-                else return '';
-            }
-        }
-    }
-}
+<script setup>
+import { computed } from 'vue';
+import { useDisplay } from 'vuetify';
+
+const props = defineProps({
+  image: String,
+  caption: String,
+  width: String,
+  imageHeight: String
+});
+
+const display = useDisplay();
+const imageWidth = computed(() => {
+  if (display.xs.value) return '100% important';
+  return props.width || '';
+});
 </script>
 
 <template>

@@ -1,13 +1,10 @@
-<script>
-export default {
-    name: 'SkillsWork',
-    props: {
-        title: String,
-        location: String,
-        date: String,
-        desc: Array
-    }
-}
+<script setup>
+defineProps({
+  title: String,
+  location: String,
+  date: String,
+  desc: Array
+});
 </script>
 
 <template>

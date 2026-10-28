@@ -1,18 +1,10 @@
-<script>
+<script setup>
 import CtaMenu from './CtaMenu.vue'
-export default {
-    name: 'ctaText',
-    emits: [
-        'scrollTo'
-    ],
-    methods: {
-        scrollTo(input) {
-            this.$emit('scrollTo', input)
-        }
-    },
-    components: {
-        CtaMenu
-    }
+
+const emit = defineEmits(['scrollTo']);
+
+function scrollTo(input) {
+  emit('scrollTo', input);
 }
 </script>
 

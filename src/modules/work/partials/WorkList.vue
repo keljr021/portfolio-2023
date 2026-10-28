@@ -1,20 +1,10 @@
-<script>
+<script setup>
   import WorkListItem from './WorkListItem.vue';
 
-  export default {
-    name: 'WorkGrid',
-    data() {
-        return {
-            listWidth: "300"
-        }
-    },
-    props: {
-      workType: String
-    },
-    components: {
-        WorkListItem
-    }
-}
+  const listWidth = '300';
+  defineProps({
+    workType: String
+  });
 </script>
 
 <template>

@@ -1,62 +1,32 @@
-<script>
+<script setup>
   import Navbar from '@/components/Navbar.vue';
   import { ref } from 'vue';
+  import { useRoute } from 'vue-router';
 
   const theme = ref('light');
+  const route = useRoute();
 
-  export default {
-    name: 'app',
-    data() {
-      return {
-        navItems: [
-          {
-            className: 'cta',
-            text: 'Home'
-          },
-          {
-            classname: 'work',
-            text: 'Work'
-          },
-          {
-            className: 'about',
-            text: 'About'
-          },
-          {
-            className: 'contact',
-            text: 'Contact'
-          },
-          {
-            className: 'resume',
-            text: 'Resume'
-          }
-        ]
-      }
-    },
-    methods: {
-      scrollTo(input) {
-        if (input === 'resume') 
-          window.open('https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=sharing', '_blank');
-        else {
-        let el = document.getElementsByClassName(input)[0];
-          if(el) 
-            el.scrollIntoView({ behavior: 'smooth', inline: 'start' });
-        }
-      }
-    },
-    mounted() {
-      let input = null;
-      if (input)
-        this.scrollTo(input);
-    },
-    components: {
-      Navbar
+  const navItems = [
+    { className: 'cta', text: 'Home' },
+    { classname: 'work', text: 'Work' },
+    { className: 'about', text: 'About' },
+    { className: 'contact', text: 'Contact' },
+    { className: 'resume', text: 'Resume' }
+  ];
+
+  function scrollTo(input) {
+    if (input === 'resume') {
+      window.open('https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=sharing', '_blank');
+    } else {
+      const el = document.getElementsByClassName(input)[0];
+      if (el) el.scrollIntoView({ behavior: 'smooth', inline: 'start' });
     }
-}
+  }
 </script>
 
 <template>
   <v-app>
-    <Navbar :onHome="this.$route.name === 'home'" @scrollTo="scrollTo" />
+    <Navbar :onHome="route.name === 'home'" @scrollTo="scrollTo" />
 
     <!-- Gives spacing between navigation and content below -->
     <!-- <v-spacer v-if="this.$vuetify.display.smAndDown" style="height:41.5px"></v-spacer> -->

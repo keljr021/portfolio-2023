@@ -1,4 +1,4 @@
-<script>
+<script setup>
   import WorkImage from '../partials/WorkImage.vue';
   import ViewTitleBanner from '../partials/ViewTitleBanner.vue';
   import Overview from '@/components/partials/view/Overview.vue';
@@ -8,58 +8,24 @@
   import Evaluate from '@/components/partials/view/Evaluate.vue';
   import Solution from '@/components/partials/view/Solution.vue';
   import ViewImage from './../partials/ViewImage.vue';
-  export default {
-    name: 'Mcs',
-    data() {
-      return {
-        wireframeUrl: 'https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/ka-clean.com?type=design&node-id=14-287&scaling=scale-down&page-id=14%3A227&starting-point-node-id=14%3A287',
-        prototypeUrl: 'https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/ka-clean.com?type=design&node-id=86-243&scaling=scale-down&page-id=86%3A130&starting-point-node-id=86%3A243',
-        caseStudyUrl: 'https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing',
-        githubUrl: 'https://github.com/keljr021/ka-clean-2023'
-      }
-    },
-    emits: [
-      'set-image',
-      'window-open',
-      'open-lofi',
-      'open-hifi',
-      'toggle-banner'
-    ],
-    props: {
-      primaryColor: {
-        type: String,
-        default: '#666'
-      },
-      secondaryColor: {
-        type: String,
-        default: '#aaa'
-      },
-      showBanner: {
-        type: Boolean,
-        default: false
-      },
-    },
-    methods: {
-      windowOpen(input) {
-        this.$emit('window-open', input);
-      },
-      toggleBanner(input) {
-        this.$emit('toggle-banner', input);
-      },
+  const wireframeUrl = 'https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/ka-clean.com?type=design&node-id=14-287&scaling=scale-down&page-id=14%3A227&starting-point-node-id=14%3A287';
+  const prototypeUrl = 'https://www.figma.com/proto/dM8f6jwpB5UK3Z17O5WXbN/ka-clean.com?type=design&node-id=86-243&scaling=scale-down&page-id=86%3A130&starting-point-node-id=86%3A243';
+  const caseStudyUrl = 'https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing';
+  const githubUrl = 'https://github.com/keljr021/ka-clean-2023';
+  const emit = defineEmits(['set-image', 'window-open', 'open-lofi', 'open-hifi', 'toggle-banner']);
+  defineProps({
+    primaryColor: { type: String, default: '#666' },
+    secondaryColor: { type: String, default: '#aaa' },
+    showBanner: { type: Boolean, default: false }
+  });
 
-    },
-    components: {
-      ViewTitleBanner,
-      Overview,
-      Define,
-      Empathize,
-      Evaluate,
-      Ideate,
-      Solution,
-      WorkImage,
-      ViewImage
-    }
-}
+  function windowOpen(input) {
+    emit('window-open', input);
+  }
+
+  function toggleBanner(input) {
+    emit('toggle-banner', input);
+  }
 </script>
 
 <template>

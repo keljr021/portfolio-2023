@@ -1,12 +1,9 @@
-<script>
-export default {
-    name: 'SkillsEdu',
-    props: {
-        title: String,
-        location: String,
-        date: String
-    }
-}
+<script setup>
+defineProps({
+  title: String,
+  location: String,
+  date: String
+});
 </script>
 
 <template>

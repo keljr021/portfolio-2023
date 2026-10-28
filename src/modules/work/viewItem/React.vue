@@ -1,49 +1,23 @@
-<script>
+<script setup>
   import ViewTitleBanner from '../partials/ViewTitleBanner.vue';
   import WorkImage from '../partials/WorkImage.vue';
   import Overview from '@/components/partials/view/Overview.vue';
-  export default {
-    name: 'React ',
-    data() {
-      return {
-        siteUrl: 'http://poc.kelvin-m.com/react-calculator/',
-        githubUrl: 'https://github.com/keljr021/react-calculator'
-      }
-    },
-    emits: [
-      'set-image',
-      'window-open',
-      'toggle-banner'
-    ],
-    props: {
-      primaryColor: {
-        type: String,
-        default: '#666'
-      },
-      secondaryColor: {
-        type: String,
-        default: '#aaa'
-      },
-      showBanner: {
-        type: Boolean,
-        default: false
-      }
-    },
-    methods: {
-      windowOpen(input) {
-        this.$emit('window-open', input);
-      },
-      toggleBanner(input) {
-        this.$emit('toggle-banner', input);
-      },
+  const siteUrl = 'http://poc.kelvin-m.com/react-calculator/';
+  const githubUrl = 'https://github.com/keljr021/react-calculator';
+  const emit = defineEmits(['set-image', 'window-open', 'toggle-banner']);
+  defineProps({
+    primaryColor: { type: String, default: '#666' },
+    secondaryColor: { type: String, default: '#aaa' },
+    showBanner: { type: Boolean, default: false }
+  });
 
-    },
-    components: {
-      ViewTitleBanner,
-      Overview,
-      WorkImage
-    }
-}
+  function windowOpen(input) {
+    emit('window-open', input);
+  }
+
+  function toggleBanner(input) {
+    emit('toggle-banner', input);
+  }
 </script>
 
 <template>

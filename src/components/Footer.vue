@@ -1,21 +1,17 @@
-<script>
-export default {
-    name: 'Footer',
-    props: {
-      fixed: {
-        type: Boolean,
-        default: false
-      },
-      onHomePage: {
-        type: Boolean,
-        default: false
-      }
-    },
-    methods: {
-      openWindow(input) {
-        window.open(input, '_blank');
-      }
-    }
+<script setup>
+defineProps({
+  fixed: {
+    type: Boolean,
+    default: false
+  },
+  onHomePage: {
+    type: Boolean,
+    default: false
+  }
+});
+
+function openWindow(input) {
+  window.open(input, '_blank');
 }
 </script>
 

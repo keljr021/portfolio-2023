@@ -1,36 +1,28 @@
-<script>
-  import Divider from './../../Divider.vue';
-  export default {
-    name: 'Ideate',
-    emits: [
-      'open-lofi',
-      'open-hifi'
-    ],
-    props: {
-        color: {
-            type: String,
-            default: '#666'
-        },
-        hasLofi: {
-            type: Boolean,
-            default: false
-        },
-        hasHifi: {
-            type: Boolean,
-            default: false
-        }
-    },
-    methods: {
-        openLofi() {
-            if (this.hasLofi) this.$emit('open-lofi');
-        },
-        openHifi() {
-            if (this.hasHifi) this.$emit('open-hifi');
-        },
-    },
-    components: {
-        Divider
-    }
+<script setup>
+import Divider from './../../Divider.vue';
+
+const emit = defineEmits(['open-lofi', 'open-hifi']);
+const props = defineProps({
+  color: {
+    type: String,
+    default: '#666'
+  },
+  hasLofi: {
+    type: Boolean,
+    default: false
+  },
+  hasHifi: {
+    type: Boolean,
+    default: false
+  }
+});
+
+function openLofi() {
+  if (props.hasLofi) emit('open-lofi');
+}
+
+function openHifi() {
+  if (props.hasHifi) emit('open-hifi');
 }
 </script>
 

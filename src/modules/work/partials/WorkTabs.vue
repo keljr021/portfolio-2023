@@ -1,34 +1,28 @@
-<script>
-  export default {
-    name: 'WorkTabs',
-    data() {
-      return {
-        selectedColor: '#18184d',
-        selectedTab: 'ui'
-      }
-    },
-    emits: [
-        'scroll-to',
-        'set-tab'
-    ],
-    props: {
-        tab: {
-            type: String,
-            default: 'ui'
-        }
-    },
-    watch: {
-        selectedTab(newVal, oldVal) {
-            if (oldVal !== newVal) this.$emit('set-tab', newVal);
-        },
-        tab() {
-            this.selectedTab = this.tab;
-        }
-    },
-    mounted() {
-        this.selectedTab = this.tab ? this.tab : 'ui';
-    }
-}
+<script setup>
+import { onMounted, ref, watch } from 'vue';
+
+const emit = defineEmits(['scroll-to', 'set-tab']);
+const props = defineProps({
+  tab: {
+    type: String,
+    default: 'ui'
+  }
+});
+
+const selectedColor = '#18184d';
+const selectedTab = ref('ui');
+
+watch(selectedTab, (newVal, oldVal) => {
+  if (oldVal !== newVal) emit('set-tab', newVal);
+});
+
+watch(() => props.tab, (newVal) => {
+  selectedTab.value = newVal;
+});
+
+onMounted(() => {
+  selectedTab.value = props.tab ? props.tab : 'ui';
+});
 </script>
 
 <template>
@@ -43,15 +37,15 @@
 
             <v-list>
                 <v-list-item>
-                    <v-list-item-title class="py-2" @click="this.$emit('scroll-to', 'ui')">
+                    <v-list-item-title class="py-2" @click="emit('scroll-to', 'ui')">
                         <v-icon start>mdi-folder-account</v-icon>
                         UI/UX Design
                     </v-list-item-title>
-                    <v-list-item-title class="py-2" @click="this.$emit('scroll-to', 'frontend')">
+                    <v-list-item-title class="py-2" @click="emit('scroll-to', 'frontend')">
                         <v-icon start>mdi-code-tags</v-icon>
                         Front-End
                     </v-list-item-title>
-                    <v-list-item-title class="py-2" @click="this.$emit('scroll-to', 'logos')">
+                    <v-list-item-title class="py-2" @click="emit('scroll-to', 'logos')">
                         <v-icon start>mdi-drawing</v-icon>
                         Logos
                     </v-list-item-title>
@@ -67,15 +61,15 @@
             direction="vertical"
             :color="selectedColor"
         >
-            <v-tab value="ui" @click="this.$emit('scroll-to', 'ui')">
+            <v-tab value="ui" @click="emit('scroll-to', 'ui')">
                 <v-icon start>mdi-folder-account</v-icon>
                 UI/UX Design
             </v-tab>
-            <v-tab value="frontend" @click="this.$emit('scroll-to', 'frontend')">
+            <v-tab value="frontend" @click="emit('scroll-to', 'frontend')">
                 <v-icon start>mdi-code-tags</v-icon>
                 Front-End
             </v-tab>
-            <v-tab value="logos" @click="this.$emit('scroll-to', 'logos')">
+            <v-tab value="logos" @click="emit('scroll-to', 'logos')">
                 <v-icon start>mdi-drawing</v-icon>
                 Logos
             </v-tab>

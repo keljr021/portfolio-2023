@@ -1,16 +1,10 @@
-<script>
-export default {
-    name: 'Divider',
-    data() {
-      return {}
-    },
-    props: {
-      color: {
-        type: String,
-        default: '#666'
-      }
-    }
-}
+<script setup>
+defineProps({
+  color: {
+    type: String,
+    default: '#666'
+  }
+});
 </script>
 
 <template>

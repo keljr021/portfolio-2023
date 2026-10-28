@@ -1,4 +1,4 @@
-<script>
+<script setup>
   import WorkImage from '../partials/WorkImage.vue';
   import ViewTitleBanner from '../partials/ViewTitleBanner.vue';
   import Overview from '@/components/partials/view/Overview.vue';
@@ -8,57 +8,24 @@
   import Evaluate from '@/components/partials/view/Evaluate.vue';
   import Solution from '@/components/partials/view/Solution.vue';
   import ViewImage from './../partials/ViewImage.vue';
-  export default {
-    name: 'Lemon',
-    data() {
-      return {
-        wireframeUrl: 'https://xd.adobe.com/view/25553f55-f5fc-4c50-9954-ab41db3bf124-7006/?fullscreen',
-        desktopPrototypeUrl: 'https://xd.adobe.com/view/39ebb787-4097-4220-85a0-e901d27a116f-6cb8/?fullscreen',
-        mobilePrototypeUrl: 'https://xd.adobe.com/view/39ebb787-4097-4220-85a0-e901d27a116f-6cb8/screen/834dee81-37bd-4411-98b2-023f9a754dce?fullscreen',
-        caseStudyUrl: 'https://docs.google.com/presentation/d/1KkYDj0hg_QahT5ULisc1QjGmakgCmZHS1LnPMD-qadA/edit?usp=sharing'
-      }
-    },
-    emits: [
-      'set-image',
-      'window-open',
-      'toggle-banner'
-    ],
-    props: {
-      primaryColor: {
-        type: String,
-        default: '#666'
-      },
-      secondaryColor: {
-        type: String,
-        default: '#aaa'
-      },
-      showBanner: {
-        type: Boolean,
-        default: false
-      },
+  const wireframeUrl = 'https://xd.adobe.com/view/25553f55-f5fc-4c50-9954-ab41db3bf124-7006/?fullscreen';
+  const desktopPrototypeUrl = 'https://xd.adobe.com/view/39ebb787-4097-4220-85a0-e901d27a116f-6cb8/?fullscreen';
+  const mobilePrototypeUrl = 'https://xd.adobe.com/view/39ebb787-4097-4220-85a0-e901d27a116f-6cb8/screen/834dee81-37bd-4411-98b2-023f9a754dce?fullscreen';
+  const caseStudyUrl = 'https://docs.google.com/presentation/d/1KkYDj0hg_QahT5ULisc1QjGmakgCmZHS1LnPMD-qadA/edit?usp=sharing';
+  const emit = defineEmits(['set-image', 'window-open', 'toggle-banner']);
+  defineProps({
+    primaryColor: { type: String, default: '#666' },
+    secondaryColor: { type: String, default: '#aaa' },
+    showBanner: { type: Boolean, default: false }
+  });
 
-    },
-    methods: {
-      windowOpen(input) {
-        this.$emit('window-open', input);
-      },
-      toggleBanner(input) {
-        this.$emit('toggle-banner', input);
-      },
+  function windowOpen(input) {
+    emit('window-open', input);
+  }
 
-    },
-    components: {
-      ViewTitleBanner,
-      Overview,
-      Define,
-      Empathize,
-      Evaluate,
-      Ideate,
-      Solution,
-      WorkImage,
-      ViewImage
-    }
-}
+  function toggleBanner(input) {
+    emit('toggle-banner', input);
+  }
 </script>
 
 <template>

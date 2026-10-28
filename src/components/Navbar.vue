@@ -1,34 +1,24 @@
-<script>
-export default {
-    name: 'navbar',
-    data() {
-        return {
-            showNavDrawer: false
-        };
-    },
-    props: {
-        logo: String,
-        onHome: {
-            type: Boolean,
-            default: false
-        }
-    },
-    emits: [
-        'scrollTo'
-    ],
-    computed: {
-        mobileNavItems() {
-           return this.navItems.filter(items => items.text);
-        }
-    },
-    methods: {
-        toggleNavDrawer() {
-            this.showNavDrawer = !this.showNavDrawer;
-        },
-        openWindow(link) {
-            window.open(link, '_blank');
-        }
-    }
+<script setup>
+import { ref } from 'vue';
+
+defineProps({
+  logo: String,
+  onHome: {
+    type: Boolean,
+    default: false
+  }
+});
+
+defineEmits(['scrollTo']);
+
+const showNavDrawer = ref(false);
+
+function toggleNavDrawer() {
+  showNavDrawer.value = !showNavDrawer.value;
+}
+
+function openWindow(link) {
+  window.open(link, '_blank');
 }
 </script>
 

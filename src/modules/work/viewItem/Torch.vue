@@ -1,4 +1,4 @@
-<script>
+<script setup>
   import WorkImage from '../partials/WorkImage.vue';
   import ViewTitleBanner from '../partials/ViewTitleBanner.vue';
   import Overview from '@/components/partials/view/Overview.vue';
@@ -8,57 +8,25 @@
   import Evaluate from '@/components/partials/view/Evaluate.vue';
   import Solution from '@/components/partials/view/Solution.vue';
   import ViewImage from './../partials/ViewImage.vue';
-  export default {
-    name: 'Torch',
-    data() {
-      return {
-        mobileWireframeUrl: 'https://www.figma.com/proto/hgMpXvVZJfJno8AiRug0VC/Torch-Mobile-App?node-id=23-3&scaling=scale-down&page-id=23%3A2&starting-point-node-id=23%3A3',
-        desktopWireframeUrl: 'https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=6-6495&scaling=min-zoom&page-id=6%3A6494&starting-point-node-id=6%3A6495',
-        mobilePrototypeUrl: 'https://www.figma.com/proto/hgMpXvVZJfJno8AiRug0VC/Torch-Mobile-App?node-id=58-3934&scaling=scale-down&page-id=58%3A3610&starting-point-node-id=58%3A3934',
-        desktopPrototypeUrl: 'https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A11119&scaling=min-zoom&page-id=28%3A11118&starting-point-node-id=28%3A11119',
-        caseStudyUrl: 'https://docs.google.com/presentation/d/1CbvvBE5rUeZywcQJZRo_OzVhJJSYJrjRe7X77Tes8hE/edit?usp=sharing'
-      }
-    },
-    emits: [
-      'set-image',
-      'window-open',
-      'toggle-banner'
-    ],
-    props: {
-      primaryColor: {
-        type: String,
-        default: '#666'
-      },
-      secondaryColor: {
-        type: String,
-        default: '#aaa'
-      },
-      showBanner: {
-        type: Boolean,
-        default: false
-      },
-    },
-    methods: {
-      windowOpen(input) {
-        this.$emit('window-open', input);
-      },
-      toggleBanner(input) {
-        this.$emit('toggle-banner', input);
-      },
+  const mobileWireframeUrl = 'https://www.figma.com/proto/hgMpXvVZJfJno8AiRug0VC/Torch-Mobile-App?node-id=23-3&scaling=scale-down&page-id=23%3A2&starting-point-node-id=23%3A3';
+  const desktopWireframeUrl = 'https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=6-6495&scaling=min-zoom&page-id=6%3A6494&starting-point-node-id=6%3A6495';
+  const mobilePrototypeUrl = 'https://www.figma.com/proto/hgMpXvVZJfJno8AiRug0VC/Torch-Mobile-App?node-id=58-3934&scaling=scale-down&page-id=58%3A3610&starting-point-node-id=58%3A3934';
+  const desktopPrototypeUrl = 'https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A11119&scaling=min-zoom&page-id=28%3A11118&starting-point-node-id=28%3A11119';
+  const caseStudyUrl = 'https://docs.google.com/presentation/d/1CbvvBE5rUeZywcQJZRo_OzVhJJSYJrjRe7X77Tes8hE/edit?usp=sharing';
+  const emit = defineEmits(['set-image', 'window-open', 'toggle-banner']);
+  defineProps({
+    primaryColor: { type: String, default: '#666' },
+    secondaryColor: { type: String, default: '#aaa' },
+    showBanner: { type: Boolean, default: false }
+  });
 
-    },
-    components: {
-      ViewTitleBanner,
-      Overview,
-      Define,
-      Empathize,
-      Evaluate,
-      Ideate,
-      Solution,
-      WorkImage,
-      ViewImage
-    }
-}
+  function windowOpen(input) {
+    emit('window-open', input);
+  }
+
+  function toggleBanner(input) {
+    emit('toggle-banner', input);
+  }
 </script>
 
 <template>

@@ -1,13 +1,6 @@
-<script>
+<script setup>
 import SkillsWork from './SkillsWork.vue'
 import SkillsEdu from './SkillsEdu.vue'
-export default {
-    name: 'Skills',
-    components: {
-        SkillsWork,
-        SkillsEdu
-    }
-}
 </script>
 
 <template>

@@ -1,35 +1,28 @@
-<script>
-export default {
-    name: 'ViewImage',
-    data() {
-        return {
-        }
-    },
-    props: {
-        src: {
-            type: String,
-            default: null
-        },
-        text: {
-            type: String,
-            default: null
-        },
-        imgWidth: {
-            type: String,
-            default: '100%'
-        },
-        imgHeight: {
-            type: String,
-            default: null
-        }
-    },
-    computed: {
-        isMobile() {
-            return this.$vuetify.display.smAndDown;
-        }
-    },
-    components: {}
-}
+<script setup>
+import { computed } from 'vue';
+import { useDisplay } from 'vuetify';
+
+defineProps({
+  src: {
+    type: String,
+    default: null
+  },
+  text: {
+    type: String,
+    default: null
+  },
+  imgWidth: {
+    type: String,
+    default: '100%'
+  },
+  imgHeight: {
+    type: String,
+    default: null
+  }
+});
+
+const display = useDisplay();
+const isMobile = computed(() => display.smAndDown.value);
 </script>
 <template>
      <v-dialog :fullscreen="isMobile" width="950" class="pa-0 mx-0" :opacity="0.75">

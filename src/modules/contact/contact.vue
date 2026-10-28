@@ -1,20 +1,10 @@
-<script>
+<script setup>
 import ContactForm from './partials/ContactForm.vue'
-export default {
-    name: 'Contact',
-    data() {
-        return {
-            resumeUrl: 'https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=sharing'
-        };
-    },
-    components: {
-        ContactForm
-    },
-    methods: {
-        openWindow(link) {
-            window.open(link, '_blank');
-        },
-    }
+
+const resumeUrl = 'https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=sharing';
+
+function openWindow(link) {
+  window.open(link, '_blank');
 }
 </script>
 
@@ -113,4 +103,3 @@ export default {
     }
 }
 </style>
-
