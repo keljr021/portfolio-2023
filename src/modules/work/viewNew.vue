@@ -4,35 +4,33 @@
   import { useDisplay } from 'vuetify';
   import { onBeforeRouteUpdate, useRoute, useRouter } from 'vue-router';
 
+  import Title from '@/modules/work/partialsNew/Title.vue';
+  import Intro from '@/modules/work/partialsNew/Intro.vue';
+  import Problem from '@/modules/work/partialsNew/Problem.vue';
+  import Research from '@/modules/work/partialsNew/Research.vue';
+  import Design from '@/modules/work/partialsNew/Design.vue';
+  import Accessibility from '@/modules/work/partialsNew/Accessibility.vue';
+  import Development from '@/modules/work/partialsNew/Development.vue';
+  import Results from '@/modules/work/partialsNew/Results.vue';
+  import LessonsLearned from '@/modules/work/partialsNew/LessonsLearned.vue';
+
   const { y } = useScroll(window);
   const currentTab = ref(null);
 
   const showTabs = ref(true);
   const showDevelopment = ref(true);
 
-  const problem = ref(null);
-  const research = ref(null);
-  const design = ref(null);
-  const accessibility = ref(null);
-  const development = ref(null);
-  const results = ref(null);
-
   const previousView = ref(null);
   const nextView = ref(null);
 
-  const sections = [
-    { id: 'problem', element: problem },
-    { id: 'research', element: research },
-    { id: 'design', element: design },
-    { id: 'accessibility', element: accessibility },
-    { id: 'development', element: development },
-    { id: 'results', element: results },
-  ];
+  const sections = ['problem', 'research', 'design', 'accessibility', 'development', 'results'];
+
+  const getSectionCard = (id) => document.getElementById(id)?.closest('.v-card');
 
   const updateCurrentTab = () => {
     const activationPoint = window.innerHeight * 0.35;
     const visibleSections = sections
-      .map(({ id, element }) => ({ id, bounds: element.value?.getBoundingClientRect() }))
+      .map((id) => ({ id, bounds: getSectionCard(id)?.getBoundingClientRect() }))
       .filter(({ bounds }) => bounds && bounds.top < window.innerHeight && bounds.bottom > 0);
 
     const activeSection = visibleSections.reduce((closest, section) => {
@@ -51,9 +49,9 @@
   };
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const card = getSectionCard(id);
+    if (card) {
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
       currentTab.value = id;
     }
   };
@@ -96,71 +94,41 @@
         <div class="overflow-x-hidden overflow-y-auto">
           <v-row>
             <v-col>
-              <v-card class="my-12 pa-4" variant="flat" ref="title" height="300">
-                Title
-              </v-card>
+              <Title />
             </v-col>
           </v-row>
           <v-row>
             <v-col cols="12" sm="12" md="6" lg="6">
-              <v-card class="ma-8 pa-4" variant="flat" height="300">
-                Intro
-              </v-card>
+              <Intro />
             </v-col>
             <v-col cols="12" sm="12" md="6" lg="6">
-              <v-card class="ma-8 pa-4" variant="flat" height="300">
-                <div ref="problem" id="problem" class="overflow-y-auto">
-                  Problem
-                </div>
-              </v-card>
+              <Problem />
             </v-col>
           </v-row>
           <v-row>
             <v-col cols="12" sm="12" md="12" lg="12">
-              <v-card class="ma-8 pa-4 overflow-y-auto" variant="flat" height="300">
-                <div ref="research" id="research" class="overflow-y-auto">
-                  Research
-                </div>
-              </v-card>
+              <Research />
             </v-col>
           </v-row>
           <v-row>
             <v-col cols="12" sm="12" md="12" lg="12">
-              <v-card class="ma-8 pa-4" variant="flat" height="300">
-                <div ref="design" id="design" class="overflow-y-auto">
-                  Design Process
-                </div>
-              </v-card>
+              <Design />
             </v-col>
           </v-row>
           <v-row>
             <v-col cols="12" sm="12" md="12" lg="12">
-              <v-card class="ma-8 pa-4" variant="flat" height="300">
-                <div ref="accessibility" id="accessibility" class="overflow-y-auto">
-                  Accessibility
-                </div>
-              </v-card>
+              <Accessibility />
             </v-col>
           </v-row><v-row v-if="showDevelopment">
             <v-col cols="12" sm="12" md="12" lg="12">
-              <v-card class="ma-8 pa-4" variant="flat" height="300">
-                <div ref="development" id="development" class="overflow-y-auto">
-                  Development
-                </div>
-              </v-card>
+              <Development />
             </v-col>
           </v-row><v-row>
             <v-col cols="12" sm="12" md="6" lg="6">
-              <v-card class="ma-8 pa-4" variant="flat" height="300">
-                <div ref="results" id="results" class="overflow-y-auto">
-                  Results
-                </div>
-              </v-card>
+              <Results />
             </v-col>
             <v-col cols="12" sm="12" md="6" lg="6">
-              <v-card class="ma-8 pa-4" variant="flat" height="300">
-                What I learned
-              </v-card>
+              <LessonsLearned />
             </v-col>
           </v-row>
         </div>
