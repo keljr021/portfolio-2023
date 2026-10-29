@@ -10,9 +10,9 @@ const workType = ref(['all']);
             <v-col>
                 <span class="title-header py-3">Title</span>
                 <span class="mx-4">
-                    <v-chip v-if="workType.includes('all')" size="medium" class="pa-4" color="indigo-darken-3" variant="plain" prepend-icon="mdi-pencil-ruler">Hybrid Work</v-chip>
-                    <v-chip v-if="workType.includes('ux')" size="medium" class="pa-4" color="teal-darken-2" variant="plain" prepend-icon="mdi-palette-outline">UX/UI</v-chip>
-                    <v-chip v-if="workType.includes('frontend')" size="medium" class="pa-4" color="blue-darken-3" variant="plain" prepend-icon="mdi-code-tags">Front-End</v-chip>
+                    <v-chip v-if="workType.includes('all')" size="small" class="pa-4" color="indigo-darken-3" variant="tonal" prepend-icon="mdi-pencil-ruler">Hybrid Work</v-chip>
+                    <v-chip v-if="workType.includes('ux')" size="small" class="pa-4" color="teal-darken-2" variant="tonal" prepend-icon="mdi-palette-outline">UX/UI</v-chip>
+                    <v-chip v-if="workType.includes('frontend')" size="small" class="pa-4" color="blue-darken-3" variant="tonal" prepend-icon="mdi-code-tags">Front-End</v-chip>
                 </span>
             </v-col>
         </v-row>
