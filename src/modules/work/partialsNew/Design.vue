@@ -3,9 +3,13 @@
 </script>
 
 <template>
-    <v-card class="ma-8 pa-4" variant="flat" height="300">
-        <div ref="design" id="design" class="overflow-y-auto">
-            Design Process
-        </div>
-    </v-card>
+    <div ref="design" id="design">
+        <div class="section-header px-8" >Design approach</div>
+
+        <v-card class="ma-8 pa-4" variant="flat" height="300">
+            <div class="overflow-y-auto">
+                x
+            </div>
+        </v-card>
+    </div>
 </template>

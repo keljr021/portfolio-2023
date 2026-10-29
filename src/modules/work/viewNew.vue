@@ -23,14 +23,14 @@
   const previousView = ref(null);
   const nextView = ref(null);
 
-  const sections = ['problem', 'research', 'design', 'accessibility', 'development', 'results'];
+  const sections = ['problem', 'research', 'design', 'development', 'accessibility', 'results'];
 
-  const getSectionCard = (id) => document.getElementById(id)?.closest('.v-card');
+  const getSectionElement = (id) => document.getElementById(id);
 
   const updateCurrentTab = () => {
     const activationPoint = window.innerHeight * 0.35;
     const visibleSections = sections
-      .map((id) => ({ id, bounds: getSectionCard(id)?.getBoundingClientRect() }))
+      .map((id) => ({ id, bounds: getSectionElement(id)?.getBoundingClientRect() }))
       .filter(({ bounds }) => bounds && bounds.top < window.innerHeight && bounds.bottom > 0);
 
     const activeSection = visibleSections.reduce((closest, section) => {
@@ -49,9 +49,9 @@
   };
 
   const scrollToSection = (id) => {
-    const card = getSectionCard(id);
-    if (card) {
-      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const section = getSectionElement(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
       currentTab.value = id;
     }
   };
@@ -83,9 +83,9 @@
         >
           <v-tab value="problem" @click="scrollToSection('problem')">Problem</v-tab>
           <v-tab value="research" @click="scrollToSection('research')">Research</v-tab>
-          <v-tab value="design" @click="scrollToSection('design')">Design Process</v-tab>
-          <v-tab value="accessibility" @click="scrollToSection('accessibility')">Accessibility</v-tab>
+          <v-tab value="design" @click="scrollToSection('design')">Design approach</v-tab>
           <v-tab v-if="showDevelopment" value="development" @click="scrollToSection('development')">Development</v-tab>
+          <v-tab value="accessibility" @click="scrollToSection('accessibility')">Accessibility</v-tab>
           <v-tab value="results" @click="scrollToSection('results')">Results</v-tab>
         </v-tabs>
       </v-col>
@@ -97,33 +97,32 @@
               <Title />
             </v-col>
           </v-row>
-          <v-row>
-            <v-col cols="12" sm="12" md="6" lg="6">
-              <Intro />
-            </v-col>
-            <v-col cols="12" sm="12" md="6" lg="6">
+          <v-row class="justify-space-around">
+            <v-col cols="12" sm="12" md="12" lg="12">
               <Problem />
             </v-col>
           </v-row>
-          <v-row>
+          <v-row class="justify-space-around">
             <v-col cols="12" sm="12" md="12" lg="12">
               <Research />
             </v-col>
           </v-row>
-          <v-row>
+          <v-row class="justify-space-around">
             <v-col cols="12" sm="12" md="12" lg="12">
               <Design />
             </v-col>
           </v-row>
-          <v-row>
-            <v-col cols="12" sm="12" md="12" lg="12">
-              <Accessibility />
-            </v-col>
-          </v-row><v-row v-if="showDevelopment">
+          <v-row v-if="showDevelopment">
             <v-col cols="12" sm="12" md="12" lg="12">
               <Development />
             </v-col>
-          </v-row><v-row>
+          </v-row>
+          <v-row class="justify-space-around">
+            <v-col cols="12" sm="12" md="12" lg="12">
+              <Accessibility />
+            </v-col>
+          </v-row>
+          <v-row class="justify-space-around">
             <v-col cols="12" sm="12" md="6" lg="6">
               <Results />
             </v-col>
@@ -170,7 +169,7 @@
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .bg {
   background-color: #f6f6f6;
   padding: 40px;
@@ -225,92 +224,33 @@
   margin-bottom: 50px;
 }
 
-:deep(.view-banner) {
-  position:fixed;
-  max-height: 100vh;
-  z-index: 2;
-  overflow: hidden;
-  background: #fff;
-  transition: ease-in-out all .2s;
-  padding-right: 0;
-  margin-right: 0;
-  max-width: 26vw;
-  color: #e6e6e6;
-
-  &:hover {
-    overflow-y: auto;
-    background: #f9f9f9;
-  }
+.section-header {
+  font-size: 28px;
 }
 
-:deep(.view-text) {
-  background-color: #f6f6f6;
+.section-caption {
+  font-weight: 500;
+}
+
+p, li {
+    font-size: 1.1em;
+    line-height: 2.5;
+  }
+
+p {
+  padding-bottom: 30px;
+}
+
+ol, ul {
   padding-left: 20px;
-  padding-right: 20px;
-  min-height: calc(85vh - 50px); 
-
-  .view-text-cta {
-    font-size: 36px;
-  }
-  
-  .view-text-title {
-    padding-bottom: 30px;
-    font-size: 24px;
-    font-weight: bold;
-  }
-
-  .view-text-overview {
-    padding: 60px 0;
-  }
-
-  .view-text-section {
-    padding-top: 50px;
-    padding-bottom: 75px;
-  }
-
-  .view-text-section-title {
-    font-size: 1.25em;
-    font-weight: 500;
-    padding: 30px 0;
-
-    &.link {
-      cursor: pointer;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
-  p, li {
-      font-size: 1.1em;
-      line-height: 2.5;
-    }
-
-  p {
-    padding-bottom: 30px;
-  }
-
-  ol, ul {
-    padding-left: 20px;
-  }
-
-  li {
-    padding-bottom: 20px;
-  }
 }
+
+li {
+  padding-bottom: 20px;
+}
+
 
 @media all and (min-width: 769px) and (max-width: 1023px) {
-  :deep(.view-banner) {
-    position:initial;
-    top: 30px;
-    left: 0;
-    max-height: initial;
-    border-right: none;
-    overflow-y: auto;
-    background: #f9f9f9;
-  }
-
   :deep(.view) {
     &.lock-scroll {
       .view-text {
@@ -338,17 +278,6 @@
     }
   }
 
-  :deep(.view-banner) {
-    position:initial;
-    top: 0;
-    left: 0;
-    max-height: initial;
-    max-width: initial;
-    border-right: none;
-    overflow-y: auto;
-    background: #f9f9f9;
-  }
-
   .view-tabs {
     top: 30px;
     left: 0;
@@ -356,18 +285,6 @@
     overflow-x: scroll;
     background: #f9f9f9;
     z-index: 1;
-  }
-
-  :deep(.view-text) {
-    min-height: initial; 
-
-    .view-text-overview {
-      padding: 40px 0 !important;
-    }
-
-    .view-text-section-title {
-      padding-bottom: 50px;
-    }
   }
 }
 </style>

@@ -3,9 +3,13 @@
 </script>
 
 <template>
-    <v-card class="ma-8 pa-4" variant="flat" height="300">
-        <div ref="accessibility" id="accessibility" class="overflow-y-auto">
-            Accessibility
-        </div>
-    </v-card>
+    <div ref="accessibility" id="accessibility">
+        <div class="section-header px-8" >Accessibility</div>
+
+        <v-card class="ma-8 pa-4" variant="flat" height="300">
+            <div class="overflow-y-auto">
+                x
+            </div>
+        </v-card>
+    </div>
 </template>

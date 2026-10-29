@@ -3,9 +3,13 @@
 </script>
 
 <template>
-    <v-card class="ma-8 pa-4" variant="flat" height="300">
-        <div ref="development" id="development" class="overflow-y-auto">
-            Development
-        </div>
-    </v-card>
+    <div ref="development" id="development">
+        <div class="section-header px-8" >Development approach</div>
+
+        <v-card class="ma-8 pa-4" variant="flat" height="300">
+            <div class="overflow-y-auto">
+                x
+            </div>
+        </v-card>
+    </div>
 </template>
