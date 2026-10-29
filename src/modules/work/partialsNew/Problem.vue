@@ -6,7 +6,7 @@
     <v-card class="ma-2 pa-8" variant="flat">
         <div ref="problem" id="problem" class="overflow-y-auto">
             <v-row>
-                <v-col>
+                <v-col cols="12" sm="12" md="6" lg="6">
                     <div class="py-6">
                         <div class="section-caption">Problem </div> 
                         <div>
@@ -21,7 +21,7 @@
                         </div>
                     </div>
                 </v-col>
-                <v-col class="text-center py-6">
+                <v-col cols="12" sm="12" md="6" lg="6" class="text-center py-6">
                     <img :src="$imageSrc('logo-pr.png')" alt="Placeholder Image" style="width: 50%; height: auto;">
                 </v-col>
             </v-row>

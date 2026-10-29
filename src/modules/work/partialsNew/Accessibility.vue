@@ -3,10 +3,10 @@
 </script>
 
 <template>
-    <div ref="accessibility" id="accessibility">
-        <div class="section-header px-8" >Accessibility</div>
+    <div ref="accessibility" id="accessibility" class="py-8">
+        <div class="section-header px-8">Accessibility</div>
 
-        <v-card class="ma-8 pa-4" variant="flat" height="300">
+        <v-card class="ma-8 pa-4" variant="flat" min-height="300">
             <div class="py-6">
                 <div class="section-caption">Problem </div> 
                 <div>

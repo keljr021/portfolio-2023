@@ -18,7 +18,7 @@ const workType = ref(['all']);
         </v-row>
         
         <v-row>
-            <v-col cols="8">
+            <v-col cols="12" sm="12" md="8" lg="8">
                 <div class="my-3">
                     <span style="font-weight: 500">Role: </span>
                     UX Designer, Logo Designer, Front-End Developer
@@ -37,7 +37,7 @@ const workType = ref(['all']);
                     <v-btn class="mr-4" rounded="xl" variant="outlined" prepend-icon="$vuetify">Button</v-btn>
                 </div>
             </v-col>
-            <v-col>
+            <v-col order-xs="1" :class="$vuetify.display.mdAndDown ? 'order-first' : ''">
                 <img :src="$imageSrc('work/pr-desktop.png')" alt="Placeholder Image" style="width: 100%; height: auto;">
             </v-col>
         </v-row>

@@ -90,7 +90,7 @@
         </v-tabs>
       </v-col>
 
-      <v-col cols="9" offset="1">
+      <v-col cols="12" sm="12" md="9" lg="9" offset-md="1" offset-lg="1">
         <div class="overflow-x-hidden overflow-y-auto">
           <v-row>
             <v-col>
@@ -98,27 +98,27 @@
             </v-col>
           </v-row>
           <v-row class="justify-space-around">
-            <v-col cols="12" sm="12" md="12" lg="12">
+            <v-col>
               <Problem />
             </v-col>
           </v-row>
           <v-row class="justify-space-around">
-            <v-col cols="12" sm="12" md="12" lg="12">
+            <v-col>
               <Research />
             </v-col>
           </v-row>
           <v-row class="justify-space-around">
-            <v-col cols="12" sm="12" md="12" lg="12">
+            <v-col>
               <Design />
             </v-col>
           </v-row>
           <v-row v-if="showDevelopment">
-            <v-col cols="12" sm="12" md="12" lg="12">
+            <v-col>
               <Development />
             </v-col>
           </v-row>
           <v-row class="justify-space-around">
-            <v-col cols="12" sm="12" md="12" lg="12">
+            <v-col>
               <Accessibility />
             </v-col>
           </v-row>
