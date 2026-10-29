@@ -4,16 +4,21 @@
   import { useDisplay } from 'vuetify';
   import { onBeforeRouteUpdate, useRoute, useRouter } from 'vue-router';
 
-  import Footer from '@/components/Footer.vue'
-
-  const currentTab = ref(null);
   const { y } = useScroll(window);
+  const currentTab = ref(null);
+
+  const showTabs = ref(true);
+  const showDevelopment = ref(true);
+
   const problem = ref(null);
   const research = ref(null);
   const design = ref(null);
   const accessibility = ref(null);
   const development = ref(null);
   const results = ref(null);
+
+  const previousView = ref(null);
+  const nextView = ref(null);
 
   const sections = [
     { id: 'problem', element: problem },
@@ -40,7 +45,10 @@
     currentTab.value = activeSection?.id ?? null;
   };
 
-  watch(y, updateCurrentTab);
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    currentTab.value = null;
+  };
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -50,6 +58,13 @@
     }
   };
 
+  const goToView = (viewId) => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant'});
+    this.$router.push({ name: 'view', params: { id: viewId } });
+  };
+  
+  watch(y, updateCurrentTab);
+  
   onMounted(updateCurrentTab);
 </script>
 
@@ -59,6 +74,7 @@
 
       <v-col :cols="$vuetify.display.mdAndDown ? 12 : 1" class="overflow-x-auto">
         <v-tabs 
+          v-if="showTabs"
           v-model="currentTab"
           color="primary"
           :direction="$vuetify.display.mdAndDown ? 'horizontal' : 'vertical'"
@@ -71,7 +87,7 @@
           <v-tab value="research" @click="scrollToSection('research')">Research</v-tab>
           <v-tab value="design" @click="scrollToSection('design')">Design Process</v-tab>
           <v-tab value="accessibility" @click="scrollToSection('accessibility')">Accessibility</v-tab>
-          <v-tab value="development" @click="scrollToSection('development')">Development</v-tab>
+          <v-tab v-if="showDevelopment" value="development" @click="scrollToSection('development')">Development</v-tab>
           <v-tab value="results" @click="scrollToSection('results')">Results</v-tab>
         </v-tabs>
       </v-col>
@@ -79,7 +95,7 @@
       <v-col cols="9" offset="1">
         <div class="overflow-x-hidden overflow-y-auto">
           <v-row>
-            <v-col cols="12" sm="12" md="12" lg="12">
+            <v-col>
               <v-card class="my-12 pa-4" variant="flat" ref="title" height="300">
                 Title
               </v-card>
@@ -125,7 +141,7 @@
                 </div>
               </v-card>
             </v-col>
-          </v-row><v-row>
+          </v-row><v-row v-if="showDevelopment">
             <v-col cols="12" sm="12" md="12" lg="12">
               <v-card class="ma-8 pa-4" variant="flat" height="300">
                 <div ref="development" id="development" class="overflow-y-auto">
@@ -149,12 +165,41 @@
           </v-row>
         </div>
       </v-col>
-
-
-
     </v-row>
 
   </v-container>
+
+  <div class="fixed-item">
+    <v-row class="fixed-item-button">
+      <v-col class="text-right mx-5 my-2">
+        <v-tooltip text="Scroll to top" location="left">
+          <template v-slot:activator="{ props }">
+            <v-btn v-bind="props" color="#18184d" variant="outlined" icon="mdi-menu-up" style="background-color:white" @click="scrollToTop"></v-btn>
+          </template>
+        </v-tooltip>
+      </v-col>
+    </v-row>
+    <v-row class="fixed-item-menu" justify="space-between">
+      <v-col cols="4" class="text-left">
+        <v-btn v-if="previousView !== null" class="px-3" variant="flat" :block="$vuetify.display.xs" @click="goToView(previousView)">
+          <v-icon class="mr-2">mdi-arrow-left</v-icon>
+          Previous <span v-if="$vuetify.display.mdAndUp">&nbsp;Item</span>
+        </v-btn>
+      </v-col>
+      <v-col cols="4" class="text-center">
+        <v-btn class="px-3" variant="flat" :block="$vuetify.display.xs" :to="{ name: 'work' }">
+            <v-icon class="mr-2">mdi-view-list</v-icon>
+            Return <span v-if="$vuetify.display.mdAndUp">&nbsp;to List</span>
+        </v-btn>
+      </v-col>
+      <v-col cols="4" class="text-right">
+        <v-btn v-if="nextView !== null" class="px-3" variant="flat" :block="$vuetify.display.xs" @click="goToView(nextView)">
+          Next <span v-if="$vuetify.display.mdAndUp">&nbsp;Item</span>
+          <v-icon class="mr-2">mdi-arrow-right</v-icon>
+        </v-btn>
+      </v-col>
+    </v-row>
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -200,7 +245,6 @@
 
 .fixed-item-menu {
   background: #fff;
-  padding-left: calc(26% + 5px);
   opacity: 0.85;
 
   &:hover {
