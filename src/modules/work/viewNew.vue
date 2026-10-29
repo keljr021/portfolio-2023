@@ -1,6 +1,6 @@
 <script setup>
-  import { ref, useTemplateRef, onMounted, onUnmounted } from 'vue';
-  import { useElementVisibility, useScroll, useElementSize } from '@vueuse/core'
+  import { onMounted, ref, watch } from 'vue';
+  import { useScroll } from '@vueuse/core'
   import { useDisplay } from 'vuetify';
   import { onBeforeRouteUpdate, useRoute, useRouter } from 'vue-router';
 
@@ -8,49 +8,49 @@
 
   const currentTab = ref(null);
   const { y } = useScroll(window);
+  const problem = ref(null);
+  const research = ref(null);
+  const design = ref(null);
+  const accessibility = ref(null);
+  const development = ref(null);
+  const results = ref(null);
 
-  const problemPos = 400;
-  const researchPos = 800;
-  const designPos = 1200;
-  const accessibilityPos = 1600;
-  const developmentPos = 1900;
-  const resultsPos = 2200;
+  const sections = [
+    { id: 'problem', element: problem },
+    { id: 'research', element: research },
+    { id: 'design', element: design },
+    { id: 'accessibility', element: accessibility },
+    { id: 'development', element: development },
+    { id: 'results', element: results },
+  ];
 
-  const checkIfSectionVisible = () => {
-    const isProblemVisible = y.value >= problemPos && y.value < researchPos;
-    const isResearchVisible = y.value >= researchPos && y.value < designPos;
-    const isDesignVisible = y.value >= designPos && y.value < accessibilityPos;
-    const isAccessibilityVisible = y.value >= accessibilityPos && y.value < developmentPos;
-    const isDevelopmentVisible = y.value >= developmentPos && y.value < resultsPos;
-    const isResultsVisible = y.value >= resultsPos;
+  const updateCurrentTab = () => {
+    const activationPoint = window.innerHeight * 0.35;
+    const visibleSections = sections
+      .map(({ id, element }) => ({ id, bounds: element.value?.getBoundingClientRect() }))
+      .filter(({ bounds }) => bounds && bounds.top < window.innerHeight && bounds.bottom > 0);
 
-    currentTab.value = null;
+    const activeSection = visibleSections.reduce((closest, section) => {
+      const distance = Math.max(section.bounds.top - activationPoint, activationPoint - section.bounds.bottom, 0);
+      return !closest || distance < closest.distance
+        ? { id: section.id, distance }
+        : closest;
+    }, null);
 
-    if (isProblemVisible) currentTab.value = 'problem';
-    if (isResearchVisible) currentTab.value = 'research';
-    if (isDesignVisible) currentTab.value = 'design';
-    if (isAccessibilityVisible) currentTab.value = 'accessibility';
-    if (isDevelopmentVisible) currentTab.value = 'development';
-    if (isResultsVisible) currentTab.value = 'results';
-
-    console.log('y:', y.value, 'Current Tab:', currentTab.value);
+    currentTab.value = activeSection?.id ?? null;
   };
 
- const scrollToSection = (id) => {
-    const element = document.querySelector(`#` + id);
+  watch(y, updateCurrentTab);
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ top: element.scrollHeight, behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       currentTab.value = id;
     }
   };
 
-  onMounted(() => {
-    window.addEventListener('scroll', checkIfSectionVisible);
-  });
-
-  onUnmounted(() => {
-    window.removeEventListener('scroll', checkIfSectionVisible);
-  });
+  onMounted(updateCurrentTab);
 </script>
 
 <template>
@@ -64,7 +64,7 @@
           :direction="$vuetify.display.mdAndDown ? 'horizontal' : 'vertical'"
           slider-variant="primary"
           align-tabs="start"
-          mandatory="false"
+          :mandatory="false"
           class="view-tabs px-0"
         >
           <v-tab value="problem" @click="scrollToSection('problem')">Problem</v-tab>
@@ -77,7 +77,7 @@
       </v-col>
 
       <v-col cols="9" offset="1">
-        <div class="overflow-x-hidden overflow-y-auto" @scroll.passive="checkIfSectionVisible">
+        <div class="overflow-x-hidden overflow-y-auto">
           <v-row>
             <v-col cols="12" sm="12" md="12" lg="12">
               <v-card class="my-12 pa-4" variant="flat" ref="title" height="300">
