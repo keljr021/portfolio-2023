@@ -141,11 +141,12 @@
       <v-col class="text-right mx-5 my-2">
         <v-tooltip text="Scroll to top" location="left">
           <template v-slot:activator="{ props }">
-            <v-btn v-bind="props" color="#18184d" variant="outlined" icon="mdi-menu-up" style="background-color:white" @click="scrollToTop"></v-btn>
+            <v-btn v-bind="props" color="#aaa" variant="outlined" icon="mdi-menu-up" style="background-color:white" @click="scrollToTop"></v-btn>
           </template>
         </v-tooltip>
       </v-col>
     </v-row>
+
     <v-row class="fixed-item-menu" justify="space-between">
       <v-col cols="4" class="text-left">
         <v-btn v-if="previousView !== null" class="px-3" variant="flat" :block="$vuetify.display.xs" @click="goToView(previousView)">
@@ -199,9 +200,17 @@
   position: fixed;
   top: 80px;
 
-  :deep(.v-btn__content) {
+  .v-btn {
     font-weight: initial;
   }
+}
+
+.section-header {
+  font-size: 28px;
+}
+
+.section-caption {
+  font-weight: 500;
 }
 
 .fixed-top-button {
@@ -212,7 +221,7 @@
 
 .fixed-item-menu {
   background: #fff;
-  opacity: 0.85;
+  opacity: 0.45;
 
   &:hover {
     opacity: 1;
@@ -224,17 +233,9 @@
   margin-bottom: 50px;
 }
 
-.section-header {
-  font-size: 28px;
-}
-
-.section-caption {
-  font-weight: 500;
-}
-
 p, li {
-    font-size: 1.1em;
-    line-height: 2.5;
+    font-size: 1.05em;
+    line-height: 1.5;
   }
 
 p {
