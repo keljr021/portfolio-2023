@@ -5,7 +5,6 @@
   import { onBeforeRouteUpdate, useRoute, useRouter } from 'vue-router';
 
   import Title from '@/modules/work/partialsNew/Title.vue';
-  import Intro from '@/modules/work/partialsNew/Intro.vue';
   import Overview from '@/modules/work/partialsNew/Overview.vue';
   import Research from '@/modules/work/partialsNew/Research.vue';
   import Design from '@/modules/work/partialsNew/Design.vue';

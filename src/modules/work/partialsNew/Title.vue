@@ -8,8 +8,8 @@ const workType = ref(['all']);
     <v-card class="my-12 pa-8" variant="flat" ref="title" min-height="300">
         <v-row>
             <v-col>
-                <span class="title-header py-3">Title</span>
-                <span class="mx-4">
+                <span class="title-header pb-3">Title</span>
+                <span class="mx-4 my-0">
                     <v-chip v-if="workType.includes('all')" size="small" class="pa-4" color="indigo-darken-3" variant="tonal" prepend-icon="mdi-pencil-ruler">Hybrid Work</v-chip>
                     <v-chip v-if="workType.includes('ux')" size="small" class="pa-4" color="teal-darken-2" variant="tonal" prepend-icon="mdi-palette-outline">UX/UI</v-chip>
                     <v-chip v-if="workType.includes('frontend')" size="small" class="pa-4" color="blue-darken-3" variant="tonal" prepend-icon="mdi-code-tags">Front-End</v-chip>
