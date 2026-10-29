@@ -6,7 +6,7 @@ const window = ref(null);
 
 <template>
     <div ref="development" id="development">
-        <div class="section-header pa-8">Development approach</div>
+        <div class="section-header pa-8">Development steps</div>
 
         <v-card variant="flat" class="pa-8 ma-8">
             <div v-if="$vuetify.display.mdAndDown">

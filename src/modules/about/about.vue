@@ -4,7 +4,7 @@ import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
-    <v-container fluid class="about">
+    <v-container fluid class="about bg">
         <v-row class="pa-4">
           <v-col>
             <div class="about-text-title">About</div>

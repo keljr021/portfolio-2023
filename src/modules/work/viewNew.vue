@@ -6,7 +6,7 @@
 
   import Title from '@/modules/work/partialsNew/Title.vue';
   import Intro from '@/modules/work/partialsNew/Intro.vue';
-  import Problem from '@/modules/work/partialsNew/Problem.vue';
+  import Overview from '@/modules/work/partialsNew/Overview.vue';
   import Research from '@/modules/work/partialsNew/Research.vue';
   import Design from '@/modules/work/partialsNew/Design.vue';
   import Accessibility from '@/modules/work/partialsNew/Accessibility.vue';
@@ -23,7 +23,7 @@
   const previousView = ref(null);
   const nextView = ref(null);
 
-  const sections = ['problem', 'research', 'design', 'development', 'accessibility', 'results'];
+  const sections = ['overview', 'research', 'design', 'development', 'accessibility', 'results'];
 
   const getSectionElement = (id) => document.getElementById(id);
 
@@ -81,7 +81,7 @@
           :mandatory="false"
           class="view-tabs px-0"
         >
-          <v-tab value="problem" @click="scrollToSection('problem')">Problem</v-tab>
+          <v-tab value="overview" @click="scrollToSection('overview')">Overview</v-tab>
           <v-tab value="research" @click="scrollToSection('research')">Research</v-tab>
           <v-tab value="design" @click="scrollToSection('design')">Design approach</v-tab>
           <v-tab v-if="showDevelopment" value="development" @click="scrollToSection('development')">Development</v-tab>
@@ -99,7 +99,7 @@
           </v-row>
           <v-row class="justify-space-around">
             <v-col>
-              <Problem />
+              <Overview />
             </v-col>
           </v-row>
           <v-row class="justify-space-around">
@@ -172,7 +172,7 @@
 
 <style lang="scss">
 .bg {
-  background-color: #f6f6f6;
+  background-color: #f7f6fa;
   padding: 40px;
   overflow-x: hidden;
   overflow-y: auto;

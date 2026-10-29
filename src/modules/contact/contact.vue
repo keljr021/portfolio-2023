@@ -9,7 +9,7 @@ function openWindow(link) {
 </script>
 
 <template>
-    <v-container fluid>
+    <v-container fluid class="bg">
         <v-row class="pa-4">
           <v-col>
             <div class="contact-title">Contact</div>

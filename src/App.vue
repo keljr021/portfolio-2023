@@ -60,4 +60,8 @@
 .fade-leave-to {
   opacity: 0;
 }
+
+.bg {
+  background-color: #f7f6fa;
+}
 </style>

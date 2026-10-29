@@ -58,7 +58,7 @@
 </script>
 
 <template>
-  <v-container fluid class="work">
+  <v-container fluid class="work bg">
     <v-row class="pa-4">
       <v-col>
         <div class="work-title px-4 py-2">Work</div>

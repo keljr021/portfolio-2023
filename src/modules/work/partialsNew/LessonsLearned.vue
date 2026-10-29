@@ -4,7 +4,7 @@
 
 <template>
     <div>
-        <div class="section-header pa-8">What I learned</div>
+        <div class="section-header pa-8">Lessons learned</div>
 
         <v-card class="mx-8 my-2 pa-8 section-text" variant="flat" height="300">
             <v-row>

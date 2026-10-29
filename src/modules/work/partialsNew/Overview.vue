@@ -4,7 +4,7 @@
 
 <template>
     <v-card class="ma-2 pa-8" variant="flat">
-        <div ref="problem" id="problem" class="overflow-y-auto">
+        <div ref="overview" id="overview" class="overflow-y-auto">
             <v-row>
                 <v-col cols="12" sm="12" md="6" lg="6">
                     <div class="py-6">
