@@ -23,7 +23,7 @@ const props = defineProps({
                         </div>
                     </div>
                 </v-col>
-                <v-col cols="12" sm="12" md="6" lg="6" class="text-center align-self-center">
+                <v-col cols="12" sm="12" md="6" lg="6" class="text-center pt-8 pb-4">
                     <img :src="$imageSrc(input.image)" alt="Placeholder Image" class="w-75">
                 </v-col>
             </v-row>

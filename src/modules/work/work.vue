@@ -123,7 +123,7 @@
 
   .work-links-chip {
     width: 100%;
-    margin: 10px 0;
+    margin: 10px 30px;
     clear: both;
   }
 }

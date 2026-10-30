@@ -18,53 +18,42 @@ const props = defineProps({
                 show-arrows
             >
                 <v-window-item
-                    v-for="n in 3"
-                    :key="n"
+                    v-for="(item, i) in input.timeline"
+                    :key="i"
                     >
-                    <v-card class="d-flex justify-center align-center" height="200px">
-                        <span class="text-display-large">Card {{ n }}</span>
+                    <v-card class="mb-8 pa-4" variant="elevated" min-width="90vw">
+                        <v-card-title>Title</v-card-title>
+                        <v-card-text>
+                            This is some text.
+                        </v-card-text>
                     </v-card>
                 </v-window-item>
             </v-window>
         </div>
 
 
-        <v-timeline v-else class="px-8" align="start" dot-color="teal-darken-2">
-            <v-timeline-item>
-            <template v-slot:opposite>
-                Opposite content
-            </template>
-            <div>
-                <div class="text-title-large">Content title</div>
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-            </div>
+        <v-timeline v-else class="px-8" align="start" dot-color="teal-darken-2" alignment="top">
+            
+            <v-timeline-item v-for="item in input.timeline" align="start">
+                <template v-if="item.images" v-slot:opposite>
+                    <div v-for="imgItem in item.images" class="py-2 text-center">
+                        <img :src="$imageSrc(imgItem)" class="w-50" />
+                    </div>
+                </template>
+                <v-card class="design-timeline-item pa-4" variant="flat" min-width="30vw">
+                    <v-card-title>{{ item.title }}</v-card-title>
+                    <v-card-text v-for="(textItem, t) in item.text" :key="t">
+                        <p>{{ textItem }}</p>
+                    </v-card-text>
+                </v-card>
             </v-timeline-item>
 
-            <v-timeline-item>
-            <template v-slot:opposite>
-                Opposite content
-            </template>
-            <div>
-                <div class="text-title-large">Content title</div>
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-            </div>
-            </v-timeline-item>
-
-            <v-timeline-item>
-            <template v-slot:opposite>
-                Opposite content
-            </template>
-            <div>
-                <div class="text-title-large">Content title</div>
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-            </div>
-            </v-timeline-item>
         </v-timeline>
     </div>
 </template>
+
+<style>
+.design-timeline-item {
+    margin-bottom: 150px;
+}
+</style>
