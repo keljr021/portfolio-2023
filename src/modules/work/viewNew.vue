@@ -13,6 +13,8 @@
   import Results from '@/modules/work/partialsNew/Results.vue';
   import LessonsLearned from '@/modules/work/partialsNew/LessonsLearned.vue';
 
+  import * as prints from '@/modules/work/items/prints.js';
+
   const { y } = useScroll(window);
   const currentTab = ref(null);
 
@@ -23,6 +25,27 @@
   const nextView = ref(null);
 
   const sections = ['overview', 'research', 'design', 'development', 'accessibility', 'results'];
+
+  const sectionValues = ref({
+    info: null,
+    overview: null,
+    research: null,
+    design: null,
+    development: null,
+    accessibility: null,
+    results: null,
+    lessons: null,
+  });
+
+
+  const loadWorkInfo = () => {
+    let { info, overview, research, design, development, accessibility, results, lessons } = prints;
+
+    showTabs.value = (info.type === 'all' || info.type === 'ux');
+    showDevelopment.value = (info.type !== 'frontend');
+
+
+  };
 
   const getSectionElement = (id) => document.getElementById(id);
 
@@ -62,7 +85,10 @@
   
   watch(y, updateCurrentTab);
   
-  onMounted(updateCurrentTab);
+  onMounted(() => {
+    updateCurrentTab();
+    loadWorkInfo();
+  });
 </script>
 
 <template>
@@ -93,40 +119,40 @@
         <div class="overflow-x-hidden overflow-y-auto">
           <v-row>
             <v-col>
-              <Title />
+              <Title :input="prints.info" />
             </v-col>
           </v-row>
           <v-row class="justify-space-around">
             <v-col>
-              <Overview />
+              <Overview :input="prints.overview" />
             </v-col>
           </v-row>
           <v-row class="justify-space-around">
             <v-col>
-              <Research />
+              <Research :input="prints.research" />
             </v-col>
           </v-row>
           <v-row class="justify-space-around">
             <v-col>
-              <Design />
+              <Design :input="prints.design" />
             </v-col>
           </v-row>
-          <v-row v-if="showDevelopment">
+          <v-row v-if="prints.dev">
             <v-col>
-              <Development />
+              <Development :input="prints.dev" />
             </v-col>
           </v-row>
           <v-row class="justify-space-around">
             <v-col>
-              <Accessibility />
+              <Accessibility :input="prints.accessibility" />
             </v-col>
           </v-row>
           <v-row class="justify-space-around">
             <v-col cols="12" sm="12" md="6" lg="6">
-              <Results />
+              <Results :input="prints.results" />
             </v-col>
             <v-col cols="12" sm="12" md="6" lg="6">
-              <LessonsLearned />
+              <LessonsLearned :input="prints.lessons" />
             </v-col>
           </v-row>
         </div>

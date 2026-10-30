@@ -1,7 +1,7 @@
 <script setup>
   import WorkListItem from './WorkListItem.vue';
+  import listArray from './../items/itemList.js';
 
-  const listWidth = '300';
   defineProps({
     workType: String
   });
@@ -9,8 +9,24 @@
 
 <template>
   <v-container fluid>
-    <v-row align-md="start" align-lg="start">
-      <work-list-item 
+    <v-row>
+      <template v-for="item in listArray" :key="item.id">
+        <work-list-item
+          v-if="workType === item.type"
+          :type="item.type"
+          :color="item.color"
+          :linkId="item.link"
+          :title="item.title"
+          :caption="item.caption"
+          :role="item.role"
+          :logo="item.logo"
+          :uxTools="item.ux"
+          :frontendStack="item.fe"
+        />
+      </template>
+
+
+      <!-- <work-list-item 
         :workType="workType"
         :displayFor="['all']"
         bg="light"
@@ -146,7 +162,7 @@
           role="Developer"
           logo="work/vue-desktop.png" 
           frontendStack="Vue JS"
-          :logoWidth="listWidth" />
+          :logoWidth="listWidth" /> -->
 
     </v-row>
   </v-container>

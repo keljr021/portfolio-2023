@@ -85,7 +85,7 @@
         </div>
         
       </v-col>
-      <v-col cols="10" class="px-4">
+      <v-col cols="11" sm="11" md="10" lg="10" class="px-4">
         <div v-for="(item, index) in workTypesArray" :key="index" class="mb-8" :id="item.value">
           <div class="work-section-title" :ref="item.value">{{ item.title }}</div>
           <WorkList :workType="item.value" />
@@ -99,7 +99,7 @@
 
 <style scoped lang="scss">
 .v-container--fluid {
-  height: calc(100% - 73.5px) !important;
+  // height: calc(100% - 73.5px) !important;
 }
 
 .work-type {
@@ -115,9 +115,10 @@
 }
 
 .work-links {
-  position: sticky;
-  top: 140px;
+  position: fixed;
+  top: 180px;
   left: 0;
+  width: 200px;
   z-index: 1;
 
   .work-links-chip {

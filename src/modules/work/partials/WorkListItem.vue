@@ -21,9 +21,9 @@ defineProps({
   logoHeight: String,
   linkId: String,
   workType: String,
+  type: String,
   uxTools: String,
   frontendStack: String,
-  displayFor: Array
 });
 
 function windowOpen(input) {
@@ -32,7 +32,7 @@ function windowOpen(input) {
 </script>
 
 <template>
-    <v-col cols="12" sm="6" md="6" lg="6" class="list-item pb-sm-8 pt-3 pb-6 px-9" :class="{ 'display' : displayFor.includes(workType) }" @click="$router.push({ name: 'view', params: { id: linkId } })">
+    <v-col cols="12" sm="12" md="6" lg="6" class="list-item pb-sm-8 pt-3 pb-6 px-9" @click="$router.push({ name: 'view', params: { id: linkId } })">
         <v-card class="mb-4 mx-auto" variant="elevated" :width="$vuetify.display.smAndDown ? '100%' : '75%'" min-height="350" link>
             <v-img v-if="$vuetify.display.smAndDown" class="mx-auto py-2 w-100" :src="$imageSrc(logo)" :height="linkId === 'reys' ? '300px' : ''"/>
             <v-img v-else :aspect-ratio="linkId === 'reys' ? 1 : ''" :class="{'mx-auto': true, 'py-2 my-5': linkId !== 'reys'}" :width="logoWidth ? logoWidth : ''" :src="$imageSrc(logo)" :height="linkId === 'reys' ? '210px' : ''"/>
@@ -54,9 +54,9 @@ function windowOpen(input) {
             </div>
 
             <div class="pt-2 pb-5 px-5">
-                <v-chip v-if="workType.includes('all')" class="px-4 mr-3" color="indigo-darken-3" variant="tonal" prepend-icon="mdi-pencil-ruler" @click="scrollToSection('all')">Hybrid Work</v-chip>
-                <v-chip v-if="workType.includes('ux')" class="px-4 mr-3" color="teal-darken-2" variant="tonal" prepend-icon="mdi-palette-outline" @click="scrollToSection('ux')">UX/UI</v-chip>
-                <v-chip v-if="workType.includes('frontend')" class="px-4 mr-3" color="blue-darken-3" variant="tonal" prepend-icon="mdi-code-tags" @click="scrollToSection('frontend')">Front-End</v-chip>
+                <v-chip v-if="type === 'all'" class="px-4 mr-3" color="indigo-darken-3" variant="tonal" prepend-icon="mdi-pencil-ruler" @click="scrollToSection('all')">Hybrid Work</v-chip>
+                <v-chip v-if="type === 'ux'" class="px-4 mr-3" color="teal-darken-2" variant="tonal" prepend-icon="mdi-palette-outline" @click="scrollToSection('ux')">UX/UI</v-chip>
+                <v-chip v-if="type === 'frontend'" class="px-4 mr-3" color="blue-darken-3" variant="tonal" prepend-icon="mdi-code-tags" @click="scrollToSection('frontend')">Front-End</v-chip>
             </div>
         </v-card>
 
@@ -70,7 +70,6 @@ function windowOpen(input) {
     padding: 30px 0;
     cursor: pointer;
     background-color: transparent;
-    display: none;
 
     &.display {
         display: initial !important;

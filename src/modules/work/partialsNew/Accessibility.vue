@@ -1,23 +1,18 @@
 <script setup>
-
+const props = defineProps({
+    input: Object,
+});
 </script>
 
 <template>
     <div ref="accessibility" id="accessibility" class="py-8">
         <div class="section-header px-8">Accessibility</div>
 
-        <v-card class="ma-8 pa-4" variant="flat" min-height="300">
-            <div class="py-6">
-                <div class="section-caption">Problem </div> 
-                <div>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus justo pellentesque felis lobortis, et hendrerit mauris cursus.
-                </div>
-            </div>
-            
-            <div class="py-6">
-                <div class="section-caption">Problem </div> 
-                <div>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus justo pellentesque felis lobortis, et hendrerit mauris cursus.
+        <v-card class="ma-8 pa-8" variant="flat">
+            <div class="py-6" v-for="item in input">
+                <div class="section-caption">{{ item.name }}</div> 
+                <div v-if="item.text">
+                    <div v-for="textItem in item.text">{{ textItem }}</div>
                 </div>
             </div>
         </v-card>
