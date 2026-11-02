@@ -113,7 +113,7 @@ export const design = {
             ]
         },
         {
-            title: 'Created digital wireframes',
+            title: 'Converted to low-fidelity wireframes',
             text: [
                 'Created digital wireframes in Figma to help visualize the site layout and user flow.',
             ],
