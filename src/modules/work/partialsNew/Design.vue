@@ -36,7 +36,7 @@ const props = defineProps({
             <v-timeline-item v-for="timelineItem in input.timeline" align="start">
                 <template v-if="timelineItem.images" v-slot:opposite>
                     <div v-for="imgItem in timelineItem.images" class="py-2 text-center">
-                        <img :src="$imageSrc(imgItem)" class="w-100" />
+                        <img :src="$imageSrc(imgItem)" class="w-75" />
                     </div>
                 </template>
                 <v-card class="design-timeline-item py-4" variant="text" width="100%">

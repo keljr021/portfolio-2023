@@ -98,24 +98,26 @@
     <v-row>
 
       <v-col :cols="$vuetify.display.mdAndDown ? 12 : 1" class="overflow-x-auto">
-        <v-tabs 
-          v-if="showTabs"
-          v-model="currentTab"
-          color="primary"
-          :direction="$vuetify.display.mdAndDown ? 'horizontal' : 'vertical'"
-          slider-variant="primary"
-          align-tabs="start"
-          :mandatory="false"
-          class="view-tabs px-0"
-        >
-          <v-tab value="overview" @click="scrollToSection('overview')">Overview</v-tab>
-          <v-tab value="research" @click="scrollToSection('research')">Research</v-tab>
-          <v-tab value="design" @click="scrollToSection('design')">Design approach</v-tab>
-          <v-tab value="mockups" @click="scrollToSection('mockups')">Mockups</v-tab>
-          <v-tab v-if="showDevelopment" value="development" @click="scrollToSection('development')">Development</v-tab>
-          <v-tab value="accessibility" @click="scrollToSection('accessibility')">Accessibility</v-tab>
-          <v-tab value="results" @click="scrollToSection('results')">Results</v-tab>
-        </v-tabs>
+        <div class="view-tabs px-0">
+          <div :class="{ 'view-tabs-title': true, 'show': currentTab !== 'overview' }">{{ prints.info.title }}</div>
+          <v-tabs 
+            v-if="showTabs"
+            v-model="currentTab"
+            color="primary"
+            :direction="$vuetify.display.mdAndDown ? 'horizontal' : 'vertical'"
+            slider-variant="primary"
+            align-tabs="start"
+            :mandatory="false"
+          >
+            <v-tab value="overview" @click="scrollToSection('overview')">Overview</v-tab>
+            <v-tab value="research" @click="scrollToSection('research')">Research</v-tab>
+            <v-tab value="design" @click="scrollToSection('design')">Design approach</v-tab>
+            <v-tab value="mockups" @click="scrollToSection('mockups')">Mockups</v-tab>
+            <v-tab v-if="showDevelopment" value="development" @click="scrollToSection('development')">Development</v-tab>
+            <v-tab value="accessibility" @click="scrollToSection('accessibility')">Accessibility</v-tab>
+            <v-tab value="results" @click="scrollToSection('results')">Results</v-tab>
+          </v-tabs>
+        </div>
       </v-col>
 
       <v-col cols="12" sm="12" md="9" lg="9" offset-md="1" offset-lg="1">
@@ -232,6 +234,18 @@
 .view-tabs {
   position: fixed;
   top: 80px;
+
+  .view-tabs-title {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 0;
+    opacity: 0;
+    transition: opacity ease-in-out 0.3s;
+
+    &.show {
+      opacity: 1;
+    }
+  }  
 
   .v-btn {
     font-weight: initial;

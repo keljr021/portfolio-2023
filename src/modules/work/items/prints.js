@@ -8,7 +8,7 @@ export const info = {
     role:       "UX Designer, Logo Designer, Front-End Developer",
     ux:         "Figma, Inskape",
     fe:         "Vue JS, Bulma, Buefy",
-    date:       "Aug 2023",
+    date:       "Aug 2023, Aug 2024",
     logo:       "work/pr/pr-desktop.png",
     
     viewButtons: [
@@ -140,57 +140,62 @@ export const design = {
 };
 
 export const dev = {
+    button: {
+        name: 'Github',
+        link: 'https://github.com/prints/webcomics-and-hosting',
+        icon: 'mdi-github'
+    },
     timeline: [
         {
-            title:  'Test title',
+            title:  'Created new Vue project',
             text:   [
-                'This is a text title.',
+                'Used Vue CLI and added the Vue Router library for proper page routes and transitions.',
             ],
             images: [
-                'logo-pr.png',
-                'logo-pr.png',
+                'work/pr/pr-dev1.png',
             ]
         },
         {
-            title:  'Test title 2',
+            title:  'Scaffholded the components',
             text:   [
-                'This is a text title.',
+                'Created the Navbar and Footer Vue components for all pages.',
+                'Used the sitemap and wireframes as a reference for developing the page layouts and child components.',
             ],
             images: [
-                'logo-pr.png',
-                'logo-pr.png',
+                'work/pr/pr-dev2.png',
             ]
         },
         {
-            title:  'Test title 3',
+            title:  'Stylized each corresponding component',
             text:   [
-                'This is a text title.',
+                'Bulma and Buefy for consistent styling. Also added web fonts via CDN.',
+            ]
+        },
+        {
+            title:  'Added wiring each component',
+            text:   [
+                'Added JavaScript methods and VueX for state and store management.',
+            ]
+        },
+        {
+            title:  'Revisited styling for responsiveness',
+            text:   [
+                'Added the proper breakpoints and updated styles for proper responsive viewing on both desktop and mobile devices.',
+            ],  
+            images: [
+                'work/pr/pr-mobile.gif',
+            ]
+        },
+        {
+            title:  'Final testing and cleanup',
+            text:   [
+                'Manually tested the site on both desktop and mobile devices. Cleaned up the code and removed any unused files or components.',
             ],
             images: [
-                'logo-pr.png',
-                'logo-pr.png',
+                'work/pr/pr-desktop.gif',
             ]
         }
-    ],
-    section: [
-        {
-            type:   'card',
-            title:  'Card 1',
-            text:   [
-                'This is text',
-                'This is text',
-            ],
-        },
-        {
-            type:   'image',
-            images: [
-                {
-                    src:    'work/pr/pr-desktop.png',
-                    caption: 'This is a text caption.'
-                },
-            ]
-        },
-    ],
+    ]
 };
 
 export const mockups = {
@@ -201,7 +206,6 @@ export const mockups = {
     },
     sticker: {
         src: 'work/pr/pr-sticker.png',
-        caption: 'This is a text caption.'
     },
     list: [
         {
