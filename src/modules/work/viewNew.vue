@@ -1,8 +1,7 @@
 <script setup>
   import { onMounted, ref, watch } from 'vue';
   import { useScroll } from '@vueuse/core'
-  import { useDisplay } from 'vuetify';
-  import { onBeforeRouteUpdate, useRoute, useRouter } from 'vue-router';
+  import { useRoute } from 'vue-router';
 
   import Title from '@/modules/work/partialsNew/Title.vue';
   import Overview from '@/modules/work/partialsNew/Overview.vue';
@@ -14,8 +13,7 @@
   import Results from '@/modules/work/partialsNew/Results.vue';
   import LessonsLearned from '@/modules/work/partialsNew/LessonsLearned.vue';
 
-  import * as prints from '@/modules/work/items/prints.js';
-
+  const route = useRoute();
   const { y } = useScroll(window);
   const currentTab = ref(null);
 
@@ -27,25 +25,26 @@
 
   const sections = ['overview', 'research', 'design', 'development', 'mockups', 'accessibility', 'results'];
 
-  const sectionValues = ref({
-    info: null,
-    overview: null,
-    research: null,
-    design: null,
-    mockups: null,
-    development: null,
-    accessibility: null,
-    results: null,
-    lessons: null,
-  });
+  const data = ref(null);
+  const workDataLoaders = import.meta.glob('./items/*.js');
 
+  const loadWorkInfo = async (workId) => {
+    data.value = null;
+    const modulePath = `./items/${workId}.js`;
+    const loadModule = workDataLoaders[modulePath];
 
-  const loadWorkInfo = () => {
-    let { info, overview, research, design, development, mockups, accessibility, results, lessons } = prints;
+    if (!loadModule) {
+      showTabs.value = false;
+      showDevelopment.value = false;
+      console.error(`No work data module found for work ID "${workId}".`);
+      return;
+    }
 
-    showTabs.value = (info.type === 'all' || info.type === 'ux');
-    showDevelopment.value = (info.type !== 'frontend');
+    data.value = await loadModule();
+    const workType = data.value.info?.type;
 
+    showTabs.value = (workType !== 'frontend');
+    showDevelopment.value = (workType !== 'frontend');
 
   };
 
@@ -86,10 +85,10 @@
   };
   
   watch(y, updateCurrentTab);
+  watch(() => route.params.id, loadWorkInfo, { immediate: true });
   
   onMounted(() => {
     updateCurrentTab();
-    loadWorkInfo();
   });
 </script>
 
@@ -99,7 +98,7 @@
 
       <v-col :cols="$vuetify.display.mdAndDown ? 12 : 1" class="overflow-x-auto">
         <div class="view-tabs px-0">
-          <div :class="{ 'view-tabs-title': true, 'show': currentTab !== 'overview' }">{{ prints.info.title }}</div>
+          <div :class="{ 'view-tabs-title': true, 'show': currentTab !== 'overview' }">{{ data?.info?.title }}</div>
           <v-tabs 
             v-if="showTabs"
             v-model="currentTab"
@@ -120,49 +119,49 @@
         </div>
       </v-col>
 
-      <v-col cols="12" sm="12" md="9" lg="9" offset-md="1" offset-lg="1">
+      <v-col v-if="data" cols="12" sm="12" md="9" lg="9" offset-md="1" offset-lg="1">
         <div class="overflow-x-hidden overflow-y-auto">
           <v-row>
             <v-col>
-              <Title :input="prints.info" />
+              <Title :input="data.info" />
             </v-col>
           </v-row>
           <v-row class="justify-space-around">
             <v-col>
-              <Overview :input="prints.overview" />
+              <Overview :input="data.overview" />
             </v-col>
           </v-row>
           <v-row class="justify-space-around">
             <v-col>
-              <Research :input="prints.research" />
+              <Research :input="data.research" />
             </v-col>
           </v-row>
           <v-row class="justify-space-around">
             <v-col>
-              <Design :input="prints.design" />
+              <Design :input="data.design" />
             </v-col>
           </v-row>
-          <v-row v-if="prints.mockups">
+          <v-row v-if="data.mockups">
             <v-col>
-              <Mockups :input="prints.mockups" />
+              <Mockups :input="data.mockups" />
             </v-col>
           </v-row>
-          <v-row v-if="prints.dev">
+          <v-row v-if="data.dev">
             <v-col>
-              <Development :input="prints.dev" />
+              <Development :input="data.dev" />
             </v-col>
           </v-row>
           <v-row class="justify-space-around">
             <v-col>
-              <Accessibility :input="prints.accessibility" />
+              <Accessibility :input="data.accessibility" />
             </v-col>
           </v-row>
           <v-row class="justify-space-around">
             <v-col cols="12" sm="12" md="6" lg="6">
-              <Results :input="prints.results" />
+              <Results :input="data.results" />
             </v-col>
             <v-col cols="12" sm="12" md="6" lg="6">
-              <LessonsLearned :input="prints.lessons" />
+              <LessonsLearned :input="data.lessons" />
             </v-col>
           </v-row>
         </div>
