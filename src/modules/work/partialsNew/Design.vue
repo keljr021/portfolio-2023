@@ -10,8 +10,8 @@ const props = defineProps({
 
 <template>
     <div ref="design" id="design">
-    <div class="section-header pa-8">Design approach</div>
-        <div v-if="$vuetify.display.mdAndDown">
+    <div class="section-header pa-md-8 my-2">Design approach</div>
+        <div v-if="$vuetify.display.smAndDown">
             <v-window
                 v-model="window"
                 show-arrows
@@ -21,10 +21,18 @@ const props = defineProps({
                     :key="i"
                     >
                     <v-card class="mb-8 pa-4" variant="elevated" min-width="90vw">
-                        <v-card-title>{{ timelineItem.title }}</v-card-title>
-                        <v-card-text>
-                            This is some text.
-                        </v-card-text>
+                        <div class="section-caption">{{ timelineItem.title }}</div>
+                        <template v-for="(textValueItem, tv) in timelineItem.text" :key="tv">
+                            <ul v-if="textValueItem.list">
+                                <li v-for="(listItem, l) in textValueItem.list" :key="l">{{ listItem }}</li>
+                            </ul>
+                            <p v-else>{{ textValueItem }}</p>
+                            <template v-if="timelineItem.images" v-for="imgItem in timelineItem.images" :key="imgItem">
+                                <div class="py-2 text-center">
+                                    <img :src="$imageSrc(imgItem)" class="w-75" />
+                                </div>
+                            </template>
+                        </template>
                     </v-card>
                 </v-window-item>
             </v-window>
@@ -61,7 +69,7 @@ const props = defineProps({
         <v-row v-if="input.section">
 
             <template v-for="sectionItem in input.section">
-                <v-col v-if="sectionItem.type === 'card'" cols="12" sm="12" md="6" lg="6">
+                <v-col v-if="sectionItem.type === 'card'" cols="12" sm="6" md="6" lg="6">
                     <v-card class="ma-8 pa-8" variant="text" min-height="300">
                         <v-row>
                             <v-col>
@@ -79,7 +87,7 @@ const props = defineProps({
                     </v-card>
                 </v-col>
 
-                <v-col v-if="sectionItem.type === 'image'" cols="12" sm="12" md="6" lg="6">
+                <v-col v-if="sectionItem.type === 'image'" cols="12" sm="6" md="6" lg="6">
                     <img v-for="(imageItem, i) in sectionItem.images" :key="i" :src="$imageSrc(imageItem.src)" :alt="imageItem.caption" class="my-4 w-100" />
                 </v-col>
             </template>

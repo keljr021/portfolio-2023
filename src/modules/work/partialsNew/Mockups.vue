@@ -6,7 +6,7 @@ const props = defineProps({
 
 <template>
     <div ref="mockups" id="mockups">
-        <div class="section-header pa-8">
+        <div class="section-header pa-md-8">
             Mockups
             <span class="px-4" v-if="input.button">
                 <v-btn 
@@ -22,10 +22,10 @@ const props = defineProps({
             </span>
         </div>
         <div class="my-2">
-            <v-card class="mx-8 mb-12 pa-8" variant="flat" v-for="(listItem, i) in input.list" :key="i">
+            <v-card class="mx-md-8 mb-12 pa-8" variant="flat" v-for="(listItem, i) in input.list" :key="i">
                 <v-card-title>{{ listItem.title }}</v-card-title>
                 <v-row>
-                    <v-col cols="6">
+                    <v-col cols="12" sm="6" md="6" lg="6">
                         <img class="mockups-item-image" :src="$imageSrc(listItem.lofi.src)" :alt="listItem.lofi.caption" />
                         <div>
                             <div class="section-caption">Before</div>
@@ -34,7 +34,7 @@ const props = defineProps({
                             </p>
                         </div>
                     </v-col>
-                    <v-col cols="6">
+                    <v-col cols="12" sm="6" md="6" lg="6">
                         <img class="mockups-item-image" :src="$imageSrc(listItem.hifi.src)" :alt="listItem.hifi.caption" />
                         <div>
                             <div class="section-caption">After</div>
@@ -71,5 +71,12 @@ const props = defineProps({
     height: 500px;
     object-fit: scale-down;
     margin: 30px 0;
+}
+
+@media all and (max-width: 768px) {
+    .mockups-item-sticker {
+        width: 100%;
+        height: auto;
+    }
 }
 </style>

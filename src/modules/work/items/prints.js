@@ -258,12 +258,6 @@ export const accessibility = [
         ],
     },
     {
-        name:   'Attention to color contrast',
-        text:   [
-            'Ensured the selected colors were WCAG AA Compliant between background and foreground.',
-        ],
-    },
-    {
         name:   'Visible focus state for form elements',
         text:   [
             'Form elements have a visible focus state.',

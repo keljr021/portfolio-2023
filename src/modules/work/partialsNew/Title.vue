@@ -17,16 +17,16 @@ const workLogo = computed(() => input.value?.logo ?? null);
         <v-row>
             <v-col>
                 <span class="title-header pb-3" :style="{ 'color': workColor }">{{ input.title }}</span>
-                <span class="mx-4 my-0">
-                    <v-chip v-if="input.type === 'all'" size="small" class="pa-4" color="indigo-darken-3" variant="plain" prepend-icon="mdi-pencil-ruler">Hybrid Work</v-chip>
-                    <v-chip v-if="input.type === 'ux'" size="small" class="pa-4" color="teal-darken-2" variant="plain" prepend-icon="mdi-palette-outline">UX/UI</v-chip>
-                    <v-chip v-if="input.type === 'frontend'" size="small" class="pa-4" color="blue-darken-3" variant="plain" prepend-icon="mdi-code-tags">Front-End</v-chip>
+                <span class="mx-md-4 my-0">
+                    <v-chip v-if="input.type === 'all'" size="small" class="pa-md-4" color="indigo-darken-3" variant="plain" prepend-icon="mdi-pencil-ruler">Hybrid Work</v-chip>
+                    <v-chip v-if="input.type === 'ux'" size="small" class="pa-md-4" color="teal-darken-2" variant="plain" prepend-icon="mdi-palette-outline">UX/UI</v-chip>
+                    <v-chip v-if="input.type === 'frontend'" size="small" class="pa-md-4" color="blue-darken-3" variant="plain" prepend-icon="mdi-code-tags">Front-End</v-chip>
                 </span>
             </v-col>
         </v-row>
         
         <v-row>
-            <v-col cols="12" sm="12" md="8" lg="8">
+            <v-col cols="12" sm="8" md="8" lg="8">
                 <div class="my-3" v-if="input.role">
                     <span :style="{ 'color': workColor, 'font-weight': 500 }">Role: </span>
                     {{ input.role }}
@@ -54,7 +54,7 @@ const workLogo = computed(() => input.value?.logo ?? null);
                     </v-btn>
                 </div>
             </v-col>
-            <v-col v-if="workLogo" order-xs="1" :class="$vuetify.display.mdAndDown ? 'order-first' : ''">
+            <v-col v-if="workLogo" order-xs="1" order-sm="1" :class="$vuetify.display.smAndDown ? 'order-first' : ''">
                 <img :src="$imageSrc(workLogo)" :alt="input.title + ' image'" class="w-100">
             </v-col>
         </v-row>

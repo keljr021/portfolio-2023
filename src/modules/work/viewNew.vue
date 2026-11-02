@@ -96,21 +96,21 @@
   <v-container fluid class="py-3 mx-0 my-5 bg">
     <v-row>
 
-      <v-col :cols="$vuetify.display.mdAndDown ? 12 : 1" class="overflow-x-auto">
+      <v-col cols="12" sm="1" md="1" lg="1" class="overflow-x-auto">
         <div class="view-tabs px-0">
-          <div :class="{ 'view-tabs-title': true, 'show': currentTab !== 'overview' }">{{ data?.info?.title }}</div>
+          <div :class="{ 'view-tabs-title': true, 'show': currentTab !== null }">{{ data?.info?.title }}</div>
           <v-tabs 
             v-if="showTabs"
             v-model="currentTab"
             color="primary"
-            :direction="$vuetify.display.mdAndDown ? 'horizontal' : 'vertical'"
+            :direction="$vuetify.display.xs ? 'horizontal' : 'vertical'"
             slider-variant="primary"
             align-tabs="start"
             :mandatory="false"
           >
             <v-tab value="overview" @click="scrollToSection('overview')">Overview</v-tab>
             <v-tab value="research" @click="scrollToSection('research')">Research</v-tab>
-            <v-tab value="design" @click="scrollToSection('design')">Design approach</v-tab>
+            <v-tab value="design" @click="scrollToSection('design')">Design</v-tab>
             <v-tab value="mockups" @click="scrollToSection('mockups')">Mockups</v-tab>
             <v-tab v-if="showDevelopment" value="development" @click="scrollToSection('development')">Development</v-tab>
             <v-tab value="accessibility" @click="scrollToSection('accessibility')">Accessibility</v-tab>
@@ -119,7 +119,7 @@
         </div>
       </v-col>
 
-      <v-col v-if="data" cols="12" sm="12" md="9" lg="9" offset-md="1" offset-lg="1">
+      <v-col v-if="data" cols="12" sm="9" md="9" lg="9" offset-sm="1" offset-md="1" offset-lg="1">
         <div class="overflow-x-hidden overflow-y-auto">
           <v-row>
             <v-col>
@@ -332,6 +332,11 @@ li {
     overflow-x: scroll;
     background: #f9f9f9;
     z-index: 1;
+
+    .view-tabs-title {
+      text-align: left;
+      padding: 20px;
+    }
   }
 }
 </style>

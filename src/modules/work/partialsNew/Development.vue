@@ -10,7 +10,7 @@ const props = defineProps({
 
 <template>
     <div ref="development" id="development">
-    <div class="section-header pa-8">
+    <div class="section-header pa-md-8">
         Development steps
 
         <span class="px-4" v-if="input.button">
@@ -26,7 +26,7 @@ const props = defineProps({
             </v-btn>
         </span>
     </div>
-        <div v-if="$vuetify.display.mdAndDown">
+        <div v-if="$vuetify.display.smAndDown">
             <v-window
                 v-model="window"
                 show-arrows
@@ -76,7 +76,7 @@ const props = defineProps({
         <v-row v-if="input.section">
 
             <template v-for="sectionItem in input.section">
-                <v-col v-if="sectionItem.type === 'card'" cols="12" sm="12" md="6" lg="6">
+                <v-col v-if="sectionItem.type === 'card'" cols="12" sm="6" md="6" lg="6">
                     <v-card class="ma-8 pa-8" variant="text" min-height="300">
                         <v-row>
                             <v-col>
@@ -94,7 +94,7 @@ const props = defineProps({
                     </v-card>
                 </v-col>
 
-                <v-col v-if="sectionItem.type === 'image'" cols="12" sm="12" md="6" lg="6">
+                <v-col v-if="sectionItem.type === 'image'" cols="12" sm="6" md="6" lg="6">
                     <img v-for="(imageItem, i) in sectionItem.images" :key="i" :src="$imageSrc(imageItem.src)" :alt="imageItem.caption" class="my-4 w-100" />
                 </v-col>
             </template>
