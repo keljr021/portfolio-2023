@@ -5,18 +5,18 @@ const props = defineProps({
 </script>
 
 <template>
-    <v-card class="ma-2 pa-8" variant="flat">
+    <v-card class="my-2 mx-8 pa-8" variant="flat">
         <div ref="overview" id="overview" class="overflow-y-auto">
             <v-row>
                 <v-col cols="12" sm="12" md="6" lg="6">
-                    <div class="py-4">
+                    <div class="pb-4">
                         <div class="section-caption">Problem </div> 
                         <div v-if="input.problem">
                             <p v-for="item in input.problem">{{ item }}</p>
                         </div>
                     </div>
 
-                    <div class="py-4">
+                    <div class="pb-4">
                         <div class="section-caption">Goal </div> 
                         <div v-if="input.goal">
                             <p v-for="item in input.goal">{{ item }}</p>

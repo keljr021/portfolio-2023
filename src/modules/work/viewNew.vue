@@ -8,6 +8,7 @@
   import Overview from '@/modules/work/partialsNew/Overview.vue';
   import Research from '@/modules/work/partialsNew/Research.vue';
   import Design from '@/modules/work/partialsNew/Design.vue';
+  import Mockups from '@/modules/work/partialsNew/Mockups.vue';
   import Accessibility from '@/modules/work/partialsNew/Accessibility.vue';
   import Development from '@/modules/work/partialsNew/Development.vue';
   import Results from '@/modules/work/partialsNew/Results.vue';
@@ -24,13 +25,14 @@
   const previousView = ref(null);
   const nextView = ref(null);
 
-  const sections = ['overview', 'research', 'design', 'development', 'accessibility', 'results'];
+  const sections = ['overview', 'research', 'design', 'development', 'mockups', 'accessibility', 'results'];
 
   const sectionValues = ref({
     info: null,
     overview: null,
     research: null,
     design: null,
+    mockups: null,
     development: null,
     accessibility: null,
     results: null,
@@ -39,7 +41,7 @@
 
 
   const loadWorkInfo = () => {
-    let { info, overview, research, design, development, accessibility, results, lessons } = prints;
+    let { info, overview, research, design, development, mockups, accessibility, results, lessons } = prints;
 
     showTabs.value = (info.type === 'all' || info.type === 'ux');
     showDevelopment.value = (info.type !== 'frontend');
@@ -109,6 +111,7 @@
           <v-tab value="overview" @click="scrollToSection('overview')">Overview</v-tab>
           <v-tab value="research" @click="scrollToSection('research')">Research</v-tab>
           <v-tab value="design" @click="scrollToSection('design')">Design approach</v-tab>
+          <v-tab value="mockups" @click="scrollToSection('mockups')">Mockups</v-tab>
           <v-tab v-if="showDevelopment" value="development" @click="scrollToSection('development')">Development</v-tab>
           <v-tab value="accessibility" @click="scrollToSection('accessibility')">Accessibility</v-tab>
           <v-tab value="results" @click="scrollToSection('results')">Results</v-tab>
@@ -135,6 +138,11 @@
           <v-row class="justify-space-around">
             <v-col>
               <Design :input="prints.design" />
+            </v-col>
+          </v-row>
+          <v-row v-if="prints.mockups">
+            <v-col>
+              <Mockups :input="prints.mockups" />
             </v-col>
           </v-row>
           <v-row v-if="prints.dev">
@@ -264,7 +272,7 @@ p, li {
   }
 
 p {
-  padding-bottom: 30px;
+  padding-bottom: 15px;
 }
 
 ol, ul {
@@ -272,7 +280,7 @@ ol, ul {
 }
 
 li {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 
