@@ -9,9 +9,11 @@ const props = defineProps({
         <div class="section-header pa-8">Results</div>
         <v-card class="mx-8 my-2 pa-8" variant="flat" min-height="300">
             <v-row>
-                <p v-for="(item, i) in input" :key="i">
-                    {{ item }}
-                </p>
+                <ul>
+                    <li v-for="(item, i) in input" :key="i" class="mb-4">
+                        {{ item }}
+                    </li>
+                </ul>
             </v-row>
         </v-card>
     </div>

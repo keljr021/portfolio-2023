@@ -246,29 +246,58 @@ export const mockups = {
 
 export const accessibility = [
     {
-        name:   'Text Caption 1',
-        images: '',
+        name:   'Attention to color contrast',
         text:   [
-            'This is a text caption',
+            'Ensured that the selected colors were WCAG AA Compliant between background and foreground.',
         ],
     },
     {
-        name:   'Text Caption 2',
-        images: '',
+        name:   'Plain language',
         text:   [
-            'This is a text caption',
+            'Used simple and clear language for pages and headers.',
+        ],
+    },
+    {
+        name:   'Attention to color contrast',
+        text:   [
+            'Ensured the selected colors were WCAG AA Compliant between background and foreground.',
+        ],
+    },
+    {
+        name:   'Visible focus state for form elements',
+        text:   [
+            'Form elements have a visible focus state.',
+        ],
+    },
+    {
+        name:   'Easier layout and navigation',
+        text:   [
+            'Page color scheme, layout, and navigation are easy to navigate across all pages.',
+        ],
+    },
+    {
+        name:   'Large clickable elements',
+        text:   [
+            'Elements are large enough to be easily clicked or tapped on both desktop and mobile devices.',
+        ],
+    },
+    {
+        name:   'Elements are zoomable',
+        text:   [
+            'Elements can be zoomed in and out without losing functionality.',
         ],
     },
 ];
 
 
 export const results = [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus justo pellentesque felis lobortis, et hendrerit mauris cursus.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus justo pellentesque felis lobortis, et hendrerit mauris cursus.',
+    'Created a web site with an improved user interface when viewing webcomics for both desktop and mobile devices.',
+    'Consistent layout and navigation across all pages.',
+    'Scalable and responsive design for future updates and improvements.',
 ];
 
 
 export const lessons = [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus justo pellentesque felis lobortis, et hendrerit mauris cursus.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus justo pellentesque felis lobortis, et hendrerit mauris cursus.',
+    'From taking on this project, user feedback was critical. Incorporating usability studies has helped in keeping the layout simple and intuitive.',
+    'It has also further expanded my horizons as a designer learning new UI webkits. The Bulma/Buefy Webkit used was somewhat new, but I was able to create a great experience in my opinion.'
 ];

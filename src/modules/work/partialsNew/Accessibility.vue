@@ -9,12 +9,12 @@ const props = defineProps({
         <div class="section-header px-8">Accessibility</div>
 
         <v-card class="ma-8 pa-8" variant="flat">
-            <div class="py-6" v-for="item in input">
-                <div class="section-caption">{{ item.name }}</div> 
-                <div v-if="item.text">
+            <v-row>
+                <v-col v-for="item in input" cols="12" sm="12" md="6" lg="6" class="py-4">
+                    <div class="section-caption">{{ item.name }}</div>
                     <div v-for="textItem in item.text">{{ textItem }}</div>
-                </div>
-            </div>
+                </v-col>
+            </v-row>
         </v-card>
     </div>
 </template>
