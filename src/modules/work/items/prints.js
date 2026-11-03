@@ -5,7 +5,7 @@ export const info = {
     color:      '#4e4c67',
     link:       'prints',
     caption:    'Site to host and share comics',
-    role:       "UX Designer, Logo Designer, Front-End Developer",
+    role:       "UX Designer, Front-End Developer",
     ux:         "Figma, Inkscape",
     fe:         "Vue JS, Bulma, Buefy",
     date:       "Aug 2023, Aug 2024",
