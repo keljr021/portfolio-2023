@@ -6,7 +6,7 @@ export const info = {
     link:       'prints',
     caption:    'Site to host and share comics',
     role:       "UX Designer, Logo Designer, Front-End Developer",
-    ux:         "Figma, Inskape",
+    ux:         "Figma, Inkscape",
     fe:         "Vue JS, Bulma, Buefy",
     date:       "Aug 2023, Aug 2024",
     logo:       "work/pr/pr-desktop.png",

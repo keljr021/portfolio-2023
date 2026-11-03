@@ -44,8 +44,6 @@
     const workType = data.value.info?.type;
 
     showTabs.value = (workType !== 'frontend');
-    showDevelopment.value = (workType !== 'frontend');
-
   };
 
   const getSectionElement = (id) => document.getElementById(id);
@@ -112,7 +110,7 @@
             <v-tab value="research" @click="scrollToSection('research')">Research</v-tab>
             <v-tab value="design" @click="scrollToSection('design')">Design</v-tab>
             <v-tab value="mockups" @click="scrollToSection('mockups')">Mockups</v-tab>
-            <v-tab v-if="showDevelopment" value="development" @click="scrollToSection('development')">Development</v-tab>
+            <v-tab v-if="data.dev" value="development" @click="scrollToSection('development')">Development</v-tab>
             <v-tab value="accessibility" @click="scrollToSection('accessibility')">Accessibility</v-tab>
             <v-tab value="results" @click="scrollToSection('results')">Results</v-tab>
           </v-tabs>
