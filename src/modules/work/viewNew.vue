@@ -96,7 +96,7 @@
     <v-row>
 
       <v-col cols="12" sm="1" md="1" lg="1" class="overflow-x-auto">
-        <div class="view-tabs px-0">
+        <div v-if="data?.info?.type !== 'frontend'" class="view-tabs px-0">
           <div :class="{ 'view-tabs-title': true, 'show': currentTab !== null }">{{ data?.info?.title }}</div>
           <v-tabs 
             v-if="showTabs"
@@ -125,17 +125,17 @@
               <Title :input="data.info" />
             </v-col>
           </v-row>
-          <v-row class="justify-space-around">
+          <v-row v-if="data.overview" class="justify-space-around">
             <v-col>
               <Overview :input="data.overview" />
             </v-col>
           </v-row>
-          <v-row class="justify-space-around">
+          <v-row v-if="data.research" class="justify-space-around">
             <v-col>
               <Research :input="data.research" />
             </v-col>
           </v-row>
-          <v-row class="justify-space-around">
+          <v-row v-if="data.design" class="justify-space-around">
             <v-col>
               <Design :input="data.design" />
             </v-col>
@@ -150,12 +150,12 @@
               <Development :input="data.dev" />
             </v-col>
           </v-row>
-          <v-row class="justify-space-around">
+          <v-row v-if="data.accessibility" class="justify-space-around">
             <v-col>
               <Accessibility :input="data.accessibility" />
             </v-col>
           </v-row>
-          <v-row class="justify-space-around">
+          <v-row v-if="data.results || data.lessons" class="justify-space-around">
             <v-col cols="12" sm="12" md="6" lg="6">
               <Results :input="data.results" />
             </v-col>
