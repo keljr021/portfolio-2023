@@ -13,7 +13,7 @@ export const info = {
     
     viewButtons: [
         {
-            name: 'Site',
+            name: 'Live Site',
             link: 'https://poc.kelvin-m.com/prints-webcomics/#/',
             icon: 'mdi-link'
         },
@@ -28,7 +28,7 @@ export const info = {
             icon: 'mdi-github'
         },
         {
-            name: 'Figma Prototype',
+            name: 'Figma',
             link: 'https://www.figma.com/proto/Q3vhPUsXjeRLio6iVKsHDs/Prints-Webcomics-and-Hosting?page-id=30%3A1292&node-id=30-1293&node-type=FRAME&viewport=1018%2C386%2C0.15&t=7rVDl1AC6erlbujd-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=30%3A1293',
             icon: 'mdi-open-in-new'
         }

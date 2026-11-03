@@ -17,8 +17,8 @@
   const { y } = useScroll(window);
   const currentTab = ref(null);
 
-  const showTabs = ref(true);
-  const showDevelopment = ref(true);
+  const showTabs = ref(false);
+  const showDevelopment = ref(false);
 
   const previousView = ref(null);
   const nextView = ref(null);
@@ -44,6 +44,7 @@
     const workType = data.value.info?.type;
 
     showTabs.value = (workType !== 'frontend');
+    showDevelopment.value = (data.value.dev !== undefined);
   };
 
   const getSectionElement = (id) => document.getElementById(id);
@@ -110,7 +111,7 @@
             <v-tab value="research" @click="scrollToSection('research')">Research</v-tab>
             <v-tab value="design" @click="scrollToSection('design')">Design</v-tab>
             <v-tab value="mockups" @click="scrollToSection('mockups')">Mockups</v-tab>
-            <v-tab v-if="data.dev" value="development" @click="scrollToSection('development')">Development</v-tab>
+            <v-tab v-if="showDevelopment" value="development" @click="scrollToSection('development')">Development</v-tab>
             <v-tab value="accessibility" @click="scrollToSection('accessibility')">Accessibility</v-tab>
             <v-tab value="results" @click="scrollToSection('results')">Results</v-tab>
           </v-tabs>
@@ -144,7 +145,7 @@
               <Mockups :input="data.mockups" />
             </v-col>
           </v-row>
-          <v-row v-if="data.dev">
+          <v-row v-if="showDevelopment">
             <v-col>
               <Development :input="data.dev" />
             </v-col>

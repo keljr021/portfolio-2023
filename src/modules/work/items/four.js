@@ -12,93 +12,98 @@ export const info = {
     
     viewButtons: [
         {
+            name: 'Figma Desktop',
+            link: 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=28-242&t=7r8PqfSf9rv4qlZX-1&scaling=min-zoom&page-id=28%3A187&starting-point-node-id=28%3A242&mode=design',
+            icon: 'mdi-open-in-new'
+        },
+                {
+            name: 'Figma Mobile',
+            link: 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=76-5666&t=V6DdFKCvilGcjKaA-1&scaling=scale-down-width&page-id=76%3A3524&starting-point-node-id=78%3A1674&mode=design',
+            icon: 'mdi-open-in-new'
+        },
+        {
             name: 'Case Study',
             link: 'https://docs.google.com/presentation/d/11AmaJsV7683gmRCD8ctkhfBbgtaMJRarI9DvzXZhG2Q/edit?usp=sharing',
             icon: 'mdi-presentation'
         },
-        {
-            name: 'Figma Prototype',
-            link: 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=28-242&t=7r8PqfSf9rv4qlZX-1&scaling=min-zoom&page-id=28%3A187&starting-point-node-id=28%3A242&mode=design',
-            icon: 'mdi-open-in-new'
-        }
     ]
 };
 
 export const overview = {
     image: 'work/fl/logo-fl.png',
     problem: [
-        "Artists are looking for a site to host and share their comic series; but the options available can be complex and difficult to understand. From a viewer's perspective, there are various sites available; but the user interface is very clunky and inaccessible.",
+        "With the excess of video game options, new consumers to the hobby are overwhelmed with the choices out there; or what all items are needed to set up their equipment.",
 
     ],
     goal: [
-        "Design a site to host and view webcomics with an easy-to-use user interface, that improves the experience for all users.",
+        "Provide an online resource that takes a question from the user and generates recommended information of items based on the request. This gives consumers a clear and informative option of what is needed for their specific game console or equipment.",
     ],
 };
 
 export const research = [
     {
         type:   'card',
-        title:  '',
         size:   6,
         images: [
             {
-                src:     'work/pr/pr-audit.png',
-                caption: 'Started with a competitive audit of direct and indirect competitors for online webcomic sites. Documented the advantages and challenges of each site; and identified opportunities for improvement.'
+                src:     'work/fl/fl-persona.png',
+                caption: 'Created a user persona for a consumer that is somewhat new to video games, but is interested in purchasing equipment for his nephew.'
             },
         ],
         text: [
-                'Started with a competitive audit of direct and indirect competitors for online webcomic sites. Documented the advantages and challenges of each site; and identified opportunities for improvement.',
+                'Created a user persona for a consumer that is somewhat new to video games, but is interested in purchasing equipment for his nephew.'
         ]
     },
-    {
+        {
         type:   'card',
-        title:  '',
         size:   6,
         images: [
             {
-                src:     'work/pr/pr-persona2.png',
-                caption: 'Created user personas for both webcomic artists and viewers.'
+                src:     'work/fl/fl-audit.png',
+                caption: 'Created a competitive audit of direct and indirect competitors.'
             },
         ],
         text: [
-                'Created user personas for both webcomic artists and viewers.',
+                'Created a competitive audit of direct and indirect competitors; including GameStop, Wikipedia, and Best Buy.',
         ]
-    }
+    },
 ];
 
 export const design = {
     timeline: [
         {
-            title:  'Defined goals',
+            title:  'Created a user diagram',
             text:   [
-                'From the above research, I have defined the following goals:',
+                'Started with a user diagram that organizes the workflow. The diagram allows us to clearly define the below goals:',
                 {
                     list: [
-                        'Keep the site layout clean while focusing on the content.',
-                        'Ensure the site is accessible and easy to navigate for all users.',
-                        'The web comic view interface should be unobtrusive for both desktop and mobile views.',
+                        'User should be able to enter a query to gather specific information.',
+                        'Query should give information laid out in an easy to read format.',
+                        'An option for the user to share that generated content.',
                     ]
                 }
+            ],
+            images: [
+                'work/fl/fl-diagram.png',
             ]
         },
         {
-            title:  'Organized notes to create a sitemap ',
+            title:  'Written notes and created a sitemap ',
             text:   [
-                'Generated notes from the research and organized them into a sitemap to help visualize the site structure and user flow.',
+                'Documented ideas from the research and organized them into a sitemap to help visualize the site structure and user flow.',
             ],
             images: [
-                'work/pr/pr-pframe1.png',
-                'work/pr/pr-pframe4.png',
+                'work/fl/fl-pframe1.png',
+                'work/fl/fl-pframe2.png',
             ]
         },
         {
             title:  'Created paper wireframes',
             text:   [
-                'Began drafting paper mockups of how each page should look like for both desktop and mobile views.',
+                'Began drafting paper mockups of how each page should look.',
             ],
             images: [
-                'work/pr/pr-pframe5.jpg',
-                'work/pr/pr-pframe6.jpg',
+                'work/fl/fl-pframe3.jpg',
             ]
         },
         {
@@ -107,13 +112,19 @@ export const design = {
                 'Created digital wireframes in Figma to help visualize the site layout and user flow.',
             ],
             images: [
-                'work/pr/pr-dframe1.png',
+                'work/fl/fl-dframe1.png',
             ]
         },
         {
             title: 'Conducted usability testing',
             text: [
-                'Conducted usability testing with real users to gather feedback and identify areas for improvement.',
+                'Conducted usability testing with real users to gather feedback and identify areas for improvement. Some of the feedback:',
+                {
+                    list: [
+                        'Several of the users noticed that they have to navigate to the Home page or Ask page to update their questions. Needs to be a quicker way for users to refine or update queries.',
+                        'The Share and Print options were missed in a few of the studies that would allow users to share content. These would need to be more prominently displayed to the user.'
+                    ]
+                }
             ]
         },
         {
@@ -122,7 +133,7 @@ export const design = {
                 'Refined the wireframes based on feedback from usability testing and created high-fidelity mockups in Figma.',
             ],  
             images: [
-                    'work/pr/pr-mock1.png',
+                    'work/fl/fl-mock1.png',
                 ]
         },
     ]
@@ -131,44 +142,44 @@ export const design = {
 export const mockups = {
     button: {
         name: 'Figma',
-        link: 'https://www.figma.com/proto/Q3vhPUsXjeRLio6iVKsHDs/Prints-Webcomics-and-Hosting?page-id=30%3A1292&node-id=30-1293&node-type=FRAME&viewport=1018%2C386%2C0.15&t=7rVDl1AC6erlbujd-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=30%3A1293',
+        link: 'https://www.figma.com/proto/vnB2X5xQX38Bhz9Nq2X7ee/4-Lives-AI?type=design&node-id=28-242&t=7r8PqfSf9rv4qlZX-1&scaling=min-zoom&page-id=28%3A187&starting-point-node-id=28%3A242&mode=design',
         icon: 'mdi-open-in-new'
     },
     sticker: {
-        src: 'work/pr/pr-sticker.png',
+        src: 'work/fl/fl-sticker.png',
     },
     list: [
         {
             title: 'Home',
             lofi: {
-                src: 'work/pr/pr-dframe1.png',
-                caption: 'The Call to Action is upfront with information about the site on the top of the page. An image is added to the left, with the text onto the right. Below the CTA, there are sections for both featured comics and authors.'
+                src: 'work/fl/fl-dframe1.png',
+                caption: 'Adds a textarea and Submit button as a Call to Action to the page so the user has a quick way to query the site.'
             },
             hifi: {
-                src: 'work/pr/pr-mock1.png',
-                caption: 'The image was scaled to the background; the text layout was kept similar, with an added button for the Genre pages. The featured comics and authors layouts were kept in below the CTA, with an added New Releases section.'
+                src: 'work/fl/fl-mock1.png',
+                caption: 'Used Microsoft Fluent UI for the components. A background image was added to complement the AI-generated workflow. Scrolling below displays a most recently searched section with links to quickly generate content.'
             },
         },
         {
-            title: 'Genres',
+            title: 'Query page',
             lofi: {
-                src: 'work/pr/pr-dframe2.png',
-                caption: 'The Genres menu is added to the left section, which will show the items available for each. On mobile, this has been replaced with a dropdown. The Comic items are separated in a three-column layout with information on the bottom for desktop; and a two-column layout for mobile.'
+                src: 'work/fl/fl-dframe2.png',
+                caption: 'After the user submits a question, this page is generated with the main answer on top. Additional information is laid out below with links to more content.'
             },
             hifi: {
-                src: 'work/pr/pr-mock2.png',
-                caption: 'The Genres section layout was kept the same. The comic content adds several mock items that shows a title, genre, author, and trigger warnings if needed.'
+                src: 'work/fl/fl-mock2.png',
+                caption: 'The question component near the navbar is now clickable for the user to quickly refine or update their question; and re-submit. The Share and Print options are added to the right of the page and fixed whenever the user scrolls.'
             },
         },
         {
-            title: 'View Comic',
+            title: 'Section page',
             lofi: {
-                src: 'work/pr/pr-dframe3.png',
-                caption: 'The image is front and center with two menu buttons on each side. The left menu is to go back, while the right menu holds a submenu for comments, likes, etc. The idea was to keep the menu options out of the way, but available as needed.'
+                src: 'work/fl/fl-dframe3.png',
+                caption: 'Based on the information given, the content may lay out as a grid of items. When clicked, the query page would be loaded with content based on the selection. The question section near the navbar lets the user keep track of what current question has been asked.'
             },
             hifi: {
-                src: 'work/pr/pr-mock3.png',
-                caption: 'The title was added to the top of the screen. For the menu buttons, I\'ve revised it to only one fixed button on the bottom left of the screen. When selected, a submenu of options are shown, with the back button included into the submenu.'
+                src: 'work/fl/fl-mock3.png',
+                caption: 'The layout is kept the same; and used the Card components to separate each item. The Share and Print options are also on the right of the page.'
             },
         }
     ]
@@ -176,52 +187,34 @@ export const mockups = {
 
 export const accessibility = [
     {
-        name:   'Attention to color contrast',
+        name:   'Color contrast',
         text:   [
-            'Ensured that the selected colors were WCAG AA Compliant between background and foreground.',
+            'Ensured sufficient color contrast between text and background elements to meet WCAG AA standards.',
         ],
     },
     {
-        name:   'Plain language',
+        name:   'Easy to understand elements',
         text:   [
-            'Used simple and clear language for pages and headers.',
+            'Textboxes, links, and buttons are clearly defined in each page.',
         ],
     },
     {
-        name:   'Visible focus state for form elements',
+        name:   'Large clickable areas',
         text:   [
-            'Form elements have a visible focus state.',
+            'Elements are able to be clicked on desktop and touched on mobile.',
         ],
-    },
-    {
-        name:   'Easier layout and navigation',
-        text:   [
-            'Page color scheme, layout, and navigation are easy to navigate across all pages.',
-        ],
-    },
-    {
-        name:   'Large clickable elements',
-        text:   [
-            'Elements are large enough to be easily clicked or tapped on both desktop and mobile devices.',
-        ],
-    },
-    {
-        name:   'Elements are zoomable',
-        text:   [
-            'Elements can be zoomed in and out without losing functionality.',
-        ],
-    },
+    },    
 ];
 
 
 export const results = [
-    'Created a web site with an improved user interface when viewing webcomics for both desktop and mobile devices.',
-    'Consistent layout and navigation across all pages.',
-    'Scalable and responsive design for future updates and improvements.',
+    'Created a site with a search workflow that gives members all the needed information.',
+    'Adds an editable query for members to quickly edit and update.',
+    'A navigation menu that highlights the latest video game consoles and equipment.',
 ];
 
 
 export const lessons = [
-    'From taking on this project, user feedback was critical. Incorporating usability studies has helped in keeping the layout simple and intuitive.',
-    'It has also further expanded my horizons as a designer learning new UI webkits. The Bulma/Buefy Webkit used was somewhat new, but I was able to create a great experience in my opinion.'
+    'Working on this project, I have gained more knowledge in using Figma\'s assets panel. This has proved very beneficial when prototyping the project to reuse assets, components, and layout structure.',
+    'It has also given me experience around AI-generated queries; AI can be very powerful and informative when generating requests.'
 ];
