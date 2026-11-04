@@ -13,11 +13,15 @@ defineProps({
   },
   imgWidth: {
     type: String,
-    default: '100%'
+    default: '300px'
   },
   imgHeight: {
     type: String,
     default: null
+  },
+  maxHeight: {
+    type: String,
+    default: '250px'
   }
 });
 
@@ -29,9 +33,12 @@ const isMobile = computed(() => display.smAndDown.value);
         <template v-slot:activator="{ props }">
             <v-img 
                 v-bind="props" 
+                eager
                 class="pt-1 cursor-pointer" 
                 :width="imgWidth" 
                 :height="imgHeight ? imgHeight : ''" 
+                :max-height="maxHeight"
+                :alt="text"
                 lazy-src="https://picsum.photos/id/11/100/60" 
                 :src="$imageSrc(src)">
                 
@@ -69,8 +76,10 @@ const isMobile = computed(() => display.smAndDown.value);
                         <v-img
                             class="mx-1"
                             width="100%"
-                            :width="imgWidth * 1.5" 
-                            :height="imgHeight ? imgHeight * 1.5 : ''" 
+                            :width="imgWidth"
+                            :height="imgHeight ? imgHeight : ''"
+                            max-height="85vh"
+                            :alt="text"
                             lazy-src="https://picsum.photos/id/11/100/60" 
                             :src="$imageSrc(src)" />
 

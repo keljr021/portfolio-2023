@@ -3,15 +3,15 @@
   import { useScroll } from '@vueuse/core'
   import { useRoute } from 'vue-router';
 
-  import Title from '@/modules/work/partialsNew/Title.vue';
-  import Overview from '@/modules/work/partialsNew/Overview.vue';
-  import Research from '@/modules/work/partialsNew/Research.vue';
-  import Design from '@/modules/work/partialsNew/Design.vue';
-  import Mockups from '@/modules/work/partialsNew/Mockups.vue';
-  import Accessibility from '@/modules/work/partialsNew/Accessibility.vue';
-  import Development from '@/modules/work/partialsNew/Development.vue';
-  import Results from '@/modules/work/partialsNew/Results.vue';
-  import LessonsLearned from '@/modules/work/partialsNew/LessonsLearned.vue';
+  import Title from '@/modules/work/partials/Title.vue';
+  import Overview from '@/modules/work/partials/Overview.vue';
+  import Research from '@/modules/work/partials/Research.vue';
+  import Design from '@/modules/work/partials/Design.vue';
+  import Mockups from '@/modules/work/partials/Mockups.vue';
+  import Accessibility from '@/modules/work/partials/Accessibility.vue';
+  import Development from '@/modules/work/partials/Development.vue';
+  import Results from '@/modules/work/partials/Results.vue';
+  import LessonsLearned from '@/modules/work/partials/LessonsLearned.vue';
 
   const route = useRoute();
   const { y } = useScroll(window);
