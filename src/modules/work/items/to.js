@@ -18,7 +18,7 @@ export const info = {
         },
         {
             name: 'Figma Desktop',
-            link: 'https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=6-6495&scaling=min-zoom&page-id=6%3A6494&starting-point-node-id=6%3A6495',
+            link: 'https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A11119&scaling=min-zoom&page-id=28%3A11118&starting-point-node-id=28%3A11119',
             icon: 'mdi-open-in-new'
         },
         {
@@ -145,7 +145,7 @@ export const mockups = {
         },
         {
             name: 'Figma Desktop',
-            link: 'https://www.figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A11119&scaling=min-zoom&page-id=28%3A11118&starting-point-node-id=28%3A11119',
+            link: 'figma.com/proto/iJUBxL1NugZC1lL3FMUKV4/Torch-Responsive-Site?node-id=28%3A11119&scaling=min-zoom&page-id=28%3A11118&starting-point-node-id=28%3A11119',
             icon: 'mdi-open-in-new'
         }
     ],
@@ -246,11 +246,23 @@ export const mockups = {
 
 export const accessibility = [
     {
-        name:   'x',
+        name:   'Consistent styling',
         text:   [
-            'x',
+            'Ensured that the styles are consistent across the mobile and web application.',
         ],
     },
+    {
+        name: 'Easily defined elements',
+        text: [
+            'All form elements, buttons, and links are defined.'
+        ]
+    },
+    {
+        name: 'Clear language',
+        text: [
+            'Application has plain language to understand each page.'
+        ]
+    }
 ];
 
 
