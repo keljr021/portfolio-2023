@@ -118,7 +118,7 @@
         </div>
       </v-col>
 
-      <v-col v-if="data" cols="12" sm="9" md="9" lg="9" offset-sm="1" offset-md="1" offset-lg="1">
+      <v-col v-if="data" cols="12" sm="10" md="10" lg="10" offset-sm="1" offset-md="1" offset-lg="1">
         <div class="overflow-x-hidden overflow-y-auto">
           <v-row>
             <v-col>

@@ -1,4 +1,6 @@
 <script setup>
+import ViewImage from './ViewImage.vue'
+
 const props = defineProps({
     input: Object,
 });
@@ -30,7 +32,7 @@ const props = defineProps({
                     </div>
                 </v-col>
                 <v-col v-if="input.image" cols="12" sm="6" md="6" lg="6" class="text-center pt-8 pb-4">
-                    <img :src="$imageSrc(input.image)" alt="Placeholder Image" class="w-75">
+                    <view-image :src="input.image" img-width="75%" class="w-75" />
                 </v-col>
                 <v-col v-if="input.features" cols="12" sm="6" md="6" lg="6" class="pt-8 pb-4 px-4">
                     <div class="section-caption">Features</div> 

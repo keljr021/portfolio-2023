@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import ViewImage from './ViewImage.vue'
 
 const window = ref(null);
 const props = defineProps({
@@ -38,7 +39,15 @@ const props = defineProps({
                     <v-card class="mb-8 pa-4" variant="elevated" min-width="90vw">
                         <v-card-title>{{ timelineItem.title }}</v-card-title>
                         <v-card-text>
-                            This is some text.
+                            <template v-for="(textValueItem, tv) in timelineItem.text" :key="tv">
+                                <ul v-if="textValueItem.list">
+                                    <li v-for="(listItem, l) in textValueItem.list" :key="l">{{ listItem }}</li>
+                                </ul>
+                                <p v-else>{{ textValueItem }}</p>
+                            </template>
+                            <div v-if="timelineItem.images" class="py-2 text-center">
+                                <view-image v-for="(imgItem, imageIndex) in timelineItem.images" :key="imageIndex" :src="imgItem" />
+                            </div>
                         </v-card-text>
                     </v-card>
                 </v-window-item>
@@ -48,10 +57,10 @@ const props = defineProps({
 
         <v-timeline v-else class="px-8" dot-color="blue-darken-3" align="start" alignment="top">
             
-            <v-timeline-item v-for="timelineItem in input.timeline" align="start">
+            <v-timeline-item v-for="(timelineItem, i) in input.timeline" :key="i" align="start">
                 <template v-if="timelineItem.images" v-slot:opposite>
-                    <div v-for="imgItem in timelineItem.images" class="py-2 text-center">
-                        <img :src="$imageSrc(imgItem)" class="w-75" />
+                    <div v-for="(imgItem, imageIndex) in timelineItem.images" :key="imageIndex" class="py-2 text-center">
+                        <view-image :src="imgItem" />
                     </div>
                 </template>
                 <v-card class="design-timeline-item py-4" variant="text" width="100%">
@@ -95,7 +104,7 @@ const props = defineProps({
                 </v-col>
 
                 <v-col v-if="sectionItem.type === 'image'" cols="12" sm="6" md="6" lg="6">
-                    <img v-for="(imageItem, i) in sectionItem.images" :key="i" :src="$imageSrc(imageItem.src)" :alt="imageItem.caption" class="my-4 w-100" />
+                    <view-image v-for="(imageItem, i) in sectionItem.images" :key="i" :src="imageItem.src" :text="imageItem.caption" class="my-4 w-100" img-width="100%" />
                 </v-col>
             </template>
 

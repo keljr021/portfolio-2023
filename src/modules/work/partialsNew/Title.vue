@@ -1,5 +1,6 @@
 <script setup>
 import { computed, toRef } from 'vue'
+import ViewImage from './ViewImage.vue'
 
 const props = defineProps({
     input: Object,
@@ -55,7 +56,7 @@ const workLogo = computed(() => input.value?.logo ?? null);
                 </div>
             </v-col>
             <v-col v-if="workLogo" order-xs="1" order-sm="1" :class="$vuetify.display.smAndDown ? 'order-first' : ''">
-                <img :src="$imageSrc(workLogo)" :alt="input.title + ' image'" class="w-100">
+                <view-image :src="workLogo" img-width="100%" />
             </v-col>
         </v-row>
     </v-card>

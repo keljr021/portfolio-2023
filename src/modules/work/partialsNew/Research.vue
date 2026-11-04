@@ -1,4 +1,6 @@
 <script setup>
+import ViewImage from './ViewImage.vue'
+
 const props = defineProps({
     input: Object,
 });
@@ -25,11 +27,12 @@ const hasImages = (item) => {
                             <v-col v-if="item.images" cols="12" :sm="item.size === 12 ? 6 : 12" :md="item.size === 12 ? 6 : 12" :lg="item.size === 12 ? 6 : 12">
                                 <div v-if="item.title" class="section-caption">{{ item.title }}</div>
                                 <div :class="{ 'my-8': true, 'text-center': item.size === 6 }">
-                                    <img v-for="(imageItem, i) in item.images" 
+                                    <view-image v-for="(imageItem, i) in item.images" 
                                         :key="i" 
                                         :class="`research-card-image ${item.size === 6 ? 'half' : 'full'}`"
-                                        :src="$imageSrc(imageItem.src)" 
-                                        :alt="imageItem.caption" 
+                                        :src="imageItem.src" 
+                                        :text="imageItem.caption"
+                                        :img-width="item.size === 6 ? '75%' : '30%'"
                                     />
                                     
                                 </div>

@@ -1,4 +1,6 @@
 <script setup>
+import ViewImage from './ViewImage.vue'
+
 const props = defineProps({
     input: Object,
 });
@@ -41,7 +43,7 @@ const props = defineProps({
                 <v-card-title>{{ listItem.title }}</v-card-title>
                 <v-row>
                     <v-col cols="12" sm="6" md="6" lg="6">
-                        <img class="mockups-item-image" :src="$imageSrc(listItem.lofi.src)" :alt="listItem.lofi.caption" />
+                        <view-image class="mockups-item-image" :src="listItem.lofi.src" :text="listItem.lofi.caption" img-width="100%" img-height="200px" />
                         <div>
                             <div class="section-caption">Before</div>
                             <p>
@@ -50,7 +52,7 @@ const props = defineProps({
                         </div>
                     </v-col>
                     <v-col cols="12" sm="6" md="6" lg="6">
-                        <img class="mockups-item-image" :src="$imageSrc(listItem.hifi.src)" :alt="listItem.hifi.caption" />
+                        <view-image class="mockups-item-image" :src="listItem.hifi.src" :text="listItem.hifi.caption" img-width="100%" img-height="200px" />
                         <div>
                             <div class="section-caption">After</div>
                             <p>
@@ -66,7 +68,7 @@ const props = defineProps({
                     <v-card class="mx-8 mb-12 pa-8" variant="flat">
                         <v-card-title>Sticker sheet</v-card-title>
                         <div class="my-5">
-                            <img class="mockups-item-sticker" :src="$imageSrc(input.sticker.src)" :alt="input.sticker.caption" />
+                            <view-image class="mockups-item-sticker" :src="input.sticker.src" :text="input.sticker.caption" img-width="100%" img-height="500px" />
                         </div>
                     </v-card>
                 </v-col>
