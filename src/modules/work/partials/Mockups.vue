@@ -68,7 +68,7 @@ const props = defineProps({
                     <v-card class="mx-8 mb-12 pa-8" variant="flat">
                         <v-card-title>Sticker sheet</v-card-title>
                         <div class="my-5">
-                            <view-image class="mockups-item-sticker" :src="input.sticker.src" :text="input.sticker.caption" img-width="100%" img-height="500px" />
+                            <view-image class="mockups-item-sticker" :src="input.sticker.src" :text="input.sticker.caption" img-width="100%" />
                         </div>
                     </v-card>
                 </v-col>

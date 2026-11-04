@@ -22,6 +22,9 @@ defineProps({
   maxHeight: {
     type: String,
     default: '250px'
+  },
+  imgClass: {
+    type: String,
   }
 });
 
@@ -34,7 +37,7 @@ const isMobile = computed(() => display.smAndDown.value);
             <v-img 
                 v-bind="props" 
                 eager
-                class="pt-1 cursor-pointer" 
+                :class="`pt-1 cursor-pointer ${imgClass}`" 
                 :width="imgWidth" 
                 :height="imgHeight ? imgHeight : ''" 
                 :max-height="maxHeight"
@@ -74,7 +77,7 @@ const isMobile = computed(() => display.smAndDown.value);
                 <v-row>
                     <v-col>
                         <v-img
-                            class="mx-1"
+                            :class="`mx-1 ${imgClass}`" 
                             width="100%"
                             :width="imgWidth"
                             :height="imgHeight ? imgHeight : ''"

@@ -31,8 +31,8 @@ const props = defineProps({
                         </div>
                     </div>
                 </v-col>
-                <v-col v-if="input.image" cols="12" sm="6" md="6" lg="6" class="text-center pt-8 pb-4">
-                    <view-image :src="input.image" img-width="75%" class="w-75" />
+                <v-col v-if="input.image" cols="12" sm="6" offset-md="1" offset-lg="1" md="3" lg="3" class="pt-8 pb-4">
+                    <view-image :src="input.image" imgClass="text-center w-50" />
                 </v-col>
                 <v-col v-if="input.features" cols="12" sm="6" md="6" lg="6" class="pt-8 pb-4 px-4">
                     <div class="section-caption">Features</div> 

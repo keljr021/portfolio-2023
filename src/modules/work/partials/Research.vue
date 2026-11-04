@@ -32,7 +32,7 @@ const hasImages = (item) => {
                                         :class="`research-card-image ${item.size === 6 ? 'half' : 'full'}`"
                                         :src="imageItem.src" 
                                         :text="imageItem.caption"
-                                        :img-width="item.size === 6 ? '75%' : '30%'"
+                                        :img-width="item.size === 6 ? 'fit-width' : '30%'"
                                     />
                                     
                                 </div>
