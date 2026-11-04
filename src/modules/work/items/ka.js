@@ -19,7 +19,7 @@ export const info = {
         },
         {
             name: 'Case Study',
-            link: 'https://docs.google.com/presentation/d/11AmaJsV7683gmRCD8ctkhfBbgtaMJRarI9DvzXZhG2Q/edit?usp=sharing',
+            link: 'https://docs.google.com/presentation/d/181XSVIOJkkjA9xZBpeepm3Is4oX9U1xV_AqXgBc-NXU/edit?usp=sharing',
             icon: 'mdi-presentation'
         },
         {
@@ -138,6 +138,62 @@ export const design = {
     ]
 };
 
+export const dev = {
+    button: {
+        name: 'Github',
+        link: 'https://github.com/keljr021/ka-clean-2023',
+        icon: 'mdi-github'
+    },
+    timeline: [
+        {
+            title:  'Created a new Vue project',
+            text:   [
+                'Used Vue CLI to generate the proper configs, then removed the excess files generated.',
+            ],
+            images: [
+                'work/ka/ka-dev1.png',
+            ]
+        },
+        {
+            title:  'Added Vuetify and scaffholded the components',
+            text:   [
+                'Created the sections for index site.',
+                'Used the sitemap and wireframes as a reference for developing the layout and child components.',
+            ],
+            images: [
+                'work/ka/ka-dev2.png',
+            ]
+        },
+        {
+            title:  'Added styles for each corresponding section',
+            text:   [
+                'Aligned with Figma for proper styling; and used SASS for consistent classes. Also added Parallax scrolling to background images.',
+            ],
+            images: [
+                'work/ka/ka-parallax.gif'
+            ]
+        },
+        {
+            title:  'Breakpoints for mobile and tablet views',
+            text:   [
+                'Added the proper breakpoints and updated styles for proper responsive viewing on both desktop and mobile devices.',
+            ],  
+            images: [
+                'work/ka/ka-mobile.gif',
+            ]
+        },
+        {
+            title:  'Final testing and cleanup',
+            text:   [
+                'Manually tested the site on both desktop and mobile devices. Added a favicon and cleaned up code.',
+            ],
+            images: [
+                'work/ka/ka-mock1.png',
+            ]
+        }
+    ]
+};
+
 export const mockups = {
     button: {
         name: 'Figma',
@@ -191,65 +247,6 @@ export const mockups = {
                 src: 'work/ka/ka-mock4.png',
                 caption: 'A popup is defined with an embedded Google Form in the desktop, with a button to close the popup or open the form in a new tab. For mobile members, the Google Form is opened in a new window by default.'
             },
-        }
-    ]
-};
-
-export const dev = {
-    button: {
-        name: 'Github',
-        link: 'https://github.com/keljr021/ka-clean-2023',
-        icon: 'mdi-github'
-    },
-    timeline: [
-        {
-            title:  'Created new Vue project',
-            text:   [
-                'Used Vue CLI and added the Vue Router library for proper page routes and transitions.',
-            ],
-            images: [
-                'work/pr/pr-dev1.png',
-            ]
-        },
-        {
-            title:  'Scaffholded the components',
-            text:   [
-                'Created the Navbar and Footer Vue components for all pages.',
-                'Used the sitemap and wireframes as a reference for developing the page layouts and child components.',
-            ],
-            images: [
-                'work/pr/pr-dev2.png',
-            ]
-        },
-        {
-            title:  'Stylized each corresponding component',
-            text:   [
-                'Bulma and Buefy for consistent styling. Also added web fonts via CDN.',
-            ]
-        },
-        {
-            title:  'Added wiring each component',
-            text:   [
-                'Added JavaScript methods and VueX for state and store management.',
-            ]
-        },
-        {
-            title:  'Revisited styling for responsiveness',
-            text:   [
-                'Added the proper breakpoints and updated styles for proper responsive viewing on both desktop and mobile devices.',
-            ],  
-            images: [
-                'work/pr/pr-mobile.gif',
-            ]
-        },
-        {
-            title:  'Final testing and cleanup',
-            text:   [
-                'Manually tested the site on both desktop and mobile devices. Cleaned up the code and removed any unused files or components.',
-            ],
-            images: [
-                'work/pr/pr-desktop.gif',
-            ]
         }
     ]
 };

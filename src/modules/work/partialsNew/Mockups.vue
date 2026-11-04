@@ -8,17 +8,32 @@ const props = defineProps({
     <div ref="mockups" id="mockups">
         <div class="section-header pa-md-8">
             Mockups
-            <span class="px-4" v-if="input.button">
-                <v-btn 
-                    class="ma-4 ml-0" 
-                    size="small"
-                    rounded="xl" 
-                    variant="outlined" 
-                    :prepend-icon="input.button.icon"
-                    :href="input.button.link"
-                    target="_blank"
-                >{{ input.button.name }}
-                </v-btn>
+            <span class="px-4" >
+                <template v-if="input.buttons">
+                    <v-btn
+                        v-for="buttonItem in input.buttons" 
+                        class="ma-4 ml-0" 
+                        size="small"
+                        rounded="xl" 
+                        variant="outlined" 
+                        :prepend-icon="buttonItem.icon"
+                        :href="buttonItem.link"
+                        target="_blank"
+                        >{{ buttonItem.name }}
+                    </v-btn>
+                </template>
+                <template v-if="input.button">
+                    <v-btn 
+                        class="ma-4 ml-0" 
+                        size="small"
+                        rounded="xl" 
+                        variant="outlined" 
+                        :prepend-icon="input.button.icon"
+                        :href="input.button.link"
+                        target="_blank"
+                        >{{ input.button.name }}
+                    </v-btn>
+                </template>
             </span>
         </div>
         <div class="my-2">

@@ -68,7 +68,7 @@ export const research = [
         images: [
             {
                 src:     'work/pr/pr-persona2.png',
-                caption: 'Created user personas for both webcomic artists and viewers.'
+                caption: 'Created user personas for both webcomic artists finding a reputable site to host their comics; and for an end user looking for an easy way to view and share comics.'
             },
         ],
         text: [
@@ -147,7 +147,7 @@ export const dev = {
     },
     timeline: [
         {
-            title:  'Created new Vue project',
+            title:  'Created a new Vue project',
             text:   [
                 'Used Vue CLI and added the Vue Router library for proper page routes and transitions.',
             ],
