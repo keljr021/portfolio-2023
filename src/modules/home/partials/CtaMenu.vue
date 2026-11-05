@@ -46,6 +46,7 @@ const showResumeDialog = inject('showResumeDialog');
         padding: 0 4px;
         opacity: 0.6;
         text-decoration: underline;
+        transition: opacity ease-in-out 0.3s;
 
         &:hover {
             opacity: 1 !important;
