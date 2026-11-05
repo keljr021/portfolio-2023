@@ -25,8 +25,6 @@ defineProps({
   },
 });
 
-const isHoveredOver = ref(true);
-
 const display = useDisplay();
 const isMobile = computed(() => display.smAndDown.value);
 </script>
@@ -58,14 +56,8 @@ const isMobile = computed(() => display.smAndDown.value);
         </template>
 
         <template v-slot:default="{ isActive }">
-            <v-row v-if="!isMobile">
-                <v-col class="text-right">
-                    <v-btn color="transparent" flat rounded="0" icon="mdi-close" class="mx-4 text-white" @click="isActive.value = false"></v-btn>
-                </v-col>
-            </v-row>
 
             <v-card 
-                scrollable
                 :width="isMobile ? '90vw': 800" 
                 class="pa-0 mx-auto">
 
@@ -78,32 +70,35 @@ const isMobile = computed(() => display.smAndDown.value);
                     ></v-progress-linear>
                 </template>
 
-                <v-row>
-                    <v-col>
-                        <v-img
-                            :class="`mx-1 ${imgClass}`" 
-                            width="100%"
-                            :width="imgWidth"
-                            :height="imgHeight ? imgHeight : ''"
-                            max-height="85vh"
-                            :alt="text"
-                            lazy-src="https://picsum.photos/id/11/100/60" 
-                            :src="$imageSrc(src)" />
+                <v-btn v-if="isMobile" class="pa-4 ma-4" variant="text" size="large" prepend-icon="mdi-close" @click="isActive.value = false">
+                    Close
+                </v-btn>
 
-                        
-
-                        <v-card-text v-if="text" class="mx-2 my-4 image-text">
-                            {{ text }}
-                        </v-card-text>
+                <v-row v-else>
+                    <v-col cols="12" class="text-right">
+                        <v-btn size="large" color="transparent" flat rounded="0" icon="mdi-close" class="ma-2 pa-2" @click="isActive.value = false"></v-btn>
                     </v-col>
                 </v-row>
 
-                <v-card-actions class="text-right pa-2" v-if="isMobile">
-                    <v-spacer></v-spacer>
-                    <v-btn :block="isMobile" prepend-icon="mdi-close" @click="isActive.value = false">
-                        Close
-                    </v-btn>
-                </v-card-actions>
+                <v-card scrollable variant="flat" height="500px" class="overflow-y-auto">
+                    <v-row>
+                        <v-col>
+                            <v-card-text v-if="text" class="mx-2 my-4 image-text">
+                                {{ text }}
+                            </v-card-text>
+                            <v-img
+                                :class="`ma-4 py-4 ${imgClass}`" 
+                                width="95%"
+                                :width="imgWidth"
+                                :height="imgHeight ? imgHeight : ''"
+                                max-height="85vh"
+                                :alt="text"
+                                lazy-src="https://picsum.photos/id/11/100/60" 
+                                :src="$imageSrc(src)" />
+                        </v-col>
+                    </v-row>
+                </v-card>
+
             </v-card>
         </template>
     </v-dialog>
@@ -111,6 +106,10 @@ const isMobile = computed(() => display.smAndDown.value);
 <style scoped lang="scss">
 .cursor-pointer {
     cursor: pointer;
+}
+
+.image-card-scroll {
+    height: 200px;
 }
 
 .image-overlay {
