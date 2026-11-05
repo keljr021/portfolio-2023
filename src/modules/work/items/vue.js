@@ -1,4 +1,6 @@
 
+export const prevLink = 'react';
+
 export const info = {
     title:      'Vue Calendar',
     type:       'frontend',

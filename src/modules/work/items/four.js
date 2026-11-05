@@ -1,4 +1,6 @@
 
+export const nextLink = 'to';
+
 export const info = {
     title:      '4 Lives AI',
     type:       'ux',

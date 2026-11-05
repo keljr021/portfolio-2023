@@ -1,4 +1,7 @@
 
+export const prevLink = 'ss';
+export const nextLink = 'vue';
+
 export const info = {
     title:      'React Calculator',
     type:       'frontend',

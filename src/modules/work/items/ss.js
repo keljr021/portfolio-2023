@@ -1,4 +1,7 @@
 
+export const prevLink = 'reys';
+export const nextLink = 'react';
+
 export const info = {
     title:      'Scoreshots',
     type:       'frontend',

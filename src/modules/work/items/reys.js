@@ -1,4 +1,6 @@
 
+export const prevLink = 'badgey';
+
 export const info = {
     title:      'Rey\'s Mexican Restaurant',
     type:       'ux',
@@ -25,7 +27,7 @@ export const info = {
 };
 
 export const overview = {
-    image: 'logo-reys.png',
+    image: 'work/reys/logo-reys.png',
     problem: [
         "Customers have frustrations about the long wait times when ordering lunch and the accuracy of their orders during pickup.",
 

@@ -1,4 +1,7 @@
 
+export const prevLink = 'to';
+export const nextLink = 'reys';
+
 const figmaLink = 'https://www.figma.com/proto/e6yZ3D35MfUyAiAZysIW8n/Badgey-Online-Badge-Site?page-id=53%3A970&node-id=368-2558&viewport=347%2C228%2C0.05&t=0wvuJ6BeI860sety-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=506%3A3468';
 const githubLink = 'https://github.com/keljr021/badgey';
 

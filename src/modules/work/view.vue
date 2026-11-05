@@ -1,7 +1,7 @@
 <script setup>
   import { onMounted, ref, watch } from 'vue';
   import { useScroll } from '@vueuse/core'
-  import { useRoute } from 'vue-router';
+  import { useRoute, useRouter } from 'vue-router';
 
   import Title from '@/modules/work/partials/Title.vue';
   import Overview from '@/modules/work/partials/Overview.vue';
@@ -14,6 +14,7 @@
   import LessonsLearned from '@/modules/work/partials/LessonsLearned.vue';
 
   const route = useRoute();
+  const router = useRouter();
   const { y } = useScroll(window);
   const currentTab = ref(null);
 
@@ -42,6 +43,9 @@
 
     data.value = await loadModule();
     const workType = data.value.info?.type;
+
+    previousView.value = data.value.prevLink ? data.value.prevLink : null;
+    nextView.value = data.value.nextLink ? data.value.nextLink : null;
 
     showTabs.value = (workType !== 'frontend');
     showDevelopment.value = (data.value.dev !== undefined);
@@ -80,7 +84,7 @@
 
   const goToView = (viewId) => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant'});
-    this.$router.push({ name: 'view', params: { id: viewId } });
+    router.push({ name: 'view', params: { id: viewId } });
   };
   
   watch(y, updateCurrentTab);

@@ -1,4 +1,7 @@
 
+export const nextLink = 'ka';
+
+
 export const info = {
     title:      'Prints Webcomics',
     type:       'all',

@@ -1,4 +1,7 @@
 
+export const prevLink = 'prints';
+export const nextLink = 'four';
+
 export const info = {
     title:      'K&A Morrisey Cleaning Services',
     type:       'all',

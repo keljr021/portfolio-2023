@@ -27,6 +27,15 @@ defineProps({
 
 const display = useDisplay();
 const isMobile = computed(() => display.smAndDown.value);
+const isLandscape = ref(false);
+
+function updateImageOrientation(src) {
+  const loadedImage = new Image();
+  loadedImage.onload = () => {
+    isLandscape.value = loadedImage.naturalWidth > loadedImage.naturalHeight;
+  };
+  loadedImage.src = src;
+}
 </script>
 <template>
      <v-dialog :fullscreen="isMobile" width="950" class="pa-0 mx-0" :opacity="0.75">
@@ -40,6 +49,7 @@ const isMobile = computed(() => display.smAndDown.value);
                 :height="imgHeight ? imgHeight : ''" 
                 :max-height="maxHeight"
                 :alt="text"
+                @load="updateImageOrientation"
                 lazy-src="https://picsum.photos/id/11/100/60" 
                 :src="$imageSrc(src)">
 
@@ -87,9 +97,8 @@ const isMobile = computed(() => display.smAndDown.value);
                                 {{ text }}
                             </v-card-text>
                             <v-img
-                                :class="`ma-4 py-4 ${imgClass}`" 
-                                width="95%"
-                                :width="imgWidth"
+                                :class="`${isLandscape ? 'my-4' : 'ma-4'} py-4 ${imgClass}`"
+                                :width="isLandscape ? '100%' : imgWidth"
                                 :height="imgHeight ? imgHeight : ''"
                                 max-height="85vh"
                                 :alt="text"

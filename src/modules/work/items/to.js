@@ -1,4 +1,7 @@
 
+export const prevLink = 'four';
+export const nextLink = 'badgey';
+
 export const info = {
     title:      'Torch Mentorship Network',
     type:       'ux',
@@ -30,7 +33,7 @@ export const info = {
 };
 
 export const overview = {
-    image: 'logo-to.png',
+    image: 'work/to/logo-to.png',
     problem: [
         "When students attempt to find a mentor, often there are missed opportunities during college studies to connect with an experienced mentor in their field of study.",
 
