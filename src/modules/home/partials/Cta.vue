@@ -24,6 +24,7 @@ function scrollTo(input) {
         <v-row>
             <v-col cols="12" xs="12" sm="12" md="6">
                 <h1 class="cta-title">Hi my name's <br v-if="$vuetify.display.xs" /><b>Kelvin Morrisey Jr.</b></h1>
+                <h3 class="cta-caption">UX Engineer  |  UX Designer  |  Front-End Developer</h3>
                 <CtaText @scrollTo="scrollTo" />
             </v-col>
         </v-row>
@@ -36,7 +37,7 @@ function scrollTo(input) {
 .cta {
     position: relative;
     height: 100%;
-    padding: 70px 0 10px 50px;
+    padding: 20px 0 10px 50px;
     background-attachment: fixed;
     background-repeat: no-repeat;
     -webkit-border-radius: 0;
@@ -74,7 +75,12 @@ function scrollTo(input) {
 
 .cta-title {
     color: #b9e9e1;
-    padding: 50px 0;
+    padding-top: 50px;
+}
+
+.cta-caption {
+    color: #b9e9e1;
+    padding: 20px 0;
 }
 
 .cta-logo {

@@ -11,10 +11,10 @@ function scrollTo(input) {
 <template>
     <div class="cta-text">
         <p>
-           <b>Front-end developer</b> and <b>UI/UX designer</b> with experience in responsive web applications. My passion is to bring client ideas to life.
+           I'm a IT Professional with a decade of expereience designing and building user-centered digital experiences through UX design and front-end development.
         </p>
         <p>
-            <CtaMenu />
+            My goal is to bring client ideas to life.
         </p>
     </div>
 </template>
