@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { useDisplay } from 'vuetify';
 
 defineProps({
@@ -23,10 +23,9 @@ defineProps({
     type: String,
     default: '250px'
   },
-  imgClass: {
-    type: String,
-  }
 });
+
+const isHoveredOver = ref(true);
 
 const display = useDisplay();
 const isMobile = computed(() => display.smAndDown.value);
@@ -34,6 +33,7 @@ const isMobile = computed(() => display.smAndDown.value);
 <template>
      <v-dialog :fullscreen="isMobile" width="950" class="pa-0 mx-0" :opacity="0.75">
         <template v-slot:activator="{ props }">
+
             <v-img 
                 v-bind="props" 
                 eager
@@ -44,7 +44,11 @@ const isMobile = computed(() => display.smAndDown.value);
                 :alt="text"
                 lazy-src="https://picsum.photos/id/11/100/60" 
                 :src="$imageSrc(src)">
-                
+
+                <div class="image-overlay">
+                    <v-icon class="image-overlay-icon" color="indigo-darken-4" size="x-large" icon="mdi-magnify-plus-outline" />
+                </div>
+
                 <template v-slot:placeholder>
                     <div class="d-flex align-center justify-center fill-height">
                         <v-progress-circular color="grey-lighten-4" indeterminate />
@@ -107,6 +111,32 @@ const isMobile = computed(() => display.smAndDown.value);
 <style scoped lang="scss">
 .cursor-pointer {
     cursor: pointer;
+}
+
+.image-overlay {
+    position: relative;
+    width: 100&;
+    height: 100%;
+    background-color: tansparent;
+    z-index: 1;
+    transition: opacity ease-in-out 0.3s;
+    opacity: 0;
+
+    .image-overlay-icon {
+        position: absolute;
+        left: 45%;
+        top: 40%;
+        opacity: 0;
+    }
+    
+    &:hover {
+        background-color: #fff;
+        opacity: 0.7;
+
+        .image-overlay-icon {
+            opacity: 1;
+        }
+    }
 }
 
 .image-text {
