@@ -38,19 +38,17 @@ const props = defineProps({
                     v-for="(timelineItem, i) in input.timeline"
                     :key="i"
                     >
-                    <v-card class="mb-8 pa-4" variant="flat" min-width="90vw">
-                        <v-card-text>
-                            <div class="section-caption">{{ timelineItem.title }}</div>
-                            <template v-for="(textValueItem, tv) in timelineItem.text" :key="tv">
-                                <ul v-if="textValueItem.list">
-                                    <li v-for="(listItem, l) in textValueItem.list" :key="l">{{ listItem }}</li>
-                                </ul>
-                                <p v-else>{{ textValueItem }}</p>
-                            </template>
-                            <div v-if="timelineItem.images" class="py-2 text-center">
-                                <view-image v-for="(imgItem, imageIndex) in timelineItem.images" :key="imageIndex" :src="imgItem" />
-                            </div>
-                        </v-card-text>
+                    <v-card class="mb-8 pa-4" variant="flat" width="90vw">
+                        <div class="section-caption">{{ timelineItem.title }}</div>
+                        <div class="pa-2 w-100 mx-auto" v-for="(textValueItem, tv) in timelineItem.text" :key="tv">
+                            <ul v-if="textValueItem.list" class="w-75">
+                                <li v-for="(listItem, l) in textValueItem.list" :key="l">{{ listItem }}</li>
+                            </ul>
+                            <p v-else class="w-75">{{ textValueItem }}</p>
+                        </div>
+                        <div v-if="timelineItem.images" class="py-2 w-100 text-center">
+                            <view-image v-for="(imgItem, imageIndex) in timelineItem.images" :key="imageIndex" :src="imgItem" />
+                        </div>
                     </v-card>
                 </v-carousel-item>
             </v-carousel>
