@@ -174,7 +174,16 @@
       <v-col class="text-right mx-5 my-2">
         <v-tooltip text="Scroll to top" location="left">
           <template v-slot:activator="{ props }">
-            <v-btn v-bind="props" color="#aaa" variant="outlined" icon="mdi-menu-up" style="background-color:white" @click="scrollToTop"></v-btn>
+            <v-btn v-bind="props" class="mx-2" color="#aaa" variant="outlined" icon="mdi-menu-up" style="background-color:white" @click="scrollToTop"></v-btn>
+          </template>
+        </v-tooltip>
+      </v-col>
+    </v-row>
+    <v-row class="fixed-item-button">
+      <v-col class="text-right mx-5 my-2">
+        <v-tooltip text="Return to list" location="left">
+          <template v-slot:activator="{ props }">
+            <v-btn v-bind="props" class="mx-2" color="#aaa" variant="outlined" icon="mdi-view-list" style="background-color:white" :to="{ name: 'work' }"></v-btn>
           </template>
         </v-tooltip>
       </v-col>

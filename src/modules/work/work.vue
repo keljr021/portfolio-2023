@@ -8,7 +8,7 @@
   const workTypesArray = ref([
     {
       title: 'Design & Development',
-      selector: 'Hybrid',
+      selector: 'Full',
       icon: 'mdi-pencil-ruler',
       value: 'all'
     },
@@ -129,9 +129,11 @@
 }
 
 .work-menu {
+  display: none;
   position: fixed;
-  top: 60px;
+  top: 80px;
   right: 0;
+  z-index: 1;
 }
 
 .work-section-title {
