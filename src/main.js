@@ -6,7 +6,7 @@ import Work from './modules/work/work.vue'
 import View from './modules/work/view.vue'
 import imageAssets from './modules/work/imageAssets.js'
 import About from './modules/about/about.vue'
-import Contact from './modules/contact/Contact.vue'
+import Contact from './modules/contact/contact.vue'
 
 // Vuetify
 import 'vuetify/styles'

@@ -1,7 +1,7 @@
 <script setup>
-function openWindow(link) {
-  window.open(link, '_blank');
-}
+import { inject } from 'vue';
+
+const showResumeDialog = inject('showResumeDialog');
 </script>
 
 <template>
@@ -16,7 +16,7 @@ function openWindow(link) {
             <div class="cta-menu-item" @click="$router.push({ name: 'contact' })">
                 <span>Contact</span>
             </div>
-            <div class="cta-menu-item" @click="openWindow('./kelvin_morrisey_resume.pdf');">
+            <div class="cta-menu-item" @click="showResumeDialog = true">
                 <span>Resume</span>
             </div>
         </div>

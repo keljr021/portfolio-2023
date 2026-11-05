@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { inject, ref } from 'vue';
 
 defineProps({
   logo: String,
@@ -9,9 +9,10 @@ defineProps({
   }
 });
 
-defineEmits(['scrollTo']);
+defineEmits(['scrollTo', 'openResume']);
 
 const showNavDrawer = ref(false);
+const showResumeDialog = inject('showResumeDialog');
 
 function toggleNavDrawer() {
   showNavDrawer.value = !showNavDrawer.value;
@@ -44,7 +45,7 @@ function openWindow(link) {
                         <v-list-item title="Work" value="work" @click="$router.push({ name: 'work' })"></v-list-item>
                         <v-list-item title="About" value="about" @click="$router.push({ name: 'about' })"></v-list-item>
                         <v-list-item title="Contact" value="contact" @click="$router.push({ name: 'contact' })"></v-list-item>
-                        <v-list-item title="Resume" value="resume" @click="openWindow('./kelvin_morrisey_resume.pdf')"></v-list-item>
+                        <v-list-item title="Resume" value="resume" @click="showResumeDialog = true"></v-list-item>
                     </v-list>
                 </v-navigation-drawer>
             </v-col>
@@ -63,10 +64,55 @@ function openWindow(link) {
                 <span class="nav-item" @click="$router.push({ name: 'work' })">Work</span>
                 <span class="nav-item" @click="$router.push({ name: 'about' })">About</span>
                 <span class="nav-item" @click="$router.push({ name: 'contact' })">Contact</span>
-                <span class="nav-item" @click="openWindow('./kelvin_morrisey_resume.pdf')">Resume</span>
+                <span class="nav-item" @click="showResumeDialog = true">Resume</span>
             </v-col>
         </v-row>
     </div>
+
+    <!-- Resume dialog -->
+    <v-dialog
+      v-model="showResumeDialog"
+      width="auto"
+    >
+      <v-card width="400">
+        <v-row class="justify-end align-center">
+            <v-col class="text-left">
+                <div class="ma-2 pa-2">
+                    Resume
+                </div>
+            </v-col>
+            <v-col class="text-right">
+                <v-btn class="ma-2 pa-2" size="large" color="transparent" flat rounded="0" icon="mdi-close" @click="showResumeDialog = false"></v-btn>
+            </v-col>
+        </v-row>
+
+        
+        <v-row>
+            <v-col class="py-2 px-6">
+                <v-btn block prepend-icon="mdi-pencil-ruler" @click="openWindow('./kelvin_morrisey_resume.pdf')">UX Engineer Resume</v-btn>
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col class="py-2 px-6">
+                <v-btn block prepend-icon="mdi-palette-outline" @click="openWindow('./kelvin_morrisey_resume.pdf')">Front-End Developer Resume</v-btn>
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col class="py-2 px-6">
+                <v-btn block prepend-icon="mdi-code-tags" @click="openWindow('./kelvin_morrisey_resume.pdf')">UX Designer Resume</v-btn>
+            </v-col>
+        </v-row>
+
+
+        <template v-slot:actions>
+          <v-btn
+            class="ms-auto"
+            text="Close"
+            @click="showResumeDialog = false"
+          ></v-btn>
+        </template>
+      </v-card>
+    </v-dialog>
 
 </template>
 

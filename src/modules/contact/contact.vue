@@ -1,7 +1,8 @@
 <script setup>
+import { inject } from 'vue'
 import ContactForm from './partials/ContactForm.vue'
 
-const resumeUrl = 'https://drive.google.com/drive/folders/1vQ4PuOoTukxV_RmmHZ6q0AngzDrxmQd-?usp=sharing';
+const showResumeDialog = inject('showResumeDialog')
 
 function openWindow(link) {
   window.open(link, '_blank');
@@ -26,7 +27,7 @@ function openWindow(link) {
                         <v-icon class="mr-2" icon="mdi-email" variant="text"  />
                         keljr021@gmail.com
                     </div>
-                    <div @click="openWindow('./kelvin_morrisey_resume.pdf')" class="mt-4">
+                    <div @click="showResumeDialog = true" class="mt-4">
                         <v-icon class="mr-2" icon="mdi-folder-file" variant="text"  />
                         Open Resume
                     </div>

@@ -1,10 +1,13 @@
 <script setup>
   import Navbar from '@/components/Navbar.vue';
-  import { ref } from 'vue';
+  import { provide, ref } from 'vue';
   import { useRoute } from 'vue-router';
 
   const theme = ref('light');
   const route = useRoute();
+  const showResumeDialog = ref(false);
+
+  provide('showResumeDialog', showResumeDialog);
 
   const navItems = [
     { className: 'cta', text: 'Home' },
