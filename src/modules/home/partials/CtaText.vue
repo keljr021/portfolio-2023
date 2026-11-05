@@ -16,6 +16,9 @@ function scrollTo(input) {
         <p>
             My goal is to bring client ideas to life.
         </p>
+        <p>
+            <CtaMenu />
+        </p>
     </div>
 </template>
 

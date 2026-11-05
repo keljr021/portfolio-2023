@@ -36,21 +36,19 @@ function openWindow(link) {
 }
 
 .cta-menu-item {
-    margin: 30px;
-    padding: 0 10px 10px;
+    margin: 10px 60px 10px 0;
+    padding: 0 10px 10px 0;
     cursor: pointer;
     text-align: left;
     float: left;
 
     span {
         padding: 0 4px;
-        opacity: 0.8;
+        opacity: 0.6;
+        text-decoration: underline;
 
         &:hover {
-            text-decoration: underline;
-            .menu-icon {
-                opacity: 1 !important;
-            }
+            opacity: 1 !important;
         }
     }   
 }
