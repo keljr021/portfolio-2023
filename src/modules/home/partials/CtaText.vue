@@ -11,7 +11,7 @@ function scrollTo(input) {
 <template>
     <div class="cta-text">
         <p>
-           <b>Front-end developer</b> and <b>UI/UX designer</b> with experience in responsive web applications. My passion is to bridge the gap between design and development to bring ideas to life.
+           <b>Front-end developer</b> and <b>UI/UX designer</b> with experience in responsive web applications. My passion is to bring client ideas to life.
         </p>
         <p>
             <CtaMenu />
