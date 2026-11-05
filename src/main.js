@@ -3,7 +3,7 @@ import App from './App.vue';
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
 import Home from './modules/home/home.vue'
 import Work from './modules/work/work.vue'
-import View from './modules/work/viewNew.vue'
+import View from './modules/work/view.vue'
 import imageAssets from './modules/work/imageAssets.js'
 import About from './modules/about/about.vue'
 import Contact from './modules/contact/Contact.vue'
