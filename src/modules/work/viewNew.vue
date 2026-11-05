@@ -170,7 +170,7 @@
   </v-container>
 
   <div class="fixed-item">
-    <v-row class="fixed-item-button">
+    <v-row class="fixed-item-button fixed-item-scroll">
       <v-col class="text-right mx-5 my-2">
         <v-tooltip text="Scroll to top" location="left">
           <template v-slot:activator="{ props }">
@@ -179,7 +179,7 @@
         </v-tooltip>
       </v-col>
     </v-row>
-    <v-row class="fixed-item-button">
+    <v-row class="fixed-item-button fixed-item-return">
       <v-col class="text-right mx-5 my-2">
         <v-tooltip text="Return to list" location="left">
           <template v-slot:activator="{ props }">
@@ -282,6 +282,10 @@
   }
 }
 
+.fixed-item-return {
+  display: none;
+}
+
 :deep(.v-container) {
   padding-top: 41.5px !important;
   margin-bottom: 50px;
@@ -345,6 +349,10 @@ li {
       text-align: left;
       padding: 20px;
     }
+  }
+
+  .fixed-item-return {
+    display: initial;
   }
 }
 </style>
