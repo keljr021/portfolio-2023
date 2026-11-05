@@ -11,9 +11,9 @@ import * as vue     from './vue.js';
 const listArray = [
     prints.info,
     ka.info,
-    badgey.info,
     four.info,
     to.info,
+    badgey.info,
     reys.info,
     ss.info,
     react.info,

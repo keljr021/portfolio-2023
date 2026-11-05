@@ -3,14 +3,14 @@ const figmaLink = 'https://www.figma.com/proto/e6yZ3D35MfUyAiAZysIW8n/Badgey-Onl
 const githubLink = 'https://github.com/keljr021/badgey';
 
 export const info = {
-    title:      'Badgey Online Badges (in progress)',
-    type:       'all',
+    title:      'Badgey Badges (site in progress)',
+    type:       'ux',
     color:      '#2a5547',
     link:       'badgey',
     caption:    'Platform to create and share event badges',
     role:       "UX Designer, Front-End Developer",
     ux:         "Figma, Inkscape",
-    fe:         "Vue JS, Nuxt UI, CSS",
+    fe:         "Vue JS, Konva JS, Nuxt UI",
     date:       "Mar 2026 (Ongoing)",
     logo:       "work/badgey/badgey-desktop.png",
     
@@ -50,7 +50,7 @@ export const research = [
             },
         ],
         text: [
-                'x'
+                'Started with creating a persona for a user who attends conventions, and loves to collect souvenirs after attending. However, over the years these items often gets misplaced.'
         ]
     },
         {
@@ -59,11 +59,11 @@ export const research = [
         images: [
             {
                 src:     'work/badgey/badgey-usermap.png',
-                caption: 'x'
+                caption: 'Then organized notes regarding her experience and created a usermap detailing the steps taken when finding a souvenir.'
             },
         ],
         text: [
-                'x',
+                'Then organized notes regarding her experience and created a usermap detailing the steps taken when finding a souvenir.',
         ]
     },
 ];
@@ -71,55 +71,57 @@ export const research = [
 export const design = {
     timeline: [
         {
-            title:  'x',
+            title:  'Documented notes',
             text:   [
-                'x',
-                {
-                    list: [
-                        'x'
-                    ]
-                }
+                'Written down all ideas for the site, along with features based on the personas and user maps. Documented general ideas for pages, data structures, and sitemaps.'
+            ],
+            images: [
+                'work/badgey/badgey-notes.png',
             ]
         },
         {
-            title:  'x',
+            title:  'Created sitemap',
             text:   [
-                'x',
+                'Generated a sitemap of the site layout based on the documented notes.',
             ],
             images: [
                 'work/badgey/badgey-outline.png',
             ]
         },
-    ]
-};
-
-export const dev = {
-    button: {
-        name: 'Github',
-        link: githubLink,
-        icon: 'mdi-github'
-    },
-    timeline: [
         {
-            title:  'x',
-            text:   [
-                'x',
-                {
-                    list: [
-                        'x'
-                    ]
-                }
-            ]
-        },
-        {
-            title:  'x',
-            text:   [
-                'x',
+            title: 'Created wireframes based on the sitemap',
+            text: [
+                'Started up Figma to generate wireframes for both desktop and mobile flows.'
             ],
             images: [
-                'work/badgey/badgey-outline.png',
+                'work/badgey/badgey-wire1.png',
             ]
         },
+        {
+            title: 'Conducted a usability study',
+            text: [
+                'From the study, documented areas of friction and opportunities for improvement; mainly for the Create Badge workflows. ',
+                {
+                    list: [
+                        'The workflow was non-existent and needs to be more interactive',
+                        'There was also no way to Publish a new badge',
+                    ]
+                }
+            ],
+            images: [
+                'work/badgey/badgey-study.png',
+            ]
+        },
+        {
+            title: 'Refined wireframes and created mockups',
+            text: [
+                'Used the feedback from the study to update the Create Badge workflow.',
+                'Selected a proper color palette and checked the WCAG contrast to make sure colors were accessible as well.'
+            ],
+            images: [
+                'work/badgey/badgey-mock1.png',
+            ]
+        }
     ]
 };
 
@@ -134,69 +136,93 @@ export const mockups = {
     },
     list: [
         {
-            title: 'Call to Action',
+            title: 'Home',
             lofi: {
-                src: 'work/ka/ka-dframe1.png',
-                caption: 'Define the business and a brief blurb on about the client with a placeholder for the image background. Also added a large button to contact the client front and center.'
+                src: 'work/badgey/badgey-wire1.png',
+                caption: 'Created a Call to Action that gives a brief blurb about the site with a button to directly login or create an account; with an image placeholder to the side.'
             },
             hifi: {
-                src: 'work/ka/ka-mock1.png',
-                caption: 'Added the logo in the center of the page. The content was given more spacing from the wireframes; and the button was replaced with links for each section of the site. The bottom has a fixed button that slides out with the user\'s contact information when clicked.'
+                src: 'work/badgey/badgey-mock1.png',
+                caption: 'Updated the Call to Action to show a background with an opaque image, with the blurb and button in the center of the page.'
             },
         },
         {
-            title: 'Services',
+            title: 'Dashboard',
             lofi: {
-                src: 'work/ka/ka-dframe2.png',
-                caption: 'Lists the different types of service items the client offers in a three-column layout.'
+                src: 'work/badgey/badgey-wire2.png',
+                caption: 'Once the user is logged in or account is created, this page is loaded with options to quickly access the links without going to the navbar. Added placeholder images for the user account profile and icons.'
             },
             hifi: {
-                src: 'work/ka/ka-mock2.png',
-                caption: 'The service layout is kept the same from the wireframes, with the icons representing each service item.'
+                src: 'work/badgey/badgey-mock2.png',
+                caption: 'The Dashboard adds a sample image with the account user\'s name and last login date. The links were refactored to be a row of 2x2 cards of equal length. On mobile these cards will stack on top of one another.'
             },
         },
         {
-            title: 'Contact',
+            title: 'Create Badge',
             lofi: {
-                src: 'work/ka/ka-dframe3.png',
-                caption: 'Gives the client\'s information and a possible map to show the client\'s location.'
+                src: 'work/badgey/badgey-wire3.png',
+                caption: 'Created a badge canvas in the center with an menu on the left. The accordion show several sections that allows members to open drafts, insert shapes, text, and images. There is also an option to Undo and Redo steps.'
             },
             hifi: {
-                src: 'work/ka/ka-mock3.png',
-                caption: 'Updated the section to include the Contact Form button, and a Google Maps iFrame to show the client\'s location.'
+                src: 'work/badgey/badgey-mock3.png',
+                caption: 'The page is updated with Nuxt UI elements. The menu on the left is refactored from accordions to a smaller menu with a window that displays options based on the selected items.'
             },
         },
         {
-            title: 'Contact form',
+            title: 'Manage Badges',
             lofi: {
-                src: 'work/ka/ka-dframe4.png',
-                caption: 'A popup that allows the user to Submit a query to the client.'
+                src: 'work/badgey/badgey-wire4.png',
+                caption: 'There are two tabs with badges obtained, and badges the user owns. The badges are displayed in a grid that shows the badge description when clicked.'
             },
             hifi: {
-                src: 'work/ka/ka-mock4.png',
-                caption: 'A popup is defined with an embedded Google Form in the desktop, with a button to close the popup or open the form in a new tab. For mobile members, the Google Form is opened in a new window by default.'
+                src: 'work/badgey/badgey-mock4.png',
+                caption: 'The tabs are updated with Nuxt UI tabs, with an added Drafts tab. The badges were randomized, and displays a modal when clicked that shows the badge description.'
             },
-        }
+        },
+        {
+            title: 'Redeem Badge',
+            lofi: {
+                src: 'work/badgey/badgey-wire5.png',
+                caption: 'The Redeem Badge page allows users to enter a badge ID to claim their badge. It also notifies the user that they can scan a corresponding QR code to access their new badge.'
+            },
+            hifi: {
+                src: 'work/badgey/badgey-mock5.png',
+                caption: 'The page is kept similar, but with new Nuxt UI cards and custom typography. The elements have been shortened to fit on the entire page.'
+            },
+        },
     ]
 };
 
 export const accessibility = [
     {
-        name:   'x',
+        name:   'Color contrast',
         text:   [
-            'x',
+            'Validated that the selected colors are WCAG compliant between foreground and background.',
         ],
-    },  
-
+    },
+    {
+        name: 'Defined elements across the site',
+        text: [
+            'Ensured that form and navigation elements are properly defined.'
+        ]
+    },
+    {
+        name:   'Plain language',
+        text:   [
+            'Used simple and clear language for pages and headers.',
+        ],
+    },
 ];
 
 
 export const results = [
-    'x',
-    
+    'Created a badge creation system with full CRUD options to customize a badge online.',
+    'Consistent interface and layout across desktop and mobile devices.',
+    'Organized several workflows for account login, badge redeems, and badge management.',
 ];
 
 
 export const lessons = [
-    'x'
+    'Working on this project taught me a lot about how to organize different workflows into a manageable hand-off to developers. Along with the various components in Figma and using external libraries; this has improved my knowledge in UX design.',
+    'As I begin to develop this site, I feel more confident in making sure the styling and layout will match the initial mocks.'
 ];
