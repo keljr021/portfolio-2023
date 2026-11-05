@@ -27,18 +27,20 @@ const props = defineProps({
             </v-btn>
         </span>
     </div>
-        <div v-if="$vuetify.display.smAndDown">
-            <v-window
+        <v-card elevation="flat" v-if="$vuetify.display.smAndDown">
+            <v-carousel
                 v-model="window"
-                show-arrows
+                progress="primary"
+                :show-arrows="false"
+                hide-delimiters
             >
-                <v-window-item
+                <v-carousel-item
                     v-for="(timelineItem, i) in input.timeline"
                     :key="i"
                     >
-                    <v-card class="mb-8 pa-4" variant="elevated" min-width="90vw">
-                        <v-card-title>{{ timelineItem.title }}</v-card-title>
+                    <v-card class="mb-8 pa-4" variant="flat" min-width="90vw">
                         <v-card-text>
+                            <div class="section-caption">{{ timelineItem.title }}</div>
                             <template v-for="(textValueItem, tv) in timelineItem.text" :key="tv">
                                 <ul v-if="textValueItem.list">
                                     <li v-for="(listItem, l) in textValueItem.list" :key="l">{{ listItem }}</li>
@@ -50,9 +52,9 @@ const props = defineProps({
                             </div>
                         </v-card-text>
                     </v-card>
-                </v-window-item>
-            </v-window>
-        </div>
+                </v-carousel-item>
+            </v-carousel>
+        </v-card>
 
 
         <v-timeline v-else class="px-8" dot-color="blue-darken-3" align="start" alignment="top">

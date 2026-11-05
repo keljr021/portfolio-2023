@@ -36,7 +36,7 @@ export const info = {
 };
 
 export const overview = {
-    image: 'logo-pr.png',
+    image: 'work/pr/logo-pr.png',
     problem: [
         "Artists are looking for a site to host and share their comic series; but the options available can be complex and difficult to understand. From a viewer's perspective, there are various sites available; but the user interface is very clunky and inaccessible.",
 
