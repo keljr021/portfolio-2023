@@ -1,4 +1,5 @@
 
+export const prevLink = 'ka';
 export const nextLink = 'to';
 
 export const info = {
