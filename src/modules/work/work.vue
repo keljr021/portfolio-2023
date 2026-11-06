@@ -7,7 +7,7 @@
   const selectedWorkType = ref('all');
   const workTypesArray = ref([
     {
-      title: 'Design & Development',
+      title: 'Full Design & Development',
       selector: 'Full',
       icon: 'mdi-pencil-ruler',
       value: 'all'
@@ -67,7 +67,7 @@
     <v-row>
       <v-col cols="10" sm="2" md="2" lg="2" class="px-4">
         <div class="work-links pl-4" v-if="$vuetify.display.mdAndUp">
-          <v-chip class="work-links-chip" size="large" :color="isAllVisible ? 'indigo-darken-3' : ''" :variant="isAllVisible ? 'tonal' : 'plain'" prepend-icon="mdi-pencil-ruler" @click="scrollToSection('all')">Hybrid Work</v-chip>
+          <v-chip class="work-links-chip" size="large" :color="isAllVisible ? 'indigo-darken-3' : ''" :variant="isAllVisible ? 'tonal' : 'plain'" prepend-icon="mdi-pencil-ruler" @click="scrollToSection('all')">Full Project</v-chip>
           <v-chip class="work-links-chip" size="large" :color="isUxVisible ? 'teal-darken-2' : ''" :variant="isUxVisible ? 'tonal' : 'plain'" prepend-icon="mdi-palette-outline" @click="scrollToSection('ux')">UX/UI</v-chip>
           <v-chip class="work-links-chip" size="large" :color="isFrontendVisible ? 'blue-darken-3' : ''" :variant="isFrontendVisible ? 'tonal' : 'plain'" prepend-icon="mdi-code-tags" @click="scrollToSection('frontend')">Front-End</v-chip>
         </div>

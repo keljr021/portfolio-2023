@@ -19,7 +19,7 @@ const workLogo = computed(() => input.value?.logo ?? null);
             <v-col>
                 <span class="title-header pb-3" :style="{ 'color': workColor }">{{ input.title }}</span>
                 <span class="mx-md-4 my-0">
-                    <v-chip v-if="input.type === 'all'" size="small" class="pa-md-4" color="indigo-darken-3" variant="plain" prepend-icon="mdi-pencil-ruler">Hybrid Work</v-chip>
+                    <v-chip v-if="input.type === 'all'" size="small" class="pa-md-4" color="indigo-darken-3" variant="plain" prepend-icon="mdi-pencil-ruler">Full Project</v-chip>
                     <v-chip v-if="input.type === 'ux'" size="small" class="pa-md-4" color="teal-darken-2" variant="plain" prepend-icon="mdi-palette-outline">UX/UI</v-chip>
                     <v-chip v-if="input.type === 'frontend'" size="small" class="pa-md-4" color="blue-darken-3" variant="plain" prepend-icon="mdi-code-tags">Front-End</v-chip>
                 </span>

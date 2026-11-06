@@ -54,7 +54,7 @@ function windowOpen(input) {
             </div>
 
             <div class="pt-2 pb-5 px-5">
-                <v-chip v-if="type === 'all'" class="px-4 mr-3" color="indigo-darken-3" variant="tonal" prepend-icon="mdi-pencil-ruler" @click="scrollToSection('all')">Hybrid Work</v-chip>
+                <v-chip v-if="type === 'all'" class="px-4 mr-3" color="indigo-darken-3" variant="tonal" prepend-icon="mdi-pencil-ruler" @click="scrollToSection('all')">Full Project</v-chip>
                 <v-chip v-if="type === 'ux'" class="px-4 mr-3" color="teal-darken-2" variant="tonal" prepend-icon="mdi-palette-outline" @click="scrollToSection('ux')">UX/UI</v-chip>
                 <v-chip v-if="type === 'frontend'" class="px-4 mr-3" color="blue-darken-3" variant="tonal" prepend-icon="mdi-code-tags" @click="scrollToSection('frontend')">Front-End</v-chip>
             </div>

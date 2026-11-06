@@ -23,13 +23,13 @@ const props = defineProps({
                     v-for="(timelineItem, i) in input.timeline"
                     :key="i"
                     >
-                    <v-card class="mb-8 pa-4" variant="flat" width="90vw">
-                        <div class="section-caption w-75 pa-2">{{ timelineItem.title }}</div>
-                        <div class="pa-2 w-100" v-for="(textValueItem, tv) in timelineItem.text" :key="tv">
-                            <ul v-if="textValueItem.list" class="w-75">
+                    <v-card class="mb-8 pa-4" variant="flat" width="90vw text-wrap">
+                        <div class="section-caption w-100 pa-3 text-wrap">{{ timelineItem.title }}</div>
+                        <div class="pa-3 w-100" v-for="(textValueItem, tv) in timelineItem.text" :key="tv">
+                            <ul v-if="textValueItem.list" class="w-100 text-wrap">
                                 <li v-for="(listItem, l) in textValueItem.list" :key="l">{{ listItem }}</li>
                             </ul>
-                            <div v-else class="w-75">{{ textValueItem }}</div>
+                            <div v-else class="w-100 text-wrap">{{ textValueItem }}</div>
                         </div>
                         <div v-if="timelineItem.images" class="py-2 w-100 text-center">
                             <view-image v-for="(imgItem, imageIndex) in timelineItem.images" :key="imageIndex" :src="imgItem" />
@@ -48,16 +48,16 @@ const props = defineProps({
                         <view-image :src="imgItem" />
                     </div>
                 </template>
-                <v-card class="design-timeline-item py-4" variant="text" width="100%">
-                    <v-card-title>{{ timelineItem.title }}</v-card-title>
+                <v-card class="design-timeline-item py-4 text-wrap" variant="text" width="100%">
+                    <v-card-title class="text-wrap">{{ timelineItem.title }}</v-card-title>
                     <v-card-text>
                         <v-row>
                             <v-col>
                                 <template v-for="(textValueItem, tv) in timelineItem.text" :key="tv">
                                     <ul v-if="textValueItem.list">
-                                        <li v-for="(listItem, l) in textValueItem.list" :key="l">{{ listItem }}</li>
+                                        <li v-for="(listItem, l) in textValueItem.list" :key="l" class="text-wrap">{{ listItem }}</li>
                                     </ul>
-                                    <p v-else>{{ textValueItem }}</p>
+                                    <p v-else class="text-wrap">{{ textValueItem }}</p>
                                 </template>
                             </v-col>
                         </v-row>

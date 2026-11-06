@@ -101,7 +101,7 @@
 
       <v-col cols="12" sm="12" md="1" lg="1" class="overflow-x-auto">
         <div v-if="data?.info?.type !== 'frontend'" class="view-tabs px-0">
-          <div :class="{ 'view-tabs-title w-100': true, 'show': currentTab !== null }">{{ data?.info?.title }}</div>
+          <div :class="{ 'view-tabs-title': true, 'show': currentTab !== null }">{{ data?.info?.title }}</div>
           <v-tabs 
             v-if="showTabs"
             v-model="currentTab"
@@ -183,15 +183,6 @@
         </v-tooltip>
       </v-col>
     </v-row>
-    <v-row class="fixed-item-button fixed-item-return">
-      <v-col class="text-right mx-5 my-2">
-        <v-tooltip text="Return to list" location="left">
-          <template v-slot:activator="{ props }">
-            <v-btn v-bind="props" class="mx-2" color="#aaa" variant="outlined" icon="mdi-view-list" style="background-color:white" :to="{ name: 'work' }"></v-btn>
-          </template>
-        </v-tooltip>
-      </v-col>
-    </v-row>
 
     <v-row class="fixed-item-menu" justify="space-between">
       <v-col cols="4" class="text-left">
@@ -245,6 +236,7 @@
 .view-tabs {
   position: fixed;
   top: 80px;
+  max-width: 150px;
 
   .view-tabs-title {
     font-size: 16px;

@@ -38,13 +38,13 @@ const props = defineProps({
                     v-for="(timelineItem, i) in input.timeline"
                     :key="i"
                     >
-                    <v-card class="mb-8 pa-4" variant="flat" width="90vw">
-                        <div class="section-caption w-75 pa-2">{{ timelineItem.title }}</div>
-                        <div class="pa-2 w-100" v-for="(textValueItem, tv) in timelineItem.text" :key="tv">
-                            <ul v-if="textValueItem.list" class="w-75">
+                    <v-card class="mb-8 pa-4" variant="flat" width="90vw text-wrap">
+                        <div class="section-caption w-100 pa-3 text-wrap">{{ timelineItem.title }}</div>
+                        <div class="pa-3 w-100" v-for="(textValueItem, tv) in timelineItem.text" :key="tv">
+                            <ul v-if="textValueItem.list" class="w-100 text-wrap">
                                 <li v-for="(listItem, l) in textValueItem.list" :key="l">{{ listItem }}</li>
                             </ul>
-                            <div v-else class="w-75 pb-2">{{ textValueItem }}</div>
+                            <div v-else class="w-100 text-wrap">{{ textValueItem }}</div>
                         </div>
                         <div v-if="timelineItem.images" class="py-2 w-100 text-center">
                             <view-image v-for="(imgItem, imageIndex) in timelineItem.images" :key="imageIndex" :src="imgItem" />
@@ -54,8 +54,7 @@ const props = defineProps({
             </v-carousel>
         </v-card>
 
-
-        <v-timeline v-else class="px-8" dot-color="blue-darken-3" align="start" alignment="top">
+        <v-timeline v-else class="pl-8" dot-color="blue-darken-3" align="start" alignment="top">
             
             <v-timeline-item v-for="(timelineItem, i) in input.timeline" :key="i" align="start">
                 <template v-if="timelineItem.images" v-slot:opposite>
@@ -63,16 +62,16 @@ const props = defineProps({
                         <view-image :src="imgItem" />
                     </div>
                 </template>
-                <v-card class="design-timeline-item py-4" variant="text" width="100%">
-                    <v-card-title>{{ timelineItem.title }}</v-card-title>
+                <v-card class="design-timeline-item py-4 text-wrap" variant="text" width="100%">
+                    <v-card-title class="text-wrap">{{ timelineItem.title }}</v-card-title>
                     <v-card-text>
                         <v-row>
                             <v-col>
                                 <template v-for="(textValueItem, tv) in timelineItem.text" :key="tv">
                                     <ul v-if="textValueItem.list">
-                                        <li v-for="(listItem, l) in textValueItem.list" :key="l">{{ listItem }}</li>
+                                        <li v-for="(listItem, l) in textValueItem.list" :key="l" class="text-wrap">{{ listItem }}</li>
                                     </ul>
-                                    <p v-else>{{ textValueItem }}</p>
+                                    <p v-else class="text-wrap">{{ textValueItem }}</p>
                                 </template>
                             </v-col>
                         </v-row>
@@ -85,7 +84,7 @@ const props = defineProps({
         <v-row v-if="input.section">
 
             <template v-for="sectionItem in input.section">
-                <v-col v-if="sectionItem.type === 'card'" cols="12" sm="6" md="6" lg="6">
+                <v-col v-if="sectionItem.type === 'card'" cols="12" sm="12" md="6" lg="6">
                     <v-card class="ma-8 pa-8" variant="text" min-height="300">
                         <v-row>
                             <v-col>
@@ -103,7 +102,7 @@ const props = defineProps({
                     </v-card>
                 </v-col>
 
-                <v-col v-if="sectionItem.type === 'image'" cols="12" sm="6" md="6" lg="6">
+                <v-col v-if="sectionItem.type === 'image'" cols="12" sm="12" md="6" lg="6">
                     <view-image v-for="(imageItem, i) in sectionItem.images" :key="i" :src="imageItem.src" :text="imageItem.caption" class="my-4 w-100" img-width="100%" />
                 </v-col>
             </template>
