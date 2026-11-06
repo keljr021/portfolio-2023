@@ -89,17 +89,17 @@ function openWindow(link) {
         
         <v-row>
             <v-col class="py-2 px-6">
-                <v-btn block prepend-icon="mdi-pencil-ruler" @click="openWindow('./kelvin_morrisey_resume.pdf')">UX Engineer Resume</v-btn>
+                <v-btn block prepend-icon="mdi-pencil-ruler" @click="openWindow('./resume/kelvin-resume-ux-engineer.pdf')">UX Engineer Resume</v-btn>
             </v-col>
         </v-row>
         <v-row>
             <v-col class="py-2 px-6">
-                <v-btn block prepend-icon="mdi-palette-outline" @click="openWindow('./kelvin_morrisey_resume.pdf')">Front-End Developer Resume</v-btn>
+                <v-btn block prepend-icon="mdi-palette-outline" @click="openWindow('./resume/kelvin-resume-fe-developer.pdf')">Front-End Developer Resume</v-btn>
             </v-col>
         </v-row>
         <v-row>
             <v-col class="py-2 px-6">
-                <v-btn block prepend-icon="mdi-code-tags" @click="openWindow('./kelvin_morrisey_resume.pdf')">UX Designer Resume</v-btn>
+                <v-btn block prepend-icon="mdi-code-tags" @click="openWindow('./resume/kelvin-resume-ux-designer.pdf')">UX Designer Resume</v-btn>
             </v-col>
         </v-row>
 
