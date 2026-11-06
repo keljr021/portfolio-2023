@@ -1,5 +1,4 @@
 <script setup>
-import Skills from './partials/Skills.vue';
 import Footer from '@/components/Footer.vue';
 </script>
 

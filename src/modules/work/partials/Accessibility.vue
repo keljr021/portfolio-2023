@@ -10,7 +10,7 @@ const props = defineProps({
 
         <v-card class="ma-md-8 pa-8" variant="flat">
             <v-row>
-                <v-col v-for="item in input" cols="12" sm="6" md="6" lg="6" class="py-4">
+                <v-col v-for="item in input" cols="12" sm="12" md="6" lg="6" class="py-4">
                     <div class="section-caption">{{ item.name }}</div>
                     <div v-for="textItem in item.text">{{ textItem }}</div>
                 </v-col>

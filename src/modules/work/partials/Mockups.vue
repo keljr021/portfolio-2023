@@ -42,7 +42,7 @@ const props = defineProps({
             <v-card class="mx-md-8 mb-12 pa-8" variant="flat" v-for="(listItem, i) in input.list" :key="i">
                 <v-card-title>{{ listItem.title }}</v-card-title>
                 <v-row class="py-4">
-                    <v-col cols="12" sm="6" md="6" lg="6">
+                    <v-col cols="12" sm="12" md="6" lg="6">
                         <view-image class="mockups-item-image" :src="listItem.lofi.src" :text="listItem.lofi.caption" img-width="100%" img-height="200px" />
                         <div class="pt-4">
                             <div class="section-caption">Before</div>
@@ -51,7 +51,7 @@ const props = defineProps({
                             </p>
                         </div>
                     </v-col>
-                    <v-col cols="12" sm="6" md="6" lg="6">
+                    <v-col cols="12" sm="12" md="6" lg="6">
                         <view-image class="mockups-item-image" :src="listItem.hifi.src" :text="listItem.hifi.caption" img-width="100%" img-height="200px" />
                         <div class="pt-4">
                             <div class="section-caption">After</div>

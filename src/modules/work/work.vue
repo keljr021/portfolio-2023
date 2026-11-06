@@ -98,10 +98,6 @@
 </template>
 
 <style scoped lang="scss">
-.v-container--fluid {
-  // height: calc(100% - 73.5px) !important;
-}
-
 .work-type {
   cursor: pointer;
   transition: all 0.2s ease-in-out;

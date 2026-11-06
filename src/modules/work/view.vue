@@ -99,14 +99,14 @@
   <v-container fluid class="py-3 mx-0 my-5 bg">
     <v-row>
 
-      <v-col cols="12" sm="1" md="1" lg="1" class="overflow-x-auto">
+      <v-col cols="12" sm="12" md="1" lg="1" class="overflow-x-auto">
         <div v-if="data?.info?.type !== 'frontend'" class="view-tabs px-0">
-          <div :class="{ 'view-tabs-title': true, 'show': currentTab !== null }">{{ data?.info?.title }}</div>
+          <div :class="{ 'view-tabs-title w-100': true, 'show': currentTab !== null }">{{ data?.info?.title }}</div>
           <v-tabs 
             v-if="showTabs"
             v-model="currentTab"
             color="primary"
-            :direction="$vuetify.display.xs ? 'horizontal' : 'vertical'"
+            :direction="$vuetify.display.smAndDown ? 'horizontal' : 'vertical'"
             slider-variant="primary"
             align-tabs="start"
             :mandatory="false"
@@ -122,7 +122,7 @@
         </div>
       </v-col>
 
-      <v-col v-if="data" cols="12" sm="10" md="10" lg="10" offset-sm="1" offset-md="1" offset-lg="1">
+      <v-col v-if="data" cols="12" sm="12" md="10" lg="10" offset-md="1" offset-lg="1">
         <div class="overflow-x-hidden overflow-y-auto">
           <v-row>
             <v-col>

@@ -24,12 +24,12 @@ const props = defineProps({
                     :key="i"
                     >
                     <v-card class="mb-8 pa-4" variant="flat" width="90vw">
-                        <div class="section-caption">{{ timelineItem.title }}</div>
-                        <div class="pa-2 w-100 mx-auto" v-for="(textValueItem, tv) in timelineItem.text" :key="tv">
+                        <div class="section-caption w-75 pa-2">{{ timelineItem.title }}</div>
+                        <div class="pa-2 w-100" v-for="(textValueItem, tv) in timelineItem.text" :key="tv">
                             <ul v-if="textValueItem.list" class="w-75">
                                 <li v-for="(listItem, l) in textValueItem.list" :key="l">{{ listItem }}</li>
                             </ul>
-                            <p v-else class="w-75">{{ textValueItem }}</p>
+                            <div v-else class="w-75">{{ textValueItem }}</div>
                         </div>
                         <div v-if="timelineItem.images" class="py-2 w-100 text-center">
                             <view-image v-for="(imgItem, imageIndex) in timelineItem.images" :key="imageIndex" :src="imgItem" />

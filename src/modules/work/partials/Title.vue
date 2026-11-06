@@ -27,7 +27,7 @@ const workLogo = computed(() => input.value?.logo ?? null);
         </v-row>
         
         <v-row>
-            <v-col cols="12" sm="8" md="8" lg="8">
+            <v-col cols="12" sm="12" md="8" lg="8">
                 <div class="my-3" v-if="input.role">
                     <span :style="{ 'color': workColor, 'font-weight': 500 }">Role: </span>
                     {{ input.role }}

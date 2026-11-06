@@ -10,7 +10,7 @@ const props = defineProps({
     <v-card class="my-2 mx-md-8 pa-8" variant="flat">
         <div ref="overview" id="overview" class="overflow-y-auto">
             <v-row>
-                <v-col cols="12" sm="6" md="6" lg="6">
+                <v-col cols="12" sm="12" md="6" lg="6">
                     <div v-if="input.info" class="pt-6 pb-4 px-4">
                         <div>
                             <p v-for="item in input.info">{{ item }}</p>
@@ -31,10 +31,10 @@ const props = defineProps({
                         </div>
                     </div>
                 </v-col>
-                <v-col v-if="input.image" cols="12" sm="6" offset-md="1" offset-lg="1" md="3" lg="3" class="pt-8 pb-4">
+                <v-col v-if="input.image" cols="12" sm="12" offset-md="1" offset-lg="1" md="3" lg="3" class="pt-8 pb-4">
                     <view-image :src="input.image" imgClass="text-center w-50" />
                 </v-col>
-                <v-col v-if="input.features" cols="12" sm="6" md="6" lg="6" class="pt-8 pb-4 px-4">
+                <v-col v-if="input.features" cols="12" sm="12" md="6" lg="6" class="pt-8 pb-4 px-4">
                     <div class="section-caption">Features</div> 
                     <div>
                         <ul>
