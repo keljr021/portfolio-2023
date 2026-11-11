@@ -20,9 +20,11 @@ const props = defineProps({
                         :progress="$vuetify.display.mdAndDown ? 'primary' : null"
                         :show-arrows="$vuetify.display.lgAndUp"
                         :hide-delimiters="$vuetify.display.mdAndDown"
+                        :height="$vuetify.display.mdAndDown ? 'auto' : '500'"
                     >
                         <v-carousel-item v-for="(item, i) in input" :key="i">
-                            <v-img class="w-75 mx-auto mt-4" lazy-src="https://picsum.photos/id/11/100/60"  :src="$imageSrc(item)" />
+                            <view-image v-if="$vuetify.display.mdAndDown" :src="item" />
+                            <v-img v-else class="w-full w-md-75 mx-auto mt-4" lazy-src="https://picsum.photos/id/11/100/60"  :src="$imageSrc(item)" />
                         </v-carousel-item>
                     </v-carousel>
                 </div>
