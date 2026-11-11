@@ -19,6 +19,10 @@ defineProps({
     type: String,
     default: null
   },
+  imgClass: {
+    type: String,
+    default: null
+  },
   maxHeight: {
     type: String,
     default: '250px'

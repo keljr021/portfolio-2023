@@ -205,6 +205,16 @@ export const accessibility = [
 ];
 
 
+export const gallery = [
+    'work/reys/reys-mock1.png',
+    'work/reys/reys-mock2.png',
+    'work/reys/reys-mock3.png',
+    'work/reys/reys-mock4.png',
+    'work/reys/reys-mock5.png',
+];
+
+
+
 export const results = [
     'Order tracker for users to track pickup orders.',
     'Account workflow for consistent members.',

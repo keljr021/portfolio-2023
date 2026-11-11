@@ -210,6 +210,16 @@ export const accessibility = [
 ];
 
 
+export const gallery = [
+    'work/fl/gallery/fl-home.png',
+    'work/fl/gallery/fl-query1.png',
+    'work/fl/gallery/fl-query2.png',
+    'work/fl/gallery/fl-systems.png',
+    'work/fl/gallery/fl-404.png',
+];
+
+
+
 export const results = [
     'Created a site with a search workflow that gives members all the needed information.',
     'Adds an editable query for members to quickly edit and update.',

@@ -218,6 +218,19 @@ export const accessibility = [
 ];
 
 
+export const gallery = [
+    'work/badgey/gallery/ba-home.png',
+    'work/badgey/gallery/ba-login.png',
+    'work/badgey/gallery/ba-dash.png',
+    'work/badgey/gallery/ba-followers.png',
+    'work/badgey/gallery/ba-create.png',
+    'work/badgey/gallery/ba-manage.png',
+    'work/badgey/gallery/ba-redeem.png',
+    'work/badgey/gallery/ba-claim.png',
+];
+
+
+
 export const results = [
     'Created a badge creation system with full CRUD options to customize a badge online.',
     'Consistent interface and layout across desktop and mobile devices.',

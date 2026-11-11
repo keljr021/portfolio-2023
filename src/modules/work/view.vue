@@ -10,6 +10,7 @@
   import Mockups from '@/modules/work/partials/Mockups.vue';
   import Accessibility from '@/modules/work/partials/Accessibility.vue';
   import Development from '@/modules/work/partials/Development.vue';
+  import Gallery from '@/modules/work/partials/Gallery.vue';
   import Results from '@/modules/work/partials/Results.vue';
   import LessonsLearned from '@/modules/work/partials/LessonsLearned.vue';
 
@@ -24,7 +25,7 @@
   const previousView = ref(null);
   const nextView = ref(null);
 
-  const sections = ['overview', 'research', 'design', 'development', 'mockups', 'accessibility', 'results'];
+  const sections = ['overview', 'research', 'design', 'development', 'mockups', 'accessibility', 'gallery', 'results'];
 
   const data = ref(null);
   const workDataLoaders = import.meta.glob('./items/*.js');
@@ -117,6 +118,7 @@
             <v-tab value="mockups" @click="scrollToSection('mockups')">Mockups</v-tab>
             <v-tab v-if="showDevelopment" value="development" @click="scrollToSection('development')">Development</v-tab>
             <v-tab value="accessibility" @click="scrollToSection('accessibility')">Accessibility</v-tab>
+            <v-tab value="gallery" @click="scrollToSection('gallery')">Gallery</v-tab>
             <v-tab value="results" @click="scrollToSection('results')">Results</v-tab>
           </v-tabs>
         </div>
@@ -157,6 +159,11 @@
           <v-row v-if="data.accessibility" class="justify-space-around">
             <v-col>
               <Accessibility :input="data.accessibility" />
+            </v-col>
+          </v-row>
+          <v-row v-if="data.gallery" class="justify-space-around">
+            <v-col>
+              <Gallery :input="data.gallery" />
             </v-col>
           </v-row>
           <v-row v-if="data.results || data.lessons" class="justify-space-around">

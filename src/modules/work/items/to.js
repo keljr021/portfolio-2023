@@ -269,6 +269,15 @@ export const accessibility = [
 ];
 
 
+export const gallery = [
+    'work/to/to-site1-alt.png',
+    'work/to/to-site2.png',
+    'work/to/to-site3.png',
+    'work/to/to-site4.png',
+];
+
+
+
 export const results = [
     'Created mocks for a mobile app and web site with consistent branding across each view.',
     'Consistent navigation across all pages.',

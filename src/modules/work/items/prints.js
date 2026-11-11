@@ -287,6 +287,21 @@ export const accessibility = [
 ];
 
 
+export const gallery = [
+    'work/pr/gallery/pr-home.png',
+    'work/pr/gallery/pr-featured.png',
+    'work/pr/gallery/pr-recommended.png',
+    'work/pr/gallery/pr-genres.png',
+    'work/pr/gallery/pr-authors.png',
+    'work/pr/gallery/pr-authors-page.png',
+    'work/pr/gallery/pr-chapters.png',
+    'work/pr/gallery/pr-comic-view.png',
+    'work/pr/gallery/pr-publish.png',
+    'work/pr/gallery/pr-new-account.png',
+    'work/pr/gallery/pr-404.png',
+];
+
+
 export const results = [
     'Created a web site with an improved user interface when viewing webcomics for both desktop and mobile devices.',
     'Consistent layout and navigation across all pages.',

@@ -277,6 +277,13 @@ export const accessibility = [
 ];
 
 
+export const gallery = [
+    'work/ka/gallery/ka-home.png',
+    'work/ka/gallery/ka-services.png',
+    'work/ka/gallery/ka-contact.png',
+]
+
+
 export const results = [
     'Created a responsive site with items fully accessible for the end user.',
     'Reduced navigation to one-page format for each section',
